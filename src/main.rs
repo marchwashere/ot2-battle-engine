@@ -1,11 +1,45 @@
 use ot2_battle_engine::{
     ActorId, Battle, BattleConfig, Command, ItemCatalog, Outcome, Side, SimError, StepReport,
+    routine::ThroneOpeningRoutine,
 };
 use std::{env, fs};
 
 fn print_report(report: &StepReport) -> Result<(), serde_json::Error> {
     println!("{}", serde_json::to_string(report)?);
     Ok(())
+}
+fn seed_value(value: &str) -> Result<u32, std::num::ParseIntError> {
+    if let Some(hex) = value
+        .strip_prefix("0x")
+        .or_else(|| value.strip_prefix("0X"))
+    {
+        u32::from_str_radix(hex, 16)
+    } else {
+        value.parse()
+    }
+}
+fn opening(seed: u32, trace: bool) -> Result<Battle, SimError> {
+    let mut config = BattleConfig::from_json(include_str!("../data/throne_opening.json"))?;
+    config.seed = seed;
+    Battle::new_opening(config, ItemCatalog::builtin()?, trace)
+}
+fn play_routine(battle: &mut Battle, print: bool) -> Result<ThroneOpeningRoutine, SimError> {
+    let mut routine = ThroneOpeningRoutine::default();
+    for _ in 0..16 {
+        if battle.state().outcome != Outcome::Ongoing {
+            break;
+        }
+        let report = routine.step(battle)?;
+        if print {
+            print_report(&report)?;
+        }
+    }
+    if battle.state().outcome != Outcome::Victory {
+        return Err(SimError(
+            "routine did not win within its action budget".into(),
+        ));
+    }
+    Ok(routine)
 }
 fn main() {
     if let Err(error) = run() {
@@ -17,7 +51,38 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<_> = env::args().skip(1).collect();
     match args.first().map(String::as_str).unwrap_or("demo") {
         "throne" => {
-            if args.len()>2 {return Err(SimError("usage: ot2-sim throne [seed]".into()).into());}
+            let trace = args.iter().any(|a| a == "--trace");
+            let seeds: Vec<_> = args.iter().skip(1).filter(|a| *a != "--trace").collect();
+            if seeds.len() > 1 { return Err(SimError("usage: ot2-sim throne [seed] [--trace]".into()).into()); }
+            let seed = seeds.first().map(|s| seed_value(s)).transpose()?.unwrap_or(123);
+            let mut battle = opening(seed, trace)?;
+            eprintln!("Opening routine; English, 2x before first action; source-derived CRT projection, not yet checked against a full live battle trace.");
+            let routine = play_routine(&mut battle, true)?;
+            println!("{}", serde_json::json!({"initial_seed":seed,"routine":routine,"state":battle.state()}));
+        }
+        "throne-sweep" => {
+            if args.len() != 3 { return Err(SimError("usage: ot2-sim throne-sweep <first-seed> <count>".into()).into()); }
+            let first = seed_value(&args[1])?;
+            let count: u32 = args[2].parse()?;
+            let base = opening(first, false)?;
+            let start = std::time::Instant::now();
+            let mut wins = 0u32;
+            let mut checksum = 0u64;
+            let mut first_failure = None;
+            for offset in 0..count {
+                let seed = first.wrapping_add(offset);
+                let mut battle = base.restarted(seed);
+                match play_routine(&mut battle, false) {
+                    Ok(_) => wins += 1,
+                    Err(e) => if first_failure.is_none() { first_failure = Some((seed, e.to_string())); },
+                }
+                checksum = checksum.wrapping_add(u64::from(battle.state().rng.state));
+            }
+            let seconds = start.elapsed().as_secs_f64();
+            println!("{}",serde_json::json!({"first_seed":first,"count":count,"wins":wins,"first_failure":first_failure,"checksum":checksum,"seconds":seconds,"battles_per_second":count as f64/seconds}));
+        }
+        "throne-combat" => {
+            if args.len()>2 {return Err(SimError("usage: ot2-sim throne-combat [seed]".into()).into());}
             let mut config=BattleConfig::from_json(include_str!("../data/throne_opening.json"))?;
             if let Some(seed)=args.get(1) {config.seed=seed.parse()?;}
             let mut battle=Battle::new(config,ItemCatalog::builtin()?)?;
@@ -78,7 +143,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
             let ai = ot2_battle_engine::ai::BossAi::from_json(&fs::read_to_string(&args[1])?)?;
             println!("Valid AI structure: {} states. Skill references are checked when loading a battle.", ai.states.len());
         }
-        _ => return Err(SimError("usage: ot2-sim [throne [seed] | demo [seed] | run <battle.json> <commands.json> | validate-ai <ai.json>]".into()).into()),
+        _ => return Err(SimError("usage: ot2-sim [throne [seed] [--trace] | throne-sweep <first-seed> <count> | throne-combat [seed] | demo [seed] | run <battle.json> <commands.json> | validate-ai <ai.json>]".into()).into()),
     }
     Ok(())
 }

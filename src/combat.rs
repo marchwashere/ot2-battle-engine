@@ -140,6 +140,15 @@ pub struct Attack {
 impl Attack {
     pub(crate) fn validate(&self) -> Result<()> {
         ensure(
+            !self.normal_attack
+                || (self.kind == DamageKind::Physical
+                    && matches!(
+                        self.weapon,
+                        Some(Weapon::Sword | Weapon::Dagger | Weapon::Axe)
+                    )),
+            "normal attack has no supported weapon callback plan",
+        )?;
+        ensure(
             self.invocation <= 10000
                 && self.ability_ratio <= 10000
                 && self.critical_power <= 1000

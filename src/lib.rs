@@ -4,7 +4,9 @@ pub mod battle;
 pub mod combat;
 pub mod content;
 pub mod model;
+pub mod opening_crt;
 pub mod rng;
+pub mod routine;
 
 pub use battle::{Battle, BattleConfig, BattleState, Command, Event, Outcome, StepReport};
 pub use content::{Catalog, Effect, Item, ItemCatalog, Recovery, Resource, Skill, TargetKind};

@@ -40,7 +40,7 @@
   "notes": [
     "EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.",
     "Default level-one starting gear and learned (GetParam=1) abilities.",
-    "Night buffs are initial state; seed is for headless battle initialization, not the game process startup.",
+    "Night talent applies after the initial order shuffle; seed precedes actor initialization, not game process startup.",
     "Starting inventory is empty; supply owned items explicitly. No invented consumables."
   ],
   "rows": {
@@ -858,9 +858,9 @@
     ],
     "skills": [
       {
-        "id": "NORMAL_ATTACK_1",
-        "ID": 1,
-        "AbilityID": 20,
+        "id": "NORMAL_ATTACK_SWORD_1",
+        "ID": 30,
+        "AbilityID": 270,
         "DisplayName": "BASIC_COMMAND_002",
         "Detail": "BASIC_COMMAND_002_DETAIL",
         "CommandActor": {
@@ -937,14 +937,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv0.Normal_Attack_Sword_Lv0",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv0.Normal_Attack_Sword_Lv0"
           },
           "subPath": ""
         },
@@ -957,9 +957,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_2",
-        "ID": 2,
-        "AbilityID": 30,
+        "id": "NORMAL_ATTACK_SWORD_2",
+        "ID": 31,
+        "AbilityID": 280,
         "DisplayName": "BASIC_COMMAND_003",
         "Detail": "BASIC_COMMAND_003_DETAIL",
         "CommandActor": {
@@ -1036,7 +1036,7 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
@@ -1056,9 +1056,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_3",
-        "ID": 3,
-        "AbilityID": 40,
+        "id": "NORMAL_ATTACK_SWORD_3",
+        "ID": 32,
+        "AbilityID": 290,
         "DisplayName": "BASIC_COMMAND_004",
         "Detail": "BASIC_COMMAND_004_DETAIL",
         "CommandActor": {
@@ -1135,7 +1135,7 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
@@ -1155,9 +1155,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_4",
-        "ID": 4,
-        "AbilityID": 50,
+        "id": "NORMAL_ATTACK_SWORD_4",
+        "ID": 33,
+        "AbilityID": 300,
         "DisplayName": "BASIC_COMMAND_005",
         "Detail": "BASIC_COMMAND_005_DETAIL",
         "CommandActor": {
@@ -1234,7 +1234,7 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
@@ -1254,9 +1254,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_1",
-        "ID": 1,
-        "AbilityID": 20,
+        "id": "NORMAL_ATTACK_DAGGER_1",
+        "ID": 38,
+        "AbilityID": 350,
         "DisplayName": "BASIC_COMMAND_002",
         "Detail": "BASIC_COMMAND_002_DETAIL",
         "CommandActor": {
@@ -1333,14 +1333,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0.Normal_Attack_Dagger_Lv0",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0.Normal_Attack_Dagger_Lv0"
           },
           "subPath": ""
         },
@@ -1353,9 +1353,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_2",
-        "ID": 2,
-        "AbilityID": 30,
+        "id": "NORMAL_ATTACK_DAGGER_2",
+        "ID": 39,
+        "AbilityID": 360,
         "DisplayName": "BASIC_COMMAND_003",
         "Detail": "BASIC_COMMAND_003_DETAIL",
         "CommandActor": {
@@ -1432,14 +1432,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger.Normal_Attack_Dagger",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger.Normal_Attack_Dagger"
           },
           "subPath": ""
         },
@@ -1452,9 +1452,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_3",
-        "ID": 3,
-        "AbilityID": 40,
+        "id": "NORMAL_ATTACK_DAGGER_3",
+        "ID": 40,
+        "AbilityID": 370,
         "DisplayName": "BASIC_COMMAND_004",
         "Detail": "BASIC_COMMAND_004_DETAIL",
         "CommandActor": {
@@ -1531,14 +1531,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger.Normal_Attack_Dagger",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger.Normal_Attack_Dagger"
           },
           "subPath": ""
         },
@@ -1551,9 +1551,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_4",
-        "ID": 4,
-        "AbilityID": 50,
+        "id": "NORMAL_ATTACK_DAGGER_4",
+        "ID": 41,
+        "AbilityID": 380,
         "DisplayName": "BASIC_COMMAND_005",
         "Detail": "BASIC_COMMAND_005_DETAIL",
         "CommandActor": {
@@ -1630,14 +1630,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3.Normal_Attack_Sword_Lv3",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3.Normal_Attack_Dagger_Lv3",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3.Normal_Attack_Sword_Lv3"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3.Normal_Attack_Dagger_Lv3"
           },
           "subPath": ""
         },
@@ -1650,9 +1650,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_1",
-        "ID": 1,
-        "AbilityID": 20,
+        "id": "NORMAL_ATTACK_AXE_1",
+        "ID": 46,
+        "AbilityID": 430,
         "DisplayName": "BASIC_COMMAND_002",
         "Detail": "BASIC_COMMAND_002_DETAIL",
         "CommandActor": {
@@ -1729,14 +1729,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv0.Normal_Attack_Axe_Lv0",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv0.Normal_Attack_Axe_Lv0"
           },
           "subPath": ""
         },
@@ -1749,9 +1749,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_2",
-        "ID": 2,
-        "AbilityID": 30,
+        "id": "NORMAL_ATTACK_AXE_2",
+        "ID": 47,
+        "AbilityID": 440,
         "DisplayName": "BASIC_COMMAND_003",
         "Detail": "BASIC_COMMAND_003_DETAIL",
         "CommandActor": {
@@ -1828,14 +1828,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe.Normal_Attack_Axe",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe.Normal_Attack_Axe"
           },
           "subPath": ""
         },
@@ -1848,9 +1848,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_3",
-        "ID": 3,
-        "AbilityID": 40,
+        "id": "NORMAL_ATTACK_AXE_3",
+        "ID": 48,
+        "AbilityID": 450,
         "DisplayName": "BASIC_COMMAND_004",
         "Detail": "BASIC_COMMAND_004_DETAIL",
         "CommandActor": {
@@ -1927,14 +1927,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe.Normal_Attack_Axe",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword.Normal_Attack_Sword"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe.Normal_Attack_Axe"
           },
           "subPath": ""
         },
@@ -1947,9 +1947,9 @@
         "SlideFrame": 0
       },
       {
-        "id": "NORMAL_ATTACK_4",
-        "ID": 4,
-        "AbilityID": 50,
+        "id": "NORMAL_ATTACK_AXE_4",
+        "ID": 49,
+        "AbilityID": 460,
         "DisplayName": "BASIC_COMMAND_005",
         "Detail": "BASIC_COMMAND_005_DETAIL",
         "CommandActor": {
@@ -2026,14 +2026,14 @@
         "EnableExcitement": false,
         "SongAbilityFlag": false,
         "DanceAbilityFlag": false,
-        "EnableAutoTameMonster": false,
+        "EnableAutoTameMonster": true,
         "UseAbilityCamera": false,
         "ActionCommandSequencer": {
           "kind": "soft-object",
           "asset": {
-            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3.Normal_Attack_Sword_Lv3",
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv3.Normal_Attack_Axe_Lv3",
             "number": 0,
-            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3.Normal_Attack_Sword_Lv3"
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv3.Normal_Attack_Axe_Lv3"
           },
           "subPath": ""
         },

@@ -21,8 +21,9 @@ Import uses `InitLevel`, `FirstEquipment`, character parameter revisions, growth
 rows and job abilities with `GetParam=1`. The base job revision is not multiplied
 twice. Armor contributes to base stats; the selected weapon contributes on attack.
 
-The checked-in setup assumes full HP/SP, 1 BP, zero latent gauge and three turns
-of night ATK/MATK/AGI buffs. Inventory is empty until supplied or items are stolen.
+The checked-in setup assumes full HP/SP, 1 BP, zero latent gauge and a three-turn
+night talent (`night_buff_turns`). Inventory starts empty until supplied, stolen
+or awarded by the opening routine's drop checks.
 These are explicit setup assumptions from default records and night-talent
 behavior; the opening story event has not been replayed to verify every entry
 field. Initial resources, equipment, statuses and inventory are configurable.
@@ -52,7 +53,8 @@ Costs are paid once per action. Steal chance is
 Defend applies guard value 130 in the defense term and promotes the actor in
 the next queue. It ends when that actor next acts. `Wait` is a testing helper.
 Items restore capped resources and never revive. Latent actions are not exposed
-for this opening encounter. Battle execution ends before rewards/drop RNG.
+for this opening encounter. `Battle::new` ends before rewards/drop RNG;
+`Battle::new_opening` includes drop checks and the first field counter reset.
 
 ## Damage, Break and turns
 
@@ -84,7 +86,9 @@ A successful weak hit removes one shield; misses/neutral hits remove none. The
 breaking hit uses pre-break damage, while subsequent hits use broken damage.
 Break cancels the enemy's remaining actions this round and the whole next round.
 At round N+2 it recovers full shields and receives recovery priority. KO actors
-stop acting/receiving further hits.
+stop acting and cannot be newly selected. The current normal attack retains its
+target until the final authored hit, so overkill hits still consume damage and
+notification draws; KO is reported only once.
 
 Boost spends up to 3 BP and uses that tier's original coefficients/duration/hits.
 Boosting suppresses the next BP regeneration; otherwise players regain 1 per
@@ -95,6 +99,10 @@ Order uses the native <=8 selection sort, including unstable ties, and backward
 sliding-triple shuffle. The next-round preview is retained. Enemy next-turn speed
 uses a 0.7–1.5 revision after round one; initialization uses 1–1 for both sides.
 Break recovery adds 1,000,000 to the next-turn score before eligible shuffles.
+The first queue is sorted/shuffled before the night talent. Direct ATK/MATK/AGI
+status application then marks party rows and moves each one place earlier in
+that queue, without sorting again or drawing CRT. The next preview uses buffed
+speed. Imported initial statuses are separate from this battle-start talent.
 
 ## Pursuer AI
 
@@ -114,21 +122,26 @@ Defend, Sharpen Dagger and each Heckle target consume one 100% status check plus
 20 duration draws: nineteen empty AddDisease entries still draw a [0,0] range.
 Cover uses its separate direct path.
 
-**Known omissions prevent seed-for-seed game predictions today:**
+The routine-specific constructor additionally covers frame initialization,
+voice candidate checks, damage/miss notification timers, weapon-specific cached
+accuracy checks, overkill hits, two drop checks and the first field counter
+reset. It assumes English, switched to 2× before the first attack. See
+[the callback audit and exact seed boundary](opening-routine.md).
+
+**Live-game accuracy remains unverified:**
 
 - Full entry-path CRT ordering, including actor initialization callbacks and
   story-event/night-buff ordering, has not been reproduced against a capture.
-- Main-CRT voice candidate checks and damage/miss notification timer draws are
-  not integrated. They must be projected as draws only; no playback, widgets,
-  animation runtime or rendering is required. Unreal global/CRI RNG stays excluded.
-- The synchronous action loop still needs full-action comparison of command
-  callbacks, all boosted sequence branches and KO callbacks.
+- Imported callback schedules and the synchronous action loop still need
+  full-action comparison, including initialization, boosted branches and KO.
+- Skills/items outside the supplied routine retain combat-only support. Their
+  omitted callbacks are rejected by `Battle::new_opening`.
 - Long-fight edge cases need original-game comparison, including cover reuse and
   exhausted enemy SP. Currently unaffordable enemy actions reject transactionally
   rather than choosing an invented fallback.
 
 Other encounters/jobs/passives/status families, later unlocked latent actions,
-reward processing and overworld progression are outside the implemented scope.
+XP/level-ups, following cutscene resets and field movement remain outside scope.
 
 ## Evidence and verification
 
@@ -149,13 +162,14 @@ Read-only parent-workspace references:
 - `OT2BattleEngine/tests/damage_tests.cpp`: original compiled-Blueprint arithmetic
   expectations reused by Rust tests.
 - `docs/defend_rng_trace.md`: captured ailment-slot draws and additional voice
-  draws; only the ailment portion is implemented here.
+  traversal, both represented in the routine projection.
 - `docs/deserted_highroad_cait_4940_trace.md`: captured initialization/shuffle
   evidence for another encounter, not a capture of this opening fight.
 
 Tests exercise all imported skills/boost levels, weak/neutral/missed hits,
 mid-action Break, cancellation/recovery, status stacking, cover, Steal, BP rules,
 conditional AI draws, rollback, all-wait defeat and victories/replay for 128 seeds.
-Release/debug CLI output is compared for the supplied seed-123 command script.
+Routine tests also cover all six party action orders, the Defend branch, trace
+continuity and identical outcomes with tracing enabled/disabled.
 These checks establish runnable mechanics and source regressions, not complete
 live-game equivalence.

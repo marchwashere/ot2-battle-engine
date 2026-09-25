@@ -41,7 +41,10 @@ function skill(id,rowIds,weapon){
   const result={id,name:names[id]||id,target,sp_cost:r.CostValue,hit:{kind:'guaranteed'},effects:effects(r,weapon),hits:1,boosted:rows.slice(1).map((r,i)=>({effects:effects(r,weapon),hits:weapon?i+2:1}))};
   skills.push(result);sourceRows.skills.push(...rows);return id;
 }
-for(const weapon of ['sword','dagger','axe'])skill('attack_'+weapon,['NORMAL_ATTACK_1','NORMAL_ATTACK_2','NORMAL_ATTACK_3','NORMAL_ATTACK_4'],weapon);
+for(const weapon of ['sword','dagger','axe']){
+  const set=sets.get('PLAYER_ATTACK_'+weapon.toUpperCase());
+  skill('attack_'+weapon,[set.NoBoost,set.BoostLv1,set.BoostLv2,set.BoostLv3],weapon);
+}
 function player(sourceId,id,name){
   const r=players.get(sourceId),g=growth.get(String(r.InitLevel)).Parameter;
   sourceRows.players.push(r);
@@ -55,16 +58,16 @@ function player(sourceId,id,name){
   const learned=jobs.get(r.FirstJob.split('::').at(-1)).JobCommandAbility.filter(a=>a.GetParam===1).map(a=>{
     const set=sets.get(a.AbilityName);return skill(a.AbilityName,[set.NoBoost,set.BoostLv1,set.BoostLv2,set.BoostLv3]);
   });
-  return {id,name,stats:{max_hp:total('HP'),max_sp:total('MP'),speed:total('AGI')},resources:{hp:total('HP'),sp:total('MP'),bp:1,latent:0},skills:[...weaponStats.map(w=>'attack_'+w.weapon),...learned],combat:{attack:total('ATK'),defense:total('DEF'),magic:total('MATK'),magic_defense:total('MDEF'),accuracy:total('ACC'),evasion:total('EVA'),critical:total('CON'),growth_attack:g.ATK,growth_magic:g.MATK,weapons:weaponStats,main_weapon:enumWeapon(r.MainWeapon),shields:0,weapon_weaknesses:[],element_weaknesses:[],statuses:['attack_up','magic_up','speed_up'].map(kind=>({kind,turns:3})),steal_item:null}};
+  return {id,name,stats:{max_hp:total('HP'),max_sp:total('MP'),speed:total('AGI')},resources:{hp:total('HP'),sp:total('MP'),bp:1,latent:0},skills:[...weaponStats.map(w=>'attack_'+w.weapon),...learned],combat:{attack:total('ATK'),defense:total('DEF'),magic:total('MATK'),magic_defense:total('MDEF'),accuracy:total('ACC'),evasion:total('EVA'),critical:total('CON'),growth_attack:g.ATK,growth_magic:g.MATK,weapons:weaponStats,main_weapon:enumWeapon(r.MainWeapon),shields:0,weapon_weaknesses:[],element_weaknesses:[],statuses:[],steal_item:null}};
 }
 const party=[player('eTHIEF','throne','Throné'),player('eGUEST_006','pirro','Pirro'),player('eGUEST_007','scaracci','Scaracci')];
 for(const id of ['ABI_ENE_0041','ABI_ENE_0500'])skill(id,[id]);
 const e=enemies.get('ENE_EVE_THI_CTY_010'),p=e.Param;
 sourceRows.enemies.push(e);
 const foes=['pursuer_a','pursuer_b'].map((id,index)=>({id,name:'Pursuer '+(index?'B':'A'),stats:{max_hp:p.HP,max_sp:p.MP,speed:p.AGI},resources:{hp:p.HP,sp:p.MP,bp:e.FirstBP,latent:0},skills:['ABI_ENE_0041','ABI_ENE_0500'],combat:{attack:p.ATK,defense:p.DEF,magic:p.MATK,magic_defense:p.MDEF,accuracy:p.ACC,evasion:p.EVA,critical:p.CON,growth_attack:p.ATK,growth_magic:p.MATK,weapons:[],main_weapon:null,shields:p.SP,weapon_weaknesses:e.WeaponResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[weaponNames[i]]:[]),element_weaknesses:e.AttributeResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[['none','fire','ice','lightning','wind','light','dark'][i]]:[]),statuses:[],steal_item:'healing_grape',enemy_bp_base:p.BP},ai:{schema_version:1,initial_state:'normal',states:[{id:'normal',rules:[{condition:{kind:'always'},selection:{kind:'opening_guard',attack:{skill:'ABI_ENE_0041',target:'random_opponent'},slash:{skill:'ABI_ENE_0500',target:'random_opponent'}}}]}]}}));
-const config={schema_version:1,rules:'ot2_opening_v1',seed:123,players:party,enemies:foes,skills,inventory:{healing_grape:0,inspiriting_plum:0}};
+const config={schema_version:1,rules:'ot2_opening_v1',seed:123,night_buff_turns:3,players:party,enemies:foes,skills,inventory:{healing_grape:0,inspiriting_plum:0}};
 const dir=path.join(__dirname,'../data');
 fs.mkdirSync(path.join(dir,'source'),{recursive:true});
 fs.writeFileSync(path.join(dir,'throne_opening.json'),JSON.stringify(config,null,2)+'\n');
-fs.writeFileSync(path.join(dir,'source/throne_opening.json'),JSON.stringify({sources,notes:['EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.','Default level-one starting gear and learned (GetParam=1) abilities.','Night buffs are initial state; seed is for headless battle initialization, not the game process startup.','Starting inventory is empty; supply owned items explicitly. No invented consumables.'],rows:sourceRows},null,2)+'\n');
+fs.writeFileSync(path.join(dir,'source/throne_opening.json'),JSON.stringify({sources,notes:['EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.','Default level-one starting gear and learned (GetParam=1) abilities.','Night talent applies after the initial order shuffle; seed precedes actor initialization, not game process startup.','Starting inventory is empty; supply owned items explicitly. No invented consumables.'],rows:sourceRows},null,2)+'\n');
 console.log('Imported '+party.length+' players, '+foes.length+' enemies, '+skills.length+' skills.');

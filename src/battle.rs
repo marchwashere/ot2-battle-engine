@@ -5,6 +5,7 @@ use crate::{
     combat::{self, CombatProfile, DamageKind, Status, StatusKind},
     content::{Effect, HitCheck, ItemCatalog, Recovery, Resource, TargetKind},
     ensure,
+    opening_crt::{self, AfterBattle, AttackStep, OpeningCrtState, RngSpan, VoiceCondition},
 };
 use serde::{Deserialize, Serialize};
 use std::{
@@ -24,6 +25,9 @@ pub struct BattleConfig {
     pub schema_version: u32,
     pub rules: RulesProfile,
     pub seed: u32,
+    /// Throné's battle-start talent, applied after the first order shuffle.
+    #[serde(default)]
+    pub night_buff_turns: u8,
     pub players: Vec<PlayerCharacter>,
     pub enemies: Vec<Enemy>,
     pub skills: Vec<Skill>,
@@ -53,6 +57,7 @@ pub struct BattleState {
     queue: Vec<ActorId>,
     cursor: usize,
     pub next_queue: Vec<ActorId>,
+    pub opening_crt: Option<OpeningCrtState>,
 }
 #[derive(Debug)]
 struct ActorDefinition {
@@ -69,12 +74,14 @@ struct Scenario {
     catalog: Catalog,
     actors: Vec<ActorDefinition>,
     rules: RulesProfile,
+    night_buff_turns: u8,
 }
 /// Cloning copies only mutable state and shares immutable scenario/content.
 #[derive(Debug, Clone)]
 pub struct Battle {
     scenario: Arc<Scenario>,
     state: BattleState,
+    initial: Arc<BattleState>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -178,9 +185,44 @@ struct Prepared {
 
 impl Battle {
     pub fn new(config: BattleConfig, items: ItemCatalog) -> Result<Self> {
+        Self::new_internal(config, items, None)
+    }
+    /// Source callback projection for the supplied opening routine, English,
+    /// switched to 2x before the first action. Other actions remain available
+    /// through `new`, but are rejected here until their CRT schedules are covered.
+    pub fn new_opening(config: BattleConfig, items: ItemCatalog, trace: bool) -> Result<Self> {
+        ensure(
+            config.rules == RulesProfile::Ot2OpeningV1
+                && config
+                    .players
+                    .iter()
+                    .map(|p| p.id.as_str())
+                    .eq(["throne", "pirro", "scaracci"])
+                && config
+                    .enemies
+                    .iter()
+                    .map(|e| e.id.as_str())
+                    .eq(["pursuer_a", "pursuer_b"]),
+            "opening CRT projection requires the original formation",
+        )?;
+        Self::new_internal(config, items, Some(OpeningCrtState::new(trace)))
+    }
+    fn new_internal(
+        config: BattleConfig,
+        items: ItemCatalog,
+        opening_crt: Option<OpeningCrtState>,
+    ) -> Result<Self> {
         ensure(
             config.schema_version == 1,
             "unsupported battle schema_version",
+        )?;
+        ensure(
+            config.night_buff_turns == 0 || config.rules == RulesProfile::Ot2OpeningV1,
+            "night talent requires OT2 rules",
+        )?;
+        ensure(
+            config.night_buff_turns <= 9,
+            "night buff exceeds nine turns",
         )?;
         ensure(
             !config.players.is_empty() && !config.enemies.is_empty(),
@@ -321,40 +363,64 @@ impl Battle {
                 )?;
             }
         }
+        let state = BattleState {
+            round: 0,
+            actors,
+            rng: CrtRng::new(config.seed),
+            inventory,
+            ai,
+            queue: Vec::new(),
+            cursor: 0,
+            outcome: Outcome::Ongoing,
+            next_queue: Vec::new(),
+            opening_crt,
+        };
         let mut battle = Self {
             scenario: Arc::new(Scenario {
                 catalog,
                 actors: definitions,
                 rules: config.rules,
+                night_buff_turns: config.night_buff_turns,
             }),
-            state: BattleState {
-                round: 0,
-                actors,
-                rng: CrtRng::new(config.seed),
-                inventory,
-                ai,
-                queue: Vec::new(),
-                cursor: 0,
-                outcome: Outcome::Ongoing,
-                next_queue: Vec::new(),
-            },
+            initial: Arc::new(state.clone()),
+            state,
         };
-        battle.refresh_outcome();
-        if battle.scenario.rules == RulesProfile::Ot2OpeningV1 {
-            for (i, definition) in battle.scenario.actors.iter().enumerate() {
+        battle.initialize();
+        Ok(battle)
+    }
+    /// Start another seed without parsing content or compiling AI again.
+    pub fn restarted(&self, seed: u32) -> Self {
+        let mut next = Self {
+            scenario: Arc::clone(&self.scenario),
+            state: (*self.initial).clone(),
+            initial: Arc::clone(&self.initial),
+        };
+        next.state.rng = CrtRng::new(seed);
+        next.initialize();
+        next
+    }
+    fn initialize(&mut self) {
+        self.refresh_outcome();
+        if self.scenario.rules == RulesProfile::Ot2OpeningV1 {
+            let scenario = Arc::clone(&self.scenario);
+            for (i, definition) in scenario.actors.iter().enumerate() {
+                let before = self.state.rng;
                 if definition.side == Side::Enemy {
-                    battle.state.actors[i].enemy_charge_max =
+                    // Enemy frame initialization uses the main CRT stream.
+                    self.state.rng.next_u15();
+                    self.state.actors[i].enemy_charge_max =
                         definition.combat.as_ref().expect("combat").enemy_bp_base
-                            + battle.state.rng.index(3) as u8;
+                            + self.state.rng.index(3) as u8;
                 }
                 // Initialize uses PLAYER_WAIT_TIME_REVISION (1..1) for both sides.
-                battle.state.rng.next_u15();
+                self.state.rng.next_u15();
+                self.trace_rng("actor_initialization", Some(ActorId(i)), before);
             }
         }
-        if battle.state.outcome == Outcome::Ongoing {
-            battle.start_round(&mut Vec::new());
+        if self.state.outcome == Outcome::Ongoing {
+            self.start_round(&mut Vec::new());
+            self.order_voice();
         }
-        Ok(battle)
     }
     pub fn state(&self) -> &BattleState {
         &self.state
@@ -371,6 +437,21 @@ impl Battle {
     }
     pub fn actor_name(&self, actor: ActorId) -> Option<&str> {
         self.scenario.actors.get(actor.0).map(|d| d.name.as_str())
+    }
+    pub fn default_attack(&self, actor: ActorId) -> Result<&'static str> {
+        use crate::combat::Weapon;
+        let weapon = self
+            .scenario
+            .actors
+            .get(actor.0)
+            .and_then(|d| d.combat.as_ref())
+            .and_then(|c| c.main_weapon);
+        match weapon {
+            Some(Weapon::Sword) => Ok("attack_sword"),
+            Some(Weapon::Dagger) => Ok("attack_dagger"),
+            Some(Weapon::Axe) => Ok("attack_axe"),
+            _ => Err(SimError("no supported default normal attack".into())),
+        }
     }
     pub fn side(&self, actor: ActorId) -> Option<Side> {
         self.scenario.actors.get(actor.0).map(|d| d.side)
@@ -417,10 +498,7 @@ impl Battle {
             Command::Item { id, target } => {
                 self.prepare(actor, Action::Item(self.catalog().item_id(&id)?), target)?
             }
-            Command::Wait => Prepared {
-                action: Action::Wait,
-                targets: Vec::new(),
-            },
+            Command::Wait => self.prepare(actor, Action::Wait, None)?,
         };
         let before = self.state.rng;
         Ok(self.execute(actor, prepared, before))
@@ -463,7 +541,10 @@ impl Battle {
             self.prepare(actor, Action::Skill(choice.skill, 0), target)
         })();
         match prepared {
-            Ok(action) => Ok(self.execute(actor, action, before)),
+            Ok(action) => {
+                self.trace_rng("enemy_ai_and_target", Some(actor), before);
+                Ok(self.execute(actor, action, before))
+            }
             Err(error) => {
                 self.state.rng = before;
                 self.state.ai[actor.0] = memory_before;
@@ -485,6 +566,24 @@ impl Battle {
         Ok(reports)
     }
     fn prepare(&self, actor: ActorId, action: Action, target: Option<ActorId>) -> Result<Prepared> {
+        if self.state.opening_crt.is_some() {
+            let supported = match action {
+                Action::Skill(i, _) => {
+                    let id = self.catalog().skills[i].id.as_str();
+                    if self.side(actor) == Some(Side::Player) {
+                        id == self.default_attack(actor)?
+                    } else {
+                        matches!(id, "ABI_ENE_0041" | "ABI_ENE_0500")
+                    }
+                }
+                Action::Defend => true,
+                _ => false,
+            };
+            ensure(
+                supported,
+                "action's full CRT callback schedule is not supported by the opening routine profile",
+            )?;
+        }
         let kind = match action {
             Action::Skill(index, boost) => {
                 ensure(
@@ -621,10 +720,25 @@ impl Battle {
     fn execute(&mut self, actor: ActorId, action: Prepared, rng_before: CrtRng) -> StepReport {
         let scenario = Arc::clone(&self.scenario);
         let mut events = Vec::new();
+        if let Some(crt) = &mut self.state.opening_crt {
+            crt.settled_damage = [false; 3];
+        }
         self.state.actors[actor.0].guard = false;
+        let mut normal_boost = 0;
         let (name, effects, hit, hits) = match action.action {
             Action::Skill(i, boost) => {
                 let skill = &scenario.catalog.skills[i];
+                normal_boost = boost;
+                for level in 1..=boost {
+                    self.voice(
+                        actor,
+                        8,
+                        VoiceCondition {
+                            border: level.into(),
+                            ..Default::default()
+                        },
+                    );
+                }
                 if boost > 0 {
                     let bp = &mut self.state.actors[actor.0].resources.bp;
                     let before = *bp;
@@ -663,8 +777,11 @@ impl Battle {
             }
             Action::Wait => ("wait", &[][..], &HitCheck::Guaranteed, 1),
             Action::Defend => {
+                let before = self.state.rng;
                 self.roll_status_application();
+                self.trace_rng("guard_disease", Some(actor), before);
                 self.state.actors[actor.0].guard = true;
+                self.voice(actor, 17, VoiceCondition::default());
                 // Guard promotes the actor in the already generated next-round queue.
                 if let Some(index) = self.state.next_queue.iter().position(|id| *id == actor) {
                     let id = self.state.next_queue.remove(index);
@@ -686,44 +803,36 @@ impl Battle {
                 name: name.to_owned(),
             },
         );
-        // StartMainAction checks normal-attack accuracy before its command loop.
-        // The first ExecStepCounter repeats that check; its result replaces this
-        // preliminary value. Keep the draw even though only the later result hits.
-        if let Some(Effect::Damage { attack }) = effects.first() {
-            if attack.normal_attack {
-                for &target in &action.targets {
-                    if !self.state.actors[target.0].broken() {
-                        let from = scenario.actors[actor.0].combat.as_ref().expect("combat");
-                        let to = scenario.actors[target.0].combat.as_ref().expect("combat");
-                        self.state.rng.weighted_bool(combat::hit_probability(
-                            from.accuracy,
-                            to.evasion,
-                            attack.hit_bonus,
-                        ));
-                    }
-                }
-            }
-        }
-        for _ in 0..hits {
+        let normal = effects.first().and_then(|e| match e {
+            Effect::Damage { attack } if attack.normal_attack => Some(attack),
+            _ => None,
+        });
+        if let Some(attack) = normal {
             for &target in &action.targets {
-                if !self.state.actors[target.0].alive() {
-                    continue;
-                }
-                let success = match hit {
-                    HitCheck::Guaranteed => true,
-                    HitCheck::Weighted { probability } => {
-                        self.state.rng.weighted_bool(*probability)
-                    }
-                };
-                if !success {
-                    events.push(Event::Miss { actor, target });
-                    continue;
-                }
-                for effect in effects {
+                self.execute_normal(actor, target, attack, normal_boost, &mut events);
+            }
+        } else {
+            for _ in 0..hits {
+                for &target in &action.targets {
                     if !self.state.actors[target.0].alive() {
-                        break;
+                        continue;
                     }
-                    self.apply_action_effect(actor, target, effect, &mut events);
+                    let success = match hit {
+                        HitCheck::Guaranteed => true,
+                        HitCheck::Weighted { probability } => {
+                            self.state.rng.weighted_bool(*probability)
+                        }
+                    };
+                    if !success {
+                        events.push(Event::Miss { actor, target });
+                        continue;
+                    }
+                    for effect in effects {
+                        if !self.state.actors[target.0].alive() {
+                            break;
+                        }
+                        self.apply_action_effect(actor, target, effect, &mut events);
+                    }
                 }
             }
         }
@@ -732,6 +841,9 @@ impl Battle {
             events.push(Event::BattleEnded {
                 outcome: self.state.outcome,
             });
+            if self.state.outcome == Outcome::Victory && self.state.opening_crt.is_some() {
+                self.finish_opening(actor);
+            }
         } else {
             self.state.cursor += 1;
             while self.state.cursor < self.state.queue.len()
@@ -746,6 +858,7 @@ impl Battle {
                     round: self.state.round,
                 });
             }
+            self.order_voice();
         }
         StepReport {
             actor,
@@ -753,6 +866,62 @@ impl Battle {
             rng_before,
             rng_after: self.state.rng,
             outcome: self.state.outcome,
+        }
+    }
+    fn normal_accuracy(
+        &mut self,
+        actor: ActorId,
+        target: ActorId,
+        attack: &combat::Attack,
+    ) -> bool {
+        let before = self.state.rng;
+        let hit = if self.state.actors[target.0].broken() || !self.state.actors[target.0].alive() {
+            true
+        } else {
+            let from = self.scenario.actors[actor.0]
+                .combat
+                .as_ref()
+                .expect("combat");
+            let to = self.scenario.actors[target.0]
+                .combat
+                .as_ref()
+                .expect("combat");
+            self.state.rng.weighted_bool(combat::hit_probability(
+                from.accuracy,
+                to.evasion,
+                attack.hit_bonus,
+            ))
+        };
+        self.trace_rng("normal_accuracy", Some(actor), before);
+        hit
+    }
+    fn execute_normal(
+        &mut self,
+        actor: ActorId,
+        target: ActorId,
+        attack: &combat::Attack,
+        boost: u8,
+        events: &mut Vec<Event>,
+    ) {
+        // StartMainAction caches accuracy. Only authored ExecStepCounter keys
+        // replace it. In particular sword/dagger Lv3 reuse it for all four hits.
+        let mut hit = self.normal_accuracy(actor, target, attack);
+        for step in opening_crt::attack_plan(attack.weapon.expect("normal weapon"), boost) {
+            match *step {
+                AttackStep::Check => hit = self.normal_accuracy(actor, target, attack),
+                AttackStep::Voice { r#type } => {
+                    self.voice(actor, r#type, VoiceCondition::default())
+                }
+                AttackStep::Damage { .. } => {
+                    // DefaultTarget stays in the source command until its final
+                    // key. Overkill hits still calculate damage and consume CRT.
+                    self.apply_attack(actor, target, attack, Some(hit), events);
+                    // Boosted normal attacks explicitly disable hit-reaction voices.
+                    // Unboosted English 2x attacks hit while their attack voice is
+                    // active; the source early gate suppresses types 9/10/12.
+                    // Final-key placement is checked when source data is loaded.
+                }
+            }
         }
     }
     fn apply_effect(&mut self, target: ActorId, effect: &Effect, events: &mut Vec<Event>) {
@@ -810,7 +979,7 @@ impl Battle {
         events: &mut Vec<Event>,
     ) {
         match effect {
-            Effect::Damage { attack } => self.apply_attack(actor, target, attack, events),
+            Effect::Damage { attack } => self.apply_attack(actor, target, attack, None, events),
             Effect::Status { status } => {
                 self.roll_status_application();
                 let statuses = &mut self.state.actors[target.0].statuses;
@@ -872,6 +1041,7 @@ impl Battle {
         actor: ActorId,
         mut target: ActorId,
         attack: &combat::Attack,
+        prechecked_hit: Option<bool>,
         events: &mut Vec<Event>,
     ) {
         if let Some(cover) = self.state.actors[target.0].cover_by {
@@ -904,11 +1074,7 @@ impl Battle {
         let magical = attack.kind == DamageKind::Magical;
         let accuracy =
             combat::hit_probability(attacker.accuracy, defender.evasion, attack.hit_bonus);
-        let pre_hit = if attack.normal_attack && !broken {
-            self.state.rng.weighted_bool(accuracy)
-        } else {
-            true
-        };
+        let before = self.state.rng;
         let crit_chance = combat::critical_probability(
             attacker.critical,
             scenario.actors[target.0].stats.speed,
@@ -916,13 +1082,15 @@ impl Battle {
             attack.critical_bonus,
         );
         let critical = !magical && self.state.rng.weighted_bool(crit_chance);
-        let hit = if attack.normal_attack {
-            pre_hit
+        let hit = if let Some(hit) = prechecked_hit {
+            hit
         } else {
             magical || broken || critical || self.state.rng.weighted_bool(accuracy)
         };
         if !hit {
+            self.trace_rng("critical_and_hit", Some(actor), before);
             events.push(Event::Miss { actor, target });
+            self.damage_notification(target, None);
             return;
         }
         let weapon_weak = attack
@@ -968,6 +1136,7 @@ impl Battle {
             attack,
             combat::variance(&mut self.state.rng),
         );
+        self.trace_rng("critical_hit_and_damage", Some(actor), before);
         events.push(Event::Damage {
             actor,
             target,
@@ -976,12 +1145,7 @@ impl Battle {
             weak: weapon_weak || element_weak,
             broken_before: broken,
         });
-        self.apply_effect(target, &Effect::FixedDamage { amount }, events);
-        if self.side(target) == Some(Side::Enemy)
-            && self.state.actors[target.0].alive()
-            && !broken
-            && (weapon_weak || element_weak)
-        {
+        if self.side(target) == Some(Side::Enemy) && !broken && (weapon_weak || element_weak) {
             let state = &mut self.state.actors[target.0];
             let before = state.shields;
             state.shields = state.shields.saturating_sub(1);
@@ -998,6 +1162,142 @@ impl Battle {
                 });
             }
         }
+        self.apply_effect(target, &Effect::FixedDamage { amount }, events);
+        self.damage_notification(target, Some(amount));
+    }
+    fn trace_rng(&mut self, reason: &'static str, actor: Option<ActorId>, before: CrtRng) {
+        if let Some(trace) = self
+            .state
+            .opening_crt
+            .as_mut()
+            .and_then(|c| c.trace.as_mut())
+        {
+            trace.push(RngSpan {
+                reason,
+                actor,
+                before,
+                after: self.state.rng,
+            });
+        }
+    }
+    fn voice(&mut self, actor: ActorId, voice_type: u8, condition: VoiceCondition) {
+        let before = self.state.rng;
+        let Some(crt) = self.state.opening_crt.as_mut() else {
+            return;
+        };
+        if actor.0 >= 3 {
+            return;
+        }
+        if matches!(voice_type, 4 | 11) && crt.settled_damage[actor.0] {
+            return;
+        }
+        let chosen = opening_crt::select_voice(
+            actor.0,
+            voice_type,
+            condition,
+            &mut crt.used_voices[actor.0],
+            &mut self.state.rng,
+        );
+        if chosen.is_some() && matches!(voice_type, 4 | 11) {
+            crt.settled_damage[actor.0] = true;
+        }
+        self.trace_rng(
+            match voice_type {
+                1 => "battle_start_voice",
+                3 => "order_voice",
+                4 => "damage_voice",
+                5 => "death_voice",
+                6 => "attack_voice",
+                7 => "last_attack_voice",
+                8 => "boost_voice",
+                11 => "avoid_voice",
+                17 => "guard_voice",
+                _ => "voice",
+            },
+            Some(actor),
+            before,
+        );
+    }
+    fn order_voice(&mut self) {
+        if let Some(actor) = self.current_actor() {
+            let state = &self.state.actors[actor.0];
+            self.voice(
+                actor,
+                3,
+                VoiceCondition {
+                    pinch: u64::from(state.resources.hp) * 4
+                        <= u64::from(self.scenario.actors[actor.0].stats.max_hp),
+                    decondition: false,
+                    border: 0,
+                },
+            );
+        }
+    }
+    fn damage_notification(&mut self, target: ActorId, amount: Option<u32>) {
+        if self.state.opening_crt.is_none() {
+            return;
+        }
+        let before = self.state.rng;
+        // PlayDamageUI/PlayMissUI -> DisplayTimer -> K2_SetTimer. Even its
+        // zero initial variance draws once from the main CRT stream.
+        self.state.rng.next_u15();
+        self.trace_rng("damage_notification_timer", Some(target), before);
+        if let Some(damage) = amount {
+            if self.state.actors[target.0].alive() {
+                let max = self.scenario.actors[target.0].stats.max_hp;
+                self.voice(
+                    target,
+                    4,
+                    VoiceCondition {
+                        border: (damage as f32 / max as f32 * 100.0) as u32,
+                        ..Default::default()
+                    },
+                );
+            } else {
+                self.voice(target, 5, VoiceCondition::default());
+            }
+        } else {
+            self.voice(target, 11, VoiceCondition::default());
+        }
+    }
+    fn finish_opening(&mut self, actor: ActorId) {
+        let data = opening_crt::data();
+        if data.victory_voice {
+            self.voice(actor, 2, VoiceCondition::default());
+        }
+        let rng_before_rewards = self.state.rng;
+        let mut healing_grapes = 0;
+        for i in 3..5 {
+            let before = self.state.rng;
+            healing_grapes += u32::from(
+                self.state
+                    .rng
+                    .weighted_bool(data.drop_rate as f32 * 0.01_f32),
+            );
+            self.trace_rng("enemy_drop", Some(ActorId(i)), before);
+        }
+        let id = self
+            .catalog()
+            .item_id("healing_grape")
+            .expect("opening item");
+        self.state.inventory[id] = self.state.inventory[id].saturating_add(healing_grapes);
+        let rng_after_rewards = self.state.rng;
+        // On Shown Field After Battle Impl resets Dng_Cty_3_1's counter.
+        // The scripted encounter does not perform random-encounter selection.
+        // Scripted encounters do not clear FirstEncount (ordinary lotteries do).
+        let encounter_steps = data.encounter.reset(&mut self.state.rng, true);
+        self.trace_rng("field_encounter_reset_b_then_a", None, rng_after_rewards);
+        self.state
+            .opening_crt
+            .as_mut()
+            .expect("opening CRT")
+            .after_battle = Some(AfterBattle {
+            rng_before_rewards,
+            rng_after_rewards,
+            rng_after_field_reset: self.state.rng,
+            healing_grapes,
+            encounter_steps,
+        });
     }
     fn source_order(&mut self, round: u32) -> Vec<ActorId> {
         let mut rows: Vec<_> = self
@@ -1035,7 +1335,17 @@ impl Battle {
             }
         });
         let states = &self.state.actors;
+        let before = self.state.rng;
         combat::shuffle_order(&mut rows, |id| !states[id.0].broken(), &mut self.state.rng);
+        self.trace_rng(
+            if round == self.state.round {
+                "current_order_shuffle"
+            } else {
+                "next_order_shuffle"
+            },
+            None,
+            before,
+        );
         rows
     }
     fn start_ot2_round(&mut self, events: &mut Vec<Event>) {
@@ -1077,11 +1387,13 @@ impl Battle {
         // BeginBattleTurn calls draw one revision per living actor; players'
         // 1..1 range still draws, enemies use 0.7..1.5 for the next preview.
         if !first {
+            let before = self.state.rng;
             for actor in &mut self.state.actors {
                 if actor.alive() {
                     actor.order_sample = self.state.rng.next_u15();
                 }
             }
+            self.trace_rng("round_timing_revision", None, before);
         }
         self.state.queue = if first {
             self.source_order(self.state.round)
@@ -1091,6 +1403,44 @@ impl Battle {
         self.state
             .queue
             .retain(|id| self.state.actors[id.0].alive() && !self.state.actors[id.0].broken());
+        if first && self.state.opening_crt.is_some() {
+            let before = self.state.rng;
+            let speaker = ActorId(self.state.rng.index(3) as usize);
+            self.trace_rng("battle_start_speaker", Some(speaker), before);
+            self.voice(speaker, 1, VoiceCondition::default());
+        }
+        if first && self.scenario.night_buff_turns > 0 {
+            // InitializeActionOrder precedes ExecSpecialAction_BuffInNight.
+            // Direct AddDisease does not use the ailment probability loop.
+            for (i, actor) in self.state.actors.iter_mut().enumerate() {
+                if actor.alive() && self.scenario.actors[i].side == Side::Player {
+                    for kind in [
+                        StatusKind::AttackUp,
+                        StatusKind::MagicUp,
+                        StatusKind::SpeedUp,
+                    ] {
+                        actor.statuses.retain(|s| s.kind != kind);
+                        actor.statuses.push(Status {
+                            kind,
+                            turns: self.scenario.night_buff_turns,
+                        });
+                    }
+                }
+            }
+            // AGI_UP marks the existing next-order rows. ExecMoveNextOrder(0,-1)
+            // moves each marked row forward one place before ChangeBattleTurn
+            // promotes that list to the first current queue. It does not re-sort.
+            let mut top = 0;
+            for i in 0..self.state.queue.len() {
+                if self.side(self.state.queue[i]) == Some(Side::Player) {
+                    let to = i.saturating_sub(1).max(top);
+                    self.state.queue.swap(i, to);
+                    if to == top {
+                        top += 1;
+                    }
+                }
+            }
+        }
         self.state.next_queue = self.source_order(self.state.round.saturating_add(1));
         self.state.cursor = 0;
     }

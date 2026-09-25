@@ -1,0 +1,1348 @@
+{
+  "voices": [
+    [
+      {
+        "id": "THIEF_eTAKE_DAMAGE_COUNTER",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": true,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_DEBUFF",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_SMALL",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 25,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_MEDIUM",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 50,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_LARGE",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 75,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv1",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 1,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv2",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 2,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_BADSTATUS",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KEN",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eFENCER",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_SIN",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "ePRIEST",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_SHO",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eMERCHANT",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_ODO",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eDANCER",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_GAK",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "ePROFESSOR",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KAR",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eHUNTER",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KUS",
+        "type": 3,
+        "rate": 50,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eALCHEMIST",
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": true
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KEN",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eFENCER",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_SIN",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "ePRIEST",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_SHO",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eMERCHANT",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_ODO",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eDANCER",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_GAK",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "ePROFESSOR",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KAR",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eHUNTER",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KUS",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": "eALCHEMIST",
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eBATTLE_START_COMMON",
+        "type": 1,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eBATTLE_VICTORY_COMMON",
+        "type": 2,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eORDER_START_COMMON",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv3",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 3,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eNORMAL_ATTACK_COMMON",
+        "type": 6,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "type": 7,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eOPEN_WEAKNESS_COMMON",
+        "type": 9,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eBREAK_ENEMY_COMMON",
+        "type": 10,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eKILL_ENEMY_COMMON",
+        "type": 12,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_FATAL",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eON_DEAD_COMMON",
+        "type": 5,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_eON_AVOID_COMMON",
+        "type": 11,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "THIEF_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      }
+    ],
+    [
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_COUNTER",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": true,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_DEBUFF",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_SMALL",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 25,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_MEDIUM",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv1",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 1,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv2",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 2,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eORDER_START_PINCH",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eORDER_START_BADSTATUS",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eBATTLE_START_COMMON",
+        "type": 1,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eBATTLE_VICTORY_COMMON",
+        "type": 2,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eORDER_START_TURN_1",
+        "type": 3,
+        "rate": 100,
+        "once": true,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv3",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 3,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eNORMAL_ATTACK_COMMON",
+        "type": 6,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "type": 7,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eOPEN_WEAKNESS_COMMON",
+        "type": 9,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eBREAK_ENEMY_COMMON",
+        "type": 10,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eKILL_ENEMY_COMMON",
+        "type": 12,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eON_DEAD_COMMON",
+        "type": 5,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eON_AVOID_COMMON",
+        "type": 11,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eORDER_START_TURN_2",
+        "type": 3,
+        "rate": 100,
+        "once": true,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_006_eORDER_START_COMMON",
+        "type": 3,
+        "rate": 40,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      }
+    ],
+    [
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_COUNTER",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": true,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_DEBUFF",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_SMALL",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 25,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_MEDIUM",
+        "type": 4,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv1",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 1,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv2",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 2,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eORDER_START_PINCH",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": true,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eORDER_START_BADSTATUS",
+        "type": 3,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": true,
+        "target": null,
+        "counter": false,
+        "decondition": true,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eBATTLE_START_COMMON",
+        "type": 1,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eBATTLE_VICTORY_COMMON",
+        "type": 2,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eORDER_START_TURN_1",
+        "type": 3,
+        "rate": 100,
+        "once": true,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv3",
+        "type": 8,
+        "rate": 100,
+        "once": false,
+        "border": 3,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eNORMAL_ATTACK_COMMON",
+        "type": 6,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "type": 7,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eOPEN_WEAKNESS_COMMON",
+        "type": 9,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eBREAK_ENEMY_COMMON",
+        "type": 10,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eKILL_ENEMY_COMMON",
+        "type": 12,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eON_DEAD_COMMON",
+        "type": 5,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eON_AVOID_COMMON",
+        "type": 11,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eORDER_START_TURN_2",
+        "type": 3,
+        "rate": 100,
+        "once": true,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "GUEST_007_eORDER_START_COMMON",
+        "type": 3,
+        "rate": 40,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      }
+    ]
+  ],
+  "attacks": {
+    "sword": [
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ]
+    ],
+    "dagger": [
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ]
+    ],
+    "axe": [
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ]
+    ]
+  },
+  "encounter": {
+    "min": 1000,
+    "range_a": 400,
+    "range_b": 400,
+    "first_ratio": 0.5
+  },
+  "drop_rate": 30,
+  "victory_voice": false
+}

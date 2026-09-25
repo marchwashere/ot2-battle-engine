@@ -2,6 +2,7 @@
   "schema_version": 1,
   "rules": "ot2_opening_v1",
   "seed": 123,
+  "night_buff_turns": 3,
   "players": [
     {
       "id": "throne",
@@ -49,20 +50,7 @@
         "shields": 0,
         "weapon_weaknesses": [],
         "element_weaknesses": [],
-        "statuses": [
-          {
-            "kind": "attack_up",
-            "turns": 3
-          },
-          {
-            "kind": "magic_up",
-            "turns": 3
-          },
-          {
-            "kind": "speed_up",
-            "turns": 3
-          }
-        ],
+        "statuses": [],
         "steal_item": null
       }
     },
@@ -106,20 +94,7 @@
         "shields": 0,
         "weapon_weaknesses": [],
         "element_weaknesses": [],
-        "statuses": [
-          {
-            "kind": "attack_up",
-            "turns": 3
-          },
-          {
-            "kind": "magic_up",
-            "turns": 3
-          },
-          {
-            "kind": "speed_up",
-            "turns": 3
-          }
-        ],
+        "statuses": [],
         "steal_item": null
       }
     },
@@ -163,20 +138,7 @@
         "shields": 0,
         "weapon_weaknesses": [],
         "element_weaknesses": [],
-        "statuses": [
-          {
-            "kind": "attack_up",
-            "turns": 3
-          },
-          {
-            "kind": "magic_up",
-            "turns": 3
-          },
-          {
-            "kind": "speed_up",
-            "turns": 3
-          }
-        ],
+        "statuses": [],
         "steal_item": null
       }
     }

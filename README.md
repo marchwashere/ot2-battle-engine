@@ -5,10 +5,10 @@ A standalone, headless Rust simulator for selected Octopath Traveler II battles.
 defeat**, with player commands and automatic enemy AI. The encounter is
 `ENG_EVE_THI_C01_010`: Throné, Pirro and Scaracci against two pursuers.
 
-The engine implements source-derived combat mechanics. **It is not yet a
-trace-verified RNG manipulation tool.** Some game callbacks consume the main CRT
-stream even with their presentation removed; those calls are not yet fully
-modeled. See [encounter details and accuracy gaps](docs/throne-opening.md).
+The supplied two-round routine also models the source's main-CRT callbacks,
+item drops and first field encounter-counter reset. **It is not yet a
+trace-verified RNG manipulation tool.** See the [routine and seed boundary](docs/opening-routine.md)
+and [combat mechanics](docs/throne-opening.md).
 
 ## Run
 
@@ -17,18 +17,27 @@ is needed to build or run the checked-in crate.
 
 ```sh
 cargo run --release -- throne 123
-cargo run --release -- run data/throne_opening.json data/throne_commands.json
+cargo run --release -- throne 0x7b --trace
+cargo run --release -- throne-sweep 0 65536
 cargo test --release
 ```
 
-Add `--offline` before `--` if dependencies are cached. `throne` uses a simple
-policy: attack the first living enemy's weakness, then boost against broken
-enemies. `run` consumes supplied player commands and executes intervening enemy
-turns. Each emits JSON action reports and a final state.
+Add `--offline` before `--` if dependencies are cached. `throne` follows the user's
+routine using each actor's default weapon:
 
-The seed-123 example wins in **6 actions, round 2**, with party HP
-**213 / 241 / 237** and CRT state **4014490537 after 46 modeled draws**. This is a
-simulator regression result, not a captured in-game result.
+- Round 1 party actions: enemy 1 unboosted; enemy 2 with 1 BP; enemy 1 unboosted.
+- Round 2: the two actors who attacked enemy 1 spend 2 BP on enemy 1 and enemy 2,
+  respectively, in their actual turn order. The other actor Defends if needed.
+
+Enemy turns execute automatically. English voices and switching from 1× to 2×
+before the first attack are the supported timing conditions. The program emits
+JSON action reports and the final state; `--trace` adds labeled CRT spans.
+`throne-sweep` suppresses per-action output and reuses compiled content.
+
+The seed-123 routine wins in **6 party actions, round 2**, with party HP
+**250 / 275 / 237**. After two drop checks and the first field counter reset,
+CRT state is **3423024866 after 145 modeled draws**, and the encounter counter is
+**798**. These are source-projection regression results, not a captured game trace.
 
 ## Implemented
 
@@ -50,6 +59,10 @@ simulator regression result, not a captured in-game result.
 - Ten recovery items: grapes, plums and jams; consumption, recovery caps,
   and party recovery that skips KO characters.
 - KO, victory/defeat, deterministic clones, and rejected-action rollback.
+- Weapon-specific cached-hit schedules, remaining hits after a mid-action KO,
+  main-CRT voice candidate checks and damage/miss timer draws.
+- User routine, optional full draw trace, post-battle drop/counter checkpoints,
+  and a release seed sweep.
 
 Only the main MSVC CRT generator is present. There are no Unreal/CRI random
 streams, audio output, rendering, animation, UI, or frame loop.
@@ -72,9 +85,16 @@ choose commands based on `current_actor()`. Self/all-target skills accept `null`
 Cover Me! requires another living ally. `Wait` is a simulator testing operation,
 separate from Defend. Escape is disabled for this encounter.
 
+`Battle::new` and `run <battle.json> <commands.json>` expose the broader combat
+core, without the opening CRT callback projection. `Battle::new_opening` adds
+that projection for default-weapon attacks, Defend and the two pursuer actions;
+it rejects skills/items whose callback schedules are not covered. The previous
+auto-attack policy remains available as `throne-combat [seed]`.
+
 The default inventory is empty. Set `inventory` in a copied config to the owned
 items, for example `{"healing_grape": 2, "inspiriting_plum": 1}`. Steal can add
-grapes during battle. No revival items or post-victory rewards are implemented.
+grapes during battle. The opening routine awards modeled grape drops; no revival
+items, XP/level-up processing or other rewards are implemented.
 
 ```rust
 use ot2_battle_engine::{Battle, BattleConfig, Command, ItemCatalog};
@@ -104,6 +124,9 @@ action fails; clone first if the whole batch needs rollback.
 `data/source/throne_opening.json` records original rows and asset hashes.
 `node tools/import-throne.cjs` can regenerate both using the local reference
 workspace. This optional import step has no runtime dependency.
+`node tools/import-opening-crt.cjs` imports scalar callback candidates and weapon
+plans. `python tools/audit-opening-timing.py` checks the English duration bounds
+from metadata only. Their source records are in `data/source/`.
 
 `data/items.json` contains ItemDB recovery values and its source hash. IDs:
 
@@ -140,10 +163,17 @@ or encounter. Unknown JSON fields and unsupported effects are rejected.
 `combat.rs` holds arithmetic and order helpers; `battle.rs` executes actions;
 `ai.rs` compiles AI; `content.rs` and `model.rs` hold data; `rng.rs` owns CRT state.
 Use the library directly for search to avoid CLI JSON I/O. Immutable definitions
-are shared through `Arc`, and references compile to dense indices. Reports and
-temporary target lists still allocate; a no-report fast path and throughput
-benchmark remain on [the checklist](PLAN.md). Snapshot loading is not implemented;
-use `Battle::clone()` for in-process branches.
+are shared through `Arc`, and references compile to dense indices.
+`Battle::restarted(seed)` starts another seed without reparsing content or AI;
+`Battle::clone()` branches from the current state. Reports and temporary target
+lists still allocate. A no-report fast path, parallel search and persisted
+snapshot loading remain on [the checklist](PLAN.md).
+
+A local single-thread release sweep completed 65,536 battles in 0.194 seconds
+(about 338,000 battles/second), with all victories. This measures the modeled
+routine with tracing/output disabled, not live-game accuracy or a portable
+performance guarantee. `data/throne_commands.json` is a replayable seed-123
+combat-only example for `run`; use `throne` for the user's routine and CRT callbacks.
 
 ```sh
 cargo fmt --all -- --check
@@ -153,6 +183,7 @@ cargo test --offline --release
 
 Tests cover arithmetic fixtures from the original compiled Blueprint, each
 starting skill/boost tier, shields/Break/recovery, AI conditions and draw order,
-items, invalid-action rollback, full victory/defeat, and replay across 128 opening
-seeds plus the scaffold fixtures. These are source and simulator checks, not
-live-game equivalence tests.
+items, invalid-action rollback, full victory/defeat, and 1,024 routine seeds
+covering every party order, enemy turns and Defend. The release sweep additionally
+checks 65,536 seeds. These are source and simulator checks, not live-game
+equivalence tests.

@@ -23,16 +23,25 @@
       empty ailment slots and fixed-output ranges.
 - [x] Replayable command script; complete victories over 128 seeds, defeat path,
       every starting skill at every boost tier, transactional error checks.
+- [x] User's two-round default-weapon routine, including Defend clarification.
+- [x] Main-CRT initialization, voice candidates, notification timers, weapon-specific
+      hit/check order and overkill callbacks for that routine.
+- [x] Apply night talent after first shuffle and move affected actors one slot.
+- [x] Item-drop checks and the first post-battle field encounter-counter reset.
+- [x] English/2× reaction-gate duration audit; no CRI RNG or audio runtime.
+- [x] Optional labeled CRT trace and deterministic restart from another seed.
+- [x] Routine replay tests across 1,024 seeds; release sweep across 65,536 seeds.
 
 ## Remaining before game-accurate manipulation
 
 - [ ] Capture the opening battle's actual entry state: story gates, night-buff
       activation, party resources, inventory and seed boundary.
-- [ ] Complete the **CRT-only projection** of omitted initialization, voice
-      selection, notification timers and command callbacks. Implement no playback,
-      graphics or Unreal object runtime. See [specific gaps](docs/throne-opening.md).
 - [ ] Compare complete game traces action by action: actors, AI choices, targets,
       damage/resources, status lifetimes, current/next queues, CRT states/draws.
+- [ ] Verify the boundary through the first field reset; model following story
+      event resets separately if prediction is needed after those cutscenes.
+- [ ] Extend callback coverage to skills/items only when needed; the full-CRT
+      opening constructor currently rejects these commands.
 - [ ] Confirm source assumptions for long/contrived fights and unusual choices
       against captures, including cover reuse and exhausted enemy SP.
 - [ ] Only label a profile exact after those comparisons pass. Reproducible
@@ -40,11 +49,13 @@
 
 ## Search and further encounters
 
-- [ ] Add a no-report path and measure release action/branch throughput.
+- [x] Add a bounded seed sweep and measure release battle throughput.
+- [ ] Add a no-report path to eliminate report allocation during search.
 - [ ] Add bounded seed/action search, pruning and parallel execution.
 - [ ] Add persisted snapshot loading if needed for resuming searches.
 - [ ] Add further encounter adapters and only their required mechanics.
 
-The engine stops at victory/defeat; rewards, overworld progression, other bosses,
-later unlocked latent abilities/jobs/passives and unsupported statuses are outside
-the implemented opening encounter. No UI/audio/graphics work is planned.
+The opening routine ends after grape-drop checks and the first field counter
+reset. Later cutscenes/field movement, XP/level-ups, other bosses, later unlocked
+latent abilities/jobs/passives and unsupported statuses remain outside scope.
+No UI/audio/graphics work is planned.

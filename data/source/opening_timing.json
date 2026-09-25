@@ -1,0 +1,109 @@
+{
+  "language": "English",
+  "battle_speed_at_first_action": 2,
+  "scope": "Uninterrupted ordinary opening actions; all variants outlast the hit. No CRI draws needed.",
+  "actors": [
+    {
+      "actor": "throne",
+      "cue": "VO_TOU_PC_BT_00060",
+      "source": "Sound/Resource/VO/Battletou/en/CueSheet_VO_BattleTOU_en.uexp",
+      "sha256": "ee5df65a102b7f70a7fe6e557af7d3c250e264e6a233bd71db86850bd85b83ac",
+      "variants": [
+        {
+          "track": 140,
+          "samples": 23008,
+          "sample_rate": 48000,
+          "seconds": 0.47933333333333333
+        },
+        {
+          "track": 141,
+          "samples": 19088,
+          "sample_rate": 48000,
+          "seconds": 0.39766666666666667
+        },
+        {
+          "track": 142,
+          "samples": 35456,
+          "sample_rate": 48000,
+          "seconds": 0.7386666666666667
+        },
+        {
+          "track": 143,
+          "samples": 56064,
+          "sample_rate": 48000,
+          "seconds": 1.168
+        },
+        {
+          "track": 144,
+          "samples": 24320,
+          "sample_rate": 48000,
+          "seconds": 0.5066666666666667
+        },
+        {
+          "track": 145,
+          "samples": 33792,
+          "sample_rate": 48000,
+          "seconds": 0.704
+        }
+      ],
+      "attack_to_hit_seconds_2x": 0.18333333333333332,
+      "shortest_clip_seconds": 0.39766666666666667
+    },
+    {
+      "actor": "pirro",
+      "cue": "VO_TOU_NPC01_BT_00060",
+      "source": "Sound/Resource/VO/Battlenpc/en/CueSheet_VO_BattleNPC_en.uexp",
+      "sha256": "32320e137eef03af7855a3ad578eb948348c4f98878a74de94f6835dd188fe3a",
+      "variants": [
+        {
+          "track": 1001,
+          "samples": 13417,
+          "sample_rate": 48000,
+          "seconds": 0.27952083333333333
+        },
+        {
+          "track": 1002,
+          "samples": 17451,
+          "sample_rate": 48000,
+          "seconds": 0.3635625
+        },
+        {
+          "track": 1003,
+          "samples": 41228,
+          "sample_rate": 48000,
+          "seconds": 0.8589166666666667
+        }
+      ],
+      "attack_to_hit_seconds_2x": 0.18333333333333332,
+      "shortest_clip_seconds": 0.27952083333333333
+    },
+    {
+      "actor": "scaracci",
+      "cue": "VO_TOU_NPC02_BT_00060",
+      "source": "Sound/Resource/VO/Battlenpc/en/CueSheet_VO_BattleNPC_en.uexp",
+      "sha256": "32320e137eef03af7855a3ad578eb948348c4f98878a74de94f6835dd188fe3a",
+      "variants": [
+        {
+          "track": 1037,
+          "samples": 23902,
+          "sample_rate": 48000,
+          "seconds": 0.49795833333333334
+        },
+        {
+          "track": 1038,
+          "samples": 20419,
+          "sample_rate": 48000,
+          "seconds": 0.4253958333333333
+        },
+        {
+          "track": 1039,
+          "samples": 37723,
+          "sample_rate": 48000,
+          "seconds": 0.7858958333333333
+        }
+      ],
+      "attack_to_hit_seconds_2x": 0.26666666666666666,
+      "shortest_clip_seconds": 0.4253958333333333
+    }
+  ]
+}

@@ -1,0 +1,3488 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    },
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Ability/Database/AbilitySetData",
+      "sha256": "34568a4256c18b359fcb77e64b65dae4840664d3795edea9ec5fcaeb7dda8ff1"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv0",
+      "sha256": "61a88546d3c7e47ab72f153e6bd42dab14064fb63af3b334483f64bc936c07db"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword",
+      "sha256": "392ed71ffafbd7bc6102aecbbbc47d97251ba258e0f3772ff702feed076f6386"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword",
+      "sha256": "392ed71ffafbd7bc6102aecbbbc47d97251ba258e0f3772ff702feed076f6386"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3",
+      "sha256": "e88c24ee811730b0978ecaf1908a64d9bee80faf31573fb36f3a921f9f9bbed1"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0",
+      "sha256": "599211d0301119b9636dd0d3cf53e85028e38fedb77d93b21e486bc217228206"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "sha256": "de261d0b4523691b89e2713d7c836e2a786a4165a42552a9ce544442e51a4a8c"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "sha256": "de261d0b4523691b89e2713d7c836e2a786a4165a42552a9ce544442e51a4a8c"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3",
+      "sha256": "8b1100e64721cbde9d4a58acac96eb65a1fd53eddf4a18eccae37ab468418a53"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv0",
+      "sha256": "8b183d9938ba8fc7bd2a3b48645784efe925671304a0931621bef25beeb4c669"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe",
+      "sha256": "072dcd30e124d5ec214b6fd98979427c2124241164c43c93bca2dcd5913b8f49"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe",
+      "sha256": "072dcd30e124d5ec214b6fd98979427c2124241164c43c93bca2dcd5913b8f49"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv3",
+      "sha256": "5e1db7251ade2fbdfd03cf2f26182d7d0c0ec281913f2fa6dc0984324abd3087"
+    },
+    {
+      "source": "/Game/Level/Database/LevelTable",
+      "sha256": "153569a707872dfec0504f8bd301d2b30baf6154469d5673c35680ed0ed30232"
+    },
+    {
+      "source": "/Game/Battle/Database/EnemyGroupData",
+      "sha256": "b3a58b0c90e2e01f11b8d2adec43b03748a478ba0e42c1b6c7a7207bc48f660f"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    }
+  ],
+  "rows": {
+    "voices": [
+      {
+        "id": "THIEF_eTAKE_DAMAGE_COUNTER",
+        "Id": 4033,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": true,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 220,
+        "VoiceLabel": "VO_TOU_PC_BT_00140"
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_DEBUFF",
+        "Id": 4047,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 210,
+        "VoiceLabel": "VO_TOU_PC_BT_00160"
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_SMALL",
+        "Id": 180,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 25,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 200,
+        "VoiceLabel": "VO_TOU_PC_BT_00220"
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_MEDIUM",
+        "Id": 181,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 50,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 190,
+        "VoiceLabel": "VO_TOU_PC_BT_00221"
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_LARGE",
+        "Id": 182,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 75,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 180,
+        "VoiceLabel": "VO_TOU_PC_BT_00222"
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv1",
+        "Id": 172,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 1,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 120,
+        "VoiceLabel": "VO_TOU_PC_BT_00110"
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv2",
+        "Id": 173,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 2,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 110,
+        "VoiceLabel": "VO_TOU_PC_BT_00120"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH",
+        "Id": 2381,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 104,
+        "VoiceLabel": "VO_TOU_PC_BT_00040"
+      },
+      {
+        "id": "THIEF_eORDER_START_BADSTATUS",
+        "Id": 2380,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 103,
+        "VoiceLabel": "VO_TOU_PC_BT_00050"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KEN",
+        "Id": 2342,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eFENCER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1000"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_SIN",
+        "Id": 2343,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "ePRIEST",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1010"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_SHO",
+        "Id": 2344,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eMERCHANT",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1020"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_ODO",
+        "Id": 2345,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eDANCER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1030"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_GAK",
+        "Id": 2346,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "ePROFESSOR",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1040"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KAR",
+        "Id": 2347,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eHUNTER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1050"
+      },
+      {
+        "id": "THIEF_eORDER_START_BREAK_KUS",
+        "Id": 2348,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eALCHEMIST",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": true,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 50,
+        "Priority": 102,
+        "VoiceLabel": "VO_TOU_PC_BT_S1060"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KEN",
+        "Id": 2353,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eFENCER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2000"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_SIN",
+        "Id": 2354,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "ePRIEST",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2010"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_SHO",
+        "Id": 2355,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eMERCHANT",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2020"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_ODO",
+        "Id": 2356,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eDANCER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2030"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_GAK",
+        "Id": 2357,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "ePROFESSOR",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2040"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KAR",
+        "Id": 2358,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eHUNTER",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2050"
+      },
+      {
+        "id": "THIEF_eORDER_START_PINCH_KUS",
+        "Id": 2359,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "eALCHEMIST",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 101,
+        "VoiceLabel": "VO_TOU_PC_BT_S2060"
+      },
+      {
+        "id": "THIEF_eBATTLE_START_COMMON",
+        "Id": 169,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00000"
+      },
+      {
+        "id": "THIEF_eBATTLE_VICTORY_COMMON",
+        "Id": 170,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_VICTORY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00020"
+      },
+      {
+        "id": "THIEF_eORDER_START_COMMON",
+        "Id": 171,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00030"
+      },
+      {
+        "id": "THIEF_eON_BOOST_Lv3",
+        "Id": 174,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 3,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00130"
+      },
+      {
+        "id": "THIEF_eNORMAL_ATTACK_COMMON",
+        "Id": 175,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00060"
+      },
+      {
+        "id": "THIEF_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "Id": 176,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK_LAST_HIT",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_01010"
+      },
+      {
+        "id": "THIEF_eOPEN_WEAKNESS_COMMON",
+        "Id": 177,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eOPEN_WEAKNESS",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00070"
+      },
+      {
+        "id": "THIEF_eBREAK_ENEMY_COMMON",
+        "Id": 178,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBREAK_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00090"
+      },
+      {
+        "id": "THIEF_eKILL_ENEMY_COMMON",
+        "Id": 179,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eKILL_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00100"
+      },
+      {
+        "id": "THIEF_eTAKE_DAMAGE_FATAL",
+        "Id": 183,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00223"
+      },
+      {
+        "id": "THIEF_eON_DEAD_COMMON",
+        "Id": 184,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_DEAD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00230"
+      },
+      {
+        "id": "THIEF_eON_AVOID_COMMON",
+        "Id": 185,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_AVOID",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00150"
+      },
+      {
+        "id": "THIEF_ePLAY_GUARD_COMMON",
+        "Id": 190,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_GUARD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_BT_00240"
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_COUNTER",
+        "Id": 4092,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": true,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 220,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00140"
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_DEBUFF",
+        "Id": 4093,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 210,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00160"
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_SMALL",
+        "Id": 372,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 25,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 200,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00220"
+      },
+      {
+        "id": "GUEST_006_eTAKE_DAMAGE_MEDIUM",
+        "Id": 373,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 190,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00221"
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv1",
+        "Id": 364,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 1,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 120,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00110"
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv2",
+        "Id": 365,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 2,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 110,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00120"
+      },
+      {
+        "id": "GUEST_006_eORDER_START_PINCH",
+        "Id": 2393,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 104,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00040"
+      },
+      {
+        "id": "GUEST_006_eORDER_START_BADSTATUS",
+        "Id": 2392,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 103,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00050"
+      },
+      {
+        "id": "GUEST_006_eBATTLE_START_COMMON",
+        "Id": 361,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00000"
+      },
+      {
+        "id": "GUEST_006_eBATTLE_VICTORY_COMMON",
+        "Id": 362,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_VICTORY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00020"
+      },
+      {
+        "id": "GUEST_006_eORDER_START_TURN_1",
+        "Id": 3891,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": true,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00030"
+      },
+      {
+        "id": "GUEST_006_eON_BOOST_Lv3",
+        "Id": 366,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 3,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00130"
+      },
+      {
+        "id": "GUEST_006_eNORMAL_ATTACK_COMMON",
+        "Id": 367,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00060"
+      },
+      {
+        "id": "GUEST_006_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "Id": 368,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK_LAST_HIT",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_01010"
+      },
+      {
+        "id": "GUEST_006_eOPEN_WEAKNESS_COMMON",
+        "Id": 369,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eOPEN_WEAKNESS",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00070"
+      },
+      {
+        "id": "GUEST_006_eBREAK_ENEMY_COMMON",
+        "Id": 370,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBREAK_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00090"
+      },
+      {
+        "id": "GUEST_006_eKILL_ENEMY_COMMON",
+        "Id": 371,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eKILL_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00100"
+      },
+      {
+        "id": "GUEST_006_eON_DEAD_COMMON",
+        "Id": 376,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_DEAD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00230"
+      },
+      {
+        "id": "GUEST_006_eON_AVOID_COMMON",
+        "Id": 377,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_AVOID",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00150"
+      },
+      {
+        "id": "GUEST_006_ePLAY_GUARD_COMMON",
+        "Id": 382,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_GUARD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00240"
+      },
+      {
+        "id": "GUEST_006_eORDER_START_TURN_2",
+        "Id": 3892,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": true,
+        "VoiceRate": 100,
+        "Priority": 99,
+        "VoiceLabel": "VO_TOU_NPC01_BT_99999"
+      },
+      {
+        "id": "GUEST_006_eORDER_START_COMMON",
+        "Id": 3893,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 40,
+        "Priority": 98,
+        "VoiceLabel": "VO_TOU_NPC01_BT_00030"
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_COUNTER",
+        "Id": 4094,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": true,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 220,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00140"
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_DEBUFF",
+        "Id": 4095,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 210,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00160"
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_SMALL",
+        "Id": 396,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 25,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 200,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00220"
+      },
+      {
+        "id": "GUEST_007_eTAKE_DAMAGE_MEDIUM",
+        "Id": 397,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 190,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00221"
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv1",
+        "Id": 388,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 1,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 120,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00110"
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv2",
+        "Id": 389,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 2,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 110,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00120"
+      },
+      {
+        "id": "GUEST_007_eORDER_START_PINCH",
+        "Id": 2395,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": true,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 104,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00040"
+      },
+      {
+        "id": "GUEST_007_eORDER_START_BADSTATUS",
+        "Id": 2394,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": true,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 103,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00050"
+      },
+      {
+        "id": "GUEST_007_eBATTLE_START_COMMON",
+        "Id": 385,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00000"
+      },
+      {
+        "id": "GUEST_007_eBATTLE_VICTORY_COMMON",
+        "Id": 386,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_VICTORY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00020"
+      },
+      {
+        "id": "GUEST_007_eORDER_START_TURN_1",
+        "Id": 3894,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": true,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00030"
+      },
+      {
+        "id": "GUEST_007_eON_BOOST_Lv3",
+        "Id": 390,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 3,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00130"
+      },
+      {
+        "id": "GUEST_007_eNORMAL_ATTACK_COMMON",
+        "Id": 391,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00060"
+      },
+      {
+        "id": "GUEST_007_eNORMAL_ATTACK_LAST_HIT_COMMON",
+        "Id": 392,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK_LAST_HIT",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_01010"
+      },
+      {
+        "id": "GUEST_007_eOPEN_WEAKNESS_COMMON",
+        "Id": 393,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eOPEN_WEAKNESS",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00070"
+      },
+      {
+        "id": "GUEST_007_eBREAK_ENEMY_COMMON",
+        "Id": 394,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBREAK_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00090"
+      },
+      {
+        "id": "GUEST_007_eKILL_ENEMY_COMMON",
+        "Id": 395,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eKILL_ENEMY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00100"
+      },
+      {
+        "id": "GUEST_007_eON_DEAD_COMMON",
+        "Id": 400,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_DEAD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00230"
+      },
+      {
+        "id": "GUEST_007_eON_AVOID_COMMON",
+        "Id": 401,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_AVOID",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00150"
+      },
+      {
+        "id": "GUEST_007_ePLAY_GUARD_COMMON",
+        "Id": 406,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_GUARD",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00240"
+      },
+      {
+        "id": "GUEST_007_eORDER_START_TURN_2",
+        "Id": 3895,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": true,
+        "VoiceRate": 100,
+        "Priority": 99,
+        "VoiceLabel": "VO_TOU_NPC02_BT_99999"
+      },
+      {
+        "id": "GUEST_007_eORDER_START_COMMON",
+        "Id": 3896,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "None",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 40,
+        "Priority": 98,
+        "VoiceLabel": "VO_TOU_NPC02_BT_00030"
+      }
+    ],
+    "level": {
+      "id": "Dng_Cty_3_1",
+      "ID": 57,
+      "LevelKind": 2,
+      "AreaID": 1,
+      "TownLabel": 0,
+      "SubTownLabel": 21,
+      "MapChangeType": 9,
+      "TransportationType": 0,
+      "EncountStepMin": 1000,
+      "RandomStepA": 400,
+      "RandomStepB": 400,
+      "FirstEncountStepRatio": 0.5,
+      "BgmLabelDayTime": "bgm_m39_dungeon_underpass",
+      "BgmLabelNight": "bgm_m39_dungeon_underpass",
+      "BgmLabelDarkness": "m100_field_finalchapter",
+      "Bgm2Label": "bgm_null",
+      "Bgm2EnableFlag": 25540,
+      "Bgm3Label": "None",
+      "Bgm3EnableFlag": 0,
+      "Bgm4Label": "None",
+      "Bgm4EnableFlag": 0,
+      "Bgm5Label": "None",
+      "Bgm5EnableFlag": 0,
+      "TimeZoneChangeSeLabel": "se_system_timechange",
+      "TimeZoneChangeSe2Label": "None",
+      "TimeZoneChangeSe2EnableFlag": 0,
+      "ScreenFadeInTime": 1,
+      "ScreenFadeOutTime": 1,
+      "EncountOffset": 0,
+      "BattleMapNameList": [
+        "Btl_Dng_CastleSewer_Land_A",
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "EncountVolumeNameList": [
+        "EVM_DNG_CTY_3_1_LND_DAY"
+      ],
+      "DarkAreaEncountVolumeName": "None",
+      "Intencity": 0,
+      "AttenuationRadius": 0,
+      "LightColor": {
+        "kind": "native-struct",
+        "type": "LinearColor",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "SourceRadius": 0,
+      "TorchFlag": false,
+      "ImpossibleTimeZoneChangeFlag": false,
+      "TimeZoneSeqChangeFlag": 0,
+      "ReplaceTimeZoneSeqLabel": "None",
+      "ReverbFlag": true,
+      "ImpossibleFCFlag": false,
+      "BarPlacementChara": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "BarPCPos1": [
+        0,
+        0,
+        0
+      ],
+      "BarPCDir1": 0,
+      "BarPCPos2": [
+        0,
+        0,
+        0
+      ],
+      "BarPCDir2": 0,
+      "BarItemLabel1": "None",
+      "BarItemCnt1": 0,
+      "BarItemLabel2": "None",
+      "BarItemCnt2": 0,
+      "BarItemLabel3": "None",
+      "BarItemCnt3": 0,
+      "BarEventLabel": "None",
+      "BanLostWay": false,
+      "BanMainMenuPartyMemberChange": false
+    },
+    "group": {
+      "id": "ENG_EVE_THI_C01_010",
+      "VoiceID": "None",
+      "TalkPlayerID": "EPlayableCharacterID::eNONE",
+      "PlayerVoiceID": "None",
+      "BGMID": "m50a_battle1",
+      "UseBattleBGM": false,
+      "UseVictoryBGM": false,
+      "ViewResult": true,
+      "ResumeBGM": false,
+      "BossBattle": false,
+      "EscapeEnable": false,
+      "PlacementType": "PMT_TYPE_2_001",
+      "EnemyID": [
+        "ENE_EVE_THI_CTY_010",
+        "ENE_EVE_THI_CTY_010",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SaveEndrollSegment": "EEndRollSegmentSet::ER_NONE",
+      "ID": 4597,
+      "BattleStartDashEnable": true,
+      "UseVictoryAction": false,
+      "ResultDashEnable": false,
+      "ItemEnable": true,
+      "GuardEnable": true,
+      "BoostEnable": true,
+      "BoostFinishResultEnable": false,
+      "BattleStartEvent": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "None",
+          "number": 0,
+          "text": "None"
+        },
+        "subPath": ""
+      },
+      "BattleStartEnemyVoiceEnable": false,
+      "WeaponUnloadGCType": "EWEAPON_UNLOAD_GC_TYPE::eTURN_END"
+    },
+    "enemy": {
+      "id": "ENE_EVE_THI_CTY_010",
+      "EnemyID": 27010,
+      "DisplayNameID": "ENN_EVE_THI_CTY_010",
+      "ResourceLabel": "ENE_EVE_THI_CTY_010",
+      "DisplayRank": 0,
+      "EnemyLevel": 1,
+      "DamageRatio": 1.2578129768371582,
+      "Size": "ECHARACTER_SIZE::eMEDIUM",
+      "NPCFlag": false,
+      "WeaponStance": "EWEAPON_STANCE::NONE",
+      "WeaponItemLabel": "None",
+      "DeadEffectSlow": false,
+      "MainEnemy": false,
+      "NonPartBattle": false,
+      "UseCatDamageType": false,
+      "DisableDeadKnockBack": false,
+      "Param": {
+        "HP": 185,
+        "MP": 50,
+        "BP": 2,
+        "SP": 1,
+        "POT": 0,
+        "ATK": 97,
+        "DEF": 80,
+        "MATK": 92,
+        "MDEF": 80,
+        "ACC": 80,
+        "EVA": 80,
+        "CON": 90,
+        "AGI": 80
+      },
+      "Exp": 2,
+      "JobPoint": 2,
+      "Money": 100,
+      "StealMoney": 0,
+      "TameEnable": false,
+      "DefaultTameRate": 2000,
+      "InvadeMonsterID": "None",
+      "FirstBP": 0,
+      "DeadType": "EENEMY_DEAD_TYPE::eNORMAL_M",
+      "AttributeResist": [
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eWEAK"
+      ],
+      "WeaponResist": [
+        "EATTRIBUTE_RESIST::eWEAK",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eWEAK",
+        "EATTRIBUTE_RESIST::eWEAK",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE"
+      ],
+      "DiseaseResist": [
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eINVALID",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE",
+        "EATTRIBUTE_RESIST::eNONE"
+      ],
+      "StealGuard": false,
+      "HaveItemID": "ITM_CSM_0010",
+      "DropProbability": 30,
+      "EnemyAI": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C",
+          "number": 0,
+          "text": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C"
+        },
+        "subPath": ""
+      },
+      "EnemyAbility": [
+        "ABI_ENE_0041",
+        "ABI_ENE_0041",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "ABI_ENE_0500",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "DiseaseEffectOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1114636288,
+            "value": 60
+          },
+          {
+            "kind": "float32",
+            "bits": 1101004800,
+            "value": 20
+          },
+          {
+            "kind": "float32",
+            "bits": 1130758144,
+            "value": 230
+          }
+        ]
+      },
+      "EnemyEffectOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 3256877056,
+            "value": -40
+          },
+          {
+            "kind": "float32",
+            "bits": 1084227584,
+            "value": 5
+          },
+          {
+            "kind": "float32",
+            "bits": 1120403456,
+            "value": 100
+          }
+        ]
+      },
+      "StatusUIOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 3240099840,
+            "value": -10
+          },
+          {
+            "kind": "float32",
+            "bits": 1097859072,
+            "value": 15
+          }
+        ]
+      },
+      "DamageUIOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 3248488448,
+            "value": -20
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 1101004800,
+            "value": 20
+          }
+        ]
+      },
+      "IconL_UV": {
+        "kind": "native-struct",
+        "type": "Vector2D",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1048911544,
+            "value": 0.25999999046325684
+          },
+          {
+            "kind": "float32",
+            "bits": 1059145646,
+            "value": 0.6299999952316284
+          }
+        ]
+      },
+      "PixelScaleL": {
+        "kind": "native-struct",
+        "type": "Vector2D",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1043878380,
+            "value": 0.18000000715255737
+          },
+          {
+            "kind": "float32",
+            "bits": 1052266988,
+            "value": 0.36000001430511475
+          }
+        ]
+      },
+      "IconS_UV": {
+        "kind": "native-struct",
+        "type": "Vector2D",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1065520988,
+            "value": 1.0199999809265137
+          },
+          {
+            "kind": "float32",
+            "bits": 1069379748,
+            "value": 1.4800000190734863
+          }
+        ]
+      },
+      "PixelScaleS": {
+        "kind": "native-struct",
+        "type": "Vector2D",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1036831949,
+            "value": 0.10000000149011612
+          },
+          {
+            "kind": "float32",
+            "bits": 1045220557,
+            "value": 0.20000000298023224
+          }
+        ]
+      },
+      "SPDiseaseEffectOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 1128792064,
+            "value": 200
+          },
+          {
+            "kind": "float32",
+            "bits": 1116471296,
+            "value": 70
+          },
+          {
+            "kind": "float32",
+            "bits": 1126170624,
+            "value": 160
+          }
+        ]
+      },
+      "SPEnemyEffectOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 3256877056,
+            "value": -40
+          },
+          {
+            "kind": "float32",
+            "bits": 1084227584,
+            "value": 5
+          },
+          {
+            "kind": "float32",
+            "bits": 1120403456,
+            "value": 100
+          }
+        ]
+      },
+      "SPStatusUIOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 3240099840,
+            "value": -10
+          },
+          {
+            "kind": "float32",
+            "bits": 1097859072,
+            "value": 15
+          }
+        ]
+      },
+      "SPDamageUIOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 3248488448,
+            "value": -20
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 1101004800,
+            "value": 20
+          }
+        ]
+      },
+      "StealMoneyGuard": true,
+      "StealItemID": "ITM_CSM_0010",
+      "AbilitySEDelay": 0,
+      "TextInfoLabel": "NPC_000",
+      "BribeGuard": false,
+      "BribeMoney": 100,
+      "RevealShieldPoint": 3,
+      "RevealEnemyAI": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C",
+          "number": 0,
+          "text": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C"
+        },
+        "subPath": ""
+      },
+      "DismantlingLabel": "ENE_EVE_THI_CTY_010_DISMANTLING",
+      "WarpOffset": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 3267887104,
+            "value": -100
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "LegendTameMonster": false,
+      "ActionModeResourceList": [
+        "None",
+        "None"
+      ],
+      "WaitEnemyActionFrame": 0,
+      "DisableBreakSlow": false,
+      "ID": 649,
+      "NotInsertOrderWithCallEnemy": false,
+      "BreakCameraType": "EBREAK_CAMERA_TYPE::eNORMAL"
+    }
+  },
+  "schedules": [
+    {
+      "ability": "NORMAL_ATTACK_SWORD_1",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 9600,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv0"
+    },
+    {
+      "ability": "NORMAL_ATTACK_SWORD_2",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 7200,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 8800,
+          "kind": "check"
+        },
+        {
+          "tick": 11200,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 16000,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword"
+    },
+    {
+      "ability": "NORMAL_ATTACK_SWORD_3",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 7200,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 8800,
+          "kind": "check"
+        },
+        {
+          "tick": 16000,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 19200,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 24000,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword"
+    },
+    {
+      "ability": "NORMAL_ATTACK_SWORD_4",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 3200,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 9600,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 16800,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 24000,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 28067,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 31200,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Sword_Lv3"
+    },
+    {
+      "ability": "NORMAL_ATTACK_DAGGER_1",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 8800,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0"
+    },
+    {
+      "ability": "NORMAL_ATTACK_DAGGER_2",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 7205,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 8000,
+          "kind": "check"
+        },
+        {
+          "tick": 8800,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 17305,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger"
+    },
+    {
+      "ability": "NORMAL_ATTACK_DAGGER_3",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 7205,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 8000,
+          "kind": "check"
+        },
+        {
+          "tick": 15358,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 16800,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 25305,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger"
+    },
+    {
+      "ability": "NORMAL_ATTACK_DAGGER_4",
+      "steps": [
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 3200,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 9600,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 17600,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 24922,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 30286,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 30450,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3"
+    },
+    {
+      "ability": "NORMAL_ATTACK_AXE_1",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 800,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 13600,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv0"
+    },
+    {
+      "ability": "NORMAL_ATTACK_AXE_2",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 10486,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 12800,
+          "kind": "check"
+        },
+        {
+          "tick": 13600,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 20800,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe"
+    },
+    {
+      "ability": "NORMAL_ATTACK_AXE_3",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 0,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 10486,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 12800,
+          "kind": "check"
+        },
+        {
+          "tick": 20800,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 23200,
+          "kind": "check"
+        },
+        {
+          "tick": 24000,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 31200,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe"
+    },
+    {
+      "ability": "NORMAL_ATTACK_AXE_4",
+      "steps": [
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "kind": "check"
+        },
+        {
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "timeline": [
+        {
+          "tick": 0,
+          "kind": "check"
+        },
+        {
+          "tick": 4000,
+          "kind": "voice",
+          "type": 6
+        },
+        {
+          "tick": 10400,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 12000,
+          "kind": "check"
+        },
+        {
+          "tick": 19200,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 20800,
+          "kind": "check"
+        },
+        {
+          "tick": 26400,
+          "kind": "damage",
+          "last": false
+        },
+        {
+          "tick": 27200,
+          "kind": "check"
+        },
+        {
+          "tick": 28000,
+          "kind": "voice",
+          "type": 7
+        },
+        {
+          "tick": 32910,
+          "kind": "damage",
+          "last": true
+        }
+      ],
+      "ticks_per_second": 24000,
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Axe_Lv3"
+    }
+  ]
+}

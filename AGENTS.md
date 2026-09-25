@@ -13,6 +13,7 @@ research/reference material, not a runtime or build dependency.
 - The opening Throné encounter runs under source-derived `ot2_opening_v1` rules.
   Keep `scaffold_v1` for synthetic tests. The mechanics and imported records are
   tested, but full live-game CRT alignment is not established; see
-  docs/throne-opening.md for concrete remaining gaps. Never claim manipulation
+  docs/throne-opening.md and docs/opening-routine.md for coverage and the exact
+  seed/exit boundary. Never claim manipulation
   accuracy from reproducible simulator output alone.
 - Keep the existing workspace and old engine unchanged. Work in this repository.
