@@ -33,6 +33,8 @@
 - [x] Routine replay tests across 1,024 seeds; release sweep across 65,536 seeds.
 - [x] User-requested local result viewer: seed entry, action details, CRT checkpoints,
       full trace, copy/export and a Windows launcher; separate from the headless core.
+- [x] Initial-seed/advance-count helper with live starting-state preview, exact
+      logarithmic CRT skip-ahead, and configuration preserved in JSON exports.
 
 ## Remaining before game-accurate manipulation
 

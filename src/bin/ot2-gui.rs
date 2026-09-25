@@ -2,7 +2,7 @@
 
 //! Local inspection shell. The battle and all RNG logic stay in the library.
 use ot2_battle_engine::{
-    Battle, BattleConfig, ItemCatalog, Outcome, SimError, routine::ThroneOpeningRoutine,
+    Battle, BattleConfig, CrtRng, ItemCatalog, Outcome, SimError, routine::ThroneOpeningRoutine,
 };
 use serde_json::{Value, json};
 use std::{
@@ -58,6 +58,55 @@ fn simulate(seed: u32) -> Result<Value, SimError> {
         "initial_seed":seed, "actors":actors, "initial_state":initial_state,
         "steps":steps, "routine":routine, "state":battle.state()
     }))
+}
+
+#[derive(Clone, Copy)]
+struct CrtSetup {
+    seed: u32,
+    advances: u64,
+}
+impl CrtSetup {
+    fn parse(query: &str) -> Result<Self, SimError> {
+        let mut seed = None;
+        let mut advances = None;
+        for part in query.split('&') {
+            let (key, value) = part
+                .split_once('=')
+                .ok_or_else(|| SimError("Invalid CRT setup.".into()))?;
+            match key {
+                "seed" if seed.is_none() => seed = Some(parse_seed(value)?),
+                "advances" if advances.is_none() => {
+                    if value.is_empty() || !value.bytes().all(|b| b.is_ascii_digit()) {
+                        return Err(SimError(
+                            "Advances must be a nonnegative whole number.".into(),
+                        ));
+                    }
+                    advances = Some(value.parse::<u64>().map_err(|_| {
+                        SimError("Advance count exceeds 18446744073709551615.".into())
+                    })?);
+                }
+                _ => return Err(SimError("Unknown or repeated CRT setup parameter.".into())),
+            }
+        }
+        Ok(Self {
+            seed: seed.ok_or_else(|| SimError("Initial seed is required.".into()))?,
+            advances: advances.unwrap_or(0),
+        })
+    }
+    fn battle_seed(self) -> u32 {
+        let mut rng = CrtRng::new(self.seed);
+        rng.advance(self.advances);
+        rng.state
+    }
+    fn json(self) -> Value {
+        // Decimal strings keep u64 counts exact in browser JavaScript and exports.
+        json!({"initial_seed":self.seed,"advances":self.advances.to_string(),"battle_seed":self.battle_seed()})
+    }
+    fn simulate(self) -> Result<Value, SimError> {
+        let mut result = simulate(self.battle_seed())?;
+        result["crt_setup"] = self.json();
+        Ok(result)
+    }
 }
 
 struct Response {
@@ -126,26 +175,39 @@ fn route(request: &str, address: &str) -> Response {
         ("GET", "/viewer.css") => Response::new(200, "text/css; charset=utf-8", CSS),
         ("GET", "/viewer.js") => Response::new(200, "text/javascript; charset=utf-8", JS),
         ("GET", "/api/health") => Response::json(200, json!({"app":"OT2 Battle Viewer"})),
-        ("GET", path) if path.starts_with("/api/simulate?seed=") => {
-            match parse_seed(&path["/api/simulate?seed=".len()..]) {
+        ("GET", path) if path.starts_with("/api/crt?") => {
+            match CrtSetup::parse(&path["/api/crt?".len()..]) {
                 Err(e) => Response::error(400, &e.to_string()),
-                Ok(seed) => match simulate(seed) {
+                Ok(setup) => Response::json(200, setup.json()),
+            }
+        }
+        ("GET", path) if path.starts_with("/api/simulate?") => {
+            match CrtSetup::parse(&path["/api/simulate?".len()..]) {
+                Err(e) => Response::error(400, &e.to_string()),
+                Ok(setup) => match setup.simulate() {
                     Ok(value) => Response::json(200, value),
                     Err(e) => Response::error(422, &e.to_string()),
                 },
             }
         }
-        ("GET", path) if path.starts_with("/api/export?seed=") => {
-            match parse_seed(&path["/api/export?seed=".len()..]) {
+        ("GET", path) if path.starts_with("/api/export?") => {
+            match CrtSetup::parse(&path["/api/export?".len()..]) {
                 Err(e) => Response::error(400, &e.to_string()),
-                Ok(seed) => match simulate(seed) {
+                Ok(setup) => match setup.simulate() {
                     Ok(value) => {
                         let mut response = Response::new(
                             200,
                             "application/json; charset=utf-8",
                             serde_json::to_string_pretty(&value).expect("serializable result"),
                         );
-                        response.filename = Some(format!("ot2-throne-seed-{seed}.json"));
+                        response.filename = Some(if setup.advances == 0 {
+                            format!("ot2-throne-seed-{}.json", setup.seed)
+                        } else {
+                            format!(
+                                "ot2-throne-seed-{}-advances-{}.json",
+                                setup.seed, setup.advances
+                            )
+                        });
                         response
                     }
                     Err(e) => Response::error(422, &e.to_string()),
@@ -317,6 +379,59 @@ mod tests {
         assert_eq!(steps[5]["round"], 2);
         assert_eq!(steps[5]["actors_after"], value["state"]["actors"]);
         assert_eq!(value["state"]["outcome"], "victory");
+    }
+
+    #[test]
+    fn prebattle_advances_use_full_state_and_do_not_change_battle_draw_counts() {
+        let setup = CrtSetup::parse("seed=0x7b&advances=2").unwrap();
+        assert_eq!(setup.battle_seed(), 3_396_176_589);
+        let configured = setup.simulate().unwrap();
+        let direct = simulate(3_396_176_589).unwrap();
+        assert_eq!(configured["state"], direct["state"]);
+        assert_eq!(configured["steps"], direct["steps"]);
+        assert_eq!(configured["initial_seed"], 3_396_176_589u32);
+        assert_eq!(
+            configured["crt_setup"],
+            json!({"initial_seed":123,"advances":"2","battle_seed":3396176589u32})
+        );
+        let unchanged = CrtSetup::parse("seed=123&advances=0")
+            .unwrap()
+            .simulate()
+            .unwrap();
+        assert_eq!(unchanged["state"], simulate(123).unwrap()["state"]);
+    }
+
+    #[test]
+    fn advance_input_preview_and_export_preserve_configuration() {
+        for invalid in [
+            "seed=123&advances=-1",
+            "seed=123&advances=1.5",
+            "seed=123&advances=",
+            "seed=123&advances=18446744073709551616",
+            "seed=1&seed=2",
+            "seed=1&advances=0&advances=1",
+        ] {
+            assert!(CrtSetup::parse(invalid).is_err(), "{invalid}");
+        }
+        let largest = CrtSetup::parse("seed=123&advances=18446744073709551615").unwrap();
+        assert_eq!(largest.json()["advances"], "18446744073709551615");
+        let address = "127.0.0.1:12345";
+        let request = |path: &str| format!("GET {path} HTTP/1.1\r\nHost: {address}\r\n\r\n");
+        let preview = route(&request("/api/crt?seed=123&advances=2"), address);
+        assert_eq!(preview.status, 200);
+        assert_eq!(
+            serde_json::from_str::<Value>(&preview.body).unwrap()["battle_seed"],
+            3_396_176_589u32
+        );
+        let export = route(&request("/api/export?seed=123&advances=2"), address);
+        assert_eq!(
+            export.filename.as_deref(),
+            Some("ot2-throne-seed-123-advances-2.json")
+        );
+        let value = serde_json::from_str::<Value>(&export.body).unwrap();
+        assert_eq!(value["crt_setup"]["initial_seed"], 123);
+        assert_eq!(value["crt_setup"]["advances"], "2");
+        assert_eq!(value["initial_seed"], 3_396_176_589u32);
     }
 
     #[test]

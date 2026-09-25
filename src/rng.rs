@@ -18,6 +18,24 @@ impl CrtRng {
         self.draws = self.draws.wrapping_add(1);
         ((self.state >> 16) & 0x7fff) as u16
     }
+    /// Advance exactly `count` CRT calls in O(log count), preserving the full
+    /// 32-bit state (not the truncated 15-bit value returned by rand()).
+    pub fn advance(&mut self, count: u64) {
+        let (mut mul, mut add) = (1u32, 0u32);
+        let (mut step_mul, mut step_add) = (214_013u32, 2_531_011u32);
+        let mut remaining = count;
+        while remaining != 0 {
+            if remaining & 1 != 0 {
+                mul = mul.wrapping_mul(step_mul);
+                add = add.wrapping_mul(step_mul).wrapping_add(step_add);
+            }
+            step_add = step_mul.wrapping_add(1).wrapping_mul(step_add);
+            step_mul = step_mul.wrapping_mul(step_mul);
+            remaining >>= 1;
+        }
+        self.state = self.state.wrapping_mul(mul).wrapping_add(add);
+        self.draws = self.draws.wrapping_add(count);
+    }
     /// Source helper multiplies by this binary32 literal; do not replace with
     /// host doubles, modulo selection, or a different random distribution.
     pub fn unit(&mut self) -> f32 {
@@ -34,5 +52,43 @@ impl CrtRng {
             return 0;
         }
         ((self.unit() * len as f32) as u32).min(len - 1)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn jump_matches_individual_crt_calls() {
+        for seed in [0, 1, 123, u32::MAX] {
+            for count in [0, 1, 2, 3, 31, 1024, 65_536] {
+                let mut reference = CrtRng::new(seed);
+                // Include an existing draw count; advancement composes with next.
+                reference.next_u15();
+                let mut jumped = reference;
+                for _ in 0..count {
+                    reference.next_u15();
+                }
+                jumped.advance(count);
+                assert_eq!(jumped, reference, "seed {seed}, advances {count}");
+            }
+        }
+    }
+
+    #[test]
+    fn large_jumps_preserve_period_and_wrapping_draw_counter() {
+        let mut rng = CrtRng::new(123);
+        rng.advance(1u64 << 32);
+        assert_eq!(rng.state, 123); // Full-period 32-bit CRT recurrence.
+        assert_eq!(rng.draws, 1u64 << 32);
+        let mut full = CrtRng::new(u32::MAX);
+        full.advance(u64::MAX);
+        let mut split = CrtRng::new(u32::MAX);
+        split.advance(1u64 << 63);
+        split.advance((1u64 << 63) - 1);
+        assert_eq!(full, split);
+        full.next_u15();
+        assert_eq!(full, CrtRng::new(u32::MAX));
     }
 }

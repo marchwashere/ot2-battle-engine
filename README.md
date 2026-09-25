@@ -21,8 +21,16 @@ On Windows, double-click **Open Battle Viewer.cmd** in this repository. It opens
 a local browser window. The launcher builds the release viewer if needed; the
 already-built `target/release/ot2-gui.exe` can also be launched directly.
 
-Enter a decimal or `0x` hexadecimal seed and click **Run simulation**. The viewer
-shows the supplied routine's actions, per-hit damage, resources, CRT trace, and
+Enter a decimal or `0x` hexadecimal **Initial seed**, then choose **RNG advances
+before battle** (default 0). The helper previews the resulting 32-bit CRT state
+in decimal and hex and automatically uses it for **Run simulation**. For example,
+seed `123` advanced twice gives battle starting state `3396176589` (`0xCA6D8ACD`).
+Skip-ahead runs in logarithmic time, so large advance counts are fast. Counts may
+range from 0 through 18446744073709551615; exports store them as decimal strings
+to preserve precision. Battle draw counts start at zero after these advances;
+the summary also shows the combined total from the original seed.
+
+The viewer shows the supplied routine's actions, per-hit damage, resources, CRT trace, and
 decimal/hex RNG checkpoints. The primary final state includes drops and the
 **first area encounter-counter reset**, before a following cutscene reset.
 Use **Copy decimal** or **Export JSON** to save a prediction. **Quit viewer** stops

@@ -5,6 +5,8 @@ const hex = value => '0x' + value.toString(16).toUpperCase().padStart(8, '0');
 let result = null;
 let running = false;
 let stopped = false;
+let previewVersion = 0;
+let previewTimer;
 const names = {attack_sword:'Sword attack',attack_dagger:'Dagger attack',attack_axe:'Axe attack',defend:'Defend',ABI_ENE_0041:'Attack',ABI_ENE_0500:'Slash'};
 const reasons = {actor_initialization:'Actor initialization',current_order_shuffle:'First order shuffle',battle_start_speaker:'Opening speaker',battle_start_voice:'Opening voice check',next_order_shuffle:'Next order shuffle',order_voice:'Turn-start voice check',boost_voice:'Boost voice check',normal_accuracy:'Cached accuracy check',attack_voice:'Attack voice check',last_attack_voice:'Final-hit voice check',critical_hit_and_damage:'Critical / hit / damage',damage_notification_timer:'Damage notification timer',miss_notification_timer:'Miss notification timer',guard_disease:'Guard status checks',guard_voice:'Guard voice check',round_timing_revision:'Round timing revision',enemy_ai_and_target:'Enemy AI and target',enemy_drop:'Enemy item drop',field_encounter_reset_b_then_a:'Area counter reset (B then A)'};
 const actorName = id => result.actors[id]?.name ?? '—';
@@ -19,26 +21,66 @@ function validateSeed(text) {
   return seed;
 }
 
+function readSetup() {
+  const seed = validateSeed($('seed').value.trim());
+  const text = $('advances').value.trim();
+  if (!/^[0-9]+$/.test(text)) throw new Error('Advances must be a nonnegative whole number.');
+  const advances = BigInt(text);
+  if (advances > 18446744073709551615n) throw new Error('Advance count exceeds 18446744073709551615.');
+  return {seed,advances:advances.toString()};
+}
+const setupQuery = setup => `seed=${setup.seed}&advances=${setup.advances}`;
+function renderSetup(setup) {
+  $('prepared-state').textContent = setup.battle_seed;
+  $('prepared-hex').textContent = hex(setup.battle_seed);
+}
+async function previewSetup() {
+  const version = ++previewVersion;
+  try {
+    const setup = readSetup();
+    const response = await fetch(`/api/crt?${setupQuery(setup)}`);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Could not calculate CRT state.');
+    if (version === previewVersion) renderSetup(data);
+  } catch(error) {
+    if (version === previewVersion) {
+      $('prepared-state').textContent = '—'; $('prepared-hex').textContent = '';
+      showError(error instanceof TypeError ? 'Cannot reach the local simulator.' : error.message);
+    }
+  }
+}
+function schedulePreview() {
+  clearTimeout(previewTimer);
+  ++previewVersion;
+  $('error').hidden = true;
+  $('prepared-state').textContent = '…'; $('prepared-hex').textContent = '';
+  previewTimer = setTimeout(previewSetup,150);
+}
+
 async function simulate(event) {
   event?.preventDefault();
   if (running || stopped) return;
   $('error').hidden = true;
-  let seed;
-  try { seed = validateSeed($('seed').value.trim()); }
-  catch(error) { showError(error.message); $('seed').setAttribute('aria-invalid','true'); return; }
-  $('seed').removeAttribute('aria-invalid');
+  let setup;
+  clearTimeout(previewTimer);
+  ++previewVersion;
+  try { setup = readSetup(); }
+  catch(error) { showError(error.message); $('prepared-state').textContent = '—'; $('prepared-hex').textContent = ''; return; }
   running = true;
   $('simulate').disabled = true;
   $('quit').disabled = true;
+  $('seed').disabled = true;
+  $('advances').disabled = true;
   $('simulate').textContent = 'Simulating…';
-  $('status').textContent = `Running seed ${seed}…`;
+  $('status').textContent = `Running seed ${setup.seed} after ${setup.advances} advances…`;
   try {
-    const response = await fetch(`/api/simulate?seed=${seed}`);
+    const response = await fetch(`/api/simulate?${setupQuery(setup)}`);
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Simulation failed.');
     result = data;
+    renderSetup(data.crt_setup);
     render();
-    $('status').textContent = `Completed seed ${seed} (${hex(seed)}).`;
+    $('status').textContent = `Completed: seed ${setup.seed} + ${setup.advances} advances → battle state ${data.initial_seed} (${hex(data.initial_seed)}).`;
   } catch(error) {
     showError(error instanceof TypeError ? 'Cannot reach the local simulator. Relaunch OT2 Battle Viewer and try again.' : error.message);
     $('status').textContent = result ? `Still displaying the previous result for seed ${result.initial_seed}.` : 'No result available.';
@@ -46,6 +88,8 @@ async function simulate(event) {
     running = false;
     $('simulate').disabled = false;
     $('quit').disabled = false;
+    $('seed').disabled = false;
+    $('advances').disabled = false;
     $('simulate').textContent = 'Run simulation ↗';
   }
 }
@@ -56,11 +100,13 @@ function render() {
   $('results').hidden = false;
   $('outcome').textContent = state.outcome === 'victory' ? 'Predicted victory' : `Predicted ${state.outcome}`;
   $('outcome').className = 'pill ' + (state.outcome === 'victory' ? 'success' : 'failure');
-  $('result-context').textContent = `Seed ${result.initial_seed} · Round ${state.round} · ${result.steps.length} actions`;
+  const setup = result.crt_setup;
+  $('result-context').textContent = `Seed ${setup.initial_seed} + ${setup.advances} advances · Start ${result.initial_seed} · Round ${state.round} · ${result.steps.length} actions`;
   $('final-seed').textContent = state.rng.state;
   $('final-hex').textContent = hex(state.rng.state);
   $('copy').textContent = 'Copy decimal';
   $('draws').textContent = state.rng.draws;
+  $('draws-help').textContent = `${setup.advances} before battle · ${BigInt(setup.advances) + BigInt(state.rng.draws)} total from initial seed`;
   $('counter').textContent = after?.encounter_steps ?? '—';
   $('drops').textContent = after ? `${after.healing_grapes} Healing Grape${after.healing_grapes === 1 ? '' : 's'} dropped` : 'No victory rewards';
   const checkpoints = [
@@ -131,8 +177,8 @@ $('copy').addEventListener('click',async () => {
 $('export').addEventListener('click',() => {
   if (!result) return;
   const link = document.createElement('a');
-  link.href = `/api/export?seed=${result.initial_seed}`;
-  link.download = `ot2-throne-seed-${result.initial_seed}.json`;
+  link.href = `/api/export?${setupQuery({seed:result.crt_setup.initial_seed,advances:result.crt_setup.advances})}`;
+  link.download = result.crt_setup.advances === '0' ? `ot2-throne-seed-${result.initial_seed}.json` : `ot2-throne-seed-${result.crt_setup.initial_seed}-advances-${result.crt_setup.advances}.json`;
   document.body.append(link); link.click(); link.remove();
 });
 $('quit').addEventListener('click',async () => {
@@ -142,9 +188,12 @@ $('quit').addEventListener('click',async () => {
     const response = await fetch('/api/shutdown',{method:'POST',headers:{'X-OT2-Viewer':'1'}});
     if (!response.ok) throw new Error('Could not stop the viewer.');
     stopped = true;
+    clearTimeout(previewTimer); ++previewVersion;
     $('results').hidden = true; $('closed').hidden = false; $('seed-form').hidden = true;
     $('quit').textContent = 'Stopped'; $('status').textContent = 'Local simulator stopped.';
   } catch(error) { showError(error.message); $('quit').disabled = false; }
 });
 $('seed-form').addEventListener('submit',simulate);
+$('seed').addEventListener('input',schedulePreview);
+$('advances').addEventListener('input',schedulePreview);
 simulate();
