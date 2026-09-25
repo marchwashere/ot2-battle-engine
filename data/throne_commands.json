@@ -1,0 +1,6 @@
+[
+  { "kind": "boost", "id": "attack_dagger", "target": 3, "bp": 0 },
+  { "kind": "boost", "id": "attack_axe", "target": 3, "bp": 1 },
+  { "kind": "boost", "id": "attack_dagger", "target": 4, "bp": 0 },
+  { "kind": "boost", "id": "attack_dagger", "target": 4, "bp": 2 }
+]

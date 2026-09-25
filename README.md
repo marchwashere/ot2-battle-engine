@@ -1,180 +1,158 @@
 # OT2BattleEngineRust
 
-A standalone, headless Rust battle simulation core for a small set of OT2
-encounters. This is a new repository, independent of the old C++ engine.
+A standalone, headless Rust simulator for selected Octopath Traveler II battles.
+**Throné's Chapter 1 opening battle now runs from initialization to victory or
+defeat**, with player commands and automatic enemy AI. The encounter is
+`ENG_EVE_THI_C01_010`: Throné, Pirro and Scaracci against two pursuers.
 
-**The scaffold can execute actions and finish battles. It does not yet reproduce
-OT2 combat or its complete RNG call sequence.** The included encounter is
-synthetic, and its required `scaffold_v1` rules flag makes that boundary explicit.
+The engine implements source-derived combat mechanics. **It is not yet a
+trace-verified RNG manipulation tool.** Some game callbacks consume the main CRT
+stream even with their presentation removed; those calls are not yet fully
+modeled. See [encounter details and accuracy gaps](docs/throne-opening.md).
 
 ## Run
 
-Requires Rust 1.85 or newer. From this repository:
+Requires Rust 1.85 or newer. No Unreal, graphics, audio, Node.js, or old C++ engine
+is needed to build or run the checked-in crate.
 
 ```sh
-cargo run --release -- demo 123
-cargo run --release -- run data/demo_battle.json data/demo_commands.json
-cargo run --release -- validate-ai data/demo_ai.json
-cargo test
+cargo run --release -- throne 123
+cargo run --release -- run data/throne_opening.json data/throne_commands.json
+cargo test --release
 ```
 
-Use `--offline` after `cargo run` / `cargo test` when dependencies are cached.
-No Unreal installation, graphics, audio, decompiler, Node.js, or old engine is
-needed to build or run the checked-in crate.
+Add `--offline` before `--` if dependencies are cached. `throne` uses a simple
+policy: attack the first living enemy's weakness, then boost against broken
+enemies. `run` consumes supplied player commands and executes intervening enemy
+turns. Each emits JSON action reports and a final state.
 
-`demo` supplies a simple player policy. `run` reads an array of player commands
-and automatically executes intervening enemy turns. Both emit one JSON action
-report per line, followed by the final state. A command script may stop at a
-player decision without ending the battle; extra commands after battle end are
-rejected. Each report contains the CRT state and draw count before and after the
-action, including enemy decision draws.
-
-For seed 123, both checked-in examples finish in **19 actions**, with victory in
-round 10, player HP 425 / SP 30, and CRT state `3486328484` after 11 draws. This is
-a regression fixture for this scaffold, not an in-game trace.
+The seed-123 example wins in **6 actions, round 2**, with party HP
+**213 / 241 / 237** and CRT state **4014490537 after 46 modeled draws**. This is a
+simulator regression result, not a captured in-game result.
 
 ## Implemented
 
-- Player and enemy structs, HP/SP/BP/latent resources, shared skill/item data.
-- Battle initialization, player commands, enemy turns, resource costs, target
-  validation, KO handling, and victory/defeat.
-- Ten recovery items: grapes, plums, and jams, including party recovery.
-- Fixed-damage and recovery skill effects, optional weighted hit checks.
-- JSON AI state machines with ordered conditions, phases, action sequences,
-  weighted choices, and target selection.
-- Explicit MSVC CRT `rand` state and draw count; reproducible battle clones for
-  exploring alternative commands.
-- Invalid individual actions leave battle state and RNG unchanged.
+- Imported opening formation, level-one stats, equipment, weaknesses, shields,
+  ability coefficients and boosted tiers, with original row IDs and SHA-256s.
+- Physical/magical damage, binary32 arithmetic, accuracy, critical hits,
+  variance, weapon/element weaknesses, and the damage cap.
+- Enemy shield reduction per successful weak hit; Break cancels remaining
+  actions that round and all actions next round; recovery restores shields.
+- Separate damage for the breaking hit and subsequent hits against Break.
+- Boost levels 0–3, normal attack hit counts, SP costs, BP regeneration and
+  suppression after boosting.
+- Current and next turn queues, source-derived sort/shuffle, break recovery
+  priority, Defend's defense modifier and next-turn promotion.
+- Steal, Darkest Night, Slice, Sharpen Dagger, Cover Me!, and Heckle.
+- Night attack/magic/speed buffs, status durations and stacking, cover redirection.
+- Pursuer Attack/Slash AI, HP threshold, no consecutive Slash, randomized BP
+  charge ceiling/reset, and random living targets.
+- Ten recovery items: grapes, plums and jams; consumption, recovery caps,
+  and party recovery that skips KO characters.
+- KO, victory/defeat, deterministic clones, and rejected-action rollback.
 
-`advance_enemies(limit)` is a bounded convenience loop, not a transaction: if a
-later enemy action fails or the budget runs out, earlier successful actions stay
-applied. Clone the battle first when the whole sequence needs rollback.
+Only the main MSVC CRT generator is present. There are no Unreal/CRI random
+streams, audio output, rendering, animation, UI, or frame loop.
 
-## Rules and accuracy
+## Supply actions
 
-There are no visual/audio systems or Unreal/CRI random streams. Only the main
-CRT stream is modeled. Any future source logic retained solely for CRT advancement
-must be supported by a battle/RNG trace.
+Actor indices follow the config's players, then enemies:
+`0` Throné, `1` Pirro, `2` Scaracci, `3` pursuer A, `4` pursuer B.
 
-The CRT generator uses wrapping `state * 214013 + 2531011`, returning bits 16..30.
-Its float helper uses the source's binary32 multiplier. Correct generator output
-alone does **not** establish the right number or order of calls in a real battle.
+```json
+[
+  { "kind": "skill", "id": "ABI_SET_THI_020", "target": 3 },
+  { "kind": "boost", "id": "attack_axe", "target": 3, "bp": 1 },
+  { "kind": "defend" }
+]
+```
 
-The current rules are deliberately small:
+Commands apply to the next player who actually gets a turn. Use the library to
+choose commands based on `current_actor()`. Self/all-target skills accept `null`;
+Cover Me! requires another living ally. `Wait` is a simulator testing operation,
+separate from Defend. Escape is disabled for this encounter.
 
-| Behavior | `scaffold_v1` |
-| --- | --- |
-| Turn order | Descending speed, actor ID breaks ties, one action per round; no RNG |
-| Damage | Explicit fixed amount; no OT2 damage formula or damage variance |
-| Guaranteed hit | No CRT draw |
-| Weighted hit | One draw per target if probability > 0, including probability 1 |
-| AI sequence | No selection draw |
-| AI weighted choice | One draw, even with one choice |
-| Random enemy target | One draw, even with one living opponent |
-| Recovery | Capped at max HP/SP, BP 5, latent 100; no revival |
-| Intrinsic item effects | No draws; complete OT2 item-action callbacks are not ported |
-| Wait | Advances the turn; this is not OT2 Defend |
-
-Not implemented: original damage/hit/critical formulas, equipment and jobs,
-weakness/shield/break, boost and BP regeneration, statuses, passives, latent
-abilities, multiple actions per turn, exact turn order, real boss encounters,
-automatic Blueprint AI import, or trace-verified OT2 RNG advancement. Unknown
-JSON fields and unsupported effect/AI variants are rejected rather than ignored.
-
-## Items and source data
-
-`data/items.json` stores recovery values extracted from the local
-`/Game/Item/Database/ItemDB.ItemDB` asset. It records the source SHA-256 and original
-row labels; English display names are assigned by the importer.
-
-| Item ID | Source row suffix | Intrinsic recovery |
-| --- | --- | --- |
-| `healing_grape` | 0010 | 500 HP |
-| `healing_grape_m` | 0020 | 1250 HP |
-| `healing_grape_bunch` | 0030 | 900 HP to living allies |
-| `inspiriting_plum` | 0040 | 40 SP |
-| `inspiriting_plum_m` | 0050 | 100 SP |
-| `inspiriting_plum_basket` | 0060 | 45 SP to living allies |
-| `refreshing_jam` | 0100 | 100% max HP and SP |
-| `rejuvenating_jam` | 0101 | 5 BP and 150 latent, capped by the core |
-| `reinforcing_jam` | 0110 | 100% max HP and SP, 5 BP |
-| `revitalizing_jam` | 0111 | 100% max HP and SP, 5 BP, 150 latent |
-
-All rows have prefix `ITM_CSM_`. Values above describe this local asset, not an
-assertion about every game version or the complete item execution path.
-
-The optional `node tools/import-items.cjs <legacy-repo-path>` build-time tool
-regenerates this JSON through the old repository's asset extractor. The runtime
-uses the checked-in JSON and has no dependency on that extractor.
-
-## Library API
+The default inventory is empty. Set `inventory` in a copied config to the owned
+items, for example `{"healing_grape": 2, "inspiriting_plum": 1}`. Steal can add
+grapes during battle. No revival items or post-victory rewards are implemented.
 
 ```rust
 use ot2_battle_engine::{Battle, BattleConfig, Command, ItemCatalog};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let json = std::fs::read_to_string("data/demo_battle.json")?;
-    let config = BattleConfig::from_json(&json)?;
+    let config = BattleConfig::from_json(&std::fs::read_to_string(
+        "data/throne_opening.json",
+    )?)?;
     let mut battle = Battle::new(config, ItemCatalog::builtin()?)?;
-    let player = battle.actor_id("player").unwrap();
-    let alternative = battle.clone(); // shares immutable content
-
-    let report = battle.step_player(Command::Item {
-        id: "healing_grape".into(),
-        target: Some(player),
-    })?;
-    let enemy_reports = battle.advance_enemies(100)?;
-    assert_ne!(battle.state(), alternative.state());
-    println!("Player report: {report:?}; enemy reports: {enemy_reports:?}");
+    battle.advance_enemies(100)?;
+    let actor = battle.current_actor().unwrap();
+    let branch = battle.clone(); // mutable state copied; definitions shared
+    let report = battle.step_player(Command::Defend)?;
+    println!("{actor:?}: {report:?}");
+    assert_ne!(battle.state(), branch.state());
     Ok(())
 }
 ```
 
-Actor indices are assigned in player-array order, then enemy-array order. JSON
-commands use those numeric indices; Rust callers can resolve IDs with `actor_id`.
-Self-target actions accept `null` or the acting actor's index; all-target actions
-require `null`. Single-target ally/opponent actions require a living target.
+Individual failed actions preserve all state, AI memory and RNG. The bounded
+`advance_enemies(limit)` helper keeps earlier successful actions if a later
+action fails; clone first if the whole batch needs rollback.
 
-Use the library directly for search, avoiding CLI JSON output. AI and content
-references compile to dense indices, and battle clones share definitions through
-`Arc`. The initial action API still allocates event reports and some temporary
-vectors. A no-trace fast path, benchmarks, and parallel search are future work;
-no throughput claim is made yet. State can be serialized for inspection, but
-serialized snapshot loading is not implemented; use `Battle::clone` for branches.
+## Data, AI and scope
 
-## Boss AI input
+`data/throne_opening.json` is ready-to-run normalized content.
+`data/source/throne_opening.json` records original rows and asset hashes.
+`node tools/import-throne.cjs` can regenerate both using the local reference
+workspace. This optional import step has no runtime dependency.
 
-`data/demo_ai.json` is a synthetic example of the supported normalized AI format.
-Embed an AI object in each enemy's `ai` field, as in `data/demo_battle.json`.
-`validate-ai` checks structure; battle construction also checks skill references,
-learned skills, and target compatibility.
+`data/items.json` contains ItemDB recovery values and its source hash. IDs:
 
-- Each state evaluates rules in order; its last rule must be `always`.
-- Conditions: `always`, `hp_at_most { percent }`,
-  `round_modulo { divisor, remainder }`, `actions_at_least { count }`.
-- Selections: `sequence { actions }` or `weighted { choices }`.
-- Actions specify `skill` and `target`. Targets: `self_only`, `first_opponent`,
-  `random_opponent`, `lowest_hp_ally`, `all_opponents`, `all_allies`.
-- `lowest_hp_ally` compares absolute HP; actor index resolves ties.
-- Optional `next_state` takes effect for the next decision. Sequence positions
-  persist per state/rule. `actions_at_least` counts the enemy's prior actions.
+| ID | Recovery |
+| --- | --- |
+| `healing_grape` / `healing_grape_m` | 500 / 1250 HP |
+| `healing_grape_bunch` | 900 HP to living allies |
+| `inspiriting_plum` / `inspiriting_plum_m` | 40 / 100 SP |
+| `inspiriting_plum_basket` | 45 SP to living allies |
+| `refreshing_jam` | Full HP/SP |
+| `rejuvenating_jam` | 5 BP, latent recovery capped at 100 |
+| `reinforcing_jam` | Full HP/SP, 5 BP |
+| `revitalizing_jam` | Full HP/SP, 5 BP, latent recovery capped at 100 |
 
-This parser consumes curated JSON. It does not parse arbitrary decompiler output
-or reconstruct original boss scripts automatically. The next encounter should
-translate verified source decisions into this format, extending it only for
-behavior that encounter needs. The selected first real encounter is **the very
-first battle in Throné's Chapter 1**. Shield reduction and Break must be implemented
-and verified before that encounter is considered supported. See [PLAN.md](PLAN.md).
+The general AI parser accepts normalized JSON state machines with ordered
+conditions, sequences, weighted choices and phase transitions. `opening_guard`
+implements the source decision branches used by these two enemies. Arbitrary
+Blueprint boss scripts are not automatically translated.
 
-## Source layout and checks
+The old synthetic example remains available:
 
-`model.rs`: combatants/resources; `content.rs`: skills/items/effects;
-`rng.rs`: CRT; `ai.rs`: AI parser/compiler; `battle.rs`: state/action loop;
-`main.rs`: CLI. `tests/integration.rs` covers recovery/caps, rejected actions,
-AI rollback, RNG draws, phases, KO, full battles, and replay across 64 seeds.
+```sh
+cargo run --release -- demo 123
+cargo run --release -- validate-ai data/demo_ai.json
+```
+
+`scaffold_v1` uses fixed damage and deterministic speed order. `ot2_opening_v1`
+requires combat profiles and supports up to eight combatants, using the native
+small-array sorting path. Neither profile implies support for every OT2 mechanic
+or encounter. Unknown JSON fields and unsupported effects are rejected.
+
+## Development and performance
+
+`combat.rs` holds arithmetic and order helpers; `battle.rs` executes actions;
+`ai.rs` compiles AI; `content.rs` and `model.rs` hold data; `rng.rs` owns CRT state.
+Use the library directly for search to avoid CLI JSON I/O. Immutable definitions
+are shared through `Arc`, and references compile to dense indices. Reports and
+temporary target lists still allocate; a no-report fast path and throughput
+benchmark remain on [the checklist](PLAN.md). Snapshot loading is not implemented;
+use `Battle::clone()` for in-process branches.
 
 ```sh
 cargo fmt --all -- --check
 cargo clippy --offline --all-targets -- -D warnings
 cargo test --offline --release
 ```
+
+Tests cover arithmetic fixtures from the original compiled Blueprint, each
+starting skill/boost tier, shields/Break/recovery, AI conditions and draw order,
+items, invalid-action rollback, full victory/defeat, and replay across 128 opening
+seeds plus the scaffold fixtures. These are source and simulator checks, not
+live-game equivalence tests.

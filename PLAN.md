@@ -1,49 +1,50 @@
 # Implementation checklist
 
-The immediate deliverable is a runnable Rust foundation. Exact simulation should
-grow around the few required encounters, with CRT traces as the acceptance test.
+## Runnable core — complete
 
-## 1. Barebones core — complete
+- [x] Standalone Rust repository, library and CLI.
+- [x] Player/enemy definitions and separate mutable combat state.
+- [x] Skills/items, parsed AI, explicit CRT state, deterministic branches.
+- [x] Validated actions, costs, inventory, KO, victory and defeat.
+- [x] Grapes, plums, jams and party recovery.
 
-- [x] New standalone Git repository and Rust library/CLI.
-- [x] Player/enemy definitions and separate mutable combatant state.
-- [x] Skill/item definitions and imported recovery-item data.
-- [x] Explicit per-battle CRT generator, state, and draw count.
-- [x] Validated actions that run to completion, costs and inventory consumption.
-- [x] Basic turns, KO, victory, and defeat under explicit scaffold rules.
-- [x] Parsed/validated AI JSON with phases, sequences, weighted choices, targets.
-- [x] Cloned branches and deterministic replay tests.
-- [x] A runnable full synthetic battle, including items and enemy actions.
+## Throné Chapter 1 opening — implemented and runnable
 
-## 2. First real encounter
+- [x] Select `ENG_EVE_THI_C01_010`, two `ENE_EVE_THI_CTY_010` pursuers.
+- [x] Import original formation, default level-one party, equipment and abilities.
+- [x] Preserve source rows and asset SHA-256 provenance.
+- [x] Physical/magical damage, hit, critical, variance, weakness and caps.
+- [x] Shields, per-hit Break, skipped actions, recovery and priority.
+- [x] Boosted attacks/skills, BP consumption/regeneration, SP costs.
+- [x] Defend, night buffs, Sharpen Dagger, Heckle, Cover Me! and Steal.
+- [x] Pursuer AI: strict HP threshold, probability/counter ordering, charge reset.
+- [x] Current/next order, native small-array sort and conditional shuffle.
+- [x] Source-derived CRT calls in those implemented combat paths, including
+      empty ailment slots and fixed-output ranges.
+- [x] Replayable command script; complete victories over 128 seeds, defeat path,
+      every starting skill at every boost tier, transactional error checks.
 
-- [x] Select the encounter: **the very first battle in Throné's Chapter 1**,
-      as requested by the user. This means the opening battle, not the chapter boss.
-- [ ] Identify its exact encounter/enemy IDs, game build/data revision, initial
-      party setup, and permitted player actions from the local source data.
-- [ ] Translate those enemies' decision logic, including action counters, phase
-      changes, target ordering, and conditional random calls.
-- [ ] Implement and verify enemy weaknesses, shield reduction, entering Break,
-      skipped actions, recovery timing, and damage effects for this encounter.
-      Break is currently absent and is required before marking it supported.
-- [ ] Implement the damage, defense, accuracy, variance, shield/break, boost, and
-      turn-order mechanics that its permitted action set actually uses.
-- [ ] Account for battle-affecting passives/statuses and CRT-consuming callbacks
-      on those paths. Omit graphics/audio output and unrelated random streams.
-- [ ] Compare a known battle trace action by action: actor, selected skill,
-      target, damage/resources, AI state, CRT state, and number of draws.
-- [ ] Gate an exact encounter profile on passing those reference fixtures; keep
-      the synthetic scaffold profile separate.
+## Remaining before game-accurate manipulation
 
-## 3. Search and more encounters
+- [ ] Capture the opening battle's actual entry state: story gates, night-buff
+      activation, party resources, inventory and seed boundary.
+- [ ] Complete the **CRT-only projection** of omitted initialization, voice
+      selection, notification timers and command callbacks. Implement no playback,
+      graphics or Unreal object runtime. See [specific gaps](docs/throne-opening.md).
+- [ ] Compare complete game traces action by action: actors, AI choices, targets,
+      damage/resources, status lifetimes, current/next queues, CRT states/draws.
+- [ ] Confirm source assumptions for long/contrived fights and unusual choices
+      against captures, including cover reuse and exhausted enemy SP.
+- [ ] Only label a profile exact after those comparisons pass. Reproducible
+      simulation and formula fixtures alone do not establish exactness.
 
-- [ ] Add a no-trace execution path and measure action/branch throughput in
-      release builds. Keep exact and fast paths behaviorally equivalent.
-- [ ] Add search over supplied player actions/seeds with bounded depth, branch
-      pruning, reproducible results, and shared immutable encounter data.
-- [ ] Add snapshot persistence if searches need to resume across processes.
-- [ ] Add encounter-specific import adapters and reusable mechanics as demanded
-      by further bosses; reject unsupported source opcodes explicitly.
+## Search and further encounters
 
-No Unreal runtime, visual/audio implementation, or general decompiler interpreter
-is part of this plan. Exactness and performance claims require measured evidence.
+- [ ] Add a no-report path and measure release action/branch throughput.
+- [ ] Add bounded seed/action search, pruning and parallel execution.
+- [ ] Add persisted snapshot loading if needed for resuming searches.
+- [ ] Add further encounter adapters and only their required mechanics.
+
+The engine stops at victory/defeat; rewards, overworld progression, other bosses,
+later unlocked latent abilities/jobs/passives and unsupported statuses are outside
+the implemented opening encounter. No UI/audio/graphics work is planned.

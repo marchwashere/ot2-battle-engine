@@ -35,8 +35,17 @@ pub enum Condition {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Selection {
-    Sequence { actions: Vec<AiAction> },
-    Weighted { choices: Vec<WeightedAction> },
+    /// Projection of NormalEnemy for the opening guard's populated slots 0,1,7.
+    OpeningGuard {
+        attack: AiAction,
+        slash: AiAction,
+    },
+    Sequence {
+        actions: Vec<AiAction>,
+    },
+    Weighted {
+        choices: Vec<WeightedAction>,
+    },
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -120,6 +129,7 @@ impl BossAi {
                     Condition::ActionsAtLeast { .. } => (),
                 }
                 match &rule.selection {
+                    Selection::OpeningGuard { .. } => (),
                     Selection::Sequence { actions } => ensure(
                         !actions.is_empty() && actions.len() <= 256,
                         "AI sequence needs 1..256 actions",
@@ -166,6 +176,7 @@ impl BossAi {
                 }
                 TargetKind::AllAllies => a.target == AiTarget::AllAllies,
                 TargetKind::AllOpponents => a.target == AiTarget::AllOpponents,
+                TargetKind::EveryoneExceptSelf | TargetKind::OtherAlly => false,
             };
             ensure(
                 compatible,
@@ -181,6 +192,10 @@ impl BossAi {
             let mut rules = Vec::new();
             for rule in &state.rules {
                 let selection = match &rule.selection {
+                    Selection::OpeningGuard {
+                        attack: basic,
+                        slash,
+                    } => CompiledSelection::OpeningGuard(action(basic)?, action(slash)?),
                     Selection::Sequence { actions } => CompiledSelection::Sequence(
                         actions.iter().map(&action).collect::<Result<_>>()?,
                     ),
@@ -219,6 +234,7 @@ struct CompiledRule {
 }
 #[derive(Debug)]
 enum CompiledSelection {
+    OpeningGuard(CompiledAction, CompiledAction),
     Sequence(Vec<CompiledAction>),
     Weighted(Vec<(u32, CompiledAction)>),
 }
@@ -232,12 +248,14 @@ pub struct AiMemory {
     pub state: usize,
     pub actions_taken: u64,
     cursors: Vec<Vec<usize>>,
+    pub last_was_slash: bool,
 }
 impl CompiledAi {
     pub fn memory(&self) -> AiMemory {
         AiMemory {
             state: self.initial,
             actions_taken: 0,
+            last_was_slash: false,
             cursors: self.states.iter().map(|s| vec![0; s.len()]).collect(),
         }
     }
@@ -247,6 +265,7 @@ impl CompiledAi {
         hp: u32,
         max_hp: u32,
         round: u32,
+        charged: bool,
         rng: &mut CrtRng,
     ) -> Result<CompiledAction> {
         let state = memory.state;
@@ -269,6 +288,16 @@ impl CompiledAi {
                     *cursor = (*cursor + 1) % actions.len();
                     action
                 }
+                CompiledSelection::OpeningGuard(attack, slash) => {
+                    // Slot 7: strict <60% HP; probability is evaluated BEFORE
+                    // the no-consecutive-special condition in UpdateThink.
+                    let use_slash = !charged
+                        && hp as f32 / (max_hp as f32) < 0.6_f32
+                        && rng.weighted_bool(0.6)
+                        && !memory.last_was_slash;
+                    memory.last_was_slash = use_slash;
+                    if use_slash { *slash } else { *attack }
+                }
                 CompiledSelection::Weighted(choices) => {
                     let total = choices.iter().map(|c| c.0).sum();
                     let mut roll = rng.index(total); // Deliberately draws even for one entry.
@@ -290,5 +319,65 @@ impl CompiledAi {
             return Ok(selected);
         }
         Err(SimError("AI has no matching rule".into()))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::{BattleConfig, ItemCatalog};
+
+    fn opening_ai() -> (CompiledAi, Catalog) {
+        let config = BattleConfig::from_json(include_str!("../data/throne_opening.json")).unwrap();
+        let catalog = Catalog::new(config.skills, ItemCatalog::builtin().unwrap()).unwrap();
+        let enemy = &config.enemies[0];
+        let learned = enemy
+            .skills
+            .iter()
+            .map(|s| catalog.skill_id(s).unwrap())
+            .collect::<Vec<_>>();
+        (enemy.ai.compile(&catalog, &learned).unwrap(), catalog)
+    }
+
+    #[test]
+    fn opening_ai_threshold_charge_and_previous_special_preserve_conditional_draws() {
+        let (ai, catalog) = opening_ai();
+        let attack = catalog.skill_id("ABI_ENE_0041").unwrap();
+        let slash = catalog.skill_id("ABI_ENE_0500").unwrap();
+        let mut memory = ai.memory();
+        let mut rng = CrtRng::new(1);
+        // Exactly 60% does not enter the special branch.
+        assert_eq!(
+            ai.choose(&mut memory, 111, 185, 1, false, &mut rng)
+                .unwrap()
+                .skill,
+            attack
+        );
+        assert_eq!(rng.draws, 0);
+        // Seed 1's first sample is below .6, so low HP enables Slash.
+        assert_eq!(
+            ai.choose(&mut memory, 110, 185, 1, false, &mut rng)
+                .unwrap()
+                .skill,
+            slash
+        );
+        assert_eq!(rng.draws, 1);
+        // Previous Slash disallows a repeat, but only AFTER the probability draw.
+        assert_eq!(
+            ai.choose(&mut memory, 110, 185, 2, false, &mut rng)
+                .unwrap()
+                .skill,
+            attack
+        );
+        assert_eq!(rng.draws, 2);
+        // Charge takes precedence and does not enter the low-HP lottery.
+        assert_eq!(
+            ai.choose(&mut memory, 1, 185, 3, true, &mut rng)
+                .unwrap()
+                .skill,
+            attack
+        );
+        assert_eq!(rng.draws, 2);
+        assert_eq!(memory.actions_taken, 4);
     }
 }

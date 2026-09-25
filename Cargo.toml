@@ -3,7 +3,7 @@ name = "ot2-battle-engine"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.85"
-description = "Standalone headless OT2 battle simulation scaffold"
+description = "Headless Rust simulator for selected OT2 battles"
 publish = false
 
 [dependencies]

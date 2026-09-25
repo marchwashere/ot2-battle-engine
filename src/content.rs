@@ -19,21 +19,37 @@ pub enum Recovery {
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Effect {
+    Damage {
+        attack: crate::combat::Attack,
+    },
+    Status {
+        status: crate::combat::Status,
+    },
+    Steal {
+        bonus: u8,
+    },
+    Cover {
+        hits: u8,
+    },
     Restore {
         resource: Resource,
         recovery: Recovery,
     },
     /// Explicit fixed damage for the scaffold; this is NOT an OT2 attack formula.
-    FixedDamage { amount: u32 },
+    FixedDamage {
+        amount: u32,
+    },
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum TargetKind {
     SelfOnly,
     Ally,
+    OtherAlly,
     AllAllies,
     Opponent,
     AllOpponents,
+    EveryoneExceptSelf,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -52,6 +68,30 @@ pub struct Skill {
     pub sp_cost: u32,
     pub hit: HitCheck,
     pub effects: Vec<Effect>,
+    /// No-boost tier lives above; entries here are boost levels 1, 2 and 3.
+    #[serde(default)]
+    pub boosted: Vec<SkillTier>,
+    #[serde(default = "one_hit")]
+    pub hits: u8,
+}
+fn one_hit() -> u8 {
+    1
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct SkillTier {
+    pub effects: Vec<Effect>,
+    pub hits: u8,
+}
+impl Skill {
+    pub(crate) fn tier(&self, boost: u8) -> (&[Effect], u8) {
+        if boost == 0 {
+            (&self.effects, self.hits)
+        } else {
+            let t = &self.boosted[boost as usize - 1];
+            (&t.effects, t.hits)
+        }
+    }
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -108,6 +148,21 @@ impl Catalog {
                 )?;
             }
             validate_effects(&skill.effects)?;
+            ensure(
+                (1..=16).contains(&skill.hits),
+                "skill hit count must be 1..16",
+            )?;
+            ensure(
+                skill.boosted.is_empty() || skill.boosted.len() == 3,
+                "boosted skill needs exactly three tiers",
+            )?;
+            for tier in &skill.boosted {
+                ensure(
+                    (1..=16).contains(&tier.hits),
+                    "skill hit count must be 1..16",
+                )?;
+                validate_effects(&tier.effects)?;
+            }
         }
         for (i, item) in items.items.iter().enumerate() {
             ensure(
@@ -159,6 +214,13 @@ fn validate_effects(effects: &[Effect]) -> Result<()> {
     ensure(!effects.is_empty(), "an action needs at least one effect")?;
     for effect in effects {
         match effect {
+            Effect::Damage { attack } => attack.validate()?,
+            Effect::Status { status } => ensure(
+                (1..=9).contains(&status.turns),
+                "status duration must be 1..9",
+            )?,
+            Effect::Steal { bonus } => ensure(*bonus <= 100, "steal bonus exceeds 100")?,
+            Effect::Cover { hits } => ensure((1..=9).contains(hits), "cover count must be 1..9")?,
             Effect::Restore {
                 recovery: Recovery::Percent { percent },
                 ..

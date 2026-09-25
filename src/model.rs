@@ -66,6 +66,8 @@ pub struct PlayerCharacter {
     #[serde(default)]
     pub resources: Option<Resources>,
     pub skills: Vec<String>,
+    #[serde(default)]
+    pub combat: Option<crate::combat::CombatProfile>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -78,15 +80,35 @@ pub struct Enemy {
     pub resources: Option<Resources>,
     pub skills: Vec<String>,
     pub ai: BossAi,
+    #[serde(default)]
+    pub combat: Option<crate::combat::CombatProfile>,
 }
 
 /// Mutable actor state. Identity, stats, skills and AI programs live separately.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct Combatant {
     pub resources: Resources,
+    pub shields: u8,
+    pub break_until_round: u32,
+    pub statuses: Vec<crate::combat::Status>,
+    pub boosted_this_round: bool,
+    pub guard: bool,
+    pub main_weapon: Option<crate::combat::Weapon>,
+    pub cover_by: Option<ActorId>,
+    pub cover_hits: u8,
+    pub item_stolen: bool,
+    pub enemy_charge_max: u8,
+    /// CRT sample used by the next-turn speed revision (players still draw).
+    pub order_sample: u16,
 }
 impl Combatant {
     pub fn alive(&self) -> bool {
         self.resources.hp != 0
+    }
+    pub fn broken(&self) -> bool {
+        self.break_until_round != 0
+    }
+    pub fn has_status(&self, kind: crate::combat::StatusKind) -> bool {
+        self.statuses.iter().any(|s| s.kind == kind && s.turns > 0)
     }
 }

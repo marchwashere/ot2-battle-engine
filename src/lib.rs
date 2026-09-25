@@ -1,6 +1,7 @@
-//! Headless simulation scaffold. See README.md for the fidelity boundary.
+//! Headless OT2 combat simulation. See README.md for supported encounters and fidelity.
 pub mod ai;
 pub mod battle;
+pub mod combat;
 pub mod content;
 pub mod model;
 pub mod rng;

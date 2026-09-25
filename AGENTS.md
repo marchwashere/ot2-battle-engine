@@ -10,7 +10,9 @@ research/reference material, not a runtime or build dependency.
   Unreal compatibility. Do not port the old interpreter/object system.
 - Use structs/enums, small mutable state and shared immutable definitions.
 - Reject unsupported data. Do not silently substitute guessed OT2 behavior.
-- The initial scaffold uses explicitly named scaffold rules. Never describe the
-  demo damage/turn rules, curated AI JSON, or item core effects as verified complete
-  OT2 behavior. Exact encounter rules and live CRT trace validation come later.
+- The opening Throné encounter runs under source-derived `ot2_opening_v1` rules.
+  Keep `scaffold_v1` for synthetic tests. The mechanics and imported records are
+  tested, but full live-game CRT alignment is not established; see
+  docs/throne-opening.md for concrete remaining gaps. Never claim manipulation
+  accuracy from reproducible simulator output alone.
 - Keep the existing workspace and old engine unchanged. Work in this repository.
