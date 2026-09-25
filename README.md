@@ -15,6 +15,35 @@ and [combat mechanics](docs/throne-opening.md).
 Requires Rust 1.85 or newer. No Unreal, graphics, audio, Node.js, or old C++ engine
 is needed to build or run the checked-in crate.
 
+### Simple GUI
+
+On Windows, double-click **Open Battle Viewer.cmd** in this repository. It opens
+a local browser window. The launcher builds the release viewer if needed; the
+already-built `target/release/ot2-gui.exe` can also be launched directly.
+
+Enter a decimal or `0x` hexadecimal seed and click **Run simulation**. The viewer
+shows the supplied routine's actions, per-hit damage, resources, CRT trace, and
+decimal/hex RNG checkpoints. The primary final state includes drops and the
+**first area encounter-counter reset**, before a following cutscene reset.
+Use **Copy decimal** or **Export JSON** to save a prediction. **Quit viewer** stops
+the local server; simply closing the tab does not stop it.
+
+The viewer calls the same Rust library as the CLI. Its HTML/CSS/JS are embedded
+in the executable; it needs no internet or additional packages. It binds only
+to `127.0.0.1` on an available port and opens the default browser. The core remains
+headless, and the existing source-derived accuracy limits still apply.
+
+```sh
+cargo build --offline --release --bin ot2-gui
+cargo run --offline --release --bin ot2-gui
+# Optional: keep browser launch manual and choose a fixed local port
+cargo run --offline --release --bin ot2-gui -- --no-open --port 8787
+```
+
+Rebuild after editing `viewer/` or Rust sources to update the embedded app.
+
+### Command line
+
 ```sh
 cargo run --release -- throne 123
 cargo run --release -- throne 0x7b --trace
@@ -64,8 +93,9 @@ CRT state is **3423024866 after 145 modeled draws**, and the encounter counter i
 - User routine, optional full draw trace, post-battle drop/counter checkpoints,
   and a release seed sweep.
 
-Only the main MSVC CRT generator is present. There are no Unreal/CRI random
-streams, audio output, rendering, animation, UI, or frame loop.
+The simulation core uses only the main MSVC CRT generator, with no Unreal/CRI
+random streams, audio output, rendering, animation, game UI or frame loop. The
+optional result viewer is a separate inspection shell.
 
 ## Supply actions
 

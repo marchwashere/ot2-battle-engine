@@ -31,6 +31,8 @@
 - [x] English/2× reaction-gate duration audit; no CRI RNG or audio runtime.
 - [x] Optional labeled CRT trace and deterministic restart from another seed.
 - [x] Routine replay tests across 1,024 seeds; release sweep across 65,536 seeds.
+- [x] User-requested local result viewer: seed entry, action details, CRT checkpoints,
+      full trace, copy/export and a Windows launcher; separate from the headless core.
 
 ## Remaining before game-accurate manipulation
 
@@ -58,4 +60,4 @@
 The opening routine ends after grape-drop checks and the first field counter
 reset. Later cutscenes/field movement, XP/level-ups, other bosses, later unlocked
 latent abilities/jobs/passives and unsupported statuses remain outside scope.
-No UI/audio/graphics work is planned.
+The result viewer is separate from the engine. No game rendering or audio is planned.

@@ -3,7 +3,9 @@
 This is the new standalone Rust simulation core. The sibling C++ project is
 research/reference material, not a runtime or build dependency.
 
-- HEADLESS: no graphics, UI, animation output, particles or audio playback.
+- The simulation core is HEADLESS: no game graphics, UI, animations, particles
+  or audio playback. The user-authorized local result viewer lives separately in
+  `src/bin/ot2-gui.rs` and `viewer/`; it must call the existing Rust core.
 - Track only the main CRT rand stream. Ignore Unreal/CRI RNG unless it changes
   battle outcomes or correct CRT advancement. Preserve relevant conditional draws.
 - Prioritize a running small battle and explicit supported behavior over general

@@ -5,6 +5,7 @@ edition = "2024"
 rust-version = "1.85"
 description = "Headless Rust simulator for selected OT2 battles"
 publish = false
+default-run = "ot2-sim"
 
 [dependencies]
 serde = { version = "1.0.228", features = ["derive"] }
@@ -17,3 +18,7 @@ codegen-units = 1
 [[bin]]
 name = "ot2-sim"
 path = "src/main.rs"
+
+[[bin]]
+name = "ot2-gui"
+path = "src/bin/ot2-gui.rs"
