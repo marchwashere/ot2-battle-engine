@@ -17,10 +17,15 @@ grow around the few required encounters, with CRT traces as the acceptance test.
 
 ## 2. First real encounter
 
-- [ ] Identify the first boss, game build/data revision, party setup, and required
-      player actions; record original script/skill IDs.
-- [ ] Translate that boss's decision logic, including action counters, phase
+- [x] Select the encounter: **the very first battle in Throné's Chapter 1**,
+      as requested by the user. This means the opening battle, not the chapter boss.
+- [ ] Identify its exact encounter/enemy IDs, game build/data revision, initial
+      party setup, and permitted player actions from the local source data.
+- [ ] Translate those enemies' decision logic, including action counters, phase
       changes, target ordering, and conditional random calls.
+- [ ] Implement and verify enemy weaknesses, shield reduction, entering Break,
+      skipped actions, recovery timing, and damage effects for this encounter.
+      Break is currently absent and is required before marking it supported.
 - [ ] Implement the damage, defense, accuracy, variance, shield/break, boost, and
       turn-order mechanics that its permitted action set actually uses.
 - [ ] Account for battle-affecting passives/statuses and CRT-consuming callbacks

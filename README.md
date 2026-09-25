@@ -162,7 +162,9 @@ learned skills, and target compatibility.
 This parser consumes curated JSON. It does not parse arbitrary decompiler output
 or reconstruct original boss scripts automatically. The next encounter should
 translate verified source decisions into this format, extending it only for
-behavior that encounter needs. See [PLAN.md](PLAN.md).
+behavior that encounter needs. The selected first real encounter is **the very
+first battle in Throné's Chapter 1**. Shield reduction and Break must be implemented
+and verified before that encounter is considered supported. See [PLAN.md](PLAN.md).
 
 ## Source layout and checks
 
