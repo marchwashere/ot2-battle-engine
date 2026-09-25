@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "rules": "scaffold_v1",
+  "seed": 123,
+  "players": [
+    {
+      "id": "player",
+      "name": "Demo player",
+      "stats": {
+        "max_hp": 1000,
+        "max_sp": 100,
+        "speed": 20
+      },
+      "resources": {
+        "hp": 200,
+        "sp": 10,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "training_strike"
+      ]
+    }
+  ],
+  "enemies": [
+    {
+      "id": "dummy",
+      "name": "Demo boss (synthetic)",
+      "stats": {
+        "max_hp": 900,
+        "max_sp": 0,
+        "speed": 10
+      },
+      "skills": [
+        "enemy_strike",
+        "heavy_strike"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "opening",
+        "states": [
+          {
+            "id": "opening",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "hp_at_most",
+                  "percent": 50
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "heavy_strike",
+                      "target": "first_opponent"
+                    }
+                  ]
+                },
+                "next_state": "enraged"
+              },
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "enemy_strike",
+                      "target": "first_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "enraged",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "weighted",
+                  "choices": [
+                    {
+                      "weight": 3,
+                      "action": {
+                        "skill": "enemy_strike",
+                        "target": "random_opponent"
+                      }
+                    },
+                    {
+                      "weight": 1,
+                      "action": {
+                        "skill": "heavy_strike",
+                        "target": "random_opponent"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "training_strike",
+      "name": "Training strike",
+      "target": "opponent",
+      "sp_cost": 20,
+      "hit": {
+        "kind": "weighted",
+        "probability": 0.95
+      },
+      "effects": [
+        {
+          "kind": "fixed_damage",
+          "amount": 180
+        }
+      ]
+    },
+    {
+      "id": "enemy_strike",
+      "name": "Enemy strike",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "fixed_damage",
+          "amount": 75
+        }
+      ]
+    },
+    {
+      "id": "heavy_strike",
+      "name": "Heavy strike",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "fixed_damage",
+          "amount": 125
+        }
+      ]
+    }
+  ],
+  "inventory": {
+    "healing_grape": 3,
+    "inspiriting_plum": 5,
+    "revitalizing_jam": 1
+  }
+}

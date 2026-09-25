@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "source": "/Game/Item/Database/ItemDB.ItemDB",
+  "source_sha256": "89199944038f11eb9ecddde95ce199a985e1e323beab4d246c14990fc2908665",
+  "items": [
+    {
+      "id": "healing_grape",
+      "name": "Healing Grape",
+      "source_label": "ITM_CSM_0010",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "healing_grape_m",
+      "name": "Healing Grape (M)",
+      "source_label": "ITM_CSM_0020",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 1250
+          }
+        }
+      ]
+    },
+    {
+      "id": "healing_grape_bunch",
+      "name": "Healing Grape Bunch",
+      "source_label": "ITM_CSM_0030",
+      "target": "all_allies",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 900
+          }
+        }
+      ]
+    },
+    {
+      "id": "inspiriting_plum",
+      "name": "Inspiriting Plum",
+      "source_label": "ITM_CSM_0040",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "inspiriting_plum_m",
+      "name": "Inspiriting Plum (M)",
+      "source_label": "ITM_CSM_0050",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "inspiriting_plum_basket",
+      "name": "Inspiriting Plum Basket",
+      "source_label": "ITM_CSM_0060",
+      "target": "all_allies",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": "refreshing_jam",
+      "name": "Refreshing Jam",
+      "source_label": "ITM_CSM_0100",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "rejuvenating_jam",
+      "name": "Rejuvenating Jam",
+      "source_label": "ITM_CSM_0101",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "bp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 5
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "latent",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "reinforcing_jam",
+      "name": "Reinforcing Jam",
+      "source_label": "ITM_CSM_0110",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "bp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "revitalizing_jam",
+      "name": "Revitalizing Jam",
+      "source_label": "ITM_CSM_0111",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "hp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "sp",
+          "recovery": {
+            "kind": "percent",
+            "percent": 100
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "bp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 5
+          }
+        },
+        {
+          "kind": "restore",
+          "resource": "latent",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 150
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  { "kind": "item", "id": "healing_grape", "target": 0 },
+  { "kind": "item", "id": "inspiriting_plum", "target": 0 },
+  { "kind": "skill", "id": "training_strike", "target": 1 },
+  { "kind": "skill", "id": "training_strike", "target": 1 },
+  { "kind": "item", "id": "inspiriting_plum", "target": 0 },
+  { "kind": "skill", "id": "training_strike", "target": 1 },
+  { "kind": "item", "id": "healing_grape", "target": 0 },
+  { "kind": "skill", "id": "training_strike", "target": 1 },
+  { "kind": "item", "id": "inspiriting_plum", "target": 0 },
+  { "kind": "skill", "id": "training_strike", "target": 1 }
+]

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "initial_state": "opening",
+  "states": [
+    {
+      "id": "opening",
+      "rules": [
+        {
+          "condition": { "kind": "hp_at_most", "percent": 50 },
+          "selection": { "kind": "sequence", "actions": [{ "skill": "heavy_strike", "target": "first_opponent" }] },
+          "next_state": "enraged"
+        },
+        {
+          "condition": { "kind": "always" },
+          "selection": { "kind": "sequence", "actions": [{ "skill": "enemy_strike", "target": "first_opponent" }] }
+        }
+      ]
+    },
+    {
+      "id": "enraged",
+      "rules": [
+        {
+          "condition": { "kind": "always" },
+          "selection": {
+            "kind": "weighted",
+            "choices": [
+              { "weight": 3, "action": { "skill": "enemy_strike", "target": "random_opponent" } },
+              { "weight": 1, "action": { "skill": "heavy_strike", "target": "random_opponent" } }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
