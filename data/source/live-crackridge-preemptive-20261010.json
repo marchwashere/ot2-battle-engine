@@ -1,0 +1,449 @@
+{
+  "description": "Retail preemptive Western Crackridge return, all four equipped A Step Ahead. Entry after field selection; first menu only.",
+  "entry": {
+    "draws": 4131,
+    "state": 191585075
+  },
+  "players": [
+    {
+      "combat": {
+        "accuracy": 119,
+        "attack": 119,
+        "critical": 109,
+        "defense": 102,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 130,
+        "growth_attack": 109,
+        "growth_magic": 109,
+        "magic": 119,
+        "magic_defense": 100,
+        "main_weapon": "dagger",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "sword"
+          },
+          {
+            "attack": 6,
+            "magic": 0,
+            "weapon": "dagger"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "staff"
+          }
+        ]
+      },
+      "id": "throne",
+      "name": "Thron\u00e9",
+      "resources": {
+        "bp": 1,
+        "hp": 885,
+        "latent": 80,
+        "sp": 56
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_010",
+        "ABI_SET_THI_020",
+        "ABI_SET_SCH_010",
+        "ABI_SET_SCH_020",
+        "ABI_SET_SCH_030",
+        "ABI_SET_SCH_060",
+        "attack_staff"
+      ],
+      "stats": {
+        "max_hp": 885,
+        "max_sp": 63,
+        "speed": 130
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 113,
+        "attack": 123,
+        "critical": 103,
+        "defense": 131,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 82,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 92,
+        "magic_defense": 91,
+        "main_weapon": "sword",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "sword"
+          },
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "lance"
+          }
+        ]
+      },
+      "id": "hikari",
+      "name": "Hikari",
+      "resources": {
+        "bp": 1,
+        "hp": 949,
+        "latent": 0,
+        "sp": 52
+      },
+      "skills": [
+        "attack_sword",
+        "ABI_SET_WAR_010",
+        "ABI_SET_WAR_050"
+      ],
+      "stats": {
+        "max_hp": 949,
+        "max_sp": 52,
+        "speed": 103
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 103,
+        "attack": 103,
+        "critical": 103,
+        "defense": 82,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 113,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 123,
+        "magic_defense": 93,
+        "main_weapon": "dagger",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "dagger"
+          }
+        ]
+      },
+      "id": "agnea",
+      "name": "Agnea",
+      "resources": {
+        "bp": 1,
+        "hp": 657,
+        "latent": 0,
+        "sp": 66
+      },
+      "skills": [
+        "attack_dagger",
+        "ABI_SET_DAN_010",
+        "ABI_SET_DAN_020"
+      ],
+      "stats": {
+        "max_hp": 657,
+        "max_sp": 66,
+        "speed": 133
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 103,
+        "attack": 113,
+        "critical": 92,
+        "defense": 116,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 92,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 113,
+        "magic_defense": 115,
+        "main_weapon": "lance",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "lance"
+          },
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "bow"
+          }
+        ]
+      },
+      "id": "partitio",
+      "name": "Partitio",
+      "resources": {
+        "bp": 1,
+        "hp": 803,
+        "latent": 0,
+        "sp": 66
+      },
+      "skills": [
+        "attack_lance",
+        "ABI_SET_MER_020",
+        "ABI_SET_MER_040"
+      ],
+      "stats": {
+        "max_hp": 803,
+        "max_sp": 66,
+        "speed": 92
+      }
+    }
+  ],
+  "levels": [
+    16,
+    14,
+    14,
+    14
+  ],
+  "enemies": [
+    "ENE_NML_FLD_WLD_040",
+    "ENE_NML_FLD_WLD_040",
+    "ENE_NML_FLD_WLD_130"
+  ],
+  "current": [
+    2,
+    3,
+    1,
+    0
+  ],
+  "next": [
+    0,
+    2,
+    6,
+    4,
+    1,
+    3,
+    5
+  ],
+  "menu_state": 829206106,
+  "draws": 49,
+  "calls": [
+    {
+      "before": 191585075,
+      "return_rva": "0x30D7424"
+    },
+    {
+      "before": 1941379370,
+      "return_rva": "0x30D7604"
+    },
+    {
+      "before": 2469296965,
+      "return_rva": "0x30D7065"
+    },
+    {
+      "before": 287867124,
+      "return_rva": "0x30D7424"
+    },
+    {
+      "before": 298445799,
+      "return_rva": "0x30D7604"
+    },
+    {
+      "before": 824653582,
+      "return_rva": "0x30D7065"
+    },
+    {
+      "before": 2088415641,
+      "return_rva": "0x30D7424"
+    },
+    {
+      "before": 917384696,
+      "return_rva": "0x30D7604"
+    },
+    {
+      "before": 708441307,
+      "return_rva": "0x30D7065"
+    },
+    {
+      "before": 3306417202,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3225297453,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2802265148,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2005207567,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 242252950,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 732889345,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 4234207168,
+      "return_rva": "0x30D7424"
+    },
+    {
+      "before": 1706229635,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1500867642,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1764999701,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3394759812,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3246254391,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3913580318,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 4084668777,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 347879048,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1678121771,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3301751106,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1052506877,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 596959692,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3334875487,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3404619430,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 208771793,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3630453328,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 331802579,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1373565770,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 487025893,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3903597588,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2249419399,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3586997038,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3019973945,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2712752920,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 778896763,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2059745874,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 2722805709,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 427813724,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1883196591,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 1708405942,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3402389665,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 4046412000,
+      "return_rva": "0x2C57B26"
+    },
+    {
+      "before": 3402896419,
+      "return_rva": "0x2C57B26"
+    }
+  ]
+}

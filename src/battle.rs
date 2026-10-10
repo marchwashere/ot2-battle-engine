@@ -2497,7 +2497,7 @@ impl Battle {
             .filter(|(_, s)| s.alive())
             .map(|(i, _)| ActorId(i))
             .collect();
-        if round == 1 || (round==2 && self.state.opening_crt.as_ref().is_some_and(|c|c.step_ahead)) {
+        if round == 1 {
             match self
                 .state
                 .opening_crt
@@ -2731,7 +2731,11 @@ impl Battle {
                 }
             }
         }
-        if first && self.state.opening_crt.as_ref().is_some_and(|c|c.step_ahead) {
+        if first && self.state.opening_crt.as_ref().is_some_and(|c|
+            c.step_ahead && c.mansion_situation == Some(crate::escape::Situation::Normal)) {
+            // BattleManagerBP.AddBattleFirstActionCharacter accepts only
+            // BattleStartType 0 (normal). Preemptive starts keep their initial
+            // player-only queue and preview an ordinary all-actor next turn.
             // SetBattleFirstActionTurn rebuilds, sorts and shuffles current
             // player orders before UpdateNextOrder. Never filter the old queue.
             let mut bonus:Vec<_>=self.state.actors.iter().enumerate()
