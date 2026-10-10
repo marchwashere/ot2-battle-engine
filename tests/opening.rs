@@ -130,6 +130,7 @@ fn arithmetic_matches_existing_original_blueprint_calculation_fixtures() {
         critical: false,
         attack_up: false,
         defense_down: false,
+        defense_up: false,
     };
     assert_eq!(combat::damage(input, &skill, 1.0), 101);
     assert_eq!(
@@ -406,6 +407,8 @@ fn cover_me_redirects_damage_to_selected_ally_and_counts_hits() {
     c.players.swap(0, 2);
     c.enemies.truncate(1);
     c.enemies[0].ai = first_opponent();
+    // Exercise redirected damage independently of the seed's accuracy roll.
+    c.enemies[0].combat.as_mut().unwrap().accuracy = 999;
     let mut b = make(c);
     until(&mut b, ActorId(0));
     b.step_player(boost("ABI_SET_GST_0200", Some(ActorId(2)), 0))

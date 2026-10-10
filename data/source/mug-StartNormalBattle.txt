@@ -1,0 +1,375 @@
+8d0ad PushExecutionFlow target=2770
+8d0b2 PushExecutionFlow target=2724
+8d0b7 PushExecutionFlow target=2562
+8d0bc PushExecutionFlow target=1709
+8d0c1 PushExecutionFlow target=1323
+8d0c6 PushExecutionFlow target=584
+8d0cb LetObj
+  8d0cc LocalVariable CallFunc_GetManagerInstance_ReturnValue
+  8d0dd CallMath import:-348:GetManagerInstance
+    8d0e2 ObjectConst import:-108:EncountManager
+8d0e8 Let property=<null-field>
+  8d0f1 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+  8d102 DynamicCast import:-36:EncountManagerBP_C
+    8d107 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+8d118 Let property=<null-field>
+  8d121 LocalVariable K2Node_DynamicCast_bSuccess
+  8d132 Cast cast=71
+    8d134 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+8d145 PopExecutionFlowIfNot
+  8d146 LocalVariable K2Node_DynamicCast_bSuccess
+8d157 Context skip=50 rvalue=<null-field>
+  8d158 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+  8d175 LocalVirtualFunction GetEncountParam_Old
+    8d17e LocalVariable CallFunc_GetEncountParam_Old_PartyData
+    8d18f LocalVariable CallFunc_GetEncountParam_Old_EnemyGropID
+    8d1a0 LocalVariable CallFunc_GetEncountParam_Old_IsEventBGM
+    8d1b1 LocalVariable CallFunc_GetEncountParam_Old_EncountType
+8d1c3 Let property=PartyCharacterData
+  8d1d4 InstanceVariable PartyCharacterData
+  8d1e5 LocalVariable CallFunc_GetEncountParam_Old_PartyData
+8d1f6 Context skip=50 rvalue=<null-field>
+  8d1f7 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+  8d214 LocalVirtualFunction GetEncountParam_Old
+    8d21d LocalVariable CallFunc_GetEncountParam_Old_PartyData
+    8d22e LocalVariable CallFunc_GetEncountParam_Old_EnemyGropID
+    8d23f LocalVariable CallFunc_GetEncountParam_Old_IsEventBGM
+    8d250 LocalVariable CallFunc_GetEncountParam_Old_EncountType
+8d262 Let property=EnemyGroupID
+  8d273 InstanceVariable EnemyGroupID
+  8d284 LocalVariable CallFunc_GetEncountParam_Old_EnemyGropID
+8d295 Context skip=50 rvalue=<null-field>
+  8d296 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+  8d2b3 LocalVirtualFunction GetEncountParam_Old
+    8d2bc LocalVariable CallFunc_GetEncountParam_Old_PartyData
+    8d2cd LocalVariable CallFunc_GetEncountParam_Old_EnemyGropID
+    8d2de LocalVariable CallFunc_GetEncountParam_Old_IsEventBGM
+    8d2ef LocalVariable CallFunc_GetEncountParam_Old_EncountType
+8d301 LetBool
+  8d302 InstanceVariable IsEventBGM
+  8d313 LocalVariable CallFunc_GetEncountParam_Old_IsEventBGM
+8d324 Context skip=50 rvalue=<null-field>
+  8d325 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP
+  8d342 LocalVirtualFunction GetEncountParam_Old
+    8d34b LocalVariable CallFunc_GetEncountParam_Old_PartyData
+    8d35c LocalVariable CallFunc_GetEncountParam_Old_EnemyGropID
+    8d36d LocalVariable CallFunc_GetEncountParam_Old_IsEventBGM
+    8d37e LocalVariable CallFunc_GetEncountParam_Old_EncountType
+8d390 Let property=m_eBattleMode
+  8d3a1 InstanceVariable m_eBattleMode
+  8d3b2 LocalVariable CallFunc_GetEncountParam_Old_EncountType
+8d3c3 LetBool
+  8d3c4 LocalVariable CallFunc_GetBattleViewerMode_ReturnValue_1
+  8d3d5 Context skip=10 rvalue=CallFunc_GetBattleViewerMode_ReturnValue_1
+    8d3d6 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    8d3fb FinalFunction import:-492:GetBattleViewerMode
+8d401 LetBool
+  8d402 InstanceVariable m_bIsViewerMode
+  8d413 LocalVariable CallFunc_GetBattleViewerMode_ReturnValue_1
+8d424 PopExecutionFlow
+8d425 LetBool
+  8d426 LocalVariable CallFunc_GeRareEnemyParameter_ReturnValue
+  8d437 Context skip=41 rvalue=CallFunc_GeRareEnemyParameter_ReturnValue
+    8d438 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    8d45d LocalVirtualFunction GeRareEnemyParameter
+      8d466 LocalVariable CallFunc_GeRareEnemyParameter_cRareCatlinParam
+      8d477 LocalVariable CallFunc_GeRareEnemyParameter_cRareOctlinParam
+      8d488 LocalVariable CallFunc_GeRareEnemyParameter_eArea
+8d49a JumpIfNot target=972
+  8d49f LocalVariable CallFunc_GeRareEnemyParameter_ReturnValue
+8d4b0 LetBool
+  8d4b1 LocalVariable CallFunc_GeRareEnemyParameter_ReturnValue
+  8d4c2 Context skip=41 rvalue=CallFunc_GeRareEnemyParameter_ReturnValue
+    8d4c3 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    8d4e8 LocalVirtualFunction GeRareEnemyParameter
+      8d4f1 LocalVariable CallFunc_GeRareEnemyParameter_cRareCatlinParam
+      8d502 LocalVariable CallFunc_GeRareEnemyParameter_cRareOctlinParam
+      8d513 LocalVariable CallFunc_GeRareEnemyParameter_eArea
+8d525 Let property=m_cRareCatlinParam
+  8d536 InstanceVariable m_cRareCatlinParam
+  8d547 LocalVariable CallFunc_GeRareEnemyParameter_cRareCatlinParam
+8d558 LetBool
+  8d559 LocalVariable CallFunc_GeRareEnemyParameter_ReturnValue
+  8d56a Context skip=41 rvalue=CallFunc_GeRareEnemyParameter_ReturnValue
+    8d56b LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    8d590 LocalVirtualFunction GeRareEnemyParameter
+      8d599 LocalVariable CallFunc_GeRareEnemyParameter_cRareCatlinParam
+      8d5aa LocalVariable CallFunc_GeRareEnemyParameter_cRareOctlinParam
+      8d5bb LocalVariable CallFunc_GeRareEnemyParameter_eArea
+8d5cd Let property=m_cRareOctlinParam
+  8d5de InstanceVariable m_cRareOctlinParam
+  8d5ef LocalVariable CallFunc_GeRareEnemyParameter_cRareOctlinParam
+8d600 LetBool
+  8d601 LocalVariable CallFunc_GeRareEnemyParameter_ReturnValue
+  8d612 Context skip=41 rvalue=CallFunc_GeRareEnemyParameter_ReturnValue
+    8d613 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    8d638 LocalVirtualFunction GeRareEnemyParameter
+      8d641 LocalVariable CallFunc_GeRareEnemyParameter_cRareCatlinParam
+      8d652 LocalVariable CallFunc_GeRareEnemyParameter_cRareOctlinParam
+      8d663 LocalVariable CallFunc_GeRareEnemyParameter_eArea
+8d675 Let property=AreaType
+  8d686 InstanceVariable AreaType
+  8d697 LocalVariable CallFunc_GeRareEnemyParameter_eArea
+8d6a8 PopExecutionFlow
+8d6a9 LetBool
+  8d6aa StructMemberContext RareEnemyFlag
+    8d6bb LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d6cc False
+8d6cd Let property=RareEnemyRate
+  8d6de StructMemberContext RareEnemyRate
+    8d6ef LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d700 IntConst 0
+8d705 Let property=RareEnemyCnt_Low
+  8d716 StructMemberContext RareEnemyCnt_Low
+    8d727 LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d738 IntConst 0
+8d73d Let property=RareEnemyCnt_Middle
+  8d74e StructMemberContext RareEnemyCnt_Middle
+    8d75f LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d770 IntConst 0
+8d775 Let property=RareEnemyCnt_High
+  8d786 StructMemberContext RareEnemyCnt_High
+    8d797 LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d7a8 IntConst 0
+8d7ad Let property=m_cRareCatlinParam
+  8d7be InstanceVariable m_cRareCatlinParam
+  8d7cf LocalVariable K2Node_MakeStruct_RareEnemyParam
+8d7e0 LetBool
+  8d7e1 StructMemberContext RareEnemyFlag
+    8d7f2 LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d803 False
+8d804 Let property=RareEnemyRate
+  8d815 StructMemberContext RareEnemyRate
+    8d826 LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d837 IntConst 0
+8d83c Let property=RareEnemyCnt_Low
+  8d84d StructMemberContext RareEnemyCnt_Low
+    8d85e LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d86f IntConst 0
+8d874 Let property=RareEnemyCnt_Middle
+  8d885 StructMemberContext RareEnemyCnt_Middle
+    8d896 LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d8a7 IntConst 0
+8d8ac Let property=RareEnemyCnt_High
+  8d8bd StructMemberContext RareEnemyCnt_High
+    8d8ce LocalVariable K2Node_MakeStruct_RareEnemyParam
+  8d8df IntConst 0
+8d8e4 Let property=m_cRareOctlinParam
+  8d8f5 InstanceVariable m_cRareOctlinParam
+  8d906 LocalVariable K2Node_MakeStruct_RareEnemyParam
+8d917 PopExecutionFlow
+8d918 LetBool
+  8d919 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+  8d92a CallMath import:-271:EqualEqual_ByteByte
+    8d92f InstanceVariable m_eBattleMode
+    8d940 ByteConst 6
+8d943 JumpIfNot target=1556
+  8d948 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+8d959 LetObj
+  8d95a LocalVariable CallFunc_GetManagerInstance_ReturnValue_2
+  8d96b CallMath import:-348:GetManagerInstance
+    8d970 ObjectConst import:-108:EncountManager
+8d976 Let property=<null-field>
+  8d97f LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP_1
+  8d990 DynamicCast import:-36:EncountManagerBP_C
+    8d995 LocalVariable CallFunc_GetManagerInstance_ReturnValue_2
+8d9a6 Let property=<null-field>
+  8d9af LocalVariable K2Node_DynamicCast_bSuccess_1
+  8d9c0 Cast cast=71
+    8d9c2 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP_1
+8d9d3 PopExecutionFlowIfNot
+  8d9d4 LocalVariable K2Node_DynamicCast_bSuccess_1
+8d9e5 Context skip=23 rvalue=<null-field>
+  8d9e6 LocalVariable K2Node_DynamicCast_AsEncount_Manager_BP_1
+  8da03 LocalVirtualFunction GetSubPartyParam_Old
+    8da0c LocalVariable CallFunc_GetSubPartyParam_Old_SubPartyData
+8da1e Let property=SubPartyCharacterData
+  8da2f InstanceVariable SubPartyCharacterData
+  8da40 LocalVariable CallFunc_GetSubPartyParam_Old_SubPartyData
+8da51 LetBool
+  8da52 InstanceVariable m_bUseSubPartyBattle
+  8da63 True
+8da64 PopExecutionFlow
+8da65 LetBool
+  8da66 LocalVariable CallFunc_EqualEqual_NameName_ReturnValue
+  8da77 CallMath import:-273:EqualEqual_NameName
+    8da7c InstanceVariable EnemyGroupID
+    8da8d NameConst ENG_BOS_DLC_VD1_010
+8da97 LetBool
+  8da98 LocalVariable CallFunc_EqualEqual_NameName_ReturnValue_1
+  8daa9 CallMath import:-273:EqualEqual_NameName
+    8daae InstanceVariable EnemyGroupID
+    8dabf NameConst ENG_BOS_LST_C03_060
+8dac9 LetBool
+  8daca LocalVariable CallFunc_BooleanOR_ReturnValue
+  8dadb CallMath import:-262:BooleanOR
+    8dae0 LocalVariable CallFunc_EqualEqual_NameName_ReturnValue_1
+    8daf1 LocalVariable CallFunc_EqualEqual_NameName_ReturnValue
+8db03 JumpIfNot target=1697
+  8db08 LocalVariable CallFunc_BooleanOR_ReturnValue
+8db19 Jump target=1368
+8db1e LetBool
+  8db1f InstanceVariable m_bUseSubPartyBattle
+  8db30 False
+8db31 PopExecutionFlow
+8db32 LetBool
+  8db33 LocalVariable CallFunc_GetBattleViewerMode_ReturnValue
+  8db44 FinalFunction import:-425:GetBattleViewerMode
+8db4a PopExecutionFlowIfNot
+  8db4b LocalVariable CallFunc_GetBattleViewerMode_ReturnValue
+8db5c LetObj
+  8db5d LocalVariable CallFunc_GetManagerInstance_ReturnValue_1
+  8db6e CallMath import:-348:GetManagerInstance
+    8db73 ObjectConst import:-108:EncountManager
+8db79 LetBool
+  8db7a LocalVariable CallFunc_GetViewerParameter_ReturnValue
+  8db8b Context skip=41 rvalue=CallFunc_GetViewerParameter_ReturnValue
+    8db8c LocalVariable CallFunc_GetManagerInstance_ReturnValue_1
+    8dbb1 LocalVirtualFunction GetViewerParameter
+      8dbba LocalVariable CallFunc_GetViewerParameter_eViewerMode
+      8dbcb LocalVariable CallFunc_GetViewerParameter_astrEnemyIDList
+      8dbdc LocalVariable CallFunc_GetViewerParameter_strPlacementID
+8dbee LetBool
+  8dbef LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2
+  8dc00 CallMath import:-271:EqualEqual_ByteByte
+    8dc05 LocalVariable CallFunc_GetViewerParameter_eViewerMode
+    8dc16 ByteConst 2
+8dc19 PopExecutionFlowIfNot
+  8dc1a LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2
+8dc2b Let property=EnemyGroupID
+  8dc3c InstanceVariable EnemyGroupID
+  8dc4d NameConst None
+8dc56 Let property=VoiceID_8_88ABE9D14C8376A4464354B009EEE27D
+  8dc67 StructMemberContext VoiceID_8_88ABE9D14C8376A4464354B009EEE27D
+    8dc78 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dc89 NameConst None
+8dc92 Let property=TalkPlayerID_59_120BD4E7412030C4A7451F94ADA561E6
+  8dca3 StructMemberContext TalkPlayerID_59_120BD4E7412030C4A7451F94ADA561E6
+    8dcb4 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dcc5 ByteConst 0
+8dcc7 Let property=PlayerVoiceID_60_93D85FE44B08FEC5471232A608853FBB
+  8dcd8 StructMemberContext PlayerVoiceID_60_93D85FE44B08FEC5471232A608853FBB
+    8dce9 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dcfa NameConst None
+8dd03 Let property=BGMID_7_B47857404179EE90049AD8A2FCC54983
+  8dd14 StructMemberContext BGMID_7_B47857404179EE90049AD8A2FCC54983
+    8dd25 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dd36 NameConst bgm_hard_bat_qp38
+8dd3f LetBool
+  8dd40 StructMemberContext UseBattleBGM_44_F63B1CBE40C700E06FCF2AB83B85A37E
+    8dd51 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dd62 True
+8dd63 LetBool
+  8dd64 StructMemberContext UseVictoryBGM_45_F4B15CC0414BE79A3DCEA6AEE16AE729
+    8dd75 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dd86 True
+8dd87 LetBool
+  8dd88 StructMemberContext ViewResult_46_700B4A7149794C6B852D1A8F34067738
+    8dd99 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8ddaa True
+8ddab LetBool
+  8ddac StructMemberContext ResumeBGM_51_8AA71C014C38BF84FA39589539D2091A
+    8ddbd LocalVariable K2Node_MakeStruct_EnemyGroup
+  8ddce True
+8ddcf LetBool
+  8ddd0 StructMemberContext BossBattle_39_C41476624E5271E08774A5BC3C8A87B5
+    8dde1 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8ddf2 False
+8ddf3 LetBool
+  8ddf4 StructMemberContext EscapeEnable_11_FEBCB2D446F7E7DFD4AEBC80CC938A9D
+    8de05 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8de16 True
+8de17 Let property=PlacementType_14_0BECBBB0413FADBA41048FAB127C7CF6
+  8de28 StructMemberContext PlacementType_14_0BECBBB0413FADBA41048FAB127C7CF6
+    8de39 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8de4a LocalVariable CallFunc_GetViewerParameter_strPlacementID
+8de5b Let property=EnemyID_37_DA234CE645A15970D15D82AA5102880C
+  8de6c StructMemberContext EnemyID_37_DA234CE645A15970D15D82AA5102880C
+    8de7d LocalVariable K2Node_MakeStruct_EnemyGroup
+  8de8e LocalVariable CallFunc_GetViewerParameter_astrEnemyIDList
+8de9f Let property=SaveEndrollSegment_50_5B46BB3C410146887FD218ADB4E764DD
+  8deb0 StructMemberContext SaveEndrollSegment_50_5B46BB3C410146887FD218ADB4E764DD
+    8dec1 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8ded2 ByteConst 53
+8ded4 Let property=ID_63_E582E26A49ACDE5B91CC488DD80CA0E2
+  8dee5 StructMemberContext ID_63_E582E26A49ACDE5B91CC488DD80CA0E2
+    8def6 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8df07 IntConst 0
+8df0c LetBool
+  8df0d StructMemberContext BattleStartDashEnable_68_F33F272245D13218ECFEEFBD592D96B3
+    8df1e LocalVariable K2Node_MakeStruct_EnemyGroup
+  8df2f True
+8df30 LetBool
+  8df31 StructMemberContext UseVictoryAction_70_4B0D29114F6CC42C709F6B992E51D342
+    8df42 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8df53 True
+8df54 LetBool
+  8df55 StructMemberContext ResultDashEnable_71_E5F54B894116409B6B94AEB69BDA07C0
+    8df66 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8df77 False
+8df78 LetBool
+  8df79 StructMemberContext ItemEnable_75_D98869564F81B427D7AA06A18FEA4F75
+    8df8a LocalVariable K2Node_MakeStruct_EnemyGroup
+  8df9b True
+8df9c LetBool
+  8df9d StructMemberContext GuardEnable_76_7F7944DA49D139D355D6D592C4AEB8EC
+    8dfae LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dfbf True
+8dfc0 LetBool
+  8dfc1 StructMemberContext BoostEnable_82_1CA0BBD2466E29C80182CA8974243BC4
+    8dfd2 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8dfe3 True
+8dfe4 LetBool
+  8dfe5 StructMemberContext BoostFinishResultEnable_80_362894EE48E086F97C9351B79E6BA95B
+    8dff6 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8e007 True
+8e008 Let property=BattleStartEvent_74_4F9751D74FBEF91A1104168C3CE9152E
+  8e019 StructMemberContext BattleStartEvent_74_4F9751D74FBEF91A1104168C3CE9152E
+    8e02a LocalVariable K2Node_MakeStruct_EnemyGroup
+  8e03b SoftObjectConst
+    8e03c StringConst ""
+8e03e LetBool
+  8e03f StructMemberContext BattleStartEnemyVoiceEnable_84_F1D6C1AD47FB2C9FBB7337B5F61A973A
+    8e050 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8e061 False
+8e062 Let property=WeaponUnloadGCType_87_5F0613304F7B4AC65B1A54A6120CB317
+  8e073 StructMemberContext WeaponUnloadGCType_87_5F0613304F7B4AC65B1A54A6120CB317
+    8e084 LocalVariable K2Node_MakeStruct_EnemyGroup
+  8e095 ByteConst 2
+8e097 Let property=EnemyGroup
+  8e0a8 InstanceVariable EnemyGroup
+  8e0b9 LocalVariable K2Node_MakeStruct_EnemyGroup
+8e0ca PopExecutionFlow
+8e0cb LetBool
+  8e0cc LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  8e0dd CallMath import:-271:EqualEqual_ByteByte
+    8e0e2 InstanceVariable m_eBattleMode
+    8e0f3 ByteConst 6
+8e0f6 PopExecutionFlowIfNot
+  8e0f7 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+8e108 LetBool
+  8e109 LocalVariable CallFunc_IsExVideBattle_ReturnValue
+  8e11a LocalVirtualFunction IsExVideBattle
+8e124 JumpIfNot target=2642
+  8e129 LocalVariable CallFunc_IsExVideBattle_ReturnValue
+8e13a PopExecutionFlow
+8e13b Let property=WorkPartyData
+  8e14c LocalVariable WorkPartyData
+  8e15d InstanceVariable PartyCharacterData
+8e16e Let property=PartyCharacterData
+  8e17f InstanceVariable PartyCharacterData
+  8e190 InstanceVariable SubPartyCharacterData
+8e1a1 Let property=SubPartyCharacterData
+  8e1b2 InstanceVariable SubPartyCharacterData
+  8e1c3 LocalVariable WorkPartyData
+8e1d4 PopExecutionFlow
+8e1d5 LocalVirtualFunction ChangeBattleFlow
+  8e1de ByteConst 1
+  8e1e0 LocalVariable CallFunc_ChangeBattleFlow_CurrentFlow
+  8e1f1 LocalVariable CallFunc_ChangeBattleFlow_IsChange
+8e203 FinalFunction import:-228:SetActorTickEnabled
+  8e208 True
+8e20a PopExecutionFlow
+8e20b Return
+  8e20c Nothing
+8e20d EndOfScript

@@ -1,0 +1,508 @@
+{
+  "asset": "Battle/BP/BattlePlayerBP",
+  "sha256": "daca68dbe063d2709143c98370605e6fad0b575358dc73579b05328ef63c59a6",
+  "functions": {
+    "AddPotentialityActionPoint": "671d2 PushExecutionFlow target=100\n671d7 PushExecutionFlow target=89\n671dc PopExecutionFlowIfNot\n  671dd InstanceVariable m_bPotentialityActionEnable\n671ee Context skip=32 rvalue=<null-field>\n  671ef InstanceVariable m_cPotentialityActionComponent\n  6720c LocalVirtualFunction AddPotentialityActionPoint\n    67215 LocalVariable nAddPoint\n    67226 LocalVariable bIgnore\n67238 LocalVirtualFunction UpdatePotentinalityActionUI\n67242 PopExecutionFlow\n67243 LetBool\n  67244 LocalOutVariable ReturnValue\n  67255 True\n67256 Return\n  67257 LocalOutVariable ReturnValue\n67268 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "CurseOfBindIdleMove_IdleMoveOffset_0033B27D4CE33F04A04FC9A268E48E94": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PlayInhaleMoveTimeline_Scale_A2FDC3714C8CE51035C787B0C6E843A4": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PlayerHardenDeadKnockBackOffset_KnockbackOffset_CA9DB61B4625846E2AF3A3A73BAD8DAA": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PartyCharaData": {
+        "PlayableCharaData": {
+          "Id": 0,
+          "DisplayName": "None",
+          "CharacterRole": "ECharacterRole::NONE",
+          "ResourceLabel": [],
+          "GuestResourceLabel": "None",
+          "VoiceCueSheet_ja": [],
+          "VoiceCueSheet_en": [],
+          "VoiceSet": "None",
+          "SpecialActionList": [],
+          "PotentialityActionLabel": "None",
+          "SecondPotentialityActionLabel": "None",
+          "SecondPotentialityActionFlag": 0,
+          "UniqueStyle": "EBATTLE_STYLE_TYPE::eNEUTRAL",
+          "ReleaseStyleFlag": 0,
+          "StyleAvailableCount": 0,
+          "InitLevel": 0,
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "WeaponStance": "EWEAPON_STANCE::NONE",
+          "MainWeapon": "EWEAPON_CATEGORY::eSWORD",
+          "FirstEquipment": {
+            "Sword": "None",
+            "Lance": "None",
+            "Dagger": "None",
+            "Axe": "None",
+            "Bow": "None",
+            "Rod": "None",
+            "Shield": "None",
+            "Head": "None",
+            "Body": "None",
+            "Accessory_00": "None",
+            "Accessory_01": "None"
+          },
+          "FirstJob": "EJOB_TYPE::eMERCHANT",
+          "FieldCommandInfo": {
+            "DayTimeFC": "MJFieldCommandType::eGeneric",
+            "DayTimeFCImpossibleFlag": 0,
+            "NightFC": "MJFieldCommandType::eGeneric",
+            "NightFCImpossibleFlag": 0
+          },
+          "MainMissionPlayingFlag": 0,
+          "SymbolLabel": "None",
+          "SymbolWhLabel": "None",
+          "DayPortraitLabel": "None",
+          "DayPortraitBgLabel": "None",
+          "NightPortraitLabel": "None",
+          "NightPortraitBgLabel": "None",
+          "PortraitNameLabel": "None",
+          "AdvancedAbility": [],
+          "TextInfoLabel": "None",
+          "CostumeList": [],
+          "CharmEnemyLabel": "None",
+          "CharmEnemyLabelForKSBattle": "None"
+        },
+        "Level": 1,
+        "HP": 0,
+        "MP": 0,
+        "Equipment": {
+          "Sword": "None",
+          "Lance": "None",
+          "Dagger": "None",
+          "Axe": "None",
+          "Bow": "None",
+          "Rod": "None",
+          "Shield": "None",
+          "Head": "None",
+          "Body": "None",
+          "Accessory_00": "None",
+          "Accessory_01": "None"
+        },
+        "FirstJobData": {
+          "ID": 0,
+          "JobID": 0,
+          "DisplayName": "None",
+          "Detail": "None",
+          "DisplayOrder": 0,
+          "MenuJobIcon": "None",
+          "AbilityJobIcon": "None",
+          "PermissionFlag": 0,
+          "EquipJobItem": "None",
+          "ProperEquipment": [],
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "JobCommandName": "None",
+          "JobCommandDetail": "None",
+          "JobCommandAbility": [],
+          "JobSupportAbility": [],
+          "JPCost": []
+        },
+        "SecondJobData": {
+          "ID": 0,
+          "JobID": 0,
+          "DisplayName": "None",
+          "Detail": "None",
+          "DisplayOrder": 0,
+          "MenuJobIcon": "None",
+          "AbilityJobIcon": "None",
+          "PermissionFlag": 0,
+          "EquipJobItem": "None",
+          "ProperEquipment": [],
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "JobCommandName": "None",
+          "JobCommandDetail": "None",
+          "JobCommandAbility": [],
+          "JobSupportAbility": [],
+          "JPCost": []
+        },
+        "Disease": [],
+        "SupporterID": "None",
+        "PotentialityActionPoint": 0
+      },
+      "EquipmentParameter": {
+        "HP": 0,
+        "MP": 0,
+        "BP": 0,
+        "SP": 0,
+        "POT": 0,
+        "ATK": 0,
+        "DEF": 0,
+        "MATK": 0,
+        "MDEF": 0,
+        "ACC": 0,
+        "EVA": 0,
+        "CON": 0,
+        "AGI": 0
+      },
+      "CoverStepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "CoverStepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "NextWaitTimeRevision": 1,
+      "UpdateDiseaseWaitTime": 0.6000000238418579,
+      "ReplayPlayerData": {
+        "BattleCharacterID": 0,
+        "CharaID": 0,
+        "JobID": 0,
+        "Position": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "CharacterStatus": "EBATTLE_REPLAY_CHARA_STATUS::eREPLAY_ALIVE",
+        "CharacterDisease": 0
+      },
+      "PlayerActiveIcon": {
+        "kind": "object",
+        "index": -639,
+        "path": "/Game/UserInterface/Battle/ActionOrder/Texture/UiTX_Battle_Order_Alfa.UiTX_Battle_Order_Alfa"
+      },
+      "PlayerActiveFrontIcon": {
+        "kind": "object",
+        "index": -639,
+        "path": "/Game/UserInterface/Battle/ActionOrder/Texture/UiTX_Battle_Order_Alfa.UiTX_Battle_Order_Alfa"
+      },
+      "ActionIconSpriteData": {
+        "SrcTexture": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "SrcUV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SrcSize": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "AddTexArray": [],
+        "VertArray": [],
+        "SocketNameArray": [],
+        "SocketPosArray": [],
+        "CharaFootPivot": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "HasAdditionalTexture": false,
+        "CustomPixelsPerUnrealUnit": 0
+      },
+      "OrderIconSpriteData": {
+        "SrcTexture": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "SrcUV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SrcSize": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "AddTexArray": [],
+        "VertArray": [],
+        "SocketNameArray": [],
+        "SocketPosArray": [],
+        "CharaFootPivot": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "HasAdditionalTexture": false,
+        "CustomPixelsPerUnrealUnit": 0
+      },
+      "CharacterActionResouceData": {
+        "FrActionList": [],
+        "ReActionList": [],
+        "LeActionList": [],
+        "RiActionList": [],
+        "Loop": [],
+        "Height": 0,
+        "TemplateSocket": false,
+        "WalkFootstep": "None",
+        "SpeedWalk": 0,
+        "SpeedRun": 0,
+        "ActionFootStep": [],
+        "ActionFootStepInterval": [],
+        "LargeIconOffsetX": 0,
+        "LargeIconOffsetY": 0,
+        "LargeIconInvertOffsetX": 0,
+        "SmallIconOffsetX": 0,
+        "SmallIconOffsetY": 0,
+        "SmallIconInvertOffsetX": 0,
+        "TabIconOffsetX": 0,
+        "TabIconOffsetY": 0,
+        "InvadeListOffsetX": 0,
+        "InvadeListOffsetY": 0,
+        "InvadeListScale": 0
+      },
+      "CurseOfBindIdleLocation": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "None",
+      "IsEquipmentSuperMagic": false,
+      "RootComponent": {
+        "kind": "object",
+        "index": 228,
+        "path": "Default__BattlePlayerBP_C.SceneComponent"
+      }
+    }
+  ]
+}

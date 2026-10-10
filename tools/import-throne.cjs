@@ -1,4 +1,5 @@
 'use strict';
+const {initialization}=require('./enemy-initialization.cjs');
 // Regenerate the opening encounter from local cooked records; no game runtime.
 const fs=require('node:fs'),path=require('node:path'),s=require('./source.cjs');
 const sources=[];
@@ -6,6 +7,7 @@ function load(name){const t=s.table(name);sources.push({source:t.source,sha256:t
 const groups=load('Battle/Database/EnemyGroupData'),enemies=load('Character/Database/EnemyDB');
 const players=load('Character/Database/PlayableCharacterDB'),jobs=load('Character/Database/JobData');
 const growth=load('Character/Database/CharacterGrow'),items=load('Item/Database/ItemDB');
+const specialActions=load('Character/Database/SpecialAction');
 const sets=load('Ability/Database/AbilitySetData'),abilities=load('Ability/Database/AbilityData');
 const ailments=load('Ability/Database/AilmentData');
 for(const id of ['ADD_GUARD','ADD_ATK_UP','ADD_DEF_DOWN']) {
@@ -14,12 +16,29 @@ for(const id of ['ADD_GUARD','ADD_ATK_UP','ADD_DEF_DOWN']) {
 }
 const group=groups.get('ENG_EVE_THI_C01_010');
 if(group.EnemyID.filter(v=>v!=='None').join(',')!=='ENE_EVE_THI_CTY_010,ENE_EVE_THI_CTY_010')throw new Error('Opening formation changed');
+const placementTypes=load('Battle/Database/BattlePlacementType'),placementList=load('Battle/Database/BattlePlacementList');
+const placementType=placementTypes.get(group.PlacementType);
+const placements=placementType.Placement.filter(id=>id!=='None').map(id=>placementList.get(id));
+if(placements.length!==2||placements[0].Placement.components[0].value!==-100||placements[1].Placement.components[0].value!==-700)throw new Error('Opening right-to-left target mapping changed');
 const weapons=['Sword','Lance','Dagger','Axe','Bow','Rod'];
 const weaponNames=['sword','lance','dagger','axe','bow','staff'];
 const enumWeapon=v=>({eSWORD:'sword',eLANCE:'lance',eDAGGER:'dagger',eAXE:'axe',eBOW:'bow',eROD:'staff',eNONE:null})[v.split('::').at(-1)];
 const enumElement=v=>({eNONE:null,eFIRE:'fire',eICE:'ice',eTHUNDER:'lightning',eWIND:'wind',eLIGHT:'light',eDARK:'dark'})[v.split('::').at(-1)];
 const skills=[];
-const sourceRows={group,players:[],enemies:[],skills:[],equipment:[],ailments:['ADD_GUARD','ADD_ATK_UP','ADD_DEF_DOWN'].map(id=>ailments.get(id))};
+const sourceRows={group,players:[],enemies:[],skills:[],equipment:[],nightTalent:specialActions.get('ePARTY_BUFF_IN_NIGHT'),ailments:['ADD_GUARD','ADD_ATK_UP','ADD_DEF_DOWN'].map(id=>ailments.get(id))};
+sourceRows.targetNumbering={order:'right_to_left',placementType,placements,enemies:['pursuer_a','pursuer_b']};
+function talentFlagCommand(event,index,enabled){
+  const file='Event/json/'+event,bytes=fs.readFileSync(path.join(s.assets.CONTENT,file));
+  sources.push({source:'/Game/'+file,sha256:s.assets.hash(bytes)});
+  const command=JSON.parse(bytes.toString('utf8'))[index];
+  if(command?.cmd!==70||command.target!==sourceRows.nightTalent.BanFlag||command.opt[0]!==enabled)
+    throw new Error('Opening talent story flag changed: '+event+'['+index+']');
+  return {event,index,command};
+}
+sourceRows.nightTalentStoryFlags=[
+  talentFlagCommand('MS_TOU_10_0100',23,'1'),
+  talentFlagCommand('MS_TOU_10_1600',11,'0'),
+];
 function effects(row,normalWeapon){
   return row.Ailment.filter(a=>a.AilmentName!=='None').map(a=>{
     switch(a.AilmentName){
@@ -64,10 +83,13 @@ const party=[player('eTHIEF','throne','Throné'),player('eGUEST_006','pirro','Pi
 for(const id of ['ABI_ENE_0041','ABI_ENE_0500'])skill(id,[id]);
 const e=enemies.get('ENE_EVE_THI_CTY_010'),p=e.Param;
 sourceRows.enemies.push(e);
-const foes=['pursuer_a','pursuer_b'].map((id,index)=>({id,name:'Pursuer '+(index?'B':'A'),stats:{max_hp:p.HP,max_sp:p.MP,speed:p.AGI},resources:{hp:p.HP,sp:p.MP,bp:e.FirstBP,latent:0},skills:['ABI_ENE_0041','ABI_ENE_0500'],combat:{attack:p.ATK,defense:p.DEF,magic:p.MATK,magic_defense:p.MDEF,accuracy:p.ACC,evasion:p.EVA,critical:p.CON,growth_attack:p.ATK,growth_magic:p.MATK,weapons:[],main_weapon:null,shields:p.SP,weapon_weaknesses:e.WeaponResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[weaponNames[i]]:[]),element_weaknesses:e.AttributeResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[['none','fire','ice','lightning','wind','light','dark'][i]]:[]),statuses:[],steal_item:'healing_grape',enemy_bp_base:p.BP},ai:{schema_version:1,initial_state:'normal',states:[{id:'normal',rules:[{condition:{kind:'always'},selection:{kind:'opening_guard',attack:{skill:'ABI_ENE_0041',target:'random_opponent'},slash:{skill:'ABI_ENE_0500',target:'random_opponent'}}}]}]}}));
-const config={schema_version:1,rules:'ot2_opening_v1',seed:123,night_buff_turns:3,players:party,enemies:foes,skills,inventory:{healing_grape:0,inspiriting_plum:0}};
+const foes=['pursuer_a','pursuer_b'].map((id,index)=>({id,name:'Pursuer '+(index?'B':'A'),stats:{max_hp:p.HP,max_sp:p.MP,speed:p.AGI},resources:{hp:p.HP,sp:p.MP,bp:e.FirstBP,latent:0},skills:['ABI_ENE_0041','ABI_ENE_0500'],combat:{attack:p.ATK,defense:p.DEF,magic:p.MATK,magic_defense:p.MDEF,accuracy:p.ACC,evasion:p.EVA,critical:p.CON,growth_attack:p.ATK,growth_magic:p.MATK,weapons:[],main_weapon:null,shields:p.SP,weapon_weaknesses:e.WeaponResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[weaponNames[i]]:[]),element_weaknesses:e.AttributeResist.flatMap((v,i)=>v.endsWith('::eWEAK')?[['none','fire','ice','lightning','wind','light','dark'][i]]:[]),statuses:[],steal_item:'healing_grape',enemy_bp_base:p.BP,enemy_initialization:initialization(e)},ai:{schema_version:1,initial_state:'normal',states:[{id:'normal',rules:[{condition:{kind:'always'},selection:{kind:'opening_guard',attack:{skill:'ABI_ENE_0041',target:'random_opponent'},slash:{skill:'ABI_ENE_0500',target:'random_opponent'}}}]}]}}));
+// MS_TOU_10_0100 command 23 sets BAN_TOU_SPECIAL_ACTION (652), which the battle's
+// CheckConditionSpecialAction honors. MS_TOU_10_1600 command 11 clears it later.
+// Only this scalar entry state is projected; there is no story-event runtime.
+const config={schema_version:1,rules:'ot2_opening_v1',seed:123,night_buff_turns:0,players:party,enemies:foes,skills,inventory:{healing_grape:0,inspiriting_plum:0}};
 const dir=path.join(__dirname,'../data');
 fs.mkdirSync(path.join(dir,'source'),{recursive:true});
 fs.writeFileSync(path.join(dir,'throne_opening.json'),JSON.stringify(config,null,2)+'\n');
-fs.writeFileSync(path.join(dir,'source/throne_opening.json'),JSON.stringify({sources,notes:['EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.','Default level-one starting gear and learned (GetParam=1) abilities.','Night talent applies after the initial order shuffle; seed precedes actor initialization, not game process startup.','Starting inventory is empty; supply owned items explicitly. No invented consumables.'],rows:sourceRows},null,2)+'\n');
+fs.writeFileSync(path.join(dir,'source/throne_opening.json'),JSON.stringify({sources,notes:['EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.','Default level-one starting gear and learned (GetParam=1) abilities.','Opening night talent is disabled by BAN_TOU_SPECIAL_ACTION (652): MS_TOU_10_0100 command 23 sets it to 1; MS_TOU_10_1600 command 11 clears it to 0 later. CheckConditionSpecialAction checks this BanFlag as well as time of day.','Seed precedes actor initialization, not game process startup.','Starting inventory is empty; supply owned items explicitly. No invented consumables.'],rows:sourceRows},null,2)+'\n');
 console.log('Imported '+party.length+' players, '+foes.length+' enemies, '+skills.length+' skills.');

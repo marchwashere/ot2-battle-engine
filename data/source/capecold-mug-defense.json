@@ -1,0 +1,103 @@
+{
+  "asset": "Battle/BP/BattleCharacterBaseBP",
+  "sha256": "f8c887c7e3e8d178fc86c063bb4bc5fd53facb14079dca497a2d0b1afcf9db4c",
+  "functions": {
+    "GetCharacterDefence": "50679 LocalVirtualFunction GetCharacterDefenseOld\n  50682 LocalVariable CalcType\n  50693 LocalVariable CallFunc_GetCharacterDefenseOld_Result\n  506a4 LocalVariable CallFunc_GetCharacterDefenseOld_Ratio\n506b6 Let property=Result\n  506c7 LocalOutVariable Result\n  506d8 LocalVariable CallFunc_GetCharacterDefenseOld_Result\n506e9 Let property=Ratio\n  506fa LocalOutVariable Ratio\n  5070b LocalVariable CallFunc_GetCharacterDefenseOld_Ratio\n5071c Return\n  5071d Nothing\n5071e EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "PlayHideoutAction_CanueMovement_CA276F844BFD9A3AB48B1196C6884576": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "ForceMovementTimeline_VectorOffset_FB34850E498904F635CA22BD6A5FE018": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "False",
+      "IsEquipmentSuperMagic": true,
+      "RootComponent": {
+        "kind": "object",
+        "index": 352,
+        "path": "Default__BattleCharacterBaseBP_C.SceneComponent"
+      }
+    }
+  ]
+}

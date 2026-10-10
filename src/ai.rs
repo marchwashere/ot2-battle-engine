@@ -40,6 +40,12 @@ pub enum Selection {
         attack: AiAction,
         slash: AiAction,
     },
+    /// NormalEnemy's populated slots 0 (ordinary), 1 (charged), and 7 (<60% HP).
+    NormalEnemy {
+        attack: AiAction,
+        charged: AiAction,
+        low_hp: AiAction,
+    },
     Sequence {
         actions: Vec<AiAction>,
     },
@@ -129,7 +135,7 @@ impl BossAi {
                     Condition::ActionsAtLeast { .. } => (),
                 }
                 match &rule.selection {
-                    Selection::OpeningGuard { .. } => (),
+                    Selection::OpeningGuard { .. } | Selection::NormalEnemy { .. } => (),
                     Selection::Sequence { actions } => ensure(
                         !actions.is_empty() && actions.len() <= 256,
                         "AI sequence needs 1..256 actions",
@@ -196,6 +202,15 @@ impl BossAi {
                         attack: basic,
                         slash,
                     } => CompiledSelection::OpeningGuard(action(basic)?, action(slash)?),
+                    Selection::NormalEnemy {
+                        attack,
+                        charged,
+                        low_hp,
+                    } => CompiledSelection::NormalEnemy(
+                        action(attack)?,
+                        action(charged)?,
+                        action(low_hp)?,
+                    ),
                     Selection::Sequence { actions } => CompiledSelection::Sequence(
                         actions.iter().map(&action).collect::<Result<_>>()?,
                     ),
@@ -221,20 +236,21 @@ impl BossAi {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) struct CompiledAi {
     initial: usize,
     states: Vec<Vec<CompiledRule>>,
 }
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct CompiledRule {
     condition: Condition,
     selection: CompiledSelection,
     next_state: Option<usize>,
 }
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 enum CompiledSelection {
     OpeningGuard(CompiledAction, CompiledAction),
+    NormalEnemy(CompiledAction, CompiledAction, CompiledAction),
     Sequence(Vec<CompiledAction>),
     Weighted(Vec<(u32, CompiledAction)>),
 }
@@ -297,6 +313,20 @@ impl CompiledAi {
                         && !memory.last_was_slash;
                     memory.last_was_slash = use_slash;
                     if use_slash { *slash } else { *attack }
+                }
+                CompiledSelection::NormalEnemy(attack, charged_attack, low_hp) => {
+                    let special = !charged
+                        && hp as f32 / (max_hp as f32) < 0.6_f32
+                        && rng.weighted_bool(0.6)
+                        && !memory.last_was_slash;
+                    memory.last_was_slash = special;
+                    if charged {
+                        *charged_attack
+                    } else if special {
+                        *low_hp
+                    } else {
+                        *attack
+                    }
                 }
                 CompiledSelection::Weighted(choices) => {
                     let total = choices.iter().map(|c| c.0).sum();

@@ -12,6 +12,7 @@ const selected=[
   ['0030','healing_grape_bunch','Healing Grape Bunch'],
   ['0040','inspiriting_plum','Inspiriting Plum'],['0050','inspiriting_plum_m','Inspiriting Plum (M)'],
   ['0060','inspiriting_plum_basket','Inspiriting Plum Basket'],
+  ['0080','energizing_pomegranate_m','Energizing Pomegranate (M)'],
   ['0100','refreshing_jam','Refreshing Jam'],['0101','rejuvenating_jam','Rejuvenating Jam'],
   ['0110','reinforcing_jam','Reinforcing Jam'],['0111','revitalizing_jam','Revitalizing Jam']
 ];
@@ -32,6 +33,16 @@ const items=selected.map(([suffix,id,name])=>{
   return {id,name,source_label,target,effects};
 });
 const output={schema_version:1,source:'/Game/Item/Database/ItemDB.ItemDB',source_sha256:a.hash(p.b),items};
+for(const [suffix,id,name,element] of [
+  ['0320','ice_soulstone','Ice Soulstone','ice'],['0380','wind_soulstone','Wind Soulstone','wind'],['0400','wind_soulstone_l','Wind Soulstone (L)','wind'],
+  ['0370','thunder_soulstone_l','Thunder Soulstone (L)','lightning'],
+  ['0410','light_soulstone','Light Soulstone','light'],['0440','shadow_soulstone','Shadow Soulstone','dark'],['0450','shadow_soulstone_m','Shadow Soulstone (M)','dark']
+]) {
+  const source_label='ITM_CSM_'+suffix,row=source.rows.find(r=>r.name.text===source_label);
+  const f=fields(row.properties),damage=fields(f.Ailment.elements[0].properties);
+  if(f.TargetType.value.text!=='EBATTLE_TARGET_TYPE::eENEMY_ALL'||damage.AilmentName.text!=='HP_FIXED_DAMAGE')throw Error('Unsupported soulstone '+source_label);
+  items.push({id,name,source_label,target:'all_opponents',effects:[{kind:'elemental_fixed_damage',amount:damage.InvocationValue,element}]});
+}
 fs.mkdirSync(path.join(__dirname,'../data'),{recursive:true});
 fs.writeFileSync(path.join(__dirname,'../data/items.json'),JSON.stringify(output,null,2)+'\n');
-console.log('Imported '+items.length+' recovery items from '+output.source_sha256);
+console.log('Imported '+items.length+' recovery items and soulstones from '+output.source_sha256);

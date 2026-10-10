@@ -1,0 +1,2719 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Battle/Database/EnemyGroupData",
+      "sha256": "b3a58b0c90e2e01f11b8d2adec43b03748a478ba0e42c1b6c7a7207bc48f660f"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Ability/Database/AbilitySetData",
+      "sha256": "34568a4256c18b359fcb77e64b65dae4840664d3795edea9ec5fcaeb7dda8ff1"
+    },
+    {
+      "source": "/Game/Character/Database/PlayableCharacterDB",
+      "sha256": "d624b29cafae9397ea9e6557930820c1bc22fcbaea37617fb07f76c9ca80b650"
+    },
+    {
+      "source": "/Game/Character/Database/CharacterGrow",
+      "sha256": "0ee3a0e09db23869d700fde639b59f0f5dca5c58b52e7a6338fd16eac570b613"
+    },
+    {
+      "source": "/Game/Item/Database/ItemDB",
+      "sha256": "89199944038f11eb9ecddde95ce199a985e1e323beab4d246c14990fc2908665"
+    },
+    {
+      "source": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    },
+    {
+      "source": "/Game/GameParam/BattleParamDefineTable",
+      "sha256": "81e0a1c028b8e9a73d33dcf502e9a8fad077afc762878d68bbca2d13f4b7e88b"
+    },
+    {
+      "source": "/Game/Sound/Resource/VO/BattleGAK/en/vo_gak_pc_ab_04020",
+      "sha256": "f4dfe414c4c3819642dc899f43c3ddd70351f76cd164822ad977a89aacee05ed"
+    },
+    {
+      "source": "/Game/Sound/Resource/VO/BattleGAK/en/vo_gak_pc_ab_04030",
+      "sha256": "d2e51ce16f229264c57beec26e08fd0910a061bfb769b406d86a8fa79062ff78"
+    },
+    {
+      "source": "/Game/Sound/Resource/VO/BattleGAK/en/vo_gak_pc_bt_00060",
+      "sha256": "b4d60fc220acd2e9b311289f9b79f3768cd92e46583a99994ef396b28415ca2d"
+    }
+  ],
+  "group": {
+    "id": "ENG_NPC_Twn_Snw_1_2_A_1100",
+    "VoiceID": "None",
+    "TalkPlayerID": "EPlayableCharacterID::eNONE",
+    "PlayerVoiceID": "None",
+    "BGMID": "m50a_battle1",
+    "UseBattleBGM": true,
+    "UseVictoryBGM": true,
+    "ViewResult": true,
+    "ResumeBGM": true,
+    "BossBattle": true,
+    "EscapeEnable": true,
+    "PlacementType": "PMT_TYPE_001",
+    "EnemyID": [
+      "ENE_NPC_Twn_Snw_1_2_A_1100",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SaveEndrollSegment": "EEndRollSegmentSet::ER_NONE",
+    "ID": 8837,
+    "BattleStartDashEnable": true,
+    "UseVictoryAction": true,
+    "ResultDashEnable": false,
+    "ItemEnable": true,
+    "GuardEnable": true,
+    "BoostEnable": true,
+    "BoostFinishResultEnable": true,
+    "BattleStartEvent": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "BattleStartEnemyVoiceEnable": false,
+    "WeaponUnloadGCType": "EWEAPON_UNLOAD_GC_TYPE::eTURN_END"
+  },
+  "enemy": {
+    "id": "ENE_NPC_Twn_Snw_1_2_A_1100",
+    "EnemyID": 13660,
+    "DisplayNameID": "None",
+    "ResourceLabel": "None",
+    "DisplayRank": 1,
+    "EnemyLevel": 1,
+    "DamageRatio": 1.1875,
+    "Size": "ECHARACTER_SIZE::eSMALL",
+    "NPCFlag": true,
+    "WeaponStance": "EWEAPON_STANCE::MALE",
+    "WeaponItemLabel": "ITM_EQP_AXE_010",
+    "DeadEffectSlow": false,
+    "MainEnemy": false,
+    "NonPartBattle": false,
+    "UseCatDamageType": false,
+    "DisableDeadKnockBack": false,
+    "Param": {
+      "HP": 280,
+      "MP": 96,
+      "BP": 3,
+      "SP": 1,
+      "POT": 0,
+      "ATK": 88,
+      "DEF": 94,
+      "MATK": 85,
+      "MDEF": 85,
+      "ACC": 66,
+      "EVA": 80,
+      "CON": 90,
+      "AGI": 68
+    },
+    "Exp": 3,
+    "JobPoint": 2,
+    "Money": 20,
+    "StealMoney": 0,
+    "TameEnable": false,
+    "DefaultTameRate": 0,
+    "InvadeMonsterID": "None",
+    "FirstBP": 0,
+    "DeadType": "EENEMY_DEAD_TYPE::eBOSS_M",
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "WeaponResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "StealGuard": true,
+    "HaveItemID": "ITM_CSM_0170",
+    "DropProbability": 30,
+    "EnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C"
+      },
+      "subPath": ""
+    },
+    "EnemyAbility": [
+      "ABI_NPB_2570",
+      "ABI_NPB_0040",
+      "ABI_NPB_0040",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "DiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1109393408,
+          "value": 40
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1126825984,
+          "value": 170
+        }
+      ]
+    },
+    "EnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3253731328,
+          "value": -30
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        },
+        {
+          "kind": "float32",
+          "bits": 1117126656,
+          "value": 75
+        }
+      ]
+    },
+    "StatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        }
+      ]
+    },
+    "DamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "IconL_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3212501320,
+          "value": -0.9800000190734863
+        },
+        {
+          "kind": "float32",
+          "bits": 1064514355,
+          "value": 0.949999988079071
+        }
+      ]
+    },
+    "PixelScaleL": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3187671040,
+          "value": -0.125
+        },
+        {
+          "kind": "float32",
+          "bits": 1040187392,
+          "value": 0.125
+        }
+      ]
+    },
+    "IconS_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3227265270,
+          "value": -3.440000057220459
+        },
+        {
+          "kind": "float32",
+          "bits": 1074790400,
+          "value": 2.25
+        }
+      ]
+    },
+    "PixelScaleS": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3179282432,
+          "value": -0.0625
+        },
+        {
+          "kind": "float32",
+          "bits": 1031798784,
+          "value": 0.0625
+        }
+      ]
+    },
+    "SPDiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1126825984,
+          "value": 170
+        }
+      ]
+    },
+    "SPEnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3253731328,
+          "value": -30
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        },
+        {
+          "kind": "float32",
+          "bits": 1117126656,
+          "value": 75
+        }
+      ]
+    },
+    "SPStatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        }
+      ]
+    },
+    "SPDamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "StealMoneyGuard": true,
+    "StealItemID": "None",
+    "AbilitySEDelay": 0,
+    "TextInfoLabel": "NPC_000",
+    "BribeGuard": false,
+    "BribeMoney": 1000,
+    "RevealShieldPoint": 5,
+    "RevealEnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C"
+      },
+      "subPath": ""
+    },
+    "DismantlingLabel": "ENE_NPC_Twn_Snw_1_2_A_1100_DISMANTLING",
+    "WarpOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3259498496,
+          "value": -50
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "LegendTameMonster": false,
+    "ActionModeResourceList": [
+      "None",
+      "None"
+    ],
+    "WaitEnemyActionFrame": 0,
+    "DisableBreakSlow": false,
+    "ID": 1001,
+    "NotInsertOrderWithCallEnemy": false,
+    "BreakCameraType": "EBREAK_CAMERA_TYPE::eNORMAL"
+  },
+  "character": {
+    "id": "ePROFESSOR",
+    "Id": 6,
+    "DisplayName": "CHARA_NAME_PC_0006",
+    "CharacterRole": "ECharacterRole::MAIN",
+    "ResourceLabel": [
+      "GakJ007_Mlb",
+      "GakJ003_Mlb",
+      "GakJ001_Mlb",
+      "GakJ006_Mlb",
+      "GakJ005_Mlb",
+      "GakJ008_Mlb",
+      "GakJ000_Mlb",
+      "GakJ002_Mlb",
+      "GakJ010_Mlb",
+      "GakJ011_Mlb",
+      "GakJ012_Mlb",
+      "GakJ009_Mlb"
+    ],
+    "GuestResourceLabel": "None",
+    "VoiceCueSheet_ja": [
+      "CueSheet_VO_EtcGAK_ja",
+      "CueSheet_VO_BattleGAK_ja",
+      "None",
+      "None"
+    ],
+    "VoiceCueSheet_en": [
+      "CueSheet_VO_EtcCyrus_en",
+      "CueSheet_VO_BattleCyrus_en",
+      "None",
+      "None"
+    ],
+    "VoiceSet": "PLAYER_VOICE_03",
+    "SpecialActionList": [
+      "ESpecialActionType::eSPECIAL_ACTION_006",
+      "ESpecialActionType::eNONE"
+    ],
+    "PotentialityActionLabel": "POTENTIALITY_ACTION_PROFESOR",
+    "SecondPotentialityActionLabel": "None",
+    "SecondPotentialityActionFlag": 0,
+    "UniqueStyle": "EBATTLE_STYLE_TYPE::eBOOST",
+    "ReleaseStyleFlag": 35,
+    "StyleAvailableCount": 1,
+    "InitLevel": 1,
+    "ParameterRevision": {
+      "HP": 80,
+      "MP": 120,
+      "BP": 100,
+      "SP": 100,
+      "POT": 100,
+      "ATK": 90,
+      "DEF": 90,
+      "MATK": 130,
+      "MDEF": 120,
+      "ACC": 100,
+      "EVA": 100,
+      "CON": 80,
+      "AGI": 90
+    },
+    "WeaponStance": "EWEAPON_STANCE::MALE_LARGE",
+    "MainWeapon": "EWEAPON_CATEGORY::eROD",
+    "FirstEquipment": {
+      "Sword": "None",
+      "Lance": "None",
+      "Dagger": "None",
+      "Axe": "None",
+      "Bow": "None",
+      "Rod": "ITM_EQP_ROD_020",
+      "Shield": "None",
+      "Head": "None",
+      "Body": "ITM_EQP_AMR_021",
+      "Accessory_00": "None",
+      "Accessory_01": "None"
+    },
+    "FirstJob": "EJOB_TYPE::ePROFESSOR",
+    "FieldCommandInfo": {
+      "DayTimeFC": "MJFieldCommandType::eSearch",
+      "DayTimeFCImpossibleFlag": 512,
+      "NightFC": "MJFieldCommandType::eRob",
+      "NightFCImpossibleFlag": 513
+    },
+    "MainMissionPlayingFlag": 2002,
+    "SymbolLabel": "symbol_scholar",
+    "SymbolWhLabel": "symbol_wh_scholar",
+    "DayPortraitLabel": "chara_portrait_professor_day",
+    "DayPortraitBgLabel": "chara_portrait_bg_professor_day",
+    "NightPortraitLabel": "chara_portrait_professor_night",
+    "NightPortraitBgLabel": "chara_portrait_bg_professor_night",
+    "PortraitNameLabel": "chara_portrait_name_professor",
+    "AdvancedAbility": [
+      {
+        "AbilityID": "ABI_SET_SCH_080",
+        "HiddenText": "eADVANCED_ABILITY_HIDDEN_TEXT_10"
+      },
+      {
+        "AbilityID": "ABI_SET_SCH_100",
+        "HiddenText": "eADVANCED_ABILITY_HIDDEN_TEXT_11"
+      }
+    ],
+    "TextInfoLabel": "PLAYER_000",
+    "CostumeList": [
+      {
+        "EventFlag": 4004,
+        "ResourceLabel": "GakE000_Mlb"
+      },
+      {
+        "EventFlag": 4010,
+        "ResourceLabel": "GakE001_Mlb"
+      },
+      {
+        "EventFlag": 4014,
+        "ResourceLabel": "GakE002_Mlb"
+      },
+      {
+        "EventFlag": 4015,
+        "ResourceLabel": "GakE003_Mlb"
+      }
+    ],
+    "CharmEnemyLabel": "ENE_BOS_DAN_C05_070",
+    "CharmEnemyLabelForKSBattle": "ENE_BOS_DLC_KSJ_044"
+  },
+  "staff": {
+    "id": "ITM_EQP_ROD_020",
+    "ID": 2204,
+    "ItemNameID": "TX_NA_ITM_EQP_ROD_020",
+    "DetailTextID": "TX_CO_ITM_EQP_ROD_020",
+    "IconLabel": "None",
+    "ItemCategory": "EItemCategoryData::eEQUIPMENT",
+    "SortCategory": 7,
+    "BackpackPriority": 518,
+    "DisplayType": "EITEM_DISPLAY_TYPE::eON_HIT",
+    "UseType": "EITEM_USE_TYPE::eDISABLE",
+    "MaxNum": 99,
+    "SpecialItemLabel": "None",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+    "Attribute": "EATTRIBUTE_TYPE::eNONE",
+    "Ailment": [
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "ValuableFlag": false,
+    "BuyPrice": 200,
+    "SellPrice": 40,
+    "BuyMeetCount": 0,
+    "SellMeetCount": 0,
+    "EquipmentCategory": "EEquipmentCategory::eROD",
+    "EquipmentTextureLabel": "WND_8422",
+    "EquipmentRevision": {
+      "HP": 0,
+      "MP": 0,
+      "BP": 0,
+      "SP": 0,
+      "POT": 0,
+      "ATK": 3,
+      "DEF": 0,
+      "MATK": 4,
+      "MDEF": 0,
+      "ACC": 0,
+      "EVA": 0,
+      "CON": 0,
+      "AGI": 0
+    },
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "CommandEffecter": {
+      "kind": "object",
+      "index": 0,
+      "path": null
+    },
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "TextInfoLabel": "ITEM_000",
+    "DisableAttackCommand": false,
+    "DisableRecoveryCommand": false,
+    "DisableReviveCommand": false,
+    "AbilityLabel": "None",
+    "DebugRecommendLv": 1
+  },
+  "armor": {
+    "id": "ITM_EQP_AMR_021",
+    "ID": 2305,
+    "ItemNameID": "TX_NA_ITM_EQP_AMR_021",
+    "DetailTextID": "TX_CO_ITM_EQP_AMR_021",
+    "IconLabel": "None",
+    "ItemCategory": "EItemCategoryData::eEQUIPMENT",
+    "SortCategory": 14,
+    "BackpackPriority": 679,
+    "DisplayType": "EITEM_DISPLAY_TYPE::eON_HIT",
+    "UseType": "EITEM_USE_TYPE::eDISABLE",
+    "MaxNum": 99,
+    "SpecialItemLabel": "None",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+    "Attribute": "EATTRIBUTE_TYPE::eNONE",
+    "Ailment": [
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "ValuableFlag": false,
+    "BuyPrice": 200,
+    "SellPrice": 40,
+    "BuyMeetCount": 0,
+    "SellMeetCount": 0,
+    "EquipmentCategory": "EEquipmentCategory::eLIGHT_ARMOR",
+    "EquipmentTextureLabel": "None",
+    "EquipmentRevision": {
+      "HP": 0,
+      "MP": 0,
+      "BP": 0,
+      "SP": 0,
+      "POT": 0,
+      "ATK": 0,
+      "DEF": 6,
+      "MATK": 0,
+      "MDEF": 3,
+      "ACC": 0,
+      "EVA": 0,
+      "CON": 0,
+      "AGI": 0
+    },
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "CommandEffecter": {
+      "kind": "object",
+      "index": 0,
+      "path": null
+    },
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "TextInfoLabel": "ITEM_000",
+    "DisableAttackCommand": false,
+    "DisableRecoveryCommand": false,
+    "DisableReviveCommand": false,
+    "AbilityLabel": "None",
+    "DebugRecommendLv": 1
+  },
+  "abilities": [
+    {
+      "id": "ABI_SET_SCH_010",
+      "r": {
+        "id": "ABI_SCH_010_01",
+        "ID": 1089,
+        "AbilityID": 10890,
+        "DisplayName": "ABN_SCH_010",
+        "Detail": "ABD_SCH_010_01",
+        "CommandActor": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+            "number": 0,
+            "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+          },
+          "subPath": ""
+        },
+        "AbilityType": "EABILITY_TYPE::eMAGIC",
+        "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+        "AlwaysDisable": false,
+        "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+        "DependWeapon": false,
+        "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+        "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+        "ExceptEnforcer": false,
+        "CostType": "EABILITY_COST_TYPE::eMP",
+        "CostValue": 14,
+        "HitRatio": 0,
+        "CriticalRatio": 0,
+        "CriticalPower": 125,
+        "AbilityRatio": 100,
+        "BaseCount": 0,
+        "MinimumCount": 0,
+        "RandomCountMin": 0,
+        "RandomCountMax": 0,
+        "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+        "EstimateOrderCount": 0,
+        "Ailment": [
+          {
+            "AilmentName": "MAGIC_DAMAGE",
+            "InvocationValue": 105,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          }
+        ],
+        "KeepBoostEffect": false,
+        "EnableItemAll": false,
+        "EnableSkillAll": false,
+        "EnableConvergence": true,
+        "EnableDiffusion": false,
+        "EnableReflection": true,
+        "EnableCounter": false,
+        "EnableHideOut": false,
+        "EnableRepeat": true,
+        "EnableCover": false,
+        "EnableProvoke": false,
+        "EnableDisableMagic": true,
+        "EnableEnchant": false,
+        "EnableChaseAttack": false,
+        "EnableWeakCheckAll": false,
+        "EnableNormalAttackAll": false,
+        "EnableSession": false,
+        "EnableBusinessSupport": false,
+        "EnableForceWeakness": true,
+        "EnableNoUseMaterial": false,
+        "EnableSwitchWeapon": false,
+        "EnableCompensationMagic": true,
+        "EnableExcitement": false,
+        "SongAbilityFlag": false,
+        "DanceAbilityFlag": false,
+        "EnableAutoTameMonster": true,
+        "UseAbilityCamera": true,
+        "ActionCommandSequencer": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+            "number": 0,
+            "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+          },
+          "subPath": ""
+        },
+        "AbilitySE": [
+          "None",
+          "None",
+          "None",
+          "None"
+        ],
+        "SlideFrame": 112
+      }
+    },
+    {
+      "id": "ABI_SET_SCH_020",
+      "r": {
+        "id": "ABI_SCH_020_01",
+        "ID": 1101,
+        "AbilityID": 11010,
+        "DisplayName": "ABN_SCH_020",
+        "Detail": "ABD_SCH_020_01",
+        "CommandActor": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+            "number": 0,
+            "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+          },
+          "subPath": ""
+        },
+        "AbilityType": "EABILITY_TYPE::eMAGIC",
+        "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+        "AlwaysDisable": false,
+        "Attribute": "EATTRIBUTE_TYPE::eICE",
+        "DependWeapon": false,
+        "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+        "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+        "ExceptEnforcer": false,
+        "CostType": "EABILITY_COST_TYPE::eMP",
+        "CostValue": 14,
+        "HitRatio": 0,
+        "CriticalRatio": 0,
+        "CriticalPower": 125,
+        "AbilityRatio": 100,
+        "BaseCount": 0,
+        "MinimumCount": 0,
+        "RandomCountMin": 0,
+        "RandomCountMax": 0,
+        "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+        "EstimateOrderCount": 0,
+        "Ailment": [
+          {
+            "AilmentName": "MAGIC_DAMAGE",
+            "InvocationValue": 105,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          }
+        ],
+        "KeepBoostEffect": false,
+        "EnableItemAll": false,
+        "EnableSkillAll": false,
+        "EnableConvergence": true,
+        "EnableDiffusion": false,
+        "EnableReflection": true,
+        "EnableCounter": false,
+        "EnableHideOut": false,
+        "EnableRepeat": true,
+        "EnableCover": false,
+        "EnableProvoke": false,
+        "EnableDisableMagic": true,
+        "EnableEnchant": false,
+        "EnableChaseAttack": false,
+        "EnableWeakCheckAll": false,
+        "EnableNormalAttackAll": false,
+        "EnableSession": false,
+        "EnableBusinessSupport": false,
+        "EnableForceWeakness": true,
+        "EnableNoUseMaterial": false,
+        "EnableSwitchWeapon": false,
+        "EnableCompensationMagic": true,
+        "EnableExcitement": false,
+        "SongAbilityFlag": false,
+        "DanceAbilityFlag": false,
+        "EnableAutoTameMonster": true,
+        "UseAbilityCamera": true,
+        "ActionCommandSequencer": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic",
+            "number": 0,
+            "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic"
+          },
+          "subPath": ""
+        },
+        "AbilitySE": [
+          "None",
+          "None",
+          "None",
+          "None"
+        ],
+        "SlideFrame": 112
+      }
+    },
+    {
+      "id": "attack_staff",
+      "r": {
+        "id": "NORMAL_ATTACK_ROD_1",
+        "ID": 50,
+        "AbilityID": 470,
+        "DisplayName": "BASIC_COMMAND_002",
+        "Detail": "BASIC_COMMAND_002_DETAIL",
+        "CommandActor": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/BP/BattleAction/NormalAttack/NormalAttackCommand.NormalAttackCommand_C",
+            "number": 0,
+            "text": "/Game/Battle/BP/BattleAction/NormalAttack/NormalAttackCommand.NormalAttackCommand_C"
+          },
+          "subPath": ""
+        },
+        "AbilityType": "EABILITY_TYPE::ePHYSICS",
+        "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+        "AlwaysDisable": false,
+        "Attribute": "EATTRIBUTE_TYPE::eNONE",
+        "DependWeapon": true,
+        "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+        "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+        "ExceptEnforcer": false,
+        "CostType": "EABILITY_COST_TYPE::eNONE",
+        "CostValue": 0,
+        "HitRatio": 20,
+        "CriticalRatio": 0,
+        "CriticalPower": 125,
+        "AbilityRatio": 80,
+        "BaseCount": 0,
+        "MinimumCount": 0,
+        "RandomCountMin": 0,
+        "RandomCountMax": 0,
+        "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+        "EstimateOrderCount": 0,
+        "Ailment": [
+          {
+            "AilmentName": "PHYSICS_DAMAGE",
+            "InvocationValue": 100,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          }
+        ],
+        "KeepBoostEffect": false,
+        "EnableItemAll": false,
+        "EnableSkillAll": false,
+        "EnableConvergence": false,
+        "EnableDiffusion": false,
+        "EnableReflection": false,
+        "EnableCounter": true,
+        "EnableHideOut": true,
+        "EnableRepeat": false,
+        "EnableCover": true,
+        "EnableProvoke": true,
+        "EnableDisableMagic": false,
+        "EnableEnchant": true,
+        "EnableChaseAttack": false,
+        "EnableWeakCheckAll": false,
+        "EnableNormalAttackAll": true,
+        "EnableSession": false,
+        "EnableBusinessSupport": false,
+        "EnableForceWeakness": true,
+        "EnableNoUseMaterial": false,
+        "EnableSwitchWeapon": false,
+        "EnableCompensationMagic": false,
+        "EnableExcitement": false,
+        "SongAbilityFlag": false,
+        "DanceAbilityFlag": false,
+        "EnableAutoTameMonster": true,
+        "UseAbilityCamera": false,
+        "ActionCommandSequencer": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv0.Normal_Attack_Rod_Lv0",
+            "number": 0,
+            "text": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv0.Normal_Attack_Rod_Lv0"
+          },
+          "subPath": ""
+        },
+        "AbilitySE": [
+          "None",
+          "None",
+          "None",
+          "None"
+        ],
+        "SlideFrame": 0
+      }
+    },
+    {
+      "id": "ABI_NPB_2570",
+      "r": {
+        "id": "ABI_NPB_2570",
+        "ID": 16593,
+        "AbilityID": 0,
+        "DisplayName": "ABN_NPC_2570",
+        "Detail": "None",
+        "CommandActor": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+            "number": 0,
+            "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+          },
+          "subPath": ""
+        },
+        "AbilityType": "EABILITY_TYPE::eBUFF",
+        "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+        "AlwaysDisable": false,
+        "Attribute": "EATTRIBUTE_TYPE::eNONE",
+        "DependWeapon": false,
+        "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+        "TargetType": "EBATTLE_TARGET_TYPE::eSELF",
+        "ExceptEnforcer": false,
+        "CostType": "EABILITY_COST_TYPE::eNONE",
+        "CostValue": 0,
+        "HitRatio": 0,
+        "CriticalRatio": 0,
+        "CriticalPower": 150,
+        "AbilityRatio": 100,
+        "BaseCount": 0,
+        "MinimumCount": 0,
+        "RandomCountMin": 0,
+        "RandomCountMax": 0,
+        "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+        "EstimateOrderCount": 0,
+        "Ailment": [
+          {
+            "AilmentName": "ADD_DEF_UP",
+            "InvocationValue": 0,
+            "InvocationTurn": 2,
+            "DiseaseRate": 100
+          },
+          {
+            "AilmentName": "ADD_MDEF_UP",
+            "InvocationValue": 0,
+            "InvocationTurn": 2,
+            "DiseaseRate": 100
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          }
+        ],
+        "KeepBoostEffect": false,
+        "EnableItemAll": false,
+        "EnableSkillAll": false,
+        "EnableConvergence": false,
+        "EnableDiffusion": true,
+        "EnableReflection": false,
+        "EnableCounter": false,
+        "EnableHideOut": false,
+        "EnableRepeat": true,
+        "EnableCover": false,
+        "EnableProvoke": false,
+        "EnableDisableMagic": false,
+        "EnableEnchant": false,
+        "EnableChaseAttack": false,
+        "EnableWeakCheckAll": false,
+        "EnableNormalAttackAll": false,
+        "EnableSession": false,
+        "EnableBusinessSupport": false,
+        "EnableForceWeakness": false,
+        "EnableNoUseMaterial": false,
+        "EnableSwitchWeapon": false,
+        "EnableCompensationMagic": false,
+        "EnableExcitement": true,
+        "SongAbilityFlag": false,
+        "DanceAbilityFlag": false,
+        "EnableAutoTameMonster": false,
+        "UseAbilityCamera": false,
+        "ActionCommandSequencer": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/Sequencer/ActionCommand/NPC/00_Buff/Seq_NPC_Buff_Defence_MagicDefence_NoAct.Seq_NPC_Buff_Defence_MagicDefence_NoAct",
+            "number": 0,
+            "text": "/Game/Battle/Sequencer/ActionCommand/NPC/00_Buff/Seq_NPC_Buff_Defence_MagicDefence_NoAct.Seq_NPC_Buff_Defence_MagicDefence_NoAct"
+          },
+          "subPath": ""
+        },
+        "AbilitySE": [
+          "None",
+          "None",
+          "None",
+          "None"
+        ],
+        "SlideFrame": 0
+      }
+    },
+    {
+      "id": "ABI_NPB_0040",
+      "r": {
+        "id": "ABI_NPB_0040",
+        "ID": 8004,
+        "AbilityID": 50040,
+        "DisplayName": "ABN_NPC_0040",
+        "Detail": "None",
+        "CommandActor": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+            "number": 0,
+            "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+          },
+          "subPath": ""
+        },
+        "AbilityType": "EABILITY_TYPE::ePHYSICS",
+        "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+        "AlwaysDisable": false,
+        "Attribute": "EATTRIBUTE_TYPE::eNONE",
+        "DependWeapon": false,
+        "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+        "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+        "ExceptEnforcer": false,
+        "CostType": "EABILITY_COST_TYPE::eNONE",
+        "CostValue": 0,
+        "HitRatio": 0,
+        "CriticalRatio": 0,
+        "CriticalPower": 150,
+        "AbilityRatio": 100,
+        "BaseCount": 0,
+        "MinimumCount": 0,
+        "RandomCountMin": 0,
+        "RandomCountMax": 0,
+        "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+        "EstimateOrderCount": 0,
+        "Ailment": [
+          {
+            "AilmentName": "PHYSICS_DAMAGE",
+            "InvocationValue": 100,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          },
+          {
+            "AilmentName": "None",
+            "InvocationValue": 0,
+            "InvocationTurn": 0,
+            "DiseaseRate": 0
+          }
+        ],
+        "KeepBoostEffect": false,
+        "EnableItemAll": false,
+        "EnableSkillAll": false,
+        "EnableConvergence": false,
+        "EnableDiffusion": false,
+        "EnableReflection": false,
+        "EnableCounter": true,
+        "EnableHideOut": true,
+        "EnableRepeat": false,
+        "EnableCover": true,
+        "EnableProvoke": true,
+        "EnableDisableMagic": false,
+        "EnableEnchant": true,
+        "EnableChaseAttack": false,
+        "EnableWeakCheckAll": false,
+        "EnableNormalAttackAll": false,
+        "EnableSession": false,
+        "EnableBusinessSupport": false,
+        "EnableForceWeakness": false,
+        "EnableNoUseMaterial": false,
+        "EnableSwitchWeapon": false,
+        "EnableCompensationMagic": false,
+        "EnableExcitement": false,
+        "SongAbilityFlag": false,
+        "DanceAbilityFlag": false,
+        "EnableAutoTameMonster": false,
+        "UseAbilityCamera": false,
+        "ActionCommandSequencer": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "/Game/Battle/Sequencer/ActionCommand/NPC/01_Axe/Seq_NPC_Axe_Single_1.Seq_NPC_Axe_Single",
+            "number": 2,
+            "text": "/Game/Battle/Sequencer/ActionCommand/NPC/01_Axe/Seq_NPC_Axe_Single_1.Seq_NPC_Axe_Single_1"
+          },
+          "subPath": ""
+        },
+        "AbilitySE": [
+          "None",
+          "None",
+          "None",
+          "None"
+        ],
+        "SlideFrame": 0
+      }
+    }
+  ],
+  "voiceRows": [
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_COUNTER",
+      "Id": 4059,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": true,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 220,
+      "VoiceLabel": "VO_GAK_PC_BT_00140"
+    },
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_DEBUFF",
+      "Id": 4060,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 210,
+      "VoiceLabel": "VO_GAK_PC_BT_00160"
+    },
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_SMALL",
+      "Id": 132,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 25,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 200,
+      "VoiceLabel": "VO_GAK_PC_BT_00220"
+    },
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_MEDIUM",
+      "Id": 133,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 50,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 190,
+      "VoiceLabel": "VO_GAK_PC_BT_00221"
+    },
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_LARGE",
+      "Id": 134,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 75,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 180,
+      "VoiceLabel": "VO_GAK_PC_BT_00222"
+    },
+    {
+      "id": "PROFESSOR_eBATTLE_START_FC",
+      "Id": 440,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": true,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 120,
+      "VoiceLabel": "VO_GAK_PC_BT_S0000"
+    },
+    {
+      "id": "PROFESSOR_eON_BOOST_Lv1",
+      "Id": 124,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 1,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 120,
+      "VoiceLabel": "VO_GAK_PC_BT_00110"
+    },
+    {
+      "id": "PROFESSOR_eBATTLE_START_BOSS",
+      "Id": 439,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": true,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 110,
+      "VoiceLabel": "VO_GAK_PC_BT_00010"
+    },
+    {
+      "id": "PROFESSOR_eON_BOOST_Lv2",
+      "Id": 125,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 2,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 110,
+      "VoiceLabel": "VO_GAK_PC_BT_00120"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH",
+      "Id": 2373,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": true,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 104,
+      "VoiceLabel": "VO_GAK_PC_BT_00040"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BADSTATUS",
+      "Id": 2372,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": true,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDECONDITION",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 103,
+      "VoiceLabel": "VO_GAK_PC_BT_00050"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_KEN",
+      "Id": 2276,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eFENCER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1000"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_SIN",
+      "Id": 2277,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "ePRIEST",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1010"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_SHO",
+      "Id": 2278,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eMERCHANT",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1020"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_ODO",
+      "Id": 2279,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eDANCER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1030"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_KAR",
+      "Id": 2281,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eHUNTER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1050"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_KUS",
+      "Id": 2282,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eALCHEMIST",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1060"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_TOU",
+      "Id": 2283,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eTHIEF",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1070"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_BREAK_GUEST_005",
+      "Id": 2286,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eGUEST_005",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": true,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 50,
+      "Priority": 102,
+      "VoiceLabel": "VO_GAK_PC_BT_S1100"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_KEN",
+      "Id": 2287,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eFENCER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2000"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_SIN",
+      "Id": 2288,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "ePRIEST",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2010"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_SHO",
+      "Id": 2289,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eMERCHANT",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2020"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_ODO",
+      "Id": 2290,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eDANCER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2030"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_KAR",
+      "Id": 2292,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eHUNTER",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2050"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_KUS",
+      "Id": 2293,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eALCHEMIST",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2060"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_TOU",
+      "Id": 2294,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eTHIEF",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2070"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_PINCH_GUEST_005",
+      "Id": 2297,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "eGUEST_005",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": true,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 101,
+      "VoiceLabel": "VO_GAK_PC_BT_S2100"
+    },
+    {
+      "id": "PROFESSOR_eBATTLE_START_COMMON",
+      "Id": 121,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_START",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00000"
+    },
+    {
+      "id": "PROFESSOR_eBATTLE_VICTORY_COMMON",
+      "Id": 122,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBATTLE_VICTORY",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00020"
+    },
+    {
+      "id": "PROFESSOR_eORDER_START_COMMON",
+      "Id": 123,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eORDER_START",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00030"
+    },
+    {
+      "id": "PROFESSOR_eON_BOOST_Lv3",
+      "Id": 126,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_BOOST",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 3,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00130"
+    },
+    {
+      "id": "PROFESSOR_eNORMAL_ATTACK_COMMON",
+      "Id": 127,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00060"
+    },
+    {
+      "id": "PROFESSOR_eNORMAL_ATTACK_LAST_HIT_COMMON",
+      "Id": 128,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eNORMAL_ATTACK_LAST_HIT",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_01010"
+    },
+    {
+      "id": "PROFESSOR_eOPEN_WEAKNESS_COMMON",
+      "Id": 129,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eOPEN_WEAKNESS",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00070"
+    },
+    {
+      "id": "PROFESSOR_eBREAK_ENEMY_COMMON",
+      "Id": 130,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eBREAK_ENEMY",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00090"
+    },
+    {
+      "id": "PROFESSOR_eKILL_ENEMY_COMMON",
+      "Id": 131,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eKILL_ENEMY",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00100"
+    },
+    {
+      "id": "PROFESSOR_eTAKE_DAMAGE_FATAL",
+      "Id": 135,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eTAKE_DAMAGE",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00223"
+    },
+    {
+      "id": "PROFESSOR_eON_DEAD_COMMON",
+      "Id": 136,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_DEAD",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00230"
+    },
+    {
+      "id": "PROFESSOR_eON_AVOID_COMMON",
+      "Id": 137,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::eON_AVOID",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00150"
+    },
+    {
+      "id": "PROFESSOR_ePLAY_GUARD_COMMON",
+      "Id": 142,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_GUARD",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "None",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_BT_00240"
+    },
+    {
+      "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01",
+      "Id": 812,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "ABI_SCH_010_01",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_AB_04020"
+    },
+    {
+      "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_020_01",
+      "Id": 815,
+      "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+      "TargetSelf": false,
+      "TargetID": "None",
+      "InvadeID": "None",
+      "SupporterID": "None",
+      "EnemyID": "None",
+      "EnemyGroupID": "None",
+      "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+      "AbilityID": "ABI_SCH_020_01",
+      "EventFlag": "None",
+      "BossFlag": false,
+      "FieldCommandFlag": false,
+      "PinchFlag": false,
+      "JustBreakFlag": false,
+      "CounterFlag": false,
+      "SongFlag": false,
+      "DanceFlag": false,
+      "MeatFlag": false,
+      "Border": 0,
+      "PlayOnce": false,
+      "VoiceRate": 100,
+      "Priority": 100,
+      "VoiceLabel": "VO_GAK_PC_AB_04030"
+    }
+  ],
+  "schedules": [
+    {
+      "id": "ABI_SET_SCH_010",
+      "asset": "Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0b7ba LocalVirtualFunction Fx_PS_Btl_Chant_Magic_A_Event_1\n  0b7c3 LocalVariable Fx_PS_Btl_Chant_Magic_A\n  0b7d4 NameConst HueShift\n  0b7dd FloatConst 0.949999988079071\n0b7e3 Return\n  0b7e4 Nothing\n0b7e5 EndOfScript"
+        },
+        {
+          "time": 125,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0b72f LocalVirtualFunction Fx_PS_Btl_Chant_Magic_A_Event_0\n  0b738 LocalVariable Fx_PS_Btl_Chant_Magic_A\n  0b749 NameConst HueShift\n  0b752 FloatConst 0.699999988079071\n0b758 Return\n  0b759 Nothing\n0b75a EndOfScript"
+        },
+        {
+          "time": 800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0b812 LocalVirtualFunction PlayVoice\n  0b81b ByteConst 18\n  0b81d ByteConst 0\n  0b81f ByteConst 0\n0b822 Return\n  0b823 Nothing\n0b824 EndOfScript"
+        },
+        {
+          "time": 7953,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0b629 LocalVirtualFunction PlayAction\n  0b632 LocalVariable Character\n  0b643 ByteConst 116\n  0b645 ByteConst 6\n  0b647 ByteConst 106\n0b64a Return\n  0b64b Nothing\n0b64c EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0b5b4 LocalVirtualFunction PlaySE\n  0b5bd NameConst se_bat_ability_scholar_09\n0b5c7 Return\n  0b5c8 Nothing\n0b5c9 EndOfScript"
+        },
+        {
+          "time": 32302,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0b6ac LocalVirtualFunction PlayAction\n  0b6b5 LocalVariable Character\n  0b6c6 ByteConst 119\n  0b6c8 ByteConst 6\n  0b6ca ByteConst 109\n0b6cd Return\n  0b6ce Nothing\n0b6cf EndOfScript"
+        },
+        {
+          "time": 63112,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0b574 LocalVirtualFunction ExecAilment\n  0b57d IntConst 0\n  0b582 True\n  0b583 True\n0b585 Return\n  0b586 Nothing\n0b587 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_020",
+      "asset": "Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic",
+      "events": [
+        {
+          "time": 574,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0b68f LocalVirtualFunction Fx_PS_Btl_Chant_Magic_A_Event_0\n  0b698 LocalVariable Fx_PS_Btl_Chant_Magic_A\n  0b6a9 NameConst HueShift\n  0b6b2 FloatConst 0.5\n0b6b8 Return\n  0b6b9 Nothing\n0b6ba EndOfScript"
+        },
+        {
+          "time": 3200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0b6e7 LocalVirtualFunction PlayVoice\n  0b6f0 ByteConst 18\n  0b6f2 ByteConst 0\n  0b6f4 ByteConst 0\n0b6f7 Return\n  0b6f8 Nothing\n0b6f9 EndOfScript"
+        },
+        {
+          "time": 7997,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0b589 LocalVirtualFunction PlayAction\n  0b592 LocalVariable Character\n  0b5a3 ByteConst 116\n  0b5a5 ByteConst 6\n  0b5a7 ByteConst 106\n0b5aa Return\n  0b5ab Nothing\n0b5ac EndOfScript"
+        },
+        {
+          "time": 13597,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0b514 LocalVirtualFunction PlaySE\n  0b51d NameConst se_bat_ability_scholar_12\n0b527 Return\n  0b528 Nothing\n0b529 EndOfScript"
+        },
+        {
+          "time": 32189,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0b60c LocalVirtualFunction PlayAction\n  0b615 LocalVariable Character\n  0b626 ByteConst 119\n  0b628 ByteConst 6\n  0b62a ByteConst 109\n0b62d Return\n  0b62e Nothing\n0b62f EndOfScript"
+        },
+        {
+          "time": 58848,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0b4d4 LocalVirtualFunction ExecAilment\n  0b4dd IntConst 0\n  0b4e2 True\n  0b4e3 True\n0b4e5 Return\n  0b4e6 Nothing\n0b4e7 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_staff",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv0",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "083a7 LocalVirtualFunction PlayVoice\n  083b0 ByteConst 6\n  083b2 ByteConst 0\n  083b4 ByteConst 0\n083b7 Return\n  083b8 Nothing\n083b9 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "08357 LocalVirtualFunction PlayAction\n  08360 LocalVariable Character\n  08371 ByteConst 42\n  08373 ByteConst 0\n  08375 ByteConst 0\n08378 Return\n  08379 Nothing\n0837a EndOfScript"
+        },
+        {
+          "time": 5600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "082e2 LocalVirtualFunction PlaySE\n  082eb NameConst se_bat_atk_sword\n082f5 Return\n  082f6 Nothing\n082f7 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "082a2 LocalVirtualFunction ExecAilment\n  082ab IntConst 0\n  082b0 True\n  082b1 True\n082b3 Return\n  082b4 Nothing\n082b5 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "ABI_NPB_2570",
+      "asset": "Battle/Sequencer/ActionCommand/NPC/00_Buff/Seq_NPC_Buff_Defence_MagicDefence_NoAct",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0e339 LocalVirtualFunction PlayVoice\n  0e342 ByteConst 18\n  0e344 ByteConst 0\n  0e346 ByteConst 0\n0e349 Return\n  0e34a Nothing\n0e34b EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0e2b5 LocalVirtualFunction PlaySE\n  0e2be NameConst se_bat_buff\n0e2c8 Return\n  0e2c9 Nothing\n0e2ca EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0e235 LocalVirtualFunction ExecAilment\n  0e23e IntConst 0\n  0e243 False\n  0e244 False\n0e246 Return\n  0e247 Nothing\n0e248 EndOfScript"
+        },
+        {
+          "time": 28000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0e2f7 LocalVirtualFunction PlaySE\n  0e300 NameConst se_bat_buff\n0e30a Return\n  0e30b Nothing\n0e30c EndOfScript"
+        },
+        {
+          "time": 28000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0e275 LocalVirtualFunction ExecAilment\n  0e27e IntConst 1\n  0e283 False\n  0e284 True\n0e286 Return\n  0e287 Nothing\n0e288 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "ABI_NPB_0040",
+      "asset": "Battle/Sequencer/ActionCommand/NPC/01_Axe/Seq_NPC_Axe_Single_1",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0e0c9 LocalVirtualFunction PlayVoice\n  0e0d2 ByteConst 18\n  0e0d4 ByteConst 0\n  0e0d6 ByteConst 0\n0e0d9 Return\n  0e0da Nothing\n0e0db EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0e078 LocalVirtualFunction PlayAction\n  0e081 LocalVariable Character\n  0e092 ByteConst 115\n  0e094 ByteConst 0\n  0e096 ByteConst 0\n  0e098 False\n0e09a Return\n  0e09b Nothing\n0e09c EndOfScript"
+        },
+        {
+          "time": 14400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0dfc1 LocalVirtualFunction PlaySE\n  0dfca NameConst se_bat_atk_axe\n0dfd4 Return\n  0dfd5 Nothing\n0dfd6 EndOfScript"
+        },
+        {
+          "time": 19200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0e003 LocalVirtualFunction PlaySE\n  0e00c NameConst se_bat_atk_axe_02\n0e016 Return\n  0e017 Nothing\n0e018 EndOfScript"
+        },
+        {
+          "time": 20800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0df81 LocalVirtualFunction ExecAilment\n  0df8a IntConst 0\n  0df8f True\n  0df90 True\n0df92 Return\n  0df93 Nothing\n0df94 EndOfScript"
+        }
+      ]
+    }
+  ]
+}

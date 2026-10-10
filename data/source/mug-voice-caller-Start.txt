@@ -1,0 +1,1947 @@
+4b488 PushExecutionFlow target=17765
+4b48d LetBool
+  4b48e LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b49f CallMath import:-294:NotEqual_IntInt
+    4b4a4 InstanceVariable LocalStep
+    4b4b5 IntConst 0
+4b4bb JumpIfNot target=630
+  4b4c0 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b4d1 LetBool
+  4b4d2 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b4e3 CallMath import:-294:NotEqual_IntInt
+    4b4e8 InstanceVariable LocalStep
+    4b4f9 IntConst 1
+4b4ff JumpIfNot target=1479
+  4b504 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b515 LetBool
+  4b516 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b527 CallMath import:-294:NotEqual_IntInt
+    4b52c InstanceVariable LocalStep
+    4b53d IntConst 2
+4b543 JumpIfNot target=2480
+  4b548 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b559 LetBool
+  4b55a LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b56b CallMath import:-294:NotEqual_IntInt
+    4b570 InstanceVariable LocalStep
+    4b581 IntConst 3
+4b587 JumpIfNot target=3348
+  4b58c LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b59d LetBool
+  4b59e LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b5af CallMath import:-294:NotEqual_IntInt
+    4b5b4 InstanceVariable LocalStep
+    4b5c5 IntConst 4
+4b5cb JumpIfNot target=4240
+  4b5d0 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b5e1 LetBool
+  4b5e2 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b5f3 CallMath import:-294:NotEqual_IntInt
+    4b5f8 InstanceVariable LocalStep
+    4b609 IntConst 5
+4b60f JumpIfNot target=5300
+  4b614 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b625 LetBool
+  4b626 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b637 CallMath import:-294:NotEqual_IntInt
+    4b63c InstanceVariable LocalStep
+    4b64d IntConst 6
+4b653 JumpIfNot target=6403
+  4b658 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b669 LetBool
+  4b66a LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b67b CallMath import:-294:NotEqual_IntInt
+    4b680 InstanceVariable LocalStep
+    4b691 IntConst 7
+4b697 JumpIfNot target=7624
+  4b69c LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b6ad LetBool
+  4b6ae LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b6bf CallMath import:-294:NotEqual_IntInt
+    4b6c4 InstanceVariable LocalStep
+    4b6d5 IntConst 8
+4b6db JumpIfNot target=17135
+  4b6e0 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b6f1 LetBool
+  4b6f2 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b703 CallMath import:-294:NotEqual_IntInt
+    4b708 InstanceVariable LocalStep
+    4b719 IntConst 9
+4b71f JumpIfNot target=17261
+  4b724 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b735 LetBool
+  4b736 LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b747 CallMath import:-294:NotEqual_IntInt
+    4b74c InstanceVariable LocalStep
+    4b75d IntConst 10
+4b763 JumpIfNot target=17387
+  4b768 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b779 LetBool
+  4b77a LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b78b CallMath import:-294:NotEqual_IntInt
+    4b790 InstanceVariable LocalStep
+    4b7a1 IntConst 11
+4b7a7 JumpIfNot target=17513
+  4b7ac LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b7bd LetBool
+  4b7be LocalVariable K2Node_SwitchInteger_CmpSuccess
+  4b7cf CallMath import:-294:NotEqual_IntInt
+    4b7d4 InstanceVariable LocalStep
+    4b7e5 IntConst 12
+4b7eb JumpIfNot target=17639
+  4b7f0 LocalVariable K2Node_SwitchInteger_CmpSuccess
+4b801 PopExecutionFlow
+4b802 Context skip=64 rvalue=<null-field>
+  4b803 ObjectConst import:-567:Default__LibGetParam_C
+  4b814 LocalVirtualFunction GetBattleParamToFloat
+    4b81d NameConst BTLST_ENEMY_FADE_AFTER
+    4b826 Self
+    4b827 LocalVariable CallFunc_GetBattleParamToFloat_Min_7
+    4b838 LocalVariable CallFunc_GetBattleParamToFloat_Max_7
+    4b849 LocalVariable CallFunc_GetBattleParamToFloat_Init_7
+    4b85a LocalVariable CallFunc_GetBattleParamToFloat_Param_7
+4b86c Let property=WaitTimeSec
+  4b87d InstanceVariable WaitTimeSec
+  4b88e LocalVariable CallFunc_GetBattleParamToFloat_Param_7
+4b89f Let property=ElapsedTime
+  4b8b0 InstanceVariable ElapsedTime
+  4b8c1 FloatConst 0
+4b8c6 Let property=CallFunc_Add_IntInt_ReturnValue_11
+  4b8d7 LocalVariable CallFunc_Add_IntInt_ReturnValue_11
+  4b8e8 CallMath import:-259:Add_IntInt
+    4b8ed InstanceVariable LocalStep
+    4b8fe IntConst 1
+4b904 Let property=LocalStep
+  4b915 InstanceVariable LocalStep
+  4b926 LocalVariable CallFunc_Add_IntInt_ReturnValue_11
+4b937 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_10
+  4b948 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_10
+  4b959 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4b95e ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4b963 InstanceVariable CurrentFlow
+4b975 Let property=CallFunc_Conv_IntToString_ReturnValue_10
+  4b986 LocalVariable CallFunc_Conv_IntToString_ReturnValue_10
+  4b997 CallMath import:-309:Conv_IntToString
+    4b99c InstanceVariable LocalStep
+4b9ae Let property=CallFunc_Concat_StrStr_ReturnValue_30
+  4b9bf LocalVariable CallFunc_Concat_StrStr_ReturnValue_30
+  4b9d0 CallMath import:-304:Concat_StrStr
+    4b9d5 StringConst "CurrentFlow : "
+    4b9e5 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_10
+4b9f7 Let property=CallFunc_Concat_StrStr_ReturnValue_31
+  4ba08 LocalVariable CallFunc_Concat_StrStr_ReturnValue_31
+  4ba19 CallMath import:-304:Concat_StrStr
+    4ba1e LocalVariable CallFunc_Concat_StrStr_ReturnValue_30
+    4ba2f StringConst "\r\nCurrentLocalStep : "
+4ba47 Let property=CallFunc_Concat_StrStr_ReturnValue_32
+  4ba58 LocalVariable CallFunc_Concat_StrStr_ReturnValue_32
+  4ba69 CallMath import:-304:Concat_StrStr
+    4ba6e LocalVariable CallFunc_Concat_StrStr_ReturnValue_31
+    4ba7f LocalVariable CallFunc_Conv_IntToString_ReturnValue_10
+4ba91 Let property=CallFunc_Conv_StringToText_ReturnValue_10
+  4baa2 LocalVariable CallFunc_Conv_StringToText_ReturnValue_10
+  4bab3 CallMath import:-335:Conv_StringToText
+    4bab8 LocalVariable CallFunc_Concat_StrStr_ReturnValue_32
+4baca Let property=m_eCategory
+  4badb StructMemberContext m_eCategory
+    4baec LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bafd ByteConst 1
+4baff Let property=m_strTitle
+  4bb10 StructMemberContext m_strTitle
+    4bb21 LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bb32 TextConst kind=1
+    4bb34 StringConst "ChangeBattleStep"
+    4bb46 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4bb68 StringConst ""
+4bb6a Let property=m_strIssuer
+  4bb7b StructMemberContext m_strIssuer
+    4bb8c LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bb9d TextConst kind=1
+    4bb9f StringConst "BattleManager"
+    4bbae StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4bbd0 StringConst ""
+4bbd2 Let property=m_strComment
+  4bbe3 StructMemberContext m_strComment
+    4bbf4 LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bc05 LocalVariable CallFunc_Conv_StringToText_ReturnValue_10
+4bc16 Let property=m_strDetail
+  4bc27 StructMemberContext m_strDetail
+    4bc38 LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bc49 TextConst kind=0
+4bc4b Let property=m_astrTagList
+  4bc5c StructMemberContext m_astrTagList
+    4bc6d LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+  4bc7e TextConst kind=1
+    4bc80 StringConst "BattleFlow,ChangeStep"
+    4bc97 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4bcb9 StringConst ""
+4bcbb CallMath import:-382:AddBattleLog
+  4bcc0 LocalVariable K2Node_MakeStruct_DebugBattleLog_10
+4bcd2 PopExecutionFlow
+4bcd3 Context skip=33 rvalue=<null-field>
+  4bcd4 ObjectConst import:-554:Default__KismetArrayLibrary
+  4bce5 FinalFunction import:-247:Array_Get
+    4bcea InstanceVariable m_acBattleEnemy
+    4bcfb IntConst 0
+    4bd00 LocalVariable CallFunc_Array_Get_Item
+4bd12 Let property=<null-field>
+  4bd1b LocalVariable K2Node_DynamicCast_AsBattle_Enemy_BP
+  4bd2c DynamicCast import:-30:BattleEnemyBP_C
+    4bd31 LocalVariable CallFunc_Array_Get_Item
+4bd42 Let property=<null-field>
+  4bd4b LocalVariable K2Node_DynamicCast_bSuccess
+  4bd5c Cast cast=71
+    4bd5e LocalVariable K2Node_DynamicCast_AsBattle_Enemy_BP
+4bd6f Context skip=23 rvalue=<null-field>
+  4bd70 LocalVariable K2Node_DynamicCast_AsBattle_Enemy_BP
+  4bd8d LocalVirtualFunction IsShowFadePlaying
+    4bd96 LocalVariable CallFunc_IsShowFadePlaying_Playing
+4bda8 JumpIfNot target=1659
+  4bdad LocalVariable CallFunc_IsShowFadePlaying_Playing
+4bdbe PopExecutionFlow
+4bdbf Context skip=24 rvalue=<null-field>
+  4bdc0 ObjectConst import:-559:Default__LevelFunction_C
+  4bdd1 LocalVirtualFunction IsLevelChanging
+    4bdda Self
+    4bddb LocalVariable CallFunc_IsLevelChanging_IsChanging
+4bded JumpIfNot target=1720
+  4bdf2 LocalVariable CallFunc_IsLevelChanging_IsChanging
+4be03 PopExecutionFlow
+4be04 LocalVirtualFunction CollectSPBattleObject
+4be0e JumpIfNot target=2461
+  4be13 InstanceVariable m_bIsBattleEvent
+4be24 Let property=CallFunc_Add_IntInt_ReturnValue_17
+  4be35 LocalVariable CallFunc_Add_IntInt_ReturnValue_17
+  4be46 CallMath import:-259:Add_IntInt
+    4be4b InstanceVariable LocalStep
+    4be5c IntConst 1
+4be62 Let property=LocalStep
+  4be73 InstanceVariable LocalStep
+  4be84 LocalVariable CallFunc_Add_IntInt_ReturnValue_17
+4be95 Let property=CallFunc_Conv_IntToString_ReturnValue_15
+  4bea6 LocalVariable CallFunc_Conv_IntToString_ReturnValue_15
+  4beb7 CallMath import:-309:Conv_IntToString
+    4bebc InstanceVariable LocalStep
+4bece Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_15
+  4bedf LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_15
+  4bef0 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4bef5 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4befa InstanceVariable CurrentFlow
+4bf0c Let property=CallFunc_Concat_StrStr_ReturnValue_45
+  4bf1d LocalVariable CallFunc_Concat_StrStr_ReturnValue_45
+  4bf2e CallMath import:-304:Concat_StrStr
+    4bf33 StringConst "CurrentFlow : "
+    4bf43 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_15
+4bf55 Let property=CallFunc_Concat_StrStr_ReturnValue_46
+  4bf66 LocalVariable CallFunc_Concat_StrStr_ReturnValue_46
+  4bf77 CallMath import:-304:Concat_StrStr
+    4bf7c LocalVariable CallFunc_Concat_StrStr_ReturnValue_45
+    4bf8d StringConst "\r\nCurrentLocalStep : "
+4bfa5 Let property=CallFunc_Concat_StrStr_ReturnValue_47
+  4bfb6 LocalVariable CallFunc_Concat_StrStr_ReturnValue_47
+  4bfc7 CallMath import:-304:Concat_StrStr
+    4bfcc LocalVariable CallFunc_Concat_StrStr_ReturnValue_46
+    4bfdd LocalVariable CallFunc_Conv_IntToString_ReturnValue_15
+4bfef Let property=CallFunc_Conv_StringToText_ReturnValue_15
+  4c000 LocalVariable CallFunc_Conv_StringToText_ReturnValue_15
+  4c011 CallMath import:-335:Conv_StringToText
+    4c016 LocalVariable CallFunc_Concat_StrStr_ReturnValue_47
+4c028 Let property=m_eCategory
+  4c039 StructMemberContext m_eCategory
+    4c04a LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c05b ByteConst 1
+4c05d Let property=m_strTitle
+  4c06e StructMemberContext m_strTitle
+    4c07f LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c090 TextConst kind=1
+    4c092 StringConst "ChangeBattleStep"
+    4c0a4 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4c0c6 StringConst ""
+4c0c8 Let property=m_strIssuer
+  4c0d9 StructMemberContext m_strIssuer
+    4c0ea LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c0fb TextConst kind=1
+    4c0fd StringConst "BattleManager"
+    4c10c StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4c12e StringConst ""
+4c130 Let property=m_strComment
+  4c141 StructMemberContext m_strComment
+    4c152 LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c163 LocalVariable CallFunc_Conv_StringToText_ReturnValue_15
+4c174 Let property=m_strDetail
+  4c185 StructMemberContext m_strDetail
+    4c196 LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c1a7 TextConst kind=0
+4c1a9 Let property=m_astrTagList
+  4c1ba StructMemberContext m_astrTagList
+    4c1cb LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+  4c1dc TextConst kind=1
+    4c1de StringConst "BattleFlow,ChangeStep"
+    4c1f5 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4c217 StringConst ""
+4c219 CallMath import:-382:AddBattleLog
+  4c21e LocalVariable K2Node_MakeStruct_DebugBattleLog_15
+4c230 PopExecutionFlow
+4c231 LocalVirtualFunction PlayEnemySideVoice_BattleStart
+4c23b Jump target=1748
+4c240 PushExecutionFlow target=2559
+4c245 PushExecutionFlow target=3318
+4c24a PopExecutionFlowIfNot
+  4c24b StructMemberContext BattleStartDashEnable_68_F33F272245D13218ECFEEFBD592D96B3
+    4c25c InstanceVariable EnemyGroup
+4c26d Context skip=16 rvalue=<null-field>
+  4c26e InstanceVariable m_cBattleDirector
+  4c28b LocalVirtualFunction ExecBattleStartDash
+    4c294 ByteConst 1
+4c297 LetBool
+  4c298 InstanceVariable m_bExecBattleStartDash
+  4c2a9 True
+4c2aa PopExecutionFlow
+4c2ab Let property=WaitTimeSec
+  4c2bc InstanceVariable WaitTimeSec
+  4c2cd FloatConst 0.20000000298023224
+4c2d2 Let property=ElapsedTime
+  4c2e3 InstanceVariable ElapsedTime
+  4c2f4 FloatConst 0
+4c2f9 Let property=CallFunc_Add_IntInt_ReturnValue_10
+  4c30a LocalVariable CallFunc_Add_IntInt_ReturnValue_10
+  4c31b CallMath import:-259:Add_IntInt
+    4c320 InstanceVariable LocalStep
+    4c331 IntConst 1
+4c337 Let property=LocalStep
+  4c348 InstanceVariable LocalStep
+  4c359 LocalVariable CallFunc_Add_IntInt_ReturnValue_10
+4c36a Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_9
+  4c37b LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_9
+  4c38c CallMath import:-302:GetEnumeratorUserFriendlyName
+    4c391 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4c396 InstanceVariable CurrentFlow
+4c3a8 Let property=CallFunc_Concat_StrStr_ReturnValue_27
+  4c3b9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_27
+  4c3ca CallMath import:-304:Concat_StrStr
+    4c3cf StringConst "CurrentFlow : "
+    4c3df LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_9
+4c3f1 Let property=CallFunc_Concat_StrStr_ReturnValue_28
+  4c402 LocalVariable CallFunc_Concat_StrStr_ReturnValue_28
+  4c413 CallMath import:-304:Concat_StrStr
+    4c418 LocalVariable CallFunc_Concat_StrStr_ReturnValue_27
+    4c429 StringConst "\r\nCurrentLocalStep : "
+4c441 Let property=CallFunc_Conv_IntToString_ReturnValue_9
+  4c452 LocalVariable CallFunc_Conv_IntToString_ReturnValue_9
+  4c463 CallMath import:-309:Conv_IntToString
+    4c468 InstanceVariable LocalStep
+4c47a Let property=CallFunc_Concat_StrStr_ReturnValue_29
+  4c48b LocalVariable CallFunc_Concat_StrStr_ReturnValue_29
+  4c49c CallMath import:-304:Concat_StrStr
+    4c4a1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_28
+    4c4b2 LocalVariable CallFunc_Conv_IntToString_ReturnValue_9
+4c4c4 Let property=CallFunc_Conv_StringToText_ReturnValue_9
+  4c4d5 LocalVariable CallFunc_Conv_StringToText_ReturnValue_9
+  4c4e6 CallMath import:-335:Conv_StringToText
+    4c4eb LocalVariable CallFunc_Concat_StrStr_ReturnValue_29
+4c4fd Let property=m_eCategory
+  4c50e StructMemberContext m_eCategory
+    4c51f LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c530 ByteConst 1
+4c532 Let property=m_strTitle
+  4c543 StructMemberContext m_strTitle
+    4c554 LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c565 TextConst kind=1
+    4c567 StringConst "ChangeBattleStep"
+    4c579 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4c59b StringConst ""
+4c59d Let property=m_strIssuer
+  4c5ae StructMemberContext m_strIssuer
+    4c5bf LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c5d0 TextConst kind=1
+    4c5d2 StringConst "BattleManager"
+    4c5e1 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4c603 StringConst ""
+4c605 Let property=m_strComment
+  4c616 StructMemberContext m_strComment
+    4c627 LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c638 LocalVariable CallFunc_Conv_StringToText_ReturnValue_9
+4c649 Let property=m_strDetail
+  4c65a StructMemberContext m_strDetail
+    4c66b LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c67c TextConst kind=0
+4c67e Let property=m_astrTagList
+  4c68f StructMemberContext m_astrTagList
+    4c6a0 LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+  4c6b1 TextConst kind=1
+    4c6b3 StringConst "BattleFlow,ChangeStep"
+    4c6ca StringConst "62FC382C4684622E8D3938BA304FB920"
+    4c6ec StringConst ""
+4c6ee CallMath import:-382:AddBattleLog
+  4c6f3 LocalVariable K2Node_MakeStruct_DebugBattleLog_9
+4c705 PopExecutionFlow
+4c706 JumpIfNot target=3333
+  4c70b InstanceVariable m_bIsBattleEvent
+4c71c PopExecutionFlow
+4c71d LocalVirtualFunction PlayPlayerSideVoice_BattleStart
+4c727 PopExecutionFlow
+4c728 Let property=CallFunc_Add_FloatFloat_ReturnValue_2
+  4c739 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_2
+  4c74a CallMath import:-258:Add_FloatFloat
+    4c74f InstanceVariable ElapsedTime
+    4c760 InstanceVariable DeltaSeconds
+4c772 Let property=ElapsedTime
+  4c783 InstanceVariable ElapsedTime
+  4c794 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_2
+4c7a5 LetBool
+  4c7a6 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_4
+  4c7b7 CallMath import:-282:LessEqual_FloatFloat
+    4c7bc InstanceVariable WaitTimeSec
+    4c7cd InstanceVariable ElapsedTime
+4c7df PopExecutionFlowIfNot
+  4c7e0 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_4
+4c7f1 CallMath import:-508:ClearFadeForcibly
+  4c7f6 Self
+4c7f8 CallMath import:-516:WipeInAtBattleStart
+  4c7fd Self
+4c7ff Context skip=14 rvalue=<null-field>
+  4c800 InstanceVariable BattleCamera
+  4c81d LocalVirtualFunction StartEncountCamera
+4c827 Let property=CallFunc_Add_IntInt_ReturnValue_12
+  4c838 LocalVariable CallFunc_Add_IntInt_ReturnValue_12
+  4c849 CallMath import:-259:Add_IntInt
+    4c84e InstanceVariable LocalStep
+    4c85f IntConst 1
+4c865 Let property=LocalStep
+  4c876 InstanceVariable LocalStep
+  4c887 LocalVariable CallFunc_Add_IntInt_ReturnValue_12
+4c898 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_11
+  4c8a9 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_11
+  4c8ba CallMath import:-302:GetEnumeratorUserFriendlyName
+    4c8bf ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4c8c4 InstanceVariable CurrentFlow
+4c8d6 Let property=CallFunc_Conv_IntToString_ReturnValue_12
+  4c8e7 LocalVariable CallFunc_Conv_IntToString_ReturnValue_12
+  4c8f8 CallMath import:-309:Conv_IntToString
+    4c8fd InstanceVariable LocalStep
+4c90f Let property=CallFunc_Concat_StrStr_ReturnValue_33
+  4c920 LocalVariable CallFunc_Concat_StrStr_ReturnValue_33
+  4c931 CallMath import:-304:Concat_StrStr
+    4c936 StringConst "CurrentFlow : "
+    4c946 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_11
+4c958 Let property=CallFunc_Concat_StrStr_ReturnValue_34
+  4c969 LocalVariable CallFunc_Concat_StrStr_ReturnValue_34
+  4c97a CallMath import:-304:Concat_StrStr
+    4c97f LocalVariable CallFunc_Concat_StrStr_ReturnValue_33
+    4c990 StringConst "\r\nCurrentLocalStep : "
+4c9a8 Let property=CallFunc_Concat_StrStr_ReturnValue_35
+  4c9b9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_35
+  4c9ca CallMath import:-304:Concat_StrStr
+    4c9cf LocalVariable CallFunc_Concat_StrStr_ReturnValue_34
+    4c9e0 LocalVariable CallFunc_Conv_IntToString_ReturnValue_12
+4c9f2 Let property=CallFunc_Conv_StringToText_ReturnValue_11
+  4ca03 LocalVariable CallFunc_Conv_StringToText_ReturnValue_11
+  4ca14 CallMath import:-335:Conv_StringToText
+    4ca19 LocalVariable CallFunc_Concat_StrStr_ReturnValue_35
+4ca2b Let property=m_eCategory
+  4ca3c StructMemberContext m_eCategory
+    4ca4d LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4ca5e ByteConst 1
+4ca60 Let property=m_strTitle
+  4ca71 StructMemberContext m_strTitle
+    4ca82 LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4ca93 TextConst kind=1
+    4ca95 StringConst "ChangeBattleStep"
+    4caa7 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4cac9 StringConst ""
+4cacb Let property=m_strIssuer
+  4cadc StructMemberContext m_strIssuer
+    4caed LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4cafe TextConst kind=1
+    4cb00 StringConst "BattleManager"
+    4cb0f StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4cb31 StringConst ""
+4cb33 Let property=m_strComment
+  4cb44 StructMemberContext m_strComment
+    4cb55 LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4cb66 LocalVariable CallFunc_Conv_StringToText_ReturnValue_11
+4cb77 Let property=m_strDetail
+  4cb88 StructMemberContext m_strDetail
+    4cb99 LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4cbaa TextConst kind=0
+4cbac Let property=m_astrTagList
+  4cbbd StructMemberContext m_astrTagList
+    4cbce LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+  4cbdf TextConst kind=1
+    4cbe1 StringConst "BattleFlow,ChangeStep"
+    4cbf8 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4cc1a StringConst ""
+4cc1c CallMath import:-382:AddBattleLog
+  4cc21 LocalVariable K2Node_MakeStruct_DebugBattleLog_11
+4cc33 PopExecutionFlow
+4cc34 Let property=CallFunc_Add_FloatFloat_ReturnValue_9
+  4cc45 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_9
+  4cc56 CallMath import:-258:Add_FloatFloat
+    4cc5b InstanceVariable ElapsedTime
+    4cc6c InstanceVariable DeltaSeconds
+4cc7e Let property=ElapsedTime
+  4cc8f InstanceVariable ElapsedTime
+  4cca0 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_9
+4ccb1 LetBool
+  4ccb2 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_7
+  4ccc3 CallMath import:-282:LessEqual_FloatFloat
+    4ccc8 InstanceVariable WaitTimeSec
+    4ccd9 InstanceVariable ElapsedTime
+4cceb PopExecutionFlowIfNot
+  4ccec LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_7
+4ccfd LetObj
+  4ccfe LocalVariable CallFunc_GetManagerInstance_ReturnValue_1
+  4cd0f CallMath import:-348:GetManagerInstance
+    4cd14 ObjectConst import:-110:FadeManager
+4cd1a LetObj
+  4cd1b LocalVariable CallFunc_GetBattleWipeWidget_ReturnValue
+  4cd2c Context skip=10 rvalue=CallFunc_GetBattleWipeWidget_ReturnValue
+    4cd2d LocalVariable CallFunc_GetManagerInstance_ReturnValue_1
+    4cd52 FinalFunction import:-495:GetBattleWipeWidget
+4cd58 LetBool
+  4cd59 LocalVariable CallFunc_IsEnableWhiteOut_ReturnValue
+  4cd6a Context skip=10 rvalue=CallFunc_IsEnableWhiteOut_ReturnValue
+    4cd6b LocalVariable CallFunc_GetBattleWipeWidget_ReturnValue
+    4cd90 FinalFunction import:-483:IsEnableWhiteOut
+4cd96 JumpIfNot target=4587
+  4cd9b LocalVariable CallFunc_IsEnableWhiteOut_ReturnValue
+4cdac LetObj
+  4cdad LocalVariable CallFunc_GetBattleWipeWidget_ReturnValue
+  4cdbe Context skip=10 rvalue=CallFunc_GetBattleWipeWidget_ReturnValue
+    4cdbf LocalVariable CallFunc_GetManagerInstance_ReturnValue_1
+    4cde4 FinalFunction import:-495:GetBattleWipeWidget
+4cdea LetBool
+  4cdeb LocalVariable CallFunc_IsExecWipe_ReturnValue
+  4cdfc Context skip=10 rvalue=CallFunc_IsExecWipe_ReturnValue
+    4cdfd LocalVariable CallFunc_GetBattleWipeWidget_ReturnValue
+    4ce22 FinalFunction import:-484:IsExecWipe
+4ce28 JumpIfNot target=4587
+  4ce2d LocalVariable CallFunc_IsExecWipe_ReturnValue
+4ce3e PopExecutionFlow
+4ce3f Let property=CallFunc_Add_IntInt_ReturnValue_16
+  4ce50 LocalVariable CallFunc_Add_IntInt_ReturnValue_16
+  4ce61 CallMath import:-259:Add_IntInt
+    4ce66 InstanceVariable LocalStep
+    4ce77 IntConst 1
+4ce7d Let property=LocalStep
+  4ce8e InstanceVariable LocalStep
+  4ce9f LocalVariable CallFunc_Add_IntInt_ReturnValue_16
+4ceb0 Let property=CallFunc_Conv_IntToString_ReturnValue_13
+  4cec1 LocalVariable CallFunc_Conv_IntToString_ReturnValue_13
+  4ced2 CallMath import:-309:Conv_IntToString
+    4ced7 InstanceVariable LocalStep
+4cee9 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_13
+  4cefa LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_13
+  4cf0b CallMath import:-302:GetEnumeratorUserFriendlyName
+    4cf10 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4cf15 InstanceVariable CurrentFlow
+4cf27 Let property=CallFunc_Concat_StrStr_ReturnValue_39
+  4cf38 LocalVariable CallFunc_Concat_StrStr_ReturnValue_39
+  4cf49 CallMath import:-304:Concat_StrStr
+    4cf4e StringConst "CurrentFlow : "
+    4cf5e LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_13
+4cf70 Let property=CallFunc_Concat_StrStr_ReturnValue_40
+  4cf81 LocalVariable CallFunc_Concat_StrStr_ReturnValue_40
+  4cf92 CallMath import:-304:Concat_StrStr
+    4cf97 LocalVariable CallFunc_Concat_StrStr_ReturnValue_39
+    4cfa8 StringConst "\r\nCurrentLocalStep : "
+4cfc0 Let property=CallFunc_Concat_StrStr_ReturnValue_41
+  4cfd1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_41
+  4cfe2 CallMath import:-304:Concat_StrStr
+    4cfe7 LocalVariable CallFunc_Concat_StrStr_ReturnValue_40
+    4cff8 LocalVariable CallFunc_Conv_IntToString_ReturnValue_13
+4d00a Let property=CallFunc_Conv_StringToText_ReturnValue_13
+  4d01b LocalVariable CallFunc_Conv_StringToText_ReturnValue_13
+  4d02c CallMath import:-335:Conv_StringToText
+    4d031 LocalVariable CallFunc_Concat_StrStr_ReturnValue_41
+4d043 Let property=m_eCategory
+  4d054 StructMemberContext m_eCategory
+    4d065 LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d076 ByteConst 1
+4d078 Let property=m_strTitle
+  4d089 StructMemberContext m_strTitle
+    4d09a LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d0ab TextConst kind=1
+    4d0ad StringConst "ChangeBattleStep"
+    4d0bf StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4d0e1 StringConst ""
+4d0e3 Let property=m_strIssuer
+  4d0f4 StructMemberContext m_strIssuer
+    4d105 LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d116 TextConst kind=1
+    4d118 StringConst "BattleManager"
+    4d127 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4d149 StringConst ""
+4d14b Let property=m_strComment
+  4d15c StructMemberContext m_strComment
+    4d16d LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d17e LocalVariable CallFunc_Conv_StringToText_ReturnValue_13
+4d18f Let property=m_strDetail
+  4d1a0 StructMemberContext m_strDetail
+    4d1b1 LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d1c2 TextConst kind=0
+4d1c4 Let property=m_astrTagList
+  4d1d5 StructMemberContext m_astrTagList
+    4d1e6 LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+  4d1f7 TextConst kind=1
+    4d1f9 StringConst "BattleFlow,ChangeStep"
+    4d210 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4d232 StringConst ""
+4d234 CallMath import:-382:AddBattleLog
+  4d239 LocalVariable K2Node_MakeStruct_DebugBattleLog_13
+4d24b PopExecutionFlow
+4d24c Let property=CallFunc_Add_FloatFloat_ReturnValue_7
+  4d25d LocalVariable CallFunc_Add_FloatFloat_ReturnValue_7
+  4d26e CallMath import:-258:Add_FloatFloat
+    4d273 InstanceVariable ElapsedTime
+    4d284 InstanceVariable DeltaSeconds
+4d296 Let property=ElapsedTime
+  4d2a7 InstanceVariable ElapsedTime
+  4d2b8 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_7
+4d2c9 LetBool
+  4d2ca LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_8
+  4d2db CallMath import:-282:LessEqual_FloatFloat
+    4d2e0 InstanceVariable WaitTimeSec
+    4d2f1 InstanceVariable ElapsedTime
+4d303 PopExecutionFlowIfNot
+  4d304 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_8
+4d315 JumpIfNot target=5436
+  4d31a InstanceVariable m_bExecBattleStartDash
+4d32b PopExecutionFlow
+4d32c JumpIfNot target=5554
+  4d331 InstanceVariable m_bIsBattleEvent
+4d342 Let property=CallFunc_Add_IntInt_ReturnValue_14
+  4d353 LocalVariable CallFunc_Add_IntInt_ReturnValue_14
+  4d364 CallMath import:-259:Add_IntInt
+    4d369 InstanceVariable LocalStep
+    4d37a IntConst 1
+4d380 Let property=ReturnLocalStep
+  4d391 InstanceVariable ReturnLocalStep
+  4d3a2 LocalVariable CallFunc_Add_IntInt_ReturnValue_14
+4d3b3 LocalVirtualFunction ChangeBattleFlow
+  4d3bc ByteConst 24
+  4d3be LocalVariable CallFunc_ChangeBattleFlow_CurrentFlow_1
+  4d3cf LocalVariable CallFunc_ChangeBattleFlow_IsChange_1
+4d3e1 PopExecutionFlow
+4d3e2 Context skip=64 rvalue=<null-field>
+  4d3e3 ObjectConst import:-567:Default__LibGetParam_C
+  4d3f4 LocalVirtualFunction GetBattleParamToFloat
+    4d3fd NameConst BATTLE_START_PLAYER_IN_TIME
+    4d406 Self
+    4d407 LocalVariable CallFunc_GetBattleParamToFloat_Min_6
+    4d418 LocalVariable CallFunc_GetBattleParamToFloat_Max_6
+    4d429 LocalVariable CallFunc_GetBattleParamToFloat_Init_6
+    4d43a LocalVariable CallFunc_GetBattleParamToFloat_Param_6
+4d44c Let property=WaitTimeSec
+  4d45d InstanceVariable WaitTimeSec
+  4d46e LocalVariable CallFunc_GetBattleParamToFloat_Param_6
+4d47f Let property=ElapsedTime
+  4d490 InstanceVariable ElapsedTime
+  4d4a1 FloatConst 0
+4d4a6 Let property=CallFunc_Add_IntInt_ReturnValue_8
+  4d4b7 LocalVariable CallFunc_Add_IntInt_ReturnValue_8
+  4d4c8 CallMath import:-259:Add_IntInt
+    4d4cd InstanceVariable LocalStep
+    4d4de IntConst 1
+4d4e4 Let property=LocalStep
+  4d4f5 InstanceVariable LocalStep
+  4d506 LocalVariable CallFunc_Add_IntInt_ReturnValue_8
+4d517 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_8
+  4d528 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_8
+  4d539 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4d53e ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4d543 InstanceVariable CurrentFlow
+4d555 Let property=CallFunc_Concat_StrStr_ReturnValue_24
+  4d566 LocalVariable CallFunc_Concat_StrStr_ReturnValue_24
+  4d577 CallMath import:-304:Concat_StrStr
+    4d57c StringConst "CurrentFlow : "
+    4d58c LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_8
+4d59e Let property=CallFunc_Conv_IntToString_ReturnValue_8
+  4d5af LocalVariable CallFunc_Conv_IntToString_ReturnValue_8
+  4d5c0 CallMath import:-309:Conv_IntToString
+    4d5c5 InstanceVariable LocalStep
+4d5d7 Let property=CallFunc_Concat_StrStr_ReturnValue_25
+  4d5e8 LocalVariable CallFunc_Concat_StrStr_ReturnValue_25
+  4d5f9 CallMath import:-304:Concat_StrStr
+    4d5fe LocalVariable CallFunc_Concat_StrStr_ReturnValue_24
+    4d60f StringConst "\r\nCurrentLocalStep : "
+4d627 Let property=CallFunc_Concat_StrStr_ReturnValue_26
+  4d638 LocalVariable CallFunc_Concat_StrStr_ReturnValue_26
+  4d649 CallMath import:-304:Concat_StrStr
+    4d64e LocalVariable CallFunc_Concat_StrStr_ReturnValue_25
+    4d65f LocalVariable CallFunc_Conv_IntToString_ReturnValue_8
+4d671 Let property=CallFunc_Conv_StringToText_ReturnValue_8
+  4d682 LocalVariable CallFunc_Conv_StringToText_ReturnValue_8
+  4d693 CallMath import:-335:Conv_StringToText
+    4d698 LocalVariable CallFunc_Concat_StrStr_ReturnValue_26
+4d6aa Let property=m_eCategory
+  4d6bb StructMemberContext m_eCategory
+    4d6cc LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d6dd ByteConst 1
+4d6df Let property=m_strTitle
+  4d6f0 StructMemberContext m_strTitle
+    4d701 LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d712 TextConst kind=1
+    4d714 StringConst "ChangeBattleStep"
+    4d726 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4d748 StringConst ""
+4d74a Let property=m_strIssuer
+  4d75b StructMemberContext m_strIssuer
+    4d76c LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d77d TextConst kind=1
+    4d77f StringConst "BattleManager"
+    4d78e StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4d7b0 StringConst ""
+4d7b2 Let property=m_strComment
+  4d7c3 StructMemberContext m_strComment
+    4d7d4 LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d7e5 LocalVariable CallFunc_Conv_StringToText_ReturnValue_8
+4d7f6 Let property=m_strDetail
+  4d807 StructMemberContext m_strDetail
+    4d818 LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d829 TextConst kind=0
+4d82b Let property=m_astrTagList
+  4d83c StructMemberContext m_astrTagList
+    4d84d LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+  4d85e TextConst kind=1
+    4d860 StringConst "BattleFlow,ChangeStep"
+    4d877 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4d899 StringConst ""
+4d89b CallMath import:-382:AddBattleLog
+  4d8a0 LocalVariable K2Node_MakeStruct_DebugBattleLog_8
+4d8b2 PopExecutionFlow
+4d8b3 Let property=CallFunc_Add_FloatFloat_ReturnValue_6
+  4d8c4 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_6
+  4d8d5 CallMath import:-258:Add_FloatFloat
+    4d8da InstanceVariable ElapsedTime
+    4d8eb InstanceVariable DeltaSeconds
+4d8fd Let property=ElapsedTime
+  4d90e InstanceVariable ElapsedTime
+  4d91f LocalVariable CallFunc_Add_FloatFloat_ReturnValue_6
+4d930 LetBool
+  4d931 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_3
+  4d942 CallMath import:-282:LessEqual_FloatFloat
+    4d947 InstanceVariable WaitTimeSec
+    4d958 InstanceVariable ElapsedTime
+4d96a PopExecutionFlowIfNot
+  4d96b LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_3
+4d97c PushExecutionFlow target=6559
+4d981 PushExecutionFlow target=7408
+4d986 PushExecutionFlow target=7457
+4d98b PushExecutionFlow target=7503
+4d990 LocalVirtualFunction OpenCharacterStatusUI
+4d99a PopExecutionFlow
+4d99b Context skip=64 rvalue=<null-field>
+  4d99c ObjectConst import:-567:Default__LibGetParam_C
+  4d9ad LocalVirtualFunction GetBattleParamToFloat
+    4d9b6 NameConst BATTLE_START_UI_OPEN_TIME
+    4d9bf Self
+    4d9c0 LocalVariable CallFunc_GetBattleParamToFloat_Min_3
+    4d9d1 LocalVariable CallFunc_GetBattleParamToFloat_Max_3
+    4d9e2 LocalVariable CallFunc_GetBattleParamToFloat_Init_3
+    4d9f3 LocalVariable CallFunc_GetBattleParamToFloat_Param_3
+4da05 Let property=WaitTimeSec
+  4da16 InstanceVariable WaitTimeSec
+  4da27 LocalVariable CallFunc_GetBattleParamToFloat_Param_3
+4da38 Let property=ElapsedTime
+  4da49 InstanceVariable ElapsedTime
+  4da5a FloatConst 0
+4da5f Let property=CallFunc_Add_IntInt_ReturnValue_6
+  4da70 LocalVariable CallFunc_Add_IntInt_ReturnValue_6
+  4da81 CallMath import:-259:Add_IntInt
+    4da86 InstanceVariable LocalStep
+    4da97 IntConst 1
+4da9d Let property=LocalStep
+  4daae InstanceVariable LocalStep
+  4dabf LocalVariable CallFunc_Add_IntInt_ReturnValue_6
+4dad0 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_6
+  4dae1 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_6
+  4daf2 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4daf7 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4dafc InstanceVariable CurrentFlow
+4db0e Let property=CallFunc_Conv_IntToString_ReturnValue_7
+  4db1f LocalVariable CallFunc_Conv_IntToString_ReturnValue_7
+  4db30 CallMath import:-309:Conv_IntToString
+    4db35 InstanceVariable LocalStep
+4db47 Let property=CallFunc_Concat_StrStr_ReturnValue_18
+  4db58 LocalVariable CallFunc_Concat_StrStr_ReturnValue_18
+  4db69 CallMath import:-304:Concat_StrStr
+    4db6e StringConst "CurrentFlow : "
+    4db7e LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_6
+4db90 Let property=CallFunc_Concat_StrStr_ReturnValue_19
+  4dba1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_19
+  4dbb2 CallMath import:-304:Concat_StrStr
+    4dbb7 LocalVariable CallFunc_Concat_StrStr_ReturnValue_18
+    4dbc8 StringConst "\r\nCurrentLocalStep : "
+4dbe0 Let property=CallFunc_Concat_StrStr_ReturnValue_20
+  4dbf1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_20
+  4dc02 CallMath import:-304:Concat_StrStr
+    4dc07 LocalVariable CallFunc_Concat_StrStr_ReturnValue_19
+    4dc18 LocalVariable CallFunc_Conv_IntToString_ReturnValue_7
+4dc2a Let property=CallFunc_Conv_StringToText_ReturnValue_6
+  4dc3b LocalVariable CallFunc_Conv_StringToText_ReturnValue_6
+  4dc4c CallMath import:-335:Conv_StringToText
+    4dc51 LocalVariable CallFunc_Concat_StrStr_ReturnValue_20
+4dc63 Let property=m_eCategory
+  4dc74 StructMemberContext m_eCategory
+    4dc85 LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4dc96 ByteConst 1
+4dc98 Let property=m_strTitle
+  4dca9 StructMemberContext m_strTitle
+    4dcba LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4dccb TextConst kind=1
+    4dccd StringConst "ChangeBattleStep"
+    4dcdf StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4dd01 StringConst ""
+4dd03 Let property=m_strIssuer
+  4dd14 StructMemberContext m_strIssuer
+    4dd25 LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4dd36 TextConst kind=1
+    4dd38 StringConst "BattleManager"
+    4dd47 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4dd69 StringConst ""
+4dd6b Let property=m_strComment
+  4dd7c StructMemberContext m_strComment
+    4dd8d LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4dd9e LocalVariable CallFunc_Conv_StringToText_ReturnValue_6
+4ddaf Let property=m_strDetail
+  4ddc0 StructMemberContext m_strDetail
+    4ddd1 LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4dde2 TextConst kind=0
+4dde4 Let property=m_astrTagList
+  4ddf5 StructMemberContext m_astrTagList
+    4de06 LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+  4de17 TextConst kind=1
+    4de19 StringConst "BattleFlow,ChangeStep"
+    4de30 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4de52 StringConst ""
+4de54 CallMath import:-382:AddBattleLog
+  4de59 LocalVariable K2Node_MakeStruct_DebugBattleLog_6
+4de6b PopExecutionFlow
+4de6c Context skip=15 rvalue=<null-field>
+  4de6d InstanceVariable DoubleSpeed
+  4de8a LocalVirtualFunction ChangeSpeed
+    4de93 True
+4de95 LetBool
+  4de96 InstanceVariable m_bAllowChangeBattleSpeed
+  4dea7 True
+4dea8 PopExecutionFlow
+4dea9 Context skip=23 rvalue=<null-field>
+  4deaa InstanceVariable BattleTargetSelect
+  4dec7 LocalVirtualFunction FixupTargetOrder
+    4ded0 InstanceVariable BattleCamera
+4dee2 PopExecutionFlow
+4dee3 Context skip=24 rvalue=<null-field>
+  4dee4 InstanceVariable TimeLineTree
+  4df01 LocalVirtualFunction AttachTimeLine
+    4df0a True
+    4df0b InstanceVariable ActionOrderTimeLine
+4df1d Context skip=14 rvalue=<null-field>
+  4df1e InstanceVariable ActionOrderTimeLine
+  4df3b LocalVirtualFunction InitActionOrder
+4df45 Context skip=16 rvalue=<null-field>
+  4df46 InstanceVariable ActionOrderTimeLine
+  4df63 VirtualFunction SetVisibility
+    4df6c ByteConst 0
+4df6f PopExecutionFlow
+4df70 Let property=CallFunc_Add_FloatFloat_ReturnValue_4
+  4df81 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_4
+  4df92 CallMath import:-258:Add_FloatFloat
+    4df97 InstanceVariable ElapsedTime
+    4dfa8 InstanceVariable DeltaSeconds
+4dfba Let property=ElapsedTime
+  4dfcb InstanceVariable ElapsedTime
+  4dfdc LocalVariable CallFunc_Add_FloatFloat_ReturnValue_4
+4dfed LetBool
+  4dfee LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue
+  4dfff CallMath import:-282:LessEqual_FloatFloat
+    4e004 InstanceVariable WaitTimeSec
+    4e015 InstanceVariable ElapsedTime
+4e027 PopExecutionFlowIfNot
+  4e028 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue
+4e039 Let property=BattleStartInfoTime
+  4e04a LocalVariable BattleStartInfoTime
+  4e05b FloatConst 0
+4e060 PushExecutionFlow target=8343
+4e065 LetBool
+  4e066 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+  4e077 CallMath import:-292:NotEqual_ByteByte
+    4e07c InstanceVariable BattleStartType
+    4e08d ByteConst 0
+4e090 JumpIfNot target=8164
+  4e095 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+4e0a6 Let property=Temp_name_Variable
+  4e0b7 LocalVariable Temp_name_Variable
+  4e0c8 NameConst None
+4e0d1 Let property=Temp_name_Variable_1
+  4e0e2 LocalVariable Temp_name_Variable_1
+  4e0f3 NameConst eBATTLE_START_ADVANTAGE
+4e0fc Let property=Temp_name_Variable_2
+  4e10d LocalVariable Temp_name_Variable_2
+  4e11e NameConst eBATTLE_START_BACK_ATTACK
+4e127 Let property=Temp_byte_Variable
+  4e138 LocalVariable Temp_byte_Variable
+  4e149 InstanceVariable BattleStartType
+4e15a CallMath import:-523:GetGameText
+  4e15f SwitchValue cases=3 end=8017
+    4e166 LocalVariable Temp_byte_Variable
+    4e177 ByteConst 0
+    4e179 SwitchCaseNext 7978
+    4e17d LocalVariable Temp_name_Variable
+    4e18e ByteConst 1
+    4e190 SwitchCaseNext 7993
+    4e194 LocalVariable Temp_name_Variable_1
+    4e1a5 ByteConst 2
+    4e1a7 SwitchCaseNext 8008
+    4e1ab LocalVariable Temp_name_Variable_2
+    4e1bc LocalVariable K2Node_Select_Default
+  4e1cd LocalVariable CallFunc_GetGameText_OutText_2
+4e1df LocalVirtualFunction ActionInfoOpen
+  4e1e8 LocalVariable CallFunc_GetGameText_OutText_2
+4e1fa Context skip=64 rvalue=<null-field>
+  4e1fb ObjectConst import:-567:Default__LibGetParam_C
+  4e20c LocalVirtualFunction GetBattleParamToFloat
+    4e215 NameConst BATTLE_START_INFO_TIME
+    4e21e Self
+    4e21f LocalVariable CallFunc_GetBattleParamToFloat_Min_5
+    4e230 LocalVariable CallFunc_GetBattleParamToFloat_Max_5
+    4e241 LocalVariable CallFunc_GetBattleParamToFloat_Init_5
+    4e252 LocalVariable CallFunc_GetBattleParamToFloat_Param_5
+4e264 Let property=BattleStartInfoTime
+  4e275 LocalVariable BattleStartInfoTime
+  4e286 LocalVariable CallFunc_GetBattleParamToFloat_Param_5
+4e297 PopExecutionFlow
+4e298 PopExecutionFlowIfNot
+  4e299 InstanceVariable m_bIsFirstActionCharacter
+4e2aa CallMath import:-523:GetGameText
+  4e2af NameConst eBATTLE_SUPPORT_FIRSTTRUN
+  4e2b8 LocalVariable CallFunc_GetGameText_OutText
+4e2ca LocalVirtualFunction ActionInfoOpen
+  4e2d3 LocalVariable CallFunc_GetGameText_OutText
+4e2e5 Context skip=64 rvalue=<null-field>
+  4e2e6 ObjectConst import:-567:Default__LibGetParam_C
+  4e2f7 LocalVirtualFunction GetBattleParamToFloat
+    4e300 NameConst BATTLE_START_INFO_TIME
+    4e309 Self
+    4e30a LocalVariable CallFunc_GetBattleParamToFloat_Min_5
+    4e31b LocalVariable CallFunc_GetBattleParamToFloat_Max_5
+    4e32c LocalVariable CallFunc_GetBattleParamToFloat_Init_5
+    4e33d LocalVariable CallFunc_GetBattleParamToFloat_Param_5
+4e34f Let property=BattleStartInfoTime
+  4e360 LocalVariable BattleStartInfoTime
+  4e371 LocalVariable CallFunc_GetBattleParamToFloat_Param_5
+4e382 PopExecutionFlow
+4e383 LetBool
+  4e384 LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_4
+  4e395 CallMath import:-293:NotEqual_FloatFloat
+    4e39a LocalVariable BattleStartInfoTime
+    4e3ab FloatConst 0
+4e3b1 JumpIfNot target=9154
+  4e3b6 LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_4
+4e3c7 Let property=WaitTimeSec
+  4e3d8 InstanceVariable WaitTimeSec
+  4e3e9 LocalVariable BattleStartInfoTime
+4e3fa Let property=ElapsedTime
+  4e40b InstanceVariable ElapsedTime
+  4e41c FloatConst 0
+4e421 Let property=CallFunc_Add_IntInt_ReturnValue_4
+  4e432 LocalVariable CallFunc_Add_IntInt_ReturnValue_4
+  4e443 CallMath import:-259:Add_IntInt
+    4e448 InstanceVariable LocalStep
+    4e459 IntConst 1
+4e45f Let property=LocalStep
+  4e470 InstanceVariable LocalStep
+  4e481 LocalVariable CallFunc_Add_IntInt_ReturnValue_4
+4e492 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_5
+  4e4a3 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_5
+  4e4b4 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4e4b9 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4e4be InstanceVariable CurrentFlow
+4e4d0 Let property=CallFunc_Concat_StrStr_ReturnValue_15
+  4e4e1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_15
+  4e4f2 CallMath import:-304:Concat_StrStr
+    4e4f7 StringConst "CurrentFlow : "
+    4e507 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_5
+4e519 Let property=CallFunc_Concat_StrStr_ReturnValue_16
+  4e52a LocalVariable CallFunc_Concat_StrStr_ReturnValue_16
+  4e53b CallMath import:-304:Concat_StrStr
+    4e540 LocalVariable CallFunc_Concat_StrStr_ReturnValue_15
+    4e551 StringConst "\r\nCurrentLocalStep : "
+4e569 Let property=CallFunc_Conv_IntToString_ReturnValue_5
+  4e57a LocalVariable CallFunc_Conv_IntToString_ReturnValue_5
+  4e58b CallMath import:-309:Conv_IntToString
+    4e590 InstanceVariable LocalStep
+4e5a2 Let property=CallFunc_Concat_StrStr_ReturnValue_17
+  4e5b3 LocalVariable CallFunc_Concat_StrStr_ReturnValue_17
+  4e5c4 CallMath import:-304:Concat_StrStr
+    4e5c9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_16
+    4e5da LocalVariable CallFunc_Conv_IntToString_ReturnValue_5
+4e5ec Let property=CallFunc_Conv_StringToText_ReturnValue_5
+  4e5fd LocalVariable CallFunc_Conv_StringToText_ReturnValue_5
+  4e60e CallMath import:-335:Conv_StringToText
+    4e613 LocalVariable CallFunc_Concat_StrStr_ReturnValue_17
+4e625 Let property=m_eCategory
+  4e636 StructMemberContext m_eCategory
+    4e647 LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e658 ByteConst 1
+4e65a Let property=m_strTitle
+  4e66b StructMemberContext m_strTitle
+    4e67c LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e68d TextConst kind=1
+    4e68f StringConst "ChangeBattleStep"
+    4e6a1 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4e6c3 StringConst ""
+4e6c5 Let property=m_strIssuer
+  4e6d6 StructMemberContext m_strIssuer
+    4e6e7 LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e6f8 TextConst kind=1
+    4e6fa StringConst "BattleManager"
+    4e709 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4e72b StringConst ""
+4e72d Let property=m_strComment
+  4e73e StructMemberContext m_strComment
+    4e74f LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e760 LocalVariable CallFunc_Conv_StringToText_ReturnValue_5
+4e771 Let property=m_strDetail
+  4e782 StructMemberContext m_strDetail
+    4e793 LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e7a4 TextConst kind=0
+4e7a6 Let property=m_astrTagList
+  4e7b7 StructMemberContext m_astrTagList
+    4e7c8 LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+  4e7d9 TextConst kind=1
+    4e7db StringConst "BattleFlow,ChangeStep"
+    4e7f2 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4e814 StringConst ""
+4e816 CallMath import:-382:AddBattleLog
+  4e81b LocalVariable K2Node_MakeStruct_DebugBattleLog_5
+4e82d PopExecutionFlow
+4e82e Let property=CallFunc_Add_IntInt_ReturnValue
+  4e83f LocalVariable CallFunc_Add_IntInt_ReturnValue
+  4e850 CallMath import:-259:Add_IntInt
+    4e855 InstanceVariable LocalStep
+    4e866 IntConst 1
+4e86c Let property=LocalStep
+  4e87d InstanceVariable LocalStep
+  4e88e LocalVariable CallFunc_Add_IntInt_ReturnValue
+4e89f Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_16
+  4e8b0 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_16
+  4e8c1 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4e8c6 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4e8cb InstanceVariable CurrentFlow
+4e8dd Let property=CallFunc_Concat_StrStr_ReturnValue_48
+  4e8ee LocalVariable CallFunc_Concat_StrStr_ReturnValue_48
+  4e8ff CallMath import:-304:Concat_StrStr
+    4e904 StringConst "CurrentFlow : "
+    4e914 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_16
+4e926 Let property=CallFunc_Concat_StrStr_ReturnValue_49
+  4e937 LocalVariable CallFunc_Concat_StrStr_ReturnValue_49
+  4e948 CallMath import:-304:Concat_StrStr
+    4e94d LocalVariable CallFunc_Concat_StrStr_ReturnValue_48
+    4e95e StringConst "\r\nCurrentLocalStep : "
+4e976 Let property=CallFunc_Conv_IntToString_ReturnValue_16
+  4e987 LocalVariable CallFunc_Conv_IntToString_ReturnValue_16
+  4e998 CallMath import:-309:Conv_IntToString
+    4e99d InstanceVariable LocalStep
+4e9af Let property=CallFunc_Concat_StrStr_ReturnValue_50
+  4e9c0 LocalVariable CallFunc_Concat_StrStr_ReturnValue_50
+  4e9d1 CallMath import:-304:Concat_StrStr
+    4e9d6 LocalVariable CallFunc_Concat_StrStr_ReturnValue_49
+    4e9e7 LocalVariable CallFunc_Conv_IntToString_ReturnValue_16
+4e9f9 Let property=CallFunc_Conv_StringToText_ReturnValue_16
+  4ea0a LocalVariable CallFunc_Conv_StringToText_ReturnValue_16
+  4ea1b CallMath import:-335:Conv_StringToText
+    4ea20 LocalVariable CallFunc_Concat_StrStr_ReturnValue_50
+4ea32 Let property=m_eCategory
+  4ea43 StructMemberContext m_eCategory
+    4ea54 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4ea65 ByteConst 1
+4ea67 Let property=m_strTitle
+  4ea78 StructMemberContext m_strTitle
+    4ea89 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4ea9a TextConst kind=1
+    4ea9c StringConst "ChangeBattleStep"
+    4eaae StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4ead0 StringConst ""
+4ead2 Let property=m_strIssuer
+  4eae3 StructMemberContext m_strIssuer
+    4eaf4 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4eb05 TextConst kind=1
+    4eb07 StringConst "BattleManager"
+    4eb16 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4eb38 StringConst ""
+4eb3a Let property=m_strComment
+  4eb4b StructMemberContext m_strComment
+    4eb5c LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4eb6d LocalVariable CallFunc_Conv_StringToText_ReturnValue_16
+4eb7e Let property=m_strDetail
+  4eb8f StructMemberContext m_strDetail
+    4eba0 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4ebb1 TextConst kind=0
+4ebb3 Let property=m_astrTagList
+  4ebc4 StructMemberContext m_astrTagList
+    4ebd5 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+  4ebe6 TextConst kind=1
+    4ebe8 StringConst "BattleFlow,ChangeStep"
+    4ebff StringConst "62FC382C4684622E8D3938BA304FB920"
+    4ec21 StringConst ""
+4ec23 CallMath import:-382:AddBattleLog
+  4ec28 LocalVariable K2Node_MakeStruct_DebugBattleLog_16
+4ec3a Let property=BattleStartInfoTime
+  4ec4b LocalVariable BattleStartInfoTime
+  4ec5c FloatConst 0
+4ec61 PushExecutionFlow target=10104
+4ec66 LetBool
+  4ec67 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  4ec78 CallMath import:-271:EqualEqual_ByteByte
+    4ec7d InstanceVariable m_eBattleMode
+    4ec8e ByteConst 4
+4ec91 PopExecutionFlowIfNot
+  4ec92 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+4eca3 CallMath import:-523:GetGameText
+  4eca8 NameConst eBATTLE_EXPOSE_START
+  4ecb1 LocalVariable CallFunc_GetGameText_OutText_1
+4ecc3 LocalVirtualFunction ActionInfoOpen
+  4eccc LocalVariable CallFunc_GetGameText_OutText_1
+4ecde Context skip=64 rvalue=<null-field>
+  4ecdf ObjectConst import:-567:Default__LibGetParam_C
+  4ecf0 LocalVirtualFunction GetBattleParamToFloat
+    4ecf9 NameConst BATTLE_START_INFO_TIME
+    4ed02 Self
+    4ed03 LocalVariable CallFunc_GetBattleParamToFloat_Min_2
+    4ed14 LocalVariable CallFunc_GetBattleParamToFloat_Max_2
+    4ed25 LocalVariable CallFunc_GetBattleParamToFloat_Init_2
+    4ed36 LocalVariable CallFunc_GetBattleParamToFloat_Param_2
+4ed48 Let property=BattleStartInfoTime
+  4ed59 LocalVariable BattleStartInfoTime
+  4ed6a LocalVariable CallFunc_GetBattleParamToFloat_Param_2
+4ed7b PopExecutionFlow
+4ed7c LetBool
+  4ed7d LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_3
+  4ed8e CallMath import:-293:NotEqual_FloatFloat
+    4ed93 LocalVariable BattleStartInfoTime
+    4eda4 FloatConst 0
+4edaa JumpIfNot target=10915
+  4edaf LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_3
+4edc0 Let property=WaitTimeSec
+  4edd1 InstanceVariable WaitTimeSec
+  4ede2 LocalVariable BattleStartInfoTime
+4edf3 Let property=ElapsedTime
+  4ee04 InstanceVariable ElapsedTime
+  4ee15 FloatConst 0
+4ee1a Let property=CallFunc_Add_IntInt_ReturnValue_1
+  4ee2b LocalVariable CallFunc_Add_IntInt_ReturnValue_1
+  4ee3c CallMath import:-259:Add_IntInt
+    4ee41 InstanceVariable LocalStep
+    4ee52 IntConst 1
+4ee58 Let property=LocalStep
+  4ee69 InstanceVariable LocalStep
+  4ee7a LocalVariable CallFunc_Add_IntInt_ReturnValue_1
+4ee8b Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1
+  4ee9c LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1
+  4eead CallMath import:-302:GetEnumeratorUserFriendlyName
+    4eeb2 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4eeb7 InstanceVariable CurrentFlow
+4eec9 Let property=CallFunc_Concat_StrStr_ReturnValue_3
+  4eeda LocalVariable CallFunc_Concat_StrStr_ReturnValue_3
+  4eeeb CallMath import:-304:Concat_StrStr
+    4eef0 StringConst "CurrentFlow : "
+    4ef00 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1
+4ef12 Let property=CallFunc_Conv_IntToString_ReturnValue_2
+  4ef23 LocalVariable CallFunc_Conv_IntToString_ReturnValue_2
+  4ef34 CallMath import:-309:Conv_IntToString
+    4ef39 InstanceVariable LocalStep
+4ef4b Let property=CallFunc_Concat_StrStr_ReturnValue_4
+  4ef5c LocalVariable CallFunc_Concat_StrStr_ReturnValue_4
+  4ef6d CallMath import:-304:Concat_StrStr
+    4ef72 LocalVariable CallFunc_Concat_StrStr_ReturnValue_3
+    4ef83 StringConst "\r\nCurrentLocalStep : "
+4ef9b Let property=CallFunc_Concat_StrStr_ReturnValue_5
+  4efac LocalVariable CallFunc_Concat_StrStr_ReturnValue_5
+  4efbd CallMath import:-304:Concat_StrStr
+    4efc2 LocalVariable CallFunc_Concat_StrStr_ReturnValue_4
+    4efd3 LocalVariable CallFunc_Conv_IntToString_ReturnValue_2
+4efe5 Let property=CallFunc_Conv_StringToText_ReturnValue_1
+  4eff6 LocalVariable CallFunc_Conv_StringToText_ReturnValue_1
+  4f007 CallMath import:-335:Conv_StringToText
+    4f00c LocalVariable CallFunc_Concat_StrStr_ReturnValue_5
+4f01e Let property=m_eCategory
+  4f02f StructMemberContext m_eCategory
+    4f040 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f051 ByteConst 1
+4f053 Let property=m_strTitle
+  4f064 StructMemberContext m_strTitle
+    4f075 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f086 TextConst kind=1
+    4f088 StringConst "ChangeBattleStep"
+    4f09a StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4f0bc StringConst ""
+4f0be Let property=m_strIssuer
+  4f0cf StructMemberContext m_strIssuer
+    4f0e0 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f0f1 TextConst kind=1
+    4f0f3 StringConst "BattleManager"
+    4f102 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4f124 StringConst ""
+4f126 Let property=m_strComment
+  4f137 StructMemberContext m_strComment
+    4f148 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f159 LocalVariable CallFunc_Conv_StringToText_ReturnValue_1
+4f16a Let property=m_strDetail
+  4f17b StructMemberContext m_strDetail
+    4f18c LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f19d TextConst kind=0
+4f19f Let property=m_astrTagList
+  4f1b0 StructMemberContext m_astrTagList
+    4f1c1 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+  4f1d2 TextConst kind=1
+    4f1d4 StringConst "BattleFlow,ChangeStep"
+    4f1eb StringConst "62FC382C4684622E8D3938BA304FB920"
+    4f20d StringConst ""
+4f20f CallMath import:-382:AddBattleLog
+  4f214 LocalVariable K2Node_MakeStruct_DebugBattleLog_1
+4f226 PopExecutionFlow
+4f227 Let property=CallFunc_Add_IntInt_ReturnValue_5
+  4f238 LocalVariable CallFunc_Add_IntInt_ReturnValue_5
+  4f249 CallMath import:-259:Add_IntInt
+    4f24e InstanceVariable LocalStep
+    4f25f IntConst 1
+4f265 Let property=LocalStep
+  4f276 InstanceVariable LocalStep
+  4f287 LocalVariable CallFunc_Add_IntInt_ReturnValue_5
+4f298 Let property=CallFunc_Conv_IntToString_ReturnValue_1
+  4f2a9 LocalVariable CallFunc_Conv_IntToString_ReturnValue_1
+  4f2ba CallMath import:-309:Conv_IntToString
+    4f2bf InstanceVariable LocalStep
+4f2d1 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_2
+  4f2e2 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_2
+  4f2f3 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4f2f8 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4f2fd InstanceVariable CurrentFlow
+4f30f Let property=CallFunc_Concat_StrStr_ReturnValue_6
+  4f320 LocalVariable CallFunc_Concat_StrStr_ReturnValue_6
+  4f331 CallMath import:-304:Concat_StrStr
+    4f336 StringConst "CurrentFlow : "
+    4f346 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_2
+4f358 Let property=CallFunc_Concat_StrStr_ReturnValue_7
+  4f369 LocalVariable CallFunc_Concat_StrStr_ReturnValue_7
+  4f37a CallMath import:-304:Concat_StrStr
+    4f37f LocalVariable CallFunc_Concat_StrStr_ReturnValue_6
+    4f390 StringConst "\r\nCurrentLocalStep : "
+4f3a8 Let property=CallFunc_Concat_StrStr_ReturnValue_8
+  4f3b9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_8
+  4f3ca CallMath import:-304:Concat_StrStr
+    4f3cf LocalVariable CallFunc_Concat_StrStr_ReturnValue_7
+    4f3e0 LocalVariable CallFunc_Conv_IntToString_ReturnValue_1
+4f3f2 Let property=CallFunc_Conv_StringToText_ReturnValue_2
+  4f403 LocalVariable CallFunc_Conv_StringToText_ReturnValue_2
+  4f414 CallMath import:-335:Conv_StringToText
+    4f419 LocalVariable CallFunc_Concat_StrStr_ReturnValue_8
+4f42b Let property=m_eCategory
+  4f43c StructMemberContext m_eCategory
+    4f44d LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f45e ByteConst 1
+4f460 Let property=m_strTitle
+  4f471 StructMemberContext m_strTitle
+    4f482 LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f493 TextConst kind=1
+    4f495 StringConst "ChangeBattleStep"
+    4f4a7 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4f4c9 StringConst ""
+4f4cb Let property=m_strIssuer
+  4f4dc StructMemberContext m_strIssuer
+    4f4ed LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f4fe TextConst kind=1
+    4f500 StringConst "BattleManager"
+    4f50f StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4f531 StringConst ""
+4f533 Let property=m_strComment
+  4f544 StructMemberContext m_strComment
+    4f555 LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f566 LocalVariable CallFunc_Conv_StringToText_ReturnValue_2
+4f577 Let property=m_strDetail
+  4f588 StructMemberContext m_strDetail
+    4f599 LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f5aa TextConst kind=0
+4f5ac Let property=m_astrTagList
+  4f5bd StructMemberContext m_astrTagList
+    4f5ce LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+  4f5df TextConst kind=1
+    4f5e1 StringConst "BattleFlow,ChangeStep"
+    4f5f8 StringConst "62FC382C4684622E8D3938BA304FB920"
+    4f61a StringConst ""
+4f61c CallMath import:-382:AddBattleLog
+  4f621 LocalVariable K2Node_MakeStruct_DebugBattleLog_2
+4f633 Let property=BattleStartInfoTime
+  4f644 LocalVariable BattleStartInfoTime
+  4f655 FloatConst 0
+4f65a PushExecutionFlow target=11855
+4f65f LocalVirtualFunction CheckSpecialActionInParty
+  4f668 ByteConst 9
+  4f66a LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction
+  4f67b LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer
+4f68d PopExecutionFlowIfNot
+  4f68e LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction
+4f69f LocalVirtualFunction ExecSpecialAction_Preparation
+  4f6a8 LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer
+  4f6b9 LocalVariable CallFunc_ExecSpecialAction_Preparation_Success
+4f6cb PopExecutionFlowIfNot
+  4f6cc LocalVariable CallFunc_ExecSpecialAction_Preparation_Success
+4f6dd Context skip=64 rvalue=<null-field>
+  4f6de ObjectConst import:-567:Default__LibGetParam_C
+  4f6ef LocalVirtualFunction GetBattleParamToFloat
+    4f6f8 NameConst BATTLE_START_INFO_TIME
+    4f701 Self
+    4f702 LocalVariable CallFunc_GetBattleParamToFloat_Min_4
+    4f713 LocalVariable CallFunc_GetBattleParamToFloat_Max_4
+    4f724 LocalVariable CallFunc_GetBattleParamToFloat_Init_4
+    4f735 LocalVariable CallFunc_GetBattleParamToFloat_Param_4
+4f747 Let property=BattleStartInfoTime
+  4f758 LocalVariable BattleStartInfoTime
+  4f769 LocalVariable CallFunc_GetBattleParamToFloat_Init_4
+4f77a PopExecutionFlow
+4f77b LetBool
+  4f77c LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_2
+  4f78d CallMath import:-293:NotEqual_FloatFloat
+    4f792 LocalVariable BattleStartInfoTime
+    4f7a3 FloatConst 0
+4f7a9 JumpIfNot target=12666
+  4f7ae LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_2
+4f7bf Let property=WaitTimeSec
+  4f7d0 InstanceVariable WaitTimeSec
+  4f7e1 LocalVariable BattleStartInfoTime
+4f7f2 Let property=ElapsedTime
+  4f803 InstanceVariable ElapsedTime
+  4f814 FloatConst 0
+4f819 Let property=CallFunc_Add_IntInt_ReturnValue_2
+  4f82a LocalVariable CallFunc_Add_IntInt_ReturnValue_2
+  4f83b CallMath import:-259:Add_IntInt
+    4f840 InstanceVariable LocalStep
+    4f851 IntConst 1
+4f857 Let property=LocalStep
+  4f868 InstanceVariable LocalStep
+  4f879 LocalVariable CallFunc_Add_IntInt_ReturnValue_2
+4f88a Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_4
+  4f89b LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_4
+  4f8ac CallMath import:-302:GetEnumeratorUserFriendlyName
+    4f8b1 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4f8b6 InstanceVariable CurrentFlow
+4f8c8 Let property=CallFunc_Concat_StrStr_ReturnValue_12
+  4f8d9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_12
+  4f8ea CallMath import:-304:Concat_StrStr
+    4f8ef StringConst "CurrentFlow : "
+    4f8ff LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_4
+4f911 Let property=CallFunc_Concat_StrStr_ReturnValue_13
+  4f922 LocalVariable CallFunc_Concat_StrStr_ReturnValue_13
+  4f933 CallMath import:-304:Concat_StrStr
+    4f938 LocalVariable CallFunc_Concat_StrStr_ReturnValue_12
+    4f949 StringConst "\r\nCurrentLocalStep : "
+4f961 Let property=CallFunc_Conv_IntToString_ReturnValue_4
+  4f972 LocalVariable CallFunc_Conv_IntToString_ReturnValue_4
+  4f983 CallMath import:-309:Conv_IntToString
+    4f988 InstanceVariable LocalStep
+4f99a Let property=CallFunc_Concat_StrStr_ReturnValue_14
+  4f9ab LocalVariable CallFunc_Concat_StrStr_ReturnValue_14
+  4f9bc CallMath import:-304:Concat_StrStr
+    4f9c1 LocalVariable CallFunc_Concat_StrStr_ReturnValue_13
+    4f9d2 LocalVariable CallFunc_Conv_IntToString_ReturnValue_4
+4f9e4 Let property=CallFunc_Conv_StringToText_ReturnValue_4
+  4f9f5 LocalVariable CallFunc_Conv_StringToText_ReturnValue_4
+  4fa06 CallMath import:-335:Conv_StringToText
+    4fa0b LocalVariable CallFunc_Concat_StrStr_ReturnValue_14
+4fa1d Let property=m_eCategory
+  4fa2e StructMemberContext m_eCategory
+    4fa3f LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4fa50 ByteConst 1
+4fa52 Let property=m_strTitle
+  4fa63 StructMemberContext m_strTitle
+    4fa74 LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4fa85 TextConst kind=1
+    4fa87 StringConst "ChangeBattleStep"
+    4fa99 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4fabb StringConst ""
+4fabd Let property=m_strIssuer
+  4face StructMemberContext m_strIssuer
+    4fadf LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4faf0 TextConst kind=1
+    4faf2 StringConst "BattleManager"
+    4fb01 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4fb23 StringConst ""
+4fb25 Let property=m_strComment
+  4fb36 StructMemberContext m_strComment
+    4fb47 LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4fb58 LocalVariable CallFunc_Conv_StringToText_ReturnValue_4
+4fb69 Let property=m_strDetail
+  4fb7a StructMemberContext m_strDetail
+    4fb8b LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4fb9c TextConst kind=0
+4fb9e Let property=m_astrTagList
+  4fbaf StructMemberContext m_astrTagList
+    4fbc0 LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+  4fbd1 TextConst kind=1
+    4fbd3 StringConst "BattleFlow,ChangeStep"
+    4fbea StringConst "62FC382C4684622E8D3938BA304FB920"
+    4fc0c StringConst ""
+4fc0e CallMath import:-382:AddBattleLog
+  4fc13 LocalVariable K2Node_MakeStruct_DebugBattleLog_4
+4fc25 PopExecutionFlow
+4fc26 Let property=CallFunc_Add_IntInt_ReturnValue_9
+  4fc37 LocalVariable CallFunc_Add_IntInt_ReturnValue_9
+  4fc48 CallMath import:-259:Add_IntInt
+    4fc4d InstanceVariable LocalStep
+    4fc5e IntConst 1
+4fc64 Let property=LocalStep
+  4fc75 InstanceVariable LocalStep
+  4fc86 LocalVariable CallFunc_Add_IntInt_ReturnValue_9
+4fc97 Let property=CallFunc_Conv_IntToString_ReturnValue_6
+  4fca8 LocalVariable CallFunc_Conv_IntToString_ReturnValue_6
+  4fcb9 CallMath import:-309:Conv_IntToString
+    4fcbe InstanceVariable LocalStep
+4fcd0 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_7
+  4fce1 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_7
+  4fcf2 CallMath import:-302:GetEnumeratorUserFriendlyName
+    4fcf7 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    4fcfc InstanceVariable CurrentFlow
+4fd0e Let property=CallFunc_Concat_StrStr_ReturnValue_21
+  4fd1f LocalVariable CallFunc_Concat_StrStr_ReturnValue_21
+  4fd30 CallMath import:-304:Concat_StrStr
+    4fd35 StringConst "CurrentFlow : "
+    4fd45 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_7
+4fd57 Let property=CallFunc_Concat_StrStr_ReturnValue_22
+  4fd68 LocalVariable CallFunc_Concat_StrStr_ReturnValue_22
+  4fd79 CallMath import:-304:Concat_StrStr
+    4fd7e LocalVariable CallFunc_Concat_StrStr_ReturnValue_21
+    4fd8f StringConst "\r\nCurrentLocalStep : "
+4fda7 Let property=CallFunc_Concat_StrStr_ReturnValue_23
+  4fdb8 LocalVariable CallFunc_Concat_StrStr_ReturnValue_23
+  4fdc9 CallMath import:-304:Concat_StrStr
+    4fdce LocalVariable CallFunc_Concat_StrStr_ReturnValue_22
+    4fddf LocalVariable CallFunc_Conv_IntToString_ReturnValue_6
+4fdf1 Let property=CallFunc_Conv_StringToText_ReturnValue_7
+  4fe02 LocalVariable CallFunc_Conv_StringToText_ReturnValue_7
+  4fe13 CallMath import:-335:Conv_StringToText
+    4fe18 LocalVariable CallFunc_Concat_StrStr_ReturnValue_23
+4fe2a Let property=m_eCategory
+  4fe3b StructMemberContext m_eCategory
+    4fe4c LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4fe5d ByteConst 1
+4fe5f Let property=m_strTitle
+  4fe70 StructMemberContext m_strTitle
+    4fe81 LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4fe92 TextConst kind=1
+    4fe94 StringConst "ChangeBattleStep"
+    4fea6 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    4fec8 StringConst ""
+4feca Let property=m_strIssuer
+  4fedb StructMemberContext m_strIssuer
+    4feec LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4fefd TextConst kind=1
+    4feff StringConst "BattleManager"
+    4ff0e StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    4ff30 StringConst ""
+4ff32 Let property=m_strComment
+  4ff43 StructMemberContext m_strComment
+    4ff54 LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4ff65 LocalVariable CallFunc_Conv_StringToText_ReturnValue_7
+4ff76 Let property=m_strDetail
+  4ff87 StructMemberContext m_strDetail
+    4ff98 LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4ffa9 TextConst kind=0
+4ffab Let property=m_astrTagList
+  4ffbc StructMemberContext m_astrTagList
+    4ffcd LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+  4ffde TextConst kind=1
+    4ffe0 StringConst "BattleFlow,ChangeStep"
+    4fff7 StringConst "62FC382C4684622E8D3938BA304FB920"
+    50019 StringConst ""
+5001b CallMath import:-382:AddBattleLog
+  50020 LocalVariable K2Node_MakeStruct_DebugBattleLog_7
+50032 Let property=BattleStartInfoTime
+  50043 LocalVariable BattleStartInfoTime
+  50054 FloatConst 0
+50059 PushExecutionFlow target=13484
+5005e PushExecutionFlow target=16988
+50063 LocalVirtualFunction CheckSpecialActionInParty
+  5006c ByteConst 16
+  5006e LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction_2
+  5007f LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer_2
+50091 LetBool
+  50092 LocalVariable SpecialSupportSuccess
+  500a3 LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction_2
+500b4 LetObj
+  500b5 LocalVariable SpecialSupportEnforcer
+  500c6 LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer_2
+500d7 PopExecutionFlow
+500d8 LetBool
+  500d9 LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_1
+  500ea CallMath import:-293:NotEqual_FloatFloat
+    500ef LocalVariable BattleStartInfoTime
+    50100 FloatConst 0
+50106 JumpIfNot target=14295
+  5010b LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue_1
+5011c Let property=WaitTimeSec
+  5012d InstanceVariable WaitTimeSec
+  5013e LocalVariable BattleStartInfoTime
+5014f Let property=ElapsedTime
+  50160 InstanceVariable ElapsedTime
+  50171 FloatConst 0
+50176 Let property=CallFunc_Add_IntInt_ReturnValue_3
+  50187 LocalVariable CallFunc_Add_IntInt_ReturnValue_3
+  50198 CallMath import:-259:Add_IntInt
+    5019d InstanceVariable LocalStep
+    501ae IntConst 1
+501b4 Let property=LocalStep
+  501c5 InstanceVariable LocalStep
+  501d6 LocalVariable CallFunc_Add_IntInt_ReturnValue_3
+501e7 Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue
+  501f8 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue
+  50209 CallMath import:-302:GetEnumeratorUserFriendlyName
+    5020e ObjectConst import:-729:EBATTLE_FLOW_STATE
+    50213 InstanceVariable CurrentFlow
+50225 Let property=CallFunc_Conv_IntToString_ReturnValue
+  50236 LocalVariable CallFunc_Conv_IntToString_ReturnValue
+  50247 CallMath import:-309:Conv_IntToString
+    5024c InstanceVariable LocalStep
+5025e Let property=CallFunc_Concat_StrStr_ReturnValue
+  5026f LocalVariable CallFunc_Concat_StrStr_ReturnValue
+  50280 CallMath import:-304:Concat_StrStr
+    50285 StringConst "CurrentFlow : "
+    50295 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue
+502a7 Let property=CallFunc_Concat_StrStr_ReturnValue_1
+  502b8 LocalVariable CallFunc_Concat_StrStr_ReturnValue_1
+  502c9 CallMath import:-304:Concat_StrStr
+    502ce LocalVariable CallFunc_Concat_StrStr_ReturnValue
+    502df StringConst "\r\nCurrentLocalStep : "
+502f7 Let property=CallFunc_Concat_StrStr_ReturnValue_2
+  50308 LocalVariable CallFunc_Concat_StrStr_ReturnValue_2
+  50319 CallMath import:-304:Concat_StrStr
+    5031e LocalVariable CallFunc_Concat_StrStr_ReturnValue_1
+    5032f LocalVariable CallFunc_Conv_IntToString_ReturnValue
+50341 Let property=CallFunc_Conv_StringToText_ReturnValue
+  50352 LocalVariable CallFunc_Conv_StringToText_ReturnValue
+  50363 CallMath import:-335:Conv_StringToText
+    50368 LocalVariable CallFunc_Concat_StrStr_ReturnValue_2
+5037a Let property=m_eCategory
+  5038b StructMemberContext m_eCategory
+    5039c LocalVariable K2Node_MakeStruct_DebugBattleLog
+  503ad ByteConst 1
+503af Let property=m_strTitle
+  503c0 StructMemberContext m_strTitle
+    503d1 LocalVariable K2Node_MakeStruct_DebugBattleLog
+  503e2 TextConst kind=1
+    503e4 StringConst "ChangeBattleStep"
+    503f6 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    50418 StringConst ""
+5041a Let property=m_strIssuer
+  5042b StructMemberContext m_strIssuer
+    5043c LocalVariable K2Node_MakeStruct_DebugBattleLog
+  5044d TextConst kind=1
+    5044f StringConst "BattleManager"
+    5045e StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    50480 StringConst ""
+50482 Let property=m_strComment
+  50493 StructMemberContext m_strComment
+    504a4 LocalVariable K2Node_MakeStruct_DebugBattleLog
+  504b5 LocalVariable CallFunc_Conv_StringToText_ReturnValue
+504c6 Let property=m_strDetail
+  504d7 StructMemberContext m_strDetail
+    504e8 LocalVariable K2Node_MakeStruct_DebugBattleLog
+  504f9 TextConst kind=0
+504fb Let property=m_astrTagList
+  5050c StructMemberContext m_astrTagList
+    5051d LocalVariable K2Node_MakeStruct_DebugBattleLog
+  5052e TextConst kind=1
+    50530 StringConst "BattleFlow,ChangeStep"
+    50547 StringConst "62FC382C4684622E8D3938BA304FB920"
+    50569 StringConst ""
+5056b CallMath import:-382:AddBattleLog
+  50570 LocalVariable K2Node_MakeStruct_DebugBattleLog
+50582 PopExecutionFlow
+50583 Let property=CallFunc_Add_IntInt_ReturnValue_13
+  50594 LocalVariable CallFunc_Add_IntInt_ReturnValue_13
+  505a5 CallMath import:-259:Add_IntInt
+    505aa InstanceVariable LocalStep
+    505bb IntConst 1
+505c1 Let property=LocalStep
+  505d2 InstanceVariable LocalStep
+  505e3 LocalVariable CallFunc_Add_IntInt_ReturnValue_13
+505f4 Let property=CallFunc_Conv_IntToString_ReturnValue_11
+  50605 LocalVariable CallFunc_Conv_IntToString_ReturnValue_11
+  50616 CallMath import:-309:Conv_IntToString
+    5061b InstanceVariable LocalStep
+5062d Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_12
+  5063e LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_12
+  5064f CallMath import:-302:GetEnumeratorUserFriendlyName
+    50654 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    50659 InstanceVariable CurrentFlow
+5066b Let property=CallFunc_Concat_StrStr_ReturnValue_36
+  5067c LocalVariable CallFunc_Concat_StrStr_ReturnValue_36
+  5068d CallMath import:-304:Concat_StrStr
+    50692 StringConst "CurrentFlow : "
+    506a2 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_12
+506b4 Let property=CallFunc_Concat_StrStr_ReturnValue_37
+  506c5 LocalVariable CallFunc_Concat_StrStr_ReturnValue_37
+  506d6 CallMath import:-304:Concat_StrStr
+    506db LocalVariable CallFunc_Concat_StrStr_ReturnValue_36
+    506ec StringConst "\r\nCurrentLocalStep : "
+50704 Let property=CallFunc_Concat_StrStr_ReturnValue_38
+  50715 LocalVariable CallFunc_Concat_StrStr_ReturnValue_38
+  50726 CallMath import:-304:Concat_StrStr
+    5072b LocalVariable CallFunc_Concat_StrStr_ReturnValue_37
+    5073c LocalVariable CallFunc_Conv_IntToString_ReturnValue_11
+5074e Let property=CallFunc_Conv_StringToText_ReturnValue_12
+  5075f LocalVariable CallFunc_Conv_StringToText_ReturnValue_12
+  50770 CallMath import:-335:Conv_StringToText
+    50775 LocalVariable CallFunc_Concat_StrStr_ReturnValue_38
+50787 Let property=m_eCategory
+  50798 StructMemberContext m_eCategory
+    507a9 LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  507ba ByteConst 1
+507bc Let property=m_strTitle
+  507cd StructMemberContext m_strTitle
+    507de LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  507ef TextConst kind=1
+    507f1 StringConst "ChangeBattleStep"
+    50803 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    50825 StringConst ""
+50827 Let property=m_strIssuer
+  50838 StructMemberContext m_strIssuer
+    50849 LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  5085a TextConst kind=1
+    5085c StringConst "BattleManager"
+    5086b StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    5088d StringConst ""
+5088f Let property=m_strComment
+  508a0 StructMemberContext m_strComment
+    508b1 LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  508c2 LocalVariable CallFunc_Conv_StringToText_ReturnValue_12
+508d3 Let property=m_strDetail
+  508e4 StructMemberContext m_strDetail
+    508f5 LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  50906 TextConst kind=0
+50908 Let property=m_astrTagList
+  50919 StructMemberContext m_astrTagList
+    5092a LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+  5093b TextConst kind=1
+    5093d StringConst "BattleFlow,ChangeStep"
+    50954 StringConst "62FC382C4684622E8D3938BA304FB920"
+    50976 StringConst ""
+50978 CallMath import:-382:AddBattleLog
+  5097d LocalVariable K2Node_MakeStruct_DebugBattleLog_12
+5098f Let property=BattleStartInfoTime
+  509a0 LocalVariable BattleStartInfoTime
+  509b1 FloatConst 0
+509b6 PushExecutionFlow target=15113
+509bb PushExecutionFlow target=16841
+509c0 LocalVirtualFunction CheckSpecialActionInParty
+  509c9 ByteConst 11
+  509cb LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction_1
+  509dc LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer_1
+509ee LetBool
+  509ef LocalVariable SpecialSupportSuccess
+  50a00 LocalVariable CallFunc_CheckSpecialActionInParty_FindSpecialAction_1
+50a11 LetObj
+  50a12 LocalVariable SpecialSupportEnforcer
+  50a23 LocalVariable CallFunc_CheckSpecialActionInParty_SpecialActionEnforcer_1
+50a34 PopExecutionFlow
+50a35 LetBool
+  50a36 LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue
+  50a47 CallMath import:-293:NotEqual_FloatFloat
+    50a4c LocalVariable BattleStartInfoTime
+    50a5d FloatConst 0
+50a63 JumpIfNot target=15924
+  50a68 LocalVariable CallFunc_NotEqual_FloatFloat_ReturnValue
+50a79 Let property=WaitTimeSec
+  50a8a InstanceVariable WaitTimeSec
+  50a9b LocalVariable BattleStartInfoTime
+50aac Let property=ElapsedTime
+  50abd InstanceVariable ElapsedTime
+  50ace FloatConst 0
+50ad3 Let property=CallFunc_Add_IntInt_ReturnValue_7
+  50ae4 LocalVariable CallFunc_Add_IntInt_ReturnValue_7
+  50af5 CallMath import:-259:Add_IntInt
+    50afa InstanceVariable LocalStep
+    50b0b IntConst 1
+50b11 Let property=LocalStep
+  50b22 InstanceVariable LocalStep
+  50b33 LocalVariable CallFunc_Add_IntInt_ReturnValue_7
+50b44 Let property=CallFunc_Conv_IntToString_ReturnValue_3
+  50b55 LocalVariable CallFunc_Conv_IntToString_ReturnValue_3
+  50b66 CallMath import:-309:Conv_IntToString
+    50b6b InstanceVariable LocalStep
+50b7d Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_3
+  50b8e LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_3
+  50b9f CallMath import:-302:GetEnumeratorUserFriendlyName
+    50ba4 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    50ba9 InstanceVariable CurrentFlow
+50bbb Let property=CallFunc_Concat_StrStr_ReturnValue_9
+  50bcc LocalVariable CallFunc_Concat_StrStr_ReturnValue_9
+  50bdd CallMath import:-304:Concat_StrStr
+    50be2 StringConst "CurrentFlow : "
+    50bf2 LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_3
+50c04 Let property=CallFunc_Concat_StrStr_ReturnValue_10
+  50c15 LocalVariable CallFunc_Concat_StrStr_ReturnValue_10
+  50c26 CallMath import:-304:Concat_StrStr
+    50c2b LocalVariable CallFunc_Concat_StrStr_ReturnValue_9
+    50c3c StringConst "\r\nCurrentLocalStep : "
+50c54 Let property=CallFunc_Concat_StrStr_ReturnValue_11
+  50c65 LocalVariable CallFunc_Concat_StrStr_ReturnValue_11
+  50c76 CallMath import:-304:Concat_StrStr
+    50c7b LocalVariable CallFunc_Concat_StrStr_ReturnValue_10
+    50c8c LocalVariable CallFunc_Conv_IntToString_ReturnValue_3
+50c9e Let property=CallFunc_Conv_StringToText_ReturnValue_3
+  50caf LocalVariable CallFunc_Conv_StringToText_ReturnValue_3
+  50cc0 CallMath import:-335:Conv_StringToText
+    50cc5 LocalVariable CallFunc_Concat_StrStr_ReturnValue_11
+50cd7 Let property=m_eCategory
+  50ce8 StructMemberContext m_eCategory
+    50cf9 LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50d0a ByteConst 1
+50d0c Let property=m_strTitle
+  50d1d StructMemberContext m_strTitle
+    50d2e LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50d3f TextConst kind=1
+    50d41 StringConst "ChangeBattleStep"
+    50d53 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    50d75 StringConst ""
+50d77 Let property=m_strIssuer
+  50d88 StructMemberContext m_strIssuer
+    50d99 LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50daa TextConst kind=1
+    50dac StringConst "BattleManager"
+    50dbb StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    50ddd StringConst ""
+50ddf Let property=m_strComment
+  50df0 StructMemberContext m_strComment
+    50e01 LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50e12 LocalVariable CallFunc_Conv_StringToText_ReturnValue_3
+50e23 Let property=m_strDetail
+  50e34 StructMemberContext m_strDetail
+    50e45 LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50e56 TextConst kind=0
+50e58 Let property=m_astrTagList
+  50e69 StructMemberContext m_astrTagList
+    50e7a LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+  50e8b TextConst kind=1
+    50e8d StringConst "BattleFlow,ChangeStep"
+    50ea4 StringConst "62FC382C4684622E8D3938BA304FB920"
+    50ec6 StringConst ""
+50ec8 CallMath import:-382:AddBattleLog
+  50ecd LocalVariable K2Node_MakeStruct_DebugBattleLog_3
+50edf PopExecutionFlow
+50ee0 Let property=CallFunc_Add_IntInt_ReturnValue_15
+  50ef1 LocalVariable CallFunc_Add_IntInt_ReturnValue_15
+  50f02 CallMath import:-259:Add_IntInt
+    50f07 InstanceVariable LocalStep
+    50f18 IntConst 1
+50f1e Let property=LocalStep
+  50f2f InstanceVariable LocalStep
+  50f40 LocalVariable CallFunc_Add_IntInt_ReturnValue_15
+50f51 Let property=CallFunc_Conv_IntToString_ReturnValue_14
+  50f62 LocalVariable CallFunc_Conv_IntToString_ReturnValue_14
+  50f73 CallMath import:-309:Conv_IntToString
+    50f78 InstanceVariable LocalStep
+50f8a Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_14
+  50f9b LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_14
+  50fac CallMath import:-302:GetEnumeratorUserFriendlyName
+    50fb1 ObjectConst import:-729:EBATTLE_FLOW_STATE
+    50fb6 InstanceVariable CurrentFlow
+50fc8 Let property=CallFunc_Concat_StrStr_ReturnValue_42
+  50fd9 LocalVariable CallFunc_Concat_StrStr_ReturnValue_42
+  50fea CallMath import:-304:Concat_StrStr
+    50fef StringConst "CurrentFlow : "
+    50fff LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_14
+51011 Let property=CallFunc_Concat_StrStr_ReturnValue_43
+  51022 LocalVariable CallFunc_Concat_StrStr_ReturnValue_43
+  51033 CallMath import:-304:Concat_StrStr
+    51038 LocalVariable CallFunc_Concat_StrStr_ReturnValue_42
+    51049 StringConst "\r\nCurrentLocalStep : "
+51061 Let property=CallFunc_Concat_StrStr_ReturnValue_44
+  51072 LocalVariable CallFunc_Concat_StrStr_ReturnValue_44
+  51083 CallMath import:-304:Concat_StrStr
+    51088 LocalVariable CallFunc_Concat_StrStr_ReturnValue_43
+    51099 LocalVariable CallFunc_Conv_IntToString_ReturnValue_14
+510ab Let property=CallFunc_Conv_StringToText_ReturnValue_14
+  510bc LocalVariable CallFunc_Conv_StringToText_ReturnValue_14
+  510cd CallMath import:-335:Conv_StringToText
+    510d2 LocalVariable CallFunc_Concat_StrStr_ReturnValue_44
+510e4 Let property=m_eCategory
+  510f5 StructMemberContext m_eCategory
+    51106 LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  51117 ByteConst 1
+51119 Let property=m_strTitle
+  5112a StructMemberContext m_strTitle
+    5113b LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  5114c TextConst kind=1
+    5114e StringConst "ChangeBattleStep"
+    51160 StringConst "56A0E4EC406407FC4BC1EC81770446E0"
+    51182 StringConst ""
+51184 Let property=m_strIssuer
+  51195 StructMemberContext m_strIssuer
+    511a6 LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  511b7 TextConst kind=1
+    511b9 StringConst "BattleManager"
+    511c8 StringConst "6BDA393B41ED9964EAA492B4CC21CC8E"
+    511ea StringConst ""
+511ec Let property=m_strComment
+  511fd StructMemberContext m_strComment
+    5120e LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  5121f LocalVariable CallFunc_Conv_StringToText_ReturnValue_14
+51230 Let property=m_strDetail
+  51241 StructMemberContext m_strDetail
+    51252 LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  51263 TextConst kind=0
+51265 Let property=m_astrTagList
+  51276 StructMemberContext m_astrTagList
+    51287 LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+  51298 TextConst kind=1
+    5129a StringConst "BattleFlow,ChangeStep"
+    512b1 StringConst "62FC382C4684622E8D3938BA304FB920"
+    512d3 StringConst ""
+512d5 CallMath import:-382:AddBattleLog
+  512da LocalVariable K2Node_MakeStruct_DebugBattleLog_14
+512ec LetObj
+  512ed LocalVariable CallFunc_GetManagerInstance_ReturnValue
+  512fe CallMath import:-348:GetManagerInstance
+    51303 ObjectConst import:-134:SoundManager
+51309 LocalVirtualFunction ActionInfoClose
+  51312 False
+51314 LocalVirtualFunction CheckBattleTutorial
+  5131d ByteConst 2
+  5131f LocalVariable CallFunc_CheckBattleTutorial_OpenTutorialType
+  51330 LocalVariable CallFunc_CheckBattleTutorial_FindTutorial
+51342 JumpIfNot target=16806
+  51347 LocalVariable CallFunc_CheckBattleTutorial_FindTutorial
+51358 Let property=ReturnTutorialFlow
+  51369 InstanceVariable ReturnTutorialFlow
+  5137a ByteConst 3
+5137c Let property=ReturnLocalStep
+  5138d InstanceVariable ReturnLocalStep
+  5139e IntConst 0
+513a3 LocalVirtualFunction ChangeBattleFlow
+  513ac ByteConst 22
+  513ae LocalVariable CallFunc_ChangeBattleFlow_CurrentFlow
+  513bf LocalVariable CallFunc_ChangeBattleFlow_IsChange
+513d1 PopExecutionFlow
+513d2 LocalVirtualFunction ChangeBattleFlow
+  513db ByteConst 3
+  513dd LocalVariable CallFunc_ChangeBattleFlow_CurrentFlow_2
+  513ee LocalVariable CallFunc_ChangeBattleFlow_IsChange_2
+51400 PopExecutionFlow
+51401 PopExecutionFlowIfNot
+  51402 LocalVariable SpecialSupportSuccess
+51413 LocalVirtualFunction ExecSpecialAction_BuffInNight
+  5141c LocalVariable SpecialSupportEnforcer
+5142e Context skip=64 rvalue=<null-field>
+  5142f ObjectConst import:-567:Default__LibGetParam_C
+  51440 LocalVirtualFunction GetBattleParamToFloat
+    51449 NameConst BATTLE_START_INFO_TIME
+    51452 Self
+    51453 LocalVariable CallFunc_GetBattleParamToFloat_Min
+    51464 LocalVariable CallFunc_GetBattleParamToFloat_Max
+    51475 LocalVariable CallFunc_GetBattleParamToFloat_Init
+    51486 LocalVariable CallFunc_GetBattleParamToFloat_Param
+51498 Let property=BattleStartInfoTime
+  514a9 LocalVariable BattleStartInfoTime
+  514ba LocalVariable CallFunc_GetBattleParamToFloat_Init
+514cb PopExecutionFlow
+514cc PopExecutionFlowIfNot
+  514cd LocalVariable SpecialSupportSuccess
+514de LocalVirtualFunction ExecSpecialAction_DebuffInNight
+  514e7 LocalVariable SpecialSupportEnforcer
+514f9 Context skip=64 rvalue=<null-field>
+  514fa ObjectConst import:-567:Default__LibGetParam_C
+  5150b LocalVirtualFunction GetBattleParamToFloat
+    51514 NameConst BATTLE_START_INFO_TIME
+    5151d Self
+    5151e LocalVariable CallFunc_GetBattleParamToFloat_Min_1
+    5152f LocalVariable CallFunc_GetBattleParamToFloat_Max_1
+    51540 LocalVariable CallFunc_GetBattleParamToFloat_Init_1
+    51551 LocalVariable CallFunc_GetBattleParamToFloat_Param_1
+51563 Let property=BattleStartInfoTime
+  51574 LocalVariable BattleStartInfoTime
+  51585 LocalVariable CallFunc_GetBattleParamToFloat_Init_1
+51596 PopExecutionFlow
+51597 Let property=CallFunc_Add_FloatFloat_ReturnValue_1
+  515a8 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_1
+  515b9 CallMath import:-258:Add_FloatFloat
+    515be InstanceVariable ElapsedTime
+    515cf InstanceVariable DeltaSeconds
+515e1 Let property=ElapsedTime
+  515f2 InstanceVariable ElapsedTime
+  51603 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_1
+51614 LetBool
+  51615 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_5
+  51626 CallMath import:-282:LessEqual_FloatFloat
+    5162b InstanceVariable WaitTimeSec
+    5163c InstanceVariable ElapsedTime
+5164e PopExecutionFlowIfNot
+  5164f LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_5
+51660 Jump target=9866
+51665 Let property=CallFunc_Add_FloatFloat_ReturnValue_3
+  51676 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_3
+  51687 CallMath import:-258:Add_FloatFloat
+    5168c InstanceVariable ElapsedTime
+    5169d InstanceVariable DeltaSeconds
+516af Let property=ElapsedTime
+  516c0 InstanceVariable ElapsedTime
+  516d1 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_3
+516e2 LetBool
+  516e3 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_1
+  516f4 CallMath import:-282:LessEqual_FloatFloat
+    516f9 InstanceVariable WaitTimeSec
+    5170a InstanceVariable ElapsedTime
+5171c PopExecutionFlowIfNot
+  5171d LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_1
+5172e Jump target=11627
+51733 Let property=CallFunc_Add_FloatFloat_ReturnValue
+  51744 LocalVariable CallFunc_Add_FloatFloat_ReturnValue
+  51755 CallMath import:-258:Add_FloatFloat
+    5175a InstanceVariable ElapsedTime
+    5176b InstanceVariable DeltaSeconds
+5177d Let property=ElapsedTime
+  5178e InstanceVariable ElapsedTime
+  5179f LocalVariable CallFunc_Add_FloatFloat_ReturnValue
+517b0 LetBool
+  517b1 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_6
+  517c2 CallMath import:-282:LessEqual_FloatFloat
+    517c7 InstanceVariable WaitTimeSec
+    517d8 InstanceVariable ElapsedTime
+517ea PopExecutionFlowIfNot
+  517eb LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_6
+517fc Jump target=13378
+51801 Let property=CallFunc_Add_FloatFloat_ReturnValue_8
+  51812 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_8
+  51823 CallMath import:-258:Add_FloatFloat
+    51828 InstanceVariable ElapsedTime
+    51839 InstanceVariable DeltaSeconds
+5184b Let property=ElapsedTime
+  5185c InstanceVariable ElapsedTime
+  5186d LocalVariable CallFunc_Add_FloatFloat_ReturnValue_8
+5187e LetBool
+  5187f LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_9
+  51890 CallMath import:-282:LessEqual_FloatFloat
+    51895 InstanceVariable WaitTimeSec
+    518a6 InstanceVariable ElapsedTime
+518b8 PopExecutionFlowIfNot
+  518b9 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_9
+518ca Jump target=15007
+518cf Let property=CallFunc_Add_FloatFloat_ReturnValue_5
+  518e0 LocalVariable CallFunc_Add_FloatFloat_ReturnValue_5
+  518f1 CallMath import:-258:Add_FloatFloat
+    518f6 InstanceVariable ElapsedTime
+    51907 InstanceVariable DeltaSeconds
+51919 Let property=ElapsedTime
+  5192a InstanceVariable ElapsedTime
+  5193b LocalVariable CallFunc_Add_FloatFloat_ReturnValue_5
+5194c LetBool
+  5194d LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_2
+  5195e CallMath import:-282:LessEqual_FloatFloat
+    51963 InstanceVariable WaitTimeSec
+    51974 InstanceVariable ElapsedTime
+51986 PopExecutionFlowIfNot
+  51987 LocalVariable CallFunc_LessEqual_FloatFloat_ReturnValue_2
+51998 Jump target=16636
+5199d Return
+  5199e Nothing
+5199f EndOfScript

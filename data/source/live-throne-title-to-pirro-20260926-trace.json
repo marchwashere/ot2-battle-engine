@@ -1,0 +1,2958 @@
+{
+  "fixture": false,
+  "pid": 4896,
+  "gameThread": 49376,
+  "initialState": 327067252,
+  "finalState": 4102411297,
+  "finish": "Detached with original debug registers restored",
+  "records": [
+    {
+      "kind": "rand",
+      "ms": 116125,
+      "tid": 49376,
+      "before": 327067252,
+      "position": 4916,
+      "seed": null,
+      "returnRva": "0x2C52E57",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C52E57"
+        },
+        {
+          "offset": 96,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 128,
+          "rva": "0x956D75"
+        },
+        {
+          "offset": 176,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1437CDD"
+        },
+        {
+          "offset": 320,
+          "rva": "0x30F9857"
+        },
+        {
+          "offset": 464,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1456896"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 672,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 736,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 920,
+          "rva": "0x1449C10"
+        },
+        {
+          "offset": 928,
+          "rva": "0x12E1062"
+        },
+        {
+          "offset": 1016,
+          "rva": "0x1449D20"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119918,
+      "tid": 49376,
+      "before": 1564310375,
+      "position": 4917,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED8202"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119918,
+      "tid": 49376,
+      "before": 2942994574,
+      "position": 4918,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED82A0"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119918,
+      "tid": 49376,
+      "before": 3621174553,
+      "position": 4919,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED82A0"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119919,
+      "tid": 49376,
+      "before": 3123186552,
+      "position": 4920,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED82A0"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119919,
+      "tid": 49376,
+      "before": 2535611483,
+      "position": 4921,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED8202"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 119997,
+      "tid": 49376,
+      "before": 1884861874,
+      "position": 4922,
+      "seed": null,
+      "returnRva": "0x11C010F",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x11C010F"
+        },
+        {
+          "offset": 80,
+          "rva": "0xEC64A0"
+        },
+        {
+          "offset": 336,
+          "rva": "0xED8202"
+        },
+        {
+          "offset": 384,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 480,
+          "rva": "0xED43AD"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1458A87"
+        },
+        {
+          "offset": 632,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 640,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 656,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 704,
+          "rva": "0x2FD7F5F"
+        },
+        {
+          "offset": 752,
+          "rva": "0xEDB699"
+        },
+        {
+          "offset": 816,
+          "rva": "0xF9ECE9"
+        },
+        {
+          "offset": 848,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 864,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 896,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 1008,
+          "rva": "0xEE48F5"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 120108,
+      "tid": 49376,
+      "before": 1618331053,
+      "position": 4923,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xB6CD57AC70",
+        "node": "/Game/Level/BP/BPC_LevelManager_Others.BPC_LevelManager_Others_C.SpawnNPC",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BPC_LevelManager_Others_C_2147482501",
+        "objectClass": "/Game/Level/BP/BPC_LevelManager_Others.BPC_LevelManager_Others_C",
+        "code": "0x24FE572D378",
+        "spawn": {
+          "locals": "0xB6CD57A290",
+          "size": 2473,
+          "values": [
+            {
+              "name": "NPCLabel",
+              "offset": 0,
+              "value": "NPC_Dng_Cty_3_1_0100_N000"
+            },
+            {
+              "name": "NPCChara",
+              "offset": 1832,
+              "value": "/Game/Level/Persistent.Persistent.PersistentLevel.KSFieldNPCCharacter_C_2147471972"
+            }
+          ]
+        }
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30E74C6"
+        },
+        {
+          "offset": 32,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 120112,
+      "tid": 49376,
+      "before": 2018394556,
+      "position": 4924,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 400,
+      "blueprint": {
+        "address": "0xB6CD57C950",
+        "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.EncountManagerBP_C_2147481933",
+        "objectClass": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C",
+        "code": "0x24FC7F08C9D",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 32,
+          "rva": "0x90DA29"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 80,
+          "rva": "0xA05B4E"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 224,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 272,
+          "rva": "0x11530CE"
+        },
+        {
+          "offset": 304,
+          "rva": "0x145AC6D"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 440,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 744,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 784,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 832,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 120113,
+      "tid": 49376,
+      "before": 635816335,
+      "position": 4925,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 400,
+      "blueprint": {
+        "address": "0xB6CD57C950",
+        "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.EncountManagerBP_C_2147481933",
+        "objectClass": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C",
+        "code": "0x24FC7F08CC2",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 32,
+          "rva": "0x90DA29"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 80,
+          "rva": "0xA05B4E"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 224,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 272,
+          "rva": "0x11530CE"
+        },
+        {
+          "offset": 304,
+          "rva": "0x145AC6D"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 440,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 744,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 784,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 832,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 120126,
+      "tid": 49376,
+      "before": 4104928790,
+      "position": 4926,
+      "seed": null,
+      "returnRva": "0xEA7749",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0xEA7749"
+        },
+        {
+          "offset": 112,
+          "rva": "0x101C1F2"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 192,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 208,
+          "rva": "0x2921927"
+        },
+        {
+          "offset": 224,
+          "rva": "0xECC7D8"
+        },
+        {
+          "offset": 240,
+          "rva": "0x1449B52"
+        },
+        {
+          "offset": 288,
+          "rva": "0x14499FB"
+        },
+        {
+          "offset": 432,
+          "rva": "0x810100"
+        },
+        {
+          "offset": 496,
+          "rva": "0x12E1062"
+        },
+        {
+          "offset": 656,
+          "rva": "0x2928A4B"
+        },
+        {
+          "offset": 704,
+          "rva": "0x85A6EE"
+        },
+        {
+          "offset": 768,
+          "rva": "0x2C494FC"
+        },
+        {
+          "offset": 784,
+          "rva": "0xE8A924"
+        },
+        {
+          "offset": 832,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 896,
+          "rva": "0xF3FD0F"
+        }
+      ],
+      "nativePointers": [
+        {
+          "register": "rbp",
+          "address": "0x24FFD300778",
+          "bytes": "4F00000000010000840000000100000000ADF28F230001CD1F2D8A62099E614EA05A67714610900400E52E905002000000090000500200002897AC1E500200008897AC1E500200008049E18650020000"
+        },
+        {
+          "register": "rdi",
+          "address": "0x24FD52CE080",
+          "bytes": "A885146EF67F0000010000000000000000000000010100008032A6BD4F02000008000000080000000000667300000000A070646EF67F00000000000000000000E41D000000000000F40E010026310000"
+        },
+        {
+          "register": "r12",
+          "address": "0x24FFD300700",
+          "bytes": "80E02CD54F02000020E02CD54F020000F0DF2CD54F020000C0DF2CD54F02000090DF2CD54F02000030DF2CD54F020000D0DE2CD54F02000070DE2CD54F02000010DE2CD54F02000080DD2CD54F020000"
+        },
+        {
+          "register": "r14",
+          "address": "0x24FFD300700",
+          "bytes": "80E02CD54F02000020E02CD54F020000F0DF2CD54F020000C0DF2CD54F02000090DF2CD54F02000030DF2CD54F020000D0DE2CD54F02000070DE2CD54F02000010DE2CD54F02000080DD2CD54F020000"
+        },
+        {
+          "register": "r15",
+          "address": "0xB6CD57D5B0",
+          "bytes": "2700000001000000000000000000000000000000010000000000000000000000000000000000000000000000800000003F00000000000000000000000000000020DC57CDB6000000C00DF5E94F020000"
+        }
+      ]
+    },
+    {
+      "kind": "rand",
+      "ms": 122652,
+      "tid": 49376,
+      "before": 2632039553,
+      "position": 4927,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 400,
+      "blueprint": {
+        "address": "0xB6CD57D7F0",
+        "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.EncountManagerBP_C_2147481933",
+        "objectClass": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C",
+        "code": "0x24FC7F08C9D",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 32,
+          "rva": "0x90DA29"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 80,
+          "rva": "0xA05B4E"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 224,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 272,
+          "rva": "0x11530CE"
+        },
+        {
+          "offset": 304,
+          "rva": "0x145AC6D"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 440,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 744,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 784,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 992,
+          "rva": "0x815A25"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 122652,
+      "tid": 49376,
+      "before": 1427549504,
+      "position": 4928,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 400,
+      "blueprint": {
+        "address": "0xB6CD57D7F0",
+        "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.EncountManagerBP_C_2147481933",
+        "objectClass": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C",
+        "code": "0x24FC7F08CC2",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 32,
+          "rva": "0x90DA29"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 80,
+          "rva": "0xA05B4E"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 224,
+          "rva": "0x113D995"
+        },
+        {
+          "offset": 272,
+          "rva": "0x11530CE"
+        },
+        {
+          "offset": 304,
+          "rva": "0x145AC6D"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 440,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 744,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 784,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 912,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 992,
+          "rva": "0x815A25"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125629,
+      "tid": 49376,
+      "before": 245864195,
+      "position": 4929,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 160,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125642,
+      "tid": 49376,
+      "before": 492152250,
+      "position": 4930,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 160,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125645,
+      "tid": 49376,
+      "before": 1499010453,
+      "position": 4931,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 160,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125651,
+      "tid": 49376,
+      "before": 3734368772,
+      "position": 4932,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 15,
+      "blueprint": {
+        "address": "0xB6CD57A6A0",
+        "node": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147471570",
+        "objectClass": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C",
+        "code": "0x24FC7E694BF",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 256,
+          "rva": "0xE30EBD"
+        },
+        {
+          "offset": 272,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 304,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 376,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 384,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 480,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 544,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 640,
+          "rva": "0x1458CDB"
+        },
+        {
+          "offset": 672,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 680,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 688,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 736,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 768,
+          "rva": "0x12E11F2"
+        },
+        {
+          "offset": 784,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 832,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 912,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 960,
+          "rva": "0x1449B52"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125651,
+      "tid": 49376,
+      "before": 247060663,
+      "position": 4933,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xB6CD57C3D0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147471571",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x24FBD6E3B06",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30BA235"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125651,
+      "tid": 49376,
+      "before": 3148787870,
+      "position": 4934,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125653,
+      "tid": 49376,
+      "before": 1172210921,
+      "position": 4935,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 15,
+      "blueprint": {
+        "address": "0xB6CD57A6A0",
+        "node": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147471502",
+        "objectClass": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C",
+        "code": "0x24FC7E694BF",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 256,
+          "rva": "0xE30EBD"
+        },
+        {
+          "offset": 272,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 304,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 376,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 384,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 480,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 544,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 640,
+          "rva": "0x1458CDB"
+        },
+        {
+          "offset": 672,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 680,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 688,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 736,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 768,
+          "rva": "0x12E11F2"
+        },
+        {
+          "offset": 784,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 832,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 912,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 960,
+          "rva": "0x1449B52"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125653,
+      "tid": 49376,
+      "before": 3633574920,
+      "position": 4936,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xB6CD57C3D0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147471503",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x24FBD6E3B06",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30BA235"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125653,
+      "tid": 49376,
+      "before": 2673140395,
+      "position": 4937,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125703,
+      "tid": 49376,
+      "before": 1449026242,
+      "position": 4938,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125703,
+      "tid": 49376,
+      "before": 931987069,
+      "position": 4939,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125703,
+      "tid": 49376,
+      "before": 3364869964,
+      "position": 4940,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125703,
+      "tid": 49376,
+      "before": 1636518111,
+      "position": 4941,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125704,
+      "tid": 49376,
+      "before": 3044868134,
+      "position": 4942,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125704,
+      "tid": 49376,
+      "before": 338409041,
+      "position": 4943,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125704,
+      "tid": 49376,
+      "before": 2198077392,
+      "position": 4944,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125704,
+      "tid": 49376,
+      "before": 2256396115,
+      "position": 4945,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125769,
+      "tid": 49376,
+      "before": 2046299338,
+      "position": 4946,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 3,
+      "blueprint": {
+        "address": "0xB6CD57CCD0",
+        "node": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C.PlayPlayerSideVoice_BattleStart",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleManagerBP_C_2147481934",
+        "objectClass": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C",
+        "code": "0x24FBD78641C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1449848"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 504,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 672,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 800,
+          "rva": "0x1458371"
+        },
+        {
+          "offset": 808,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 848,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 976,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 125769,
+      "tid": 49376,
+      "before": 2617385061,
+      "position": 4947,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128762,
+      "tid": 49376,
+      "before": 501879188,
+      "position": 4948,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 131054087,
+      "position": 4949,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 1144409262,
+      "position": 4950,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 2246832313,
+      "position": 4951,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 3967742104,
+      "position": 4952,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47590"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 3294244091,
+      "position": 4953,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE475B2"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 771474386,
+      "position": 4954,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 128763,
+      "tid": 49376,
+      "before": 2712476493,
+      "position": 4955,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 129145,
+      "tid": 49376,
+      "before": 1749467356,
+      "position": 4956,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 129145,
+      "tid": 49376,
+      "before": 3575696431,
+      "position": 4957,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 129145,
+      "tid": 49376,
+      "before": 2609755702,
+      "position": 4958,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    }
+  ]
+}

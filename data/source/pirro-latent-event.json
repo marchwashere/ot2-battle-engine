@@ -1,0 +1,12 @@
+{
+  "asset": "Battle/Sequencer/BattleEvent/BattleEvent_TOU_01/ENG_BOS_THI_C01_010",
+  "sha256": "992b4549968f5945e031d2b9178fedaa088a72970c08d2562d828e3b53ce7ce3",
+  "functions": {
+    "ExecuteUbergraph_SequenceDirector": "066e0 ComputedJump\n  066e1 LocalVariable EntryPoint\n066f2 FinalFunction import:-39:ReleasePotentialityAction_Implementation\n  066f7 LocalVariable K2Node_CustomEvent_CharacterID\n06709 Jump target=304\n0670e FinalFunction import:-35:PlayAction_Implementation\n  06713 LocalVariable K2Node_CustomEvent_Character\n  06724 LocalVariable K2Node_CustomEvent_BattleActionID\n06736 Jump target=304\n0673b FinalFunction import:-32:JumpToFrame_Implementation\n  06740 LocalVariable K2Node_CustomEvent_Frame_1\n06752 Jump target=304\n06757 FinalFunction import:-38:RandomJumpToFrame_Implementation\n  0675c LocalVariable K2Node_CustomEvent_Rate\n  0676d LocalVariable K2Node_CustomEvent_Frame\n0677f Jump target=304\n06784 FinalFunction import:-40:SetEventFlag_Implementation\n  06789 LocalVariable K2Node_CustomEvent_FlagName\n  0679a LocalVariable K2Node_CustomEvent_Value\n067ac Jump target=304\n067b1 FinalFunction import:-37:PlayVibration_Implementation\n  067b6 LocalVariable K2Node_CustomEvent_VibrationID\n  067c7 LocalVariable K2Node_CustomEvent_Power\n067d9 Jump target=304\n067de FinalFunction import:-31:CloseTalk_Implementation\n067e4 Jump target=304\n067e9 FinalFunction import:-33:OpenTalk_Implementation\n  067ee LocalVariable K2Node_CustomEvent_TalkTextID\n  067ff LocalVariable K2Node_CustomEvent_Offset\n  06810 LocalVariable K2Node_CustomEvent_WaitFinish\n06822 Jump target=304\n06827 Jump target=190\n0682c FinalFunction import:-36:PlaySE_Implementation\n  06831 LocalVariable K2Node_CustomEvent_SEID\n06843 Jump target=304\n06848 FinalFunction import:-34:OpenTutorial_Implementation\n  0684d LocalVariable K2Node_CustomEvent_TutorialType\n  0685e LocalVariable K2Node_CustomEvent_bForcedDisplay\n06870 Return\n  06871 Nothing\n06872 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {}
+    }
+  ]
+}

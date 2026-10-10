@@ -1,0 +1,52 @@
+[
+  {
+    "time": 4000,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+    "body": "07160 LocalVirtualFunction OpenTalk\n  07169 NameConst TX_MS_TOU_10_BOS01_0010\n  07172 StructConst import:-69:Vector2D size=8\n    0717b FloatConst 160\n    07180 FloatConst 240\n  07186 True\n07188 Return\n  07189 Nothing\n0718a EndOfScript"
+  },
+  {
+    "time": 8000,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+    "body": "072bc LocalVirtualFunction OpenTalk\n  072c5 NameConst TX_MS_TOU_10_BOS01_0020\n  072ce StructConst import:-69:Vector2D size=8\n    072d7 FloatConst -40\n    072dc FloatConst 25\n  072e2 True\n072e4 Return\n  072e5 Nothing\n072e6 EndOfScript"
+  },
+  {
+    "time": 11200,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+    "body": "07313 LocalVirtualFunction OpenTalk\n  0731c NameConst TX_MS_TOU_10_BOS01_0030\n  07325 StructConst import:-69:Vector2D size=8\n    0732e FloatConst -90\n    07333 FloatConst 25\n  07339 True\n0733b Return\n  0733c Nothing\n0733d EndOfScript"
+  },
+  {
+    "time": 15200,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+    "body": "071b7 LocalVirtualFunction OpenTalk\n  071c0 NameConst TX_MS_TOU_10_BOS01_0040\n  071c9 StructConst import:-69:Vector2D size=8\n    071d2 FloatConst 90\n    071d7 FloatConst 240\n  071dd True\n071df Return\n  071e0 Nothing\n071e1 EndOfScript"
+  },
+  {
+    "time": 19200,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+    "body": "0736a LocalVirtualFunction OpenTalk\n  07373 NameConst TX_MS_TOU_10_BOS01_0050\n  0737c StructConst import:-69:Vector2D size=8\n    07385 FloatConst -70\n    0738a FloatConst 25\n  07390 True\n07392 Return\n  07393 Nothing\n07394 EndOfScript"
+  },
+  {
+    "time": 22400,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+    "body": "073c1 LocalVirtualFunction OpenTalk\n  073ca NameConst TX_MS_TOU_10_BOS01_0060\n  073d3 StructConst import:-69:Vector2D size=8\n    073dc FloatConst -60\n    073e1 FloatConst 25\n  073e7 True\n073e9 Return\n  073ea Nothing\n073eb EndOfScript"
+  },
+  {
+    "time": 26400,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+    "body": "0720e LocalVirtualFunction OpenTalk\n  07217 NameConst TX_MS_TOU_10_BOS01_0070\n  07220 StructConst import:-69:Vector2D size=8\n    07229 FloatConst 120\n    0722e FloatConst 240\n  07234 True\n07236 Return\n  07237 Nothing\n07238 EndOfScript"
+  },
+  {
+    "time": 29600,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+    "body": "07265 LocalVirtualFunction OpenTalk\n  0726e NameConst TX_MS_TOU_10_BOS01_0090\n  07277 StructConst import:-69:Vector2D size=8\n    07280 FloatConst 130\n    07285 FloatConst 240\n  0728b True\n0728d Return\n  0728e Nothing\n0728f EndOfScript"
+  },
+  {
+    "time": 33600,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+    "body": "070e9 LocalVirtualFunction SequenceEvent_0\n  070f2 ByteConst 7\n070f5 Return\n  070f6 Nothing\n070f7 EndOfScript"
+  },
+  {
+    "time": 36000,
+    "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+    "body": "07124 LocalVirtualFunction OpenTutorial\n  0712d ByteConst 81\n  0712f False\n07131 Return\n  07132 Nothing\n07133 EndOfScript"
+  }
+]

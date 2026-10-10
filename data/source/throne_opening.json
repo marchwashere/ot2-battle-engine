@@ -25,6 +25,10 @@
       "sha256": "89199944038f11eb9ecddde95ce199a985e1e323beab4d246c14990fc2908665"
     },
     {
+      "source": "/Game/Character/Database/SpecialAction",
+      "sha256": "8426d9dde7971f48aa4abc6a7b58e6bd208b0ee551e9949a9760b23fd84eeab3"
+    },
+    {
       "source": "/Game/Ability/Database/AbilitySetData",
       "sha256": "34568a4256c18b359fcb77e64b65dae4840664d3795edea9ec5fcaeb7dda8ff1"
     },
@@ -35,12 +39,29 @@
     {
       "source": "/Game/Ability/Database/AilmentData",
       "sha256": "f2a99c806f16db66a01681d96b525034563766a62710b6d6fbd80742a7bdb363"
+    },
+    {
+      "source": "/Game/Battle/Database/BattlePlacementType",
+      "sha256": "7213a4e6080d95821a5d69baa83422222c040015d85e3d7cf524c756023f68b1"
+    },
+    {
+      "source": "/Game/Battle/Database/BattlePlacementList",
+      "sha256": "199cac51f2e60d03b98da6be8a914a2578598cc62eda4af97458db39028c9d37"
+    },
+    {
+      "source": "/Game/Event/json/MS_TOU_10_0100",
+      "sha256": "4889053dac297d7781ce00bec46dce14430d82c3b1bdc3fd1ceff9eaec5dd25a"
+    },
+    {
+      "source": "/Game/Event/json/MS_TOU_10_1600",
+      "sha256": "67099bb7823261413be954a60d290481e727ceed9c228c1b01117b112e31a5a6"
     }
   ],
   "notes": [
     "EnemyGroup ENG_EVE_THI_C01_010; opening formation, not Pirro chapter boss.",
     "Default level-one starting gear and learned (GetParam=1) abilities.",
-    "Night talent applies after the initial order shuffle; seed precedes actor initialization, not game process startup.",
+    "Opening night talent is disabled by BAN_TOU_SPECIAL_ACTION (652): MS_TOU_10_0100 command 23 sets it to 1; MS_TOU_10_1600 command 11 clears it to 0 later. CheckConditionSpecialAction checks this BanFlag as well as time of day.",
+    "Seed precedes actor initialization, not game process startup.",
     "Starting inventory is empty; supply owned items explicitly. No invented consumables."
   ],
   "rows": {
@@ -6469,6 +6490,23 @@
         "DebugRecommendLv": 1
       }
     ],
+    "nightTalent": {
+      "id": "ePARTY_BUFF_IN_NIGHT",
+      "Id": 11,
+      "MenuName": "eSTATUSMENU_SPECIFIC_ACTION_NAME_THI",
+      "MenuDetail": "eSTATUSMENU_SPECIFIC_ACTION_DETAIL_THI",
+      "BattleCommandName": "None",
+      "BattleCommandDetail": "None",
+      "PlayerSelectDetail": "TITLE_PLAYER_TALENT_D_05",
+      "SpecialActionType": "ePARTY_BUFF_IN_NIGHT",
+      "AbilityID": [
+        "None",
+        "None",
+        "None"
+      ],
+      "UniqueCommandFlag": false,
+      "BanFlag": 652
+    },
     "ailments": [
       {
         "id": "ADD_GUARD",
@@ -7231,6 +7269,116 @@
         "AdvValue4": 0,
         "TargetDiseaseName": "ePOISON",
         "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+      }
+    ],
+    "targetNumbering": {
+      "order": "right_to_left",
+      "placementType": {
+        "id": "PMT_TYPE_2_001",
+        "ID": 1004,
+        "CameraType": "EBATTLE_CAMERA_TYPE::NEAR",
+        "Placement": [
+          "PMT_LIST_XM0100_YP0100",
+          "PMT_LIST_XM0700_YM0300",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None"
+        ]
+      },
+      "placements": [
+        {
+          "id": "PMT_LIST_XM0100_YP0100",
+          "ID": 325,
+          "Placement": {
+            "kind": "native-struct",
+            "type": "Vector",
+            "components": [
+              {
+                "kind": "float32",
+                "bits": 3267887104,
+                "value": -100
+              },
+              {
+                "kind": "float32",
+                "bits": 1120403456,
+                "value": 100
+              },
+              {
+                "kind": "float32",
+                "bits": 0,
+                "value": 0
+              }
+            ]
+          },
+          "Priority": 0
+        },
+        {
+          "id": "PMT_LIST_XM0700_YM0300",
+          "ID": 332,
+          "Placement": {
+            "kind": "native-struct",
+            "type": "Vector",
+            "components": [
+              {
+                "kind": "float32",
+                "bits": 3291414528,
+                "value": -700
+              },
+              {
+                "kind": "float32",
+                "bits": 3281387520,
+                "value": -300
+              },
+              {
+                "kind": "float32",
+                "bits": 0,
+                "value": 0
+              }
+            ]
+          },
+          "Priority": 0
+        }
+      ],
+      "enemies": [
+        "pursuer_a",
+        "pursuer_b"
+      ]
+    },
+    "nightTalentStoryFlags": [
+      {
+        "event": "MS_TOU_10_0100",
+        "index": 23,
+        "command": {
+          "cmd": 70,
+          "target": 652,
+          "pos": "X=0.0,Y=0.0,Z=0.0",
+          "dir": -1,
+          "text": "",
+          "async": "0",
+          "opt": [
+            "1"
+          ]
+        }
+      },
+      {
+        "event": "MS_TOU_10_1600",
+        "index": 11,
+        "command": {
+          "cmd": 70,
+          "target": 652,
+          "pos": "X=0.0,Y=0.0,Z=0.0",
+          "dir": -1,
+          "text": "",
+          "async": "0",
+          "opt": [
+            "0"
+          ]
+        }
       }
     ]
   }

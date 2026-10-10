@@ -1,0 +1,26 @@
+{
+  "source": "User-reported retail replay, 2026-09-28; not a per-call trace",
+  "initial_seed": 0,
+  "observations": [
+    {
+      "pre_cutscene_advances": 5595,
+      "first_command_menu_advances": 5631,
+      "round_7_command_menu_advances": 5798,
+      "round_9_command_menu_advances": [5832, 5836],
+      "round_10_command_menu_advances": 5892,
+      "round_10_enemy_action": {
+        "reported_name": "穿心",
+        "result": "hit",
+        "damage_recollection": "2 or 3; user uncertain",
+        "reported_on": "2026-09-29"
+      }
+    },
+    {
+      "pre_cutscene_advances": 5678,
+      "pre_cutscene_state_hex": "0xAA7C3306",
+      "extra_boost_adjustment": false,
+      "round_4_sword": { "damage": 38, "critical": true },
+      "outcome": "defeat"
+    }
+  ]
+}

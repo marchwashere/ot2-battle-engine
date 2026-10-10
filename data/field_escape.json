@@ -1,0 +1,1970 @@
+{
+  "route_base_exp": {
+    "ENG_EVE_THI_C01_020": 7,
+    "ENG_BOS_THI_C01_010": 41
+  },
+  "enemies": {
+    "ENE_NML_FLD_CTY_010": {
+      "speed": 57,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_100": {
+      "speed": 63,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 89,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_020": {
+      "speed": 59,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_120": {
+      "speed": 91,
+      "bp_base": 3,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OTR_130": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_530": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_020": {
+      "speed": 77,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_010": {
+      "speed": 68,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_210": {
+      "speed": 69,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 22,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_270": {
+      "speed": 55,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_010": {
+      "speed": 64,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_020": {
+      "speed": 72,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_160": {
+      "speed": 81,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_100": {
+      "speed": 71,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_310": {
+      "speed": 67,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 15,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_330": {
+      "speed": 75,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 315,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_290": {
+      "speed": 73,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_510": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OTR_140": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_590": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_130": {
+      "speed": 87,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_560": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_040": {
+      "speed": 82,
+      "bp_base": 1,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_050": {
+      "speed": 87,
+      "bp_base": 1,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_150": {
+      "speed": 90,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 30,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_120": {
+      "speed": 90,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_170": {
+      "speed": 92,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_110": {
+      "speed": 95,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_340": {
+      "speed": 92,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 315,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SNW_180": {
+      "speed": 92,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OTR_110": {
+      "speed": 99,
+      "bp_base": 2,
+      "weakness_count": 2,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_010": {
+      "speed": 68,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_020": {
+      "speed": 77,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_100": {
+      "speed": 58,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 89,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_110": {
+      "speed": 64,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_180": {
+      "speed": 74,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_120": {
+      "speed": 80,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_030": {
+      "speed": 85,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_FST_140": {
+      "speed": 84,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 15,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_150": {
+      "speed": 59,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_160": {
+      "speed": 56,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_280": {
+      "speed": 75,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 32,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_170": {
+      "speed": 70,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 17,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_220": {
+      "speed": 74,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 90,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_550": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_270": {
+      "speed": 63,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_110": {
+      "speed": 70,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 89,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_030": {
+      "speed": 65,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_100": {
+      "speed": 84,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 42,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_570": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_100": {
+      "speed": 64,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 13,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_220": {
+      "speed": 85,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 22,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_030": {
+      "speed": 85,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_170": {
+      "speed": 95,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 28,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_040": {
+      "speed": 105,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_050": {
+      "speed": 107,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_EVE_SUB_OTR_010": {
+      "speed": 93,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 89,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_130": {
+      "speed": 108,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_230": {
+      "speed": 109,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 22,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_150": {
+      "speed": 99,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_060": {
+      "speed": 118,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_180": {
+      "speed": 130,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 28,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_240": {
+      "speed": 120,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_070": {
+      "speed": 127,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_140": {
+      "speed": 135,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_090": {
+      "speed": 148,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_080": {
+      "speed": 145,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_110": {
+      "speed": 141,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_210": {
+      "speed": 145,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_250": {
+      "speed": 144,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OTR_100": {
+      "speed": 140,
+      "bp_base": 2,
+      "weakness_count": 2,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_160": {
+      "speed": 157,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OTR_150": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_600": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_520": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_540": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_WTR_580": {
+      "speed": 999,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 14,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    }
+  },
+  "osvald_levels": [
+    {
+      "level": 1,
+      "total_exp": 0,
+      "max_hp": 200,
+      "speed": 72
+    },
+    {
+      "level": 2,
+      "total_exp": 6,
+      "max_hp": 208,
+      "speed": 72
+    },
+    {
+      "level": 3,
+      "total_exp": 16,
+      "max_hp": 225,
+      "speed": 73
+    },
+    {
+      "level": 4,
+      "total_exp": 31,
+      "max_hp": 251,
+      "speed": 75
+    },
+    {
+      "level": 5,
+      "total_exp": 51,
+      "max_hp": 284,
+      "speed": 77
+    },
+    {
+      "level": 6,
+      "total_exp": 92,
+      "max_hp": 326,
+      "speed": 79
+    },
+    {
+      "level": 7,
+      "total_exp": 140,
+      "max_hp": 376,
+      "speed": 81
+    },
+    {
+      "level": 8,
+      "total_exp": 195,
+      "max_hp": 384,
+      "speed": 82
+    },
+    {
+      "level": 9,
+      "total_exp": 260,
+      "max_hp": 400,
+      "speed": 83
+    },
+    {
+      "level": 10,
+      "total_exp": 335,
+      "max_hp": 422,
+      "speed": 84
+    },
+    {
+      "level": 11,
+      "total_exp": 434,
+      "max_hp": 452,
+      "speed": 86
+    },
+    {
+      "level": 12,
+      "total_exp": 577,
+      "max_hp": 488,
+      "speed": 88
+    },
+    {
+      "level": 13,
+      "total_exp": 772,
+      "max_hp": 532,
+      "speed": 90
+    },
+    {
+      "level": 14,
+      "total_exp": 1017,
+      "max_hp": 584,
+      "speed": 92
+    },
+    {
+      "level": 15,
+      "total_exp": 1407,
+      "max_hp": 642,
+      "speed": 95
+    },
+    {
+      "level": 16,
+      "total_exp": 1877,
+      "max_hp": 708,
+      "speed": 98
+    },
+    {
+      "level": 17,
+      "total_exp": 2443,
+      "max_hp": 780,
+      "speed": 100
+    },
+    {
+      "level": 18,
+      "total_exp": 3121,
+      "max_hp": 861,
+      "speed": 104
+    },
+    {
+      "level": 19,
+      "total_exp": 3933,
+      "max_hp": 949,
+      "speed": 108
+    },
+    {
+      "level": 20,
+      "total_exp": 4813,
+      "max_hp": 1044,
+      "speed": 111
+    },
+    {
+      "level": 21,
+      "total_exp": 5713,
+      "max_hp": 1052,
+      "speed": 112
+    },
+    {
+      "level": 22,
+      "total_exp": 6699,
+      "max_hp": 1068,
+      "speed": 113
+    },
+    {
+      "level": 23,
+      "total_exp": 7788,
+      "max_hp": 1090,
+      "speed": 114
+    },
+    {
+      "level": 24,
+      "total_exp": 8918,
+      "max_hp": 1120,
+      "speed": 116
+    },
+    {
+      "level": 25,
+      "total_exp": 10118,
+      "max_hp": 1156,
+      "speed": 117
+    },
+    {
+      "level": 26,
+      "total_exp": 11370,
+      "max_hp": 1200,
+      "speed": 119
+    },
+    {
+      "level": 27,
+      "total_exp": 12759,
+      "max_hp": 1252,
+      "speed": 122
+    },
+    {
+      "level": 28,
+      "total_exp": 14294,
+      "max_hp": 1310,
+      "speed": 125
+    },
+    {
+      "level": 29,
+      "total_exp": 15984,
+      "max_hp": 1376,
+      "speed": 127
+    },
+    {
+      "level": 30,
+      "total_exp": 17841,
+      "max_hp": 1448,
+      "speed": 130
+    },
+    {
+      "level": 31,
+      "total_exp": 19732,
+      "max_hp": 1455,
+      "speed": 131
+    },
+    {
+      "level": 32,
+      "total_exp": 21790,
+      "max_hp": 1468,
+      "speed": 132
+    },
+    {
+      "level": 33,
+      "total_exp": 24019,
+      "max_hp": 1487,
+      "speed": 133
+    },
+    {
+      "level": 34,
+      "total_exp": 26422,
+      "max_hp": 1512,
+      "speed": 135
+    },
+    {
+      "level": 35,
+      "total_exp": 29004,
+      "max_hp": 1544,
+      "speed": 136
+    },
+    {
+      "level": 36,
+      "total_exp": 31619,
+      "max_hp": 1581,
+      "speed": 138
+    },
+    {
+      "level": 37,
+      "total_exp": 34413,
+      "max_hp": 1625,
+      "speed": 141
+    },
+    {
+      "level": 38,
+      "total_exp": 37220,
+      "max_hp": 1676,
+      "speed": 144
+    },
+    {
+      "level": 39,
+      "total_exp": 40213,
+      "max_hp": 1732,
+      "speed": 146
+    },
+    {
+      "level": 40,
+      "total_exp": 43401,
+      "max_hp": 1795,
+      "speed": 149
+    },
+    {
+      "level": 41,
+      "total_exp": 46646,
+      "max_hp": 1798,
+      "speed": 150
+    },
+    {
+      "level": 42,
+      "total_exp": 49994,
+      "max_hp": 1804,
+      "speed": 151
+    },
+    {
+      "level": 43,
+      "total_exp": 53537,
+      "max_hp": 1814,
+      "speed": 152
+    },
+    {
+      "level": 44,
+      "total_exp": 57279,
+      "max_hp": 1827,
+      "speed": 153
+    },
+    {
+      "level": 45,
+      "total_exp": 61223,
+      "max_hp": 1843,
+      "speed": 153
+    },
+    {
+      "level": 46,
+      "total_exp": 65327,
+      "max_hp": 1862,
+      "speed": 155
+    },
+    {
+      "level": 47,
+      "total_exp": 69465,
+      "max_hp": 1884,
+      "speed": 157
+    },
+    {
+      "level": 48,
+      "total_exp": 73814,
+      "max_hp": 1910,
+      "speed": 159
+    },
+    {
+      "level": 49,
+      "total_exp": 78382,
+      "max_hp": 1939,
+      "speed": 161
+    },
+    {
+      "level": 50,
+      "total_exp": 83178,
+      "max_hp": 1970,
+      "speed": 162
+    },
+    {
+      "level": 51,
+      "total_exp": 88232,
+      "max_hp": 2004,
+      "speed": 165
+    },
+    {
+      "level": 52,
+      "total_exp": 93525,
+      "max_hp": 2042,
+      "speed": 168
+    },
+    {
+      "level": 53,
+      "total_exp": 99059,
+      "max_hp": 2083,
+      "speed": 171
+    },
+    {
+      "level": 54,
+      "total_exp": 104837,
+      "max_hp": 2127,
+      "speed": 173
+    },
+    {
+      "level": 55,
+      "total_exp": 110863,
+      "max_hp": 2174,
+      "speed": 176
+    },
+    {
+      "level": 56,
+      "total_exp": 117192,
+      "max_hp": 2224,
+      "speed": 180
+    },
+    {
+      "level": 57,
+      "total_exp": 123780,
+      "max_hp": 2278,
+      "speed": 183
+    },
+    {
+      "level": 58,
+      "total_exp": 130634,
+      "max_hp": 2335,
+      "speed": 187
+    },
+    {
+      "level": 59,
+      "total_exp": 137934,
+      "max_hp": 2395,
+      "speed": 190
+    },
+    {
+      "level": 60,
+      "total_exp": 145735,
+      "max_hp": 2457,
+      "speed": 194
+    },
+    {
+      "level": 61,
+      "total_exp": 154072,
+      "max_hp": 2463,
+      "speed": 195
+    },
+    {
+      "level": 62,
+      "total_exp": 162641,
+      "max_hp": 2473,
+      "speed": 196
+    },
+    {
+      "level": 63,
+      "total_exp": 171647,
+      "max_hp": 2489,
+      "speed": 197
+    },
+    {
+      "level": 64,
+      "total_exp": 181554,
+      "max_hp": 2510,
+      "speed": 198
+    },
+    {
+      "level": 65,
+      "total_exp": 192452,
+      "max_hp": 2536,
+      "speed": 199
+    },
+    {
+      "level": 66,
+      "total_exp": 204440,
+      "max_hp": 2568,
+      "speed": 201
+    },
+    {
+      "level": 67,
+      "total_exp": 217627,
+      "max_hp": 2604,
+      "speed": 203
+    },
+    {
+      "level": 68,
+      "total_exp": 232133,
+      "max_hp": 2646,
+      "speed": 205
+    },
+    {
+      "level": 69,
+      "total_exp": 248090,
+      "max_hp": 2693,
+      "speed": 207
+    },
+    {
+      "level": 70,
+      "total_exp": 265643,
+      "max_hp": 2745,
+      "speed": 210
+    },
+    {
+      "level": 71,
+      "total_exp": 284951,
+      "max_hp": 2751,
+      "speed": 211
+    },
+    {
+      "level": 72,
+      "total_exp": 304259,
+      "max_hp": 2761,
+      "speed": 212
+    },
+    {
+      "level": 73,
+      "total_exp": 326077,
+      "max_hp": 2777,
+      "speed": 213
+    },
+    {
+      "level": 74,
+      "total_exp": 350731,
+      "max_hp": 2798,
+      "speed": 214
+    },
+    {
+      "level": 75,
+      "total_exp": 378590,
+      "max_hp": 2824,
+      "speed": 216
+    },
+    {
+      "level": 76,
+      "total_exp": 410071,
+      "max_hp": 2856,
+      "speed": 217
+    },
+    {
+      "level": 77,
+      "total_exp": 445645,
+      "max_hp": 2892,
+      "speed": 219
+    },
+    {
+      "level": 78,
+      "total_exp": 485844,
+      "max_hp": 2934,
+      "speed": 221
+    },
+    {
+      "level": 79,
+      "total_exp": 531269,
+      "max_hp": 2981,
+      "speed": 224
+    },
+    {
+      "level": 80,
+      "total_exp": 582599,
+      "max_hp": 3033,
+      "speed": 226
+    },
+    {
+      "level": 81,
+      "total_exp": 640602,
+      "max_hp": 3039,
+      "speed": 227
+    },
+    {
+      "level": 82,
+      "total_exp": 698605,
+      "max_hp": 3049,
+      "speed": 228
+    },
+    {
+      "level": 83,
+      "total_exp": 765888,
+      "max_hp": 3065,
+      "speed": 229
+    },
+    {
+      "level": 84,
+      "total_exp": 843936,
+      "max_hp": 3086,
+      "speed": 230
+    },
+    {
+      "level": 85,
+      "total_exp": 934472,
+      "max_hp": 3112,
+      "speed": 232
+    },
+    {
+      "level": 86,
+      "total_exp": 1039494,
+      "max_hp": 3144,
+      "speed": 234
+    },
+    {
+      "level": 87,
+      "total_exp": 1161320,
+      "max_hp": 3180,
+      "speed": 235
+    },
+    {
+      "level": 88,
+      "total_exp": 1302638,
+      "max_hp": 3222,
+      "speed": 237
+    },
+    {
+      "level": 89,
+      "total_exp": 1466567,
+      "max_hp": 3269,
+      "speed": 240
+    },
+    {
+      "level": 90,
+      "total_exp": 1656725,
+      "max_hp": 3321,
+      "speed": 243
+    },
+    {
+      "level": 91,
+      "total_exp": 1877308,
+      "max_hp": 3327,
+      "speed": 243
+    },
+    {
+      "level": 92,
+      "total_exp": 2097891,
+      "max_hp": 3337,
+      "speed": 244
+    },
+    {
+      "level": 93,
+      "total_exp": 2362591,
+      "max_hp": 3353,
+      "speed": 245
+    },
+    {
+      "level": 94,
+      "total_exp": 2680231,
+      "max_hp": 3374,
+      "speed": 246
+    },
+    {
+      "level": 95,
+      "total_exp": 3061399,
+      "max_hp": 3400,
+      "speed": 248
+    },
+    {
+      "level": 96,
+      "total_exp": 3518801,
+      "max_hp": 3432,
+      "speed": 250
+    },
+    {
+      "level": 97,
+      "total_exp": 4067683,
+      "max_hp": 3468,
+      "speed": 252
+    },
+    {
+      "level": 98,
+      "total_exp": 4726341,
+      "max_hp": 3510,
+      "speed": 253
+    },
+    {
+      "level": 99,
+      "total_exp": 5516731,
+      "max_hp": 3557,
+      "speed": 256
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "total_exp": 0,
+      "max_hp": 250,
+      "speed": 96
+    },
+    {
+      "level": 2,
+      "total_exp": 6,
+      "max_hp": 261,
+      "speed": 97
+    },
+    {
+      "level": 3,
+      "total_exp": 16,
+      "max_hp": 282,
+      "speed": 98
+    },
+    {
+      "level": 4,
+      "total_exp": 31,
+      "max_hp": 314,
+      "speed": 100
+    },
+    {
+      "level": 5,
+      "total_exp": 51,
+      "max_hp": 356,
+      "speed": 103
+    },
+    {
+      "level": 6,
+      "total_exp": 92,
+      "max_hp": 408,
+      "speed": 105
+    },
+    {
+      "level": 7,
+      "total_exp": 140,
+      "max_hp": 471,
+      "speed": 109
+    },
+    {
+      "level": 8,
+      "total_exp": 195,
+      "max_hp": 481,
+      "speed": 110
+    },
+    {
+      "level": 9,
+      "total_exp": 260,
+      "max_hp": 500,
+      "speed": 111
+    },
+    {
+      "level": 10,
+      "total_exp": 335,
+      "max_hp": 528,
+      "speed": 112
+    },
+    {
+      "level": 11,
+      "total_exp": 434,
+      "max_hp": 565,
+      "speed": 115
+    },
+    {
+      "level": 12,
+      "total_exp": 577,
+      "max_hp": 611,
+      "speed": 117
+    },
+    {
+      "level": 13,
+      "total_exp": 772,
+      "max_hp": 666,
+      "speed": 120
+    },
+    {
+      "level": 14,
+      "total_exp": 1017,
+      "max_hp": 730,
+      "speed": 123
+    },
+    {
+      "level": 15,
+      "total_exp": 1407,
+      "max_hp": 803,
+      "speed": 127
+    },
+    {
+      "level": 16,
+      "total_exp": 1877,
+      "max_hp": 885,
+      "speed": 130
+    },
+    {
+      "level": 17,
+      "total_exp": 2443,
+      "max_hp": 976,
+      "speed": 134
+    },
+    {
+      "level": 18,
+      "total_exp": 3121,
+      "max_hp": 1077,
+      "speed": 139
+    },
+    {
+      "level": 19,
+      "total_exp": 3933,
+      "max_hp": 1187,
+      "speed": 144
+    },
+    {
+      "level": 20,
+      "total_exp": 4813,
+      "max_hp": 1306,
+      "speed": 148
+    },
+    {
+      "level": 21,
+      "total_exp": 5713,
+      "max_hp": 1316,
+      "speed": 150
+    },
+    {
+      "level": 22,
+      "total_exp": 6699,
+      "max_hp": 1335,
+      "speed": 151
+    },
+    {
+      "level": 23,
+      "total_exp": 7788,
+      "max_hp": 1363,
+      "speed": 152
+    },
+    {
+      "level": 24,
+      "total_exp": 8918,
+      "max_hp": 1400,
+      "speed": 154
+    },
+    {
+      "level": 25,
+      "total_exp": 10118,
+      "max_hp": 1446,
+      "speed": 157
+    },
+    {
+      "level": 26,
+      "total_exp": 11370,
+      "max_hp": 1501,
+      "speed": 159
+    },
+    {
+      "level": 27,
+      "total_exp": 12759,
+      "max_hp": 1565,
+      "speed": 163
+    },
+    {
+      "level": 28,
+      "total_exp": 14294,
+      "max_hp": 1638,
+      "speed": 166
+    },
+    {
+      "level": 29,
+      "total_exp": 15984,
+      "max_hp": 1720,
+      "speed": 170
+    },
+    {
+      "level": 30,
+      "total_exp": 17841,
+      "max_hp": 1811,
+      "speed": 174
+    },
+    {
+      "level": 31,
+      "total_exp": 19732,
+      "max_hp": 1819,
+      "speed": 175
+    },
+    {
+      "level": 32,
+      "total_exp": 21790,
+      "max_hp": 1835,
+      "speed": 176
+    },
+    {
+      "level": 33,
+      "total_exp": 24019,
+      "max_hp": 1859,
+      "speed": 177
+    },
+    {
+      "level": 34,
+      "total_exp": 26422,
+      "max_hp": 1891,
+      "speed": 180
+    },
+    {
+      "level": 35,
+      "total_exp": 29004,
+      "max_hp": 1930,
+      "speed": 182
+    },
+    {
+      "level": 36,
+      "total_exp": 31619,
+      "max_hp": 1977,
+      "speed": 184
+    },
+    {
+      "level": 37,
+      "total_exp": 34413,
+      "max_hp": 2032,
+      "speed": 188
+    },
+    {
+      "level": 38,
+      "total_exp": 37220,
+      "max_hp": 2095,
+      "speed": 192
+    },
+    {
+      "level": 39,
+      "total_exp": 40213,
+      "max_hp": 2166,
+      "speed": 195
+    },
+    {
+      "level": 40,
+      "total_exp": 43401,
+      "max_hp": 2244,
+      "speed": 199
+    },
+    {
+      "level": 41,
+      "total_exp": 46646,
+      "max_hp": 2248,
+      "speed": 200
+    },
+    {
+      "level": 42,
+      "total_exp": 49994,
+      "max_hp": 2256,
+      "speed": 201
+    },
+    {
+      "level": 43,
+      "total_exp": 53537,
+      "max_hp": 2268,
+      "speed": 202
+    },
+    {
+      "level": 44,
+      "total_exp": 57279,
+      "max_hp": 2284,
+      "speed": 204
+    },
+    {
+      "level": 45,
+      "total_exp": 61223,
+      "max_hp": 2304,
+      "speed": 205
+    },
+    {
+      "level": 46,
+      "total_exp": 65327,
+      "max_hp": 2328,
+      "speed": 207
+    },
+    {
+      "level": 47,
+      "total_exp": 69465,
+      "max_hp": 2356,
+      "speed": 210
+    },
+    {
+      "level": 48,
+      "total_exp": 73814,
+      "max_hp": 2388,
+      "speed": 212
+    },
+    {
+      "level": 49,
+      "total_exp": 78382,
+      "max_hp": 2424,
+      "speed": 214
+    },
+    {
+      "level": 50,
+      "total_exp": 83178,
+      "max_hp": 2463,
+      "speed": 217
+    },
+    {
+      "level": 51,
+      "total_exp": 88232,
+      "max_hp": 2506,
+      "speed": 220
+    },
+    {
+      "level": 52,
+      "total_exp": 93525,
+      "max_hp": 2553,
+      "speed": 224
+    },
+    {
+      "level": 53,
+      "total_exp": 99059,
+      "max_hp": 2604,
+      "speed": 228
+    },
+    {
+      "level": 54,
+      "total_exp": 104837,
+      "max_hp": 2659,
+      "speed": 231
+    },
+    {
+      "level": 55,
+      "total_exp": 110863,
+      "max_hp": 2718,
+      "speed": 235
+    },
+    {
+      "level": 56,
+      "total_exp": 117192,
+      "max_hp": 2781,
+      "speed": 240
+    },
+    {
+      "level": 57,
+      "total_exp": 123780,
+      "max_hp": 2848,
+      "speed": 244
+    },
+    {
+      "level": 58,
+      "total_exp": 130634,
+      "max_hp": 2919,
+      "speed": 249
+    },
+    {
+      "level": 59,
+      "total_exp": 137934,
+      "max_hp": 2994,
+      "speed": 254
+    },
+    {
+      "level": 60,
+      "total_exp": 145735,
+      "max_hp": 3072,
+      "speed": 259
+    },
+    {
+      "level": 61,
+      "total_exp": 154072,
+      "max_hp": 3079,
+      "speed": 260
+    },
+    {
+      "level": 62,
+      "total_exp": 162641,
+      "max_hp": 3092,
+      "speed": 261
+    },
+    {
+      "level": 63,
+      "total_exp": 171647,
+      "max_hp": 3112,
+      "speed": 262
+    },
+    {
+      "level": 64,
+      "total_exp": 181554,
+      "max_hp": 3138,
+      "speed": 264
+    },
+    {
+      "level": 65,
+      "total_exp": 192452,
+      "max_hp": 3171,
+      "speed": 266
+    },
+    {
+      "level": 66,
+      "total_exp": 204440,
+      "max_hp": 3210,
+      "speed": 268
+    },
+    {
+      "level": 67,
+      "total_exp": 217627,
+      "max_hp": 3256,
+      "speed": 271
+    },
+    {
+      "level": 68,
+      "total_exp": 232133,
+      "max_hp": 3308,
+      "speed": 273
+    },
+    {
+      "level": 69,
+      "total_exp": 248090,
+      "max_hp": 3367,
+      "speed": 277
+    },
+    {
+      "level": 70,
+      "total_exp": 265643,
+      "max_hp": 3432,
+      "speed": 280
+    },
+    {
+      "level": 71,
+      "total_exp": 284951,
+      "max_hp": 3439,
+      "speed": 282
+    },
+    {
+      "level": 72,
+      "total_exp": 304259,
+      "max_hp": 3452,
+      "speed": 283
+    },
+    {
+      "level": 73,
+      "total_exp": 326077,
+      "max_hp": 3472,
+      "speed": 284
+    },
+    {
+      "level": 74,
+      "total_exp": 350731,
+      "max_hp": 3498,
+      "speed": 285
+    },
+    {
+      "level": 75,
+      "total_exp": 378590,
+      "max_hp": 3531,
+      "speed": 288
+    },
+    {
+      "level": 76,
+      "total_exp": 410071,
+      "max_hp": 3570,
+      "speed": 290
+    },
+    {
+      "level": 77,
+      "total_exp": 445645,
+      "max_hp": 3616,
+      "speed": 292
+    },
+    {
+      "level": 78,
+      "total_exp": 485844,
+      "max_hp": 3668,
+      "speed": 295
+    },
+    {
+      "level": 79,
+      "total_exp": 531269,
+      "max_hp": 3727,
+      "speed": 298
+    },
+    {
+      "level": 80,
+      "total_exp": 582599,
+      "max_hp": 3792,
+      "speed": 302
+    },
+    {
+      "level": 81,
+      "total_exp": 640602,
+      "max_hp": 3799,
+      "speed": 303
+    },
+    {
+      "level": 82,
+      "total_exp": 698605,
+      "max_hp": 3812,
+      "speed": 304
+    },
+    {
+      "level": 83,
+      "total_exp": 765888,
+      "max_hp": 3832,
+      "speed": 306
+    },
+    {
+      "level": 84,
+      "total_exp": 843936,
+      "max_hp": 3858,
+      "speed": 307
+    },
+    {
+      "level": 85,
+      "total_exp": 934472,
+      "max_hp": 3891,
+      "speed": 309
+    },
+    {
+      "level": 86,
+      "total_exp": 1039494,
+      "max_hp": 3930,
+      "speed": 312
+    },
+    {
+      "level": 87,
+      "total_exp": 1161320,
+      "max_hp": 3976,
+      "speed": 314
+    },
+    {
+      "level": 88,
+      "total_exp": 1302638,
+      "max_hp": 4028,
+      "speed": 316
+    },
+    {
+      "level": 89,
+      "total_exp": 1466567,
+      "max_hp": 4087,
+      "speed": 320
+    },
+    {
+      "level": 90,
+      "total_exp": 1656725,
+      "max_hp": 4152,
+      "speed": 324
+    },
+    {
+      "level": 91,
+      "total_exp": 1877308,
+      "max_hp": 4159,
+      "speed": 325
+    },
+    {
+      "level": 92,
+      "total_exp": 2097891,
+      "max_hp": 4172,
+      "speed": 326
+    },
+    {
+      "level": 93,
+      "total_exp": 2362591,
+      "max_hp": 4192,
+      "speed": 327
+    },
+    {
+      "level": 94,
+      "total_exp": 2680231,
+      "max_hp": 4218,
+      "speed": 328
+    },
+    {
+      "level": 95,
+      "total_exp": 3061399,
+      "max_hp": 4251,
+      "speed": 331
+    },
+    {
+      "level": 96,
+      "total_exp": 3518801,
+      "max_hp": 4290,
+      "speed": 333
+    },
+    {
+      "level": 97,
+      "total_exp": 4067683,
+      "max_hp": 4336,
+      "speed": 336
+    },
+    {
+      "level": 98,
+      "total_exp": 4726341,
+      "max_hp": 4388,
+      "speed": 338
+    },
+    {
+      "level": 99,
+      "total_exp": 5516731,
+      "max_hp": 4447,
+      "speed": 342
+    }
+  ]
+}

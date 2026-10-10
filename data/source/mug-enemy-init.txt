@@ -1,0 +1,527 @@
+30181 PushExecutionFlow target=4132
+30186 Let property=EnemyData
+  30197 InstanceVariable EnemyData
+  301a8 LocalVariable EnemyData
+301b9 LocalVirtualFunction SetRowID
+  301c2 LocalVariable EnemyRowID
+301d4 PushExecutionFlow target=2793
+301d9 PushExecutionFlow target=2645
+301de PushExecutionFlow target=2455
+301e3 PushExecutionFlow target=1687
+301e8 PushExecutionFlow target=547
+301ed LetObj
+  301ee LocalVariable CallFunc_GetManagerInstance_ReturnValue
+  301ff CallMath import:-277:GetManagerInstance
+    30204 ObjectConst import:-67:FieldCommandManager
+3020a LetObj
+  3020b LocalVariable CallFunc_GetTargetNpc_ReturnValue
+  3021c Context skip=14 rvalue=CallFunc_GetTargetNpc_ReturnValue
+    3021d LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    30242 LocalVirtualFunction GetTargetNpc
+3024c LetBool
+  3024d LocalVariable CallFunc_IsValid_ReturnValue
+  3025e CallMath import:-265:IsValid
+    30263 LocalVariable CallFunc_GetTargetNpc_ReturnValue
+30275 JumpIfNot target=2805
+  3027a LocalVariable CallFunc_IsValid_ReturnValue
+3028b LetObj
+  3028c LocalVariable CallFunc_GetTargetNpc_ReturnValue
+  3029d Context skip=14 rvalue=CallFunc_GetTargetNpc_ReturnValue
+    3029e LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    302c3 LocalVirtualFunction GetTargetNpc
+302cd LetObj
+  302ce LocalVariable CallFunc_GetNpcPropertyComponent_ReturnValue
+  302df Context skip=14 rvalue=CallFunc_GetNpcPropertyComponent_ReturnValue
+    302e0 LocalVariable CallFunc_GetTargetNpc_ReturnValue
+    30305 VirtualFunction GetNpcPropertyComponent
+3030f LetBool
+  30310 LocalVariable CallFunc_IsValid_ReturnValue_1
+  30321 CallMath import:-265:IsValid
+    30326 LocalVariable CallFunc_GetNpcPropertyComponent_ReturnValue
+30338 JumpIfNot target=2805
+  3033d LocalVariable CallFunc_IsValid_ReturnValue_1
+3034e LetObj
+  3034f LocalVariable CallFunc_GetTargetNpc_ReturnValue
+  30360 Context skip=14 rvalue=CallFunc_GetTargetNpc_ReturnValue
+    30361 LocalVariable CallFunc_GetManagerInstance_ReturnValue
+    30386 LocalVirtualFunction GetTargetNpc
+30390 LetObj
+  30391 LocalVariable CallFunc_GetNpcPropertyComponent_ReturnValue
+  303a2 Context skip=14 rvalue=CallFunc_GetNpcPropertyComponent_ReturnValue
+    303a3 LocalVariable CallFunc_GetTargetNpc_ReturnValue
+    303c8 VirtualFunction GetNpcPropertyComponent
+303d2 Let property=CallFunc_GetNpcLabel_ReturnValue
+  303e3 LocalVariable CallFunc_GetNpcLabel_ReturnValue
+  303f4 Context skip=10 rvalue=CallFunc_GetNpcLabel_ReturnValue
+    303f5 LocalVariable CallFunc_GetNpcPropertyComponent_ReturnValue
+    3041a FinalFunction import:-376:GetNpcLabel
+30420 LetBool
+  30421 LocalVariable CallFunc_GetNPCDataByPlacementInfo_ReturnValue
+  30432 CallMath import:-377:GetNPCDataByPlacementInfo
+    30437 LocalVariable CallFunc_GetNPCDataByPlacementInfo_outData
+    30448 LocalVariable CallFunc_GetNpcLabel_ReturnValue
+3045a PopExecutionFlowIfNot
+  3045b LocalVariable CallFunc_GetNPCDataByPlacementInfo_ReturnValue
+3046c LocalVirtualFunction OverrideEnemyDataByNPCData
+  30475 LocalVariable CallFunc_GetNPCDataByPlacementInfo_outData
+30487 PopExecutionFlow
+30488 Let property=CallFunc_K2_GetActorLocation_ReturnValue
+  30499 LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+  304aa FinalFunction import:-193:K2_GetActorLocation
+304b0 Let property=CallFunc_MakeTransform_ReturnValue
+  304c1 LocalVariable CallFunc_MakeTransform_ReturnValue
+  304d2 CallMath import:-237:MakeTransform
+    304d7 LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+    304e8 RotationConst pitch=0 yaw=0 roll=0
+    304f5 VectorConst x=1 y=1 z=1
+30503 LetObj
+  30504 LocalVariable CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
+  30515 CallMath import:-201:BeginDeferredActorSpawnFromClass
+    3051a Self
+    3051b ObjectConst import:-14:KSBattleCharacterEnemy_C
+    30520 LocalVariable CallFunc_MakeTransform_ReturnValue
+    30531 ByteConst 1
+    30533 Self
+30535 Let property=CallFunc_K2_GetActorLocation_ReturnValue
+  30546 LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+  30557 FinalFunction import:-193:K2_GetActorLocation
+3055d Let property=CallFunc_MakeTransform_ReturnValue
+  3056e LocalVariable CallFunc_MakeTransform_ReturnValue
+  3057f CallMath import:-237:MakeTransform
+    30584 LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+    30595 RotationConst pitch=0 yaw=0 roll=0
+    305a2 VectorConst x=1 y=1 z=1
+305b0 LetObj
+  305b1 LocalVariable CallFunc_FinishSpawningActor_ReturnValue
+  305c2 CallMath import:-202:FinishSpawningActor
+    305c7 LocalVariable CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
+    305d8 LocalVariable CallFunc_MakeTransform_ReturnValue
+305ea LetObj
+  305eb InstanceVariable AnimCharacter
+  305fc LocalVariable CallFunc_FinishSpawningActor_ReturnValue
+3060d Let property=CallFunc_K2_GetActorLocation_ReturnValue
+  3061e LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+  3062f FinalFunction import:-193:K2_GetActorLocation
+30635 LetBool
+  30636 LocalVariable CallFunc_K2_SetActorLocation_ReturnValue
+  30647 Context skip=30 rvalue=CallFunc_K2_SetActorLocation_ReturnValue
+    30648 InstanceVariable AnimCharacter
+    3066d FinalFunction import:-194:K2_SetActorLocation
+      30672 LocalVariable CallFunc_K2_GetActorLocation_ReturnValue
+      30683 False
+      30684 LocalVariable CallFunc_K2_SetActorLocation_SweepHitResult
+      30695 True
+30697 PushExecutionFlow target=1194
+3069c Let property=<null-field>
+  306a5 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+  306b6 DynamicCast import:-14:KSBattleCharacterEnemy_C
+    306bb InstanceVariable AnimCharacter
+306cc Let property=<null-field>
+  306d5 LocalVariable K2Node_DynamicCast_bSuccess
+  306e6 Cast cast=71
+    306e8 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+306f9 LetBool
+  306fa LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+  3070b CallMath import:-226:EqualEqual_ByteByte
+    30710 StructMemberContext DeadType_323_EE9C700E4D07A774EE44B9B5B22AA7C8
+      30721 InstanceVariable EnemyData
+    30732 ByteConst 7
+30735 Context skip=41 rvalue=<null-field>
+  30736 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+  30753 LocalVirtualFunction SetSyncAnimationCharacter
+    3075c StructMemberContext MainEnemy_244_B56C489E45163033A302468220E309F5
+      3076d InstanceVariable EnemyData
+    3077e LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+30790 JumpIfNot target=2919
+  30795 StructMemberContext MainEnemy_244_B56C489E45163033A302468220E309F5
+    307a6 InstanceVariable EnemyData
+307b7 Context skip=24 rvalue=<null-field>
+  307b8 ObjectConst import:-390:Default__LibBattle_C
+  307c9 LocalVirtualFunction GetBattleManager
+    307d2 Self
+    307d3 LocalVariable CallFunc_GetBattleManager_BattleManager
+307e5 Context skip=11 rvalue=<null-field>
+  307e6 LocalVariable CallFunc_GetBattleManager_BattleManager
+  30803 FinalFunction import:-350:SetSyncAnimationCharacterParent
+    30808 Self
+3080a PopExecutionFlow
+3080b JumpIfNot target=1672
+  30810 InstanceVariable m_bCharacterReady
+30821 PushExecutionFlow target=3064
+30826 PushExecutionFlow target=3049
+3082b Let property=<null-field>
+  30834 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  30845 DynamicCast import:-14:KSBattleCharacterEnemy_C
+    3084a InstanceVariable AnimCharacter
+3085b Let property=<null-field>
+  30864 LocalVariable K2Node_DynamicCast_bSuccess_1
+  30875 Cast cast=71
+    30877 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+30888 PopExecutionFlowIfNot
+  30889 LocalVariable K2Node_DynamicCast_bSuccess_1
+3089a Context skip=32 rvalue=<null-field>
+  3089b LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  308b8 LocalVirtualFunction SetCharacterNPC
+    308c1 StructMemberContext NPCFlag_205_2349F79B4FBCFEAFF33C8F9B1C3D3107
+      308d2 InstanceVariable EnemyData
+308e4 Context skip=34 rvalue=<null-field>
+  308e5 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  30902 LocalVirtualFunction SetupActionTable
+    3090b StructMemberContext ActionLabel
+      3091c InstanceVariable CurrentResourceData
+    3092d ByteConst 3
+30930 Context skip=23 rvalue=<null-field>
+  30931 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  3094e LocalVirtualFunction GetIdleType
+    30957 LocalVariable CallFunc_GetIdleType_type
+30969 Context skip=26 rvalue=<null-field>
+  3096a LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  30987 VirtualFunction PlayCharacterAction
+    30990 LocalVariable CallFunc_GetIdleType_type
+    309a1 ByteConst 3
+    309a3 True
+309a5 Context skip=14 rvalue=<null-field>
+  309a6 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  309c3 LocalVirtualFunction SetFlipRChannel
+309cd Context skip=24 rvalue=<null-field>
+  309ce ObjectConst import:-390:Default__LibBattle_C
+  309df LocalVirtualFunction GetBattleManager
+    309e8 Self
+    309e9 LocalVariable CallFunc_GetBattleManager_BattleManager_2
+309fb LetBool
+  309fc LocalVariable CallFunc_IsKSPartyBattle_ReturnValue_1
+  30a0d Context skip=14 rvalue=CallFunc_IsKSPartyBattle_ReturnValue_1
+    30a0e LocalVariable CallFunc_GetBattleManager_BattleManager_2
+    30a33 LocalVirtualFunction IsKSPartyBattle
+30a3d PopExecutionFlowIfNot
+  30a3e LocalVariable CallFunc_IsKSPartyBattle_ReturnValue_1
+30a4f Context skip=15 rvalue=<null-field>
+  30a50 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy_1
+  30a6d LocalVirtualFunction SetKSPartyMember
+    30a76 True
+30a78 PopExecutionFlow
+30a79 LocalVirtualFunction LoadEnemyResource
+30a83 PopExecutionFlow
+30a84 PushExecutionFlow target=3707
+30a89 PushExecutionFlow target=3299
+30a8e PushExecutionFlow target=3125
+30a93 PushExecutionFlow target=1840
+30a98 PushExecutionFlow target=2222
+30a9d Let property=TargetPriority
+  30aae InstanceVariable TargetPriority
+  30abf LocalVariable TargetPriority
+30ad0 LetBool
+  30ad1 InstanceVariable IsDead
+  30ae2 False
+30ae3 LetBool
+  30ae4 InstanceVariable NoResult
+  30af5 False
+30af6 LetBool
+  30af7 InstanceVariable DoExRotten
+  30b08 False
+30b09 Let property=m_fBribeRatio
+  30b1a InstanceVariable m_fBribeRatio
+  30b2b FloatConst 1
+30b30 LetBool
+  30b31 InstanceVariable IsEnemy
+  30b42 True
+30b43 LetBool
+  30b44 InstanceVariable IsSettledDeadPattern
+  30b55 False
+30b56 LetBool
+  30b57 InstanceVariable m_bIsAutoTameMonster
+  30b68 False
+30b69 LetBool
+  30b6a InstanceVariable InBattleLoadedFlag
+  30b7b False
+30b7c PopExecutionFlow
+30b7d Let property=m_nCurrentHP
+  30b8e InstanceVariable m_nCurrentHP
+  30b9f StructMemberContext HP
+    30bb0 InstanceVariable m_cMasterParameter
+30bc1 Let property=m_nCurrentMP
+  30bd2 InstanceVariable m_nCurrentMP
+  30be3 StructMemberContext MP
+    30bf4 InstanceVariable m_cMasterParameter
+30c05 Let property=CallFunc_Add_IntInt_ReturnValue
+  30c16 LocalVariable CallFunc_Add_IntInt_ReturnValue
+  30c27 CallMath import:-215:Add_IntInt
+    30c2c StructMemberContext BP
+      30c3d InstanceVariable m_cMasterParameter
+    30c4e IntConst 2
+30c54 Let property=CallFunc_RandomIntegerInRange_ReturnValue
+  30c65 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue
+  30c76 CallMath import:-253:RandomIntegerInRange
+    30c7b StructMemberContext BP
+      30c8c InstanceVariable m_cMasterParameter
+    30c9d LocalVariable CallFunc_Add_IntInt_ReturnValue
+30caf Let property=ResultBP
+  30cc0 LocalVariable ResultBP
+  30cd1 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue
+30ce2 LocalVirtualFunction InitBoostPoint
+  30ceb StructMemberContext FirstBP_157_A9BAE80B4AED1411EB63288E9043C107
+    30cfc InstanceVariable EnemyData
+  30d0d LocalVariable ResultBP
+30d1f LetBool
+  30d20 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+  30d31 CallMath import:-245:NotEqual_ByteByte
+    30d36 LocalVariable BattleMode
+    30d47 ByteConst 4
+30d4a LetBool
+  30d4b LocalVariable Temp_bool_Variable
+  30d5c LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+30d6d LocalVirtualFunction InitBreakPoint
+  30d76 SwitchValue cases=2 end=2220
+    30d7d LocalVariable Temp_bool_Variable
+    30d8e False
+    30d8f SwitchCaseNext 2188
+    30d93 StructMemberContext RevealShieldPoint_318_33A2EAE54825316FAE75DD9F5F13CF15
+      30da4 InstanceVariable EnemyData
+    30db5 True
+    30db6 SwitchCaseNext 2211
+    30dba StructMemberContext SP
+      30dcb InstanceVariable m_cMasterParameter
+    30ddc LocalVariable K2Node_Select_Default
+30dee PopExecutionFlow
+30def Let property=m_nCharacterID
+  30e00 InstanceVariable m_nCharacterID
+  30e11 StructMemberContext EnemyID_150_C340ADF44DDF1FA9859D9B9EB7A9BF4C
+    30e22 InstanceVariable EnemyData
+30e33 Let property=m_cMasterParameter
+  30e44 InstanceVariable m_cMasterParameter
+  30e55 StructMemberContext Param_288_26ADF7E94CDC32CEEDEF2CA219E264BF
+    30e66 InstanceVariable EnemyData
+30e77 LocalVirtualFunction InitializeDiseaseResist
+  30e80 StructMemberContext DiseaseResist_284_473D871A46E1123D4DB763B4629FFA22
+    30e91 InstanceVariable EnemyData
+30ea3 Let property=AttributeResist
+  30eb4 InstanceVariable AttributeResist
+  30ec5 StructMemberContext AttributeResist_282_87881AFB4F4DD148EA692D8F63B73E16
+    30ed6 InstanceVariable EnemyData
+30ee7 LetBool
+  30ee8 InstanceVariable SettledStealItem
+  30ef9 StructMemberContext StealGuard_296_148A86084818F42133C90C9D84C5E707
+    30f0a InstanceVariable EnemyData
+30f1b LetBool
+  30f1c InstanceVariable SettledStealMoney
+  30f2d StructMemberContext StealMoneyGuard_298_E478E53B4DA8F726470B708E9AB69222
+    30f3e InstanceVariable EnemyData
+30f4f Let property=CharacterActionLabel
+  30f60 LocalVariable CharacterActionLabel
+  30f71 StructMemberContext ActionLabel
+    30f82 InstanceVariable CurrentResourceData
+30f93 PopExecutionFlow
+30f94 LetBool
+  30f95 LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+  30fa6 CallMath import:-247:NotEqual_NameName
+    30fab StructMemberContext BattleVoiceCharacterID
+      30fbc InstanceVariable CurrentResourceData
+    30fcd NameConst None
+30fd7 PopExecutionFlowIfNot
+  30fd8 LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+30fe9 LetObj
+  30fea LocalVariable CallFunc_AddComponent_ReturnValue
+  30ffb FinalFunction import:-191:AddComponent
+    31000 NameConst NODE_AddBP_BattleVoiceComponent-0
+    31009 False
+    3100a LocalVariable Temp_struct_Variable
+    3101b Self
+    3101c False
+3101e LetObj
+  3101f InstanceVariable m_cBattleVoiceComponent
+  31030 LocalVariable CallFunc_AddComponent_ReturnValue
+31041 LetBool
+  31042 LocalVariable CallFunc_InitBattleVoice_ReturnValue
+  31053 Context skip=32 rvalue=CallFunc_InitBattleVoice_ReturnValue
+    31054 InstanceVariable m_cBattleVoiceComponent
+    31079 LocalVirtualFunction InitBattleVoice
+      31082 StructMemberContext BattleVoiceCharacterID
+        31093 InstanceVariable CurrentResourceData
+310a5 PopExecutionFlow
+310a6 LetBool
+  310a7 InstanceVariable m_bBattleAIReady
+  310b8 False
+310b9 LetBool
+  310ba LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2
+  310cb CallMath import:-226:EqualEqual_ByteByte
+    310d0 LocalVariable BattleMode
+    310e1 ByteConst 4
+310e4 LetBool
+  310e5 LocalVariable Temp_bool_Variable_1
+  310f6 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2
+31107 LocalVirtualFunction CreateBattleAI
+  31110 SwitchValue cases=2 end=2790
+    31117 LocalVariable Temp_bool_Variable_1
+    31128 False
+    31129 SwitchCaseNext 2758
+    3112d StructMemberContext EnemyAI_321_C934EDCB46C8699CFAB4AD87D320D2DE
+      3113e InstanceVariable EnemyData
+    3114f True
+    31150 SwitchCaseNext 2781
+    31154 StructMemberContext RevealEnemyAI_320_D486C76644E549BF05A58686E82CAA3E
+      31165 InstanceVariable EnemyData
+    31176 LocalVariable K2Node_Select_Default_1
+  31187 False
+31189 PopExecutionFlow
+3118a LetBool
+  3118b InstanceVariable EnemyForReserve
+  3119c False
+3119d PopExecutionFlow
+3119e LetObj
+  3119f LocalVariable CallFunc_GetInstance_ReturnValue
+  311b0 CallMath import:-355:GetInstance
+311b6 LetBool
+  311b7 LocalVariable CallFunc_GetNpcDataByEnemyLabel_ReturnValue
+  311c8 Context skip=28 rvalue=CallFunc_GetNpcDataByEnemyLabel_ReturnValue
+    311c9 LocalVariable CallFunc_GetInstance_ReturnValue
+    311ee FinalFunction import:-356:GetNpcDataByEnemyLabel
+      311f3 LocalVariable CallFunc_GetNpcDataByEnemyLabel_outData
+      31204 LocalVariable EnemyRowID
+31216 PopExecutionFlowIfNot
+  31217 LocalVariable CallFunc_GetNpcDataByEnemyLabel_ReturnValue
+31228 LocalVirtualFunction OverrideEnemyDataByNPCData
+  31231 LocalVariable CallFunc_GetNpcDataByEnemyLabel_outData
+31243 PopExecutionFlow
+31244 LetBool
+  31245 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  31256 CallMath import:-226:EqualEqual_ByteByte
+    3125b StructMemberContext DeadType_323_EE9C700E4D07A774EE44B9B5B22AA7C8
+      3126c InstanceVariable EnemyData
+    3127d ByteConst 7
+31280 PopExecutionFlowIfNot
+  31281 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+31292 Context skip=24 rvalue=<null-field>
+  31293 ObjectConst import:-390:Default__LibBattle_C
+  312a4 LocalVirtualFunction GetBattleManager
+    312ad Self
+    312ae LocalVariable CallFunc_GetBattleManager_BattleManager
+312c0 Context skip=11 rvalue=<null-field>
+  312c1 LocalVariable CallFunc_GetBattleManager_BattleManager
+  312de FinalFunction import:-342:AddSyncAnimationCharacterChilds
+    312e3 Self
+312e5 PopExecutionFlow
+312e6 LocalVirtualFunction SetWeaponTexture
+312f0 PopExecutionFlow
+312f1 LocalVirtualFunction InitializeSpriteSocketData
+312fb LocalVirtualFunction GetEnemyEffectPosition
+  31304 LocalVariable CallFunc_GetEnemyEffectPosition_EffectPosition
+31316 LocalVirtualFunction CreateBattleEffectSocket
+  3131f LocalVariable CallFunc_GetEnemyEffectPosition_EffectPosition
+31331 PopExecutionFlow
+31332 Context skip=64 rvalue=<null-field>
+  31333 ObjectConst import:-391:Default__LibGetParam_C
+  31344 LocalVirtualFunction GetBattleParamToFloat
+    3134d NameConst PLAYER_WAIT_TIME_REVISION
+    31356 Self
+    31357 LocalVariable CallFunc_GetBattleParamToFloat_Min
+    31368 LocalVariable CallFunc_GetBattleParamToFloat_Max
+    31379 LocalVariable CallFunc_GetBattleParamToFloat_Init
+    3138a LocalVariable CallFunc_GetBattleParamToFloat_Param
+3139c Let property=CallFunc_RandomFloatInRange_ReturnValue
+  313ad LocalVariable CallFunc_RandomFloatInRange_ReturnValue
+  313be CallMath import:-251:RandomFloatInRange
+    313c3 LocalVariable CallFunc_GetBattleParamToFloat_Min
+    313d4 LocalVariable CallFunc_GetBattleParamToFloat_Max
+313e6 Let property=NextWaitTimeRevision
+  313f7 InstanceVariable NextWaitTimeRevision
+  31408 LocalVariable CallFunc_RandomFloatInRange_ReturnValue
+31419 LocalVirtualFunction InitializeMultiActionOrderData
+31423 PopExecutionFlow
+31424 Context skip=24 rvalue=<null-field>
+  31425 ObjectConst import:-388:Default__LibAccessor_SaveGame_C
+  31436 LocalVirtualFunction GetSaveData
+    3143f Self
+    31440 LocalVariable CallFunc_GetSaveData_KSSaveGame
+31452 Let property=CallFunc_GetSaveEnemyData_ReturnValue
+  31463 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+  31474 Context skip=19 rvalue=CallFunc_GetSaveEnemyData_ReturnValue
+    31475 LocalVariable CallFunc_GetSaveData_KSSaveGame
+    3149a FinalFunction import:-374:GetSaveEnemyData
+      3149f InstanceVariable m_nCharacterID
+314b1 LetBool
+  314b2 InstanceVariable IsAnalyse
+  314c3 StructMemberContext IsAnalyse
+    314d4 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+314e5 Context skip=24 rvalue=<null-field>
+  314e6 ObjectConst import:-388:Default__LibAccessor_SaveGame_C
+  314f7 LocalVirtualFunction GetSaveData
+    31500 Self
+    31501 LocalVariable CallFunc_GetSaveData_KSSaveGame
+31513 Let property=CallFunc_GetSaveEnemyData_ReturnValue
+  31524 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+  31535 Context skip=19 rvalue=CallFunc_GetSaveEnemyData_ReturnValue
+    31536 LocalVariable CallFunc_GetSaveData_KSSaveGame
+    3155b FinalFunction import:-374:GetSaveEnemyData
+      31560 InstanceVariable m_nCharacterID
+31572 Let property=WeaknessOpen
+  31583 InstanceVariable WeaknessOpen
+  31594 StructMemberContext WeaknessOpen
+    315a5 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+315b6 Context skip=24 rvalue=<null-field>
+  315b7 ObjectConst import:-388:Default__LibAccessor_SaveGame_C
+  315c8 LocalVirtualFunction GetSaveData
+    315d1 Self
+    315d2 LocalVariable CallFunc_GetSaveData_KSSaveGame
+315e4 Let property=CallFunc_GetSaveEnemyData_ReturnValue
+  315f5 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+  31606 Context skip=19 rvalue=CallFunc_GetSaveEnemyData_ReturnValue
+    31607 LocalVariable CallFunc_GetSaveData_KSSaveGame
+    3162c FinalFunction import:-374:GetSaveEnemyData
+      31631 InstanceVariable m_nCharacterID
+31643 LetBool
+  31644 InstanceVariable m_bIsPreparation
+  31655 StructMemberContext IsPreparation
+    31666 LocalVariable CallFunc_GetSaveEnemyData_ReturnValue
+31677 PopExecutionFlow
+31678 Context skip=24 rvalue=<null-field>
+  31679 ObjectConst import:-390:Default__LibBattle_C
+  3168a LocalVirtualFunction GetBattleManager
+    31693 Self
+    31694 LocalVariable CallFunc_GetBattleManager_BattleManager_1
+316a6 LetBool
+  316a7 LocalVariable CallFunc_IsKSPartyBattle_ReturnValue
+  316b8 Context skip=14 rvalue=CallFunc_IsKSPartyBattle_ReturnValue
+    316b9 LocalVariable CallFunc_GetBattleManager_BattleManager_1
+    316de LocalVirtualFunction IsKSPartyBattle
+316e8 PopExecutionFlowIfNot
+  316e9 LocalVariable CallFunc_IsKSPartyBattle_ReturnValue
+316fa Context skip=37 rvalue=<null-field>
+  316fb ObjectConst import:-391:Default__LibGetParam_C
+  3170c LocalVirtualFunction GetBattleParamToVector
+    31715 NameConst KSPARTY_STEP_POSITION
+    3171e Self
+    3171f LocalVariable CallFunc_GetBattleParamToVector_Param_1
+31731 Let property=StepPoint
+  31742 InstanceVariable StepPoint
+  31753 LocalVariable CallFunc_GetBattleParamToVector_Param_1
+31764 Let property=DeadType_323_EE9C700E4D07A774EE44B9B5B22AA7C8
+  31775 StructMemberContext DeadType_323_EE9C700E4D07A774EE44B9B5B22AA7C8
+    31786 InstanceVariable EnemyData
+  31797 ByteConst 9
+31799 LocalVirtualFunction GetRowID
+  317a2 LocalVariable CallFunc_GetRowID_RowID
+317b4 LetBool
+  317b5 LocalVariable CallFunc_GetDataTableRowFromName_ReturnValue
+  317c6 Context skip=37 rvalue=CallFunc_GetDataTableRowFromName_ReturnValue
+    317c7 ObjectConst import:-98:Default__DataTableFunctionLibrary
+    317e0 FinalFunction import:-200:GetDataTableRowFromName
+      317e5 ObjectConst import:-96:BattleParamDefineTable
+      317ea LocalVariable CallFunc_GetRowID_RowID
+      317fb LocalVariable CallFunc_GetDataTableRowFromName_OutRow
+3180d PopExecutionFlowIfNot
+  3180e LocalVariable CallFunc_GetDataTableRowFromName_ReturnValue
+3181f LocalVirtualFunction GetRowID
+  31828 LocalVariable CallFunc_GetRowID_RowID
+3183a Context skip=33 rvalue=<null-field>
+  3183b ObjectConst import:-391:Default__LibGetParam_C
+  3184c LocalVirtualFunction GetBattleParamToVector
+    31855 LocalVariable CallFunc_GetRowID_RowID
+    31866 Self
+    31867 LocalVariable CallFunc_GetBattleParamToVector_Param
+31879 Let property=EnemyStatusUIOffsetForKSParty
+  3188a InstanceVariable EnemyStatusUIOffsetForKSParty
+  3189b LocalVariable CallFunc_GetBattleParamToVector_Param
+318ac PopExecutionFlow
+318ad Return
+  318ae Nothing
+318af EndOfScript

@@ -56,7 +56,7 @@ function program(row,count){
     }
   }
   if(steps.filter(s=>s.kind==='damage').length!==count)throw new Error('Unexpected hit count '+asset);
-  return {steps,timeline,ticks_per_second:24000,asset};
+  return {steps:timeline,timeline,ticks_per_second:24000,asset};
 }
 const attacks={}; const schedules=[];
 for(const weapon of ['sword','dagger','axe']){
@@ -68,7 +68,19 @@ for(const weapon of ['sword','dagger','axe']){
 const level=table('Level/Database/LevelTable').find(r=>r.id==='Dng_Cty_3_1');
 const group=table('Battle/Database/EnemyGroupData').find(r=>r.id==='ENG_EVE_THI_C01_010');
 const enemy=table('Character/Database/EnemyDB').find(r=>r.id==='ENE_EVE_THI_CTY_010');
-const output={voices:sets,attacks,encounter:{min:level.EncountStepMin,range_a:level.RandomStepA,range_b:level.RandomStepB,first_ratio:level.FirstEncountStepRatio},drop_rate:enemy.DropProbability,victory_voice:group.UseVictoryAction};
+const params=table('GameParam/BattleParamDefineTable');
+const breakSlow=params.find(r=>r.id==='BREAK_CAMERA_SLOW');
+const finishSlow=params.find(r=>r.id==='FINISH_BLOW_SLOW');
+if(Number(finishSlow.Min)!==0||enemy.DeadEffectSlow)throw new Error('Unmodeled timer condition');
+// Read duration only: the core has no camera, animation, or audio runtime.
+const breakAsset='Battle/Sequencer/Break/BreakCamera_Lv1_Near';
+const breakPackage=s.assets.loadPackage(path.join(s.assets.CONTENT,breakAsset+'.uasset'));
+sources.push({source:'/Game/'+breakAsset,sha256:s.assets.hash(breakPackage.b)});
+const breakMovie=s.fields(objectHeader(breakPackage,breakPackage.exports.find(e=>e.name==='MovieScene_0')).properties);
+const range=Buffer.from(breakMovie.PlaybackRange.hex,'hex');
+if(range.length!==10||range[0]!==1||range[5]!==0||range.readInt32LE(1)!==0)throw new Error('Unexpected break timing bounds');
+const postEvent=table('Event/Database/EventList').find(r=>r.id==='MS_TOU_10_0300');
+const output={voices:sets,attacks,break_timer_delay_ticks:Math.round(Number(breakSlow.Min)*24000),break_busy_ticks:range.readInt32LE(6),post_event_encounter_reset:postEvent.EncountReset,encounter:{min:level.EncountStepMin,range_a:level.RandomStepA,range_b:level.RandomStepB,first_ratio:level.FirstEncountStepRatio},drop_rate:enemy.DropProbability,victory_voice:group.UseVictoryAction,battle_start_voice:group.BattleStartEvent===null || group.BattleStartEvent.asset?.text==="None"};
 fs.writeFileSync(path.join(__dirname,'../data/opening_crt.json'),JSON.stringify(output,null,2)+'\n');
-fs.writeFileSync(path.join(__dirname,'../data/source/opening_crt.json'),JSON.stringify({sources,rows:{voices:raw,level,group,enemy},schedules},null,2)+'\n');
+fs.writeFileSync(path.join(__dirname,'../data/source/opening_crt.json'),JSON.stringify({sources,rows:{voices:raw,level,group,enemy,breakSlow,finishSlow,postEvent},schedules},null,2)+'\n');
 console.log('Imported opening CRT candidates, weapon schedules, drops and encounter-counter parameters.');

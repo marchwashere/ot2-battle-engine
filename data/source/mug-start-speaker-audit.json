@@ -1,0 +1,288 @@
+{
+  "asset": "Battle/BP/BattleManagerBP",
+  "sha256": "139466a3fbf82ced8be92faafe0072747a960db77be86f848f787586b22888b1",
+  "functions": {
+    "PlayPlayerSideVoice_BattleStart": "d6189 PushExecutionFlow target=1453\nd618e LetBool\n  d618f LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue\n  d61a0 CallMath import:-292:NotEqual_ByteByte\n    d61a5 StructMemberContext TalkPlayerID_59_120BD4E7412030C4A7451F94ADA561E6\n      d61b6 InstanceVariable EnemyGroup\n    d61c7 ByteConst 0\nd61ca JumpIfNot target=750\n  d61cf LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue\nd61e0 PushExecutionFlow target=1163\nd61e5 LetBool\n  d61e6 LocalVariable FindTalkPlayer\n  d61f7 False\nd61f8 LetBool\n  d61f9 LocalVariable Temp_bool_True_if_break_was_hit_Variable\n  d620a False\nd620b Let property=Temp_int_Loop_Counter_Variable\n  d621c LocalVariable Temp_int_Loop_Counter_Variable\n  d622d IntConst 0\nd6232 Let property=Temp_int_Array_Index_Variable\n  d6243 LocalVariable Temp_int_Array_Index_Variable\n  d6254 IntConst 0\nd6259 Let property=CallFunc_Array_Length_ReturnValue_1\n  d626a LocalVariable CallFunc_Array_Length_ReturnValue_1\n  d627b Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_1\n    d627c ObjectConst import:-554:Default__KismetArrayLibrary\n    d6295 FinalFunction import:-250:Array_Length\n      d629a InstanceVariable m_acBattlePlayer\nd62ac LetBool\n  d62ad LocalVariable CallFunc_Less_IntInt_ReturnValue\n  d62be CallMath import:-281:Less_IntInt\n    d62c3 LocalVariable Temp_int_Loop_Counter_Variable\n    d62d4 LocalVariable CallFunc_Array_Length_ReturnValue_1\nd62e6 LetBool\n  d62e7 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n  d62f8 CallMath import:-291:Not_PreBool\n    d62fd LocalVariable Temp_bool_True_if_break_was_hit_Variable\nd630f LetBool\n  d6310 LocalVariable CallFunc_BooleanAND_ReturnValue\n  d6321 CallMath import:-261:BooleanAND\n    d6326 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n    d6337 LocalVariable CallFunc_Less_IntInt_ReturnValue\nd6349 PopExecutionFlowIfNot\n  d634a LocalVariable CallFunc_BooleanAND_ReturnValue\nd635b Let property=Temp_int_Array_Index_Variable\n  d636c LocalVariable Temp_int_Array_Index_Variable\n  d637d LocalVariable Temp_int_Loop_Counter_Variable\nd638e PushExecutionFlow target=1379\nd6393 Context skip=37 rvalue=<null-field>\n  d6394 ObjectConst import:-554:Default__KismetArrayLibrary\n  d63a5 FinalFunction import:-247:Array_Get\n    d63aa InstanceVariable m_acBattlePlayer\n    d63bb LocalVariable Temp_int_Array_Index_Variable\n    d63cc LocalVariable CallFunc_Array_Get_Item\nd63de LetBool\n  d63df LocalVariable CallFunc_IsCharacterDead_ReturnValue\n  d63f0 Context skip=14 rvalue=CallFunc_IsCharacterDead_ReturnValue\n    d63f1 LocalVariable CallFunc_Array_Get_Item\n    d6416 VirtualFunction IsCharacterDead\nd6420 LetBool\n  d6421 LocalVariable CallFunc_Not_PreBool_ReturnValue\n  d6432 CallMath import:-291:Not_PreBool\n    d6437 LocalVariable CallFunc_IsCharacterDead_ReturnValue\nd6449 Context skip=23 rvalue=<null-field>\n  d644a LocalVariable CallFunc_Array_Get_Item\n  d6467 LocalVirtualFunction GetCharacterID\n    d6470 LocalVariable CallFunc_GetCharacterID_nCharaID\nd6482 Let property=CallFunc_Conv_IntToByte_ReturnValue\n  d6493 LocalVariable CallFunc_Conv_IntToByte_ReturnValue\n  d64a4 CallMath import:-266:Conv_IntToByte\n    d64a9 LocalVariable CallFunc_GetCharacterID_nCharaID\nd64bb LetBool\n  d64bc LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n  d64cd CallMath import:-271:EqualEqual_ByteByte\n    d64d2 LocalVariable CallFunc_Conv_IntToByte_ReturnValue\n    d64e3 StructMemberContext TalkPlayerID_59_120BD4E7412030C4A7451F94ADA561E6\n      d64f4 InstanceVariable EnemyGroup\nd6506 LetBool\n  d6507 LocalVariable CallFunc_BooleanAND_ReturnValue_1\n  d6518 CallMath import:-261:BooleanAND\n    d651d LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n    d652e LocalVariable CallFunc_Not_PreBool_ReturnValue\nd6540 PopExecutionFlowIfNot\n  d6541 LocalVariable CallFunc_BooleanAND_ReturnValue_1\nd6552 LetBool\n  d6553 LocalVariable FindTalkPlayer\n  d6564 True\nd6565 Context skip=37 rvalue=<null-field>\n  d6566 ObjectConst import:-554:Default__KismetArrayLibrary\n  d6577 FinalFunction import:-247:Array_Get\n    d657c InstanceVariable m_acBattlePlayer\n    d658d LocalVariable Temp_int_Array_Index_Variable\n    d659e LocalVariable CallFunc_Array_Get_Item\nd65b0 LetObj\n  d65b1 LocalVariable WorkTalkPlayer\n  d65c2 LocalVariable CallFunc_Array_Get_Item\nd65d3 LetBool\n  d65d4 LocalVariable Temp_bool_True_if_break_was_hit_Variable\n  d65e5 True\nd65e6 PopExecutionFlow\nd65e7 Context skip=34 rvalue=<null-field>\n  d65e8 ObjectConst import:-565:Default__LibBattle_C\n  d65f9 LocalVirtualFunction BattleCharacterFilterForDeadOrAlive\n    d6602 InstanceVariable m_acBattlePlayer\n    d6613 True\n    d6614 Self\n    d6615 LocalVariable CallFunc_BattleCharacterFilterForDeadOrAlive_out\nd6627 Let property=CallFunc_Array_Length_ReturnValue\n  d6638 LocalVariable CallFunc_Array_Length_ReturnValue\n  d6649 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    d664a ObjectConst import:-554:Default__KismetArrayLibrary\n    d6663 FinalFunction import:-250:Array_Length\n      d6668 LocalVariable CallFunc_BattleCharacterFilterForDeadOrAlive_out\nd667a Let property=CallFunc_RandomInteger_ReturnValue\n  d668b LocalVariable CallFunc_RandomInteger_ReturnValue\n  d669c CallMath import:-298:RandomInteger\n    d66a1 LocalVariable CallFunc_Array_Length_ReturnValue\nd66b3 Context skip=37 rvalue=<null-field>\n  d66b4 ObjectConst import:-554:Default__KismetArrayLibrary\n  d66c5 FinalFunction import:-247:Array_Get\n    d66ca LocalVariable CallFunc_BattleCharacterFilterForDeadOrAlive_out\n    d66db LocalVariable CallFunc_RandomInteger_ReturnValue\n    d66ec LocalVariable CallFunc_Array_Get_Item_1\nd66fe LetBool\n  d66ff LocalVariable CallFunc_PlayBattleVoice_ReturnValue_1\n  d6710 Context skip=169 rvalue=CallFunc_PlayBattleVoice_ReturnValue_1\n    d6711 LocalVariable CallFunc_Array_Get_Item_1\n    d6736 LocalVirtualFunction PlayBattleVoice\n      d673f ByteConst 1\n      d6741 StructConst import:-704:BattleVoiceSetData size=144\n        d674a IntConst 0\n        d674f ByteConst 0\n        d6751 False\n        d6752 NameConst None\n        d675b NameConst None\n        d6764 NameConst None\n        d676d NameConst None\n        d6776 NameConst None\n        d677f ByteConst 7\n        d6781 NameConst None\n        d678a NameConst None\n        d6793 False\n        d6794 False\n        d6795 False\n        d6796 False\n        d6797 False\n        d6798 False\n        d6799 False\n        d679a False\n        d679b IntConst 0\n        d67a0 False\n        d67a1 IntConst 0\n        d67a6 IntConst 0\n        d67ab NameConst None\n      d67b5 False\nd67b7 PopExecutionFlow\nd67b8 JumpIfNot target=750\n  d67bd LocalVariable FindTalkPlayer\nd67ce LetBool\n  d67cf LocalVariable CallFunc_PlayBattleVoice_ReturnValue\n  d67e0 Context skip=169 rvalue=CallFunc_PlayBattleVoice_ReturnValue\n    d67e1 LocalVariable WorkTalkPlayer\n    d6806 LocalVirtualFunction PlayBattleVoice\n      d680f ByteConst 1\n      d6811 StructConst import:-704:BattleVoiceSetData size=144\n        d681a IntConst 0\n        d681f ByteConst 0\n        d6821 False\n        d6822 NameConst None\n        d682b NameConst None\n        d6834 NameConst None\n        d683d NameConst None\n        d6846 NameConst None\n        d684f ByteConst 7\n        d6851 NameConst None\n        d685a NameConst None\n        d6863 False\n        d6864 False\n        d6865 False\n        d6866 False\n        d6867 False\n        d6868 False\n        d6869 False\n        d686a False\n        d686b IntConst 0\n        d6870 False\n        d6871 IntConst 0\n        d6876 IntConst 0\n        d687b NameConst None\n      d6885 False\nd6887 PopExecutionFlow\nd6888 Let property=CallFunc_Add_IntInt_ReturnValue\n  d6899 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  d68aa CallMath import:-259:Add_IntInt\n    d68af LocalVariable Temp_int_Loop_Counter_Variable\n    d68c0 IntConst 1\nd68c6 Let property=Temp_int_Loop_Counter_Variable\n  d68d7 LocalVariable Temp_int_Loop_Counter_Variable\n  d68e8 LocalVariable CallFunc_Add_IntInt_ReturnValue\nd68f9 Jump target=132\nd68fe Return\n  d68ff Nothing\nd6900 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "RecoveryCutDiseaseMaterialCurve_ScrollParameter_5CD8F9C34693B09366CBFB985BD32928": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "RecoveryCutDiseaseMaterialCurve_MaskParameter_5CD8F9C34693B09366CBFB985BD32928": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PrevFlow": "EBATTLE_FLOW_STATE::NewEnumerator0",
+      "ActionParam": {
+        "Enforcer": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "Targets": [],
+        "ActionCommand": {
+          "ID": 0,
+          "AbilityID": 0,
+          "DisplayName": "None",
+          "Detail": "None",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "None",
+              "number": 0,
+              "text": "None"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::ePHYSICS",
+          "AbilityUseType": "EABILITY_USE_TYPE::eALWAYS",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eNONE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eSWORD",
+          "TargetType": "EBATTLE_TARGET_TYPE::eSELF",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eNONE",
+          "CostValue": 0,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 0,
+          "AbilityRatio": 0,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": false,
+          "EnableDiffusion": false,
+          "EnableReflection": false,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": false,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": false,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": false,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": false,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": false,
+          "UseAbilityCamera": false,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "None",
+              "number": 0,
+              "text": "None"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [],
+          "SlideFrame": 0
+        },
+        "BoostLevel": 0,
+        "AddValueA": "None",
+        "AddValueB": "None",
+        "MenuIndex": 0,
+        "AdditiveTurn": false,
+        "UseActionLabel": "None",
+        "UseGrowMagicBuff": false
+      },
+      "ReturnBattleFlow": "EBATTLE_FLOW_STATE::NewEnumerator0",
+      "MapBGMData": {
+        "SoundCri": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "BgmLabel": "None",
+        "BgmId": 0,
+        "Priority": 0,
+        "FadeIn": 0,
+        "FadeOut": 0,
+        "Volume": 0,
+        "Time": 0,
+        "StateChangeBgm": 0,
+        "TargetSoundComponent": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "IsInterupt": false,
+        "IsPlayedMusicRecord": false
+      },
+      "EnemyGroup": {
+        "VoiceID": "None",
+        "TalkPlayerID": "EPlayableCharacterID::eNONE",
+        "PlayerVoiceID": "None",
+        "BGMID": "None",
+        "UseBattleBGM": false,
+        "UseVictoryBGM": false,
+        "ViewResult": false,
+        "ResumeBGM": false,
+        "BossBattle": false,
+        "EscapeEnable": false,
+        "PlacementType": "None",
+        "EnemyID": [],
+        "SaveEndrollSegment": "EEndRollSegmentSet::ER_NONE",
+        "ID": 0,
+        "BattleStartDashEnable": false,
+        "UseVictoryAction": false,
+        "ResultDashEnable": false,
+        "ItemEnable": false,
+        "GuardEnable": false,
+        "BoostEnable": false,
+        "BoostFinishResultEnable": false,
+        "BattleStartEvent": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "BattleStartEnemyVoiceEnable": false,
+        "WeaponUnloadGCType": "EWEAPON_UNLOAD_GC_TYPE::eTURN_END"
+      },
+      "EscapeSuccess": true,
+      "PlayerStatusUIMax": 8,
+      "BattleDamageUIMax": 50,
+      "EnemyStatusUIMax": 6,
+      "DebugResultExpRatio": 1,
+      "DebugResultJPRatio": 1,
+      "DebugResultMoneyRatio": 1,
+      "DebugResultDropRatio": 1,
+      "BattleCameraType": "EBATTLE_CAMERA_TYPE::EBATTLE_CAMERA_MAX",
+      "ExecutableChangeSubParty": true,
+      "EXPRatioByAbility": 1,
+      "EXPRatioByEquipment": 1,
+      "JPRatioByAbility": 1,
+      "JPRatioByEquipment": 1,
+      "MoneyRatioByEquipment": 1,
+      "DropRatioByEquipment": 1,
+      "DebugResultEXPValue": -1,
+      "CurrentReplayData": {
+        "Enable": false,
+        "PlayerID": [],
+        "PlayerJob": [],
+        "PlayerPos": [],
+        "PlayerDisease": [],
+        "PlayerStatus": [],
+        "PlayerWeapon": [],
+        "MasqueradeTargetID": 0,
+        "MasqueradeJobID": 0,
+        "EnemyID": [],
+        "EnemyPos": [],
+        "EnemyDisease": [],
+        "EnemyDiseaseParam": [],
+        "EnemyStatus": [],
+        "EnemyActionMode": [],
+        "SupportID": [],
+        "SupportStatus": [],
+        "ActionID": 0,
+        "ActionEnforcer": 0,
+        "PotentialityActionStatus": 0,
+        "ActionTarget": 0,
+        "ActionParam": [],
+        "FieldStatus": 0,
+        "FinishType": 0,
+        "CameraType": 0
+      },
+      "RecordPlayerIDList": [
+        0
+      ],
+      "RecordPlayerJobList": [
+        0
+      ],
+      "RecordPlayerPosList": [
+        {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "RecordPlayerStatusList": [
+        0
+      ],
+      "OpenTutorialType": "ETUTORIAL_TYPE::eBATTLE_BREAK",
+      "ReturnTutorialFlow": "EBATTLE_FLOW_STATE::NewEnumerator14",
+      "WorkMaterialParam": {
+        "Array": []
+      },
+      "RemoveSolid00": "False",
+      "RemoveSolid01": "False",
+      "RemoveSolid02": "False",
+      "VignetteIntensity_Original": 1,
+      "bFirst_VignetteIntensity": true,
+      "m_bDebugRelaseWeaponTexture": true
+    }
+  ]
+}

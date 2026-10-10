@@ -1,0 +1,13 @@
+423ef LetValueOnPersistentFrame K2Node_Event_Player
+  42400 LocalOutVariable Player
+42411 LetValueOnPersistentFrame K2Node_Event_EnemyGroupID
+  42422 LocalVariable EnemyGroupID
+42433 LetValueOnPersistentFrame K2Node_Event_IsEventBGM
+  42444 LocalVariable IsEventBGM
+42455 LetValueOnPersistentFrame K2Node_Event_IsInvadeBattle
+  42466 LocalVariable IsInvadeBattle
+42477 FinalFunction export:1:ExecuteUbergraph_BattleManagerBP
+  4247c IntConst 8064
+42482 Return
+  42483 Nothing
+42484 EndOfScript

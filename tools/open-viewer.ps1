@@ -1,16 +1,6 @@
 $ErrorActionPreference = 'Stop'
-$viewerRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
-$viewerExe = Join-Path $viewerRoot 'target\release\ot2-gui.exe'
-try {
-    if (-not (Test-Path -LiteralPath $viewerExe)) {
-        Push-Location -LiteralPath $viewerRoot
-        try {
-            & cargo build --offline --release --bin ot2-gui
-            if ($LASTEXITCODE -ne 0) { throw 'Viewer build failed. See the compiler output above.' }
-        } finally { Pop-Location }
-    }
-    Start-Process -FilePath $viewerExe -WorkingDirectory $viewerRoot -WindowStyle Hidden
-} catch {
-    Write-Host $_ -ForegroundColor Red
-    exit 1
-}
+# Compatibility entry point for existing desktop shortcuts. UI belongs to the
+# assistant repository; this battle crate has no viewer target or dependency.
+$assistantLauncher = Join-Path $PSScriptRoot '..\..\OT2SpeedrunAssistant\tools\open-viewer.ps1'
+if (-not (Test-Path -LiteralPath $assistantLauncher)) { throw 'The sibling OT2SpeedrunAssistant repository is required for the GUI. Battle CLI remains standalone.' }
+& $assistantLauncher

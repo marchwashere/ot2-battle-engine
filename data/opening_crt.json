@@ -1051,88 +1051,109 @@
     "sword": [
       [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 7200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8800,
           "kind": "check"
         },
         {
+          "tick": 11200,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 16000,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 7200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8800,
           "kind": "check"
         },
         {
+          "tick": 16000,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 19200,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 24000,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 3200,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 16800,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 24000,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 28067,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 31200,
           "kind": "damage",
           "last": true
         }
@@ -1141,88 +1162,109 @@
     "dagger": [
       [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 8800,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 7205,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8000,
           "kind": "check"
         },
         {
+          "tick": 8800,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 17305,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 7205,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8000,
           "kind": "check"
         },
         {
+          "tick": 15358,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 16800,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 25305,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 3200,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 17600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 24922,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 30286,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 30450,
           "kind": "damage",
           "last": true
         }
@@ -1231,112 +1273,142 @@
     "axe": [
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 800,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 13600,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10486,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12800,
           "kind": "check"
         },
         {
+          "tick": 13600,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 20800,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10486,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12800,
           "kind": "check"
         },
         {
+          "tick": 20800,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 23200,
           "kind": "check"
         },
         {
+          "tick": 24000,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 31200,
           "kind": "damage",
           "last": true
         }
       ],
       [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 4000,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10400,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12000,
           "kind": "check"
         },
         {
+          "tick": 19200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 20800,
           "kind": "check"
         },
         {
+          "tick": 26400,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 27200,
           "kind": "check"
         },
         {
+          "tick": 28000,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 32910,
           "kind": "damage",
           "last": true
         }
       ]
     ]
   },
+  "break_timer_delay_ticks": 2400,
+  "break_busy_ticks": 30000,
+  "post_event_encounter_reset": true,
   "encounter": {
     "min": 1000,
     "range_a": 400,
@@ -1344,5 +1416,6 @@
     "first_ratio": 0.5
   },
   "drop_rate": 30,
-  "victory_voice": false
+  "victory_voice": false,
+  "battle_start_voice": true
 }

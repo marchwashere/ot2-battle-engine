@@ -2,7 +2,7 @@
   "schema_version": 1,
   "rules": "ot2_opening_v1",
   "seed": 123,
-  "night_buff_turns": 3,
+  "night_buff_turns": 0,
   "players": [
     {
       "id": "throne",
@@ -185,7 +185,12 @@
         ],
         "statuses": [],
         "steal_item": "healing_grape",
-        "enemy_bp_base": 2
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 15,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
       },
       "ai": {
         "schema_version": 1,
@@ -256,7 +261,12 @@
         ],
         "statuses": [],
         "steal_item": "healing_grape",
-        "enemy_bp_base": 2
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 15,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
       },
       "ai": {
         "schema_version": 1,

@@ -100,6 +100,22 @@
       ]
     },
     {
+      "id": "energizing_pomegranate_m",
+      "name": "Energizing Pomegranate (M)",
+      "source_label": "ITM_CSM_0080",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "bp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 2
+          }
+        }
+      ]
+    },
+    {
       "id": "refreshing_jam",
       "name": "Refreshing Jam",
       "source_label": "ITM_CSM_0100",
@@ -216,6 +232,97 @@
             "kind": "fixed",
             "amount": 150
           }
+        }
+      ]
+    },
+    {
+      "id": "ice_soulstone",
+      "name": "Ice Soulstone",
+      "source_label": "ITM_CSM_0320",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 200,
+          "element": "ice"
+        }
+      ]
+    },
+    {
+      "id": "wind_soulstone",
+      "name": "Wind Soulstone",
+      "source_label": "ITM_CSM_0380",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 200,
+          "element": "wind"
+        }
+      ]
+    },
+    {
+      "id": "wind_soulstone_l",
+      "name": "Wind Soulstone (L)",
+      "source_label": "ITM_CSM_0400",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 2700,
+          "element": "wind"
+        }
+      ]
+    },
+    {
+      "id": "thunder_soulstone_l",
+      "name": "Thunder Soulstone (L)",
+      "source_label": "ITM_CSM_0370",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 2700,
+          "element": "lightning"
+        }
+      ]
+    },
+    {
+      "id": "light_soulstone",
+      "name": "Light Soulstone",
+      "source_label": "ITM_CSM_0410",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 200,
+          "element": "light"
+        }
+      ]
+    },
+    {
+      "id": "shadow_soulstone",
+      "name": "Shadow Soulstone",
+      "source_label": "ITM_CSM_0440",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 200,
+          "element": "dark"
+        }
+      ]
+    },
+    {
+      "id": "shadow_soulstone_m",
+      "name": "Shadow Soulstone (M)",
+      "source_label": "ITM_CSM_0450",
+      "target": "all_opponents",
+      "effects": [
+        {
+          "kind": "elemental_fixed_damage",
+          "amount": 1100,
+          "element": "dark"
         }
       ]
     }

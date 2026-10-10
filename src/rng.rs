@@ -36,6 +36,20 @@ impl CrtRng {
         self.state = self.state.wrapping_mul(mul).wrapping_add(add);
         self.draws = self.draws.wrapping_add(count);
     }
+    /// Exact forward distance on the full-period 32-bit CRT cycle, in 32 steps.
+    pub fn distance_to(self, target:u32)->u64 {
+        let (mut state,mut mul,mut add,mut distance)=(self.state,214_013u32,2_531_011u32,0u64);
+        for bit in 0..32 {
+            if (state^target)&(1u32<<bit)!=0 {
+                state=state.wrapping_mul(mul).wrapping_add(add);
+                distance|=1u64<<bit;
+            }
+            add=add.wrapping_mul(mul.wrapping_add(1));
+            mul=mul.wrapping_mul(mul);
+        }
+        debug_assert_eq!(state,target);
+        distance
+    }
     /// Source helper multiplies by this binary32 literal; do not replace with
     /// host doubles, modulo selection, or a different random distribution.
     pub fn unit(&mut self) -> f32 {
@@ -59,6 +73,15 @@ impl CrtRng {
 mod tests {
     use super::*;
 
+    #[test]
+    fn forward_distance_matches_jump_including_wraparound() {
+        for seed in [0,1,1775700753,u32::MAX] {
+            for steps in [0,1,2,17,1200,19290035,u32::MAX as u64,1u64<<32] {
+                let from=CrtRng::new(seed);let mut to=from;to.advance(steps);
+                assert_eq!(from.distance_to(to.state),steps% (1u64<<32));
+            }
+        }
+    }
     #[test]
     fn jump_matches_individual_crt_calls() {
         for seed in [0, 1, 123, u32::MAX] {

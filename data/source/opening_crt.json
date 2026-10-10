@@ -71,6 +71,18 @@
     {
       "source": "/Game/Character/Database/EnemyDB",
       "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/GameParam/BattleParamDefineTable",
+      "sha256": "81e0a1c028b8e9a73d33dcf502e9a8fad077afc762878d68bbca2d13f4b7e88b"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/Break/BreakCamera_Lv1_Near",
+      "sha256": "7c7bf494682317838321c045072f01e0ee857f757401947528cbf93abfaea0f8"
+    },
+    {
+      "source": "/Game/Event/Database/EventList",
+      "sha256": "acbbb094b2b071271fde8e4adf26b0df3661594556b3835b96e93a97300089a3"
     }
   ],
   "rows": {
@@ -2788,6 +2800,64 @@
       "ID": 649,
       "NotInsertOrderWithCallEnemy": false,
       "BreakCameraType": "EBREAK_CAMERA_TYPE::eNORMAL"
+    },
+    "breakSlow": {
+      "id": "BREAK_CAMERA_SLOW",
+      "ID": 0,
+      "VarType": "float",
+      "Min": "0.1",
+      "Max": "0.2",
+      "Init": "0.25",
+      "Param": "0"
+    },
+    "finishSlow": {
+      "id": "FINISH_BLOW_SLOW",
+      "ID": 0,
+      "VarType": "float",
+      "Min": "0",
+      "Max": "1",
+      "Init": "1",
+      "Param": "0"
+    },
+    "postEvent": {
+      "id": "MS_TOU_10_0300",
+      "EventIndex": 0,
+      "ExecCode": "MS_TOU_10_0300",
+      "CueSheetName": "CueSheet_VO_EventTOU010",
+      "RadarMapExitCode": "None",
+      "MapID": "57",
+      "Kind": "EEventKind::EVENT_MAIN",
+      "EventSoundLabel": "ES_TOU_10_0300",
+      "MissionLabel": "ML_TOU_10_0300",
+      "EventSkip": 1,
+      "LevelTriggerID": "ELevelTriggerID::Trigger_01",
+      "LanthanumFlag": 0,
+      "EncountTrigger": "ENT_DNG_CTY_3_1_LND_1",
+      "CameraLockTrigger1": "None",
+      "CameraLockTrigger2": "None",
+      "CameraLockTrigger3": "None",
+      "StartFadeOutFlag": 1,
+      "ChengeTimeSequencer": "None",
+      "ChengeFinishTimeSequencer": "None",
+      "TargetChara": 0,
+      "EncountReset": true,
+      "Args": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
     }
   },
   "schedules": [
@@ -2795,10 +2865,12 @@
       "ability": "NORMAL_ATTACK_SWORD_1",
       "steps": [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": true
         }
@@ -2822,24 +2894,30 @@
       "ability": "NORMAL_ATTACK_SWORD_2",
       "steps": [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 7200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8800,
           "kind": "check"
         },
         {
+          "tick": 11200,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 16000,
           "kind": "damage",
           "last": true
         }
@@ -2881,28 +2959,35 @@
       "ability": "NORMAL_ATTACK_SWORD_3",
       "steps": [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 7200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8800,
           "kind": "check"
         },
         {
+          "tick": 16000,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 19200,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 24000,
           "kind": "damage",
           "last": true
         }
@@ -2949,26 +3034,32 @@
       "ability": "NORMAL_ATTACK_SWORD_4",
       "steps": [
         {
+          "tick": 3200,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 16800,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 24000,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 28067,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 31200,
           "kind": "damage",
           "last": true
         }
@@ -3012,10 +3103,12 @@
       "ability": "NORMAL_ATTACK_DAGGER_1",
       "steps": [
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 8800,
           "kind": "damage",
           "last": true
         }
@@ -3039,24 +3132,30 @@
       "ability": "NORMAL_ATTACK_DAGGER_2",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 7205,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8000,
           "kind": "check"
         },
         {
+          "tick": 8800,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 17305,
           "kind": "damage",
           "last": true
         }
@@ -3098,28 +3197,35 @@
       "ability": "NORMAL_ATTACK_DAGGER_3",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 7205,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 8000,
           "kind": "check"
         },
         {
+          "tick": 15358,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 16800,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 25305,
           "kind": "damage",
           "last": true
         }
@@ -3166,26 +3272,32 @@
       "ability": "NORMAL_ATTACK_DAGGER_4",
       "steps": [
         {
+          "tick": 3200,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 9600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 17600,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 24922,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 30286,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 30450,
           "kind": "damage",
           "last": true
         }
@@ -3229,13 +3341,16 @@
       "ability": "NORMAL_ATTACK_AXE_1",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 800,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 13600,
           "kind": "damage",
           "last": true
         }
@@ -3263,24 +3378,30 @@
       "ability": "NORMAL_ATTACK_AXE_2",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10486,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12800,
           "kind": "check"
         },
         {
+          "tick": 13600,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 20800,
           "kind": "damage",
           "last": true
         }
@@ -3322,31 +3443,39 @@
       "ability": "NORMAL_ATTACK_AXE_3",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 0,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10486,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12800,
           "kind": "check"
         },
         {
+          "tick": 20800,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 23200,
           "kind": "check"
         },
         {
+          "tick": 24000,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 31200,
           "kind": "damage",
           "last": true
         }
@@ -3397,38 +3526,48 @@
       "ability": "NORMAL_ATTACK_AXE_4",
       "steps": [
         {
+          "tick": 0,
           "kind": "check"
         },
         {
+          "tick": 4000,
           "kind": "voice",
           "type": 6
         },
         {
+          "tick": 10400,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 12000,
           "kind": "check"
         },
         {
+          "tick": 19200,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 20800,
           "kind": "check"
         },
         {
+          "tick": 26400,
           "kind": "damage",
           "last": false
         },
         {
+          "tick": 27200,
           "kind": "check"
         },
         {
+          "tick": 28000,
           "kind": "voice",
           "type": 7
         },
         {
+          "tick": 32910,
           "kind": "damage",
           "last": true
         }

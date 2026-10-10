@@ -1,0 +1,104 @@
+{
+  "asset": "Battle/BP/BattleCharacterBaseBP",
+  "sha256": "f8c887c7e3e8d178fc86c063bb4bc5fd53facb14079dca497a2d0b1afcf9db4c",
+  "functions": {
+    "GetDEFDiseaseRatio": "30d22 PushExecutionFlow target=473\n30d27 Let property=TmpRatio\n  30d38 LocalVariable TmpRatio\n  30d49 FloatConst 1\n30d4e PushExecutionFlow target=446\n30d53 PushExecutionFlow target=242\n30d58 LocalVirtualFunction SearchDisease\n  30d61 ByteConst 24\n  30d63 LocalVariable CallFunc_SearchDisease_ExecHandler_1\n  30d74 LocalVariable CallFunc_SearchDisease_Enable_1\n30d86 PopExecutionFlowIfNot\n  30d87 LocalVariable CallFunc_SearchDisease_Enable_1\n30d98 Context skip=64 rvalue=<null-field>\n  30d99 ObjectConst import:-324:Default__LibGetParam_C\n  30daa LocalVirtualFunction GetBattleParamToFloat\n    30db3 NameConst DISEASE_PARANETER_RATIO\n    30dbc Self\n    30dbd LocalVariable CallFunc_GetBattleParamToFloat_Min\n    30dce LocalVariable CallFunc_GetBattleParamToFloat_Max\n    30ddf LocalVariable CallFunc_GetBattleParamToFloat_Init\n    30df0 LocalVariable CallFunc_GetBattleParamToFloat_Param\n30e02 Let property=CallFunc_Multiply_FloatFloat_ReturnValue_1\n  30e13 LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue_1\n  30e24 CallMath import:-158:Multiply_FloatFloat\n    30e29 LocalVariable TmpRatio\n    30e3a LocalVariable CallFunc_GetBattleParamToFloat_Min\n30e4c Let property=TmpRatio\n  30e5d LocalVariable TmpRatio\n  30e6e LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue_1\n30e7f PopExecutionFlow\n30e80 LocalVirtualFunction SearchDisease\n  30e89 ByteConst 25\n  30e8b LocalVariable CallFunc_SearchDisease_ExecHandler\n  30e9c LocalVariable CallFunc_SearchDisease_Enable\n30eae PopExecutionFlowIfNot\n  30eaf LocalVariable CallFunc_SearchDisease_Enable\n30ec0 Context skip=64 rvalue=<null-field>\n  30ec1 ObjectConst import:-324:Default__LibGetParam_C\n  30ed2 LocalVirtualFunction GetBattleParamToFloat\n    30edb NameConst DISEASE_PARANETER_RATIO\n    30ee4 Self\n    30ee5 LocalVariable CallFunc_GetBattleParamToFloat_Min\n    30ef6 LocalVariable CallFunc_GetBattleParamToFloat_Max\n    30f07 LocalVariable CallFunc_GetBattleParamToFloat_Init\n    30f18 LocalVariable CallFunc_GetBattleParamToFloat_Param\n30f2a Let property=CallFunc_Multiply_FloatFloat_ReturnValue\n  30f3b LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue\n  30f4c CallMath import:-158:Multiply_FloatFloat\n    30f51 LocalVariable TmpRatio\n    30f62 LocalVariable CallFunc_GetBattleParamToFloat_Max\n30f74 Let property=TmpRatio\n  30f85 LocalVariable TmpRatio\n  30f96 LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue\n30fa7 PopExecutionFlow\n30fa8 Let property=DiseaseRatio\n  30fb9 LocalOutVariable DiseaseRatio\n  30fca LocalVariable TmpRatio\n30fdb Return\n  30fdc Nothing\n30fdd EndOfScript",
+    "GetMDEFDiseaseRatio": "31252 PushExecutionFlow target=473\n31257 Let property=TmpRatio\n  31268 LocalVariable TmpRatio\n  31279 FloatConst 1\n3127e PushExecutionFlow target=446\n31283 PushExecutionFlow target=242\n31288 LocalVirtualFunction SearchDisease\n  31291 ByteConst 26\n  31293 LocalVariable CallFunc_SearchDisease_ExecHandler_1\n  312a4 LocalVariable CallFunc_SearchDisease_Enable_1\n312b6 PopExecutionFlowIfNot\n  312b7 LocalVariable CallFunc_SearchDisease_Enable_1\n312c8 Context skip=64 rvalue=<null-field>\n  312c9 ObjectConst import:-324:Default__LibGetParam_C\n  312da LocalVirtualFunction GetBattleParamToFloat\n    312e3 NameConst DISEASE_PARANETER_RATIO\n    312ec Self\n    312ed LocalVariable CallFunc_GetBattleParamToFloat_Min\n    312fe LocalVariable CallFunc_GetBattleParamToFloat_Max\n    3130f LocalVariable CallFunc_GetBattleParamToFloat_Init\n    31320 LocalVariable CallFunc_GetBattleParamToFloat_Param\n31332 Let property=CallFunc_Multiply_FloatFloat_ReturnValue_1\n  31343 LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue_1\n  31354 CallMath import:-158:Multiply_FloatFloat\n    31359 LocalVariable TmpRatio\n    3136a LocalVariable CallFunc_GetBattleParamToFloat_Min\n3137c Let property=TmpRatio\n  3138d LocalVariable TmpRatio\n  3139e LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue_1\n313af PopExecutionFlow\n313b0 LocalVirtualFunction SearchDisease\n  313b9 ByteConst 27\n  313bb LocalVariable CallFunc_SearchDisease_ExecHandler\n  313cc LocalVariable CallFunc_SearchDisease_Enable\n313de PopExecutionFlowIfNot\n  313df LocalVariable CallFunc_SearchDisease_Enable\n313f0 Context skip=64 rvalue=<null-field>\n  313f1 ObjectConst import:-324:Default__LibGetParam_C\n  31402 LocalVirtualFunction GetBattleParamToFloat\n    3140b NameConst DISEASE_PARANETER_RATIO\n    31414 Self\n    31415 LocalVariable CallFunc_GetBattleParamToFloat_Min\n    31426 LocalVariable CallFunc_GetBattleParamToFloat_Max\n    31437 LocalVariable CallFunc_GetBattleParamToFloat_Init\n    31448 LocalVariable CallFunc_GetBattleParamToFloat_Param\n3145a Let property=CallFunc_Multiply_FloatFloat_ReturnValue\n  3146b LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue\n  3147c CallMath import:-158:Multiply_FloatFloat\n    31481 LocalVariable TmpRatio\n    31492 LocalVariable CallFunc_GetBattleParamToFloat_Max\n314a4 Let property=TmpRatio\n  314b5 LocalVariable TmpRatio\n  314c6 LocalVariable CallFunc_Multiply_FloatFloat_ReturnValue\n314d7 PopExecutionFlow\n314d8 Let property=DiseaseRatio\n  314e9 LocalOutVariable DiseaseRatio\n  314fa LocalVariable TmpRatio\n3150b Return\n  3150c Nothing\n3150d EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "PlayHideoutAction_CanueMovement_CA276F844BFD9A3AB48B1196C6884576": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "ForceMovementTimeline_VectorOffset_FB34850E498904F635CA22BD6A5FE018": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "False",
+      "IsEquipmentSuperMagic": true,
+      "RootComponent": {
+        "kind": "object",
+        "index": 352,
+        "path": "Default__BattleCharacterBaseBP_C.SceneComponent"
+      }
+    }
+  ]
+}

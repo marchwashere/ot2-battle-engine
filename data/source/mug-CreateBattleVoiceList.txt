@@ -1,0 +1,189 @@
+10c788 PushExecutionFlow target=1625
+10c78d PushExecutionFlow target=124
+10c792 Let property=WorkBattleVoiceCharacterID
+  10c7a3 LocalVariable WorkBattleVoiceCharacterID
+  10c7b4 NameConst None
+10c7bd Context skip=19 rvalue=<null-field>
+  10c7be ObjectConst import:-56:Default__BlueprintMapLibrary
+  10c7cf FinalFunction import:-230:Map_Clear
+    10c7d4 InstanceVariable m_acBattleVoiceSetList
+10c7e6 Context skip=19 rvalue=<null-field>
+  10c7e7 ObjectConst import:-554:Default__KismetArrayLibrary
+  10c7f8 FinalFunction import:-244:Array_Clear
+    10c7fd LocalVariable WorkBattleVoiceSetList
+10c80f PopExecutionFlow
+10c810 SetArray
+  10c811 LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+10c823 CallMath import:-236:GetDataTableRowNames
+  10c828 ObjectConst import:-162:BattleVoiceSet
+  10c82d LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+10c83f Let property=Temp_int_Loop_Counter_Variable
+  10c850 LocalVariable Temp_int_Loop_Counter_Variable
+  10c861 IntConst 0
+10c866 Let property=Temp_int_Array_Index_Variable
+  10c877 LocalVariable Temp_int_Array_Index_Variable
+  10c888 IntConst 0
+10c88d Let property=CallFunc_Array_Length_ReturnValue_1
+  10c89e LocalVariable CallFunc_Array_Length_ReturnValue_1
+  10c8af Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_1
+    10c8b0 ObjectConst import:-554:Default__KismetArrayLibrary
+    10c8c9 FinalFunction import:-250:Array_Length
+      10c8ce LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+10c8e0 LetBool
+  10c8e1 LocalVariable CallFunc_Less_IntInt_ReturnValue
+  10c8f2 CallMath import:-281:Less_IntInt
+    10c8f7 LocalVariable Temp_int_Loop_Counter_Variable
+    10c908 LocalVariable CallFunc_Array_Length_ReturnValue_1
+10c91a JumpIfNot target=605
+  10c91f LocalVariable CallFunc_Less_IntInt_ReturnValue
+10c930 Let property=Temp_int_Array_Index_Variable
+  10c941 LocalVariable Temp_int_Array_Index_Variable
+  10c952 LocalVariable Temp_int_Loop_Counter_Variable
+10c963 PushExecutionFlow target=1423
+10c968 Let property=CallFunc_MakeLiteralString_ReturnValue
+  10c979 LocalVariable CallFunc_MakeLiteralString_ReturnValue
+  10c98a CallMath import:-332:MakeLiteralString
+    10c98f StringConst "_VOICE_DATA_START"
+10c9a3 Context skip=37 rvalue=<null-field>
+  10c9a4 ObjectConst import:-554:Default__KismetArrayLibrary
+  10c9b5 FinalFunction import:-247:Array_Get
+    10c9ba LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+    10c9cb LocalVariable Temp_int_Array_Index_Variable
+    10c9dc LocalVariable CallFunc_Array_Get_Item
+10c9ee Let property=CallFunc_Conv_NameToString_ReturnValue_1
+  10c9ff LocalVariable CallFunc_Conv_NameToString_ReturnValue_1
+  10ca10 CallMath import:-310:Conv_NameToString
+    10ca15 LocalVariable CallFunc_Array_Get_Item
+10ca27 LetBool
+  10ca28 LocalVariable CallFunc_EndsWith_ReturnValue
+  10ca39 CallMath import:-313:EndsWith
+    10ca3e LocalVariable CallFunc_Conv_NameToString_ReturnValue_1
+    10ca4f LocalVariable CallFunc_MakeLiteralString_ReturnValue
+    10ca60 ByteConst 1
+10ca63 JumpIfNot target=1497
+  10ca68 LocalVariable CallFunc_EndsWith_ReturnValue
+10ca79 LetBool
+  10ca7a LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+  10ca8b CallMath import:-295:NotEqual_NameName
+    10ca90 LocalVariable WorkBattleVoiceCharacterID
+    10caa1 NameConst None
+10caab JumpIfNot target=1124
+  10cab0 LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+10cac1 Let property=m_strCharacterID
+  10cad2 StructMemberContext m_strCharacterID
+    10cae3 LocalVariable K2Node_MakeStruct_BattleVoiceSetList
+  10caf4 LocalVariable WorkBattleVoiceCharacterID
+10cb05 Let property=m_astrBattleVoiceLabel
+  10cb16 StructMemberContext m_astrBattleVoiceLabel
+    10cb27 LocalVariable K2Node_MakeStruct_BattleVoiceSetList
+  10cb38 LocalVariable WorkBattleVoiceSetList
+10cb49 Context skip=37 rvalue=<null-field>
+  10cb4a ObjectConst import:-56:Default__BlueprintMapLibrary
+  10cb5b FinalFunction import:-229:Map_Add
+    10cb60 InstanceVariable m_acBattleVoiceSetList
+    10cb71 LocalVariable WorkBattleVoiceCharacterID
+    10cb82 LocalVariable K2Node_MakeStruct_BattleVoiceSetList
+10cb94 Let property=CallFunc_Concat_StrStr_ReturnValue
+  10cba5 LocalVariable CallFunc_Concat_StrStr_ReturnValue
+  10cbb6 CallMath import:-304:Concat_StrStr
+    10cbbb StringConst "Create BattleVoiceSetList"
+    10cbd6 StringConst " : "
+10cbdc Let property=CallFunc_Array_Length_ReturnValue
+  10cbed LocalVariable CallFunc_Array_Length_ReturnValue
+  10cbfe Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue
+    10cbff ObjectConst import:-554:Default__KismetArrayLibrary
+    10cc18 FinalFunction import:-250:Array_Length
+      10cc1d LocalVariable WorkBattleVoiceSetList
+10cc2f Let property=CallFunc_Conv_NameToString_ReturnValue
+  10cc40 LocalVariable CallFunc_Conv_NameToString_ReturnValue
+  10cc51 CallMath import:-310:Conv_NameToString
+    10cc56 LocalVariable WorkBattleVoiceCharacterID
+10cc68 Let property=CallFunc_Conv_IntToString_ReturnValue
+  10cc79 LocalVariable CallFunc_Conv_IntToString_ReturnValue
+  10cc8a CallMath import:-309:Conv_IntToString
+    10cc8f LocalVariable CallFunc_Array_Length_ReturnValue
+10cca1 Let property=CallFunc_Concat_StrStr_ReturnValue_1
+  10ccb2 LocalVariable CallFunc_Concat_StrStr_ReturnValue_1
+  10ccc3 CallMath import:-304:Concat_StrStr
+    10ccc8 LocalVariable CallFunc_Concat_StrStr_ReturnValue
+    10ccd9 LocalVariable CallFunc_Conv_NameToString_ReturnValue
+10cceb Let property=CallFunc_Concat_StrStr_ReturnValue_2
+  10ccfc LocalVariable CallFunc_Concat_StrStr_ReturnValue_2
+  10cd0d CallMath import:-304:Concat_StrStr
+    10cd12 LocalVariable CallFunc_Concat_StrStr_ReturnValue_1
+    10cd23 StringConst " : "
+10cd29 Let property=CallFunc_Concat_StrStr_ReturnValue_3
+  10cd3a LocalVariable CallFunc_Concat_StrStr_ReturnValue_3
+  10cd4b CallMath import:-304:Concat_StrStr
+    10cd50 LocalVariable CallFunc_Concat_StrStr_ReturnValue_2
+    10cd61 LocalVariable CallFunc_Conv_IntToString_ReturnValue
+10cd73 CallMath import:-334:PrintString
+  10cd78 Self
+  10cd79 LocalVariable CallFunc_Concat_StrStr_ReturnValue_3
+  10cd8a True
+  10cd8b True
+  10cd8c StructConst import:-684:LinearColor size=16
+    10cd95 FloatConst 0
+    10cd9a FloatConst 0.6600000262260437
+    10cd9f FloatConst 1
+    10cda4 FloatConst 1
+  10cdaa FloatConst 2
+10cdb0 Let property=CallFunc_MakeLiteralString_ReturnValue
+  10cdc1 LocalVariable CallFunc_MakeLiteralString_ReturnValue
+  10cdd2 CallMath import:-332:MakeLiteralString
+    10cdd7 StringConst "_VOICE_DATA_START"
+10cdeb Context skip=37 rvalue=<null-field>
+  10cdec ObjectConst import:-554:Default__KismetArrayLibrary
+  10cdfd FinalFunction import:-247:Array_Get
+    10ce02 LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+    10ce13 LocalVariable Temp_int_Array_Index_Variable
+    10ce24 LocalVariable CallFunc_Array_Get_Item
+10ce36 Let property=CallFunc_Conv_NameToString_ReturnValue_1
+  10ce47 LocalVariable CallFunc_Conv_NameToString_ReturnValue_1
+  10ce58 CallMath import:-310:Conv_NameToString
+    10ce5d LocalVariable CallFunc_Array_Get_Item
+10ce6f Let property=CallFunc_Replace_ReturnValue
+  10ce80 LocalVariable CallFunc_Replace_ReturnValue
+  10ce91 CallMath import:-316:Replace
+    10ce96 LocalVariable CallFunc_Conv_NameToString_ReturnValue_1
+    10cea7 LocalVariable CallFunc_MakeLiteralString_ReturnValue
+    10ceb8 StringConst ""
+    10ceba ByteConst 1
+10cebd Let property=CallFunc_Conv_StringToName_ReturnValue
+  10cece LocalVariable CallFunc_Conv_StringToName_ReturnValue
+  10cedf CallMath import:-311:Conv_StringToName
+    10cee4 LocalVariable CallFunc_Replace_ReturnValue
+10cef6 Let property=WorkBattleVoiceCharacterID
+  10cf07 LocalVariable WorkBattleVoiceCharacterID
+  10cf18 LocalVariable CallFunc_Conv_StringToName_ReturnValue
+10cf29 Context skip=19 rvalue=<null-field>
+  10cf2a ObjectConst import:-554:Default__KismetArrayLibrary
+  10cf3b FinalFunction import:-244:Array_Clear
+    10cf40 LocalVariable WorkBattleVoiceSetList
+10cf52 PopExecutionFlow
+10cf53 Let property=CallFunc_Add_IntInt_ReturnValue
+  10cf64 LocalVariable CallFunc_Add_IntInt_ReturnValue
+  10cf75 CallMath import:-259:Add_IntInt
+    10cf7a LocalVariable Temp_int_Loop_Counter_Variable
+    10cf8b IntConst 1
+10cf91 Let property=Temp_int_Loop_Counter_Variable
+  10cfa2 LocalVariable Temp_int_Loop_Counter_Variable
+  10cfb3 LocalVariable CallFunc_Add_IntInt_ReturnValue
+10cfc4 Jump target=209
+10cfc9 Context skip=37 rvalue=<null-field>
+  10cfca ObjectConst import:-554:Default__KismetArrayLibrary
+  10cfdb FinalFunction import:-247:Array_Get
+    10cfe0 LocalVariable CallFunc_GetDataTableRowNames_OutRowNames
+    10cff1 LocalVariable Temp_int_Array_Index_Variable
+    10d002 LocalVariable CallFunc_Array_Get_Item
+10d014 Let property=CallFunc_Array_Add_ReturnValue
+  10d025 LocalVariable CallFunc_Array_Add_ReturnValue
+  10d036 Context skip=28 rvalue=CallFunc_Array_Add_ReturnValue
+    10d037 ObjectConst import:-554:Default__KismetArrayLibrary
+    10d050 FinalFunction import:-241:Array_Add
+      10d055 LocalVariable WorkBattleVoiceSetList
+      10d066 LocalVariable CallFunc_Array_Get_Item
+10d078 PopExecutionFlow
+10d079 Return
+  10d07a Nothing
+10d07b EndOfScript

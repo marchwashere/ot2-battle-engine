@@ -1,0 +1,84 @@
+{
+  "source": "Native decomp and original executable plus extracted local map assets, inspected 2026-09-26",
+  "executable_sha256": "409648e864ceec5ca0e57a493b39d808b54bef1e183c674f7f40cededacfdbcf",
+  "shared_level": {
+    "name": "Btl_SinExpose",
+    "fname_global": "0x144F96358",
+    "initializer": {
+      "address": "0x14065C1B0",
+      "bytes_hex": "41b801000000488d15bb126503488d0d94a19304e9472fbf00",
+      "initializer_table_pointer": "0x143AD4C80",
+      "instructions": [
+        {
+          "address": "0x14065C1B0",
+          "operation": "mov r8d, 1"
+        },
+        {
+          "address": "0x14065C1B6",
+          "operation": "lea rdx, [rip+0x36512BB]",
+          "target": "0x143CAD478",
+          "value": "Btl_SinExpose"
+        },
+        {
+          "address": "0x14065C1BD",
+          "operation": "lea rcx, [rip+0x493A194]",
+          "target": "0x144F96358"
+        },
+        {
+          "address": "0x14065C1C4",
+          "operation": "jmp FName constructor",
+          "target": "0x14124F110"
+        }
+      ]
+    }
+  },
+  "level_table": {
+    "source": "/Game/Level/Database/LevelTable",
+    "sha256": "153569a707872dfec0504f8bd301d2b30baf6154469d5673c35680ed0ed30232",
+    "row": "Dng_Cty_3_1",
+    "battle_map_name_list": [
+      "Btl_Dng_CastleSewer_Land_A",
+      "None",
+      "None",
+      "None",
+      "None"
+    ]
+  },
+  "level_sets": [
+    {
+      "name": "City/Dng_Cty_3_1",
+      "assets": [
+        "/Game/Level/Level/City/Dng_Cty_3_1",
+        "/Game/Level/Level/City/Dng_Cty_3_1_Art",
+        "/Game/Level/Level/City/Dng_Cty_3_1_Coll",
+        "/Game/Level/Level/City/Dng_Cty_3_1_Sound"
+      ]
+    },
+    {
+      "name": "Other/Btl_Dng_CastleSewer_Land_A",
+      "assets": [
+        "/Game/Level/Level/Other/Btl_Dng_CastleSewer_Land_A"
+      ]
+    },
+    {
+      "name": "Other/Btl_SinExpose",
+      "assets": [
+        "/Game/Level/Level/Other/Btl_SinExpose"
+      ]
+    }
+  ],
+  "native_logic": {
+    "load": "FUN_140ed98a0, line 2543104; load shared FName only if FUN_140ed0fa0 returns false",
+    "loaded_predicate": "FUN_140ed0fa0, line 2535771; existing level-set map entry and FUN_140ed1330 loading predicate",
+    "unload": "FUN_140ed9bc0, line 2543233; unload previous field and its battle-map list, not separate shared entry",
+    "visibility": "FUN_140eda7e0, line 2543743; show/hide shared entry",
+    "construction": "FUN_140ed4030 -> FUN_140ed8170 -> FUN_140ec60c0 -> FUN_1411c0100 -> rand"
+  },
+  "capture_comparison": {
+    "first_streamed_level_draws": 6,
+    "repeat_streamed_level_draws": 5,
+    "other_prebattle_draws_each": 7,
+    "attribution": "The traces do not log level names. The retained shared entry is identified from native load/unload logic and asset inventory, consistent with both captures.",
+    "limitation": "Existing loader state is the condition; these captures do not establish a universal first-run/repeat offset."
+  }
+}

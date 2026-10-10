@@ -1,0 +1,948 @@
+{
+  "source": "capecold-mug-completion-live.json",
+  "sha256": "e690b4b9ce696f7190424558202940cb329a5cbd454ce2fd83a215987c0e0d4f",
+  "calls": [
+    {
+      "position": 6165,
+      "before": 2326615495,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.Initialize",
+      "ms": 120694
+    },
+    {
+      "position": 6166,
+      "before": 1815902574,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 120703
+    },
+    {
+      "position": 6167,
+      "before": 939289209,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+      "ms": 120703
+    },
+    {
+      "position": 6168,
+      "before": 2749662040,
+      "return_rva": "0x2C57B26",
+      "node": null,
+      "ms": 120742
+    },
+    {
+      "position": 6169,
+      "before": 1365537979,
+      "return_rva": "0x30D7424",
+      "node": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C.PlayPlayerSideVoice_BattleStart",
+      "ms": 120809
+    },
+    {
+      "position": 6170,
+      "before": 422309010,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 120809
+    },
+    {
+      "position": 6171,
+      "before": 623878413,
+      "return_rva": "0x30D7424",
+      "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.OpenWeakIcon",
+      "ms": 122242
+    },
+    {
+      "position": 6172,
+      "before": 445001628,
+      "return_rva": "0x2C57B26",
+      "node": null,
+      "ms": 122767
+    },
+    {
+      "position": 6173,
+      "before": 3826089967,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123150
+    },
+    {
+      "position": 6174,
+      "before": 1774623478,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123151
+    },
+    {
+      "position": 6175,
+      "before": 1423844833,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123151
+    },
+    {
+      "position": 6176,
+      "before": 1967059232,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123151
+    },
+    {
+      "position": 6177,
+      "before": 735464291,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123151
+    },
+    {
+      "position": 6178,
+      "before": 1255344282,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123152
+    },
+    {
+      "position": 6179,
+      "before": 1204055285,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123152
+    },
+    {
+      "position": 6180,
+      "before": 2628348900,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123152
+    },
+    {
+      "position": 6181,
+      "before": 1853811479,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123152
+    },
+    {
+      "position": 6182,
+      "before": 744552830,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123152
+    },
+    {
+      "position": 6183,
+      "before": 700656201,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123153
+    },
+    {
+      "position": 6184,
+      "before": 3639837672,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123153
+    },
+    {
+      "position": 6185,
+      "before": 2953687819,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123153
+    },
+    {
+      "position": 6186,
+      "before": 2897047970,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123154
+    },
+    {
+      "position": 6187,
+      "before": 1630753245,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123166
+    },
+    {
+      "position": 6188,
+      "before": 1944214828,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123167
+    },
+    {
+      "position": 6189,
+      "before": 3703781183,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123167
+    },
+    {
+      "position": 6190,
+      "before": 3930502406,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123167
+    },
+    {
+      "position": 6191,
+      "before": 679090097,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 123167
+    },
+    {
+      "position": 6192,
+      "before": 1008098224,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 124030
+    },
+    {
+      "position": 6193,
+      "before": 1330531251,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "ms": 125197
+    },
+    {
+      "position": 6194,
+      "before": 3245361066,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 125198
+    },
+    {
+      "position": 6195,
+      "before": 1708978117,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 125238
+    },
+    {
+      "position": 6196,
+      "before": 1301226356,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "ms": 126980
+    },
+    {
+      "position": 6197,
+      "before": 2269119591,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "ms": 126980
+    },
+    {
+      "position": 6198,
+      "before": 2026302862,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 126980
+    },
+    {
+      "position": 6199,
+      "before": 898993689,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127738
+    },
+    {
+      "position": 6200,
+      "before": 3278870648,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127739
+    },
+    {
+      "position": 6201,
+      "before": 599766363,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127739
+    },
+    {
+      "position": 6202,
+      "before": 2703534770,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127739
+    },
+    {
+      "position": 6203,
+      "before": 3659916973,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127739
+    },
+    {
+      "position": 6204,
+      "before": 922869436,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127739
+    },
+    {
+      "position": 6205,
+      "before": 1988031119,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127740
+    },
+    {
+      "position": 6206,
+      "before": 751092502,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127740
+    },
+    {
+      "position": 6207,
+      "before": 116141441,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127740
+    },
+    {
+      "position": 6208,
+      "before": 805001792,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127740
+    },
+    {
+      "position": 6209,
+      "before": 1122865155,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127740
+    },
+    {
+      "position": 6210,
+      "before": 27769530,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6211,
+      "before": 3103184533,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6212,
+      "before": 3925913348,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6213,
+      "before": 2108531127,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6214,
+      "before": 2335659422,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6215,
+      "before": 303601129,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127741
+    },
+    {
+      "position": 6216,
+      "before": 325697800,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127742
+    },
+    {
+      "position": 6217,
+      "before": 541555627,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127742
+    },
+    {
+      "position": 6218,
+      "before": 254449602,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127839
+    },
+    {
+      "position": 6219,
+      "before": 3929825149,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127906
+    },
+    {
+      "position": 6220,
+      "before": 1766175820,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 127906
+    },
+    {
+      "position": 6221,
+      "before": 1696444895,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 128580
+    },
+    {
+      "position": 6222,
+      "before": 3383346470,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "ms": 129880
+    },
+    {
+      "position": 6223,
+      "before": 184117073,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 129881
+    },
+    {
+      "position": 6224,
+      "before": 1419701456,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "ms": 131080
+    },
+    {
+      "position": 6225,
+      "before": 4288747603,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "ms": 131081
+    },
+    {
+      "position": 6226,
+      "before": 347234762,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 131081
+    },
+    {
+      "position": 6227,
+      "before": 1231495525,
+      "return_rva": "0x2C57B26",
+      "node": null,
+      "ms": 131384
+    },
+    {
+      "position": 6228,
+      "before": 3976138388,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Library/LibAilment.LibAilment_C.RandomBoolForAilment",
+      "ms": 132075
+    },
+    {
+      "position": 6229,
+      "before": 616874759,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6230,
+      "before": 515584430,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6231,
+      "before": 4063314361,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6232,
+      "before": 70450584,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6233,
+      "before": 2008155643,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6234,
+      "before": 4103616722,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132075
+    },
+    {
+      "position": 6235,
+      "before": 1005304909,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6236,
+      "before": 525262300,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6237,
+      "before": 784102703,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6238,
+      "before": 3802053430,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6239,
+      "before": 3014051105,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6240,
+      "before": 2163348320,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6241,
+      "before": 76932259,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6242,
+      "before": 1896430810,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6243,
+      "before": 3619868725,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6244,
+      "before": 2831893028,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6245,
+      "before": 3384961111,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6246,
+      "before": 2140897726,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6247,
+      "before": 1426362761,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6248,
+      "before": 3965472296,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132076
+    },
+    {
+      "position": 6249,
+      "before": 2857129035,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Library/LibAilment.LibAilment_C.RandomBoolForAilment",
+      "ms": 132492
+    },
+    {
+      "position": 6250,
+      "before": 1149668834,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132492
+    },
+    {
+      "position": 6251,
+      "before": 2582183197,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132492
+    },
+    {
+      "position": 6252,
+      "before": 217996140,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132492
+    },
+    {
+      "position": 6253,
+      "before": 2075671679,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132492
+    },
+    {
+      "position": 6254,
+      "before": 848078150,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132492
+    },
+    {
+      "position": 6255,
+      "before": 3023652593,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6256,
+      "before": 4012232176,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6257,
+      "before": 2805527795,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6258,
+      "before": 174410730,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6259,
+      "before": 2900288261,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6260,
+      "before": 3605416372,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6261,
+      "before": 2216923559,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6262,
+      "before": 2606843342,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6263,
+      "before": 3589768537,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6264,
+      "before": 3451302584,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6265,
+      "before": 916678299,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132493
+    },
+    {
+      "position": 6266,
+      "before": 4149122802,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132494
+    },
+    {
+      "position": 6267,
+      "before": 3207143917,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132494
+    },
+    {
+      "position": 6268,
+      "before": 360000764,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132494
+    },
+    {
+      "position": 6269,
+      "before": 1722681295,
+      "return_rva": "0x30D7604",
+      "node": null,
+      "ms": 132494
+    },
+    {
+      "position": 6270,
+      "before": 496796502,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133533
+    },
+    {
+      "position": 6271,
+      "before": 3291868353,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133534
+    },
+    {
+      "position": 6272,
+      "before": 3433766016,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133534
+    },
+    {
+      "position": 6273,
+      "before": 1664567619,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133534
+    },
+    {
+      "position": 6274,
+      "before": 1639943930,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6275,
+      "before": 1775262165,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6276,
+      "before": 672212292,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6277,
+      "before": 2242199287,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6278,
+      "before": 282426846,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6279,
+      "before": 4239334697,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133535
+    },
+    {
+      "position": 6280,
+      "before": 3847433032,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133536
+    },
+    {
+      "position": 6281,
+      "before": 3917757675,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133536
+    },
+    {
+      "position": 6282,
+      "before": 445207554,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133536
+    },
+    {
+      "position": 6283,
+      "before": 652290749,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133536
+    },
+    {
+      "position": 6284,
+      "before": 3675542156,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133536
+    },
+    {
+      "position": 6285,
+      "before": 3430602527,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133537
+    },
+    {
+      "position": 6286,
+      "before": 3241629030,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133537
+    },
+    {
+      "position": 6287,
+      "before": 1868674705,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133537
+    },
+    {
+      "position": 6288,
+      "before": 3392339728,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133537
+    },
+    {
+      "position": 6289,
+      "before": 712892819,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "ms": 133758
+    },
+    {
+      "position": 6290,
+      "before": 2505115146,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133775
+    },
+    {
+      "position": 6291,
+      "before": 3622581413,
+      "return_rva": "0x30D7065",
+      "node": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "ms": 133975
+    },
+    {
+      "position": 6292,
+      "before": 3561805012,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 133976
+    },
+    {
+      "position": 6293,
+      "before": 1782870087,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 133977
+    },
+    {
+      "position": 6294,
+      "before": 1073818094,
+      "return_rva": "0x2C52E57",
+      "node": null,
+      "ms": 134017
+    },
+    {
+      "position": 6295,
+      "before": 219175161,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "ms": 135583
+    },
+    {
+      "position": 6296,
+      "before": 998422488,
+      "return_rva": "0x2C57B26",
+      "node": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C.LotteryDropItem",
+      "ms": 137108
+    },
+    {
+      "position": 6297,
+      "before": 771479355,
+      "return_rva": "0x30D7424",
+      "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+      "ms": 139647
+    },
+    {
+      "position": 6298,
+      "before": 3775907090,
+      "return_rva": "0x30D7424",
+      "node": "/Game/Battle/BP/EncountManagerBP.EncountManagerBP_C.CalcEncountStepCount",
+      "ms": 139647
+    }
+  ],
+  "after": {
+    "state": 3699775373,
+    "draws": 6299
+  }
+}

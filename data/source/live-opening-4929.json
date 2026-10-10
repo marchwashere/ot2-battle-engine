@@ -1,0 +1,20 @@
+{
+  "source": "User's live-game crosscheck and 154-call replay capture, 2026-09-25",
+  "trace_file": "live-opening-4929-trace.json",
+  "routine": "Historical: second party actor boosts enemy 2; first and third hit enemy 1 unboosted. Replayed explicitly in tests/live_opening.rs, independently of the current routine.",
+  "initial_seed": 0,
+  "prebattle_advances": 4929,
+  "corrected_from_prebattle_advances": 4927,
+  "entry_description": "before initialization; corrected count corroborated by live tracer attachment at 0x0EA79703",
+  "first_command_menu": "0xF485D421",
+  "first_round_party": ["pirro", "throne", "scaracci"],
+  "first_round_display": ["pirro", "throne", "grunt", "grunt", "scaracci"],
+  "second_round_party": ["scaracci", "throne", "pirro"],
+  "after_area_reset": "0x194611CD",
+  "damage_report": "User reports round-one Pirro 31; Throné 31 then 50 after break; all default weapons. Other hits not yet supplied.",
+  "damage_reports": [
+    {"round": 1, "actor": "pirro", "hits": [31]},
+    {"round": 1, "actor": "throne", "hits": [31, 50]}
+  ],
+  "exit_description": "after the second post-battle counter reset; capture confirms first reset at 0x0EC00F7B and second at 0x194611CD"
+}

@@ -1,0 +1,80 @@
+{
+  "players": {
+    "throne": {
+      "voice": 0,
+      "latent_max": 80
+    },
+    "osvald": {
+      "voice": 1,
+      "latent_max": 100
+    },
+    "agnea": {
+      "voice": 2,
+      "latent_max": 110
+    },
+    "partitio": {
+      "voice": 3,
+      "latent_max": 100
+    },
+    "hikari": {
+      "voice": 4,
+      "latent_max": 125
+    }
+  },
+  "initial_bp": 1,
+  "groups": {
+    "ENG_FLD_SEA_1_3_WTR_DAY_110": [
+      "ENE_NML_FLD_SEA_150"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_120": [
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_130": [
+      "ENE_NML_WTR_280"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_140": [
+      "ENE_NML_WTR_280",
+      "ENE_NML_WTR_280"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_210": [
+      "ENE_NML_WTR_280",
+      "ENE_NML_WTR_280"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_220": [
+      "ENE_NML_FLD_SEA_150",
+      "ENE_NML_FLD_SEA_150"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_230": [
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_240": [
+      "ENE_NML_WTR_280",
+      "ENE_NML_FLD_SEA_170",
+      "ENE_NML_FLD_SEA_170"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_310": [
+      "ENE_NML_WTR_280",
+      "ENE_NML_WTR_280",
+      "ENE_NML_WTR_280"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_320": [
+      "ENE_NML_FLD_SEA_170",
+      "ENE_NML_FLD_SEA_170"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_330": [
+      "ENE_NML_FLD_SEA_150",
+      "ENE_NML_FLD_SEA_220"
+    ],
+    "ENG_FLD_SEA_1_3_WTR_DAY_340": [
+      "ENE_NML_FLD_SEA_170",
+      "ENE_NML_FLD_SEA_170",
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160",
+      "ENE_NML_FLD_SEA_160"
+    ]
+  }
+}

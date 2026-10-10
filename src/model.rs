@@ -47,12 +47,15 @@ impl Resources {
         }
     }
     pub(crate) fn validate(&self, stats: &Stats) -> Result<()> {
+        self.validate_with_latent_max(stats, 100)
+    }
+    pub(crate) fn validate_with_latent_max(&self, stats: &Stats, latent_max: u16) -> Result<()> {
         ensure(
             self.hp <= stats.max_hp
                 && self.sp <= stats.max_sp
                 && self.bp <= 5
-                && self.latent <= 100,
-            "initial resources exceed caps (BP 5, latent 100)",
+                && self.latent <= latent_max,
+            "initial resources exceed character caps",
         )
     }
 }
@@ -100,6 +103,9 @@ pub struct Combatant {
     pub enemy_charge_max: u8,
     /// CRT sample used by the next-turn speed revision (players still draw).
     pub order_sample: u16,
+    /// Discovered weaknesses affect reaction voice CRT draws, even headlessly.
+    pub revealed_weapon_weaknesses: u8,
+    pub revealed_element_weaknesses: u8,
 }
 impl Combatant {
     pub fn alive(&self) -> bool {

@@ -1,0 +1,103 @@
+{
+  "asset": "Battle/BP/BattleCharacterBaseBP",
+  "sha256": "f8c887c7e3e8d178fc86c063bb4bc5fd53facb14079dca497a2d0b1afcf9db4c",
+  "functions": {
+    "GetCharacterDefenseOld": "2505d LetBool\n  2505e LocalVariable K2Node_SwitchEnum_CmpSuccess\n  2506f CallMath import:-161:NotEqual_ByteByte\n    25074 LocalVariable CalcType\n    25085 ByteConst 0\n25088 JumpIfNot target=320\n  2508d LocalVariable K2Node_SwitchEnum_CmpSuccess\n2509e LetBool\n  2509f LocalVariable K2Node_SwitchEnum_CmpSuccess\n  250b0 CallMath import:-161:NotEqual_ByteByte\n    250b5 LocalVariable CalcType\n    250c6 ByteConst 1\n250c9 JumpIfNot target=411\n  250ce LocalVariable K2Node_SwitchEnum_CmpSuccess\n250df LetBool\n  250e0 LocalVariable K2Node_SwitchEnum_CmpSuccess\n  250f1 CallMath import:-161:NotEqual_ByteByte\n    250f6 LocalVariable CalcType\n    25107 ByteConst 2\n2510a JumpIfNot target=502\n  2510f LocalVariable K2Node_SwitchEnum_CmpSuccess\n25120 LetBool\n  25121 LocalVariable K2Node_SwitchEnum_CmpSuccess\n  25132 CallMath import:-161:NotEqual_ByteByte\n    25137 LocalVariable CalcType\n    25148 ByteConst 3\n2514b JumpIfNot target=502\n  25150 LocalVariable K2Node_SwitchEnum_CmpSuccess\n25161 LetBool\n  25162 LocalVariable K2Node_SwitchEnum_CmpSuccess\n  25173 CallMath import:-161:NotEqual_ByteByte\n    25178 LocalVariable CalcType\n    25189 ByteConst 4\n2518c JumpIfNot target=502\n  25191 LocalVariable K2Node_SwitchEnum_CmpSuccess\n251a2 LetBool\n  251a3 LocalVariable K2Node_SwitchEnum_CmpSuccess\n  251b4 CallMath import:-161:NotEqual_ByteByte\n    251b9 LocalVariable CalcType\n    251ca ByteConst 5\n251cd JumpIfNot target=502\n  251d2 LocalVariable K2Node_SwitchEnum_CmpSuccess\n251e3 LetBool\n  251e4 LocalVariable K2Node_SwitchEnum_CmpSuccess\n  251f5 CallMath import:-161:NotEqual_ByteByte\n    251fa LocalVariable CalcType\n    2520b ByteConst 6\n2520e JumpIfNot target=502\n  25213 LocalVariable K2Node_SwitchEnum_CmpSuccess\n25224 Jump target=548\n25229 LocalVirtualFunction GetDEFDiseaseRatio\n  25232 LocalVariable CallFunc_GetDEFDiseaseRatio_DiseaseRatio\n25244 Let property=Result\n  25255 LocalOutVariable Result\n  25266 StructMemberContext DEF\n    25277 InstanceVariable m_cMasterParameter\n25288 Let property=Ratio\n  25299 LocalOutVariable Ratio\n  252aa LocalVariable CallFunc_GetDEFDiseaseRatio_DiseaseRatio\n252bb Jump target=548\n252c0 LocalVirtualFunction GetMDEFDiseaseRatio\n  252c9 LocalVariable CallFunc_GetMDEFDiseaseRatio_DiseaseRatio\n252db Let property=Result\n  252ec LocalOutVariable Result\n  252fd StructMemberContext MDEF\n    2530e InstanceVariable m_cMasterParameter\n2531f Let property=Ratio\n  25330 LocalOutVariable Ratio\n  25341 LocalVariable CallFunc_GetMDEFDiseaseRatio_DiseaseRatio\n25352 Jump target=548\n25357 Let property=Result\n  25368 LocalOutVariable Result\n  25379 IntConst 0\n2537e Let property=Ratio\n  2538f LocalOutVariable Ratio\n  253a0 FloatConst 0\n253a5 Return\n  253a6 Nothing\n253a7 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "PlayHideoutAction_CanueMovement_CA276F844BFD9A3AB48B1196C6884576": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "ForceMovementTimeline_VectorOffset_FB34850E498904F635CA22BD6A5FE018": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "StepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "False",
+      "IsEquipmentSuperMagic": true,
+      "RootComponent": {
+        "kind": "object",
+        "index": 352,
+        "path": "Default__BattleCharacterBaseBP_C.SceneComponent"
+      }
+    }
+  ]
+}

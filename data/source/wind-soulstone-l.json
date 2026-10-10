@@ -1,0 +1,137 @@
+{
+  "item": {
+    "id": "ITM_CSM_0400",
+    "ID": 1943,
+    "ItemNameID": "TX_NA_ITM_CSM_0400",
+    "DetailTextID": "TX_CO_ITM_CSM_0400",
+    "IconLabel": "ITEM_ICON_CONSUME_WIND",
+    "ItemCategory": "EItemCategoryData::eCONSUMABLE",
+    "SortCategory": 72,
+    "BackpackPriority": 74,
+    "DisplayType": "EITEM_DISPLAY_TYPE::eITEM_USE",
+    "UseType": "EITEM_USE_TYPE::eBATTLE_ONLY",
+    "MaxNum": 99,
+    "SpecialItemLabel": "None",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+    "Attribute": "EATTRIBUTE_TYPE::eWIND",
+    "Ailment": [
+      {
+        "AilmentName": "HP_FIXED_DAMAGE",
+        "InvocationValue": 2700,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "ValuableFlag": false,
+    "BuyPrice": 6300,
+    "SellPrice": 630,
+    "BuyMeetCount": 99,
+    "SellMeetCount": 1,
+    "EquipmentCategory": "EEquipmentCategory::eSWORD",
+    "EquipmentTextureLabel": "None",
+    "EquipmentRevision": {
+      "HP": 0,
+      "MP": 0,
+      "BP": 0,
+      "SP": 0,
+      "POT": 0,
+      "ATK": 0,
+      "DEF": 0,
+      "MATK": 0,
+      "MDEF": 0,
+      "ACC": 0,
+      "EVA": 0,
+      "CON": 0,
+      "AGI": 0
+    },
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "CommandEffecter": {
+      "kind": "object",
+      "index": 0,
+      "path": null
+    },
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/Sequencer/ActionCommand/Item/Damage/Wind_3.Wind",
+        "number": 4,
+        "text": "/Game/Battle/Sequencer/ActionCommand/Item/Damage/Wind_3.Wind_3"
+      },
+      "subPath": ""
+    },
+    "TextInfoLabel": "ITEM_000",
+    "DisableAttackCommand": true,
+    "DisableRecoveryCommand": false,
+    "DisableReviveCommand": false,
+    "AbilityLabel": "None",
+    "DebugRecommendLv": 0
+  },
+  "asset": "Battle/Sequencer/ActionCommand/Item/Damage/Wind_3",
+  "events": [
+    {
+      "time": 0,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+      "body": "09aca LocalVirtualFunction PlayVoice\n  09ad3 ByteConst 16\n  09ad5 ByteConst 0\n  09ad7 ByteConst 0\n09ada Return\n  09adb Nothing\n09adc EndOfScript"
+    },
+    {
+      "time": 6400,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+      "body": "09a7a LocalVirtualFunction PlayAction\n  09a83 LocalVariable Character\n  09a94 ByteConst 34\n  09a96 ByteConst 0\n  09a98 ByteConst 0\n09a9b Return\n  09a9c Nothing\n09a9d EndOfScript"
+    },
+    {
+      "time": 20800,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+      "body": "099c3 LocalVirtualFunction PlaySE\n  099cc NameConst se_bat_omen_wind\n099d6 Return\n  099d7 Nothing\n099d8 EndOfScript"
+    },
+    {
+      "time": 29600,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+      "body": "09a05 LocalVirtualFunction PlaySE\n  09a0e NameConst se_bat_enemy_ability_wind7\n09a18 Return\n  09a19 Nothing\n09a1a EndOfScript"
+    },
+    {
+      "time": 68800,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+      "body": "09983 LocalVirtualFunction ExecAilment\n  0998c IntConst 0\n  09991 True\n  09992 True\n09994 Return\n  09995 Nothing\n09996 EndOfScript"
+    }
+  ]
+}

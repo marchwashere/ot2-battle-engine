@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "rules": "ot2_opening_v1",
+  "seed": 0,
+  "night_buff_turns": 0,
+  "players": [
+    {
+      "id": "osvald",
+      "name": "Osvald",
+      "stats": {
+        "max_hp": 200,
+        "max_sp": 60,
+        "speed": 72
+      },
+      "resources": {
+        "hp": 200,
+        "sp": 60,
+        "bp": 1,
+        "latent": 0
+      },
+      "skills": [
+        "attack_staff",
+        "ABI_SET_SCH_010",
+        "ABI_SET_SCH_020"
+      ],
+      "combat": {
+        "attack": 72,
+        "defense": 78,
+        "magic": 104,
+        "magic_defense": 99,
+        "accuracy": 80,
+        "evasion": 80,
+        "critical": 64,
+        "growth_attack": 80,
+        "growth_magic": 80,
+        "weapons": [
+          {
+            "weapon": "staff",
+            "attack": 3,
+            "magic": 4
+          }
+        ],
+        "main_weapon": "staff",
+        "shields": 0,
+        "weapon_weaknesses": [],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null
+      }
+    }
+  ],
+  "enemies": [
+    {
+      "id": "cape_cold_man",
+      "name": "Man",
+      "stats": {
+        "max_hp": 280,
+        "max_sp": 96,
+        "speed": 68
+      },
+      "resources": {
+        "hp": 280,
+        "sp": 96,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_NPB_2570",
+        "ABI_NPB_0040"
+      ],
+      "combat": {
+        "attack": 88,
+        "defense": 94,
+        "magic": 85,
+        "magic_defense": 85,
+        "accuracy": 66,
+        "evasion": 80,
+        "critical": 90,
+        "growth_attack": 88,
+        "growth_magic": 88,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 1,
+        "weapon_weaknesses": [
+          "sword",
+          "dagger",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "steal_item": null,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 0,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "pattern",
+        "states": [
+          {
+            "id": "pattern",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "ABI_NPB_2570",
+                      "target": "self_only"
+                    },
+                    {
+                      "skill": "ABI_NPB_0040",
+                      "target": "random_opponent"
+                    },
+                    {
+                      "skill": "ABI_NPB_0040",
+                      "target": "random_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "ABI_SET_SCH_010",
+      "name": "Fireball",
+      "target": "all_opponents",
+      "sp_cost": 14,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "magical",
+            "weapon": null,
+            "element": "fire",
+            "invocation": 105,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": [
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "fire",
+                "invocation": 105,
+                "ability_ratio": 190,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "fire",
+                "invocation": 105,
+                "ability_ratio": 280,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "fire",
+                "invocation": 105,
+                "ability_ratio": 370,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_020",
+      "name": "Icewind",
+      "target": "all_opponents",
+      "sp_cost": 14,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "magical",
+            "weapon": null,
+            "element": "ice",
+            "invocation": 105,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": [
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "ice",
+                "invocation": 105,
+                "ability_ratio": 190,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "ice",
+                "invocation": 105,
+                "ability_ratio": 280,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "ice",
+                "invocation": 105,
+                "ability_ratio": 370,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attack_staff",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "staff",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_NPB_2570",
+      "name": "Stand Ground",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "status",
+          "status": {
+            "kind": "defense_up",
+            "turns": 2
+          }
+        },
+        {
+          "kind": "status",
+          "status": {
+            "kind": "magic_defense_up",
+            "turns": 2
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_NPB_0040",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    }
+  ],
+  "inventory": {}
+}

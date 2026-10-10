@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "rules": "ot2_opening_v1",
+  "seed": 0,
+  "night_buff_turns": 0,
+  "players": [],
+  "enemies": [
+    {
+      "id": "ENE_EVE_WAR_DST_090",
+      "name": "Ruffian Soldier II",
+      "stats": {
+        "max_hp": 280,
+        "max_sp": 50,
+        "speed": 60
+      },
+      "resources": {
+        "hp": 280,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0180",
+        "ABI_ENE_0010",
+        "ABI_ENE_0190"
+      ],
+      "combat": {
+        "attack": 97,
+        "defense": 85,
+        "magic": 100,
+        "magic_defense": 72,
+        "accuracy": 100,
+        "evasion": 98,
+        "critical": 110,
+        "growth_attack": 119,
+        "growth_magic": 119,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 3,
+        "weapon_weaknesses": [
+          "dagger",
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "steal_item": null,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0180",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0190",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ENE_EVE_WAR_DST_080",
+      "name": "Ruffian Soldier I",
+      "stats": {
+        "max_hp": 180,
+        "max_sp": 50,
+        "speed": 60
+      },
+      "resources": {
+        "hp": 180,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "combat": {
+        "attack": 90,
+        "defense": 82,
+        "magic": 110,
+        "magic_defense": 70,
+        "accuracy": 90,
+        "evasion": 98,
+        "critical": 102,
+        "growth_attack": 119,
+        "growth_magic": 119,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 1,
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "ABI_ENE_0010",
+                      "target": "random_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ENE_EVE_WAR_DST_080",
+      "name": "Ruffian Soldier I",
+      "stats": {
+        "max_hp": 180,
+        "max_sp": 50,
+        "speed": 60
+      },
+      "resources": {
+        "hp": 180,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "combat": {
+        "attack": 90,
+        "defense": 82,
+        "magic": 110,
+        "magic_defense": 70,
+        "accuracy": 90,
+        "evasion": 98,
+        "critical": 102,
+        "growth_attack": 119,
+        "growth_magic": 119,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 1,
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "ABI_ENE_0010",
+                      "target": "random_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "attack_dagger",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "dagger",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "attack_staff",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "staff",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "attack_lance",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "lance",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0010",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0180",
+      "name": "Slice",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 120,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0190",
+      "name": "Triple Slash",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 3,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 85,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    }
+  ],
+  "inventory": {
+    "ice_soulstone": 1
+  }
+}

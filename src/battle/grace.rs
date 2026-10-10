@@ -1,0 +1,784 @@
+//! BG primitive execution. The parent scheduler owns target selection and time.
+use super::*;
+use crate::bg_effects::{EffectKind,Operation};
+
+impl Battle {
+    pub(super) fn grace_enemies_alive(&self)->bool {(0..self.state.actors.len()).any(|i|self.side(ActorId(i))==Some(Side::Enemy)&&self.state.actors[i].alive())}
+    pub(super) fn grace_step(&mut self,command:Command,levels:Option<&[u8]>)->Result<StepReport> {
+        ensure(self.state.opening_crt.as_ref().is_some_and(|c|c.step_ahead),"Summon/dance requires the carried Gravell battle profile")?;
+        let actor=self.current_actor().ok_or_else(||SimError("Battle ended".into()))?;
+        let (id,bp)=match command {Command::Skill {id,..}=>(id,0),Command::Boost {id,bp,..}=>(id,bp),_=>unreachable!()};
+        let index=self.catalog().skill_id(&id)?;
+        ensure(self.scenario.actors[actor.0].skills.contains(&index),"Skill not learned")?;
+        ensure(!self.state.actors[actor.0].has_status(StatusKind::Silence),"Silence prevents this skill")?;
+        let cost=self.catalog().skills[index].sp_cost;
+        ensure(bp<=3&&self.state.actors[actor.0].resources.bp>=bp,"Not enough BP")?;
+        ensure(self.state.actors[actor.0].resources.sp>=cost,"Not enough SP")?;
+        let before=self.state.rng;
+        let standard:Vec<_>=(1..=bp).collect();let inputs=levels.unwrap_or(&standard);
+        self.validate_boost_inputs(inputs,bp)?;self.apply_boost_inputs(inputs);
+        let mut events=vec![Event::Action {actor,name:id.clone()}];
+        let state=&mut self.state.actors[actor.0];state.guard=false;
+        let old=state.resources.bp;state.resources.bp-=bp;state.boosted_this_round|=bp>0;
+        if bp>0 {events.push(Event::ResourceChanged {actor,resource:Resource::Bp,before:old.into(),after:state.resources.bp.into()});}
+        let old=state.resources.sp;state.resources.sp-=cost;
+        if cost>0 {events.push(Event::ResourceChanged {actor,resource:Resource::Sp,before:old,after:state.resources.sp});}
+        self.state.opening_crt.as_mut().unwrap().settled_damage.fill(false);
+        if id=="bewildering_grace" {
+            let mut dance=crate::bewildering_grace::Dance::new(bp)?;
+            let mut first=true;
+            while let Some(selection)=dance.select(&mut self.state.rng)? {
+                self.trace_rng("bewildering_grace_lottery",Some(actor),selection.before);
+                // SetupActionCommand selects the first child before the parent
+                // ability voice. Later children follow completion of all child callbacks.
+                if first {self.voice(actor,18,VoiceCondition {ability:Some("ABI_DAN_070_01"),..Default::default()});first=false;}
+                self.grace_child(actor,crate::bg_effects::child(selection.ability)?,&mut events)?;
+                dance.complete_child(selection.ability,self.state.actors[actor.0].alive(),self.grace_enemies_alive())?;
+            }
+        } else {
+            let summons=crate::hired_help::prepare_guards(&mut self.state.rng,bp)?;
+            self.trace_rng("guards_variant_preparation",Some(actor),summons.before);
+            self.voice(actor,18,VoiceCondition {ability:Some("ABI_MER_070_D_1"),..Default::default()});
+            let targets:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Enemy)&&self.state.actors[id.0].alive()).collect();
+            let mut jobs=vec![];
+            for (i,id) in summons.variants.iter().take(summons.count as usize).enumerate() {
+                let profile=crate::bg_effects::summon(id)?;
+                ensure(profile.initial_idle_frames==0,"Guard sprite initialization changed")?;
+                jobs.push(([53280.0,64778.0,76778.0,88778.0][i],crate::bg_effects::child("ABI_MER_YOHEI_04_01")?,targets.clone(),Some(profile)));
+            }
+            self.grace_commands(actor,&jobs,&mut events)?;
+        }
+        Ok(self.complete_player_action(actor,events,before))
+    }
+    pub(super) fn grace_child(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,events:&mut Vec<Event>)->Result<()> {
+        // Transform selects its replacement in SetupActionCommand; target
+        // selection uses the complete enemy array in TransformEnemyStart.
+        if child.id=="ABI_DAN_MAKA_003" {return self.grace_transform(child,events);}
+        let actors=(0..self.state.actors.len()).map(|i|crate::bg_effects::TargetActor {id:ActorId(i),side:self.scenario.actors[i].side,alive:self.state.actors[i].alive()}).collect::<Vec<_>>();
+        let before=self.state.rng;let targets=child.select_targets(actor,&actors,&mut self.state.rng)?;
+        self.trace_rng("bg_child_target",Some(actor),before);
+        events.push(Event::Action {actor,name:child.id.clone()});
+        if matches!(child.id.as_str(),"ABI_DAN_MAKA_006"|"ABI_DAN_MAKA_017") {
+            let summon=crate::bg_effects::summon(&child.operations[0].source)?;
+            if summon.initial_idle_frames>0 {let before=self.state.rng;self.state.rng.index(summon.initial_idle_frames);self.trace_rng("bg_summon_initial_frame",Some(actor),before);}
+            let nested=crate::bg_effects::child(if child.id=="ABI_DAN_MAKA_006" {"ABI_DAN_MAKA_006_INV"}else{"ABI_DAN_MAKA_017_INV"})?;
+            self.grace_common_command(actor,nested,&targets,Some(summon),events)
+        } else {self.grace_common_child(actor,child,&targets,events)}
+    }
+    fn grace_transform(&mut self,child:&crate::bg_effects::Child,events:&mut Vec<Event>)->Result<()> {
+        let before=self.state.rng;let roll=self.state.rng.index(100);let mut sum=0;
+        let replacement=child.operations.iter().find(|op|{sum+=op.value;roll<sum}).ok_or_else(||SimError("Invalid transformation weights".into()))?;
+        self.trace_rng("bg_transform_species",None,before);
+        let mut rows:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Enemy)).collect();
+        let before=self.state.rng;for i in 0..rows.len() {let j=i+self.state.rng.index((rows.len()-i) as u32) as usize;rows.swap(i,j);}
+        self.trace_rng("bg_transform_target_shuffle",None,before);
+        let Some(target)=rows.into_iter().find(|id|self.state.actors[id.0].alive()&&!crate::bg_effects::transform_immune(&self.scenario.actors[id.0].id)) else {return Ok(())};
+        let enemy=crate::field_escape::transformed_enemy(&replacement.source)?;
+        let combat=enemy.combat.clone().ok_or_else(||SimError("Missing transform combat profile".into()))?;
+        let known=self.enemy_knowledge().get(&replacement.source).copied().unwrap_or_default();
+        let old_broken=self.state.actors[target.0].broken();
+        let before=self.state.rng;
+        if let Some(init)=&combat.enemy_initialization {if init.initial_idle_frames>0 {self.state.rng.index(init.initial_idle_frames);}}
+        self.trace_rng("bg_transform_resource_frame",Some(target),before);
+        let before=self.state.rng;let charge=combat.enemy_bp_base+self.state.rng.index(3) as u8;self.trace_rng("bg_transform_bp",Some(target),before);
+        let def=&mut Arc::make_mut(&mut self.scenario).actors[target.0];
+        def.id=enemy.id;def.name=enemy.name;def.stats=enemy.stats;def.combat=Some(combat.clone());
+        let state=&mut self.state.actors[target.0];state.resources=enemy.resources.unwrap_or_else(||Resources::full(&def.stats));
+        state.shields=combat.shields;state.break_until_round=0;state.statuses.clear();state.enemy_charge_max=charge;
+        state.revealed_weapon_weaknesses=known.weapons;state.revealed_element_weaknesses=known.elements;
+        if old_broken {let mut i=0;self.state.queue.retain(|id|{let keep=i<=self.state.cursor||*id!=target;i+=1;keep});}
+        self.grace_insert_next(target,"bg_transform_next_order_insert");
+        events.push(Event::Action {actor:target,name:format!("transformed_to_{}",replacement.source)});
+        Ok(())
+    }
+    fn grace_insert_next(&mut self,target:ActorId,reason:&'static str) {
+        self.state.next_queue.retain(|id|*id!=target);
+        let mut gaps:Vec<_>=(0..=self.state.next_queue.len()).collect();
+        for (i,&id) in self.state.next_queue.iter().enumerate() {let s=&self.state.actors[id.0];if s.broken() {if s.break_until_round<=self.state.round+1 {gaps.retain(|g|*g!=i);}else {gaps.retain(|g|*g!=i+1);}}}
+        let before=self.state.rng;let index=gaps[self.state.rng.index(gaps.len() as u32) as usize];
+        self.trace_rng(reason,Some(target),before);self.state.next_queue.insert(index,target);
+    }
+    pub(super) fn grace_post_action(&mut self,actor:ActorId,events:&mut Vec<Event>) {
+        if !self.state.actors[actor.0].alive()||!self.state.actors[actor.0].has_status(StatusKind::Poison) {return;}
+        // ExecDisease_Poison -> SetDamageForPlayer(IsPoisonDamage=true):
+        // no damage reaction/latent gain, but the damage UI timer still runs.
+        let damage=(self.scenario.actors[actor.0].stats.max_hp as f32*0.167_f32).ceil() as u32;
+        let state=&mut self.state.actors[actor.0];let before=state.resources.hp;state.resources.hp=before.saturating_sub(damage);
+        events.push(Event::ResourceChanged {actor,resource:Resource::Hp,before,after:state.resources.hp});
+        if !state.alive() {self.grace_player_death(actor);}
+        self.timer_rng("poison_damage_notification_timer",Some(actor));
+    }
+    pub(super) fn grace_last_act(&mut self) {
+        if !self.state.opening_crt.as_ref().is_some_and(|c|c.step_ahead) {return;}
+        // CheckCondition_LastAct excludes the opening retail turn of a preemptive battle.
+        if self.state.round<=2 && self.state.opening_crt.as_ref().is_some_and(|c|c.mansion_situation==Some(crate::escape::Situation::Preemptive)) {return;}
+        let modifiers=self.state.grace.get_or_insert_with(Default::default);
+        if modifiers.last_act_round==Some(self.state.round) {return;}
+        modifiers.last_act_round=Some(self.state.round);
+        for (i,state) in self.state.actors.iter_mut().enumerate() {
+            if state.alive()&&!state.broken()&&state.has_status(StatusKind::LastAct) {
+                state.statuses.retain(|s|s.kind!=StatusKind::LastAct);
+                self.state.queue.push(ActorId(i));
+            }
+        }
+    }
+    /// Executes the authored timeline for an ordinary BG child. The caller
+    /// selects its targets during child preparation, before any authored event.
+    /// Specialized summon/transform/random-count commands have their own setup.
+    pub(super) fn grace_common_child(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,targets:&[ActorId],events:&mut Vec<Event>)->Result<()> {
+        self.grace_common_command(actor,child,targets,None,events)
+    }
+    fn grace_common_command(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,targets:&[ActorId],summon:Option<&crate::bg_effects::SummonProfile>,events:&mut Vec<Event>)->Result<()> {
+        self.grace_commands(actor,&[(0.0,child,targets.to_vec(),summon)],events)
+    }
+    fn grace_commands(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>)->Result<()> {
+        use crate::bg_effects::{EffectKind::*,Step};
+        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>}
+        let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
+        let party:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Player)).collect();
+        let mut schedule=vec![];
+        for (i,(start,child,_,_)) in jobs.iter().enumerate() {
+            schedule.push((*start,i,None));
+            for step in &child.steps {
+                let tick=match step {Step::Effects {tick,..}|Step::Voice {tick,..}|Step::RandomTarget {tick}=>*tick};
+                schedule.push((start+tick,i,Some(step)));
+            }
+        }
+        schedule.sort_by(|a,b|a.0.total_cmp(&b.0));
+        for (tick,i,step) in schedule {
+            loop {
+                let next=states.iter().enumerate().filter_map(|(n,s)|s.pending.map(|(t,id)|(n,t,id)))
+                    .filter(|(_,t,_)|*t<=tick).min_by(|a,b|a.1.total_cmp(&b.1));
+                let Some((n,_,id))=next else {break};states[n].pending=None;self.timer_rng("break_slow_timer",Some(id));
+            }
+            let (_,child,targets,summon)=&jobs[i];let run=&mut states[i];
+            let random_count=child.id=="ABI_DAN_MAKA_039";
+            if step.is_none() {
+                if random_count {let before=self.state.rng;self.state.rng.index(1);for n in (1..=10).rev() {self.state.rng.index(n);}self.trace_rng("bg_random_count_setup",Some(actor),before);}
+                continue;
+            }
+            match *step.unwrap() {
+                Step::RandomTarget {..}=>{
+                    let live=targets.iter().copied().filter(|t|self.state.actors[t.0].alive()).collect::<Vec<_>>();
+                    let before=self.state.rng;
+                    run.random=if live.is_empty() {None} else {Some(live[self.state.rng.index(live.len() as u32) as usize])};
+                    self.trace_rng("bg_random_hit_target",Some(actor),before);
+                },
+                Step::Voice {voice_type,..}=>{
+                    if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
+                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(&child.id),..Default::default()});}
+                },
+                Step::Effects {index,last,on_hit,..}=>{
+                    if random_count&&!self.grace_enemies_alive() {continue;}
+                    let damage_event_start=events.len();
+                    let before_states=self.state.actors.iter().map(|a|(a.alive(),a.broken())).collect::<Vec<_>>();
+                    let mut reaction=None;
+                    for (n,op) in child.operations.iter().enumerate() {
+                        if index.is_some_and(|v|v!=n) {continue;}
+                        let before=self.state.rng;
+                        let mut selected=if random_count {run.random.into_iter().collect()} else {op.select_targets(actor,targets,&party,&mut self.state.rng)?};
+                        if on_hit {selected.retain(|t|run.hits.contains(t));}
+                        self.trace_rng("bg_ailment_target",Some(actor),before);
+                        let result=match op.kind {
+                            PhysicalDamage|MagicDamage|RandomTargetMagicDamage=>{
+                                let begin=events.len();let profile=summon.map(|s|s.combat());
+                                let result=self.grace_damage(actor,&selected,child,op,last,profile.as_ref(),events)?;
+                                for e in &events[begin..] {if let Event::Damage {target,..}=e {if !run.hits.contains(target) {run.hits.push(*target);}
+                                    if summon.is_some_and(|s|s.id.starts_with("PC_ABI_MER_YOHEI")) {self.state.grace.get_or_insert_with(Default::default).guard_hits.push(*target);}
+                                }}
+                                result
+                            },
+                            ShieldDamage=>self.grace_shield_damage(actor,&selected,op.value,events),
+                            OrderDelay=>{self.grace_delay(actor,&selected,op.value as usize);None},
+                            _=>{self.grace_scalar(actor,&selected,op,&mut run.recovery,events)?;None},
+                        };
+                        if result.is_some_and(|v|reaction.is_none_or(|r|v>r)) {reaction=result;}
+                    }
+                    if summon.is_none()&&self.state.actors[actor.0].alive() {if let Some(kind)=reaction {self.voice(actor,kind,VoiceCondition::default());}}
+                    let damage_targets:Vec<_>=events[damage_event_start..].iter().filter_map(|e|if let Event::Damage {target,..}=e {Some(*target)}else{None}).collect();
+                    let mut new_break=None;let mut broken_hit=None;
+                    for (n,(was_alive,was_broken)) in before_states.into_iter().enumerate() {
+                        let target=ActorId(n);if self.side(target)!=Some(Side::Enemy)||!was_alive {continue;}
+                        let state=&mut self.state.actors[n];if last&&!state.alive() {state.break_until_round=0;}
+                        if state.broken() {if !was_broken {new_break=Some(target);}else if damage_targets.contains(&target) {broken_hit=Some(target);}}
+                    }
+                    if let Some(target)=new_break {run.pending=Some((tick+f64::from(self.crt_data().break_timer_delay_ticks),target));run.busy=tick+f64::from(self.crt_data().break_busy_ticks);}
+                    else if tick>=run.busy {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
+                }
+            }
+        }
+        let mut remaining:Vec<_>=states.into_iter().filter_map(|s|s.pending).collect();remaining.sort_by(|a,b|a.0.total_cmp(&b.0));
+        for (_,target) in remaining {self.timer_rng("break_slow_timer",Some(target));}
+        Ok(())
+    }
+    pub(super) fn grace_player_death(&mut self,target:ActorId) {
+        if self.side(target)!=Some(Side::Player) {return;}
+        let state=&mut self.state.actors[target.0];
+        let permanent=state.statuses.iter().copied().filter(|s|s.turns==255).collect();
+        state.statuses.clear();state.resources.bp=0;state.resources.latent=0;
+        state.guard=false;state.cover_by=None;state.cover_hits=0;
+        self.state.grace.get_or_insert_with(Default::default).dead_permanent.insert(target,permanent);
+        // Keep the executing row/cursor stable. All future rows are removed,
+        // including extra actions, so revival cannot restore a current action.
+        let mut index=0;
+        self.state.queue.retain(|id| {let keep=index<=self.state.cursor||*id!=target;index+=1;keep});
+        self.state.next_queue.retain(|id|*id!=target);
+    }
+    pub(super) fn grace_revive(&mut self,actor:ActorId,target:ActorId,ratio:u32,speaker:Option<ActorId>,events:&mut Vec<Event>) {
+        let hp=(self.scenario.actors[target.0].stats.max_hp as f32*(ratio as f32*0.01_f32)) as u32;
+        if self.state.actors[target.0].alive() {
+            self.grace_recover(actor,target,Resource::Hp,hp,speaker,events);return;
+        }
+        self.state.actors[target.0].resources.hp=hp.min(self.scenario.actors[target.0].stats.max_hp);
+        events.push(Event::ResourceChanged {actor:target,resource:Resource::Hp,before:0,after:self.state.actors[target.0].resources.hp});
+        self.timer_rng("revive_recovery_notification_timer",Some(target));
+        if let Some(permanent)=self.state.grace.as_mut().and_then(|g|g.dead_permanent.remove(&target)) {
+            self.state.actors[target.0].statuses=permanent;
+        }
+        self.voice(target,14,VoiceCondition {recovery_enforcer:self.grace_enforcer(actor),..Default::default()});
+        self.state.next_queue.retain(|id|*id!=target);
+        // BattleActionOrderBP.InsertActionOrder(normal): choose one of all
+        // insertion gaps after CheckOverTake/CheckWrapAround constraints.
+        let mut gaps:Vec<_>=(0..=self.state.next_queue.len()).collect();
+        for (i,&id) in self.state.next_queue.iter().enumerate() {
+            let state=&self.state.actors[id.0];
+            if state.broken() {
+                if state.break_until_round<=self.state.round+1 {gaps.retain(|g|*g!=i);}
+                else {gaps.retain(|g|*g!=i+1);}
+            }
+        }
+        let before=self.state.rng;
+        let index=gaps[self.state.rng.index(gaps.len() as u32) as usize];
+        self.trace_rng("revive_next_order_insert",Some(target),before);
+        self.state.next_queue.insert(index,target);
+    }
+    fn grace_enforcer(&self,actor:ActorId)->Option<&'static str> {
+        match self.scenario.actors[actor.0].id.as_str() {
+            "throne"=>Some("eTHIEF"),"hikari"=>Some("eFENCER"),"agnea"=>Some("eDANCER"),
+            "partitio"=>Some("eMERCHANT"),"osvald"=>Some("ePROFESSOR"),_=>None,
+        }
+    }
+    pub(super) fn grace_damage(&mut self,actor:ActorId,targets:&[ActorId],child:&crate::bg_effects::Child,op:&Operation,last:bool,summon:Option<&CombatProfile>,events:&mut Vec<Event>)->Result<Option<u8>> {
+        let element=match child.attribute.rsplit("::").next().unwrap() {
+            "eNONE"=>None,"eFIRE"=>Some(combat::Element::Fire),"eICE"=>Some(combat::Element::Ice),
+            "eTHUNDER"=>Some(combat::Element::Lightning),"eWIND"=>Some(combat::Element::Wind),
+            "eLIGHT"=>Some(combat::Element::Light),"eDARK"=>Some(combat::Element::Dark),
+            other=>return Err(SimError(format!("Unknown BG element {other}"))),
+        };
+        let attack=combat::Attack {kind:if op.kind==EffectKind::PhysicalDamage {DamageKind::Physical} else {DamageKind::Magical},
+            weapon:summon.and_then(|s|s.main_weapon),element,invocation:op.value,ability_ratio:child.ability_ratio,
+            hit_bonus:child.hit_ratio,critical_bonus:child.critical_ratio,critical_power:child.critical_power,normal_attack:false};
+        let mut reaction=None;
+        for &target in targets {
+            // Summon commands retain their prepared targets. LibAilment's
+            // damage loop checks object validity, not current HP; later Guards
+            // still process a target killed by an earlier Guard.
+            if !self.state.actors[target.0].alive() && summon.is_none() {continue;}
+            let broken=self.state.actors[target.0].broken();
+            let known=self.state.actors[target.0].revealed_element_weaknesses;
+            self.apply_attack_profile(actor,target,&attack,None,summon,events);
+            if self.side(target)==Some(Side::Enemy) {
+                let after=&self.state.actors[target.0];
+                let kind=if last&&!after.alive() {Some(12)} else if !broken&&after.broken() {Some(10)}
+                    else if known!=after.revealed_element_weaknesses {Some(9)} else {None};
+                if kind.is_some_and(|k|reaction.is_none_or(|old|k>old)) {reaction=kind;}
+            }
+        }
+        Ok(reaction)
+    }
+    pub(super) fn grace_delay(&mut self,actor:ActorId,targets:&[ActorId],count:usize) {
+        let mut current=Vec::new();let mut next=Vec::new();
+        for &target in targets {
+            if !self.state.actors[target.0].alive()||self.state.actors[target.0].broken() {continue;}
+            // OrderCountControl: the caster and already-acted characters move
+            // next turn; a character with an outstanding row moves only now.
+            if target!=actor&&self.state.queue[self.state.cursor+1..].contains(&target) {current.push(target);}
+            else {next.push(target);}
+        }
+        for (rows,start,selected,is_next) in [(&mut self.state.queue,self.state.cursor+1,current,false),(&mut self.state.next_queue,0,next,true)] {
+            if start>=rows.len() {continue;}
+            let mut end=rows.len()-1;
+            // Cannot push past a still-broken character's reserved row.
+            for (i,id) in rows.iter().enumerate().skip(start) {
+                let s=&self.state.actors[id.0];
+                if s.broken()&&(!is_next||s.break_until_round>self.state.round+1) {end=i.saturating_sub(1);}
+            }
+            for i in (start..rows.len()).rev() {
+                if !selected.contains(&rows[i])||i>end {continue;}
+                let to=i.saturating_add(count).min(end);
+                let id=rows.remove(i);rows.insert(to,id);
+                if to==end {end=end.saturating_sub(1).max(start);}
+            }
+        }
+    }
+    pub(super) fn grace_shield_damage(&mut self,actor:ActorId,targets:&[ActorId],amount:u32,events:&mut Vec<Event>)->Option<u8> {
+        let mut reaction=None;
+        for &target in targets {
+            if !self.state.actors[target.0].alive()||self.side(target)!=Some(Side::Enemy) {continue;}
+            let s=&mut self.state.actors[target.0];
+            let before=s.shields;s.shields=s.shields.saturating_sub(amount.min(255) as u8);
+            events.push(Event::ShieldChanged {actor:target,before,after:s.shields});
+            if before>0&&s.shields==0 {
+                s.break_until_round=self.state.round+2;
+                events.push(Event::Broken {actor:target,recover_round:s.break_until_round});
+                self.timer_rng("bg_shield_break_notification",Some(target));reaction=Some(10);
+                let cap=crate::field_escape::player_latent_max(&self.scenario.actors[actor.0].id).expect("BG actor");
+                let r=&mut self.state.actors[actor.0].resources.latent;*r=r.saturating_add(25).min(cap);
+            }
+        }
+        reaction
+    }
+    /// Execute scalar effects in ailment order (outside the per-target loop).
+    /// `recovery_settled` belongs to the command, not an individual ailment.
+    pub(super) fn grace_scalar(&mut self,actor:ActorId,targets:&[ActorId],op:&Operation,recovery_settled:&mut bool,events:&mut Vec<Event>)->Result<()> {
+        use EffectKind::*;
+        match op.kind {
+            ReviveRatio=>{
+                let speaker=self.grace_recovery_speaker(actor,targets,recovery_settled);
+                for &target in targets {self.grace_revive(actor,target,op.value,speaker,events);}
+            },
+            DisableItems=>self.state.grace.get_or_insert_with(Default::default).items_disabled=true,
+            ExpMultiplier=>self.state.grace.get_or_insert_with(Default::default).exp_requests.push(op.value),
+            JpMultiplier=>self.state.grace.get_or_insert_with(Default::default).jp_requests.push(op.value),
+            AddMoney=>{
+                let m=self.state.grace.get_or_insert_with(Default::default);
+                m.money_gained=m.money_gained.saturating_add(op.value);
+            },
+            HpFixedRecovery|SpFixedRecovery|SpRatioRecovery|BpRecovery|LatentRecovery=>{
+                let speaker=self.grace_recovery_speaker(actor,targets,recovery_settled);
+                for &target in targets {
+                    let (resource,amount)=match op.kind {
+                        HpFixedRecovery=>(Resource::Hp,op.value),
+                        SpFixedRecovery=>(Resource::Sp,op.value),
+                        SpRatioRecovery=>(Resource::Sp,(self.scenario.actors[target.0].stats.max_sp as f32*(op.value as f32*0.01_f32)) as u32),
+                        BpRecovery=>(Resource::Bp,op.value),
+                        LatentRecovery=>(Resource::Latent,op.value),_=>unreachable!(),
+                    };
+                    self.grace_recover(actor,target,resource,amount,speaker,events);
+                }
+            },
+            BpDamage|LatentDamage|SpRatioDamage=>{
+                for &target in targets {
+                    let (resource,amount)=match op.kind {
+                        BpDamage=>(Resource::Bp,op.value),LatentDamage=>(Resource::Latent,op.value),
+                        SpRatioDamage=>(Resource::Sp,(self.scenario.actors[target.0].stats.max_sp as f32*(op.value as f32*0.01_f32)) as u32),
+                        _=>unreachable!(),
+                    };
+                    self.grace_resource_loss(target,resource,amount,events)?;
+                }
+            },
+            HpOne=>for &target in targets {self.grace_hp_one(actor,target,events);},
+            InstantDeathExceptCaster=>for &target in targets {self.grace_instant_death(actor,target,op,events);},
+            AddStatus=>for &target in targets {self.grace_status(actor,target,op,events)?;},
+            RemovePartyDeconditions=>for &target in targets {self.grace_remove_deconditions(target);},
+            ReverseBuffs=>for &target in targets {self.grace_reverse_buffs(target);},
+            _=>return Err(SimError(format!("BG operation requires its specialized executor: {:?}",op.kind))),
+        }
+        Ok(())
+    }
+    pub(super) fn grace_recovery_speaker(&mut self,actor:ActorId,targets:&[ActorId],settled:&mut bool)->Option<ActorId> {
+        if *settled {return None;}
+        *settled=true;
+        if targets.len()<=1 {return targets.first().copied().filter(|t|*t!=actor);}
+        let before=self.state.rng;
+        let mut work=targets.to_vec();
+        // GenericArray_Shuffle draws for every slot, including the last one.
+        for i in 0..work.len() {
+            let j=i+self.state.rng.index((work.len()-i) as u32) as usize;
+            work.swap(i,j);
+        }
+        self.trace_rng("bg_recovery_speaker_shuffle",Some(actor),before);
+        work.into_iter().find(|t|*t!=actor)
+    }
+    pub(super) fn grace_recover(&mut self,actor:ActorId,target:ActorId,resource:Resource,amount:u32,speaker:Option<ActorId>,events:&mut Vec<Event>) {
+        if !self.state.actors[target.0].alive() {return;}
+        if resource==Resource::Latent {
+            let cap=crate::field_escape::player_latent_max(&self.scenario.actors[target.0].id).expect("validated carried player");
+            let value=&mut self.state.actors[target.0].resources.latent;
+            let before=*value;
+            *value=(u32::from(*value).saturating_add(amount)).min(u32::from(cap)) as u16;
+            events.push(Event::ResourceChanged {actor:target,resource,before:before.into(),after:(*value).into()});
+        } else {
+            self.apply_effect(target,&Effect::Restore {resource,recovery:Recovery::Fixed {amount}},events);
+        }
+        // BattlePlayerBP recovery executes its display before OnRecovered.
+        // Its timer consumes CRT even at zero variance; moving it after the
+        // voice changes which conditional recipient voice succeeds.
+        if resource!=Resource::Latent {self.timer_rng("recovery_notification_timer",Some(target));}
+        if speaker==Some(target)&&target!=actor {
+            let enforcer=self.grace_enforcer(actor);
+            self.voice(target,13,VoiceCondition {recovery_enforcer:enforcer,..Default::default()});
+        }
+    }
+    pub(super) fn grace_hp_one(&mut self,actor:ActorId,target:ActorId,events:&mut Vec<Event>) {
+        if !self.state.actors[target.0].alive() {return;}
+        // BG's child disables reflection/hide-out. HP1 has no accuracy,
+        // critical or damage-variance roll (Battle_CheckDamageSuccessForHP1).
+        let amount=self.state.actors[target.0].resources.hp-1;
+        self.resolve_damage(actor,target,amount,false,false,events);
+    }
+    pub(super) fn grace_instant_death(&mut self,actor:ActorId,target:ActorId,op:&Operation,events:&mut Vec<Event>) {
+        if actor==target||!self.state.actors[target.0].alive() {return;}
+        let before=self.state.rng;
+        let success=self.state.rng.weighted_bool(op.disease_rate as f32*0.01_f32);
+        self.trace_rng("bg_instant_death",Some(actor),before);
+        if success {
+            let amount=self.state.actors[target.0].resources.hp;
+            self.resolve_damage(actor,target,amount,false,false,events);
+        }
+    }
+    pub(super) fn grace_remove_deconditions(&mut self,target:ActorId) {
+        // The BG-reachable deconditions. Buff/debuff and field item-disable
+        // are different categories and must survive this cleanse.
+        self.state.actors[target.0].statuses.retain(|s|!matches!(s.kind,StatusKind::Silence|StatusKind::Poison));
+    }
+    pub(super) fn grace_reverse_buffs(&mut self,target:ActorId) {
+        // REVERSE_BUFF selects buff category 1, then converts only diseases
+        // with EnableResist. AddDisease is direct, without the 21-roll handler.
+        let buffs:Vec<_>=self.state.actors[target.0].statuses.iter().copied().filter_map(|status| {
+            let kind=match status.kind {
+                StatusKind::AttackUp=>StatusKind::AttackDown,
+                StatusKind::MagicUp=>StatusKind::MagicDown,
+                StatusKind::SpeedUp=>StatusKind::SpeedDown,
+                StatusKind::DefenseUp=>StatusKind::DefenseDown,
+                StatusKind::MagicDefenseUp=>StatusKind::MagicDefenseDown,
+                _=>return None,
+            };
+            Some((status,kind))
+        }).collect();
+        for (status,kind) in buffs {
+            self.state.actors[target.0].statuses.retain(|s|s.kind!=status.kind);
+            self.grace_add_disease(target,Status {kind,turns:status.turns});
+        }
+    }
+    fn grace_add_disease(&mut self,target:ActorId,status:Status) {
+        let statuses=&mut self.state.actors[target.0].statuses;
+        if let Some(old)=statuses.iter_mut().find(|s|s.kind==status.kind) {
+            old.turns=if old.turns==255 {255} else {old.turns.saturating_add(status.turns).min(9)};
+            return;
+        }
+        // AddDisease removes a nonpermanent opposing disease and returns;
+        // it does NOT install the new disease on that same application.
+        let opposite=match status.kind {
+            StatusKind::AttackUp=>Some(StatusKind::AttackDown),StatusKind::AttackDown=>Some(StatusKind::AttackUp),
+            StatusKind::MagicUp=>Some(StatusKind::MagicDown),StatusKind::MagicDown=>Some(StatusKind::MagicUp),
+            StatusKind::DefenseUp=>Some(StatusKind::DefenseDown),StatusKind::DefenseDown=>Some(StatusKind::DefenseUp),
+            StatusKind::MagicDefenseUp=>Some(StatusKind::MagicDefenseDown),StatusKind::MagicDefenseDown=>Some(StatusKind::MagicDefenseUp),
+            StatusKind::SpeedUp=>Some(StatusKind::SpeedDown),StatusKind::SpeedDown=>Some(StatusKind::SpeedUp),
+            _=>None,
+        };
+        if let Some(index)=opposite.and_then(|kind|statuses.iter().position(|s|s.kind==kind&&s.turns!=255)) {
+            statuses.remove(index);return;
+        }
+        statuses.push(status);
+    }
+    /// Execute one already-targeted scalar/status operation. This intentionally
+    /// does not select another child, spend action resources or advance a turn.
+    pub(super) fn grace_status(&mut self, actor:ActorId,target:ActorId,op:&Operation,events:&mut Vec<Event>)->Result<()> {
+        ensure(op.kind==EffectKind::AddStatus,"Not a BG status")?;
+        let kind=match op.status.as_deref() {
+            Some("ATK_UP")=>StatusKind::AttackUp,
+            Some("MATK_UP")=>StatusKind::MagicUp,
+            Some("DEF_UP")=>StatusKind::DefenseUp,
+            Some("MDEF_UP")=>StatusKind::MagicDefenseUp,
+            Some("AGI_UP")=>StatusKind::SpeedUp,
+            Some("DEF_DOWN")=>StatusKind::DefenseDown,
+            Some("MDEF_DOWN")=>StatusKind::MagicDefenseDown,
+            Some("SILENCE")=>StatusKind::Silence,
+            Some("POISON")=>StatusKind::Poison,
+            Some("MAGIC_REFLECTION")=>StatusKind::MagicReflection,
+            Some("LAST_ACT_SPECIAL")=>StatusKind::LastAct,
+            _=>return Err(SimError(format!("Unknown BG status {:?}",op.status))),
+        };
+        ensure(target.0<self.state.actors.len(),"Invalid BG status target")?;
+        if !self.state.actors[target.0].alive() {return Ok(());}
+        let before=self.state.rng;
+        let slots=op.roll_status_slots(&mut self.state.rng)?;
+        self.trace_rng("bg_status_application",Some(actor),before);
+        if let Some(slots)=slots {
+            // Imported BG ailment rows have one actual disease in slot zero;
+            // all following None entries still consumed their duration rolls.
+            let turns=(u32::from(op.turns)+slots[0]).min(9) as u8;
+            let status=Status {kind,turns};
+            self.grace_add_disease(target,status);
+            events.push(Event::StatusApplied {actor:target,status});
+        }
+        Ok(())
+    }
+
+    pub(super) fn grace_resource_loss(&mut self,target:ActorId,resource:Resource,amount:u32,events:&mut Vec<Event>)->Result<()> {
+        ensure(target.0<self.state.actors.len(),"Invalid BG resource target")?;
+        ensure(matches!(resource,Resource::Bp|Resource::Sp|Resource::Latent),"HP damage must use the damage pipeline")?;
+        if !self.state.actors[target.0].alive() {return Ok(());}
+        let r=&mut self.state.actors[target.0].resources;
+        let (before,after)=match resource {
+            Resource::Bp=>{let before=u32::from(r.bp);r.bp=r.bp.saturating_sub(amount.min(255) as u8);(before,u32::from(r.bp))},
+            Resource::Sp=>{let before=r.sp;r.sp=r.sp.saturating_sub(amount);(before,r.sp)},
+            Resource::Latent=>{let before=u32::from(r.latent);r.latent=r.latent.saturating_sub(amount.min(65535) as u16);(before,u32::from(r.latent))},
+            Resource::Hp=>unreachable!(),
+        };
+        events.push(Event::ResourceChanged {actor:target,resource,before,after});
+        // BP/SP handlers call PlayDamageUI even at zero. Latent damage instead
+        // calls AddPotentialityActionPoint directly and has no damage UI draw.
+        if resource!=Resource::Latent {self.timer_rng("bg_resource_damage_notification",Some(target));}
+        Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    fn battle()->Battle {
+        let party:Vec<_>=[7,1,8,4].map(|id|crate::field_escape::route_player(id,5000).unwrap()).into();
+        crate::field_escape::carried_step_ahead(CrtRng::new(0),crate::escape::Situation::Normal,&party,
+            &["ENE_NML_FLD_WLD_250","ENE_NML_FLD_WLD_160","ENE_NML_OTR_150"],true,&crate::knowledge::EnemyHistory::new()).unwrap()
+    }
+    #[test]
+    fn live_guards_retains_prepared_targets_through_throne_menu() {
+        let mut b=battle();
+        b.state.queue=vec![ActorId(3),ActorId(0),ActorId(2)];b.state.cursor=0;
+        b.state.actors[3].resources.bp=3;
+        b.state.rng=CrtRng::new(0);b.state.rng.advance(19_290_035);
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        let report=b.step_player(Command::Boost {id:"hired_help_guards".into(),bp:3,target:None}).unwrap();
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        let live:serde_json::Value=serde_json::from_str(include_str!("../../data/source/live-guards-20261010.json")).unwrap();
+        let live=live.as_array().unwrap();assert_eq!(live.len(),69);
+        let mut checked=0;
+        for span in trace {
+            for position in span.before.draws..span.after.draws {
+                let row=&live[(position-19_290_035) as usize];
+                assert_eq!(row["position"].as_u64(),Some(position));
+                let mut expected=span.before;expected.advance(position-span.before.draws);
+                assert_eq!(row["before"].as_u64(),Some(u64::from(expected.state)));
+                let node=row["node"].as_str().unwrap();
+                let rva=row["return_rva"].as_str().unwrap();
+                match span.reason {
+                    "boost_voice"|"ability_voice"|"summon_ability_voice"|"order_voice"=>assert!(node.ends_with(".PlayBattleVoice")),
+                    "guards_variant_preparation"=>assert_eq!(rva,"0x30D7604"),
+                    "damage_notification_timer"|"break_slow_timer"=>assert_eq!(rva,"0x2C52E57"),
+                    "critical_hit_and_damage"=>assert!(node.ends_with(".CheckCritical")||node.ends_with(".CheckHit")||node.ends_with(".GetCalcValueRandomRatio")),
+                    other=>panic!("unexpected live draw {position}: {other}"),
+                }
+                checked+=1;
+            }
+        }
+        assert_eq!(checked,69);
+        assert_eq!(b.current_actor(),Some(ActorId(0)));
+        assert_eq!(b.state.rng.draws,19_290_104);
+        assert_eq!(report.events.iter().filter(|e|matches!(e,Event::Damage {..}|Event::Miss {..})).count(),12);
+    }
+    #[test]
+    fn live_hikari_donate_bp_matches_partitio_menu() {
+        let mut b=battle();
+        b.state.queue=vec![ActorId(1),ActorId(3),ActorId(0),ActorId(2)];
+        b.state.cursor=0;
+        b.state.rng=CrtRng::new(0);b.state.rng.advance(19_290_014);
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        b.step_player(Command::Boost {id:"donate_bp".into(),bp:1,target:Some(ActorId(3))}).unwrap();
+        assert_eq!(b.current_actor(),Some(ActorId(3)));
+        assert_eq!(b.state.actors[3].resources.bp,3);
+        assert_eq!(b.state.rng.draws,19_290_035);
+        assert_eq!(b.state.rng.state,3265071429);
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        let spans:Vec<_>=trace.iter().map(|s|(s.reason,s.before.draws,s.after.draws)).collect();
+        assert_eq!(spans,vec![
+            ("boost_voice",19_290_014,19_290_015),
+            ("ability_voice",19_290_015,19_290_016),
+            ("recovery_notification_timer",19_290_016,19_290_017),
+            ("voice",19_290_017,19_290_018),
+            ("order_voice",19_290_018,19_290_035),
+        ]);
+    }
+    #[test]
+    fn all_thirty_nine_effects_execute_against_real_combatants() {
+        for number in 1..=39 {
+            let mut b=battle();let mut events=vec![];
+            let child=crate::bg_effects::child(&format!("ABI_DAN_MAKA_{number:03}")).unwrap();
+            b.grace_child(ActorId(2),child,&mut events).unwrap_or_else(|e|panic!("{number}: {e}"));
+            assert!(b.state.actors.iter().enumerate().all(|(i,a)|a.resources.hp<=b.scenario.actors[i].stats.max_hp));
+            if number==3 {assert_eq!(b.scenario.actors[6].id,"ENE_NML_OTR_150","Chubby is transform-immune");assert!(b.state.rng.draws>b.initial.rng.draws);}
+            if number==6||number==17 {assert!(b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap().iter().any(|s|s.reason=="bg_summon_initial_frame"));}
+            if number==17 {assert!(b.state.actors[4..].iter().all(|a|a.has_status(StatusKind::AttackUp)&&a.has_status(StatusKind::SpeedUp)));}
+            if number==39 {assert!(b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap().iter().any(|s|s.reason=="bg_random_count_setup"&&s.after.draws-s.before.draws==11));}
+        }
+    }
+    #[test]
+    fn guards_interleave_child_voices_and_damage_and_ignore_owner_attack() {
+        let mut b=battle();b.state.queue=vec![ActorId(1),ActorId(0),ActorId(2),ActorId(3)];b.state.cursor=0;b.state.actors[1].resources.bp=3;
+        let start=b.state.rng.draws;
+        let report=b.step_player(Command::Boost {id:"hired_help_guards".into(),bp:2,target:None}).unwrap();
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        let voices:Vec<_>=trace.iter().filter(|s|s.reason=="summon_ability_voice"&&s.before.draws>=start).collect();
+        assert_eq!(voices.len(),3);
+        let first_damage=trace.iter().find(|s|s.reason=="critical_hit_and_damage"&&s.before.draws>=start).unwrap();
+        assert!(voices[1].after.draws<=first_damage.before.draws,"second Guard voice precedes first Guard damage");
+        let cat_damage:Vec<_>=report.events.iter().filter_map(|e|if let Event::Damage {target:ActorId(6),amount,..}=e {Some(*amount)}else{None}).collect();
+        assert!(cat_damage.iter().all(|n|*n==31||*n==32||(*n>=39&&*n<=41)));
+    }
+    #[test]
+    fn poison_can_kill_and_last_act_is_a_real_additional_menu() {
+        let mut b=battle();b.state.actors[2].resources.hp=1;b.state.actors[2].statuses.push(Status {kind:StatusKind::Poison,turns:9});
+        let before=b.state.rng.draws;b.grace_post_action(ActorId(2),&mut vec![]);
+        assert!(!b.state.actors[2].alive());assert_eq!(b.state.rng.draws,before+1);
+        let mut b=battle();b.state.actors[2].statuses.push(Status {kind:StatusKind::LastAct,turns:1});
+        let before=b.state.queue.len();b.grace_last_act();assert_eq!(b.state.queue.len(),before+1);assert_eq!(b.state.queue.last(),Some(&ActorId(2)));
+        b.grace_last_act();assert_eq!(b.state.queue.len(),before+1);
+    }
+    #[test]
+    fn every_common_child_executes_its_authored_timeline() {
+        let mut count=0;
+        for child in crate::bg_effects::children().values().filter(|c|c.command.contains("/_Common/CommonCommand.")) {
+            let mut b=battle();let actor=ActorId(2);let mut events=vec![];
+            let actors=(0..b.state.actors.len()).map(|i|crate::bg_effects::TargetActor {id:ActorId(i),side:b.side(ActorId(i)).unwrap(),alive:true}).collect::<Vec<_>>();
+            let targets=child.select_targets(actor,&actors,&mut b.state.rng).unwrap();
+            b.grace_common_child(actor,child,&targets,&mut events).unwrap_or_else(|e|panic!("{}: {e:?}",child.id));
+            count+=1;
+            if child.id=="ABI_DAN_MAKA_002" {assert_eq!(b.state.grace.as_ref().unwrap().exp_percent(),10000);}
+            if child.id=="ABI_DAN_MAKA_016" {assert!(b.state.actors[..4].iter().all(|a|a.resources.bp==0));}
+            if child.id=="ABI_DAN_MAKA_007" {assert!(b.state.actors[..4].iter().all(|a|a.resources.hp==1));}
+            if child.id=="ABI_DAN_MAKA_029" {assert!(b.state.actors[4..].iter().any(|a|a.broken()));}
+        }
+        assert!(count>=35,"Every ordinary child must be exercised, got {count}");
+    }
+    #[test]
+    fn death_then_revive_removes_current_action_and_rolls_next_insertion() {
+        let mut b=battle();let caster=ActorId(2);let target=ActorId(0);
+        b.state.queue=vec![caster,target,ActorId(1),ActorId(3)];b.state.cursor=0;
+        b.state.next_queue=vec![target,ActorId(1),caster,ActorId(3)];
+        b.state.actors[0].resources.bp=5;b.state.actors[0].resources.latent=80;
+        b.state.actors[0].statuses=vec![Status {kind:StatusKind::AttackUp,turns:2},Status {kind:StatusKind::ActFirst,turns:255}];
+        let hp=b.state.actors[0].resources.hp;
+        b.resolve_damage(caster,target,hp,false,false,&mut vec![]);
+        assert!(!b.state.queue.contains(&target));assert!(!b.state.next_queue.contains(&target));
+        assert_eq!(b.state.actors[0].resources.bp,0);assert_eq!(b.state.actors[0].resources.latent,0);
+        assert!(b.state.actors[0].statuses.is_empty());
+        let before=b.state.rng;let mut reference=before;
+        reference.next_u15(); // recovery display
+        // Revive voice is conditional, but its rate selection is shared with
+        // the production voice resolver. Insertion must follow that voice.
+        let mut voice_copy=b.clone();voice_copy.timer_rng("test",Some(target));
+        voice_copy.voice(target,14,VoiceCondition {recovery_enforcer:Some("eDANCER"),..Default::default()});
+        reference=voice_copy.state.rng;let index=reference.index(4) as usize;
+        b.grace_revive(caster,target,100,None,&mut vec![]);
+        assert_eq!(b.state.rng,reference);assert_eq!(b.state.next_queue[index],target);
+        assert!(!b.state.queue.contains(&target));assert_eq!(b.state.actors[0].resources.hp,hp);
+        assert_eq!(b.state.actors[0].statuses,vec![Status {kind:StatusKind::ActFirst,turns:255}]);
+    }
+    #[test]
+    fn wind_delay_moves_remaining_party_now_and_caster_next_turn() {
+        let mut b=battle();let caster=ActorId(2);
+        b.state.queue=vec![caster,ActorId(0),ActorId(4),ActorId(1),ActorId(5),ActorId(3),ActorId(6)];
+        b.state.cursor=0;b.state.next_queue=b.state.queue.clone();let before=b.state.rng;
+        b.grace_delay(caster,&[ActorId(0),ActorId(1),caster,ActorId(3)],10);
+        assert_eq!(b.state.queue,vec![caster,ActorId(4),ActorId(5),ActorId(6),ActorId(0),ActorId(1),ActorId(3)]);
+        assert_eq!(b.state.next_queue,vec![ActorId(0),ActorId(4),ActorId(1),ActorId(5),ActorId(3),ActorId(6),caster]);
+        assert_eq!(b.state.rng,before);
+    }
+    #[test]
+    fn opposing_disease_cancels_instead_of_replacing_and_permanent_buff_survives() {
+        let mut b=battle();b.state.actors[0].statuses=vec![Status {kind:StatusKind::MagicDefenseUp,turns:3}];
+        b.grace_add_disease(ActorId(0),Status {kind:StatusKind::MagicDefenseDown,turns:2});
+        assert!(b.state.actors[0].statuses.is_empty());
+        b.state.actors[0].statuses=vec![Status {kind:StatusKind::MagicDefenseUp,turns:255}];
+        b.grace_add_disease(ActorId(0),Status {kind:StatusKind::MagicDefenseDown,turns:2});
+        assert_eq!(b.state.actors[0].statuses.len(),2);
+    }
+    #[test]
+    fn recovery_shuffles_once_per_command_and_retains_character_latent_cap() {
+        let mut b=battle();let before=b.state.rng;let mut settled=false;
+        let targets=[ActorId(0),ActorId(1),ActorId(2),ActorId(3)];
+        let speaker=b.grace_recovery_speaker(ActorId(2),&targets,&mut settled);
+        assert_ne!(speaker,Some(ActorId(2)));assert!(speaker.is_some());
+        assert_eq!(b.state.rng.draws,before.draws+4);
+        let after=b.state.rng;
+        assert_eq!(b.grace_recovery_speaker(ActorId(2),&targets,&mut settled),None);
+        assert_eq!(b.state.rng,after);
+        b.grace_recover(ActorId(2),ActorId(1),Resource::Latent,300,None,&mut vec![]);
+        assert_eq!(b.state.actors[1].resources.latent,125);assert_eq!(b.state.rng,after);
+    }
+    #[test]
+    fn exp100_survives_later_lesser_rolls_and_scattering_rejects_items_atomically() {
+        let mut b=battle();let mut settled=false;let mut events=vec![];let before=b.state.rng;
+        for name in ["ABI_DAN_MAKA_002","ABI_DAN_MAKA_010","ABI_DAN_MAKA_019","ABI_DAN_MAKA_015"] {
+            let op=&crate::bg_effects::child(name).unwrap().operations[0];
+            b.grace_scalar(ActorId(2),&[],op,&mut settled,&mut events).unwrap();
+        }
+        assert_eq!(b.state.rng,before);
+        assert_eq!(b.state.grace.as_ref().unwrap().exp_percent(),10_000);
+        let snapshot=b.state.clone();
+        assert!(b.step_player(Command::Item {id:"thunder_soulstone_l".into(),target:None}).unwrap_err().0.contains("scattered"));
+        assert_eq!(b.state,snapshot);
+    }
+    #[test]
+    fn silence_mutates_actual_battle_state_and_preserves_all_status_rolls() {
+        let mut b=battle();let before=b.state.rng;let mut reference=before;
+        let op=&crate::bg_effects::child("ABI_DAN_MAKA_024").unwrap().operations[0];
+        let slots=op.roll_status_slots(&mut reference).unwrap().unwrap();
+        let mut events=vec![];
+        b.grace_status(ActorId(2),ActorId(0),op,&mut events).unwrap();
+        assert_eq!(b.state.rng,reference);
+        assert_eq!(b.state.actors[0].statuses.iter().find(|s|s.kind==StatusKind::Silence).unwrap().turns,2+slots[0] as u8);
+        assert_eq!(b.state.round,1);
+        assert_eq!(b.state.rng.draws-before.draws,21);
+    }
+    #[test]
+    fn bp_depletion_is_clamped_and_does_not_change_hp_or_sp() {
+        let mut b=battle();let before=b.state.actors[0].resources.clone();let rng=b.state.rng;
+        b.grace_resource_loss(ActorId(0),Resource::Bp,5,&mut vec![]).unwrap();
+        assert_eq!(b.state.actors[0].resources.bp,0);
+        assert_eq!(b.state.actors[0].resources.hp,before.hp);
+        assert_eq!(b.state.actors[0].resources.sp,before.sp);
+        assert_eq!(b.state.rng.draws,rng.draws+1);
+    }
+    #[test]
+    fn latent_depletion_does_not_borrow_bp_damage_ui_rng() {
+        let mut b=battle();b.state.actors[0].resources.latent=80;let before=b.state.rng;
+        b.grace_resource_loss(ActorId(0),Resource::Latent,300,&mut vec![]).unwrap();
+        assert_eq!(b.state.actors[0].resources.latent,0);assert_eq!(b.state.rng,before);
+    }
+    #[test]
+    fn hp_one_does_not_kill_or_consume_a_damage_roll() {
+        let mut b=battle();let mut events=vec![];
+        b.grace_hp_one(ActorId(2),ActorId(0),&mut events);
+        assert_eq!(b.state.actors[0].resources.hp,1);
+        assert!(!events.iter().any(|e|matches!(e,Event::KnockedOut {..})));
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        assert!(!trace.iter().any(|s|s.reason=="critical_hit_and_damage"));
+    }
+    #[test]
+    fn reverse_and_cleanse_preserve_other_status_categories_and_no_rng() {
+        let mut b=battle();let before=b.state.rng;
+        b.state.actors[0].statuses=vec![
+            Status {kind:StatusKind::AttackUp,turns:5},Status {kind:StatusKind::Poison,turns:9},
+            Status {kind:StatusKind::MagicReflection,turns:1},Status {kind:StatusKind::DefenseDown,turns:2}];
+        b.grace_reverse_buffs(ActorId(0));b.grace_remove_deconditions(ActorId(0));
+        assert_eq!(b.state.rng,before);
+        assert!(b.state.actors[0].has_status(StatusKind::AttackDown));
+        assert!(b.state.actors[0].has_status(StatusKind::MagicReflection));
+        assert!(b.state.actors[0].has_status(StatusKind::DefenseDown));
+        assert!(!b.state.actors[0].has_status(StatusKind::Poison));
+    }
+    #[test]
+    fn instant_death_has_a_real_chance_and_caster_is_excluded() {
+        let op=&crate::bg_effects::child("ABI_DAN_MAKA_008").unwrap().operations[0];
+        let mut killed=false;let mut survived=false;
+        for seed in [0,10_000,50_000,u32::MAX] {
+            let mut b=battle();b.state.rng=CrtRng::new(seed);let before=b.state.rng;
+            b.grace_instant_death(ActorId(2),ActorId(2),op,&mut vec![]);assert_eq!(b.state.rng,before);
+            b.grace_instant_death(ActorId(2),ActorId(0),op,&mut vec![]);
+            killed|=!b.state.actors[0].alive();survived|=b.state.actors[0].alive();
+        }
+        assert!(killed&&survived);
+    }
+    #[test]
+    fn buffs_on_broken_enemies_do_not_create_broken_hit_timers() {
+        let mut b=battle();b.state.actors[4].break_until_round=2;
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        b.grace_child(ActorId(2),crate::bg_effects::child("ABI_DAN_MAKA_017").unwrap(),&mut vec![]).unwrap();
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        assert!(!trace.iter().any(|s|s.reason=="broken_hit_slow_timer"));
+    }
+
+}
+

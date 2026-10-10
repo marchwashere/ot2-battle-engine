@@ -1,0 +1,672 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Ability/Database/AilmentData",
+      "sha256": "f2a99c806f16db66a01681d96b525034563766a62710b6d6fbd80742a7bdb363"
+    }
+  ],
+  "ability": {
+    "id": "ABI_BOS_THI_C01_010_008",
+    "ID": 7086,
+    "AbilityID": 40860,
+    "DisplayName": "ABN_BOS_THI_101_008",
+    "Detail": "None",
+    "CommandActor": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+        "number": 0,
+        "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+      },
+      "subPath": ""
+    },
+    "AbilityType": "EABILITY_TYPE::eOTHER",
+    "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+    "AlwaysDisable": false,
+    "Attribute": "EATTRIBUTE_TYPE::eNONE",
+    "DependWeapon": false,
+    "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+    "ExceptEnforcer": false,
+    "CostType": "EABILITY_COST_TYPE::eNONE",
+    "CostValue": 0,
+    "HitRatio": 0,
+    "CriticalRatio": 0,
+    "CriticalPower": 150,
+    "AbilityRatio": 100,
+    "BaseCount": 1,
+    "MinimumCount": 0,
+    "RandomCountMin": 0,
+    "RandomCountMax": 0,
+    "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+    "EstimateOrderCount": 0,
+    "Ailment": [
+      {
+        "AilmentName": "HP_RATIO_DAMAGE",
+        "InvocationValue": 1,
+        "InvocationTurn": 0,
+        "DiseaseRate": 100
+      },
+      {
+        "AilmentName": "ADD_THIS_ATTACK_HIT_FAILED",
+        "InvocationValue": 1,
+        "InvocationTurn": 0,
+        "DiseaseRate": 100
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "KeepBoostEffect": false,
+    "EnableItemAll": false,
+    "EnableSkillAll": false,
+    "EnableConvergence": false,
+    "EnableDiffusion": false,
+    "EnableReflection": false,
+    "EnableCounter": true,
+    "EnableHideOut": true,
+    "EnableRepeat": false,
+    "EnableCover": true,
+    "EnableProvoke": true,
+    "EnableDisableMagic": false,
+    "EnableEnchant": false,
+    "EnableChaseAttack": false,
+    "EnableWeakCheckAll": false,
+    "EnableNormalAttackAll": false,
+    "EnableSession": false,
+    "EnableBusinessSupport": false,
+    "EnableForceWeakness": false,
+    "EnableNoUseMaterial": false,
+    "EnableSwitchWeapon": false,
+    "EnableCompensationMagic": false,
+    "EnableExcitement": false,
+    "SongAbilityFlag": false,
+    "DanceAbilityFlag": false,
+    "EnableAutoTameMonster": false,
+    "UseAbilityCamera": true,
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/Sequencer/ActionCommand/BOSS/Thief/Seq_Bos_Thi_C010_010_008s.Seq_Bos_Thi_C010_010_008s",
+        "number": 0,
+        "text": "/Game/Battle/Sequencer/ActionCommand/BOSS/Thief/Seq_Bos_Thi_C010_010_008s.Seq_Bos_Thi_C010_010_008s"
+      },
+      "subPath": ""
+    },
+    "AbilitySE": [
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SlideFrame": 100
+  },
+  "ratio": {
+    "id": "HP_RATIO_DAMAGE",
+    "ID": 25,
+    "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+    "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator2",
+    "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+    "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
+    "DiseaseRatio": 100,
+    "AddDisease": [
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      }
+    ],
+    "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+    "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+    "TargetParam": {
+      "HP": false,
+      "MP": false,
+      "BP": false,
+      "SP": false,
+      "POT": false,
+      "ATK": false,
+      "DEF": false,
+      "MATK": false,
+      "MDEF": false,
+      "ACC": false,
+      "EVA": false,
+      "CON": false,
+      "AGI": false
+    },
+    "AdvValue1": 0,
+    "AdvValue2": 0,
+    "AdvValue3": 0,
+    "AdvValue4": 0,
+    "TargetDiseaseName": "ePOISON",
+    "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+  },
+  "status": {
+    "id": "ADD_THIS_ATTACK_HIT_FAILED",
+    "ID": 334,
+    "AilmentType": "EAILMENT_TYPE::NewEnumerator8",
+    "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator1",
+    "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+    "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator1",
+    "DiseaseRatio": 100,
+    "AddDisease": [
+      {
+        "DiseaseName": "ATTACK_HIT_FAILED_NO_ICON",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      },
+      {
+        "DiseaseName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "ActionCommand": {
+          "kind": "object",
+          "index": 0,
+          "path": null
+        },
+        "ByEquipment": false
+      }
+    ],
+    "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+    "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+    "TargetParam": {
+      "HP": false,
+      "MP": false,
+      "BP": false,
+      "SP": false,
+      "POT": false,
+      "ATK": false,
+      "DEF": false,
+      "MATK": false,
+      "MDEF": false,
+      "ACC": false,
+      "EVA": false,
+      "CON": false,
+      "AGI": false
+    },
+    "AdvValue1": 0,
+    "AdvValue2": 0,
+    "AdvValue3": 0,
+    "AdvValue4": 0,
+    "TargetDiseaseName": "ePOISON",
+    "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+  },
+  "names": {
+    "EN": "Pierce Through",
+    "ZH_CN": "穿心"
+  },
+  "command": {
+    "asset": "Battle/BP/BattleAction/_Base/BP_ActionCommandBase",
+    "sha256": "1b48752709f8e58d8c9f38b685c2a4d06301b5a566999eac9cc9ab5858255e59",
+    "forcedMissGate": "32165 LetBool\n  32166 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n  32177 CallMath import:-135:EqualEqual_ByteByte\n    3217c StructMemberContext CalcType_98_EE3DC6C641F97E3E0DE9E9917815CEFC\n      3218d StructMemberContext Ailment_29_75475DD04B3C5EEC50F1BE921DE759E3\n        3219e LocalVariable Ailment\n    321af ByteConst 0\n321b2 PopExecutionFlowIfNot\n  321b3 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n321c4 Let property=<null-field>\n  321cd LocalVariable K2Node_DynamicCast_AsBattle_Character_Base_BP\n  321de DynamicCast import:-10:BattleCharacterBaseBP_C\n    321e3 StructMemberContext Enforcer_58_86723D6647D3A7C577D78DBEAB27607D\n      321f4 LocalVariable Ailment\n32205 Let property=<null-field>\n  3220e LocalVariable K2Node_DynamicCast_bSuccess\n  3221f Cast cast=71\n    32221 LocalVariable K2Node_DynamicCast_AsBattle_Character_Base_BP\n32232 Context skip=34 rvalue=<null-field>\n  32233 LocalVariable K2Node_DynamicCast_AsBattle_Character_Base_BP\n  32250 LocalVirtualFunction SearchDisease\n    32259 ByteConst 71\n    3225b LocalVariable CallFunc_SearchDisease_ExecHandler\n    3226c LocalVariable CallFunc_SearchDisease_Enable\n3227e PopExecutionFlowIfNot\n  3227f LocalVariable CallFunc_SearchDisease_Enable\n32290 FinalFunction import:-231:SetAttackHitFailed\n  32295 True\n32297 LetBool\n  32298 InstanceVariable SpecialHitResult\n  322a9 False\n322aa LetBool\n  322ab LocalVariable WorkEnableSpecialHit\n  322bc True\n322bd PopExecutionFlow\n322be LetBool\n  322bf LocalOutVariable Enable\n  322d0 LocalVariable WorkEnableSpecialHit\n322e1 LetBool\n  322e2 LocalOutVariable Result\n  322f3 InstanceVariable SpecialHitResult\n32304 Return\n  32305 Nothing\n32306 EndOfScript",
+    "ratioCalculation": "2675c Context skip=32 rvalue=<null-field>\n  2675d LocalVariable DamageTarget\n  2677a LocalVirtualFunction GetHP\n    26783 LocalVariable CallFunc_GetHP_HP_2\n    26794 LocalVariable CallFunc_GetHP_HPMax_2\n267a6 Let property=CallFunc_Multiply_IntInt_ReturnValue\n  267b7 LocalVariable CallFunc_Multiply_IntInt_ReturnValue\n  267c8 CallMath import:-149:Multiply_IntInt\n    267cd LocalVariable CallFunc_GetHP_HPMax_2\n    267de LocalVariable InvocationValue\n267f0 Let property=CallFunc_Divide_IntInt_ReturnValue_1\n  26801 LocalVariable CallFunc_Divide_IntInt_ReturnValue_1\n  26812 CallMath import:-133:Divide_IntInt\n    26817 LocalVariable CallFunc_Multiply_IntInt_ReturnValue\n    26828 IntConst 100\n2682e Let property=CallFunc_Min_ReturnValue_2\n  2683f LocalVariable CallFunc_Min_ReturnValue_2\n  26850 CallMath import:-146:Min\n    26855 LocalVariable CallFunc_GetHP_HP_2\n    26866 LocalVariable CallFunc_Divide_IntInt_ReturnValue_1\n26878 Let property=DamageResult\n  26889 LocalVariable DamageResult\n  2689a LocalVariable CallFunc_Min_ReturnValue_2\n268ab PopExecutionFlow\n"
+  },
+  "conclusion": "ATTACK_HIT_FAILED gates CalcType 0 only. Pierce Through uses HP_RATIO_DAMAGE (CalcType 2), so it takes the ordinary accuracy check and successful damage reaction. Its 1% of 261 max HP truncates to 2 damage. Both scripted status applications still consume their CRT calls."
+}

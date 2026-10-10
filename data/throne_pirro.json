@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "rules": "ot2_opening_v1",
+  "seed": 123,
+  "night_buff_turns": 3,
+  "players": [
+    {
+      "id": "throne",
+      "name": "Throné",
+      "stats": {
+        "max_hp": 261,
+        "max_sp": 40,
+        "speed": 97
+      },
+      "resources": {
+        "hp": 261,
+        "sp": 40,
+        "bp": 1,
+        "latent": 0
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_020"
+      ],
+      "combat": {
+        "attack": 89,
+        "defense": 79,
+        "magic": 81,
+        "magic_defense": 73,
+        "accuracy": 89,
+        "evasion": 97,
+        "critical": 81,
+        "growth_attack": 81,
+        "growth_magic": 81,
+        "weapons": [
+          {
+            "weapon": "sword",
+            "attack": 4,
+            "magic": 0
+          },
+          {
+            "weapon": "dagger",
+            "attack": 6,
+            "magic": 0
+          }
+        ],
+        "main_weapon": "dagger",
+        "shields": 0,
+        "weapon_weaknesses": [],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null
+      }
+    }
+  ],
+  "enemies": [
+    {
+      "id": "pirro_boss",
+      "name": "Pirro",
+      "stats": {
+        "max_hp": 2100,
+        "max_sp": 101,
+        "speed": 68
+      },
+      "resources": {
+        "hp": 2100,
+        "sp": 101,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_BOS_THI_C01_010_000",
+        "ABI_BOS_THI_C01_010_001",
+        "ABI_BOS_THI_C01_010_002",
+        "ABI_BOS_THI_C01_010_003",
+        "ABI_BOS_THI_C01_010_004",
+        "ABI_BOS_THI_C01_010_005",
+        "ABI_BOS_THI_C01_010_006",
+        "ABI_BOS_THI_C01_010_007",
+        "ABI_BOS_THI_C01_010_008",
+        "ABI_BOS_THI_C01_010_009",
+        "ABI_BOS_THI_C01_010_010",
+        "ABI_BOS_THI_C01_010_011",
+        "ABI_BOS_THI_C01_010_012",
+        "ABI_BOS_THI_C01_010_100"
+      ],
+      "combat": {
+        "attack": 108,
+        "defense": 86,
+        "magic": 100,
+        "magic_defense": 68,
+        "accuracy": 143,
+        "evasion": 120,
+        "critical": 20,
+        "growth_attack": 108,
+        "growth_magic": 100,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 5,
+        "weapon_weaknesses": [
+          "sword"
+        ],
+        "element_weaknesses": [
+          "light",
+          "dark"
+        ],
+        "statuses": [],
+        "steal_item": "light_soulstone",
+        "enemy_bp_base": 5,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "pirro",
+        "states": [
+          {
+            "id": "pirro",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "ABI_BOS_THI_C01_010_003",
+                      "target": "random_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "attack_sword",
+      "name": "attack_sword",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "sword",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "attack_dagger",
+      "name": "attack_dagger",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "dagger",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_THI_020",
+      "name": "Darkest Night",
+      "target": "opponent",
+      "sp_cost": 7,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "magical",
+            "weapon": null,
+            "element": "dark",
+            "invocation": 130,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 200,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 300,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 400,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_000",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 95,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_001",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 105,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_002",
+      "name": "Slice",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 105,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_003",
+      "name": "Hesitation",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_004",
+      "name": "Stunning Strike",
+      "target": "all_opponents",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 110,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_005",
+      "name": "Double Edge",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 80,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 2,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_006",
+      "name": "Dark Needle",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "magical",
+            "weapon": null,
+            "element": "dark",
+            "invocation": 115,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        },
+        {
+          "kind": "sp_ratio_damage",
+          "percent": 25
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_007",
+      "name": "Resolution",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "status",
+          "status": {
+            "kind": "attack_up",
+            "turns": 255
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_008",
+      "name": "Pierce Through",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "unarmed_hp_ratio_damage",
+          "percent": 1,
+          "hit_bonus": 0
+        },
+        {
+          "kind": "force_miss"
+        }
+      ],
+      "hits": 2,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_009",
+      "name": "Pierce Through",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "unarmed_hp_ratio_damage",
+          "percent": 100,
+          "hit_bonus": 999
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_010",
+      "name": "Quintuple Edge",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 62,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        },
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 120,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        },
+        {
+          "kind": "sign_of_boost",
+          "enabled": false
+        }
+      ],
+      "hits": 6,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_011",
+      "name": "Lightning Speed",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "status",
+          "status": {
+            "kind": "speed_up",
+            "turns": 255
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_012",
+      "name": "Triple Edge",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 75,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 3,
+      "boosted": []
+    },
+    {
+      "id": "ABI_BOS_THI_C01_010_100",
+      "name": "Pirro steels his resolve!",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "sign_of_boost",
+          "enabled": true
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    }
+  ],
+  "inventory": {
+    "healing_grape": 1,
+    "shadow_soulstone": 1,
+    "light_soulstone": 1,
+    "wind_soulstone": 1,
+    "ice_soulstone": 1
+  }
+}

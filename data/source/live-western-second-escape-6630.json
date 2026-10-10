@@ -1,0 +1,3182 @@
+{
+  "records": [
+    {
+      "kind": "rand",
+      "ms": 36997,
+      "tid": 50936,
+      "before": 923866087,
+      "position": 6581,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 12,
+      "blueprint": {
+        "address": "0xA59997A610",
+        "node": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147463221",
+        "objectClass": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C",
+        "code": "0x23FF9F0FB1F",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 256,
+          "rva": "0xE30EBD"
+        },
+        {
+          "offset": 272,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 304,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 376,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 384,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 480,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 544,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 640,
+          "rva": "0x1458CDB"
+        },
+        {
+          "offset": 672,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 680,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 688,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 736,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 768,
+          "rva": "0x12E11F2"
+        },
+        {
+          "offset": 784,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 832,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 912,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 960,
+          "rva": "0x1449B52"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 36997,
+      "tid": 50936,
+      "before": 535936782,
+      "position": 6582,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30BA235"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 36997,
+      "tid": 50936,
+      "before": 339417497,
+      "position": 6583,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997C340",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463222",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x23FA961C866",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 36999,
+      "tid": 50936,
+      "before": 3272406520,
+      "position": 6584,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 12,
+      "blueprint": {
+        "address": "0xA59997A610",
+        "node": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147463201",
+        "objectClass": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C",
+        "code": "0x23FF9F0FB1F",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 256,
+          "rva": "0xE30EBD"
+        },
+        {
+          "offset": 272,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 304,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 376,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 384,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 480,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 544,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 640,
+          "rva": "0x1458CDB"
+        },
+        {
+          "offset": 672,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 680,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 688,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 736,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 768,
+          "rva": "0x12E11F2"
+        },
+        {
+          "offset": 784,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 832,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 912,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 960,
+          "rva": "0x1449B52"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 36999,
+      "tid": 50936,
+      "before": 171810011,
+      "position": 6585,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30BA235"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 36999,
+      "tid": 50936,
+      "before": 363394098,
+      "position": 6586,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997C340",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463202",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x23FA961C866",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37006,
+      "tid": 50936,
+      "before": 2090797613,
+      "position": 6587,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 30,
+      "blueprint": {
+        "address": "0xA59997A610",
+        "node": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147463181",
+        "objectClass": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C",
+        "code": "0x23FF9F0FB1F",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 256,
+          "rva": "0xE30EBD"
+        },
+        {
+          "offset": 272,
+          "rva": "0x2A03CF2"
+        },
+        {
+          "offset": 304,
+          "rva": "0x12E042C"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 376,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 384,
+          "rva": "0x1449BF2"
+        },
+        {
+          "offset": 480,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 544,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 640,
+          "rva": "0x1458CDB"
+        },
+        {
+          "offset": 672,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 680,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 688,
+          "rva": "0x2921997"
+        },
+        {
+          "offset": 704,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 736,
+          "rva": "0x29233EC"
+        },
+        {
+          "offset": 768,
+          "rva": "0x12E11F2"
+        },
+        {
+          "offset": 784,
+          "rva": "0x291E299"
+        },
+        {
+          "offset": 832,
+          "rva": "0x1449C7E"
+        },
+        {
+          "offset": 912,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 960,
+          "rva": "0x1449B52"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37006,
+      "tid": 50936,
+      "before": 3884217404,
+      "position": 6588,
+      "seed": null,
+      "returnRva": "0x30D7604",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7604"
+        },
+        {
+          "offset": 16,
+          "rva": "0x30BA235"
+        },
+        {
+          "offset": 64,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 208,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 336,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37007,
+      "tid": 50936,
+      "before": 3576508943,
+      "position": 6589,
+      "seed": null,
+      "returnRva": "0x30D7065",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997C340",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463182",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x23FA961C866",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7065"
+        },
+        {
+          "offset": 80,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 144,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 224,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 352,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 404227222,
+      "position": 6590,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 651716865,
+      "position": 6591,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 1115989952,
+      "position": 6592,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 1818732419,
+      "position": 6593,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 972518458,
+      "position": 6594,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 1775086101,
+      "position": 6595,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37053,
+      "tid": 50936,
+      "before": 1646933124,
+      "position": 6596,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47590"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37054,
+      "tid": 50936,
+      "before": 2905018679,
+      "position": 6597,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE475B2"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 576,
+          "rva": "0x30C8AB5"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 752,
+          "rva": "0x2C8864D"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37119,
+      "tid": 50936,
+      "before": 2364081950,
+      "position": 6598,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 2,
+      "blueprint": {
+        "address": "0xA59997CC40",
+        "node": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C.PlayPlayerSideVoice_BattleStart",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleManagerBP_C_2147481936",
+        "objectClass": "/Game/Battle/BP/BattleManagerBP.BattleManagerBP_C",
+        "code": "0x2406EA17D9C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1449848"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 480,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 504,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1437CDD"
+        },
+        {
+          "offset": 672,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 800,
+          "rva": "0x1458371"
+        },
+        {
+          "offset": 808,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 848,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 976,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 37120,
+      "tid": 50936,
+      "before": 1420394857,
+      "position": 6599,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997BCC0",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463247.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE2A85",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 38552,
+      "tid": 50936,
+      "before": 2361720456,
+      "position": 6600,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 3,
+      "blueprint": {
+        "address": "0xA59997C5E0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.OpenWeakIcon",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463222",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x2406EACB3F3",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 288,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x12E4AB2"
+        },
+        {
+          "offset": 400,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 448,
+          "rva": "0x12E4A80"
+        },
+        {
+          "offset": 600,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1437A62"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 864,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 896,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 904,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 928,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 944,
+          "rva": "0x1448E68"
+        },
+        {
+          "offset": 1008,
+          "rva": "0x1449848"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 38553,
+      "tid": 50936,
+      "before": 2836120363,
+      "position": 6601,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 2,
+      "blueprint": {
+        "address": "0xA59997C5E0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.OpenWeakIcon",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463222",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x2406EACB3F3",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 288,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x12E4AB2"
+        },
+        {
+          "offset": 400,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 448,
+          "rva": "0x12E4A80"
+        },
+        {
+          "offset": 600,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x30AA5C6"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 864,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 896,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 904,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 928,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 944,
+          "rva": "0x1448E68"
+        },
+        {
+          "offset": 1008,
+          "rva": "0x1449848"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 38553,
+      "tid": 50936,
+      "before": 1851507010,
+      "position": 6602,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 3,
+      "blueprint": {
+        "address": "0xA59997C5E0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.OpenWeakIcon",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463182",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x2406EACB3F3",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 288,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x12E4AB2"
+        },
+        {
+          "offset": 400,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 448,
+          "rva": "0x12E4A80"
+        },
+        {
+          "offset": 600,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x1437A62"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 864,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 896,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 904,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 928,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 944,
+          "rva": "0x1448E68"
+        },
+        {
+          "offset": 1008,
+          "rva": "0x1449848"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 38553,
+      "tid": 50936,
+      "before": 1479467773,
+      "position": 6603,
+      "seed": null,
+      "returnRva": "0x30D7424",
+      "maximum": 2,
+      "blueprint": {
+        "address": "0xA59997C5E0",
+        "node": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.OpenWeakIcon",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147463182",
+        "objectClass": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C",
+        "code": "0x2406EACB3F3",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x30D7424"
+        },
+        {
+          "offset": 48,
+          "rva": "0x1458588"
+        },
+        {
+          "offset": 112,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 128,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 192,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 288,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 320,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 336,
+          "rva": "0x12E4AB2"
+        },
+        {
+          "offset": 400,
+          "rva": "0x1449DBF"
+        },
+        {
+          "offset": 448,
+          "rva": "0x12E4A80"
+        },
+        {
+          "offset": 600,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 608,
+          "rva": "0x30AA5C6"
+        },
+        {
+          "offset": 768,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 864,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 896,
+          "rva": "0x1412129"
+        },
+        {
+          "offset": 904,
+          "rva": "0x1449D20"
+        },
+        {
+          "offset": 928,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 944,
+          "rva": "0x1448E68"
+        },
+        {
+          "offset": 1008,
+          "rva": "0x1449848"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39078,
+      "tid": 50936,
+      "before": 349972940,
+      "position": 6604,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39078,
+      "tid": 50936,
+      "before": 3121631583,
+      "position": 6605,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39078,
+      "tid": 50936,
+      "before": 464512678,
+      "position": 6606,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39078,
+      "tid": 50936,
+      "before": 441254609,
+      "position": 6607,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39078,
+      "tid": 50936,
+      "before": 779229776,
+      "position": 6608,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39079,
+      "tid": 50936,
+      "before": 314413011,
+      "position": 6609,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39079,
+      "tid": 50936,
+      "before": 3516595018,
+      "position": 6610,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47548"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39079,
+      "tid": 50936,
+      "before": 2817742053,
+      "position": 6611,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47554"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39079,
+      "tid": 50936,
+      "before": 2844292116,
+      "position": 6612,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": null,
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 64,
+          "rva": "0xE47560"
+        },
+        {
+          "offset": 80,
+          "rva": "0x113F313"
+        },
+        {
+          "offset": 96,
+          "rva": "0x12DF17B"
+        },
+        {
+          "offset": 352,
+          "rva": "0xFAEBBC"
+        },
+        {
+          "offset": 416,
+          "rva": "0x12E5E69"
+        },
+        {
+          "offset": 448,
+          "rva": "0x1441EA1"
+        },
+        {
+          "offset": 464,
+          "rva": "0x143B760"
+        },
+        {
+          "offset": 544,
+          "rva": "0x1458F0C"
+        },
+        {
+          "offset": 624,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 688,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 720,
+          "rva": "0x12E58CC"
+        },
+        {
+          "offset": 816,
+          "rva": "0x1437C66"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39461,
+      "tid": 50936,
+      "before": 2661192327,
+      "position": 6613,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39461,
+      "tid": 50936,
+      "before": 4207657774,
+      "position": 6614,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39461,
+      "tid": 50936,
+      "before": 2032504121,
+      "position": 6615,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39462,
+      "tid": 50936,
+      "before": 904141592,
+      "position": 6616,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39462,
+      "tid": 50936,
+      "before": 1190440315,
+      "position": 6617,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39462,
+      "tid": 50936,
+      "before": 835600978,
+      "position": 6618,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39462,
+      "tid": 50936,
+      "before": 4216299469,
+      "position": 6619,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39462,
+      "tid": 50936,
+      "before": 336671580,
+      "position": 6620,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39463,
+      "tid": 50936,
+      "before": 4020991151,
+      "position": 6621,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39463,
+      "tid": 50936,
+      "before": 439336118,
+      "position": 6622,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39463,
+      "tid": 50936,
+      "before": 2514075809,
+      "position": 6623,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39463,
+      "tid": 50936,
+      "before": 1470570720,
+      "position": 6624,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39463,
+      "tid": 50936,
+      "before": 3230448675,
+      "position": 6625,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39464,
+      "tid": 50936,
+      "before": 1424143962,
+      "position": 6626,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39464,
+      "tid": 50936,
+      "before": 1560044469,
+      "position": 6627,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39464,
+      "tid": 50936,
+      "before": 516720548,
+      "position": 6628,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 39464,
+      "tid": 50936,
+      "before": 2394200023,
+      "position": 6629,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997B480",
+        "node": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+        "obj": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147463275.NODE_AddBP_BattleVoiceComponent-0",
+        "objectClass": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C",
+        "code": "0x23FF0CE237C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 368,
+          "rva": "0x12E5E69"
+        }
+      ],
+      "nativePointers": []
+    },
+    {
+      "kind": "rand",
+      "ms": 45129,
+      "tid": 50936,
+      "before": 333640510,
+      "position": 6630,
+      "seed": null,
+      "returnRva": "0x2C57B26",
+      "maximum": null,
+      "blueprint": {
+        "address": "0xA59997D250",
+        "node": "/Game/Library/LibBattle.LibBattle_C.CheckEscapeSuccess",
+        "obj": "/Game/Library/LibBattle.Default__LibBattle_C",
+        "objectClass": "/Game/Library/LibBattle.LibBattle_C",
+        "code": "0x23FFFD06B6C",
+        "spawn": null
+      },
+      "nativeContext": null,
+      "stack": [
+        {
+          "offset": 0,
+          "rva": "0x2C57B26"
+        },
+        {
+          "offset": 32,
+          "rva": "0x14585BB"
+        },
+        {
+          "offset": 64,
+          "rva": "0x30D6DE2"
+        },
+        {
+          "offset": 96,
+          "rva": "0x1046064"
+        },
+        {
+          "offset": 112,
+          "rva": "0x1458699"
+        },
+        {
+          "offset": 176,
+          "rva": "0x1449D7F"
+        },
+        {
+          "offset": 240,
+          "rva": "0x1430B67"
+        },
+        {
+          "offset": 304,
+          "rva": "0x1437C66"
+        },
+        {
+          "offset": 464,
+          "rva": "0x1458699"
+        }
+      ],
+      "nativePointers": []
+    }
+  ],
+  "menu": 6630,
+  "escape_success": false
+}

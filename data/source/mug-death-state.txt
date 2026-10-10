@@ -1,0 +1,5 @@
+2dfd8 FinalFunction export:1:ExecuteUbergraph_BattleEnemyBP
+  2dfdd IntConst 28372
+2dfe3 Return
+  2dfe4 Nothing
+2dfe5 EndOfScript

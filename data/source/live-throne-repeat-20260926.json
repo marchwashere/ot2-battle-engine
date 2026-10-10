@@ -1,0 +1,44 @@
+{
+  "source": "Live comparison after returning to title, 2026-09-26; both cutscenes skipped and first player command menu confirmed by user",
+  "trace_file": "live-throne-repeat-20260926-trace.json",
+  "total_capture_records": 244,
+  "repeat_start_record_index": 202,
+  "repeat_records": 42,
+  "prebattle_calls": 12,
+  "battle_initialization_calls": 30,
+  "title_marker": {
+    "record_index": 202,
+    "state": "0xEA4F203D",
+    "position_from_zero": 5131
+  },
+  "untraced_state_change_before_repeat": {
+    "expected": "0xEA4F203D",
+    "observed_before_first_repeat_draw": "0x5D3D7B67",
+    "observed_position_from_zero": 4917,
+    "srand_recorded": false,
+    "note": "Do not treat the whole capture as one continuous sequence or subtract the title-marker position to count the repeat. The 42 repeat calls are consecutive from this new observed state; the tracer did not write RNG state."
+  },
+  "battle_entry": {"position_from_zero": 4929, "state": "0x0EA79703"},
+  "first_command_menu": {"position_from_zero": 4959, "state": "0xF485D421"},
+  "prebattle_counts": {
+    "timer": 1,
+    "streamed_level_colors": 5,
+    "field_npc_animation_frame": 1,
+    "encounter_counter": 4,
+    "black_market_lottery": 1
+  },
+  "difference_from_first_capture": "One fewer streamed-level color draw at return RVA 0x11C010F; every other prebattle caller count is unchanged.",
+  "native_source": {
+    "retained_level": "Btl_SinExpose; DAT_144f96358 resolved by native initializer 0x14065C1B0; see opening-level-loading.json",
+    "load_condition": "FUN_140ed98a0 queues this separate level only when FUN_140ed0fa0 reports it not loaded",
+    "unload_condition": "FUN_140ed9bc0 unloads the previous field and its BattleMapNameList, excluding the separately held Btl_SinExpose entry",
+    "loader": "FUN_140ed4030 looks up a level entry in its map; existing entries bypass creation and the vtable +0x270 initialization call",
+    "initialization": "FUN_140ed8170 calls FUN_140ec60c0 for the primary level and requested sublevels",
+    "color": "FUN_140ec60c0 calls FUN_1411c0100 once while constructing LevelStreamingCustom; rand returns at RVA 0x11C010F"
+  },
+  "limitations": [
+    "The trace did not log level names. Btl_SinExpose attribution is derived from native load/unload logic and asset inventory, consistent with both captures.",
+    "These two captures do not establish 12 as a universal count for every return-to-title route.",
+    "The cause of the state change before the repeat interval was not recorded."
+  ]
+}

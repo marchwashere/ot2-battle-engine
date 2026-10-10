@@ -1,0 +1,48 @@
+{
+  "source": "Live game-thread CRT capture, title screen to user-confirmed Pirro command menu, 2026-09-26",
+  "trace_file": "live-throne-title-to-pirro-20260926-trace.json",
+  "initial_seed": 0,
+  "title_position": 4916,
+  "title_state": "0x137EA674",
+  "prebattle_calls": 13,
+  "battle_entry_position": 4929,
+  "battle_entry_state": "0x0EA79703",
+  "battle_initialization_calls": 30,
+  "first_menu_position": 4959,
+  "first_menu_state": "0xF485D421",
+  "skip_behavior": "User confirmed: skipped both opening cutscenes.",
+  "prebattle_callers": [
+    {"rva": "0x2C52E57", "count": 1, "meaning": "Native timer helper; specific title/new-game timer not attributed by this capture"},
+    {"rva": "0x11C010F", "count": 6, "meaning": "Streamed-level color initialization, FUN_140ec60c0 calls FUN_1411c0100"},
+    {"rva": "0x30D7604", "count": 1, "meaning": "SpawnNPC initial animation frame", "npc": "NPC_Dng_Cty_3_1_0100_N000"},
+    {"rva": "0x30D7424", "count": 4, "meaning": "Two CalcEncountStepCount calls, B then A, maximum 400"},
+    {"rva": "0xEA7749", "count": 1, "meaning": "GMK_BLACKMARKET_CONTROL lottery", "evidence": "Live RDI row ID/begin/end/trigger/apply fields match imported row"}
+  ],
+  "flag_source": {
+    "source": "/Game/Flag/Database/FlagRandomControlDB",
+    "sha256": "db66c1ebe5e35f0dac32692e1c5f8173d22adf1fbe682ae49dede8a24aec4d13",
+    "row": {
+      "id": "GMK_BLACKMARKET_CONTROL",
+      "ID": 1,
+      "ControlBeginFlag": 0,
+      "ControlEndFlag": 0,
+      "ControlTrigger": "EFlagRandomControlTrigger::eTimeZoneChange",
+      "ApplyValue": true,
+      "ControlCandidate": [
+        {"Flag": 25500, "Rate": 50},
+        {"Flag": 25501, "Rate": 20},
+        {"Flag": 25502, "Rate": 15},
+        {"Flag": 25503, "Rate": 15},
+        {"Flag": 0, "Rate": 0},
+        {"Flag": 0, "Rate": 0},
+        {"Flag": 0, "Rate": 0},
+        {"Flag": 0, "Rate": 0}
+      ]
+    }
+  },
+  "limitations": [
+    "Only this replay's transition is validated; no universal watching/skipping equivalence is claimed.",
+    "Neither cutscene boundary was separately marked, so the two reset pairs are not individually assigned to events.",
+    "The 4916 title position predates attachment; this is not a live capture of process startup."
+  ]
+}

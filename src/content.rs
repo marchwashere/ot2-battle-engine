@@ -19,8 +19,34 @@ pub enum Recovery {
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Effect {
+    NoEffect,
+    /// Stimulate/Guards: move remaining current and next rows; no lottery.
+    OrderShift { positions: i8 },
+    /// CalcType 4: elemental resistance and incoming break multiplier only.
+    ElementalFixedDamage {
+        amount: u32,
+        element: crate::combat::Element,
+    },
+    UnarmedHpRatioDamage {
+        percent: u8,
+        hit_bonus: i32,
+    },
+    SpRatioDamage {
+        percent: u8,
+    },
+    ForceMiss,
+    SignOfBoost {
+        enabled: bool,
+    },
     Damage {
         attack: crate::combat::Attack,
+    },
+    /// CalcType 2: percentage of maximum HP, capped at current HP. No
+    /// critical or variance roll; physical accuracy and weakness still apply.
+    HpRatioDamage {
+        percent: u8,
+        weapon: crate::combat::Weapon,
+        hit_bonus: i32,
     },
     Status {
         status: crate::combat::Status,
@@ -124,7 +150,7 @@ impl ItemCatalog {
 
 /// Immutable content shared by battle clones. Strings resolve to dense indices
 /// at setup/command boundaries, not by scanning records during each effect.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Catalog {
     pub(crate) skills: Vec<Skill>,
     pub(crate) items: Vec<Item>,
@@ -172,16 +198,22 @@ impl Catalog {
             ensure(
                 matches!(
                     item.target,
-                    TargetKind::Ally | TargetKind::AllAllies | TargetKind::SelfOnly
+                    TargetKind::Ally
+                        | TargetKind::AllAllies
+                        | TargetKind::SelfOnly
+                        | TargetKind::AllOpponents
                 ),
                 "healing items must target allies",
             )?;
             validate_effects(&item.effects)?;
             ensure(
-                item.effects
-                    .iter()
-                    .all(|e| matches!(e, Effect::Restore { .. })),
-                "only recovery items are supported",
+                item.effects.iter().all(|e| {
+                    matches!(
+                        e,
+                        Effect::Restore { .. } | Effect::ElementalFixedDamage { .. }
+                    )
+                }),
+                "unsupported item effect",
             )?;
         }
         Ok(Self {
@@ -214,10 +246,28 @@ fn validate_effects(effects: &[Effect]) -> Result<()> {
     ensure(!effects.is_empty(), "an action needs at least one effect")?;
     for effect in effects {
         match effect {
+            Effect::OrderShift { positions } => ensure((-10..=10).contains(positions), "order shift out of range")?,
+            Effect::NoEffect | Effect::ForceMiss | Effect::SignOfBoost { .. } => (),
+            Effect::ElementalFixedDamage { amount, .. } => {
+                ensure(*amount <= i32::MAX as u32, "fixed damage out of range")?
+            }
+            Effect::UnarmedHpRatioDamage { percent, hit_bonus } => ensure(
+                *percent <= 100 && (-100..=999).contains(hit_bonus),
+                "invalid ratio damage",
+            )?,
+            Effect::SpRatioDamage { percent } => {
+                ensure(*percent <= 100, "invalid SP ratio damage")?
+            }
             Effect::Damage { attack } => attack.validate()?,
+            Effect::HpRatioDamage {
+                percent, hit_bonus, ..
+            } => ensure(
+                *percent <= 100 && (-100..=100).contains(hit_bonus),
+                "invalid HP-ratio damage coefficients",
+            )?,
             Effect::Status { status } => ensure(
-                (1..=9).contains(&status.turns),
-                "status duration must be 1..9",
+                (1..=9).contains(&status.turns) || status.turns == 255,
+                "status duration must be 1..9 or permanent (255)",
             )?,
             Effect::Steal { bonus } => ensure(*bonus <= 100, "steal bonus exceeds 100")?,
             Effect::Cover { hits } => ensure((1..=9).contains(hits), "cover count must be 1..9")?,

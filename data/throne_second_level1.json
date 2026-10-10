@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "rules": "ot2_opening_v1",
+  "seed": 123,
+  "night_buff_turns": 0,
+  "players": [
+    {
+      "id": "throne",
+      "name": "Throné",
+      "stats": {
+        "max_hp": 250,
+        "max_sp": 40,
+        "speed": 96
+      },
+      "resources": {
+        "hp": 250,
+        "sp": 40,
+        "bp": 1,
+        "latent": 0
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_010",
+        "ABI_SET_THI_020"
+      ],
+      "combat": {
+        "attack": 88,
+        "defense": 79,
+        "magic": 80,
+        "magic_defense": 73,
+        "accuracy": 88,
+        "evasion": 96,
+        "critical": 80,
+        "growth_attack": 80,
+        "growth_magic": 80,
+        "weapons": [
+          {
+            "weapon": "sword",
+            "attack": 4,
+            "magic": 0
+          },
+          {
+            "weapon": "dagger",
+            "attack": 6,
+            "magic": 0
+          }
+        ],
+        "main_weapon": "dagger",
+        "shields": 0,
+        "weapon_weaknesses": [],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null
+      }
+    },
+    {
+      "id": "pirro",
+      "name": "Pirro",
+      "stats": {
+        "max_hp": 275,
+        "max_sp": 45,
+        "speed": 56
+      },
+      "resources": {
+        "hp": 275,
+        "sp": 45,
+        "bp": 1,
+        "latent": 0
+      },
+      "skills": [
+        "attack_dagger",
+        "ABI_SET_GST_0170",
+        "ABI_SET_GST_0180",
+        "ABI_SET_GST_0190"
+      ],
+      "combat": {
+        "attack": 88,
+        "defense": 87,
+        "magic": 80,
+        "magic_defense": 81,
+        "accuracy": 88,
+        "evasion": 88,
+        "critical": 80,
+        "growth_attack": 80,
+        "growth_magic": 80,
+        "weapons": [
+          {
+            "weapon": "dagger",
+            "attack": 4,
+            "magic": 0
+          }
+        ],
+        "main_weapon": "dagger",
+        "shields": 0,
+        "weapon_weaknesses": [],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null
+      }
+    },
+    {
+      "id": "scaracci",
+      "name": "Scaracci",
+      "stats": {
+        "max_hp": 237,
+        "max_sp": 35,
+        "speed": 56
+      },
+      "resources": {
+        "hp": 237,
+        "sp": 35,
+        "bp": 1,
+        "latent": 0
+      },
+      "skills": [
+        "attack_axe",
+        "ABI_SET_GST_0200",
+        "ABI_SET_GST_0210"
+      ],
+      "combat": {
+        "attack": 88,
+        "defense": 87,
+        "magic": 80,
+        "magic_defense": 81,
+        "accuracy": 88,
+        "evasion": 88,
+        "critical": 72,
+        "growth_attack": 80,
+        "growth_magic": 80,
+        "weapons": [
+          {
+            "weapon": "axe",
+            "attack": 6,
+            "magic": 0
+          }
+        ],
+        "main_weapon": "axe",
+        "shields": 0,
+        "weapon_weaknesses": [],
+        "element_weaknesses": [],
+        "statuses": [],
+        "steal_item": null
+      }
+    }
+  ],
+  "enemies": [
+    {
+      "id": "grunt_right",
+      "name": "Pursuer",
+      "stats": {
+        "max_hp": 185,
+        "max_sp": 50,
+        "speed": 80
+      },
+      "resources": {
+        "hp": 185,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0041",
+        "ABI_ENE_0500"
+      ],
+      "combat": {
+        "attack": 97,
+        "defense": 80,
+        "magic": 92,
+        "magic_defense": 80,
+        "accuracy": 80,
+        "evasion": 80,
+        "critical": 90,
+        "growth_attack": 97,
+        "growth_magic": 92,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 1,
+        "weapon_weaknesses": [
+          "sword",
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "dark"
+        ],
+        "statuses": [],
+        "steal_item": "healing_grape",
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 15,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0041",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0041",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0500",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "leader",
+      "name": "Pursuer Leader",
+      "stats": {
+        "max_hp": 375,
+        "max_sp": 50,
+        "speed": 96
+      },
+      "resources": {
+        "hp": 375,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0200",
+        "ABI_ENE_0010"
+      ],
+      "combat": {
+        "attack": 110,
+        "defense": 95,
+        "magic": 107,
+        "magic_defense": 100,
+        "accuracy": 94,
+        "evasion": 89,
+        "critical": 100,
+        "growth_attack": 110,
+        "growth_magic": 107,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 3,
+        "weapon_weaknesses": [
+          "axe"
+        ],
+        "element_weaknesses": [
+          "dark"
+        ],
+        "statuses": [],
+        "steal_item": "inspiriting_plum",
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 15,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0200",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0200",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "grunt_left",
+      "name": "Pursuer",
+      "stats": {
+        "max_hp": 185,
+        "max_sp": 50,
+        "speed": 80
+      },
+      "resources": {
+        "hp": 185,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0041",
+        "ABI_ENE_0500"
+      ],
+      "combat": {
+        "attack": 97,
+        "defense": 80,
+        "magic": 92,
+        "magic_defense": 80,
+        "accuracy": 80,
+        "evasion": 80,
+        "critical": 90,
+        "growth_attack": 97,
+        "growth_magic": 92,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 1,
+        "weapon_weaknesses": [
+          "sword",
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "dark"
+        ],
+        "statuses": [],
+        "steal_item": "healing_grape",
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 15,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "normal",
+        "states": [
+          {
+            "id": "normal",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0041",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0041",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0500",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "attack_sword",
+      "name": "attack_sword",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "sword",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "attack_dagger",
+      "name": "attack_dagger",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "dagger",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "attack_axe",
+      "name": "attack_axe",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "axe",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "axe",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "axe",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "axe",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_THI_010",
+      "name": "Steal",
+      "target": "opponent",
+      "sp_cost": 2,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "steal",
+          "bonus": 4
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "steal",
+              "bonus": 14
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "steal",
+              "bonus": 34
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "steal",
+              "bonus": 94
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_THI_020",
+      "name": "Darkest Night",
+      "target": "opponent",
+      "sp_cost": 7,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "magical",
+            "weapon": null,
+            "element": "dark",
+            "invocation": 130,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 200,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 300,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "magical",
+                "weapon": null,
+                "element": "dark",
+                "invocation": 130,
+                "ability_ratio": 400,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_GST_0170",
+      "name": "Slice",
+      "target": "opponent",
+      "sp_cost": 8,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "dagger",
+            "element": null,
+            "invocation": 110,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 110,
+                "ability_ratio": 200,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 110,
+                "ability_ratio": 300,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 110,
+                "ability_ratio": 400,
+                "hit_bonus": 0,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": false
+              }
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_GST_0180",
+      "name": "Sharpen Dagger",
+      "target": "self_only",
+      "sp_cost": 3,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "status",
+          "status": {
+            "kind": "attack_up",
+            "turns": 3
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "attack_up",
+                "turns": 5
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "attack_up",
+                "turns": 7
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "attack_up",
+                "turns": 9
+              }
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_GST_0200",
+      "name": "Cover Me!",
+      "target": "other_ally",
+      "sp_cost": 4,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "cover",
+          "hits": 1
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "cover",
+              "hits": 2
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "cover",
+              "hits": 3
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "cover",
+              "hits": 4
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_GST_0210",
+      "name": "Heckle",
+      "target": "everyone_except_self",
+      "sp_cost": 6,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "status",
+          "status": {
+            "kind": "defense_down",
+            "turns": 1
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "defense_down",
+                "turns": 2
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "defense_down",
+                "turns": 3
+              }
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "status",
+              "status": {
+                "kind": "defense_down",
+                "turns": 4
+              }
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "ABI_ENE_0041",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0500",
+      "name": "Slash",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 120,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": []
+    },
+    {
+      "id": "ABI_SET_GST_0190",
+      "name": "Pierce Through",
+      "target": "opponent",
+      "sp_cost": 15,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "hp_ratio_damage",
+          "percent": 70,
+          "weapon": "dagger",
+          "hit_bonus": 0
+        }
+      ],
+      "boosted": [
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "hp_ratio_damage",
+              "percent": 80,
+              "weapon": "dagger",
+              "hit_bonus": 0
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "hp_ratio_damage",
+              "percent": 90,
+              "weapon": "dagger",
+              "hit_bonus": 0
+            }
+          ]
+        },
+        {
+          "hits": 1,
+          "effects": [
+            {
+              "kind": "hp_ratio_damage",
+              "percent": 100,
+              "weapon": "dagger",
+              "hit_bonus": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ABI_ENE_0200",
+      "name": "Double Thrust",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 2,
+      "boosted": [],
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 90,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "ABI_ENE_0010",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "boosted": [],
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ]
+    }
+  ],
+  "inventory": {
+    "healing_grape": 0,
+    "inspiriting_plum": 0
+  }
+}

@@ -1,0 +1,23 @@
+71deb LetBool
+  71dec LocalVariable CallFunc_IsValid_ReturnValue
+  71dfd CallMath import:-182:IsValid
+    71e02 InstanceVariable m_cBattleVoiceComponent
+71e14 JumpIfNot target=131
+  71e19 LocalVariable CallFunc_IsValid_ReturnValue
+71e2a LetBool
+  71e2b LocalVariable CallFunc_PlayBattleVoice_ReturnValue
+  71e3c Context skip=32 rvalue=CallFunc_PlayBattleVoice_ReturnValue
+    71e3d InstanceVariable m_cBattleVoiceComponent
+    71e62 LocalVirtualFunction PlayBattleVoice
+      71e6b LocalVariable eBattleVoiceType
+      71e7c LocalVariable cPlayCondition
+71e8e LetBool
+  71e8f LocalOutVariable ReturnValue
+  71ea0 LocalVariable CallFunc_PlayBattleVoice_ReturnValue
+71eb1 Jump target=142
+71eb6 LetBool
+  71eb7 LocalOutVariable ReturnValue
+  71ec8 False
+71ec9 Return
+  71eca LocalOutVariable ReturnValue
+71edb EndOfScript

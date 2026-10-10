@@ -1,0 +1,175 @@
+[
+  {
+    "id": "donate_bp",
+    "name": "Donate BP",
+    "target": "other_ally",
+    "sp_cost": 6,
+    "hit": {
+      "kind": "guaranteed"
+    },
+    "effects": [
+      {
+        "kind": "restore",
+        "resource": "bp",
+        "recovery": {
+          "kind": "fixed",
+          "amount": 1
+        }
+      }
+    ],
+    "boosted": [
+      {
+        "effects": [
+          {
+            "kind": "restore",
+            "resource": "bp",
+            "recovery": {
+              "kind": "fixed",
+              "amount": 2
+            }
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "restore",
+            "resource": "bp",
+            "recovery": {
+              "kind": "fixed",
+              "amount": 3
+            }
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "restore",
+            "resource": "bp",
+            "recovery": {
+              "kind": "fixed",
+              "amount": 4
+            }
+          }
+        ],
+        "hits": 1
+      }
+    ]
+  },
+  {
+    "id": "bewildering_grace",
+    "name": "Bewildering Grace",
+    "target": "self_only",
+    "sp_cost": 25,
+    "hit": {
+      "kind": "guaranteed"
+    },
+    "effects": [
+      {
+        "kind": "no_effect"
+      }
+    ],
+    "boosted": [
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      }
+    ]
+  },
+  {
+    "id": "hired_help_guards",
+    "name": "Hired Help: Guards",
+    "target": "self_only",
+    "sp_cost": 0,
+    "hit": {
+      "kind": "guaranteed"
+    },
+    "effects": [
+      {
+        "kind": "no_effect"
+      }
+    ],
+    "boosted": [
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      },
+      {
+        "effects": [
+          {
+            "kind": "no_effect"
+          }
+        ],
+        "hits": 1
+      }
+    ]
+  },
+  {
+    "id": "stimulate",
+    "name": "Stimulate",
+    "target": "other_ally",
+    "sp_cost": 5,
+    "hit": {
+      "kind": "guaranteed"
+    },
+    "effects": [
+      {
+        "kind": "order_shift",
+        "positions": -1
+      }
+    ]
+  },
+  {
+    "id": "springy_boots",
+    "name": "Springy Boots",
+    "target": "ally",
+    "sp_cost": 0,
+    "hit": {
+      "kind": "guaranteed"
+    },
+    "effects": [
+      {
+        "kind": "status",
+        "status": {
+          "kind": "act_first",
+          "turns": 5
+        }
+      }
+    ]
+  }
+]

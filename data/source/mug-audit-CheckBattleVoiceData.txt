@@ -1,0 +1,20 @@
+12f8c Let property=CallFunc_Multiply_IntFloat_ReturnValue
+  12f9d LocalVariable CallFunc_Multiply_IntFloat_ReturnValue
+  12fae CallMath import:-65:Multiply_IntFloat
+    12fb3 StructMemberContext VoiceRate
+      12fc4 LocalVariable BattleVoiceData
+    12fd5 FloatConst 0.009999999776482582
+12fdb LetBool
+  12fdc LocalVariable CallFunc_RandomBoolWithWeight_ReturnValue
+  12fed CallMath import:-70:RandomBoolWithWeight
+    12ff2 LocalVariable CallFunc_Multiply_IntFloat_ReturnValue
+13004 LetBool
+  13005 LocalOutVariable Enable
+  13016 LocalVariable CallFunc_RandomBoolWithWeight_ReturnValue
+13027 Let property=VoiceLabel
+  13038 LocalOutVariable VoiceLabel
+  13049 StructMemberContext VoiceLabel
+    1305a LocalVariable BattleVoiceData
+1306b Return
+  1306c Nothing
+1306d EndOfScript

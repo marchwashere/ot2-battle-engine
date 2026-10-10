@@ -1,2 +1,10 @@
 /target/
 /output/
+
+/outputs/
+/*.log
+/profile-*.json
+/investigate-*.json
+/gravell-route-*.json
+.env
+.env.*

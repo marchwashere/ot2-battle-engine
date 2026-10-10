@@ -1,0 +1,151 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/Item/Database/ItemDB",
+      "sha256": "89199944038f11eb9ecddde95ce199a985e1e323beab4d246c14990fc2908665"
+    },
+    {
+      "source": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    }
+  ],
+  "item": {
+    "id": "ITM_CSM_0450",
+    "ID": 1948,
+    "ItemNameID": "TX_NA_ITM_CSM_0450",
+    "DetailTextID": "TX_CO_ITM_CSM_0450",
+    "IconLabel": "ITEM_ICON_CONSUME_DARK",
+    "ItemCategory": "EItemCategoryData::eCONSUMABLE",
+    "SortCategory": 72,
+    "BackpackPriority": 79,
+    "DisplayType": "EITEM_DISPLAY_TYPE::eITEM_USE",
+    "UseType": "EITEM_USE_TYPE::eBATTLE_ONLY",
+    "MaxNum": 99,
+    "SpecialItemLabel": "None",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+    "Attribute": "EATTRIBUTE_TYPE::eDARK",
+    "Ailment": [
+      {
+        "AilmentName": "HP_FIXED_DAMAGE",
+        "InvocationValue": 1100,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "ValuableFlag": false,
+    "BuyPrice": 1700,
+    "SellPrice": 170,
+    "BuyMeetCount": 34,
+    "SellMeetCount": 1,
+    "EquipmentCategory": "EEquipmentCategory::eSWORD",
+    "EquipmentTextureLabel": "None",
+    "EquipmentRevision": {
+      "HP": 0,
+      "MP": 0,
+      "BP": 0,
+      "SP": 0,
+      "POT": 0,
+      "ATK": 0,
+      "DEF": 0,
+      "MATK": 0,
+      "MDEF": 0,
+      "ACC": 0,
+      "EVA": 0,
+      "CON": 0,
+      "AGI": 0
+    },
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "CommandEffecter": {
+      "kind": "object",
+      "index": 0,
+      "path": null
+    },
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/Sequencer/ActionCommand/Item/Damage/Dark_2.Dark",
+        "number": 3,
+        "text": "/Game/Battle/Sequencer/ActionCommand/Item/Damage/Dark_2.Dark_2"
+      },
+      "subPath": ""
+    },
+    "TextInfoLabel": "ITEM_000",
+    "DisableAttackCommand": true,
+    "DisableRecoveryCommand": false,
+    "DisableReviveCommand": false,
+    "AbilityLabel": "None",
+    "DebugRecommendLv": 0
+  },
+  "asset": "Battle/Sequencer/ActionCommand/Item/Damage/Dark_2",
+  "events": [
+    {
+      "time": 0,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+      "body": "09ac3 LocalVirtualFunction PlayVoice\n  09acc ByteConst 16\n  09ace ByteConst 0\n  09ad0 ByteConst 0\n09ad3 Return\n  09ad4 Nothing\n09ad5 EndOfScript"
+    },
+    {
+      "time": 6400,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+      "body": "09a73 LocalVirtualFunction PlayAction\n  09a7c LocalVariable Character\n  09a8d ByteConst 34\n  09a8f ByteConst 0\n  09a91 ByteConst 0\n09a94 Return\n  09a95 Nothing\n09a96 EndOfScript"
+    },
+    {
+      "time": 21600,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+      "body": "099bc LocalVirtualFunction PlaySE\n  099c5 NameConst se_bat_omen_dark\n099cf Return\n  099d0 Nothing\n099d1 EndOfScript"
+    },
+    {
+      "time": 30400,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+      "body": "099fe LocalVirtualFunction PlaySE\n  09a07 NameConst se_bat_mt_dark_ea_b\n09a11 Return\n  09a12 Nothing\n09a13 EndOfScript"
+    },
+    {
+      "time": 53600,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+      "body": "0997c LocalVirtualFunction ExecAilment\n  09985 IntConst 0\n  0998a True\n  0998b True\n0998d Return\n  0998e Nothing\n0998f EndOfScript"
+    }
+  ]
+}

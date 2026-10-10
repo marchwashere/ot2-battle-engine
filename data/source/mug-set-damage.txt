@@ -1,0 +1,369 @@
+41bed PushExecutionFlow target=2751
+41bf2 LetBool
+  41bf3 LocalVariable CallFunc_Not_PreBool_ReturnValue_1
+  41c04 CallMath import:-244:Not_PreBool
+    41c09 InstanceVariable IsReplayMode
+41c1b JumpIfNot target=116
+  41c20 LocalVariable CallFunc_Not_PreBool_ReturnValue_1
+41c31 PushExecutionFlow target=2275
+41c36 PushExecutionFlow target=2245
+41c3b PushExecutionFlow target=2159
+41c40 PushExecutionFlow target=2096
+41c45 PushExecutionFlow target=1084
+41c4a PushExecutionFlow target=730
+41c4f PushExecutionFlow target=158
+41c54 LetBool
+  41c55 InstanceVariable m_bJustKillInAilment
+  41c66 False
+41c67 PopExecutionFlowIfNot
+  41c68 LocalVariable InstantDeath
+41c79 LetBool
+  41c7a InstanceVariable m_bHitDiseaseInAction
+  41c8b True
+41c8c PopExecutionFlow
+41c8d LocalVirtualFunction SetDamageForReplay
+  41c96 LocalVariable Value
+  41ca7 LocalVariable Type
+  41cb8 LocalVariable LastHit
+41cca PopExecutionFlow
+41ccb Let property=PrevHP
+  41cdc LocalVariable PrevHP
+  41ced InstanceVariable m_nCurrentHP
+41cfe Let property=CallFunc_Subtract_IntInt_ReturnValue
+  41d0f LocalVariable CallFunc_Subtract_IntInt_ReturnValue
+  41d20 CallMath import:-257:Subtract_IntInt
+    41d25 InstanceVariable m_nCurrentHP
+    41d36 LocalVariable Value
+41d48 LocalVirtualFunction SetHP
+  41d51 LocalVariable CallFunc_Subtract_IntInt_ReturnValue
+  41d62 False
+  41d63 LocalVariable CallFunc_SetHP_CurrentHP_4
+41d75 LetBool
+  41d76 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue
+  41d87 CallMath import:-227:EqualEqual_IntInt
+    41d8c InstanceVariable m_nCurrentHP
+    41d9d IntConst 0
+41da3 PopExecutionFlowIfNot
+  41da4 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue
+41db5 PushExecutionFlow target=2621
+41dba PushExecutionFlow target=422
+41dbf PushExecutionFlow target=589
+41dc4 LocalVirtualFunction SearchDisease
+  41dcd ByteConst 76
+  41dcf LocalVariable CallFunc_SearchDisease_ExecHandler_2
+  41de0 LocalVariable CallFunc_SearchDisease_Enable_2
+41df2 PopExecutionFlowIfNot
+  41df3 LocalVariable CallFunc_SearchDisease_Enable_2
+41e04 LocalVirtualFunction SetHP
+  41e0d IntConst 1
+  41e12 False
+  41e13 LocalVariable CallFunc_SetHP_CurrentHP_3
+41e25 LocalVirtualFunction UpdateDiseaseCounter
+  41e2e ByteConst 76
+  41e30 LocalVariable CallFunc_UpdateDiseaseCounter_Remove
+41e42 PopExecutionFlow
+41e43 Context skip=24 rvalue=<null-field>
+  41e44 ObjectConst import:-390:Default__LibBattle_C
+  41e55 LocalVirtualFunction GetBattleManager
+    41e5e Self
+    41e5f LocalVariable CallFunc_GetBattleManager_BattleManager_2
+41e71 Let property=CallFunc_GetBattleMode_ReturnValue
+  41e82 LocalVariable CallFunc_GetBattleMode_ReturnValue
+  41e93 Context skip=10 rvalue=CallFunc_GetBattleMode_ReturnValue
+    41e94 LocalVariable CallFunc_GetBattleManager_BattleManager_2
+    41eb9 FinalFunction import:-346:GetBattleMode
+41ebf LetBool
+  41ec0 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+  41ed1 CallMath import:-226:EqualEqual_ByteByte
+    41ed6 LocalVariable CallFunc_GetBattleMode_ReturnValue
+    41ee7 ByteConst 4
+41eea PopExecutionFlowIfNot
+  41eeb LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+41efc LocalVirtualFunction SetHP
+  41f05 IntConst 1
+  41f0a False
+  41f0b LocalVariable CallFunc_SetHP_CurrentHP
+41f1d PopExecutionFlow
+41f1e LocalVirtualFunction SearchDisease
+  41f27 ByteConst 78
+  41f29 LocalVariable CallFunc_SearchDisease_ExecHandler_1
+  41f3a LocalVariable CallFunc_SearchDisease_Enable_1
+41f4c JumpIfNot target=667
+  41f51 LocalVariable CallFunc_SearchDisease_Enable_1
+41f62 LocalVirtualFunction SetHP
+  41f6b IntConst 1
+  41f70 False
+  41f71 LocalVariable CallFunc_SetHP_CurrentHP_2
+41f83 PopExecutionFlow
+41f84 PopExecutionFlowIfNot
+  41f85 StructMemberContext LegendTameMonster_333_703E7AB144B5501FFEE88D9DC3F752F0
+    41f96 InstanceVariable EnemyData
+41fa7 LocalVirtualFunction SetHP
+  41fb0 IntConst 1
+  41fb5 False
+  41fb6 LocalVariable CallFunc_SetHP_CurrentHP_1
+41fc8 LocalVirtualFunction SetStatusGroggy
+41fd2 PopExecutionFlow
+41fd3 LocalVirtualFunction SearchDisease
+  41fdc ByteConst 100
+  41fde LocalVariable CallFunc_SearchDisease_ExecHandler
+  41fef LocalVariable CallFunc_SearchDisease_Enable
+42001 JumpIfNot target=820
+  42006 LocalVariable CallFunc_SearchDisease_Enable
+42017 Context skip=19 rvalue=<null-field>
+  42018 InstanceVariable AnimCharacter
+  42035 VirtualFunction PlayCharacterAction
+    4203e ByteConst 35
+    42040 ByteConst 3
+    42042 False
+42044 PopExecutionFlow
+42045 Context skip=24 rvalue=<null-field>
+  42046 ObjectConst import:-390:Default__LibBattle_C
+  42057 LocalVirtualFunction GetBattleManager
+    42060 Self
+    42061 LocalVariable CallFunc_GetBattleManager_BattleManager_5
+42073 LetBool
+  42074 LocalVariable CallFunc_IsKSPartyBattle_ReturnValue
+  42085 Context skip=14 rvalue=CallFunc_IsKSPartyBattle_ReturnValue
+    42086 LocalVariable CallFunc_GetBattleManager_BattleManager_5
+    420ab LocalVirtualFunction IsKSPartyBattle
+420b5 JumpIfNot target=973
+  420ba LocalVariable CallFunc_IsKSPartyBattle_ReturnValue
+420cb LocalVirtualFunction IsGuard
+  420d4 LocalVariable CallFunc_IsGuard_GuardRatio
+  420e5 LocalVariable CallFunc_IsGuard_GuardEnable
+420f7 JumpIfNot target=778
+  420fc LocalVariable CallFunc_IsGuard_GuardEnable
+4210d PopExecutionFlow
+4210e Let property=<null-field>
+  42117 LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+  42128 DynamicCast import:-14:KSBattleCharacterEnemy_C
+    4212d InstanceVariable AnimCharacter
+4213e Let property=<null-field>
+  42147 LocalVariable K2Node_DynamicCast_bSuccess
+  42158 Cast cast=71
+    4215a LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+4216b Context skip=23 rvalue=<null-field>
+  4216c LocalVariable K2Node_DynamicCast_AsKSBattle_Character_Enemy
+  42189 VirtualFunction SetDamageAction
+    42192 LocalVariable Type
+421a4 PopExecutionFlow
+421a5 JumpIfNot target=1099
+  421aa InstanceVariable IsDead
+421bb PopExecutionFlow
+421bc LetBool
+  421bd LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue_1
+  421ce CallMath import:-227:EqualEqual_IntInt
+    421d3 InstanceVariable m_nCurrentHP
+    421e4 IntConst 0
+421ea LetBool
+  421eb InstanceVariable IsDead
+  421fc LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue_1
+4220d PopExecutionFlowIfNot
+  4220e InstanceVariable IsDead
+4221f PushExecutionFlow target=1190
+42224 LetBool
+  42225 LocalVariable CheckOverKill
+  42236 True
+42237 LetBool
+  42238 InstanceVariable m_bJustKillInAilment
+  42249 True
+4224a PopExecutionFlow
+4224b Context skip=24 rvalue=<null-field>
+  4224c ObjectConst import:-390:Default__LibBattle_C
+  4225d LocalVirtualFunction GetBattleManager
+    42266 Self
+    42267 LocalVariable CallFunc_GetBattleManager_BattleManager
+42279 LetBool
+  4227a LocalVariable CallFunc_GetCurrentActionCommand_ReturnValue
+  4228b Context skip=23 rvalue=CallFunc_GetCurrentActionCommand_ReturnValue
+    4228c LocalVariable CallFunc_GetBattleManager_BattleManager
+    422b1 LocalVirtualFunction GetCurrentActionCommand
+      422ba LocalVariable CallFunc_GetCurrentActionCommand_cActionCommand
+422cc Let property=CallFunc_GetTameMonsterMode_ReturnValue
+  422dd LocalVariable CallFunc_GetTameMonsterMode_ReturnValue
+  422ee CallMath import:-354:GetTameMonsterMode
+422f4 LetBool
+  422f5 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  42306 CallMath import:-226:EqualEqual_ByteByte
+    4230b LocalVariable CallFunc_GetTameMonsterMode_ReturnValue
+    4231c ByteConst 1
+4231f LetBool
+  42320 LocalVariable CallFunc_BooleanAND_ReturnValue_2
+  42331 CallMath import:-218:BooleanAND
+    42336 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+    42347 LocalVariable CallFunc_GetCurrentActionCommand_ReturnValue
+42359 PopExecutionFlowIfNot
+  4235a LocalVariable CallFunc_BooleanAND_ReturnValue_2
+4236b Context skip=24 rvalue=<null-field>
+  4236c ObjectConst import:-390:Default__LibBattle_C
+  4237d LocalVirtualFunction GetBattleManager
+    42386 Self
+    42387 LocalVariable CallFunc_GetBattleManager_BattleManager
+42399 LetBool
+  4239a LocalVariable CallFunc_IsAutoTameMonster_ReturnValue
+  423ab Context skip=14 rvalue=CallFunc_IsAutoTameMonster_ReturnValue
+    423ac LocalVariable CallFunc_GetBattleManager_BattleManager
+    423d1 LocalVirtualFunction IsAutoTameMonster
+423db LetBool
+  423dc LocalVariable CallFunc_GetCurrentActionCommand_ReturnValue
+  423ed Context skip=23 rvalue=CallFunc_GetCurrentActionCommand_ReturnValue
+    423ee LocalVariable CallFunc_GetBattleManager_BattleManager
+    42413 LocalVirtualFunction GetCurrentActionCommand
+      4241c LocalVariable CallFunc_GetCurrentActionCommand_cActionCommand
+4242e LetBool
+  4242f LocalVariable CallFunc_Not_PreBool_ReturnValue
+  42440 CallMath import:-244:Not_PreBool
+    42445 LocalVariable CallFunc_IsAutoTameMonster_ReturnValue
+42457 LetBool
+  42458 LocalVariable CallFunc_CheckEnableAutoTameMonster_ReturnValue
+  42469 Context skip=14 rvalue=CallFunc_CheckEnableAutoTameMonster_ReturnValue
+    4246a LocalVariable CallFunc_GetCurrentActionCommand_cActionCommand
+    4248f LocalVirtualFunction CheckEnableAutoTameMonster
+42499 LetBool
+  4249a LocalVariable CallFunc_BooleanAND_ReturnValue_1
+  424ab CallMath import:-218:BooleanAND
+    424b0 LocalVariable CallFunc_CheckEnableAutoTameMonster_ReturnValue
+    424c1 LocalVariable CallFunc_Not_PreBool_ReturnValue
+424d3 PopExecutionFlowIfNot
+  424d4 LocalVariable CallFunc_BooleanAND_ReturnValue_1
+424e5 Context skip=64 rvalue=<null-field>
+  424e6 ObjectConst import:-391:Default__LibGetParam_C
+  424f7 LocalVirtualFunction GetBattleParamToFloat
+    42500 NameConst AUTO_TAME_MONSTER_RATE
+    42509 Self
+    4250a LocalVariable CallFunc_GetBattleParamToFloat_Min
+    4251b LocalVariable CallFunc_GetBattleParamToFloat_Max
+    4252c LocalVariable CallFunc_GetBattleParamToFloat_Init
+    4253d LocalVariable CallFunc_GetBattleParamToFloat_Param
+4254f LocalVirtualFunction GetTameMonsterData
+  42558 LocalVariable CallFunc_GetTameMonsterData_bTameEnable
+  42569 LocalVariable CallFunc_GetTameMonsterData_fTameRateBase
+4257b LetBool
+  4257c LocalVariable CallFunc_RandomBoolWithWeight_ReturnValue
+  4258d CallMath import:-250:RandomBoolWithWeight
+    42592 LocalVariable CallFunc_GetBattleParamToFloat_Param
+425a4 LetBool
+  425a5 LocalVariable CallFunc_BooleanAND_ReturnValue
+  425b6 CallMath import:-218:BooleanAND
+    425bb LocalVariable CallFunc_GetTameMonsterData_bTameEnable
+    425cc LocalVariable CallFunc_RandomBoolWithWeight_ReturnValue
+425de Context skip=24 rvalue=<null-field>
+  425df ObjectConst import:-390:Default__LibBattle_C
+  425f0 LocalVirtualFunction GetBattleManager
+    425f9 Self
+    425fa LocalVariable CallFunc_GetBattleManager_BattleManager_1
+4260c LetBool
+  4260d LocalVariable CallFunc_CheckDebugSwitch_ReturnValue
+  4261e Context skip=12 rvalue=CallFunc_CheckDebugSwitch_ReturnValue
+    4261f LocalVariable CallFunc_GetBattleManager_BattleManager_1
+    42644 FinalFunction import:-343:CheckDebugSwitch
+      42649 ByteConst 25
+4264c LetBool
+  4264d LocalVariable CallFunc_BooleanOR_ReturnValue
+  4265e CallMath import:-219:BooleanOR
+    42663 LocalVariable CallFunc_BooleanAND_ReturnValue
+    42674 LocalVariable CallFunc_CheckDebugSwitch_ReturnValue
+42686 PopExecutionFlowIfNot
+  42687 LocalVariable CallFunc_BooleanOR_ReturnValue
+42698 LetBool
+  42699 InstanceVariable m_bIsAutoTameMonster
+  426aa True
+426ab Context skip=24 rvalue=<null-field>
+  426ac ObjectConst import:-390:Default__LibBattle_C
+  426bd LocalVirtualFunction GetBattleManager
+    426c6 Self
+    426c7 LocalVariable CallFunc_GetBattleManager_BattleManager_3
+426d9 LetBool
+  426da LocalVariable CallFunc_SetupAutoTameMonster_ReturnValue
+  426eb Context skip=15 rvalue=CallFunc_SetupAutoTameMonster_ReturnValue
+    426ec LocalVariable CallFunc_GetBattleManager_BattleManager_3
+    42711 LocalVirtualFunction SetupAutoTameMonster
+      4271a Self
+4271c PopExecutionFlow
+4271d LetBool
+  4271e LocalVariable CallFunc_BooleanAND_ReturnValue_3
+  4272f CallMath import:-218:BooleanAND
+    42734 InstanceVariable IsDead
+    42745 LocalVariable LastHit
+42757 PopExecutionFlowIfNot
+  42758 LocalVariable CallFunc_BooleanAND_ReturnValue_3
+42769 LocalVirtualFunction Update Animation State OLD
+42773 PopExecutionFlow
+42774 LetBool
+  42775 LocalVariable CallFunc_IsValid_ReturnValue
+  42786 CallMath import:-265:IsValid
+    4278b InstanceVariable m_cBattleAIComponent
+4279d PopExecutionFlowIfNot
+  4279e LocalVariable CallFunc_IsValid_ReturnValue
+427af LetBool
+  427b0 LocalVariable CallFunc_OnDamage_ReturnValue
+  427c1 Context skip=14 rvalue=CallFunc_OnDamage_ReturnValue
+    427c2 InstanceVariable m_cBattleAIComponent
+    427e7 LocalVirtualFunction OnDamage
+427f1 PopExecutionFlow
+427f2 JumpIfNot target=2260
+  427f7 LocalVariable IsPoison
+42808 PopExecutionFlow
+42809 LocalVirtualFunction ExecDisease_OnDamage
+42813 PopExecutionFlow
+42814 PopExecutionFlowIfNot
+  42815 LocalVariable CheckOverKill
+42826 Context skip=24 rvalue=<null-field>
+  42827 ObjectConst import:-390:Default__LibBattle_C
+  42838 LocalVirtualFunction GetBattleManager_OLD
+    42841 Self
+    42842 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager
+42854 Let property=CallFunc_Conv_IntToFloat_ReturnValue
+  42865 LocalVariable CallFunc_Conv_IntToFloat_ReturnValue
+  42876 CallMath import:-224:Conv_IntToFloat
+    4287b LocalVariable Value
+4288d Let property=CallFunc_Conv_IntToFloat_ReturnValue_1
+  4289e LocalVariable CallFunc_Conv_IntToFloat_ReturnValue_1
+  428af CallMath import:-224:Conv_IntToFloat
+    428b4 LocalVariable PrevHP
+428c6 Let property=CallFunc_Divide_FloatFloat_ReturnValue
+  428d7 LocalVariable CallFunc_Divide_FloatFloat_ReturnValue
+  428e8 CallMath import:-225:Divide_FloatFloat
+    428ed LocalVariable CallFunc_Conv_IntToFloat_ReturnValue
+    428fe LocalVariable CallFunc_Conv_IntToFloat_ReturnValue_1
+42910 Context skip=64 rvalue=<null-field>
+  42911 ObjectConst import:-391:Default__LibGetParam_C
+  42922 LocalVirtualFunction GetBattleParamToFloat
+    4292b NameConst RESULT_BONUS_OVERKILL
+    42934 Self
+    42935 LocalVariable CallFunc_GetBattleParamToFloat_Min_1
+    42946 LocalVariable CallFunc_GetBattleParamToFloat_Max_1
+    42957 LocalVariable CallFunc_GetBattleParamToFloat_Init_1
+    42968 LocalVariable CallFunc_GetBattleParamToFloat_Param_1
+4297a LetBool
+  4297b LocalVariable CallFunc_GreaterEqual_FloatFloat_ReturnValue
+  4298c CallMath import:-232:GreaterEqual_FloatFloat
+    42991 LocalVariable CallFunc_Divide_FloatFloat_ReturnValue
+    429a2 LocalVariable CallFunc_GetBattleParamToFloat_Min_1
+429b4 Context skip=23 rvalue=<null-field>
+  429b5 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager
+  429d2 LocalVirtualFunction SetLastEnemyOverKill
+    429db LocalVariable CallFunc_GreaterEqual_FloatFloat_ReturnValue
+429ed PopExecutionFlow
+429ee Context skip=24 rvalue=<null-field>
+  429ef ObjectConst import:-390:Default__LibBattle_C
+  42a00 LocalVirtualFunction GetBattleManager
+    42a09 Self
+    42a0a LocalVariable CallFunc_GetBattleManager_BattleManager_4
+42a1c LetBool
+  42a1d LocalVariable CallFunc_CheckDebugSwitch_ReturnValue_1
+  42a2e Context skip=12 rvalue=CallFunc_CheckDebugSwitch_ReturnValue_1
+    42a2f LocalVariable CallFunc_GetBattleManager_BattleManager_4
+    42a54 FinalFunction import:-343:CheckDebugSwitch
+      42a59 ByteConst 4
+42a5c PopExecutionFlowIfNot
+  42a5d LocalVariable CallFunc_CheckDebugSwitch_ReturnValue_1
+42a6e LocalVirtualFunction SetHP
+  42a77 IntConst 1
+  42a7c False
+  42a7d LocalVariable CallFunc_SetHP_CurrentHP_5
+42a8f PopExecutionFlow
+42a90 Return
+  42a91 Nothing
+42a92 EndOfScript

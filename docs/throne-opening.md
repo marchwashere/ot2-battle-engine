@@ -21,12 +21,15 @@ Import uses `InitLevel`, `FirstEquipment`, character parameter revisions, growth
 rows and job abilities with `GetParam=1`. The base job revision is not multiplied
 twice. Armor contributes to base stats; the selected weapon contributes on attack.
 
-The checked-in setup assumes full HP/SP, 1 BP, zero latent gauge and a three-turn
-night talent (`night_buff_turns`). Inventory starts empty until supplied, stolen
+The checked-in setup assumes full HP/SP, 1 BP, zero latent gauge and no
+night talent (`night_buff_turns: 0`). Inventory starts empty until supplied, stolen
 or awarded by the opening routine's drop checks.
-These are explicit setup assumptions from default records and night-talent
-behavior; the opening story event has not been replayed to verify every entry
-field. Initial resources, equipment, statuses and inventory are configurable.
+The earlier three-turn talent assumption was wrong: removing it matches the
+live first-round queue, Pirro's 31 damage and Throné's broken-target 50. The
+talent's source gate checks BanFlag 652 (`BAN_TOU_SPECIAL_ACTION`) as well as
+night time. `MS_TOU_10_0100` command 23 sets this flag; `MS_TOU_10_1600` command
+11 clears it later. Throné's first hit remains 33 versus reported 31. Initial
+resources, equipment, statuses and inventory are configurable.
 
 `seed` initializes the modeled headless setup. It is not a game-process startup
 seed or a captured seed at the first command menu.
@@ -54,7 +57,7 @@ Defend applies guard value 130 in the defense term and promotes the actor in
 the next queue. It ends when that actor next acts. `Wait` is a testing helper.
 Items restore capped resources and never revive. Latent actions are not exposed
 for this opening encounter. `Battle::new` ends before rewards/drop RNG;
-`Battle::new_opening` includes drop checks and the first field counter reset.
+`Battle::new_opening` includes drop checks and both post-battle counter resets.
 
 ## Damage, Break and turns
 
@@ -99,10 +102,12 @@ Order uses the native <=8 selection sort, including unstable ties, and backward
 sliding-triple shuffle. The next-round preview is retained. Enemy next-turn speed
 uses a 0.7–1.5 revision after round one; initialization uses 1–1 for both sides.
 Break recovery adds 1,000,000 to the next-turn score before eligible shuffles.
-The first queue is sorted/shuffled before the night talent. Direct ATK/MATK/AGI
+When enabled in a custom setup, the night talent follows the first shuffle. Direct ATK/MATK/AGI
 status application then marks party rows and moves each one place earlier in
-that queue, without sorting again or drawing CRT. The next preview uses buffed
-speed. Imported initial statuses are separate from this battle-start talent.
+that queue, without sorting again or drawing CRT. Normal encounters first
+promote the first shuffled player. The initial next preview uses cached speed
+from before the talent; EndOrder/BeginBattleTurn refresh timing later.
+Imported initial statuses are separate from this battle-start talent.
 
 ## Pursuer AI
 
@@ -124,16 +129,16 @@ Cover uses its separate direct path.
 
 The routine-specific constructor additionally covers frame initialization,
 voice candidate checks, damage/miss notification timers, weapon-specific cached
-accuracy checks, overkill hits, two drop checks and the first field counter
-reset. It assumes English, switched to 2× before the first attack. See
+accuracy checks, overkill hits, break/impact/BP timers, two drop checks and both
+post-battle counter resets. It assumes English, switched to 2× before the first attack. See
 [the callback audit and exact seed boundary](opening-routine.md).
 
 **Live-game accuracy remains unverified:**
 
-- Full entry-path CRT ordering, including actor initialization callbacks and
-  story-event/night-buff ordering, has not been reproduced against a capture.
-- Imported callback schedules and the synchronous action loop still need
-  full-action comparison, including initialization, boosted branches and KO.
+- Seed 0 + 4929 matches all 154 CRT calls in the captured replay, including
+  initialization, boost selection, KO and both counter resets. Other seeds
+  still need live verification; see [the capture](live-opening-4929.md).
+- Damage amounts and full enemy queue placement remain under investigation.
 - Skills/items outside the supplied routine retain combat-only support. Their
   omitted callbacks are rejected by `Battle::new_opening`.
 - Long-fight edge cases need original-game comparison, including cover reuse and
@@ -141,7 +146,7 @@ reset. It assumes English, switched to 2× before the first attack. See
   rather than choosing an invented fallback.
 
 Other encounters/jobs/passives/status families, later unlocked latent actions,
-XP/level-ups, following cutscene resets and field movement remain outside scope.
+XP/level-ups, later story events and field movement remain outside scope.
 
 ## Evidence and verification
 

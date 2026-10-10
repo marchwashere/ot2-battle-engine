@@ -1,0 +1,223 @@
+{
+  "players": [
+    {
+      "combat": {
+        "accuracy": 94,
+        "attack": 94,
+        "critical": 86,
+        "defense": 83,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 103,
+        "growth_attack": 86,
+        "growth_magic": 86,
+        "magic": 86,
+        "magic_defense": 77,
+        "main_weapon": "dagger",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "sword"
+          },
+          {
+            "attack": 6,
+            "magic": 0,
+            "weapon": "dagger"
+          }
+        ]
+      },
+      "id": "throne",
+      "name": "Throné",
+      "resources": {
+        "bp": 1,
+        "hp": 356,
+        "latent": 50,
+        "sp": 43
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_010",
+        "ABI_SET_THI_020"
+      ],
+      "stats": {
+        "max_hp": 356,
+        "max_sp": 43,
+        "speed": 103
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 80,
+        "attack": 72,
+        "critical": 64,
+        "defense": 78,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 80,
+        "growth_attack": 80,
+        "growth_magic": 80,
+        "magic": 104,
+        "magic_defense": 99,
+        "main_weapon": "staff",
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 3,
+            "magic": 4,
+            "weapon": "staff"
+          }
+        ]
+      },
+      "id": "osvald",
+      "name": "Osvald",
+      "resources": {
+        "bp": 1,
+        "hp": 200,
+        "latent": 0,
+        "sp": 60
+      },
+      "skills": [
+        "attack_staff"
+      ],
+      "stats": {
+        "max_hp": 200,
+        "max_sp": 60,
+        "speed": 72
+      }
+    }
+  ],
+  "history": {
+    "ENE_NML_FLD_CTY_010": {
+      "elements": 0,
+      "studied": false,
+      "weapons": 4
+    },
+    "ENE_NML_FLD_CTY_120": {
+      "elements": 0,
+      "studied": false,
+      "weapons": 4
+    }
+  },
+  "entry": {
+    "draws": 1408,
+    "state": 974226150
+  },
+  "title_battle_entry": 12034190,
+  "menu_position": 12035637,
+  "escape_menu_position": 12035651,
+  "field_position": 12035657,
+  "field_state": 421020075,
+  "records": [
+    {
+      "position": 12035637,
+      "state": 1340435047,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035638,
+      "state": 1072610190,
+      "caller": "0x30D7065"
+    },
+    {
+      "position": 12035639,
+      "state": 3705021465,
+      "caller": "0x2C52E57"
+    },
+    {
+      "position": 12035640,
+      "state": 3079001720,
+      "caller": "0x30D7065"
+    },
+    {
+      "position": 12035641,
+      "state": 3925146459,
+      "caller": "0x2C52E57"
+    },
+    {
+      "position": 12035642,
+      "state": 1193072818,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035643,
+      "state": 1584749741,
+      "caller": "0x2C52E57"
+    },
+    {
+      "position": 12035644,
+      "state": 661355708,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035645,
+      "state": 2369394831,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035646,
+      "state": 279662870,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035647,
+      "state": 1123058561,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035648,
+      "state": 2764462144,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035649,
+      "state": 3389298179,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035650,
+      "state": 2616895674,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035651,
+      "state": 3140881557,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035652,
+      "state": 1335561476,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035653,
+      "state": 1742112695,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035654,
+      "state": 1540662174,
+      "caller": "0x2C57B26"
+    },
+    {
+      "position": 12035655,
+      "state": 1392028649,
+      "caller": "0x30D7424"
+    },
+    {
+      "position": 12035656,
+      "state": 413237000,
+      "caller": "0x30D7424"
+    }
+  ]
+}

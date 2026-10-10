@@ -1,0 +1,584 @@
+{
+  "asset": "Battle/BP/BattleEnemyBP",
+  "sha256": "12dc546a1392c68eea69bff4602404c1d6e0ef7235d587daf5152eef17cff198",
+  "functions": {
+    "LoadEnemyResource": "2e9f6 FinalFunction export:1:ExecuteUbergraph_BattleEnemyBP\n  2e9fb IntConst 12603\n2ea01 Return\n  2ea02 Nothing\n2ea03 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "EnemyData": {
+        "EnemyID": 0,
+        "DisplayNameID": "None",
+        "ResourceLabel": "None",
+        "DisplayRank": 0,
+        "EnemyLevel": 0,
+        "DamageRatio": 0,
+        "Size": "ECHARACTER_SIZE::eSMALL",
+        "NPCFlag": false,
+        "WeaponStance": "EWEAPON_STANCE::NONE",
+        "WeaponItemLabel": "None",
+        "DeadEffectSlow": false,
+        "MainEnemy": false,
+        "NonPartBattle": false,
+        "UseCatDamageType": false,
+        "DisableDeadKnockBack": false,
+        "Param": {
+          "HP": 0,
+          "MP": 0,
+          "BP": 0,
+          "SP": 0,
+          "POT": 0,
+          "ATK": 0,
+          "DEF": 0,
+          "MATK": 0,
+          "MDEF": 0,
+          "ACC": 0,
+          "EVA": 0,
+          "CON": 0,
+          "AGI": 0
+        },
+        "Exp": 0,
+        "JobPoint": 0,
+        "Money": 0,
+        "StealMoney": 0,
+        "TameEnable": false,
+        "DefaultTameRate": 0,
+        "InvadeMonsterID": "None",
+        "FirstBP": 0,
+        "DeadType": "EENEMY_DEAD_TYPE::eNORMAL_S",
+        "AttributeResist": [],
+        "WeaponResist": [],
+        "DiseaseResist": [],
+        "StealGuard": false,
+        "HaveItemID": "None",
+        "DropProbability": 0,
+        "EnemyAI": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "EnemyAbility": [],
+        "DiseaseEffectOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyEffectOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "StatusUIOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "DamageUIOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "IconL_UV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "PixelScaleL": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "IconS_UV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "PixelScaleS": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SPDiseaseEffectOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SPEnemyEffectOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SPStatusUIOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SPDamageUIOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "StealMoneyGuard": false,
+        "StealItemID": "None",
+        "AbilitySEDelay": 0,
+        "TextInfoLabel": "None",
+        "BribeGuard": false,
+        "BribeMoney": 0,
+        "RevealShieldPoint": 0,
+        "RevealEnemyAI": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "DismantlingLabel": "None",
+        "WarpOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "LegendTameMonster": false,
+        "ActionModeResourceList": [],
+        "WaitEnemyActionFrame": 0,
+        "DisableBreakSlow": false,
+        "ID": 0,
+        "NotInsertOrderWithCallEnemy": false,
+        "BreakCameraType": "EBREAK_CAMERA_TYPE::EBREAK_CAMERA_MAX"
+      },
+      "ReplayEnemyData": {
+        "BattleCharacterID": 0,
+        "EnemyID": 0,
+        "RawHP": 0,
+        "CharacterDisease": 0,
+        "Position": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "CharacterStatus": "EBATTLE_REPLAY_CHARA_STATUS::eREPLAY_ALIVE"
+      },
+      "CurrentResourceData": {
+        "ID": 0,
+        "ActionLabel": "None",
+        "ActionOrderIconL": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "ActionOrderIconS": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "FieldCommandIcon": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "BattleStartVoiceID": "None",
+        "BattleVoiceCharacterID": "None",
+        "WaitEnemyActionFrame": 0,
+        "ActionDelaySEData": [],
+        "BattleSessionSEID": "ESESSION_SE_TYPE::eSESSION_SE_NONE",
+        "BattleCursorOffset": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "LastEffectPosition": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "LastDamageUIPosition": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "LastStatusUIPosition": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "LastDiseaseEffectPosition": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "CoverStepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "CoverStepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "EnemyStatusUIOffsetForKSParty": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "None",
+      "RootComponent": {
+        "kind": "object",
+        "index": 207,
+        "path": "Default__BattleEnemyBP_C.SceneComponent"
+      }
+    }
+  ]
+}

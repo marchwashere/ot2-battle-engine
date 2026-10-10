@@ -1,0 +1,842 @@
+{
+  "actor": {
+    "asset": "Character/BP/Type/KSBattleCharacterEnemy",
+    "sha256": "5d09a73a22b2755dbb4264f8eb1b0f94eed013a9f6d6c169094b3e4b08675a9c",
+    "functions": {
+      "FinishCallbackLoaded": "11281 FinalFunction export:1:ExecuteUbergraph_KSBattleCharacterEnemy\n  11286 IntConst 11598\n1128c Return\n  1128d Nothing\n1128e EndOfScript",
+      "PlayActionNPC": "1459a PushExecutionFlow target=1954\n1459f Let property=CallFunc_GetDir_ReturnValue\n  145b0 LocalVariable CallFunc_GetDir_ReturnValue\n  145c1 FinalFunction import:-139:GetDir\n145c7 LetBool\n  145c8 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue\n  145d9 CallMath import:-100:NotEqual_ByteByte\n    145de LocalVariable Direction\n    145ef LocalVariable CallFunc_GetDir_ReturnValue\n14601 LetBool\n  14602 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue_1\n  14613 CallMath import:-100:NotEqual_ByteByte\n    14618 LocalVariable Action\n    14629 InstanceVariable NowActionID\n1463b LetBool\n  1463c LocalVariable CallFunc_BooleanOR_ReturnValue\n  1464d CallMath import:-87:BooleanOR\n    14652 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue_1\n    14663 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue\n14675 JumpIfNot target=250\n  1467a LocalVariable CallFunc_BooleanOR_ReturnValue\n1468b PushExecutionFlow target=1760\n14690 PushExecutionFlow target=1731\n14695 PushExecutionFlow target=1715\n1469a PushExecutionFlow target=1117\n1469f PushExecutionFlow target=928\n146a4 PushExecutionFlow target=255\n146a9 LetBool\n  146aa LocalVariable bError\n  146bb False\n146bc LetBool\n  146bd LocalVariable CallFunc_SetFlipbook_ReturnValue\n  146ce Context skip=15 rvalue=CallFunc_SetFlipbook_ReturnValue\n    146cf InstanceVariable Sprite\n    146f4 VirtualFunction SetFlipbook\n      146fd NoObject\n146ff PopExecutionFlow\n14700 Jump target=1954\n14705 LetObj\n  14706 LocalVariable CallFunc_GetManagerInstance_ReturnValue\n  14717 CallMath import:-128:GetManagerInstance\n    1471c ObjectConst import:-43:KSFlipbookManager\n14722 LetObj\n  14723 LocalVariable FlipbookManager\n  14734 LocalVariable CallFunc_GetManagerInstance_ReturnValue\n14745 LetBool\n  14746 LocalVariable CallFunc_IsValid_ReturnValue\n  14757 CallMath import:-112:IsValid\n    1475c LocalVariable FlipbookManager\n1476e JumpIfNot target=839\n  14773 LocalVariable CallFunc_IsValid_ReturnValue\n14784 LetBool\n  14785 LocalVariable CallFunc_GetActionFlipbookName_ReturnValue\n  14796 FinalFunction import:-137:GetActionFlipbookName\n    1479b LocalVariable Action\n    147ac LocalVariable Direction\n    147bd LocalVariable CallFunc_GetActionFlipbookName_outFlipbookName\n    147ce LocalVariable CallFunc_GetActionFlipbookName_outIsReverse\n147e0 Let property=FlipbookName\n  147f1 LocalVariable FlipbookName\n  14802 LocalVariable CallFunc_GetActionFlipbookName_outFlipbookName\n14813 LetBool\n  14814 LocalVariable CallFunc_GetActionFlipbookName_ReturnValue\n  14825 FinalFunction import:-137:GetActionFlipbookName\n    1482a LocalVariable Action\n    1483b LocalVariable Direction\n    1484c LocalVariable CallFunc_GetActionFlipbookName_outFlipbookName\n    1485d LocalVariable CallFunc_GetActionFlipbookName_outIsReverse\n1486f JumpIfNot target=827\n  14874 LocalVariable CallFunc_GetActionFlipbookName_ReturnValue\n14885 LetBool\n  14886 LocalVariable CallFunc_GetActionFlipbookName_ReturnValue\n  14897 FinalFunction import:-137:GetActionFlipbookName\n    1489c LocalVariable Action\n    148ad LocalVariable Direction\n    148be LocalVariable CallFunc_GetActionFlipbookName_outFlipbookName\n    148cf LocalVariable CallFunc_GetActionFlipbookName_outIsReverse\n148e1 FinalFunction import:-155:SetReverseSpriteFlag\n  148e6 LocalVariable CallFunc_GetActionFlipbookName_outIsReverse\n148f8 LetObj\n  148f9 LocalVariable CallFunc_GetFlipbookMaterial_ReturnValue\n  1490a FinalFunction import:-140:GetFlipbookMaterial\n    1490f LocalVariable FlipbookName\n    14920 False\n14922 LetObj\n  14923 InstanceVariable MaterialInstance\n  14934 LocalVariable CallFunc_GetFlipbookMaterial_ReturnValue\n14945 LetBool\n  14946 LocalVariable CallFunc_IsValid_ReturnValue_1\n  14957 CallMath import:-112:IsValid\n    1495c InstanceVariable MaterialInstance\n1496e JumpIfNot target=827\n  14973 LocalVariable CallFunc_IsValid_ReturnValue_1\n14984 LetObj\n  14985 LocalVariable CallFunc_GetCurrentWeaponTexture_ReturnValue\n  14996 FinalFunction import:-138:GetCurrentWeaponTexture\n1499c Context skip=32 rvalue=<null-field>\n  1499d InstanceVariable MaterialInstance\n  149ba FinalFunction import:-115:SetTextureParameterValue\n    149bf NameConst WeaponTexture\n    149c8 LocalVariable CallFunc_GetCurrentWeaponTexture_ReturnValue\n149da FinalFunction import:-135:ChangeFlipbook\n  149df LocalVariable FlipbookName\n  149f0 InstanceVariable MaterialInstance\n14a02 LetBool\n  14a03 LocalVariable CallFunc_IsValid_ReturnValue_2\n  14a14 CallMath import:-112:IsValid\n    14a19 InstanceVariable CustomFlipbook\n14a2b PopExecutionFlowIfNot\n  14a2c LocalVariable CallFunc_IsValid_ReturnValue_2\n14a3d LetObj\n  14a3e InstanceVariable NPCActionFlipBook\n  14a4f InstanceVariable CustomFlipbook\n14a60 PopExecutionFlow\n14a61 LetBool\n  14a62 LocalVariable bError\n  14a73 True\n14a74 PopExecutionFlow\n14a75 CallMath import:-113:PrintString\n  14a7a Self\n  14a7b StringConst \"Error : Not Found Flipbook Manager\"\n  14a9f True\n  14aa0 True\n  14aa1 StructConst import:-201:LinearColor size=16\n    14aaa FloatConst 0\n    14aaf FloatConst 0.6600000262260437\n    14ab4 FloatConst 1\n    14ab9 FloatConst 1\n  14abf FloatConst 2\n14ac5 PopExecutionFlow\n14ac6 PushExecutionFlow target=994\n14acb PushExecutionFlow target=1027\n14ad0 PushExecutionFlow target=1061\n14ad5 Context skip=28 rvalue=<null-field>\n  14ad6 InstanceVariable Sprite\n  14af3 VirtualFunction SetMaterial\n    14afc IntConst 0\n    14b01 InstanceVariable MaterialInstance\n14b13 PopExecutionFlow\n14b14 Context skip=10 rvalue=<null-field>\n  14b15 InstanceVariable Sprite\n  14b32 FinalFunction import:-159:PlayFromStart\n14b38 PopExecutionFlow\n14b39 Context skip=11 rvalue=<null-field>\n  14b3a InstanceVariable Sprite\n  14b57 FinalFunction import:-160:SetLooping\n    14b5c False\n14b5e PopExecutionFlow\n14b5f LetBool\n  14b60 LocalVariable CallFunc_SetFlipbook_ReturnValue_1\n  14b71 Context skip=23 rvalue=CallFunc_SetFlipbook_ReturnValue_1\n    14b72 InstanceVariable Sprite\n    14b97 VirtualFunction SetFlipbook\n      14ba0 InstanceVariable NPCActionFlipBook\n14bb2 PopExecutionFlow\n14bb3 Let property=CallFunc_Conv_ByteToInt_ReturnValue\n  14bc4 LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n  14bd5 CallMath import:-90:Conv_ByteToInt\n    14bda LocalVariable Action\n14bec LetBool\n  14bed LocalVariable CallFunc_Array_IsValidIndex_ReturnValue\n  14bfe Context skip=37 rvalue=CallFunc_Array_IsValidIndex_ReturnValue\n    14bff ObjectConst import:-164:Default__KismetArrayLibrary\n    14c18 FinalFunction import:-80:Array_IsValidIndex\n      14c1d StructMemberContext Loop\n        14c2e InstanceVariable ActionFlipbook\n      14c3f LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n14c51 JumpIfNot target=1516\n  14c56 LocalVariable CallFunc_Array_IsValidIndex_ReturnValue\n14c67 Let property=CallFunc_Conv_ByteToInt_ReturnValue\n  14c78 LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n  14c89 CallMath import:-90:Conv_ByteToInt\n    14c8e LocalVariable Action\n14ca0 Context skip=46 rvalue=<null-field>\n  14ca1 ObjectConst import:-164:Default__KismetArrayLibrary\n  14cb2 FinalFunction import:-79:Array_Get\n    14cb7 StructMemberContext Loop\n      14cc8 InstanceVariable ActionFlipbook\n    14cd9 LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n    14cea LocalVariable CallFunc_Array_Get_Item\n14cfc LetBool\n  14cfd LocalVariable CallFunc_Not_PreBool_ReturnValue\n  14d0e CallMath import:-99:Not_PreBool\n    14d13 LocalVariable CallFunc_Array_Get_Item\n14d25 LetBool\n  14d26 InstanceVariable IsPlayingAction\n  14d37 LocalVariable CallFunc_Not_PreBool_ReturnValue\n14d48 JumpIfNot target=1415\n  14d4d LocalVariable bError\n14d5e LetBool\n  14d5f InstanceVariable IsPlayingAction\n  14d70 False\n14d71 Let property=LatestAction\n  14d82 InstanceVariable LatestAction\n  14d93 LocalVariable Action\n14da4 Let property=NowActionID\n  14db5 InstanceVariable NowActionID\n  14dc6 LocalVariable Action\n14dd7 Let property=PlayDirection\n  14de8 InstanceVariable PlayDirection\n  14df9 LocalVariable Direction\n14e0a FinalFunction import:-156:UpdateCanoeDir\n  14e0f InstanceVariable PlayDirection\n14e21 PopExecutionFlow\n14e22 Let property=CallFunc_Conv_ByteToInt_ReturnValue\n  14e33 LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n  14e44 CallMath import:-90:Conv_ByteToInt\n    14e49 LocalVariable Action\n14e5b Let property=CallFunc_Conv_IntToString_ReturnValue\n  14e6c LocalVariable CallFunc_Conv_IntToString_ReturnValue\n  14e7d CallMath import:-105:Conv_IntToString\n    14e82 LocalVariable CallFunc_Conv_ByteToInt_ReturnValue\n14e94 Let property=CallFunc_Concat_StrStr_ReturnValue\n  14ea5 LocalVariable CallFunc_Concat_StrStr_ReturnValue\n  14eb6 CallMath import:-103:Concat_StrStr\n    14ebb StringConst \"Loop Array Index Over = \"\n    14ed5 LocalVariable CallFunc_Conv_IntToString_ReturnValue\n14ee7 CallMath import:-113:PrintString\n  14eec Self\n  14eed LocalVariable CallFunc_Concat_StrStr_ReturnValue\n  14efe True\n  14eff True\n  14f00 StructConst import:-201:LinearColor size=16\n    14f09 FloatConst 0\n    14f0e FloatConst 0.6600000262260437\n    14f13 FloatConst 1\n    14f18 FloatConst 1\n  14f1e FloatConst 2\n14f24 PopExecutionFlow\n14f25 LocalVirtualFunction UpdateBillboard\n  14f2e True\n14f30 PopExecutionFlow\n14f31 FinalFunction import:-147:OverwriteTemplateSpriteSockets\n  14f36 LocalVariable Action\n  14f47 LocalVariable Direction\n14f59 PopExecutionFlow\n14f5a LetBool\n  14f5b LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n  14f6c CallMath import:-92:EqualEqual_ByteByte\n    14f71 LocalVariable Action\n    14f82 ByteConst 130\n14f85 LetBool\n  14f86 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1\n  14f97 CallMath import:-92:EqualEqual_ByteByte\n    14f9c LocalVariable Action\n    14fad ByteConst 0\n14fb0 LetBool\n  14fb1 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2\n  14fc2 CallMath import:-92:EqualEqual_ByteByte\n    14fc7 LocalVariable Action\n    14fd8 ByteConst 20\n14fdb LetBool\n  14fdc LocalVariable CallFunc_BooleanOR_ReturnValue_1\n  14fed CallMath import:-87:BooleanOR\n    14ff2 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1\n    15003 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_2\n15015 LetBool\n  15016 LocalVariable CallFunc_BooleanOR_ReturnValue_2\n  15027 CallMath import:-87:BooleanOR\n    1502c LocalVariable CallFunc_BooleanOR_ReturnValue_1\n    1503d LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n1504f PopExecutionFlowIfNot\n  15050 LocalVariable CallFunc_BooleanOR_ReturnValue_2\n15061 LocalVirtualFunction SyncAnimationFrame\n1506b PopExecutionFlow\n1506c Return\n  1506d Nothing\n1506e EndOfScript",
+      "SetupActionTable": "15130 VirtualFunction SetDir\n  15139 LocalVariable DefaultDirection\n  1514a False\n1514c LetBool\n  1514d InstanceVariable FixAnimation\n  1515e True\n1515f FinalFunction import:-145:InitAction\n  15164 LocalVariable ActionLabel\n  15175 True\n15177 Return\n  15178 Nothing\n15179 EndOfScript",
+      "GetIdleType": "16084 LetBool\n  16085 LocalVariable CallFunc_Not_PreBool_ReturnValue\n  16096 CallMath import:-99:Not_PreBool\n    1609b InstanceVariable IsKSParty\n160ad JumpIfNot target=75\n  160b2 LocalVariable CallFunc_Not_PreBool_ReturnValue\n160c3 Let property=type\n  160d4 LocalOutVariable type\n  160e5 InstanceVariable PlayBattleIdleType\n160f6 Jump target=304\n160fb JumpIfNot target=114\n  16100 InstanceVariable IsDead\n16111 Let property=type\n  16122 LocalOutVariable type\n  16133 ByteConst 24\n16135 Jump target=304\n1613a JumpIfNot target=160\n  1613f InstanceVariable IsPlayingActionCommand\n16150 Let property=type\n  16161 LocalOutVariable type\n  16172 InstanceVariable PlayBattleIdleType\n16183 Jump target=304\n16188 JumpIfNot target=199\n  1618d InstanceVariable IsGuard\n1619e Let property=type\n  161af LocalOutVariable type\n  161c0 ByteConst 22\n161c2 Jump target=304\n161c7 JumpIfNot target=238\n  161cc InstanceVariable IsDisease\n161dd Let property=type\n  161ee LocalOutVariable type\n  161ff ByteConst 86\n16201 Jump target=304\n16206 JumpIfNot target=277\n  1620b InstanceVariable IsPinch\n1621c Let property=type\n  1622d LocalOutVariable type\n  1623e ByteConst 23\n16240 Jump target=304\n16245 Let property=type\n  16256 LocalOutVariable type\n  16267 InstanceVariable PlayBattleIdleType\n16278 Return\n  16279 Nothing\n1627a EndOfScript",
+      "SetSyncAnimationCharacter": "1711e LetBool\n  1711f InstanceVariable IsSyncFrameForParent\n  17130 LocalVariable IsSyncFrameForParent\n17141 LetBool\n  17142 InstanceVariable IsSyncFrameForChilds\n  17153 LocalVariable IsSyncFrameForChilds\n17164 Return\n  17165 Nothing\n17166 EndOfScript",
+      "FinishCallbackLoadedBody": "10e72 Let property=NowActionID\n  10e83 InstanceVariable NowActionID\n  10e94 ByteConst 191\n10e96 Let property=CallFunc_GetDir_ReturnValue_4\n  10ea7 LocalVariable CallFunc_GetDir_ReturnValue_4\n  10eb8 FinalFunction import:-139:GetDir\n10ebe LocalVirtualFunction GetIdleType\n  10ec7 LocalVariable CallFunc_GetIdleType_type_6\n10ed9 LocalVirtualFunction PlayActionNPC\n  10ee2 LocalVariable CallFunc_GetIdleType_type_6\n  10ef3 LocalVariable CallFunc_GetDir_ReturnValue_4\n10f05 LetBool\n  10f06 LocalVariable CallFunc_BooleanOR_ReturnValue\n  10f17 CallMath import:-87:BooleanOR\n    10f1c InstanceVariable IsSyncFrameForChilds\n    10f2d InstanceVariable IsSyncFrameForParent\n10f3f LetBool\n  10f40 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n  10f51 CallMath import:-99:Not_PreBool\n    10f56 LocalVariable CallFunc_BooleanOR_ReturnValue\n10f68 PopExecutionFlowIfNot\n  10f69 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n10f7a Let property=CallFunc_GetFlipbookLengthInFrames_ReturnValue\n  10f8b LocalVariable CallFunc_GetFlipbookLengthInFrames_ReturnValue\n  10f9c Context skip=10 rvalue=CallFunc_GetFlipbookLengthInFrames_ReturnValue\n    10f9d InstanceVariable Sprite\n    10fc2 FinalFunction import:-157:GetFlipbookLengthInFrames\n10fc8 Let property=CallFunc_RandomInteger_ReturnValue\n  10fd9 LocalVariable CallFunc_RandomInteger_ReturnValue\n  10fea CallMath import:-102:RandomInteger\n    10fef LocalVariable CallFunc_GetFlipbookLengthInFrames_ReturnValue\n11001 FinalFunction import:-154:SetPlayAnimationFrame\n  11006 LocalVariable CallFunc_RandomInteger_ReturnValue\n11018 PopExecutionFlow\n"
+    },
+    "defaults": [
+      {
+        "UberGraphFrame": {},
+        "EnemySelectedBoostBlinkLoop_SelectedColor_5263333E4D35094CDEAA72B1D7E2B4AA": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemySelectedBlinkLoop_SelectedColor_99869BA2448EE24720EE30BF5096F403": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "ChangeModeTransition_TransitionIn_EFE8A578404E943DF8343D98D9AC9000": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "ChangeModeTransition_TransitionOut_EFE8A578404E943DF8343D98D9AC9000": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "InvadeMonsterKnockBack_KnockbackOffset_2E1C9E5742018F689A4BA2BEAE09B0C1": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDeadKnockback_KnockbackOffset_015E44264BACCA510A42BBA5361DDE6C": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageVibration_B_KnockbackOffset_F48E58D548A309CADE83BB8841DC6E1E": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyBreakAnimation_SelectedColor_891D5D9943CB8483BC5893B3F778B29E": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageVibration_L_KnockbackOffset_E83E898C45760BDA02F889B843EF0C30": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageVibration_M_KnockbackOffset_27B414EA4894DED6D082CCB808C2D7E0": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageVibration_S_KnockbackOffset_14CD157C4A8F56907A85E0AE9D704616": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageWhiteBlink_BlinkColor_2E91507943FFBB8B408EE89A4F1E406B": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyDamageRedBlink_BlinkColor_AF4C1BF74C092995C7BF3F94DCC14367": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "EnemyActionAnimation_ActionColor_3E1A241B44B4BF82BC21BEABE7A74AED": {
+          "kind": "native-struct",
+          "type": "LinearColor",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "DefaultPosition": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "PlayBattleIdleType": "EKSCharacterAction::BAT_IDLE_ENEMY",
+        "PlayBattleAtkAction": "EKSCharacterAction::BAT_ATK_ENEMY",
+        "CanoeComponent": {
+          "kind": "object",
+          "index": 104,
+          "path": "Default__KSBattleCharacterEnemy_C.CanoeComponent"
+        },
+        "Sprite": {
+          "kind": "object",
+          "index": 98,
+          "path": "Default__KSBattleCharacterEnemy_C.Sprite0"
+        },
+        "CharacterMovement": {
+          "kind": "object",
+          "index": 97,
+          "path": "Default__KSBattleCharacterEnemy_C.CharMoveComp"
+        },
+        "CapsuleComponent": {
+          "kind": "object",
+          "index": 93,
+          "path": "Default__KSBattleCharacterEnemy_C.CollisionCylinder"
+        },
+        "SpawnCollisionHandlingMethod": "ESpawnActorCollisionHandlingMethod::AlwaysSpawn",
+        "RootComponent": {
+          "kind": "object",
+          "index": 93,
+          "path": "Default__KSBattleCharacterEnemy_C.CollisionCylinder"
+        }
+      }
+    ]
+  },
+  "npc": {
+    "id": "NPC_Twn_Snw_1_2_A_TALK_1100",
+    "ID": 12,
+    "TextLabel": "CN_NPC_Twn_Snw_1_2_A_TALK_1100",
+    "NPC_UnqIndex": 12520,
+    "ActionID": "SnwSm001_Mle",
+    "FaintAction": 36,
+    "UsePathLabel": "",
+    "IgnoreRelation": false,
+    "WorseRelationTextLabel": "None",
+    "FCmd_Purchase_ID": "FC_P_NPC_Twn_Snw_1_2_A_TALK_1100",
+    "FCmd_Lure_ID": "FC_L_NPC_Twn_Snw_1_2_A_TALK_1100",
+    "FCmd_Battle_ID": "FC_B_NPC_Twn_Snw_1_2_A_TALK_1100",
+    "FCmd_Search_ID": "FC_INFO_NPC_Twn_Snw_1_2_A_TALK_1100",
+    "FCmd_RecoverArea": 5,
+    "FCmd_EnemyGroup": "ENG_NPC_Twn_Snw_1_2_A_1100",
+    "FCmd_UseBattleMapIndex": 0,
+    "TextInfoLabel": "None",
+    "IsNotWorsenRelation": false,
+    "FcSpecialPopupType": "EFieldCommandSpecialPopupType::eNone"
+  },
+  "initial_action": 130,
+  "initial_direction": 3,
+  "npc_initial_animation": {
+    "kind": "soft-object",
+    "asset": {
+      "base": "None",
+      "number": 0,
+      "text": "None"
+    },
+    "subPath": ""
+  },
+  "enemy": {
+    "id": "ENE_NPC_Twn_Snw_1_2_A_1100",
+    "EnemyID": 13660,
+    "DisplayNameID": "None",
+    "ResourceLabel": "None",
+    "DisplayRank": 1,
+    "EnemyLevel": 1,
+    "DamageRatio": 1.1875,
+    "Size": "ECHARACTER_SIZE::eSMALL",
+    "NPCFlag": true,
+    "WeaponStance": "EWEAPON_STANCE::MALE",
+    "WeaponItemLabel": "ITM_EQP_AXE_010",
+    "DeadEffectSlow": false,
+    "MainEnemy": false,
+    "NonPartBattle": false,
+    "UseCatDamageType": false,
+    "DisableDeadKnockBack": false,
+    "Param": {
+      "HP": 280,
+      "MP": 96,
+      "BP": 3,
+      "SP": 1,
+      "POT": 0,
+      "ATK": 88,
+      "DEF": 94,
+      "MATK": 85,
+      "MDEF": 85,
+      "ACC": 66,
+      "EVA": 80,
+      "CON": 90,
+      "AGI": 68
+    },
+    "Exp": 3,
+    "JobPoint": 2,
+    "Money": 20,
+    "StealMoney": 0,
+    "TameEnable": false,
+    "DefaultTameRate": 0,
+    "InvadeMonsterID": "None",
+    "FirstBP": 0,
+    "DeadType": "EENEMY_DEAD_TYPE::eBOSS_M",
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "WeaponResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "StealGuard": true,
+    "HaveItemID": "ITM_CSM_0170",
+    "DropProbability": 30,
+    "EnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C"
+      },
+      "subPath": ""
+    },
+    "EnemyAbility": [
+      "ABI_NPB_2570",
+      "ABI_NPB_0040",
+      "ABI_NPB_0040",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "DiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1109393408,
+          "value": 40
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1126825984,
+          "value": 170
+        }
+      ]
+    },
+    "EnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3253731328,
+          "value": -30
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        },
+        {
+          "kind": "float32",
+          "bits": 1117126656,
+          "value": 75
+        }
+      ]
+    },
+    "StatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        }
+      ]
+    },
+    "DamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "IconL_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3212501320,
+          "value": -0.9800000190734863
+        },
+        {
+          "kind": "float32",
+          "bits": 1064514355,
+          "value": 0.949999988079071
+        }
+      ]
+    },
+    "PixelScaleL": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3187671040,
+          "value": -0.125
+        },
+        {
+          "kind": "float32",
+          "bits": 1040187392,
+          "value": 0.125
+        }
+      ]
+    },
+    "IconS_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3227265270,
+          "value": -3.440000057220459
+        },
+        {
+          "kind": "float32",
+          "bits": 1074790400,
+          "value": 2.25
+        }
+      ]
+    },
+    "PixelScaleS": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3179282432,
+          "value": -0.0625
+        },
+        {
+          "kind": "float32",
+          "bits": 1031798784,
+          "value": 0.0625
+        }
+      ]
+    },
+    "SPDiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1126825984,
+          "value": 170
+        }
+      ]
+    },
+    "SPEnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3253731328,
+          "value": -30
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        },
+        {
+          "kind": "float32",
+          "bits": 1117126656,
+          "value": 75
+        }
+      ]
+    },
+    "SPStatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 1092616192,
+          "value": 10
+        }
+      ]
+    },
+    "SPDamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "StealMoneyGuard": true,
+    "StealItemID": "None",
+    "AbilitySEDelay": 0,
+    "TextInfoLabel": "NPC_000",
+    "BribeGuard": false,
+    "BribeMoney": 1000,
+    "RevealShieldPoint": 5,
+    "RevealEnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/NPC/BattleAI_NPC_Pattern.BattleAI_NPC_Pattern_C"
+      },
+      "subPath": ""
+    },
+    "DismantlingLabel": "ENE_NPC_Twn_Snw_1_2_A_1100_DISMANTLING",
+    "WarpOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3259498496,
+          "value": -50
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "LegendTameMonster": false,
+    "ActionModeResourceList": [
+      "None",
+      "None"
+    ],
+    "WaitEnemyActionFrame": 0,
+    "DisableBreakSlow": false,
+    "ID": 1001,
+    "NotInsertOrderWithCallEnemy": false,
+    "BreakCameraType": "EBREAK_CAMERA_TYPE::eNORMAL"
+  },
+  "sources": [
+    {
+      "source": "/Game/Character/Database/NPCData",
+      "sha256": "ad0dfb8416c6235f60529a73ae07acda68d76d4f930acaa478c7cd8d9f6b101b"
+    },
+    {
+      "source": "/Game/Character/Database/CharactersAction",
+      "sha256": "f71a993ab7dd443ebbbb394949d7625c93f6f1f9030327572f965f1ad383b39c"
+    },
+    {
+      "source": "/Game/Character/Database/CharacterResourceDB",
+      "sha256": "c01945df431b1cdff0790d026c5d5a27813748e89b854f26757381ba559f3a6d"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    }
+  ],
+  "native": "ulonglong FUN_14091ff00(longlong param_1)\n\n{\n  uint uVar1;\n  longlong lVar2;\n  ulonglong uVar3;\n  longlong lVar4;\n  uint uVar5;\n  ulonglong uVar6;\n  longlong lVar7;\n  uint uVar8;\n  ulonglong uVar9;\n  uint uVar10;\n  longlong lVar12;\n  uint uVar13;\n  longlong lVar14;\n  int iVar15;\n  int iVar16;\n  int iVar17;\n  int iVar18;\n  int iVar19;\n  int iVar20;\n  int iVar21;\n  int iVar22;\n  ulonglong uVar11;\n  \n  lVar2 = *(longlong *)(param_1 + 0x478);\n  if (lVar2 == 0) {\n    return 0;\n  }\n  uVar1 = *(uint *)(lVar2 + 0x38);\n  lVar14 = (longlong)(int)uVar1;\n  uVar9 = 0;\n  uVar8 = 0;\n  uVar13 = 0;\n  uVar10 = 0;\n  uVar3 = uVar9;\n  if ((0 < (int)uVar1) && (uVar3 = 0, 7 < uVar1)) {\n    lVar12 = *(longlong *)(lVar2 + 0x30);\n    iVar19 = 0;\n    iVar20 = 0;\n    iVar21 = 0;\n    iVar22 = 0;\n    iVar15 = 0;\n    iVar16 = 0;\n    iVar17 = 0;\n    iVar18 = 0;\n    uVar5 = uVar1 & 0x80000007;\n    if ((int)uVar5 < 0) {\n      uVar5 = (uVar5 - 1 | 0xfffffff8) + 1;\n    }\n    uVar3 = uVar9;\n    uVar6 = uVar9;\n    uVar11 = uVar9;\n    do {\n      uVar10 = (int)uVar11 + 8;\n      uVar11 = (ulonglong)uVar10;\n      uVar3 = uVar3 + 8;\n      iVar19 = iVar19 + *(int *)(uVar6 + 8 + lVar12);\n      iVar20 = iVar20 + *(int *)(uVar6 + 0x18 + lVar12);\n      iVar21 = iVar21 + *(int *)(uVar6 + 0x28 + lVar12);\n      iVar22 = iVar22 + *(int *)(uVar6 + 0x38 + lVar12);\n      iVar15 = iVar15 + *(int *)(uVar6 + 0x48 + lVar12);\n      iVar16 = iVar16 + *(int *)(uVar6 + 0x58 + lVar12);\n      iVar17 = iVar17 + *(int *)(uVar6 + 0x68 + lVar12);\n      iVar18 = iVar18 + *(int *)(uVar6 + 0x78 + lVar12);\n      uVar6 = uVar6 + 0x80;\n    } while ((longlong)uVar3 < (longlong)(int)(uVar1 - uVar5));\n    uVar3 = (ulonglong)(uint)(iVar15 + iVar19 + iVar17 + iVar21 + iVar16 + iVar20 + iVar18 + iVar22)\n    ;\n  }\n  lVar12 = (longlong)(int)uVar10;\n  iVar15 = (int)uVar3;\n  if (lVar14 <= lVar12) {\n    return uVar3;\n  }\n  lVar2 = *(longlong *)(lVar2 + 0x30);\n  if (1 < lVar14 - lVar12) {\n    lVar7 = lVar12 << 4;\n    lVar4 = ((lVar14 - lVar12) - 2U >> 1) + 1;\n    lVar12 = lVar12 + lVar4 * 2;\n    uVar3 = uVar9;\n    do {\n      uVar8 = (int)uVar9 + *(int *)(lVar7 + 8 + lVar2);\n      uVar9 = (ulonglong)uVar8;\n      uVar13 = (int)uVar3 + *(int *)(lVar7 + 0x18 + lVar2);\n      uVar3 = (ulonglong)uVar13;\n      lVar7 = lVar7 + 0x20;\n      lVar4 = lVar4 + -1;\n    } while (lVar4 != 0);\n    if (lVar14 <= lVar12) goto LAB_140921908;\n  }\n  iVar15 = iVar15 + *(int *)(lVar2 + 8 + lVar12 * 0x10);\nLAB_140921908:\n  return (ulonglong)(uVar13 + uVar8 + iVar15);\n}\nvoid FUN_1430d73b0(undefined8 param_1,longlong param_2,int *param_3)\n\n{\n  uint uVar1;\n  int iVar2;\n  int iVar3;\n  int local_res10 [6];\n  \n  local_res10[0] = 0;\n  FUN_14142ba80();\n  if (*(longlong *)(param_2 + 0x20) == 0) {\n    *(undefined8 *)(param_2 + 0x80) = *(undefined8 *)(*(longlong *)(param_2 + 0x80) + 0x20);\n    FUN_141453670(param_2,local_res10);\n  }\n  else {\n    FUN_141453640(param_2,*(undefined8 *)(param_2 + 0x18),local_res10);\n  }\n  iVar2 = local_res10[0];\n  *(ulonglong *)(param_2 + 0x20) =\n       (ulonglong)(*(longlong *)(param_2 + 0x20) != 0) + *(longlong *)(param_2 + 0x20);\n  if (0 < local_res10[0]) {\n    uVar1 = rand();\n    iVar3 = iVar2 + -1;\n    iVar2 = (int)((float)(uVar1 & 0x7fff) * 3.051851e-05 * (float)iVar2);\n    if (iVar2 <= iVar3) {\n      iVar3 = iVar2;\n    }\n    *param_3 = iVar3;\n    return;\n  }\n  *param_3 = 0;\n  return;\n}\n"
+}

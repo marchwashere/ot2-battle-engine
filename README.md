@@ -1,13 +1,28 @@
 # OT2BattleEngineRust
 
 A standalone, headless Rust simulator for selected Octopath Traveler II battles.
+The [Scholar job helpers](docs/scholar-jobs.md) apply source-derived stat and
+equipment changes to carried characters and preserve job-aware level growth.
+The [Hikari recruitment fight](docs/hikari-recruitment.md) accepts the carried
+Throné/Osvald/Agnea/Partitio party: regular Ice Soulstone, then the next player's
+default attack. It returns complete CRT, resources, enemy history and rewards.
+Use `cargo run --example hikari_recruitment -- <seed>` for a standalone trace.
+The [second Chapter 1 sewer fight](docs/throne-second.md) is also available:
+level-two party, Pursuer Leader, Darkest Night, Pierce Through and 2-BP Slice.
+Use `ot2-sim throne-second [seed]` or `throne-second-sweep <seed> <count>`.
+Its routine wins all 4,096 regression seeds; its CRT timing awaits live validation.
+
 **Throné's Chapter 1 opening battle now runs from initialization to victory or
 defeat**, with player commands and automatic enemy AI. The encounter is
 `ENG_EVE_THI_C01_010`: Throné, Pirro and Scaracci against two pursuers.
 
-The supplied two-round routine also models the source's main-CRT callbacks,
-item drops and first field encounter-counter reset. **It is not yet a
-trace-verified RNG manipulation tool.** See the [routine and seed boundary](docs/opening-routine.md)
+The engine also models the source's main-CRT callbacks, item drops and both
+post-battle encounter-counter resets. **All 154 CRT calls match the historical
+seed 0 + 4929 replay using its original actions.** The current routine boosts
+the first actor instead and still needs a live comparison. The erroneous opening night buff is
+removed: full first-round order, Pirro's 31 damage and Throné's second-hit 50
+match. Throné's first hit remains 33 versus reported 31; other damage and seeds
+still need comparison. See the [recorded comparison](docs/live-opening-4929.md), [routine and seed boundary](docs/opening-routine.md)
 and [combat mechanics](docs/throne-opening.md).
 
 ## Run
@@ -15,40 +30,17 @@ and [combat mechanics](docs/throne-opening.md).
 Requires Rust 1.85 or newer. No Unreal, graphics, audio, Node.js, or old C++ engine
 is needed to build or run the checked-in crate.
 
-### Simple GUI
+### GUI and route assistant
 
-On Windows, double-click **Open Battle Viewer.cmd** in this repository. It opens
-a local browser window. The launcher builds the release viewer if needed; the
-already-built `target/release/ot2-gui.exe` can also be launched directly.
+The GUI, field encounter predictor and route orchestration now live in the
+separate sibling [OT2SpeedrunAssistant](../OT2SpeedrunAssistant/README.md) repository.
+It imports this crate through Cargo. This battle library has no reverse dependency
+and can be built, benchmarked or used for brute-force sweeps independently.
 
-Enter a decimal or `0x` hexadecimal **Initial seed**, then choose **RNG advances
-before battle** (default 0). The helper previews the resulting 32-bit CRT state
-in decimal and hex and automatically uses it for **Run simulation**. For example,
-seed `123` advanced twice gives battle starting state `3396176589` (`0xCA6D8ACD`).
-Skip-ahead runs in logarithmic time, so large advance counts are fast. Counts may
-range from 0 through 18446744073709551615; exports store them as decimal strings
-to preserve precision. Battle draw counts start at zero after these advances;
-the summary also shows the combined total from the original seed.
-
-The viewer shows the supplied routine's actions, per-hit damage, resources, CRT trace, and
-decimal/hex RNG checkpoints. The primary final state includes drops and the
-**first area encounter-counter reset**, before a following cutscene reset.
-Use **Copy decimal** or **Export JSON** to save a prediction. **Quit viewer** stops
-the local server; simply closing the tab does not stop it.
-
-The viewer calls the same Rust library as the CLI. Its HTML/CSS/JS are embedded
-in the executable; it needs no internet or additional packages. It binds only
-to `127.0.0.1` on an available port and opens the default browser. The core remains
-headless, and the existing source-derived accuracy limits still apply.
-
-```sh
-cargo build --offline --release --bin ot2-gui
-cargo run --offline --release --bin ot2-gui
-# Optional: keep browser launch manual and choose a fixed local port
-cargo run --offline --release --bin ot2-gui -- --no-open --port 8787
-```
-
-Rebuild after editing `viewer/` or Rust sources to update the embedded app.
+The existing **Open Battle Viewer.cmd** still works and forwards to the assistant.
+For the GUI, build/run from that repository; this crate contains only the library
+and `ot2-sim` command-line binary. External callers can load the bundled opening
+configuration with `BattleConfig::throne_opening(seed)` without copying data files.
 
 ### Command line
 
@@ -62,19 +54,22 @@ cargo test --release
 Add `--offline` before `--` if dependencies are cached. `throne` follows the user's
 routine using each actor's default weapon:
 
-- Round 1 party actions: enemy 1 unboosted; enemy 2 with 1 BP; enemy 1 unboosted.
-- Round 2: the two actors who attacked enemy 1 spend 2 BP on enemy 1 and enemy 2,
-  respectively, in their actual turn order. The other actor Defends if needed.
+- Enemies are numbered right to left: enemy 1 is the right-hand pursuer;
+  enemy 2 is the left-hand pursuer.
+- Round 1 party actions: enemy 1 with 1 BP (two hits); enemy 2 unboosted;
+  enemy 2 unboosted.
+- Round 2: the two actors who attacked enemy 2 spend 2 BP on enemy 1 and enemy 2,
+  respectively, in their actual turn order. The first-round booster Defends if needed.
 
 Enemy turns execute automatically. English voices and switching from 1× to 2×
 before the first attack are the supported timing conditions. The program emits
 JSON action reports and the final state; `--trace` adds labeled CRT spans.
 `throne-sweep` suppresses per-action output and reuses compiled content.
 
-The seed-123 routine wins in **6 party actions, round 2**, with party HP
-**250 / 275 / 237**. After two drop checks and the first field counter reset,
-CRT state is **3423024866 after 145 modeled draws**, and the encounter counter is
-**798**. These are source-projection regression results, not a captured game trace.
+The seed-123 routine wins in **6 party actions plus 1 enemy action, round 2**,
+with party HP **250 / 240 / 237**. After two drop checks and both counter resets,
+CRT state is **3217448444 after 163 modeled draws**, and the encounter counter is
+**639**. These seed-123 results are internal regressions, not a captured game trace.
 
 ## Implemented
 
@@ -225,3 +220,8 @@ items, invalid-action rollback, full victory/defeat, and 1,024 routine seeds
 covering every party order, enemy turns and Defend. The release sweep additionally
 checks 65,536 seeds. These are source and simulator checks, not live-game
 equivalence tests.
+
+Pirro's Chapter 1 boss routine is available through `Battle::new_pirro` and
+`pirro::PirroRoutine`. Run `cargo run --example pirro -- 0 5595` to inspect a
+standalone replay. See [the profile and limits](docs/throne-pirro.md); live CRT
+validation is pending and the supplied routine can lose on some rolls.

@@ -1,0 +1,574 @@
+{
+  "tiers": [
+    {
+      "ability": "ABI_DAN_070_01",
+      "count": 1,
+      "total": 890,
+      "entries": [
+        {
+          "ability": "ABI_DAN_MAKA_039",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_038",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_037",
+          "weight": 0
+        },
+        {
+          "ability": "ABI_DAN_MAKA_036",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_035",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_034",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_033",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_032",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_031",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_030",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_029",
+          "weight": 0
+        },
+        {
+          "ability": "ABI_DAN_MAKA_028",
+          "weight": 0
+        },
+        {
+          "ability": "ABI_DAN_MAKA_027",
+          "weight": 100
+        },
+        {
+          "ability": "ABI_DAN_MAKA_026",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_025",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_024",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_023",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_022",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_021",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_020",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_019",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_018",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_017",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_016",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_014",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_013",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_011",
+          "weight": 20
+        }
+      ]
+    },
+    {
+      "ability": "ABI_DAN_070_02",
+      "count": 2,
+      "total": 880,
+      "entries": [
+        {
+          "ability": "ABI_DAN_MAKA_039",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_038",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_037",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_036",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_035",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_034",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_033",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_032",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_031",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_030",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_029",
+          "weight": 0
+        },
+        {
+          "ability": "ABI_DAN_MAKA_028",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_027",
+          "weight": 80
+        },
+        {
+          "ability": "ABI_DAN_MAKA_026",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_025",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_024",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_023",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_022",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_021",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_020",
+          "weight": 50
+        },
+        {
+          "ability": "ABI_DAN_MAKA_019",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_018",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_017",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_016",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_015",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_014",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_013",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_012",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_011",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_010",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "ability": "ABI_DAN_070_03",
+      "count": 3,
+      "total": 950,
+      "entries": [
+        {
+          "ability": "ABI_DAN_MAKA_039",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_038",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_037",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_036",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_035",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_034",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_033",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_032",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_031",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_030",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_029",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_028",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_027",
+          "weight": 80
+        },
+        {
+          "ability": "ABI_DAN_MAKA_026",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_025",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_024",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_023",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_022",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_021",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_020",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_019",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_018",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_017",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_016",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_015",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_014",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_013",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_012",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_011",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_010",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_009",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_008",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_007",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_006",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_005",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "ability": "ABI_DAN_070_04",
+      "count": 4,
+      "total": 997,
+      "entries": [
+        {
+          "ability": "ABI_DAN_MAKA_039",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_038",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_037",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_036",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_035",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_034",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_033",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_032",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_031",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_030",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_029",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_028",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_027",
+          "weight": 80
+        },
+        {
+          "ability": "ABI_DAN_MAKA_026",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_025",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_024",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_023",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_022",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_021",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_020",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_019",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_018",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_017",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_016",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_015",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_014",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_013",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_012",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_011",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_010",
+          "weight": 20
+        },
+        {
+          "ability": "ABI_DAN_MAKA_009",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_008",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_007",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_006",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_005",
+          "weight": 10
+        },
+        {
+          "ability": "ABI_DAN_MAKA_004",
+          "weight": 40
+        },
+        {
+          "ability": "ABI_DAN_MAKA_003",
+          "weight": 5
+        },
+        {
+          "ability": "ABI_DAN_MAKA_002",
+          "weight": 1
+        },
+        {
+          "ability": "ABI_DAN_MAKA_001",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "guard_variants": [
+    {
+      "id": "PC_ABI_MER_YOHEI_04_01_INVADE",
+      "weight": 10
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_04_02_INVADE",
+      "weight": 10
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_04_03_INVADE",
+      "weight": 10
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_04_04_INVADE",
+      "weight": 10
+    }
+  ]
+}

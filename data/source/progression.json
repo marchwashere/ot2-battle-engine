@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Character/Database/CharacterGrow",
+      "sha256": "0ee3a0e09db23869d700fde639b59f0f5dca5c58b52e7a6338fd16eac570b613"
+    },
+    {
+      "source": "/Game/Character/Database/PlayableCharacterDB",
+      "sha256": "d624b29cafae9397ea9e6557930820c1bc22fcbaea37617fb07f76c9ca80b650"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/Battle/Database/EnemyGroupData",
+      "sha256": "b3a58b0c90e2e01f11b8d2adec43b03748a478ba0e42c1b6c7a7207bc48f660f"
+    },
+    {
+      "source": "/Game/Item/Database/ItemDB",
+      "sha256": "89199944038f11eb9ecddde95ce199a985e1e323beab4d246c14990fc2908665"
+    },
+    {
+      "source": "/Game/Character/Database/JobData",
+      "sha256": "787d98d2be48d04bafa080a4ea828ee7f3d762455ff0a414795d9e4cb7db7ac1"
+    }
+  ]
+}

@@ -1,0 +1,508 @@
+{
+  "asset": "Battle/BP/BattlePlayerBP",
+  "sha256": "daca68dbe063d2709143c98370605e6fad0b575358dc73579b05328ef63c59a6",
+  "functions": {
+    "SetDamageForPlayer": "50861 PushExecutionFlow target=2167\n50866 LetBool\n  50867 LocalVariable PrevIsPinch\n  50878 False\n50879 LetBool\n  5087a LocalVariable CallFunc_IsCharacterDead_ReturnValue\n  5088b VirtualFunction IsCharacterDead\n50895 LetBool\n  50896 LocalVariable CallFunc_Not_PreBool_ReturnValue_2\n  508a7 CallMath import:-310:Not_PreBool\n    508ac LocalVariable CallFunc_IsCharacterDead_ReturnValue\n508be LetBool\n  508bf LocalVariable CallFunc_BooleanOR_ReturnValue\n  508d0 CallMath import:-280:BooleanOR\n    508d5 LocalVariable CallFunc_Not_PreBool_ReturnValue_2\n    508e6 InstanceVariable m_bIsExceptField\n508f8 PopExecutionFlowIfNot\n  508f9 LocalVariable CallFunc_BooleanOR_ReturnValue\n5090a PushExecutionFlow target=1865\n5090f PushExecutionFlow target=1616\n50914 PushExecutionFlow target=1586\n50919 PushExecutionFlow target=1497\n5091e PushExecutionFlow target=1275\n50923 PushExecutionFlow target=451\n50928 PushExecutionFlow target=217\n5092d LetBool\n  5092e LocalVariable CallFunc_IsCharacterPinch_ReturnValue_1\n  5093f LocalVirtualFunction IsCharacterPinch\n50949 LetBool\n  5094a LocalVariable PrevIsPinch\n  5095b LocalVariable CallFunc_IsCharacterPinch_ReturnValue_1\n5096c PopExecutionFlowIfNot\n  5096d LocalVariable InstantDeath\n5097e LetBool\n  5097f InstanceVariable m_bHitDiseaseInAction\n  50990 True\n50991 PopExecutionFlow\n50992 Context skip=24 rvalue=<null-field>\n  50993 ObjectConst import:-508:Default__LibBattle_C\n  509a4 LocalVirtualFunction GetBattleManager\n    509ad Self\n    509ae LocalVariable CallFunc_GetBattleManager_BattleManager_2\n509c0 LetBool\n  509c1 LocalVariable CallFunc_IsEndrollReplayMode_ReturnValue\n  509d2 Context skip=10 rvalue=CallFunc_IsEndrollReplayMode_ReturnValue\n    509d3 LocalVariable CallFunc_GetBattleManager_BattleManager_2\n    509f8 FinalFunction import:-431:IsEndrollReplayMode\n509fe LetBool\n  509ff LocalVariable CallFunc_Not_PreBool_ReturnValue_4\n  50a10 CallMath import:-310:Not_PreBool\n    50a15 LocalVariable CallFunc_IsEndrollReplayMode_ReturnValue\n50a27 PopExecutionFlowIfNot\n  50a28 LocalVariable CallFunc_Not_PreBool_ReturnValue_4\n50a39 Let property=PrevHP\n  50a4a LocalVariable PrevHP\n  50a5b InstanceVariable m_nCurrentHP\n50a6c Let property=CallFunc_Subtract_IntInt_ReturnValue\n  50a7d LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n  50a8e CallMath import:-322:Subtract_IntInt\n    50a93 InstanceVariable m_nCurrentHP\n    50aa4 LocalVariable DamageValue\n50ab6 LocalVirtualFunction SetHP\n  50abf LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n  50ad0 False\n  50ad1 LocalVariable CallFunc_SetHP_CurrentHP_1\n50ae3 PopExecutionFlow\n50ae4 LetBool\n  50ae5 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue_1\n  50af6 CallMath import:-290:EqualEqual_IntInt\n    50afb InstanceVariable m_nCurrentHP\n    50b0c IntConst 0\n50b12 PopExecutionFlowIfNot\n  50b13 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue_1\n50b24 Context skip=24 rvalue=<null-field>\n  50b25 ObjectConst import:-508:Default__LibBattle_C\n  50b36 LocalVirtualFunction GetBattleManager\n    50b3f Self\n    50b40 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n50b52 LetBool\n  50b53 LocalVariable CallFunc_CheckDebugSwitch_ReturnValue\n  50b64 Context skip=12 rvalue=CallFunc_CheckDebugSwitch_ReturnValue\n    50b65 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n    50b8a FinalFunction import:-422:CheckDebugSwitch\n      50b8f ByteConst 3\n50b92 JumpIfNot target=629\n  50b97 LocalVariable CallFunc_CheckDebugSwitch_ReturnValue\n50ba8 LocalVirtualFunction SetHP\n  50bb1 IntConst 1\n  50bb6 False\n  50bb7 LocalVariable CallFunc_SetHP_CurrentHP\n50bc9 PopExecutionFlow\n50bca LetBool\n  50bcb LocalVariable CallFunc_CheckSupportAilment_ReturnValue\n  50bdc VirtualFunction CheckSupportAilment\n    50be5 ByteConst 33\n    50be7 LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData\n50bf9 LetBool\n  50bfa LocalVariable CallFunc_Not_PreBool_ReturnValue\n  50c0b CallMath import:-310:Not_PreBool\n    50c10 LocalVariable PrevIsPinch\n50c22 LetBool\n  50c23 LocalVariable CallFunc_Not_PreBool_ReturnValue_3\n  50c34 CallMath import:-310:Not_PreBool\n    50c39 LocalVariable InstantDeath\n50c4b LetBool\n  50c4c LocalVariable CallFunc_BooleanAND_ReturnValue_1\n  50c5d CallMath import:-279:BooleanAND\n    50c62 LocalVariable CallFunc_Not_PreBool_ReturnValue\n    50c73 LocalVariable CallFunc_Not_PreBool_ReturnValue_3\n50c85 LetBool\n  50c86 LocalVariable CallFunc_BooleanAND_ReturnValue_2\n  50c97 CallMath import:-279:BooleanAND\n    50c9c LocalVariable CallFunc_BooleanAND_ReturnValue_1\n    50cad LocalVariable CallFunc_CheckSupportAilment_ReturnValue\n50cbf JumpIfNot target=1021\n  50cc4 LocalVariable CallFunc_BooleanAND_ReturnValue_2\n50cd5 LocalVirtualFunction GetEffectSpawnPosition\n  50cde True\n  50cdf LocalVariable CallFunc_GetEffectSpawnPosition_Position_1\n50cf1 Context skip=24 rvalue=<null-field>\n  50cf2 ObjectConst import:-505:Default__LibAccessor_EffectManager_C\n  50d03 LocalVirtualFunction GetEffectManager\n    50d0c Self\n    50d0d LocalVariable CallFunc_GetEffectManager_EffectManager\n50d1f Context skip=87 rvalue=<null-field>\n  50d20 LocalVariable CallFunc_GetEffectManager_EffectManager\n  50d3d FinalFunction import:-467:SpawnEffect\n    50d42 NameConst ENEMY_OVERHEAT\n    50d4b Self\n    50d4c LocalVariable CallFunc_GetEffectSpawnPosition_Position_1\n    50d5d RotationConst pitch=0 yaw=0 roll=0\n    50d6a False\n    50d6b LocalVariable CallFunc_SpawnEffect_Effect\n    50d7c LocalVariable CallFunc_SpawnEffect_Success\n    50d8d LocalVariable CallFunc_SpawnEffect_LoopEffect\n    50d9e VectorConst x=1 y=1 z=1\n50dac LocalVirtualFunction SetHP\n  50db5 IntConst 1\n  50dba False\n  50dbb LocalVariable CallFunc_SetHP_CurrentHP_2\n50dcd PopExecutionFlow\n50dce LocalVirtualFunction SearchDisease\n  50dd7 ByteConst 76\n  50dd9 LocalVariable CallFunc_SearchDisease_ExecHandler\n  50dea LocalVariable CallFunc_SearchDisease_Enable\n50dfc PopExecutionFlowIfNot\n  50dfd LocalVariable CallFunc_SearchDisease_Enable\n50e0e LocalVirtualFunction RemoveDisease\n  50e17 ByteConst 76\n  50e19 True\n  50e1a LocalVariable CallFunc_RemoveDisease_ExecRemove\n50e2c LocalVirtualFunction GetEffectSpawnPosition\n  50e35 True\n  50e36 LocalVariable CallFunc_GetEffectSpawnPosition_Position\n50e48 Context skip=24 rvalue=<null-field>\n  50e49 ObjectConst import:-505:Default__LibAccessor_EffectManager_C\n  50e5a LocalVirtualFunction GetEffectManager\n    50e63 Self\n    50e64 LocalVariable CallFunc_GetEffectManager_EffectManager_1\n50e76 Context skip=87 rvalue=<null-field>\n  50e77 LocalVariable CallFunc_GetEffectManager_EffectManager_1\n  50e94 FinalFunction import:-467:SpawnEffect\n    50e99 NameConst BTL_WIZARD_FUSHINOKOKUIN_ACTIVATE\n    50ea2 Self\n    50ea3 LocalVariable CallFunc_GetEffectSpawnPosition_Position\n    50eb4 RotationConst pitch=0 yaw=0 roll=0\n    50ec1 False\n    50ec2 LocalVariable CallFunc_SpawnEffect_Effect_1\n    50ed3 LocalVariable CallFunc_SpawnEffect_Success_1\n    50ee4 LocalVariable CallFunc_SpawnEffect_LoopEffect_1\n    50ef5 VectorConst x=1 y=1 z=1\n50f03 Jump target=991\n50f08 PushExecutionFlow target=1414\n50f0d LocalVirtualFunction IsGuard\n  50f16 LocalVariable CallFunc_IsGuard_GuardRatio\n  50f27 LocalVariable CallFunc_IsGuard_GuardEnable\n50f39 JumpIfNot target=1374\n  50f3e LocalVariable CallFunc_IsGuard_GuardEnable\n50f4f LetBool\n  50f50 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n  50f61 CallMath import:-300:LessEqual_IntInt\n    50f66 LocalVariable PrevHP\n    50f77 LocalVariable DamageValue\n50f89 PopExecutionFlowIfNot\n  50f8a LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n50f9b Context skip=17 rvalue=<null-field>\n  50f9c InstanceVariable AnimCharacter\n  50fb9 VirtualFunction PlayBattleAction\n    50fc2 ByteConst 15\n    50fc4 True\n50fc6 PopExecutionFlow\n50fc7 Context skip=24 rvalue=<null-field>\n  50fc8 ObjectConst import:-508:Default__LibBattle_C\n  50fd9 LocalVirtualFunction GetBattleManager_OLD\n    50fe2 Self\n    50fe3 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager_1\n50ff5 Context skip=14 rvalue=<null-field>\n  50ff6 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager_1\n  51013 LocalVirtualFunction TakeDamageVibration\n5101d PopExecutionFlow\n5101e LocalVirtualFunction UpdateStatusUI\n51028 LetBool\n  51029 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n  5103a CallMath import:-290:EqualEqual_IntInt\n    5103f InstanceVariable m_nCurrentHP\n    51050 IntConst 0\n51056 JumpIfNot target=1574\n  5105b LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n5106c LocalVirtualFunction SetStatusDead\n51076 PopExecutionFlow\n51077 LetBool\n  51078 InstanceVariable ExecDownVoice\n  51089 False\n5108a PopExecutionFlow\n5108b JumpIfNot target=1601\n  51090 LocalVariable IsPoisonDamage\n510a1 PopExecutionFlow\n510a2 LocalVirtualFunction ExecDisease_OnDamage\n510ac PopExecutionFlow\n510ad Context skip=24 rvalue=<null-field>\n  510ae ObjectConst import:-508:Default__LibBattle_C\n  510bf LocalVirtualFunction GetBattleManager_OLD\n    510c8 Self\n    510c9 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n510db Context skip=14 rvalue=<null-field>\n  510dc LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n  510f9 LocalVirtualFunction AddPlayerDamageCount\n51103 PopExecutionFlowIfNot\n  51104 InstanceVariable m_bPotentialityActionEnable\n51115 LocalVirtualFunction GetHP\n  5111e LocalVariable CallFunc_GetHP_HP\n  5112f LocalVariable CallFunc_GetHP_HPMax\n51141 Context skip=42 rvalue=<null-field>\n  51142 ObjectConst import:-508:Default__LibBattle_C\n  51153 LocalVirtualFunction CalcPotentialityActionPoint\n    5115c LocalVariable DamageValue\n    5116d LocalVariable CallFunc_GetHP_HPMax\n    5117e Self\n    5117f LocalVariable CallFunc_CalcPotentialityActionPoint_ActionPoint\n51191 Context skip=24 rvalue=<null-field>\n  51192 InstanceVariable m_cPotentialityActionComponent\n  511af LocalVirtualFunction AddPotentialityActionPoint\n    511b8 LocalVariable CallFunc_CalcPotentialityActionPoint_ActionPoint\n    511c9 False\n511cb LocalVirtualFunction UpdatePotentinalityActionUI\n511d5 PopExecutionFlow\n511d6 LetBool\n  511d7 LocalVariable CallFunc_IsCharacterPinch_ReturnValue\n  511e8 LocalVirtualFunction IsCharacterPinch\n511f2 LetBool\n  511f3 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n  51204 CallMath import:-310:Not_PreBool\n    51209 LocalVariable PrevIsPinch\n5121b LetBool\n  5121c LocalVariable CallFunc_BooleanAND_ReturnValue\n  5122d CallMath import:-279:BooleanAND\n    51232 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n    51243 LocalVariable CallFunc_IsCharacterPinch_ReturnValue\n51255 PopExecutionFlowIfNot\n  51256 LocalVariable CallFunc_BooleanAND_ReturnValue\n51267 PushExecutionFlow target=2087\n5126c LetBool\n  5126d LocalVariable CallFunc_CheckSupportAilment_ReturnValue_1\n  5127e VirtualFunction CheckSupportAilment\n    51287 ByteConst 17\n    51289 LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData_1\n5129b PopExecutionFlowIfNot\n  5129c LocalVariable CallFunc_CheckSupportAilment_ReturnValue_1\n512ad LetBool\n  512ae LocalVariable CallFunc_CheckSupportAilment_ReturnValue_1\n  512bf VirtualFunction CheckSupportAilment\n    512c8 ByteConst 17\n    512ca LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData_1\n512dc LocalVirtualFunction RecoveryBP\n  512e5 NoObject\n  512e6 StructMemberContext InvocationValue\n    512f7 LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData_1\n  51308 True\n  51309 False\n5130b PopExecutionFlow\n5130c Context skip=24 rvalue=<null-field>\n  5130d ObjectConst import:-508:Default__LibBattle_C\n  5131e LocalVirtualFunction GetBattleManager\n    51327 Self\n    51328 LocalVariable CallFunc_GetBattleManager_BattleManager\n5133a Context skip=11 rvalue=<null-field>\n  5133b LocalVariable CallFunc_GetBattleManager_BattleManager\n  51358 FinalFunction import:-442:SetPrevNoticeCharacter_Pinch\n    5135d Self\n5135f PopExecutionFlow\n51360 Return\n  51361 Nothing\n51362 EndOfScript"
+  },
+  "defaults": [
+    {
+      "UberGraphFrame": {},
+      "CurseOfBindIdleMove_IdleMoveOffset_0033B27D4CE33F04A04FC9A268E48E94": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PlayInhaleMoveTimeline_Scale_A2FDC3714C8CE51035C787B0C6E843A4": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PlayerHardenDeadKnockBackOffset_KnockbackOffset_CA9DB61B4625846E2AF3A3A73BAD8DAA": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "PartyCharaData": {
+        "PlayableCharaData": {
+          "Id": 0,
+          "DisplayName": "None",
+          "CharacterRole": "ECharacterRole::NONE",
+          "ResourceLabel": [],
+          "GuestResourceLabel": "None",
+          "VoiceCueSheet_ja": [],
+          "VoiceCueSheet_en": [],
+          "VoiceSet": "None",
+          "SpecialActionList": [],
+          "PotentialityActionLabel": "None",
+          "SecondPotentialityActionLabel": "None",
+          "SecondPotentialityActionFlag": 0,
+          "UniqueStyle": "EBATTLE_STYLE_TYPE::eNEUTRAL",
+          "ReleaseStyleFlag": 0,
+          "StyleAvailableCount": 0,
+          "InitLevel": 0,
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "WeaponStance": "EWEAPON_STANCE::NONE",
+          "MainWeapon": "EWEAPON_CATEGORY::eSWORD",
+          "FirstEquipment": {
+            "Sword": "None",
+            "Lance": "None",
+            "Dagger": "None",
+            "Axe": "None",
+            "Bow": "None",
+            "Rod": "None",
+            "Shield": "None",
+            "Head": "None",
+            "Body": "None",
+            "Accessory_00": "None",
+            "Accessory_01": "None"
+          },
+          "FirstJob": "EJOB_TYPE::eMERCHANT",
+          "FieldCommandInfo": {
+            "DayTimeFC": "MJFieldCommandType::eGeneric",
+            "DayTimeFCImpossibleFlag": 0,
+            "NightFC": "MJFieldCommandType::eGeneric",
+            "NightFCImpossibleFlag": 0
+          },
+          "MainMissionPlayingFlag": 0,
+          "SymbolLabel": "None",
+          "SymbolWhLabel": "None",
+          "DayPortraitLabel": "None",
+          "DayPortraitBgLabel": "None",
+          "NightPortraitLabel": "None",
+          "NightPortraitBgLabel": "None",
+          "PortraitNameLabel": "None",
+          "AdvancedAbility": [],
+          "TextInfoLabel": "None",
+          "CostumeList": [],
+          "CharmEnemyLabel": "None",
+          "CharmEnemyLabelForKSBattle": "None"
+        },
+        "Level": 1,
+        "HP": 0,
+        "MP": 0,
+        "Equipment": {
+          "Sword": "None",
+          "Lance": "None",
+          "Dagger": "None",
+          "Axe": "None",
+          "Bow": "None",
+          "Rod": "None",
+          "Shield": "None",
+          "Head": "None",
+          "Body": "None",
+          "Accessory_00": "None",
+          "Accessory_01": "None"
+        },
+        "FirstJobData": {
+          "ID": 0,
+          "JobID": 0,
+          "DisplayName": "None",
+          "Detail": "None",
+          "DisplayOrder": 0,
+          "MenuJobIcon": "None",
+          "AbilityJobIcon": "None",
+          "PermissionFlag": 0,
+          "EquipJobItem": "None",
+          "ProperEquipment": [],
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "JobCommandName": "None",
+          "JobCommandDetail": "None",
+          "JobCommandAbility": [],
+          "JobSupportAbility": [],
+          "JPCost": []
+        },
+        "SecondJobData": {
+          "ID": 0,
+          "JobID": 0,
+          "DisplayName": "None",
+          "Detail": "None",
+          "DisplayOrder": 0,
+          "MenuJobIcon": "None",
+          "AbilityJobIcon": "None",
+          "PermissionFlag": 0,
+          "EquipJobItem": "None",
+          "ProperEquipment": [],
+          "ParameterRevision": {
+            "HP": 0,
+            "MP": 0,
+            "BP": 0,
+            "SP": 0,
+            "POT": 0,
+            "ATK": 0,
+            "DEF": 0,
+            "MATK": 0,
+            "MDEF": 0,
+            "ACC": 0,
+            "EVA": 0,
+            "CON": 0,
+            "AGI": 0
+          },
+          "JobCommandName": "None",
+          "JobCommandDetail": "None",
+          "JobCommandAbility": [],
+          "JobSupportAbility": [],
+          "JPCost": []
+        },
+        "Disease": [],
+        "SupporterID": "None",
+        "PotentialityActionPoint": 0
+      },
+      "EquipmentParameter": {
+        "HP": 0,
+        "MP": 0,
+        "BP": 0,
+        "SP": 0,
+        "POT": 0,
+        "ATK": 0,
+        "DEF": 0,
+        "MATK": 0,
+        "MDEF": 0,
+        "ACC": 0,
+        "EVA": 0,
+        "CON": 0,
+        "AGI": 0
+      },
+      "CoverStepStart": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "CoverStepPoint": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "NextWaitTimeRevision": 1,
+      "UpdateDiseaseWaitTime": 0.6000000238418579,
+      "ReplayPlayerData": {
+        "BattleCharacterID": 0,
+        "CharaID": 0,
+        "JobID": 0,
+        "Position": {
+          "kind": "native-struct",
+          "type": "Vector",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "CharacterStatus": "EBATTLE_REPLAY_CHARA_STATUS::eREPLAY_ALIVE",
+        "CharacterDisease": 0
+      },
+      "PlayerActiveIcon": {
+        "kind": "object",
+        "index": -639,
+        "path": "/Game/UserInterface/Battle/ActionOrder/Texture/UiTX_Battle_Order_Alfa.UiTX_Battle_Order_Alfa"
+      },
+      "PlayerActiveFrontIcon": {
+        "kind": "object",
+        "index": -639,
+        "path": "/Game/UserInterface/Battle/ActionOrder/Texture/UiTX_Battle_Order_Alfa.UiTX_Battle_Order_Alfa"
+      },
+      "ActionIconSpriteData": {
+        "SrcTexture": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "SrcUV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SrcSize": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "AddTexArray": [],
+        "VertArray": [],
+        "SocketNameArray": [],
+        "SocketPosArray": [],
+        "CharaFootPivot": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "HasAdditionalTexture": false,
+        "CustomPixelsPerUnrealUnit": 0
+      },
+      "OrderIconSpriteData": {
+        "SrcTexture": {
+          "kind": "soft-object",
+          "asset": {
+            "base": "None",
+            "number": 0,
+            "text": "None"
+          },
+          "subPath": ""
+        },
+        "SrcUV": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "SrcSize": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "AddTexArray": [],
+        "VertArray": [],
+        "SocketNameArray": [],
+        "SocketPosArray": [],
+        "CharaFootPivot": {
+          "kind": "native-struct",
+          "type": "Vector2D",
+          "components": [
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            },
+            {
+              "kind": "float32",
+              "bits": 0,
+              "value": 0
+            }
+          ]
+        },
+        "HasAdditionalTexture": false,
+        "CustomPixelsPerUnrealUnit": 0
+      },
+      "CharacterActionResouceData": {
+        "FrActionList": [],
+        "ReActionList": [],
+        "LeActionList": [],
+        "RiActionList": [],
+        "Loop": [],
+        "Height": 0,
+        "TemplateSocket": false,
+        "WalkFootstep": "None",
+        "SpeedWalk": 0,
+        "SpeedRun": 0,
+        "ActionFootStep": [],
+        "ActionFootStepInterval": [],
+        "LargeIconOffsetX": 0,
+        "LargeIconOffsetY": 0,
+        "LargeIconInvertOffsetX": 0,
+        "SmallIconOffsetX": 0,
+        "SmallIconOffsetY": 0,
+        "SmallIconInvertOffsetX": 0,
+        "TabIconOffsetX": 0,
+        "TabIconOffsetY": 0,
+        "InvadeListOffsetX": 0,
+        "InvadeListOffsetY": 0,
+        "InvadeListScale": 0
+      },
+      "CurseOfBindIdleLocation": {
+        "kind": "native-struct",
+        "type": "Vector",
+        "components": [
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          },
+          {
+            "kind": "float32",
+            "bits": 0,
+            "value": 0
+          }
+        ]
+      },
+      "DebugFixedUseAbilityLabel": "None",
+      "IsEquipmentSuperMagic": false,
+      "RootComponent": {
+        "kind": "object",
+        "index": 228,
+        "path": "Default__BattlePlayerBP_C.SceneComponent"
+      }
+    }
+  ]
+}

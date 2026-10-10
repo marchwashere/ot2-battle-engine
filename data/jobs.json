@@ -1,0 +1,2100 @@
+{
+  "scholar": {
+    "id": 6,
+    "revision": {
+      "HP": 100,
+      "MP": 113,
+      "BP": 100,
+      "SP": 100,
+      "POT": 100,
+      "ATK": 100,
+      "DEF": 100,
+      "MATK": 110,
+      "MDEF": 105,
+      "ACC": 100,
+      "EVA": 100,
+      "CON": 100,
+      "AGI": 100
+    },
+    "permitted_weapons": [
+      "staff"
+    ]
+  },
+  "characters": {
+    "1": {
+      "id": "hikari",
+      "main_job": 2,
+      "permitted_weapons": [
+        "sword",
+        "lance"
+      ]
+    },
+    "4": {
+      "id": "partitio",
+      "main_job": 0,
+      "permitted_weapons": [
+        "lance",
+        "bow"
+      ]
+    },
+    "6": {
+      "id": "osvald",
+      "main_job": 6,
+      "permitted_weapons": [
+        "staff"
+      ]
+    },
+    "7": {
+      "id": "throne",
+      "main_job": 1,
+      "permitted_weapons": [
+        "sword",
+        "dagger"
+      ]
+    },
+    "8": {
+      "id": "agnea",
+      "main_job": 5,
+      "permitted_weapons": [
+        "dagger"
+      ]
+    }
+  },
+  "default_weapons": [
+    {
+      "weapon": "sword",
+      "source_id": "ITM_EQP_SWD_010",
+      "attack": 0,
+      "magic": 0
+    },
+    {
+      "weapon": "lance",
+      "source_id": "ITM_EQP_LNS_010",
+      "attack": 0,
+      "magic": 0
+    },
+    {
+      "weapon": "dagger",
+      "source_id": "ITM_EQP_DGR_010",
+      "attack": 0,
+      "magic": 0
+    },
+    {
+      "weapon": "axe",
+      "source_id": "ITM_EQP_AXE_010",
+      "attack": 0,
+      "magic": 0
+    },
+    {
+      "weapon": "bow",
+      "source_id": "ITM_EQP_BOW_010",
+      "attack": 0,
+      "magic": 0
+    },
+    {
+      "weapon": "staff",
+      "source_id": "ITM_EQP_ROD_010",
+      "attack": 0,
+      "magic": 0
+    }
+  ],
+  "scholar_abilities": [
+    {
+      "id": "ABI_SET_SCH_010",
+      "name": "Fireball",
+      "default_on_assignment": true,
+      "sp_cost": 14,
+      "tier_ids": [
+        "ABI_SCH_010_01",
+        "ABI_SCH_010_02",
+        "ABI_SCH_010_03",
+        "ABI_SCH_010_04"
+      ],
+      "tiers": [
+        {
+          "id": "ABI_SCH_010_01",
+          "ID": 1089,
+          "AbilityID": 10890,
+          "DisplayName": "ABN_SCH_010",
+          "Detail": "ABD_SCH_010_01",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 100,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_010_02",
+          "ID": 1090,
+          "AbilityID": 10900,
+          "DisplayName": "ABN_SCH_010",
+          "Detail": "ABD_SCH_010_02",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 190,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_010_03",
+          "ID": 1091,
+          "AbilityID": 10910,
+          "DisplayName": "ABN_SCH_010",
+          "Detail": "ABD_SCH_010_03",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 280,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_010_04",
+          "ID": 1092,
+          "AbilityID": 10920,
+          "DisplayName": "ABN_SCH_010",
+          "Detail": "ABD_SCH_010_04",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 370,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_020",
+      "name": "Icewind",
+      "default_on_assignment": true,
+      "sp_cost": 14,
+      "tier_ids": [
+        "ABI_SCH_020_01",
+        "ABI_SCH_020_02",
+        "ABI_SCH_020_03",
+        "ABI_SCH_020_04"
+      ],
+      "tiers": [
+        {
+          "id": "ABI_SCH_020_01",
+          "ID": 1101,
+          "AbilityID": 11010,
+          "DisplayName": "ABN_SCH_020",
+          "Detail": "ABD_SCH_020_01",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eICE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 100,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_020_02",
+          "ID": 1102,
+          "AbilityID": 11020,
+          "DisplayName": "ABN_SCH_020",
+          "Detail": "ABD_SCH_020_02",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eICE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 190,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_020_03",
+          "ID": 1103,
+          "AbilityID": 11030,
+          "DisplayName": "ABN_SCH_020",
+          "Detail": "ABD_SCH_020_03",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eICE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 280,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_020_04",
+          "ID": 1104,
+          "AbilityID": 11040,
+          "DisplayName": "ABN_SCH_020",
+          "Detail": "ABD_SCH_020_04",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eICE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 370,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_020_IceMagic.Seq_Sch_020_IceMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_030",
+      "name": "Lightning Bolt",
+      "default_on_assignment": false,
+      "sp_cost": 14,
+      "tier_ids": [
+        "ABI_SCH_030_01",
+        "ABI_SCH_030_02",
+        "ABI_SCH_030_03",
+        "ABI_SCH_030_04"
+      ],
+      "tiers": [
+        {
+          "id": "ABI_SCH_030_01",
+          "ID": 1113,
+          "AbilityID": 11130,
+          "DisplayName": "ABN_SCH_030",
+          "Detail": "ABD_SCH_030_01",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eTHUNDER",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 100,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_030_02",
+          "ID": 1114,
+          "AbilityID": 11140,
+          "DisplayName": "ABN_SCH_030",
+          "Detail": "ABD_SCH_030_02",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eTHUNDER",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 190,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_030_03",
+          "ID": 1115,
+          "AbilityID": 11150,
+          "DisplayName": "ABN_SCH_030",
+          "Detail": "ABD_SCH_030_03",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eTHUNDER",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 280,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        },
+        {
+          "id": "ABI_SCH_030_04",
+          "ID": 1116,
+          "AbilityID": 11160,
+          "DisplayName": "ABN_SCH_030",
+          "Detail": "ABD_SCH_030_04",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eTHUNDER",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 14,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 370,
+          "BaseCount": 0,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 0,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "MAGIC_DAMAGE",
+              "InvocationValue": 105,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": false,
+          "EnableConvergence": true,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": true,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": true,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_030_ThunderMagic.Seq_Sch_030_ThunderMagic"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 112
+        }
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_060",
+      "name": "Elemental Barrage",
+      "default_on_assignment": false,
+      "sp_cost": 10,
+      "tier_ids": [
+        "ABI_SCH_060_01",
+        "ABI_SCH_060_02",
+        "ABI_SCH_060_03",
+        "ABI_SCH_060_04"
+      ],
+      "tiers": [
+        {
+          "id": "ABI_SCH_060_01",
+          "ID": 1133,
+          "AbilityID": 11330,
+          "DisplayName": "ABN_SCH_060",
+          "Detail": "ABD_SCH_060_01",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eNONE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 10,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 80,
+          "BaseCount": 3,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 2,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": true,
+          "EnableConvergence": false,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": false,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": false,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 15
+        },
+        {
+          "id": "ABI_SCH_060_02",
+          "ID": 1134,
+          "AbilityID": 11340,
+          "DisplayName": "ABN_SCH_060",
+          "Detail": "ABD_SCH_060_02",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eNONE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 10,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 110,
+          "BaseCount": 4,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 2,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": true,
+          "EnableConvergence": false,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": false,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": false,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 15
+        },
+        {
+          "id": "ABI_SCH_060_03",
+          "ID": 1135,
+          "AbilityID": 11350,
+          "DisplayName": "ABN_SCH_060",
+          "Detail": "ABD_SCH_060_03",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eNONE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 10,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 140,
+          "BaseCount": 5,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 2,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": true,
+          "EnableConvergence": false,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": false,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": false,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 15
+        },
+        {
+          "id": "ABI_SCH_060_04",
+          "ID": 1136,
+          "AbilityID": 11360,
+          "DisplayName": "ABN_SCH_060",
+          "Detail": "ABD_SCH_060_04",
+          "CommandActor": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C",
+              "number": 0,
+              "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C"
+            },
+            "subPath": ""
+          },
+          "AbilityType": "EABILITY_TYPE::eMAGIC",
+          "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+          "AlwaysDisable": false,
+          "Attribute": "EATTRIBUTE_TYPE::eNONE",
+          "DependWeapon": false,
+          "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+          "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+          "ExceptEnforcer": false,
+          "CostType": "EABILITY_COST_TYPE::eMP",
+          "CostValue": 10,
+          "HitRatio": 0,
+          "CriticalRatio": 0,
+          "CriticalPower": 125,
+          "AbilityRatio": 170,
+          "BaseCount": 6,
+          "MinimumCount": 0,
+          "RandomCountMin": 0,
+          "RandomCountMax": 2,
+          "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+          "EstimateOrderCount": 0,
+          "Ailment": [
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+              "InvocationValue": 80,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            },
+            {
+              "AilmentName": "None",
+              "InvocationValue": 0,
+              "InvocationTurn": 0,
+              "DiseaseRate": 0
+            }
+          ],
+          "KeepBoostEffect": false,
+          "EnableItemAll": false,
+          "EnableSkillAll": true,
+          "EnableConvergence": false,
+          "EnableDiffusion": false,
+          "EnableReflection": true,
+          "EnableCounter": false,
+          "EnableHideOut": false,
+          "EnableRepeat": true,
+          "EnableCover": false,
+          "EnableProvoke": false,
+          "EnableDisableMagic": false,
+          "EnableEnchant": false,
+          "EnableChaseAttack": false,
+          "EnableWeakCheckAll": false,
+          "EnableNormalAttackAll": false,
+          "EnableSession": false,
+          "EnableBusinessSupport": false,
+          "EnableForceWeakness": true,
+          "EnableNoUseMaterial": false,
+          "EnableSwitchWeapon": false,
+          "EnableCompensationMagic": false,
+          "EnableExcitement": false,
+          "SongAbilityFlag": false,
+          "DanceAbilityFlag": false,
+          "EnableAutoTameMonster": true,
+          "UseAbilityCamera": true,
+          "ActionCommandSequencer": {
+            "kind": "soft-object",
+            "asset": {
+              "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi",
+              "number": 0,
+              "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi"
+            },
+            "subPath": ""
+          },
+          "AbilitySE": [
+            "None",
+            "None",
+            "None",
+            "None"
+          ],
+          "SlideFrame": 15
+        }
+      ]
+    }
+  ],
+  "maximum_hp_sp": 9999,
+  "maximum_stat": 999,
+  "additional_jobs": [
+    {
+      "id": 11,
+      "revision": {
+        "HP": 100,
+        "MP": 100,
+        "BP": 100,
+        "SP": 100,
+        "POT": 100,
+        "ATK": 107,
+        "DEF": 106,
+        "MATK": 107,
+        "MDEF": 106,
+        "ACC": 106,
+        "EVA": 100,
+        "CON": 108,
+        "AGI": 100
+      },
+      "permitted_weapons": [
+        "sword",
+        "axe"
+      ]
+    },
+    {
+      "id": 0,
+      "revision": {
+        "HP": 108,
+        "MP": 108,
+        "BP": 100,
+        "SP": 100,
+        "POT": 100,
+        "ATK": 103,
+        "DEF": 103,
+        "MATK": 103,
+        "MDEF": 103,
+        "ACC": 100,
+        "EVA": 100,
+        "CON": 100,
+        "AGI": 100
+      },
+      "permitted_weapons": [
+        "lance",
+        "bow"
+      ]
+    },
+    {
+      "id": 5,
+      "revision": {
+        "HP": 100,
+        "MP": 100,
+        "BP": 100,
+        "SP": 100,
+        "POT": 100,
+        "ATK": 100,
+        "DEF": 100,
+        "MATK": 108,
+        "MDEF": 100,
+        "ACC": 100,
+        "EVA": 110,
+        "CON": 100,
+        "AGI": 110
+      },
+      "permitted_weapons": [
+        "dagger"
+      ]
+    }
+  ]
+}

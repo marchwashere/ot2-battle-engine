@@ -1,10 +1,23 @@
 //! Headless OT2 combat simulation. See README.md for supported encounters and fidelity.
 pub mod ai;
 pub mod battle;
+pub mod bewildering_grace;
+pub mod bg_effects;
+pub mod gravell_routine;
+pub mod fight_search;
+pub mod hired_help;
 pub mod combat;
 pub mod content;
+pub mod escape;
+pub mod field_escape;
 pub mod model;
+pub mod mug;
+pub mod hikari_recruitment;
+pub mod jobs;
 pub mod opening_crt;
+pub mod pirro;
+pub mod progression;
+pub mod knowledge;
 pub mod rng;
 pub mod routine;
 

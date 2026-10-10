@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {blueprint}=require('./audit-pirro.cjs');
+const preparation=blueprint('Battle/BP/BattleManagerBP',['ExecSpecialAction_Preparation']);
+const weakness=blueprint('Battle/BP/BattleEnemyBP',['OpenWeakIcon']);
+assert(preparation.functions.ExecSpecialAction_Preparation.includes('LocalVariable ExecEnemyID'));
+assert(preparation.functions.ExecSpecialAction_Preparation.includes('LocalVirtualFunction GetCharacterID'));
+assert(/LocalVirtualFunction OpenWeakIcon\n\s+\w+ IntConst 0\n\s+\w+ True/.test(preparation.functions.ExecSpecialAction_Preparation));
+assert(/LocalVirtualFunction OpenWeakIcon\n\s+\w+ LocalVariable OpenIndex\n\s+\w+ False/.test(preparation.functions.ExecSpecialAction_Preparation));
+assert(weakness.functions.OpenWeakIcon.includes('CallMath import:-252:RandomInteger'));
+const out={preparation,weakness,conclusion:'Study Foe calls random OpenWeakIcon once per distinct enemy CharacterID with closed weaknesses. It propagates the selected icon to duplicates using bRandom=false. CRT index uses number of closed icons, not total enemies. This regional first-encounter projection starts with no previously discovered weaknesses.'};
+fs.writeFileSync(path.join(__dirname,'../data/source/field-party-audit.json'),JSON.stringify(out,null,2)+'\n');
+console.log(out.conclusion);

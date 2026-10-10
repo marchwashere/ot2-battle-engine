@@ -1,0 +1,393 @@
+04c0b PushExecutionFlow target=3031
+04c10 Context skip=19 rvalue=<null-field>
+  04c11 ObjectConst import:-9:Default__BlueprintMapLibrary
+  04c22 FinalFunction import:-45:Map_Clear
+    04c27 InstanceVariable m_acBattleVoiceDataList
+04c39 Context skip=19 rvalue=<null-field>
+  04c3a ObjectConst import:-9:Default__BlueprintMapLibrary
+  04c4b FinalFunction import:-45:Map_Clear
+    04c50 InstanceVariable m_acAbilityVoiceDataList
+04c62 PushExecutionFlow target=899
+04c67 Context skip=24 rvalue=<null-field>
+  04c68 ObjectConst import:-94:Default__LibBattle_C
+  04c79 LocalVirtualFunction GetBattleManager
+    04c82 Self
+    04c83 LocalVariable CallFunc_GetBattleManager_BattleManager_1
+04c95 LetBool
+  04c96 LocalVariable CallFunc_GetBattleVoiceSetList_ReturnValue
+  04ca7 Context skip=32 rvalue=CallFunc_GetBattleVoiceSetList_ReturnValue
+    04ca8 LocalVariable CallFunc_GetBattleManager_BattleManager_1
+    04ccd LocalVirtualFunction GetBattleVoiceSetList
+      04cd6 LocalVariable strBattleVoiceID
+      04ce7 LocalVariable CallFunc_GetBattleVoiceSetList_astrBattleVoiceLabel
+04cf9 PopExecutionFlowIfNot
+  04cfa LocalVariable CallFunc_GetBattleVoiceSetList_ReturnValue
+04d0b Context skip=24 rvalue=<null-field>
+  04d0c ObjectConst import:-94:Default__LibBattle_C
+  04d1d LocalVirtualFunction GetBattleManager
+    04d26 Self
+    04d27 LocalVariable CallFunc_GetBattleManager_BattleManager_1
+04d39 LetBool
+  04d3a LocalVariable CallFunc_GetBattleVoiceSetList_ReturnValue
+  04d4b Context skip=32 rvalue=CallFunc_GetBattleVoiceSetList_ReturnValue
+    04d4c LocalVariable CallFunc_GetBattleManager_BattleManager_1
+    04d71 LocalVirtualFunction GetBattleVoiceSetList
+      04d7a LocalVariable strBattleVoiceID
+      04d8b LocalVariable CallFunc_GetBattleVoiceSetList_astrBattleVoiceLabel
+04d9d Let property=WorkBattleVoiceLabelList
+  04dae LocalVariable WorkBattleVoiceLabelList
+  04dbf LocalVariable CallFunc_GetBattleVoiceSetList_astrBattleVoiceLabel
+04dd0 Let property=Temp_int_Loop_Counter_Variable
+  04de1 LocalVariable Temp_int_Loop_Counter_Variable
+  04df2 IntConst 0
+04df7 Let property=Temp_int_Array_Index_Variable
+  04e08 LocalVariable Temp_int_Array_Index_Variable
+  04e19 IntConst 0
+04e1e Let property=CallFunc_Array_Length_ReturnValue
+  04e2f LocalVariable CallFunc_Array_Length_ReturnValue
+  04e40 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue
+    04e41 ObjectConst import:-93:Default__KismetArrayLibrary
+    04e5a FinalFunction import:-52:Array_Length
+      04e5f LocalVariable WorkBattleVoiceLabelList
+04e71 LetBool
+  04e72 LocalVariable CallFunc_Less_IntInt_ReturnValue
+  04e83 CallMath import:-64:Less_IntInt
+    04e88 LocalVariable Temp_int_Loop_Counter_Variable
+    04e99 LocalVariable CallFunc_Array_Length_ReturnValue
+04eab PopExecutionFlowIfNot
+  04eac LocalVariable CallFunc_Less_IntInt_ReturnValue
+04ebd Let property=Temp_int_Array_Index_Variable
+  04ece LocalVariable Temp_int_Array_Index_Variable
+  04edf LocalVariable Temp_int_Loop_Counter_Variable
+04ef0 PushExecutionFlow target=915
+04ef5 Context skip=37 rvalue=<null-field>
+  04ef6 ObjectConst import:-93:Default__KismetArrayLibrary
+  04f07 FinalFunction import:-49:Array_Get
+    04f0c LocalVariable WorkBattleVoiceLabelList
+    04f1d LocalVariable Temp_int_Array_Index_Variable
+    04f2e LocalVariable CallFunc_Array_Get_Item
+04f40 LetBool
+  04f41 LocalVariable CallFunc_GetDataTableRowFromName_ReturnValue
+  04f52 Context skip=37 rvalue=CallFunc_GetDataTableRowFromName_ReturnValue
+    04f53 ObjectConst import:-33:Default__DataTableFunctionLibrary
+    04f6c FinalFunction import:-47:GetDataTableRowFromName
+      04f71 ObjectConst import:-32:BattleVoiceSet
+      04f76 LocalVariable CallFunc_Array_Get_Item
+      04f87 LocalVariable CallFunc_GetDataTableRowFromName_OutRow
+04f99 PopExecutionFlowIfNot
+  04f9a LocalVariable CallFunc_GetDataTableRowFromName_ReturnValue
+04fab Let property=WorkBattleVoiceSetData
+  04fbc LocalVariable WorkBattleVoiceSetData
+  04fcd LocalVariable CallFunc_GetDataTableRowFromName_OutRow
+04fde Let property=WorkBattleVoiceType
+  04fef LocalVariable WorkBattleVoiceType
+  05000 StructMemberContext BattleVoiceType
+    05011 LocalVariable CallFunc_GetDataTableRowFromName_OutRow
+05022 Context skip=37 rvalue=<null-field>
+  05023 ObjectConst import:-93:Default__KismetArrayLibrary
+  05034 FinalFunction import:-49:Array_Get
+    05039 LocalVariable WorkBattleVoiceLabelList
+    0504a LocalVariable Temp_int_Array_Index_Variable
+    0505b LocalVariable CallFunc_Array_Get_Item
+0506d Context skip=46 rvalue=<null-field>
+  0506e ObjectConst import:-9:Default__BlueprintMapLibrary
+  0507f FinalFunction import:-44:Map_Add
+    05084 InstanceVariable VoiceLabelToVoiceSetLabel
+    05095 StructMemberContext VoiceLabel
+      050a6 LocalVariable CallFunc_GetDataTableRowFromName_OutRow
+    050b7 LocalVariable CallFunc_Array_Get_Item
+050c9 PushExecutionFlow target=2011
+050ce PushExecutionFlow target=1836
+050d3 PushExecutionFlow target=1537
+050d8 PushExecutionFlow target=1238
+050dd PushExecutionFlow target=989
+050e2 LetBool
+  050e3 LocalVariable EnableBattleInfomation
+  050f4 True
+050f5 PopExecutionFlow
+050f6 LetBool
+  050f7 LocalOutVariable ReturnValue
+  05108 True
+05109 Jump target=3031
+0510e Let property=CallFunc_Add_IntInt_ReturnValue
+  0511f LocalVariable CallFunc_Add_IntInt_ReturnValue
+  05130 CallMath import:-54:Add_IntInt
+    05135 LocalVariable Temp_int_Loop_Counter_Variable
+    05146 IntConst 1
+0514c Let property=Temp_int_Loop_Counter_Variable
+  0515d LocalVariable Temp_int_Loop_Counter_Variable
+  0516e LocalVariable CallFunc_Add_IntInt_ReturnValue
+0517f Jump target=395
+05184 LetBool
+  05185 LocalVariable CallFunc_NotEqual_NameName_ReturnValue_1
+  05196 CallMath import:-69:NotEqual_NameName
+    0519b StructMemberContext EnemyGroupID
+      051ac LocalVariable WorkBattleVoiceSetData
+    051bd NameConst None
+051c7 PopExecutionFlowIfNot
+  051c8 LocalVariable CallFunc_NotEqual_NameName_ReturnValue_1
+051d9 Context skip=24 rvalue=<null-field>
+  051da ObjectConst import:-94:Default__LibBattle_C
+  051eb LocalVirtualFunction GetBattleManager
+    051f4 Self
+    051f5 LocalVariable CallFunc_GetBattleManager_BattleManager
+05207 LetBool
+  05208 LocalVariable CallFunc_GetBattleInfomation_ReturnValue
+  05219 Context skip=41 rvalue=CallFunc_GetBattleInfomation_ReturnValue
+    0521a LocalVariable CallFunc_GetBattleManager_BattleManager
+    0523f LocalVirtualFunction GetBattleInfomation
+      05248 LocalVariable CallFunc_GetBattleInfomation_strEnemyGroupID
+      05259 LocalVariable CallFunc_GetBattleInfomation_bBossBattle
+      0526a LocalVariable CallFunc_GetBattleInfomation_bFieldCommandBattle
+0527c LetBool
+  0527d LocalVariable CallFunc_NotEqual_NameName_ReturnValue_2
+  0528e CallMath import:-69:NotEqual_NameName
+    05293 StructMemberContext EnemyGroupID
+      052a4 LocalVariable WorkBattleVoiceSetData
+    052b5 LocalVariable CallFunc_GetBattleInfomation_strEnemyGroupID
+052c7 PopExecutionFlowIfNot
+  052c8 LocalVariable CallFunc_NotEqual_NameName_ReturnValue_2
+052d9 LetBool
+  052da LocalVariable EnableBattleInfomation
+  052eb False
+052ec PopExecutionFlow
+052ed LetBool
+  052ee LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  052ff CallMath import:-57:EqualEqual_ByteByte
+    05304 LocalVariable WorkBattleVoiceType
+    05315 ByteConst 2
+05318 LetBool
+  05319 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+  0532a CallMath import:-57:EqualEqual_ByteByte
+    0532f LocalVariable WorkBattleVoiceType
+    05340 ByteConst 1
+05343 LetBool
+  05344 LocalVariable CallFunc_BooleanOR_ReturnValue
+  05355 CallMath import:-56:BooleanOR
+    0535a LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+    0536b LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+0537d PopExecutionFlowIfNot
+  0537e LocalVariable CallFunc_BooleanOR_ReturnValue
+0538f PopExecutionFlowIfNot
+  05390 StructMemberContext BossFlag
+    053a1 LocalVariable WorkBattleVoiceSetData
+053b2 Context skip=24 rvalue=<null-field>
+  053b3 ObjectConst import:-94:Default__LibBattle_C
+  053c4 LocalVirtualFunction GetBattleManager
+    053cd Self
+    053ce LocalVariable CallFunc_GetBattleManager_BattleManager
+053e0 LetBool
+  053e1 LocalVariable CallFunc_GetBattleInfomation_ReturnValue
+  053f2 Context skip=41 rvalue=CallFunc_GetBattleInfomation_ReturnValue
+    053f3 LocalVariable CallFunc_GetBattleManager_BattleManager
+    05418 LocalVirtualFunction GetBattleInfomation
+      05421 LocalVariable CallFunc_GetBattleInfomation_strEnemyGroupID
+      05432 LocalVariable CallFunc_GetBattleInfomation_bBossBattle
+      05443 LocalVariable CallFunc_GetBattleInfomation_bFieldCommandBattle
+05455 LetBool
+  05456 LocalVariable CallFunc_Not_PreBool_ReturnValue_1
+  05467 CallMath import:-66:Not_PreBool
+    0546c LocalVariable CallFunc_GetBattleInfomation_bBossBattle
+0547e PopExecutionFlowIfNot
+  0547f LocalVariable CallFunc_Not_PreBool_ReturnValue_1
+05490 LetBool
+  05491 LocalVariable EnableBattleInfomation
+  054a2 False
+054a3 PopExecutionFlow
+054a4 LetBool
+  054a5 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+  054b6 CallMath import:-57:EqualEqual_ByteByte
+    054bb LocalVariable WorkBattleVoiceType
+    054cc ByteConst 2
+054cf LetBool
+  054d0 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+  054e1 CallMath import:-57:EqualEqual_ByteByte
+    054e6 LocalVariable WorkBattleVoiceType
+    054f7 ByteConst 1
+054fa LetBool
+  054fb LocalVariable CallFunc_BooleanOR_ReturnValue
+  0550c CallMath import:-56:BooleanOR
+    05511 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1
+    05522 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue
+05534 PopExecutionFlowIfNot
+  05535 LocalVariable CallFunc_BooleanOR_ReturnValue
+05546 PopExecutionFlowIfNot
+  05547 StructMemberContext FieldCommandFlag
+    05558 LocalVariable WorkBattleVoiceSetData
+05569 Context skip=24 rvalue=<null-field>
+  0556a ObjectConst import:-94:Default__LibBattle_C
+  0557b LocalVirtualFunction GetBattleManager
+    05584 Self
+    05585 LocalVariable CallFunc_GetBattleManager_BattleManager
+05597 LetBool
+  05598 LocalVariable CallFunc_GetBattleInfomation_ReturnValue
+  055a9 Context skip=41 rvalue=CallFunc_GetBattleInfomation_ReturnValue
+    055aa LocalVariable CallFunc_GetBattleManager_BattleManager
+    055cf LocalVirtualFunction GetBattleInfomation
+      055d8 LocalVariable CallFunc_GetBattleInfomation_strEnemyGroupID
+      055e9 LocalVariable CallFunc_GetBattleInfomation_bBossBattle
+      055fa LocalVariable CallFunc_GetBattleInfomation_bFieldCommandBattle
+0560c LetBool
+  0560d LocalVariable CallFunc_Not_PreBool_ReturnValue
+  0561e CallMath import:-66:Not_PreBool
+    05623 LocalVariable CallFunc_GetBattleInfomation_bFieldCommandBattle
+05635 PopExecutionFlowIfNot
+  05636 LocalVariable CallFunc_Not_PreBool_ReturnValue
+05647 LetBool
+  05648 LocalVariable EnableBattleInfomation
+  05659 False
+0565a PopExecutionFlow
+0565b LetBool
+  0565c LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue_1
+  0566d CallMath import:-67:NotEqual_ByteByte
+    05672 StructMemberContext BattleVoiceType
+      05683 LocalVariable WorkBattleVoiceSetData
+    05694 ByteConst 8
+05697 PopExecutionFlowIfNot
+  05698 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue_1
+056a9 LetBool
+  056aa LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+  056bb CallMath import:-69:NotEqual_NameName
+    056c0 StructMemberContext EventFlag
+      056d1 LocalVariable WorkBattleVoiceSetData
+    056e2 NameConst None
+056ec PopExecutionFlowIfNot
+  056ed LocalVariable CallFunc_NotEqual_NameName_ReturnValue
+056fe FinalFunction import:-85:GetEventFlag
+  05703 StructMemberContext EventFlag
+    05714 LocalVariable WorkBattleVoiceSetData
+  05725 LocalVariable CallFunc_GetEventFlag_Value
+05737 JumpIfNot target=1999
+  0573c LocalVariable CallFunc_GetEventFlag_Value
+0574d PopExecutionFlow
+0574e LetBool
+  0574f LocalVariable EnableBattleInfomation
+  05760 False
+05761 PopExecutionFlow
+05762 PopExecutionFlowIfNot
+  05763 LocalVariable EnableBattleInfomation
+05774 LetBool
+  05775 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+  05786 CallMath import:-67:NotEqual_ByteByte
+    0578b LocalVariable WorkBattleVoiceType
+    0579c ByteConst 18
+0579f JumpIfNot target=2535
+  057a4 LocalVariable CallFunc_NotEqual_ByteByte_ReturnValue
+057b5 PushExecutionFlow target=2475
+057ba LetBool
+  057bb LocalVariable CallFunc_Map_Find_ReturnValue_1
+  057cc Context skip=37 rvalue=CallFunc_Map_Find_ReturnValue_1
+    057cd ObjectConst import:-9:Default__BlueprintMapLibrary
+    057e6 FinalFunction import:-46:Map_Find
+      057eb InstanceVariable m_acBattleVoiceDataList
+      057fc LocalVariable WorkBattleVoiceType
+      0580d LocalVariable CallFunc_Map_Find_Value_1
+0581f JumpIfNot target=2355
+  05824 LocalVariable CallFunc_Map_Find_ReturnValue_1
+05835 LetBool
+  05836 LocalVariable CallFunc_Map_Find_ReturnValue_1
+  05847 Context skip=37 rvalue=CallFunc_Map_Find_ReturnValue_1
+    05848 ObjectConst import:-9:Default__BlueprintMapLibrary
+    05861 FinalFunction import:-46:Map_Find
+      05866 InstanceVariable m_acBattleVoiceDataList
+      05877 LocalVariable WorkBattleVoiceType
+      05888 LocalVariable CallFunc_Map_Find_Value_1
+0589a Let property=WorkBattleVoiceDataList
+  058ab LocalVariable WorkBattleVoiceDataList
+  058bc LocalVariable CallFunc_Map_Find_Value_1
+058cd Let property=WorkBattleVoiceDataArray
+  058de LocalVariable WorkBattleVoiceDataArray
+  058ef StructMemberContext m_acBattleVoiceData
+    05900 LocalVariable WorkBattleVoiceDataList
+05911 LocalVirtualFunction InsertBattleVoiceData
+  0591a LocalVariable WorkBattleVoiceDataArray
+  0592b LocalVariable WorkBattleVoiceSetData
+0593d Let property=m_acBattleVoiceData
+  0594e StructMemberContext m_acBattleVoiceData
+    0595f LocalVariable WorkBattleVoiceDataList
+  05970 LocalVariable WorkBattleVoiceDataArray
+05981 PopExecutionFlow
+05982 SetArray
+  05983 LocalVariable K2Node_MakeArray_Array_1
+  05994 LocalVariable WorkBattleVoiceSetData
+059a6 Let property=m_eBattleVoiceType
+  059b7 StructMemberContext m_eBattleVoiceType
+    059c8 LocalVariable K2Node_MakeStruct_BattleVoiceDataList_1
+  059d9 LocalVariable WorkBattleVoiceType
+059ea Let property=m_acBattleVoiceData
+  059fb StructMemberContext m_acBattleVoiceData
+    05a0c LocalVariable K2Node_MakeStruct_BattleVoiceDataList_1
+  05a1d LocalVariable K2Node_MakeArray_Array_1
+05a2e Let property=WorkBattleVoiceDataList
+  05a3f LocalVariable WorkBattleVoiceDataList
+  05a50 LocalVariable K2Node_MakeStruct_BattleVoiceDataList_1
+05a61 PopExecutionFlow
+05a62 Context skip=37 rvalue=<null-field>
+  05a63 ObjectConst import:-9:Default__BlueprintMapLibrary
+  05a74 FinalFunction import:-44:Map_Add
+    05a79 InstanceVariable m_acBattleVoiceDataList
+    05a8a LocalVariable WorkBattleVoiceType
+    05a9b LocalVariable WorkBattleVoiceDataList
+05aad PopExecutionFlow
+05aae PushExecutionFlow target=2962
+05ab3 LetBool
+  05ab4 LocalVariable CallFunc_Map_Find_ReturnValue
+  05ac5 Context skip=46 rvalue=CallFunc_Map_Find_ReturnValue
+    05ac6 ObjectConst import:-9:Default__BlueprintMapLibrary
+    05adf FinalFunction import:-46:Map_Find
+      05ae4 InstanceVariable m_acAbilityVoiceDataList
+      05af5 StructMemberContext AbilityID
+        05b06 LocalVariable WorkBattleVoiceSetData
+      05b17 LocalVariable CallFunc_Map_Find_Value
+05b29 JumpIfNot target=2842
+  05b2e LocalVariable CallFunc_Map_Find_ReturnValue
+05b3f LetBool
+  05b40 LocalVariable CallFunc_Map_Find_ReturnValue
+  05b51 Context skip=46 rvalue=CallFunc_Map_Find_ReturnValue
+    05b52 ObjectConst import:-9:Default__BlueprintMapLibrary
+    05b6b FinalFunction import:-46:Map_Find
+      05b70 InstanceVariable m_acAbilityVoiceDataList
+      05b81 StructMemberContext AbilityID
+        05b92 LocalVariable WorkBattleVoiceSetData
+      05ba3 LocalVariable CallFunc_Map_Find_Value
+05bb5 Let property=WorkBattleVoiceDataList
+  05bc6 LocalVariable WorkBattleVoiceDataList
+  05bd7 LocalVariable CallFunc_Map_Find_Value
+05be8 Let property=WorkBattleVoiceDataArray
+  05bf9 LocalVariable WorkBattleVoiceDataArray
+  05c0a StructMemberContext m_acBattleVoiceData
+    05c1b LocalVariable WorkBattleVoiceDataList
+05c2c LocalVirtualFunction InsertBattleVoiceData
+  05c35 LocalVariable WorkBattleVoiceDataArray
+  05c46 LocalVariable WorkBattleVoiceSetData
+05c58 Let property=m_acBattleVoiceData
+  05c69 StructMemberContext m_acBattleVoiceData
+    05c7a LocalVariable WorkBattleVoiceDataList
+  05c8b LocalVariable WorkBattleVoiceDataArray
+05c9c PopExecutionFlow
+05c9d SetArray
+  05c9e LocalVariable K2Node_MakeArray_Array
+  05caf LocalVariable WorkBattleVoiceSetData
+05cc1 Let property=m_eBattleVoiceType
+  05cd2 StructMemberContext m_eBattleVoiceType
+    05ce3 LocalVariable K2Node_MakeStruct_BattleVoiceDataList
+  05cf4 LocalVariable WorkBattleVoiceType
+05d05 Let property=m_acBattleVoiceData
+  05d16 StructMemberContext m_acBattleVoiceData
+    05d27 LocalVariable K2Node_MakeStruct_BattleVoiceDataList
+  05d38 LocalVariable K2Node_MakeArray_Array
+05d49 Let property=WorkBattleVoiceDataList
+  05d5a LocalVariable WorkBattleVoiceDataList
+  05d6b LocalVariable K2Node_MakeStruct_BattleVoiceDataList
+05d7c PopExecutionFlow
+05d7d Context skip=46 rvalue=<null-field>
+  05d7e ObjectConst import:-9:Default__BlueprintMapLibrary
+  05d8f FinalFunction import:-44:Map_Add
+    05d94 InstanceVariable m_acAbilityVoiceDataList
+    05da5 StructMemberContext AbilityID
+      05db6 LocalVariable WorkBattleVoiceSetData
+    05dc7 LocalVariable WorkBattleVoiceDataList
+05dd9 PopExecutionFlow
+05dda Return
+  05ddb LocalOutVariable ReturnValue
+05dec EndOfScript

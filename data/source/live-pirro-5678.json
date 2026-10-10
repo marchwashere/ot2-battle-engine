@@ -1,0 +1,1473 @@
+{
+  "source": "Live hardware-breakpoint CRT capture, 2026-09-28; original debug registers restored on detach.",
+  "capture_sha256": "d7f5687482bddb193a83e4dc1e8022f97daf06e17975f040cf10f546b5ee59c1",
+  "initial_seed": 0,
+  "initial_advances": 5678,
+  "initial_state": 2860266246,
+  "final_advances": 5881,
+  "final_state": 531955483,
+  "command_menus": [
+    {
+      "round": 1,
+      "actor": 0,
+      "advances": 5714
+    },
+    {
+      "round": 2,
+      "actor": 0,
+      "advances": 5752
+    },
+    {
+      "round": 3,
+      "actor": 0,
+      "advances": 5783
+    },
+    {
+      "round": 4,
+      "actor": 0,
+      "advances": 5813
+    },
+    {
+      "round": 5,
+      "actor": 0,
+      "advances": 5860
+    },
+    {
+      "round": 6,
+      "actor": 0,
+      "advances": 5870
+    }
+  ],
+  "reported": {
+    "round_4_sword": {
+      "critical": true,
+      "damage": 38
+    },
+    "outcome": "defeat"
+  },
+  "verified_calls": 203,
+  "verification": "All recorded CRT states/caller categories and six menus match, including the final state at 5881. GetActionCommandForItem enables the ability-camera gate, suppressing PlayFinishBlow's timer after Shadow Soulstone. Other winning/boosted paths remain source-derived pending live captures.",
+  "records": [
+    {
+      "position": 5678,
+      "before": 2860266246,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.Initialize",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5679,
+      "before": 2538708401,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147465444"
+    },
+    {
+      "position": 5680,
+      "before": 3240610224,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5681,
+      "before": 2874278323,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.InitializeEnemy",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5682,
+      "before": 3418170794,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5683,
+      "before": 1273910725,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5684,
+      "before": 1819472244,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5685,
+      "before": 390896231,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5686,
+      "before": 3799591822,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5687,
+      "before": 183948313,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5688,
+      "before": 3957573240,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5689,
+      "before": 278604635,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5690,
+      "before": 2280278194,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5691,
+      "before": 2110590125,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5692,
+      "before": 606366908,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5693,
+      "before": 2261731471,
+      "returnRva": "0x2C4A60D",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5694,
+      "before": 1420542230,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5695,
+      "before": 3836687233,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5696,
+      "before": 1984579648,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5697,
+      "before": 825804291,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5698,
+      "before": 3541964986,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5699,
+      "before": 3482041493,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5700,
+      "before": 3847879940,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5701,
+      "before": 777631671,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5702,
+      "before": 1896551326,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5703,
+      "before": 3642055657,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5704,
+      "before": 889941768,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5705,
+      "before": 3080352171,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5706,
+      "before": 881440194,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5707,
+      "before": 404161917,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5708,
+      "before": 3855467084,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5709,
+      "before": 1027442655,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5710,
+      "before": 941769510,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5711,
+      "before": 990375249,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5712,
+      "before": 839604944,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5713,
+      "before": 2123615827,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5714,
+      "before": 842153930,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5715,
+      "before": 2178910053,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5716,
+      "before": 1890442388,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5717,
+      "before": 1919965447,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5718,
+      "before": 2341498798,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.SelectRandomTargetWithWeight",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5719,
+      "before": 170493881,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5720,
+      "before": 2162305944,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5721,
+      "before": 333216763,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5722,
+      "before": 3379615442,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5723,
+      "before": 559538765,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5724,
+      "before": 589065180,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.SelectRandomTargetWithWeight",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5725,
+      "before": 1728826159,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5726,
+      "before": 1317583158,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5727,
+      "before": 2439039777,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5728,
+      "before": 1666974048,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5729,
+      "before": 1250957987,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5730,
+      "before": 3077741274,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5731,
+      "before": 461289013,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5732,
+      "before": 2024771620,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5733,
+      "before": 3905781335,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5734,
+      "before": 1448230846,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5735,
+      "before": 2505594761,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5736,
+      "before": 3187211304,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5737,
+      "before": 3719187019,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5738,
+      "before": 2444798946,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5739,
+      "before": 1548395293,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5740,
+      "before": 2817616236,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5741,
+      "before": 1687622271,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5742,
+      "before": 717759302,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5743,
+      "before": 318688497,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5744,
+      "before": 3698146288,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5745,
+      "before": 580561651,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5746,
+      "before": 2929207786,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5747,
+      "before": 3711846661,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5748,
+      "before": 3470792628,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5749,
+      "before": 1626220455,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5750,
+      "before": 2530837454,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5751,
+      "before": 2382809945,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5752,
+      "before": 2250301624,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5753,
+      "before": 3416054939,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5754,
+      "before": 3719967986,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5755,
+      "before": 2078164973,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5756,
+      "before": 1869462268,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5757,
+      "before": 142368207,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5758,
+      "before": 151617878,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5759,
+      "before": 4016501441,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.SelectRandomTargetWithWeight",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5760,
+      "before": 1655704192,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5761,
+      "before": 3126886211,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5762,
+      "before": 4036750586,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5763,
+      "before": 1613971413,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5764,
+      "before": 1006662468,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5765,
+      "before": 3297727735,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5766,
+      "before": 3287235550,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5767,
+      "before": 4091142953,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5768,
+      "before": 2926238024,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5769,
+      "before": 3799331563,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5770,
+      "before": 319713794,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5771,
+      "before": 4081701053,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5772,
+      "before": 871522444,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5773,
+      "before": 3885542687,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5774,
+      "before": 3736458086,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5775,
+      "before": 710818961,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5776,
+      "before": 1054174480,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5777,
+      "before": 1003394963,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5778,
+      "before": 4088849418,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5779,
+      "before": 1706203813,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5780,
+      "before": 269591252,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5781,
+      "before": 1739458119,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5782,
+      "before": 362571758,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5783,
+      "before": 2193006329,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5784,
+      "before": 3609716184,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5785,
+      "before": 3309587771,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5786,
+      "before": 3163448082,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5787,
+      "before": 3322035597,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5788,
+      "before": 4280310300,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5789,
+      "before": 2835939439,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5790,
+      "before": 1786124662,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5791,
+      "before": 1810475617,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5792,
+      "before": 3436077984,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5793,
+      "before": 2534536163,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5794,
+      "before": 3680636698,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5795,
+      "before": 2807126389,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5796,
+      "before": 2991892068,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5797,
+      "before": 1485257623,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5798,
+      "before": 2502559742,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5799,
+      "before": 2193751753,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5800,
+      "before": 4226352744,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5801,
+      "before": 89598859,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5802,
+      "before": 2589132834,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5803,
+      "before": 1471975005,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5804,
+      "before": 3117983660,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5805,
+      "before": 1445615551,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5806,
+      "before": 1144214406,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5807,
+      "before": 3494788145,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5808,
+      "before": 197914160,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5809,
+      "before": 3533149235,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5810,
+      "before": 2287365674,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5811,
+      "before": 2799991877,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5812,
+      "before": 826965492,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5813,
+      "before": 2945971431,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5814,
+      "before": 757144590,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5815,
+      "before": 2556494489,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckCritical",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5816,
+      "before": 58669816,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5817,
+      "before": 1916456411,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5818,
+      "before": 2981454130,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.RandomBoolForAilment",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5819,
+      "before": 1013826349,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5820,
+      "before": 3158067516,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5821,
+      "before": 2862199567,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5822,
+      "before": 3977675158,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5823,
+      "before": 3088118273,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5824,
+      "before": 775883968,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5825,
+      "before": 1527543939,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5826,
+      "before": 2827813178,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5827,
+      "before": 2122384149,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5828,
+      "before": 3535022468,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5829,
+      "before": 3751621175,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5830,
+      "before": 3108676638,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5831,
+      "before": 2486741609,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5832,
+      "before": 1341883272,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5833,
+      "before": 1773941803,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5834,
+      "before": 1565421122,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5835,
+      "before": 139123709,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5836,
+      "before": 1571569356,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5837,
+      "before": 1681134175,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5838,
+      "before": 3750273958,
+      "returnRva": "0x30D7604",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5839,
+      "before": 2549533649,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5840,
+      "before": 702070608,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5841,
+      "before": 1398644947,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5842,
+      "before": 3342780490,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5843,
+      "before": 2960911845,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5844,
+      "before": 2744297748,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Character/BP/Type/KSBattleCharacterEnemy.KSBattleCharacterEnemy_C.ExecuteUbergraph_KSBattleCharacterEnemy",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.KSBattleCharacterEnemy_C_2147465444"
+    },
+    {
+      "position": 5845,
+      "before": 93582215,
+      "returnRva": "0x30D7424",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.SelectRandomTargetWithWeight",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5846,
+      "before": 380608558,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5847,
+      "before": 1127085625,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5848,
+      "before": 1320083480,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5849,
+      "before": 669539963,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5850,
+      "before": 1559703378,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5851,
+      "before": 533256397,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5852,
+      "before": 2227800156,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5853,
+      "before": 2467722671,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5854,
+      "before": 2670901686,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5855,
+      "before": 3372534177,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5856,
+      "before": 1200227808,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5857,
+      "before": 3837267235,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5858,
+      "before": 1558496090,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5859,
+      "before": 4150934709,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5860,
+      "before": 136772772,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5861,
+      "before": 951662807,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5862,
+      "before": 865669182,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckCritical",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5863,
+      "before": 1046865417,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5864,
+      "before": 136990888,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5865,
+      "before": 386682059,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5866,
+      "before": 3855131746,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5867,
+      "before": 2275195293,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5868,
+      "before": 930424300,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5869,
+      "before": 3919437055,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5870,
+      "before": 3372073926,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5871,
+      "before": 1484778353,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5872,
+      "before": 3011764336,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattlePlayerBP.BattlePlayerBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472"
+    },
+    {
+      "position": 5873,
+      "before": 2391326067,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Battle/BP/BattleEnemyBP.BattleEnemyBP_C.BeginBattleTurn",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445"
+    },
+    {
+      "position": 5874,
+      "before": 3744985706,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5875,
+      "before": 371257221,
+      "returnRva": "0x2C57B26",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5876,
+      "before": 1274160180,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattleEnemyBP_C_2147465445.NODE_AddBP_BattleVoiceComponent-0"
+    },
+    {
+      "position": 5877,
+      "before": 3666477607,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Library/LibAilment.LibAilment_C.CheckHit",
+      "object": "/Game/Library/LibAilment.Default__LibAilment_C"
+    },
+    {
+      "position": 5878,
+      "before": 529527886,
+      "returnRva": "0x30D7065",
+      "blueprint": "/Game/Library/LibBattle.LibBattle_C.GetCalcValueRandomRatio",
+      "object": "/Game/Library/LibBattle.Default__LibBattle_C"
+    },
+    {
+      "position": 5879,
+      "before": 3141892569,
+      "returnRva": "0x2C52E57",
+      "blueprint": null,
+      "object": null
+    },
+    {
+      "position": 5880,
+      "before": 2956907832,
+      "returnRva": "0x2C57B26",
+      "blueprint": "/Game/Battle/BP/BattleCharacterComponent/BP_BattleVoiceComponent.BP_BattleVoiceComponent_C.PlayBattleVoice",
+      "object": "/Game/Level/Persistent.Persistent.PersistentLevel.BattlePlayerBP_C_2147465472.NODE_AddBP_BattleVoiceComponent-0"
+    }
+  ]
+}

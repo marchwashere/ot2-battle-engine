@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "asset": "Character/BP/BattleAI/BOSS/Thief/BattleAI_Bos_Thi_C01_010",
+      "sha256": "25b66e02f2d0669cf6dc22d07707bee038d02457718195c659011fd3810e7470",
+      "superclass": "/Game/Character/BP/BattleAI/Base/BP_BattleAI_Boss_Base.BP_BattleAI_Boss_Base_C",
+      "checked_functions": [
+        "PostUpdateThink",
+        "PreOrderStart",
+        "AIInitialize",
+        "PreTurnStart",
+        "PreUpdateThink",
+        "UpdateThink",
+        "PostOrderEnd",
+        "PostSignOfBoost",
+        "OnBreak"
+      ]
+    },
+    {
+      "asset": "Character/BP/BattleAI/Base/BP_BattleAI_Boss_Base",
+      "sha256": "7610ef8e8395be69058583ef47b550d0f8fe08f111e781aa9d7a8262ae7b4b43",
+      "superclass": "/Game/Character/BP/BattleAI/Base/BP_BattleAI_Base.BP_BattleAI_Base_C",
+      "checked_functions": [
+        "GetNumberOfEnemy",
+        "GetAlivePC",
+        "GetLowestHP_PC",
+        "GetAnyPlayerData",
+        "GetEnemyExceptSelf",
+        "Select Target Two PC",
+        "GetAliveEnemy",
+        "GetBuffedPC",
+        "Get Debuffed Enemy",
+        "GetHighestHP_PC",
+        "IncreaseCurrentShield",
+        "SwitchBool",
+        "GetDeconditionedEnemy",
+        "GetAliveKSCharacter",
+        "CountAliveCharacter"
+      ]
+    },
+    {
+      "asset": "Character/BP/BattleAI/Base/BP_BattleAI_Base",
+      "sha256": "59dc3090f866046dff9ec980f7aed116aa4ba503da77f2b4b45b1aa4bb6bc98b",
+      "superclass": "/Script/Majesty.BattleAIBase",
+      "checked_functions": [
+        "GetHPRate",
+        "SetOwner_old",
+        "TakeDamage_Old",
+        "CheckUniqueAbility",
+        "AddSignActionTurn",
+        "GetAbilityTable",
+        "GetFirstActionPattern",
+        "GetAbilityPattern",
+        "CountSpecialTurnVariable",
+        "DoAnyTimes",
+        "SwitchPahse",
+        "AIInitialize",
+        "PreUpdateThink",
+        "UpdateThink",
+        "SelectBattleTarget",
+        "PostUpdateThink",
+        "GetCounterAbility",
+        "PostSignOfBoost",
+        "UpdateThinkForConfusion"
+      ]
+    },
+    {
+      "asset": "Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy",
+      "sha256": "5d3f02780bb8d2cac0268578746d4b36c21a2dcd4746388398a9e084a6b9ae6c",
+      "boost_action_check": "02efb Context skip=23 rvalue=<null-field>\n  02efc InstanceVariable Owner_Old\n  02f19 LocalVirtualFunction CheckBoostMax\n    02f22 LocalVariable CallFunc_CheckBoostMax_BoostMax\n02f34 JumpIfNot target=117\n  02f39 LocalVariable CallFunc_CheckBoostMax_BoostMax\n02f4a Context skip=20 rvalue=<null-field>\n  02f4b InstanceVariable Owner_Old\n  02f68 LocalVirtualFunction SetBoostPoint_OLD\n    02f71 IntConst 0\n    02f76 True\n02f78 LetBool\n  02f79 LocalOutVariable UseBoostAction\n  02f8a True\n02f8b Jump target=128\n02f90 LetBool\n  02f91 LocalOutVariable UseBoostAction\n  02fa2 False\n02fa3 Return\n  02fa4 Nothing\n02fa5 EndOfScript"
+    },
+    {
+      "asset": "Battle/BP/BattleEnemyBP",
+      "sha256": "12dc546a1392c68eea69bff4602404c1d6e0ef7235d587daf5152eef17cff198",
+      "entry": "2dd2e LetValueOnPersistentFrame K2Node_Event_Value\n  2dd3f LocalVariable Value\n2dd50 LetValueOnPersistentFrame K2Node_Event_Use\n  2dd61 LocalVariable Use\n2dd72 FinalFunction export:1:ExecuteUbergraph_BattleEnemyBP\n  2dd77 IntConst 29789\n2dd7d Return\n  2dd7e Nothing\n2dd7f EndOfScript",
+      "reroll": "2a91b PushExecutionFlow target=30010\n2a920 LetBool\n  2a921 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n  2a932 CallMath import:-227:EqualEqual_IntInt\n    2a937 LocalVariable K2Node_Event_Value\n    2a948 IntConst 0\n2a94e LetBool\n  2a94f LocalVariable CallFunc_BooleanAND_ReturnValue_13\n  2a960 CallMath import:-218:BooleanAND\n    2a965 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n    2a976 LocalVariable K2Node_Event_Use\n2a988 PopExecutionFlowIfNot\n  2a989 LocalVariable CallFunc_BooleanAND_ReturnValue_13\n2a99a Let property=CallFunc_Add_IntInt_ReturnValue_9\n  2a9ab LocalVariable CallFunc_Add_IntInt_ReturnValue_9\n  2a9bc CallMath import:-215:Add_IntInt\n    2a9c1 StructMemberContext BP\n      2a9d2 InstanceVariable m_cMasterParameter\n    2a9e3 IntConst 2\n2a9e9 Let property=CallFunc_RandomIntegerInRange_ReturnValue\n  2a9fa LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n  2aa0b CallMath import:-253:RandomIntegerInRange\n    2aa10 StructMemberContext BP\n      2aa21 InstanceVariable m_cMasterParameter\n    2aa32 LocalVariable CallFunc_Add_IntInt_ReturnValue_9\n2aa44 Let property=BoostMax\n  2aa55 InstanceVariable BoostMax\n  2aa66 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n2aa77 PopExecutionFlow\n2aa78 Let property=CallFunc_Min_ReturnValue_2\n  2aa89 LocalVariable CallFunc_Min_ReturnValue_2\n  2aa9a CallMath import:-241:Min\n    2aa9f LocalVariable K2Node_Event_Value\n    2aab0 InstanceVariable BoostMax\n2aac2 Let property=BoostPoint_OLD\n  2aad3 InstanceVariable BoostPoint_OLD\n  2aae4 LocalVariable CallFunc_Min_ReturnValue_2\n2aaf5 Jump target=17826\n"
+    }
+  ],
+  "conclusion": "NormalEnemy.UpdateThink calls BoostActionCheck, which sets BP to zero with Use=true when full. BattleEnemyBP then rerolls BoostMax. Pirro overrides the boss AI hooks and neither calls nor inherits NormalEnemy; his scripted charged orders are separate. Preserve initialization BP draws, but no automatic threshold reroll at full BP."
+}
