@@ -810,7 +810,7 @@ impl Battle {
     }
     /// Continue a validated headless command-menu cursor without resetting the
     /// selected BP to zero. Selected BP belongs to that cursor, not spent BP.
-    pub(crate) fn advance_boost_input(&mut self, previous: u8, level: u8) -> Result<()> {
+    pub fn advance_boost_input(&mut self, previous: u8, level: u8) -> Result<()> {
         ensure(self.scenario.rules == RulesProfile::Ot2OpeningV1 && self.state.opening_crt.is_some(),
             "boost cycling requires the opening CRT profile")?;
         let actor=self.current_actor().ok_or_else(|| SimError("battle is over".into()))?;
@@ -820,6 +820,26 @@ impl Battle {
             "boost inputs must change one level within available BP")?;
         self.apply_boost_input(previous,level);
         Ok(())
+    }
+    /// Begin a new draw-count epoch at an observed Pirro R3 menu. This changes
+    /// bookkeeping only: it retains every combat, AI, order and voice field.
+    /// The high state bit is unobservable to CRT rand and can be canonicalized.
+    pub fn rebase_pirro_identification(&mut self) -> Result<()> {
+        ensure(self.is_pirro() && self.state.round==3 && self.current_actor()==Some(ActorId(0)),
+            "identification checkpoint requires Pirro R3 player menu")?;
+        self.state.rng = CrtRng::new(self.state.rng.state & 0x7fff_ffff);
+        if let Some(crt)=self.state.opening_crt.as_mut() {crt.trace=Some(Vec::new());}
+        self.initial=std::sync::Arc::new(self.state.clone());
+        Ok(())
+    }
+    /// Identification leaves 3 BP selected. Execute its already-boosted R3
+    /// Darkest Night without drawing the 0->3 boost voices a second time.
+    pub fn pirro_identified_darkest_night(&mut self) -> Result<StepReport> {
+        ensure(self.is_pirro() && self.state.round==3 && self.current_actor()==Some(ActorId(0)),
+            "identified action requires Pirro R3 player menu")?;
+        let actor=ActorId(0);
+        let prepared=self.prepare(actor,Action::Skill(self.catalog().skill_id("ABI_SET_THI_020")?,3),Some(ActorId(1)))?;
+        Ok(self.execute(actor,prepared,self.state.rng,false))
     }
     pub fn actor_name_id(&self,actor:ActorId)->Option<&str> {self.scenario.actors.get(actor.0).map(|a|a.id.as_str())}
     pub fn step_player(&mut self, command: Command) -> Result<StepReport> {
