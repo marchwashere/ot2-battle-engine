@@ -1,4 +1,5 @@
 {
+  "guards_cost": 7000,
   "tiers": [
     {
       "ability": "ABI_DAN_070_01",

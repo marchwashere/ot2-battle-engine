@@ -27,7 +27,8 @@ for(const row of sourceRows){
 const guardRow=find('ABI_MER_070_D_1');
 const guardVariants=guardRow.Ailment.filter(r=>r.AilmentName!=='None').map(r=>({id:r.AilmentName,weight:r.InvocationValue}));
 assert.equal(guardVariants.length,4);assert(guardVariants.every(v=>v.weight>0));
-fs.writeFileSync(path.join(__dirname,'../data/gravell_battle.json'),JSON.stringify({tiers,guard_variants:guardVariants},null,2)+'\n');
+assert.equal(guardRow.CostType,'EABILITY_COST_TYPE::eMONEY');
+fs.writeFileSync(path.join(__dirname,'../data/gravell_battle.json'),JSON.stringify({tiers,guard_variants:guardVariants,guards_cost:guardRow.CostValue},null,2)+'\n');
 const crt=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/carried_field_item_crt.json')));
 crt.ability_voice_ids??={};
 const voiceTable=s.table('Character/Database/BattleVoiceSet');

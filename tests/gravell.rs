@@ -111,7 +111,7 @@ fn complete_fight_search_replays_victory_exp100_and_all_four_rewards() {
     assert_eq!(reference.state,fight.state);
     let reward=gravell_routine::rewards(&fight,true).unwrap();
     assert!(reward.awarded.exp>=reward.base.exp*100);
-    assert_eq!(reward.hired_help_cost,10_000);
+    assert_eq!(reward.hired_help_cost,7_000);
     assert!(reward.after.draws>=fight.after.draws);
     println!("Gravell {:?}: {} inputs, {} calls",fight.evaluation,fight.actions.iter().map(|a|a.inputs.len()).sum::<usize>(),fight.after.draws);
 }

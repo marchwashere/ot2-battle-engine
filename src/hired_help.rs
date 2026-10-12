@@ -6,11 +6,12 @@ use std::sync::OnceLock;
 #[derive(Debug, Deserialize)]
 struct Variant { id:String, weight:u32 }
 #[derive(Debug, Deserialize)]
-struct Data { guard_variants:Vec<Variant> }
+struct Data { guard_variants:Vec<Variant>, guards_cost:u32 }
 fn data()->&'static Data {
     static DATA:OnceLock<Data>=OnceLock::new();
     DATA.get_or_init(||serde_json::from_str(include_str!("../data/gravell_battle.json")).expect("Guard summon import"))
 }
+pub fn guards_cost()->u32 {data().guards_cost}
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct GuardSummons {
     pub variants:Vec<&'static str>,

@@ -273,7 +273,7 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
     if fight.state.round<=2 {awarded.jp+=(awarded.jp/10).max(1);}
     if !damaged {awarded.money+=(awarded.money/10).max(1);}
     awarded.money+=modifiers.money_gained;
-    let hired_help_cost=10_000*fight.actions.iter().filter(|a|a.action==Action::Guards).count() as u32;
+    let hired_help_cost=crate::hired_help::guards_cost()*fight.actions.iter().filter(|a|a.action==Action::Guards).count() as u32;
     Ok(Rewards {base,awarded,drops,after,trace,hired_help_cost})
 }
 #[cfg(test)]
