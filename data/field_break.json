@@ -8032,6 +8032,87 @@
         "steal_item": null,
         "use_cat_damage_type": true
       }
+    },
+    "ENE_EVE_SUB_OTR_100": {
+      "id": "ENE_EVE_SUB_OTR_100",
+      "name": "Brigand",
+      "stats": {
+        "max_hp": 280,
+        "max_sp": 50,
+        "speed": 60
+      },
+      "resources": {
+        "hp": 280,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 97,
+        "defense": 85,
+        "magic": 100,
+        "magic_defense": 72,
+        "accuracy": 100,
+        "evasion": 98,
+        "critical": 110,
+        "growth_attack": 280,
+        "growth_magic": 280,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 21,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "axe",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
     }
   }
 }

@@ -77,8 +77,12 @@ impl OpeningPlan {
         ensure(battle.state().round==1&&battle.state().opening_crt.as_ref().is_some_and(|c|c.step_ahead),"Gravell plan requires the A Step Ahead opening")?;
         ensure(battle.current_actor()==battle.state().turn_order().first().copied(),"Build the opening plan before the first action")?;
         let find=|name:&str| battle.actor_id(name).ok_or_else(||crate::SimError(format!("Missing {name}")));
-        let throne=find("throne")?;let agnea=find("agnea")?;let hikari=find("hikari")?;let partitio=find("partitio")?;
-        Self::new(battle.state().turn_order(),throne,agnea,[hikari,partitio])
+        let throne=find("throne")?;let agnea=find("agnea")?;let partitio=find("partitio")?;
+        let merchant=match (battle.actor_id("hikari"),battle.actor_id("osvald")) {
+            (Some(id),None)|(None,Some(id))=>id,
+            _=>return Err(crate::SimError("Gravell routine needs exactly one of Hikari or Osvald as the second Merchant".into())),
+        };
+        Self::new(battle.state().turn_order(),throne,agnea,[merchant,partitio])
     }
     pub fn new(order:&[ActorId],throne:ActorId,agnea:ActorId,merchants:[ActorId;2])->Result<Self> {
         let party=[throne,agnea,merchants[0],merchants[1]];
@@ -315,6 +319,22 @@ mod tests {
             return;
         }
         panic!("No scattered-items BG case exercised");
+    }
+    #[test]
+    fn galdera_osvald_takes_the_second_merchant_role_in_actual_battle_order() {
+        let party:Vec<_>=[7,6,8,4].map(|id|crate::field_escape::route_player(id,5000).unwrap()).into();
+        let battle=crate::field_escape::carried_step_ahead(crate::CrtRng::new(123),
+            crate::escape::Situation::Normal,&party,
+            &["ENE_NML_FLD_WLD_250","ENE_NML_FLD_WLD_160","ENE_NML_OTR_150"],
+            true,&crate::knowledge::EnemyHistory::new()).unwrap();
+        let plan=OpeningPlan::from_battle(&battle).unwrap();
+        let osvald=battle.actor_id("osvald").unwrap();
+        let partitio=battle.actor_id("partitio").unwrap();
+        let merchants:Vec<_>=battle.state().turn_order().iter().copied().filter(|id|*id==osvald||*id==partitio).collect();
+        assert_eq!(plan.bonus_turn.iter().find(|a|a.actor==merchants[0]).unwrap().action,Action::DonateBp {target:merchants[1]});
+        assert_eq!(plan.bonus_turn.iter().find(|a|a.actor==merchants[1]).unwrap().action,Action::Guards);
+        let fight=replay(battle,&[1,2,3],&[1,2,3]).unwrap();
+        assert!(fight.actions.iter().any(|a|a.actor==osvald && matches!(a.action,Action::DonateBp {..}|Action::Guards)));
     }
     #[test]
     fn every_opening_order_uses_fixed_roles_and_donation_precedes_guards() {

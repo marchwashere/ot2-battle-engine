@@ -77,6 +77,24 @@ fn search_resumes_and_replays_each_unique_state_exactly() {
 }
 
 #[test]
+fn galdera_merchant_osvald_search_replays_exp100_with_everyone_alive() {
+    let mut party:Vec<_>=[7,6,8,4].map(|id|route_player(id,5000).unwrap()).into();
+    jobs::change_secondary_job(&mut party[1],6,field_escape::level_for_experience(5000),None,Some(0)).unwrap();
+    let battle=carried_step_ahead(CrtRng::new(77),Situation::Normal,&party,
+        &["ENE_NML_FLD_WLD_250","ENE_NML_FLD_WLD_160","ENE_NML_OTR_150"],true,&EnemyHistory::new()).unwrap();
+    let fight=gravell_routine::search(battle.clone(),4096).unwrap().expect("Galdera EXP100 victory");
+    assert_eq!(fight.evaluation,gravell_routine::Evaluation::Accepted);
+    assert_eq!(fight.state.outcome,Outcome::Victory);
+    assert!(fight.state.actors[..4].iter().all(|p|p.alive()));
+    assert_eq!(fight.state.grace.as_ref().unwrap().exp_percent(),10_000);
+    let bg=&fight.actions.iter().find(|a|a.action==gravell_routine::Action::BewilderingGrace).unwrap().inputs;
+    let guards=fight.actions.iter().find(|a|a.action==gravell_routine::Action::Guards).unwrap().inputs.as_slice();
+    let replay=gravell_routine::replay(battle,bg,guards).unwrap();
+    assert_eq!(replay.state,fight.state);
+    assert_eq!(replay.after,fight.after);
+    assert!(gravell_routine::rewards(&fight,true).unwrap().awarded.exp>=50_000);
+}
+#[test]
 fn complete_fight_search_replays_victory_exp100_and_all_four_rewards() {
     let battle=opening(77);
     let fight=gravell_routine::search(battle.clone(),4096).unwrap().expect("winning routine within test frontier");
@@ -150,6 +168,32 @@ fn step_ahead_escape_projection_and_item_clear_share_real_bonus_menu() {
 }
 
 
+#[test]
+fn seven_defends_promote_the_whole_party_and_replay_both_rounds() {
+ let party:Vec<_>=[7,6,8,4].map(|id|route_player(id,5000).unwrap()).into();
+ let ids=["ENE_NML_FLD_SEA_130"];
+ for situation in [Situation::Normal,Situation::Preemptive] {
+ for seed in 0..16 {
+  let mut rng=CrtRng::new(seed);rng.advance(200);
+  let mut battle=carried_step_ahead(rng,situation,&party,&ids,false,&EnemyHistory::new()).unwrap();
+  let mut menu=field_escape::FieldEscapeMenu::with_step_ahead(rng,situation,&party,&[14;4],&ids,&EnemyHistory::new()).unwrap();
+  for i in 0..7 {
+   assert_eq!(menu.round(),if i<4 {1}else{2});
+   let (next,report)=menu.safe_step_ahead_defend_through_next_round().unwrap().unwrap();
+   let actual=battle.step_player(Command::Defend).unwrap();
+   assert_eq!(report.rng_after.state,actual.rng_after.state);
+   assert_eq!(next.rng.draws,rng.draws+battle.state().rng.draws);
+   assert_eq!(next.first_actor,battle.current_actor().unwrap().0);
+   assert!(next.first_actor<4);menu=next;
+  }
+  assert_eq!(menu.round(),2);
+  assert!(menu.safe_step_ahead_defend_through_next_round().unwrap().is_none());
+  let win=field_escape::carried_soulstone_after_defends(rng,situation,&party,&[14;4],&ids,false,&EnemyHistory::new(),&[1,0],"wind_soulstone_l",true,7).unwrap().unwrap();
+  assert_eq!(win.at_command_menu,menu.rng);assert_eq!(win.actor,menu.first_actor);
+  assert!(menu.attempt(&[1,0],1).unwrap().success);
+ }
+ }
+}
 #[test]
 fn safe_step_ahead_defends_stop_before_enemies_and_match_battle_rng() {
  let party:Vec<_>=[7,1,8,4].map(|id|route_player(id,5000).unwrap()).into();

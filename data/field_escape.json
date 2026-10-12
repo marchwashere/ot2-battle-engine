@@ -773,6 +773,16 @@
         "sync_to_parent": false,
         "sync_children": false
       }
+    },
+    "ENE_EVE_SUB_OTR_100": {
+      "speed": 60,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
     }
   },
   "osvald_levels": [

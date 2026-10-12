@@ -537,5 +537,12 @@
     "money": 1500,
     "drop_item": "ITM_CSM_0710",
     "drop_rate": 5
+  },
+  "ENE_EVE_SUB_OTR_100": {
+    "exp": 20,
+    "jp": 20,
+    "money": 300,
+    "drop_item": "ITM_CSM_0040",
+    "drop_rate": 100
   }
 }

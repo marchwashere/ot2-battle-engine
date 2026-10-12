@@ -205,7 +205,9 @@ pub fn carried_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::Play
     for p in &mut config.players {
         if p.id=="throne" {p.skills.push("springy_boots".into());}
         if p.id=="agnea" {p.skills.extend(["stimulate".into(),"bewildering_grace".into()]);}
-        if matches!(p.id.as_str(),"hikari"|"partitio") {p.skills.extend(["hired_help_guards".into(),"donate_bp".into()]);}
+        // This bounded route profile assumes the caller has purchased the
+        // Merchant skills. Galdera keeps Osvald in Hikari's Merchant role.
+        if matches!(p.id.as_str(),"hikari"|"osvald"|"partitio") {p.skills.extend(["hired_help_guards".into(),"donate_bp".into()]);}
     }
     config.inventory.insert("energizing_pomegranate_m".into(),1);
     config.inventory.insert("thunder_soulstone_l".into(),1);
@@ -225,10 +227,19 @@ pub fn carried_soulstone(entry:CrtRng,situation:Situation,players:&[crate::Playe
 }
 pub fn carried_soulstone_with_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
     levels:&[u32],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,inputs:&[u8],item:&str,step_ahead:bool)->Result<Option<FieldRareVictory>> {
+    carried_soulstone_after_defends(entry,situation,players,levels,enemies,night,history,inputs,item,step_ahead,0)
+}
+pub fn carried_soulstone_after_defends(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
+    levels:&[u32],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,inputs:&[u8],item:&str,step_ahead:bool,defends:usize)->Result<Option<FieldRareVictory>> {
+    ensure(defends==0||step_ahead,"Defended item clear requires A Step Ahead")?;
     let (amount,element)=match item {"shadow_soulstone_m"=>(1100,combat::Element::Dark),"wind_soulstone_l"=>(2700,combat::Element::Wind),_=>return Err(SimError("Unsupported carried soulstone".into()))};
     if situation==Situation::Surprise {return Ok(None);}
     // Validate identities, resources and the ordinary first-menu assumptions.
-    let menu=if step_ahead {FieldEscapeMenu::with_step_ahead(entry,situation,players,levels,enemies,history)?}else{FieldEscapeMenu::with_players(entry,situation,players,levels,enemies,history)?};
+    let mut menu=if step_ahead {FieldEscapeMenu::with_step_ahead(entry,situation,players,levels,enemies,history)?}else{FieldEscapeMenu::with_players(entry,situation,players,levels,enemies,history)?};
+    for _ in 0..defends {
+        let Some((next,_))=menu.safe_step_ahead_defend_through_next_round()? else {return Ok(None)};
+        menu=next;
+    }
     let mut config=break_data().party_config.clone();
     config.players=players.to_vec();
     for p in &mut config.players {p.resources.as_mut().unwrap().bp=1;p.skills.clear();}
@@ -238,6 +249,10 @@ pub fn carried_soulstone_with_step_ahead(entry:CrtRng,situation:Situation,player
     config.inventory.insert(item.into(),1);config.enemy_knowledge=history.clone();
     let voices=players.iter().map(|p|carried_data().players[&p.id].voice).collect();
     let mut battle=if step_ahead {Battle::new_carried_step_ahead(config,situation,voices)?}else{Battle::new_carried_field_item(config,situation,voices)?};
+    for _ in 0..defends {
+        ensure(battle.current_actor().is_some_and(|id|battle.side(id)==Some(crate::Side::Player)),"Defend prefix reached an enemy")?;
+        battle.step_player(Command::Defend)?;
+    }
     let actor=battle.current_actor().unwrap();
     let absolute=|r:CrtRng|CrtRng {state:r.state,draws:entry.draws+r.draws};
     let at_command_menu=absolute(battle.state().rng);
@@ -609,11 +624,22 @@ impl FieldEscapeMenu {
     }
     /// Defend only inside the all-player bonus turn. Never run an enemy action.
     pub fn safe_step_ahead_defend(&self)->Result<Option<(Self,crate::StepReport)>> {
+        self.safe_defend(false)
+    }
+    /// Defending all bonus-turn players promotes them ahead of enemies in the
+    /// first regular turn. Permit that turn too, stopping at the last safe menu.
+    pub fn safe_step_ahead_defend_through_next_round(&self)->Result<Option<(Self,crate::StepReport)>> {
+        self.safe_defend(true)
+    }
+    pub fn round(&self)->u32 {self.step_battle.as_ref().map_or(1,|b|b.state().round)}
+    fn safe_defend(&self,through_next_round:bool)->Result<Option<(Self,crate::StepReport)>> {
         let Some(mut battle)=self.step_battle.clone() else {return Ok(None)};
-        if battle.state().round!=1 || battle.state().turn_order().len()<2 {return Ok(None);}
+        let max_round=if through_next_round {2} else {1};
+        if battle.state().round>max_round || battle.current_actor().is_none_or(|id|battle.side(id)!=Some(crate::Side::Player))
+            || (!through_next_round && battle.state().turn_order().len()<2) {return Ok(None);}
         let origin=self.rng.draws-battle.state().rng.draws;
         let mut report=battle.step_player(Command::Defend)?;
-        if battle.state().round!=1 || battle.current_actor().is_none_or(|id|battle.side(id)!=Some(crate::Side::Player)) {return Ok(None);}
+        if battle.state().round>max_round || battle.current_actor().is_none_or(|id|battle.side(id)!=Some(crate::Side::Player)) {return Ok(None);}
         let mut menu=self.clone();let state=battle.state();let crt=state.opening_crt.as_ref().unwrap();
         menu.rng=CrtRng {state:state.rng.state,draws:origin+state.rng.draws};
         menu.first_actor=battle.current_actor().unwrap().0;
