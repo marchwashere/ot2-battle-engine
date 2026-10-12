@@ -167,6 +167,30 @@ pub fn replay(battle:Battle,bg_inputs:&[u8],guard_inputs:&[u8])->Result<Fight> {
     }
     Ok(runner.finish())
 }
+// Reconstruct the selected routine without changing any upstream decision.
+fn before_finisher(battle:Battle,selected:&Fight)->Result<Runner> {
+    ensure(selected.evaluation==Evaluation::Accepted,"Finisher adjustment requires an accepted EXP100 routine")?;
+    ensure(selected.actions.last().is_some_and(|a|a.action==Action::ThunderSoulstone),"Selected routine must end with Thunder Soulstone L")?;
+    let mut runner=Runner::new(battle)?;
+    for action in &selected.actions[..selected.actions.len()-1] {
+        ensure(runner.next()==Some(action.action)&&runner.battle.current_actor()==Some(action.actor),"Selected finisher prefix diverged")?;
+        ensure(runner.execute(action.action,&action.inputs)?,"Selected finisher prefix became unavailable")?;
+    }
+    ensure(runner.next()==Some(Action::ThunderSoulstone),"Selected routine did not reach the finisher menu")?;
+    Ok(runner)
+}
+/// Actual last command menu, with Guards/BG and all earlier inputs frozen.
+pub fn finisher_menu(battle:Battle,selected:&Fight)->Result<Battle> {
+    Ok(before_finisher(battle,selected)?.battle)
+}
+/// Replay the frozen prefix and a zero-ending boost path before the item.
+pub fn replay_finisher(battle:Battle,selected:&Fight,inputs:&[u8])->Result<Fight> {
+    let mut runner=before_finisher(battle,selected)?;
+    ensure(runner.execute(Action::ThunderSoulstone,inputs)?,"Finisher item became unavailable")?;
+    let fight=runner.finish();
+    ensure(fight.evaluation==Evaluation::Accepted,"Adjusted finisher lost EXP100/victory/all-alive acceptance")?;
+    Ok(fight)
+}
 /// Untargeted compatibility search: fix the first finisher-ready Guards roll,
 /// then search BG. Targeted route refinement uses the joint search below.
 pub fn search(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {

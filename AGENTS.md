@@ -1,5 +1,12 @@
 # Active project
 
+- gravell_routine exposes finisher_menu/replay_finisher for the assistant's
+  Galdera coast extension. Reconstruct the accepted routine with the exact
+  earlier actor/actions/inputs frozen, then use actual zero-ending boost inputs
+  before Thunder L. Replay victory/EXP100/all alive and native callbacks. Do not
+  grant BP to an empty finisher menu. World travel/counter search stays in the
+  assistant; Any% and existing EXP100 search are unchanged.
+
 - Cat fixed elemental damage must use EnemyDB.UseCatDamageType: integer divide
   post-resistance damage by100, minimum1. SSM deals11 to Cultured Cait8HP,
   so the coast pack does NOT grant Overkill EXP. Missing this awarded129 extra

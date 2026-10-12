@@ -89,10 +89,35 @@ fn galdera_merchant_osvald_search_replays_exp100_with_everyone_alive() {
     assert_eq!(fight.state.grace.as_ref().unwrap().exp_percent(),10_000);
     let bg=&fight.actions.iter().find(|a|a.action==gravell_routine::Action::BewilderingGrace).unwrap().inputs;
     let guards=fight.actions.iter().find(|a|a.action==gravell_routine::Action::Guards).unwrap().inputs.as_slice();
+    let unchanged=gravell_routine::replay_finisher(battle.clone(),&fight,&[]).unwrap();
+    assert_eq!(unchanged.state,fight.state);
+    let menu=gravell_routine::finisher_menu(battle.clone(),&fight).unwrap();
+    assert_eq!(menu.state().actors[menu.current_actor().unwrap().0].resources.bp,0);
+    assert!(gravell_routine::replay_finisher(battle.clone(),&fight,&[1,0]).is_err());
     let replay=gravell_routine::replay(battle,bg,guards).unwrap();
     assert_eq!(replay.state,fight.state);
     assert_eq!(replay.after,fight.after);
     assert!(gravell_routine::rewards(&fight,true).unwrap().awarded.exp>=50_000);
+}
+#[test]
+fn late_finisher_adjustment_replays_callbacks_and_preserves_the_frozen_prefix() {
+    for seed in 0..128 {
+        let battle=opening(seed);
+        let Some(fight)=gravell_routine::search(battle.clone(),4096).unwrap() else {continue;};
+        let menu=gravell_routine::finisher_menu(battle.clone(),&fight).unwrap();
+        if menu.state().actors[menu.current_actor().unwrap().0].resources.bp==0 {continue;}
+        let mut direct=menu;
+        direct.step_player_with_boost_inputs(gravell_routine::Action::ThunderSoulstone.command(),&[1,0]).unwrap();
+        let adjusted=gravell_routine::replay_finisher(battle,&fight,&[1,0]).unwrap();
+        assert_eq!(adjusted.state,*direct.state());
+        assert_eq!(adjusted.evaluation,gravell_routine::Evaluation::Accepted);
+        assert_eq!(serde_json::to_value(&adjusted.actions[..adjusted.actions.len()-1]).unwrap(),
+            serde_json::to_value(&fight.actions[..fight.actions.len()-1]).unwrap());
+        assert_eq!(adjusted.actions.last().unwrap().inputs,vec![1,0]);
+        assert!(adjusted.after.draws>fight.after.draws);
+        return;
+    }
+    panic!("No finisher with available BP tested");
 }
 #[test]
 fn complete_fight_search_replays_victory_exp100_and_all_four_rewards() {
