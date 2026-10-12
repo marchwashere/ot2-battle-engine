@@ -1,5 +1,11 @@
 # Active project
 
+- import-highroad-return now also imports every Southern Sai Sands land group
+  (DST_2_3 DAY/NGT, all progression tiers) and its native enemy initialization,
+  combat and reward records. The assistant models the planned first encounter
+  using carried level70 party/supports/history and validates native Escape100%.
+  Map loading, ambush avoidance and field restoration remain in the assistant.
+
 - gravell_routine exposes finisher_menu/replay_finisher for the assistant's
   Galdera coast extension. Reconstruct the accepted routine with the exact
   earlier actor/actions/inputs frozen, then use actual zero-ending boost inputs
