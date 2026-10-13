@@ -37,6 +37,13 @@
         "bow"
       ]
     },
+    "5": {
+      "id": "temenos",
+      "main_job": 4,
+      "permitted_weapons": [
+        "staff"
+      ]
+    },
     "6": {
       "id": "osvald",
       "main_job": 6,
@@ -2094,6 +2101,28 @@
       },
       "permitted_weapons": [
         "dagger"
+      ]
+    },
+    {
+      "id": 2,
+      "revision": {
+        "HP": 118,
+        "MP": 100,
+        "BP": 100,
+        "SP": 100,
+        "POT": 100,
+        "ATK": 105,
+        "DEF": 105,
+        "MATK": 100,
+        "MDEF": 100,
+        "ACC": 100,
+        "EVA": 100,
+        "CON": 100,
+        "AGI": 100
+      },
+      "permitted_weapons": [
+        "sword",
+        "lance"
       ]
     }
   ]

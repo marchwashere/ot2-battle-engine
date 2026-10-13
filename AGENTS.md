@@ -1,5 +1,12 @@
 # Active project
 
+- Galdera after Temenos: field Escape supports actual Step Ahead membership
+  [0,1,3] via with_step_ahead_members; level1 Temenos without support does not
+  enter the Normal bonus turn. Preemptive remains all-player. Import Temenos
+  voice identity5/latent110, Warrior job2 and Temenos job revisions. Existing
+  all-party callers pass None and keep their ordering/RNG. New route ends at
+  Quicksand entry; world controls live in assistant docs/galdera-quicksand.md.
+
 - Temenos Galdera recruitment uses temenos_recruitment::predict: source normal
   attack AbilityRatio80, +1 BP, first A Step Ahead actor; boost/cancel search
   secures a real first-action kill, including Osvald/Partitio critical requirements.

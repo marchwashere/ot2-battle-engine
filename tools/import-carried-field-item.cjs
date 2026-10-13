@@ -4,7 +4,7 @@ const s=require('./source.cjs'),{objectHeader}=require('../../OT2BattleEngine/to
 const table=s.table('Character/Database/BattleVoiceSet');
 const crt=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/field_rare_crt.json')));
 const types={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12,eUSE_ITEM_TO_PARTY:15,eUSE_ITEM_TO_ENEMY:16};
-const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN']];
+const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN'],['PRIEST','BattleSIN']];
 const sources=[{source:table.source,sha256:table.sha256}],voiceRows=[];
 crt.voices=specs.map(([prefix,folder],i)=>{
  const a=table.rows.findIndex(r=>r.id===prefix+'_VOICE_DATA_START'),b=table.rows.findIndex((r,j)=>j>a&&r.id.endsWith('_VOICE_DATA_START'));
@@ -32,6 +32,6 @@ assert(crt.skills.wind_soulstone_l.some(e=>e.kind==='damage'));
 crt.skill_uses_ability_camera.wind_soulstone_l=crt.skill_uses_ability_camera.shadow_soulstone_m;
 for(let i=0;i<specs.length;i++)crt.skill_voice_duration_ticks['wind_soulstone_l:'+i]=crt.skill_voice_duration_ticks['shadow_soulstone_m:'+i];
 fs.writeFileSync(path.join(__dirname,'../data/source/wind-soulstone-l.json'),JSON.stringify({item:wind,asset:windAsset,events:windEvents},null,2)+'\n');
-crt.player_latent_maxima=[80,100,110,100,125];
+crt.player_latent_maxima=[80,100,110,100,125,110];
 fs.writeFileSync(path.join(__dirname,'../data/carried_field_item_crt.json'),JSON.stringify(crt,null,2)+'\n');
 fs.writeFileSync(path.join(__dirname,'../data/source/carried_field_item.json'),JSON.stringify({sources,voiceRows,scope:'One first-menu Shadow Soulstone M with actual ordered party, ordinary field voices and source item sequence.'},null,2)+'\n');

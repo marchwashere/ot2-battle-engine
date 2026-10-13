@@ -2496,6 +2496,127 @@
       "CharmEnemyLabelForKSBattle": "ENE_BOS_DLC_KSJ_046"
     },
     {
+      "id": "ePRIEST",
+      "Id": 5,
+      "DisplayName": "CHARA_NAME_PC_0005",
+      "CharacterRole": "ECharacterRole::MAIN",
+      "ResourceLabel": [
+        "SinJ007_Mle",
+        "SinJ003_Mle",
+        "SinJ001_Mle",
+        "SinJ006_Mle",
+        "SinJ000_Mle",
+        "SinJ008_Mle",
+        "SinJ004_Mle",
+        "SinJ002_Mle",
+        "SinJ010_Mle",
+        "SinJ011_Mle",
+        "SinJ012_Mle",
+        "SinJ009_Mle"
+      ],
+      "GuestResourceLabel": "None",
+      "VoiceCueSheet_ja": [
+        "CueSheet_VO_EtcSIN_ja",
+        "CueSheet_VO_BattleSIN_ja",
+        "None",
+        "None"
+      ],
+      "VoiceCueSheet_en": [
+        "CueSheet_VO_EtcOphilia_en",
+        "CueSheet_VO_BattleOphilia_en",
+        "None",
+        "None"
+      ],
+      "VoiceSet": "PLAYER_VOICE_07",
+      "SpecialActionList": [
+        "ESpecialActionType::eENEMY_DEBUFF_IN_NIGHT",
+        "ESpecialActionType::eCALL_SUPPORTER_PRI"
+      ],
+      "PotentialityActionLabel": "POTENTIALITY_ACTION_PRIEST",
+      "SecondPotentialityActionLabel": "None",
+      "SecondPotentialityActionFlag": 0,
+      "UniqueStyle": "EBATTLE_STYLE_TYPE::eBREAK",
+      "ReleaseStyleFlag": 34,
+      "StyleAvailableCount": 1,
+      "InitLevel": 1,
+      "ParameterRevision": {
+        "HP": 90,
+        "MP": 130,
+        "BP": 100,
+        "SP": 100,
+        "POT": 100,
+        "ATK": 100,
+        "DEF": 100,
+        "MATK": 120,
+        "MDEF": 130,
+        "ACC": 100,
+        "EVA": 80,
+        "CON": 70,
+        "AGI": 80
+      },
+      "WeaponStance": "EWEAPON_STANCE::MALE",
+      "MainWeapon": "EWEAPON_CATEGORY::eROD",
+      "FirstEquipment": {
+        "Sword": "None",
+        "Lance": "None",
+        "Dagger": "None",
+        "Axe": "None",
+        "Bow": "None",
+        "Rod": "ITM_EQP_ROD_030",
+        "Shield": "ITM_EQP_SLD_030",
+        "Head": "ITM_EQP_HLM_021",
+        "Body": "ITM_EQP_AMR_060",
+        "Accessory_00": "None",
+        "Accessory_01": "None"
+      },
+      "FirstJob": "EJOB_TYPE::ePRIEST",
+      "FieldCommandInfo": {
+        "DayTimeFC": "MJFieldCommandType::eLead",
+        "DayTimeFCImpossibleFlag": 508,
+        "NightFC": "MJFieldCommandType::eReveal",
+        "NightFCImpossibleFlag": 509
+      },
+      "MainMissionPlayingFlag": 2006,
+      "SymbolLabel": "symbol_priest",
+      "SymbolWhLabel": "symbol_wh_priest",
+      "DayPortraitLabel": "chara_portrait_priest_day",
+      "DayPortraitBgLabel": "chara_portrait_bg_priest_day",
+      "NightPortraitLabel": "chara_portrait_priest_night",
+      "NightPortraitBgLabel": "chara_portrait_bg_priest_night",
+      "PortraitNameLabel": "chara_portrait_name_priest",
+      "AdvancedAbility": [
+        {
+          "AbilityID": "ABI_SET_CLE_080",
+          "HiddenText": "eADVANCED_ABILITY_HIDDEN_TEXT_08"
+        },
+        {
+          "AbilityID": "ABI_SET_CLE_090",
+          "HiddenText": "eADVANCED_ABILITY_HIDDEN_TEXT_09"
+        }
+      ],
+      "TextInfoLabel": "PLAYER_000",
+      "CostumeList": [
+        {
+          "EventFlag": 0,
+          "ResourceLabel": "None"
+        },
+        {
+          "EventFlag": 0,
+          "ResourceLabel": "None"
+        },
+        {
+          "EventFlag": 0,
+          "ResourceLabel": "None"
+        },
+        {
+          "EventFlag": 0,
+          "ResourceLabel": "None"
+        }
+      ],
+      "CharmEnemyLabel": "ENE_BOS_DAN_C05_060",
+      "CharmEnemyLabelForKSBattle": "ENE_BOS_DLC_KSJ_043"
+    },
+    {
       "id": "ePROFESSOR",
       "Id": 6,
       "DisplayName": "CHARA_NAME_PC_0006",

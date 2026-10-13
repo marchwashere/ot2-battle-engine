@@ -36,6 +36,8 @@ pub struct OpeningCrtState {
     pub field_item: bool,
     #[serde(skip_serializing_if = "is_false")]
     pub step_ahead: bool,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub step_ahead_members:Option<Vec<usize>>,
     #[serde(skip_serializing_if = "is_false")]
     pub temenos_recruitment: bool,
     #[serde(skip_serializing_if = "is_false")]
@@ -59,6 +61,7 @@ impl OpeningCrtState {
             field_break: false,
             field_item: false,
             step_ahead: false,
+            step_ahead_members:None,
             temenos_recruitment: false,
             hikari_recruitment: false,
             carried_voices: None,

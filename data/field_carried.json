@@ -19,6 +19,10 @@
     "hikari": {
       "voice": 4,
       "latent_max": 125
+    },
+    "temenos": {
+      "voice": 5,
+      "latent_max": 110
     }
   },
   "initial_bp": 1,

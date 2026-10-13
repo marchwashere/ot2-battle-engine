@@ -17,7 +17,7 @@ const defaults=['SWORD','LANCE','DAGGER','AXE','BOW','ROD'].map((name,i)=>{
 assert.equal(defaults[5].source_id,'ITM_EQP_ROD_010');assert.equal(defaults[5].attack,0);assert.equal(defaults[5].magic,0);
 const characters={};
 const imported=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/progression.json')));
-for(const [id,name,coreId] of [[7,'eTHIEF','throne'],[6,'ePROFESSOR','osvald'],[8,'eDANCER','agnea'],[4,'eMERCHANT','partitio'],[1,'eFENCER','hikari']]){
+for(const [id,name,coreId] of [[7,'eTHIEF','throne'],[6,'ePROFESSOR','osvald'],[8,'eDANCER','agnea'],[4,'eMERCHANT','partitio'],[1,'eFENCER','hikari'],[5,'ePRIEST','temenos']]){
  const p=players.get(name),main=jobs.get(p.FirstJob.split('::').at(-1));
  characters[id]={id:coreId,main_job:main.JobID,permitted_weapons:weaponNames.filter((_,i)=>main.ProperEquipment[i])};
  // Native Multiply_CharacterParam_RevisionParam is float32 product*.01 then
@@ -52,7 +52,7 @@ assert.equal((native.FUN_140fcaf50.body.match(/ROUND/g)||[]).length,13);
 const data={scholar:{id:6,revision:scholar.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>scholar.ProperEquipment[i])},
  characters,default_weapons:defaults,scholar_abilities:scholarAbilities,
  maximum_hp_sp:Number(params.get('PLAYER_STATUS_HP_RANGE').Max),maximum_stat:Number(params.get('PLAYER_STATUS_RANGE').Max)};
-data.additional_jobs=['eINVENTOR','eMERCHANT','eDANCER'].map(id=>{const j=jobs.get(id);return {id:j.JobID,revision:j.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>j.ProperEquipment[i])};});
+data.additional_jobs=['eINVENTOR','eMERCHANT','eDANCER','eFENCER'].map(id=>{const j=jobs.get(id);return {id:j.JobID,revision:j.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>j.ProperEquipment[i])};});
 const out=path.join(__dirname,'../data');
 fs.writeFileSync(path.join(out,'jobs.json'),JSON.stringify(data,null,2)+'\n');
 fs.writeFileSync(path.join(out,'source/jobs.json'),JSON.stringify({sources,scholar,ability_sets:scholarAbilities.map(a=>sets.get(a.id)),ability_definitions:scholarAbilities,characters:[...players.values()].filter(p=>Object.values(characters).some(c=>c.main_job===jobs.get(p.FirstJob.split('::').at(-1))?.JobID)),default_items:defaults.map(d=>items.get(d.source_id)),staff_normal_attack:abilities.get('NORMAL_ATTACK_ROD_1'),characterAudit,itemAudit,native,

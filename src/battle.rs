@@ -406,19 +406,22 @@ impl Battle {
     pub(crate) fn new_carried_field_item(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
         let mut crt=OpeningCrtState::new(true);
         crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;
-        crt.carried_voices=Some(voices);crt.used_voices=vec![0;5];crt.settled_damage=vec![false;config.players.len()];
+        crt.used_voices=vec![0;voices.iter().copied().max().unwrap_or(0)+1];crt.carried_voices=Some(voices);crt.settled_damage=vec![false;config.players.len()];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     pub(crate) fn new_carried_step_ahead(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
+        Self::new_carried_step_ahead_members(config,situation,voices,None)
+    }
+    pub(crate) fn new_carried_step_ahead_members(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>,members:Option<Vec<usize>>)->Result<Self> {
         let mut crt=OpeningCrtState::new(true);
-        crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;
-        crt.carried_voices=Some(voices);crt.used_voices=vec![0;5];crt.settled_damage=vec![false;config.players.len()];
+        crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.step_ahead_members=members;
+        crt.used_voices=vec![0;voices.iter().copied().max().unwrap_or(0)+1];crt.carried_voices=Some(voices);crt.settled_damage=vec![false;config.players.len()];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     pub(crate) fn new_temenos_recruitment(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
         let mut crt=OpeningCrtState::new(true);
         crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.temenos_recruitment=true;
-        crt.carried_voices=Some(voices);crt.used_voices=vec![0;5];crt.settled_damage=vec![false;config.players.len()];
+        crt.used_voices=vec![0;voices.iter().copied().max().unwrap_or(0)+1];crt.carried_voices=Some(voices);crt.settled_damage=vec![false;config.players.len()];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     fn new_internal(
@@ -2749,7 +2752,7 @@ impl Battle {
             // SetBattleFirstActionTurn rebuilds, sorts and shuffles current
             // player orders before UpdateNextOrder. Never filter the old queue.
             let mut bonus:Vec<_>=self.state.actors.iter().enumerate()
-                .filter(|(i,a)|a.alive()&&self.scenario.actors[*i].side==Side::Player)
+                .filter(|(i,a)|a.alive()&&self.scenario.actors[*i].side==Side::Player&&self.state.opening_crt.as_ref().unwrap().step_ahead_members.as_ref().is_none_or(|ids|ids.contains(i)))
                 .map(|(i,_)|ActorId(i)).collect();
             combat::sort_order(&mut bonus,|id|self.scenario.actors[id.0].stats.speed);
             let before=self.state.rng;

@@ -34,7 +34,7 @@ crt.ability_voice_ids??={};
 const voiceTable=s.table('Character/Database/BattleVoiceSet');
 const voiceTypes={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12,eON_RECOVERED:13,eON_REVIVED:14,eUSE_ITEM_TO_PARTY:15,eUSE_ITEM_TO_ENEMY:16,ePLAY_GUARD:17,ePLAY_ABILITY:18};
 const abilities=['ABI_DAN_060_01','ABI_DAN_070_01','ABI_INV_020_01','ABI_MER_070_01'];
-const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN']];
+const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN'],['PRIEST','BattleSIN']];
 const durations=[];
 crt.voices=specs.map(([prefix,folder],index)=>{
  const a=voiceTable.rows.findIndex(r=>r.id===prefix+'_VOICE_DATA_START'),b=voiceTable.rows.findIndex((r,j)=>j>a&&r.id.endsWith('_VOICE_DATA_START'));

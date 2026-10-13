@@ -195,6 +195,10 @@ pub fn opening_shadow_soulstone_m_with_history(entry:CrtRng,situation:Situation,
 /// RNG in the returned Battle is relative to entry.state.
 pub fn carried_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
     enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory)->Result<Battle> {
+    carried_step_ahead_members(entry,situation,players,enemies,night,history,None)
+}
+pub fn carried_step_ahead_members(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,members:Option<Vec<usize>>)->Result<Battle> {
+    ensure(members.as_ref().is_none_or(|v|!v.is_empty()&&v.iter().all(|&i|i<players.len())),"Invalid Step Ahead members")?;
     ensure(situation!=Situation::Surprise,"Route prohibits surprise")?;
     let mut config=break_data().party_config.clone();config.players=players.to_vec();
     for p in &mut config.players {p.resources.as_mut().ok_or_else(||SimError("Missing carried resources".into()))?.bp=1;p.skills.clear();}
@@ -212,7 +216,7 @@ pub fn carried_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::Play
     config.inventory.insert("energizing_pomegranate_m".into(),1);
     config.inventory.insert("thunder_soulstone_l".into(),1);
     let voices=players.iter().map(|p|carried_data().players.get(&p.id).map(|d|d.voice).ok_or_else(||SimError("Unsupported carried identity".into()))).collect::<Result<_>>()?;
-    Battle::new_carried_step_ahead(config,situation,voices)
+    Battle::new_carried_step_ahead_members(config,situation,voices,members)
 }
 
 /// Bounded first-menu item clear with the actual ordered party. Night talent is
@@ -609,8 +613,11 @@ impl FieldEscapeMenu {
     /// Project the first extra-turn menu using the shared A Step Ahead initializer.
     pub fn with_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
         levels:&[u32],enemies:&[&str],history:&crate::knowledge::EnemyHistory)->Result<Self> {
+        Self::with_step_ahead_members(entry,situation,players,levels,enemies,history,None)
+    }
+    pub fn with_step_ahead_members(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],levels:&[u32],enemies:&[&str],history:&crate::knowledge::EnemyHistory,members:Option<Vec<usize>>)->Result<Self> {
         let mut menu=Self::with_players(entry,situation,players,levels,enemies,history)?;
-        let battle=carried_step_ahead(entry,situation,players,enemies,false,history)?;
+        let battle=carried_step_ahead_members(entry,situation,players,enemies,false,history,members)?;
         let state=battle.state();let crt=state.opening_crt.as_ref().unwrap();
         menu.rng=CrtRng {state:state.rng.state,draws:entry.draws+state.rng.draws};
         menu.first_actor=battle.current_actor().unwrap().0;
@@ -1016,3 +1023,16 @@ mod spell_break_tests {
 }
 
 pub(crate) fn transformed_enemy(id:&str)->Result<EnemyDefinition> {break_data().enemies.get(id).cloned().ok_or_else(||SimError(format!("Missing transformed enemy {id}")))}
+#[cfg(test)]mod mixed_step_ahead_tests {
+ use super::*;
+ #[test]fn temenos_without_support_stays_out_of_bonus_turn() {
+  let high=experience_for_level(70).unwrap();
+  let players=vec![route_player(7,high).unwrap(),route_player(6,high).unwrap(),route_player(5,0).unwrap(),route_player(4,high).unwrap()];
+  for seed in 0..24 {let menu=FieldEscapeMenu::with_step_ahead_members(CrtRng::new(seed),Situation::Normal,&players,&[70,70,1,70],&["ENE_NML_FLD_CTY_010"],&Default::default(),Some(vec![0,1,3])).unwrap();
+   let mut actors=menu.current_order.clone();actors.sort();assert_eq!(actors,vec![0,1,3]);assert_eq!(menu.next_order.len(),5);
+   assert_ne!(menu.first_actor,2);let escape=menu.attempt(&[],16).unwrap();assert_eq!(escape.chance_percent,100);assert!(escape.success);
+   let preempt=FieldEscapeMenu::with_step_ahead_members(CrtRng::new(seed),Situation::Preemptive,&players,&[70,70,1,70],&["ENE_NML_FLD_CTY_010"],&Default::default(),Some(vec![0,1,3])).unwrap();
+   assert_eq!(preempt.current_order.len(),4);assert!(preempt.current_order.contains(&2));
+  }
+ }
+}

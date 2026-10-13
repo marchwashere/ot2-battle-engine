@@ -8,7 +8,7 @@ const voices=table('Character/Database/BattleVoiceSet');
 const latent=table('Character/Database/PotentialityActionDB');
 const bp=table('GameParam/BattleParamDefineTable').find(r=>r.id==='DEFAULT_BP_VALUE');
 assert.equal(Number(bp.Init),1);assert.equal(Number(bp.Max),5);
-const specs=[['throne','THIEF','THIEF'],['osvald','PROFESSOR','PROFESOR'],['agnea','DANCER','DANCER'],['partitio','MERCHANT','MERCHANT'],['hikari','FENCER','FENCER_LIGHT']];
+const specs=[['throne','THIEF','THIEF'],['osvald','PROFESSOR','PROFESOR'],['agnea','DANCER','DANCER'],['partitio','MERCHANT','MERCHANT'],['hikari','FENCER','FENCER_LIGHT'],['temenos','PRIEST','PRIEST']];
 const types={eBATTLE_START:1,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12};
 const crt=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/field_party_crt.json')));
 const rawVoices=[];
