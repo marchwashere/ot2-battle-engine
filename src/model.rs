@@ -63,6 +63,8 @@ impl Resources {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct PlayerCharacter {
+    #[serde(default,skip_serializing_if="is_false")]
+    pub boost_start: bool,
     pub id: String,
     pub name: String,
     pub stats: Stats,
@@ -72,6 +74,7 @@ pub struct PlayerCharacter {
     #[serde(default)]
     pub combat: Option<crate::combat::CombatProfile>,
 }
+fn is_false(value:&bool)->bool { !*value }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]

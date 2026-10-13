@@ -10509,6 +10509,2875 @@
         "steal_item": null,
         "use_cat_damage_type": false
       }
+    },
+    "ENE_NML_FLD_ISD_040": {
+      "id": "ENE_NML_FLD_ISD_040",
+      "name": "ENE_NML_FLD_ISD_040",
+      "stats": {
+        "max_hp": 922,
+        "max_sp": 50,
+        "speed": 87
+      },
+      "resources": {
+        "hp": 922,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 231,
+        "defense": 175,
+        "magic": 195,
+        "magic_defense": 181,
+        "accuracy": 136,
+        "evasion": 109,
+        "critical": 129,
+        "growth_attack": 231,
+        "growth_magic": 231,
+        "shields": 2,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_050": {
+      "id": "ENE_NML_FLD_ISD_050",
+      "name": "ENE_NML_FLD_ISD_050",
+      "stats": {
+        "max_hp": 1097,
+        "max_sp": 50,
+        "speed": 92
+      },
+      "resources": {
+        "hp": 1097,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 249,
+        "defense": 182,
+        "magic": 223,
+        "magic_defense": 218,
+        "accuracy": 145,
+        "evasion": 116,
+        "critical": 136,
+        "growth_attack": 249,
+        "growth_magic": 249,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "wind",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_180": {
+      "id": "ENE_NML_FLD_ISD_180",
+      "name": "ENE_NML_FLD_ISD_180",
+      "stats": {
+        "max_hp": 912,
+        "max_sp": 50,
+        "speed": 89
+      },
+      "resources": {
+        "hp": 912,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 241,
+        "defense": 177,
+        "magic": 223,
+        "magic_defense": 151,
+        "accuracy": 124,
+        "evasion": 112,
+        "critical": 132,
+        "growth_attack": 241,
+        "growth_magic": 241,
+        "shields": 3,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 12,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "wind"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_230": {
+      "id": "ENE_NML_FLD_ISD_230",
+      "name": "ENE_NML_FLD_ISD_230",
+      "stats": {
+        "max_hp": 1219,
+        "max_sp": 50,
+        "speed": 90
+      },
+      "resources": {
+        "hp": 1219,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 279,
+        "defense": 192,
+        "magic": 211,
+        "magic_defense": 223,
+        "accuracy": 133,
+        "evasion": 108,
+        "critical": 136,
+        "growth_attack": 279,
+        "growth_magic": 279,
+        "shields": 3,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 40,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_190": {
+      "id": "ENE_NML_FLD_ISD_190",
+      "name": "ENE_NML_FLD_ISD_190",
+      "stats": {
+        "max_hp": 1275,
+        "max_sp": 50,
+        "speed": 79
+      },
+      "resources": {
+        "hp": 1275,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 228,
+        "defense": 159,
+        "magic": 184,
+        "magic_defense": 162,
+        "accuracy": 106,
+        "evasion": 95,
+        "critical": 126,
+        "growth_attack": 228,
+        "growth_magic": 228,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 30,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_150": {
+      "id": "ENE_NML_FLD_ISD_150",
+      "name": "ENE_NML_FLD_ISD_150",
+      "stats": {
+        "max_hp": 865,
+        "max_sp": 50,
+        "speed": 103
+      },
+      "resources": {
+        "hp": 865,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 231,
+        "defense": 175,
+        "magic": 207,
+        "magic_defense": 173,
+        "accuracy": 121,
+        "evasion": 119,
+        "critical": 125,
+        "growth_attack": 231,
+        "growth_magic": 231,
+        "shields": 2,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 16,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "wind",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_270": {
+      "id": "ENE_NML_FLD_ISD_270",
+      "name": "ENE_NML_FLD_ISD_270",
+      "stats": {
+        "max_hp": 1045,
+        "max_sp": 50,
+        "speed": 96
+      },
+      "resources": {
+        "hp": 1045,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 266,
+        "defense": 179,
+        "magic": 266,
+        "magic_defense": 162,
+        "accuracy": 150,
+        "evasion": 24,
+        "critical": 140,
+        "growth_attack": 266,
+        "growth_magic": 266,
+        "shields": 2,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 54,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_060": {
+      "id": "ENE_NML_FLD_ISD_060",
+      "name": "ENE_NML_FLD_ISD_060",
+      "stats": {
+        "max_hp": 1648,
+        "max_sp": 50,
+        "speed": 108
+      },
+      "resources": {
+        "hp": 1648,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 334,
+        "defense": 200,
+        "magic": 298,
+        "magic_defense": 244,
+        "accuracy": 170,
+        "evasion": 136,
+        "critical": 156,
+        "growth_attack": 334,
+        "growth_magic": 334,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_200": {
+      "id": "ENE_NML_FLD_ISD_200",
+      "name": "ENE_NML_FLD_ISD_200",
+      "stats": {
+        "max_hp": 1980,
+        "max_sp": 50,
+        "speed": 104
+      },
+      "resources": {
+        "hp": 1980,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 341,
+        "defense": 279,
+        "magic": 273,
+        "magic_defense": 225,
+        "accuracy": 173,
+        "evasion": 125,
+        "critical": 159,
+        "growth_attack": 341,
+        "growth_magic": 341,
+        "shields": 4,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 30,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "axe"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_WLD_200": {
+      "id": "ENE_NML_FLD_WLD_200",
+      "name": "ENE_NML_FLD_WLD_200",
+      "stats": {
+        "max_hp": 2688,
+        "max_sp": 50,
+        "speed": 124
+      },
+      "resources": {
+        "hp": 2688,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 368,
+        "defense": 295,
+        "magic": 277,
+        "magic_defense": 253,
+        "accuracy": 245,
+        "evasion": 176,
+        "critical": 167,
+        "growth_attack": 368,
+        "growth_magic": 368,
+        "shields": 4,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "axe",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_070": {
+      "id": "ENE_NML_FLD_ISD_070",
+      "name": "ENE_NML_FLD_ISD_070",
+      "stats": {
+        "max_hp": 2860,
+        "max_sp": 50,
+        "speed": 105
+      },
+      "resources": {
+        "hp": 2860,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 397,
+        "defense": 300,
+        "magic": 321,
+        "magic_defense": 266,
+        "accuracy": 187,
+        "evasion": 150,
+        "critical": 174,
+        "growth_attack": 397,
+        "growth_magic": 397,
+        "shields": 5,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 25,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_090": {
+      "id": "ENE_NML_FLD_SEA_090",
+      "name": "ENE_NML_FLD_SEA_090",
+      "stats": {
+        "max_hp": 6451,
+        "max_sp": 50,
+        "speed": 157
+      },
+      "resources": {
+        "hp": 6451,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 467,
+        "defense": 456,
+        "magic": 406,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 245,
+        "critical": 199,
+        "growth_attack": 467,
+        "growth_magic": 467,
+        "shields": 5,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 25,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_070": {
+      "id": "ENE_NML_FLD_SEA_070",
+      "name": "ENE_NML_FLD_SEA_070",
+      "stats": {
+        "max_hp": 2860,
+        "max_sp": 50,
+        "speed": 120
+      },
+      "resources": {
+        "hp": 2860,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 397,
+        "defense": 300,
+        "magic": 265,
+        "magic_defense": 266,
+        "accuracy": 187,
+        "evasion": 165,
+        "critical": 160,
+        "growth_attack": 397,
+        "growth_magic": 397,
+        "shields": 5,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 25,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "lance"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_080": {
+      "id": "ENE_NML_FLD_SEA_080",
+      "name": "ENE_NML_FLD_SEA_080",
+      "stats": {
+        "max_hp": 5657,
+        "max_sp": 50,
+        "speed": 153
+      },
+      "resources": {
+        "hp": 5657,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 452,
+        "defense": 431,
+        "magic": 395,
+        "magic_defense": 393,
+        "accuracy": 285,
+        "evasion": 239,
+        "critical": 195,
+        "growth_attack": 452,
+        "growth_magic": 452,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 25,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "ice"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_210": {
+      "id": "ENE_NML_FLD_SEA_210",
+      "name": "ENE_NML_FLD_SEA_210",
+      "stats": {
+        "max_hp": 6987,
+        "max_sp": 50,
+        "speed": 140
+      },
+      "resources": {
+        "hp": 6987,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 475,
+        "defense": 485,
+        "magic": 406,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 175,
+        "critical": 195,
+        "growth_attack": 475,
+        "growth_magic": 475,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 25,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "fire"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_190": {
+      "id": "ENE_NML_FLD_SEA_190",
+      "name": "ENE_NML_FLD_SEA_190",
+      "stats": {
+        "max_hp": 4111,
+        "max_sp": 50,
+        "speed": 136
+      },
+      "resources": {
+        "hp": 4111,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 438,
+        "defense": 430,
+        "magic": 392,
+        "magic_defense": 387,
+        "accuracy": 283,
+        "evasion": 170,
+        "critical": 186,
+        "growth_attack": 438,
+        "growth_magic": 438,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 21,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "wind"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_240": {
+      "id": "ENE_NML_FLD_SEA_240",
+      "name": "ENE_NML_FLD_SEA_240",
+      "stats": {
+        "max_hp": 5600,
+        "max_sp": 50,
+        "speed": 140
+      },
+      "resources": {
+        "hp": 5600,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 452,
+        "defense": 458,
+        "magic": 395,
+        "magic_defense": 393,
+        "accuracy": 285,
+        "evasion": 136,
+        "critical": 187,
+        "growth_attack": 452,
+        "growth_magic": 452,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 48,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "lance",
+          "axe"
+        ],
+        "element_weaknesses": [],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_260": {
+      "id": "ENE_NML_FLD_SEA_260",
+      "name": "ENE_NML_FLD_SEA_260",
+      "stats": {
+        "max_hp": 9904,
+        "max_sp": 50,
+        "speed": 117
+      },
+      "resources": {
+        "hp": 9904,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 598,
+        "defense": 532,
+        "magic": 490,
+        "magic_defense": 494,
+        "accuracy": 301,
+        "evasion": 144,
+        "critical": 201,
+        "growth_attack": 598,
+        "growth_magic": 598,
+        "shields": 6,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 27,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_OCN_230": {
+      "id": "ENE_NML_OCN_230",
+      "name": "ENE_NML_OCN_230",
+      "stats": {
+        "max_hp": 6897,
+        "max_sp": 50,
+        "speed": 123
+      },
+      "resources": {
+        "hp": 6897,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 479,
+        "defense": 449,
+        "magic": 413,
+        "magic_defense": 403,
+        "accuracy": 295,
+        "evasion": 70,
+        "critical": 187,
+        "growth_attack": 479,
+        "growth_magic": 479,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 54,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "lightning"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_010": {
+      "id": "ENE_NML_FLD_ISD_010",
+      "name": "ENE_NML_FLD_ISD_010",
+      "stats": {
+        "max_hp": 195,
+        "max_sp": 50,
+        "speed": 64
+      },
+      "resources": {
+        "hp": 195,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 94,
+        "defense": 85,
+        "magic": 96,
+        "magic_defense": 94,
+        "accuracy": 67,
+        "evasion": 81,
+        "critical": 101,
+        "growth_attack": 94,
+        "growth_magic": 94,
+        "shields": 1,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "lightning",
+          "wind"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_120": {
+      "id": "ENE_NML_FLD_ISD_120",
+      "name": "ENE_NML_FLD_ISD_120",
+      "stats": {
+        "max_hp": 194,
+        "max_sp": 50,
+        "speed": 69
+      },
+      "resources": {
+        "hp": 194,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 93,
+        "defense": 91,
+        "magic": 97,
+        "magic_defense": 93,
+        "accuracy": 82,
+        "evasion": 95,
+        "critical": 102,
+        "growth_attack": 93,
+        "growth_magic": 93,
+        "shields": 1,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 12,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "axe",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "lightning",
+          "wind"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_020": {
+      "id": "ENE_NML_FLD_ISD_020",
+      "name": "ENE_NML_FLD_ISD_020",
+      "stats": {
+        "max_hp": 291,
+        "max_sp": 50,
+        "speed": 72
+      },
+      "resources": {
+        "hp": 291,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 121,
+        "defense": 112,
+        "magic": 131,
+        "magic_defense": 113,
+        "accuracy": 75,
+        "evasion": 91,
+        "critical": 111,
+        "growth_attack": 121,
+        "growth_magic": 121,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "axe"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "ice",
+          "lightning"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_170": {
+      "id": "ENE_NML_FLD_ISD_170",
+      "name": "ENE_NML_FLD_ISD_170",
+      "stats": {
+        "max_hp": 287,
+        "max_sp": 50,
+        "speed": 50
+      },
+      "resources": {
+        "hp": 287,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 106,
+        "defense": 137,
+        "magic": 108,
+        "magic_defense": 115,
+        "accuracy": 84,
+        "evasion": 67,
+        "critical": 104,
+        "growth_attack": 106,
+        "growth_magic": 106,
+        "shields": 2,
+        "enemy_bp_base": 4,
+        "enemy_initialization": {
+          "initial_idle_frames": 30,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "axe",
+          "bow",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "fire"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_CTY_190": {
+      "id": "ENE_NML_FLD_CTY_190",
+      "name": "ENE_NML_FLD_CTY_190",
+      "stats": {
+        "max_hp": 505,
+        "max_sp": 50,
+        "speed": 90
+      },
+      "resources": {
+        "hp": 505,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 174,
+        "defense": 163,
+        "magic": 169,
+        "magic_defense": 142,
+        "accuracy": 100,
+        "evasion": 120,
+        "critical": 120,
+        "growth_attack": 174,
+        "growth_magic": 174,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 22,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_260": {
+      "id": "ENE_NML_FLD_ISD_260",
+      "name": "ENE_NML_FLD_ISD_260",
+      "stats": {
+        "max_hp": 378,
+        "max_sp": 50,
+        "speed": 73
+      },
+      "resources": {
+        "hp": 378,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 121,
+        "defense": 108,
+        "magic": 135,
+        "magic_defense": 88,
+        "accuracy": 76,
+        "evasion": 18,
+        "critical": 112,
+        "growth_attack": 121,
+        "growth_magic": 121,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 54,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_130": {
+      "id": "ENE_NML_FLD_ISD_130",
+      "name": "ENE_NML_FLD_ISD_130",
+      "stats": {
+        "max_hp": 540,
+        "max_sp": 50,
+        "speed": 85
+      },
+      "resources": {
+        "hp": 540,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 144,
+        "defense": 163,
+        "magic": 164,
+        "magic_defense": 162,
+        "accuracy": 100,
+        "evasion": 116,
+        "critical": 120,
+        "growth_attack": 144,
+        "growth_magic": 144,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 12,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "wind"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_030": {
+      "id": "ENE_NML_FLD_ISD_030",
+      "name": "ENE_NML_FLD_ISD_030",
+      "stats": {
+        "max_hp": 592,
+        "max_sp": 50,
+        "speed": 80
+      },
+      "resources": {
+        "hp": 592,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 174,
+        "defense": 153,
+        "magic": 169,
+        "magic_defense": 165,
+        "accuracy": 100,
+        "evasion": 100,
+        "critical": 160,
+        "growth_attack": 174,
+        "growth_magic": 174,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_080": {
+      "id": "ENE_NML_FLD_ISD_080",
+      "name": "ENE_NML_FLD_ISD_080",
+      "stats": {
+        "max_hp": 4714,
+        "max_sp": 50,
+        "speed": 119
+      },
+      "resources": {
+        "hp": 4714,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 460,
+        "defense": 431,
+        "magic": 368,
+        "magic_defense": 393,
+        "accuracy": 285,
+        "evasion": 171,
+        "critical": 195,
+        "growth_attack": 460,
+        "growth_magic": 460,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_SEA_270": {
+      "id": "ENE_NML_FLD_SEA_270",
+      "name": "ENE_NML_FLD_SEA_270",
+      "stats": {
+        "max_hp": 3573,
+        "max_sp": 50,
+        "speed": 96
+      },
+      "resources": {
+        "hp": 3573,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 369,
+        "defense": 331,
+        "magic": 336,
+        "magic_defense": 358,
+        "accuracy": 177,
+        "evasion": 192,
+        "critical": 180,
+        "growth_attack": 369,
+        "growth_magic": 369,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 40,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "dagger"
+        ],
+        "element_weaknesses": [
+          "wind",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_090": {
+      "id": "ENE_NML_FLD_ISD_090",
+      "name": "ENE_NML_FLD_ISD_090",
+      "stats": {
+        "max_hp": 5376,
+        "max_sp": 50,
+        "speed": 122
+      },
+      "resources": {
+        "hp": 5376,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 475,
+        "defense": 456,
+        "magic": 379,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 140,
+        "critical": 199,
+        "growth_attack": 475,
+        "growth_magic": 475,
+        "shields": 5,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 20,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "staff"
+        ],
+        "element_weaknesses": [
+          "ice",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_160": {
+      "id": "ENE_NML_FLD_ISD_160",
+      "name": "ENE_NML_FLD_ISD_160",
+      "stats": {
+        "max_hp": 6451,
+        "max_sp": 50,
+        "speed": 192
+      },
+      "resources": {
+        "hp": 6451,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 467,
+        "defense": 456,
+        "magic": 423,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 217,
+        "critical": 191,
+        "growth_attack": 467,
+        "growth_magic": 467,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "bow",
+          "staff"
+        ],
+        "element_weaknesses": [],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_220": {
+      "id": "ENE_NML_FLD_ISD_220",
+      "name": "ENE_NML_FLD_ISD_220",
+      "stats": {
+        "max_hp": 8859,
+        "max_sp": 50,
+        "speed": 115
+      },
+      "resources": {
+        "hp": 8859,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 555,
+        "defense": 479,
+        "magic": 469,
+        "magic_defense": 440,
+        "accuracy": 295,
+        "evasion": 141,
+        "critical": 197,
+        "growth_attack": 555,
+        "growth_magic": 555,
+        "shields": 6,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 32,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "axe",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "lightning"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_240": {
+      "id": "ENE_NML_FLD_ISD_240",
+      "name": "ENE_NML_FLD_ISD_240",
+      "stats": {
+        "max_hp": 13000,
+        "max_sp": 50,
+        "speed": 120
+      },
+      "resources": {
+        "hp": 13000,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 365,
+        "defense": 190,
+        "magic": 320,
+        "magic_defense": 190,
+        "accuracy": 120,
+        "evasion": 95,
+        "critical": 130,
+        "growth_attack": 365,
+        "growth_magic": 365,
+        "shields": 5,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 18,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "dagger",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_ISD_280": {
+      "id": "ENE_NML_FLD_ISD_280",
+      "name": "ENE_NML_FLD_ISD_280",
+      "stats": {
+        "max_hp": 6451,
+        "max_sp": 50,
+        "speed": 140
+      },
+      "resources": {
+        "hp": 6451,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 467,
+        "defense": 456,
+        "magic": 423,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 35,
+        "critical": 195,
+        "growth_attack": 467,
+        "growth_magic": 467,
+        "shields": 4,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 54,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "sword",
+          "axe",
+          "staff"
+        ],
+        "element_weaknesses": [
+          "lightning"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_CTY_220": {
+      "id": "ENE_NML_FLD_CTY_220",
+      "name": "ENE_NML_FLD_CTY_220",
+      "stats": {
+        "max_hp": 5590,
+        "max_sp": 50,
+        "speed": 157
+      },
+      "resources": {
+        "hp": 5590,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 422,
+        "defense": 485,
+        "magic": 360,
+        "magic_defense": 422,
+        "accuracy": 291,
+        "evasion": 227,
+        "critical": 195,
+        "growth_attack": 422,
+        "growth_magic": 422,
+        "shields": 3,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 23,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "wind",
+          "light"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
+    },
+    "ENE_NML_FLD_CTY_200": {
+      "id": "ENE_NML_FLD_CTY_200",
+      "name": "ENE_NML_FLD_CTY_200",
+      "stats": {
+        "max_hp": 2857,
+        "max_sp": 50,
+        "speed": 153
+      },
+      "resources": {
+        "hp": 2857,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "ordinary",
+        "states": [
+          {
+            "id": "ordinary",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "normal_enemy",
+                  "attack": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "charged": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  },
+                  "low_hp": {
+                    "skill": "ABI_ENE_0010",
+                    "target": "random_opponent"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "combat": {
+        "attack": 416,
+        "defense": 404,
+        "magic": 349,
+        "magic_defense": 393,
+        "accuracy": 285,
+        "evasion": 205,
+        "critical": 191,
+        "growth_attack": 416,
+        "growth_magic": 416,
+        "shields": 2,
+        "enemy_bp_base": 2,
+        "enemy_initialization": {
+          "initial_idle_frames": 22,
+          "sync_to_parent": false,
+          "sync_children": false
+        },
+        "weapon_weaknesses": [
+          "lance"
+        ],
+        "element_weaknesses": [
+          "light",
+          "dark"
+        ],
+        "statuses": [],
+        "weapons": [],
+        "main_weapon": null,
+        "steal_item": null,
+        "use_cat_damage_type": false
+      }
     }
   }
 }

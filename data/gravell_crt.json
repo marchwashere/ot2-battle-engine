@@ -6009,6 +6009,19 @@
         "effect": null
       }
     ],
+    "energizing_pomegranate": [
+      {
+        "kind": "voice",
+        "tick": 0,
+        "type": 15
+      },
+      {
+        "kind": "damage",
+        "tick": 21600,
+        "last": false,
+        "effect": null
+      }
+    ],
     "energizing_pomegranate_m": [
       {
         "kind": "voice",
@@ -6049,6 +6062,7 @@
     "donate_bp": true,
     "stimulate": true,
     "springy_boots": true,
+    "energizing_pomegranate": false,
     "energizing_pomegranate_m": false,
     "thunder_soulstone_l": false
   },
@@ -6089,6 +6103,12 @@
     "springy_boots:3": 35568,
     "springy_boots:4": 34896,
     "springy_boots:5": 18409,
+    "energizing_pomegranate:0": 23472,
+    "energizing_pomegranate:1": 21073,
+    "energizing_pomegranate:2": 16537,
+    "energizing_pomegranate:3": 29808,
+    "energizing_pomegranate:4": 13633,
+    "energizing_pomegranate:5": 24048,
     "energizing_pomegranate_m:0": 23472,
     "energizing_pomegranate_m:1": 21073,
     "energizing_pomegranate_m:2": 16537,

@@ -1,5 +1,4 @@
 {
-  "guards_cost": 7000,
   "tiers": [
     {
       "ability": "ABI_DAN_070_01",
@@ -571,5 +570,6 @@
       "id": "PC_ABI_MER_YOHEI_04_04_INVADE",
       "weight": 10
     }
-  ]
+  ],
+  "guards_cost": 7000
 }

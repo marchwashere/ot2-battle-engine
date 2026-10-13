@@ -100,6 +100,22 @@
       ]
     },
     {
+      "id": "energizing_pomegranate",
+      "name": "Energizing Pomegranate",
+      "source_label": "ITM_CSM_0070",
+      "target": "ally",
+      "effects": [
+        {
+          "kind": "restore",
+          "resource": "bp",
+          "recovery": {
+            "kind": "fixed",
+            "amount": 1
+          }
+        }
+      ]
+    },
+    {
       "id": "energizing_pomegranate_m",
       "name": "Energizing Pomegranate (M)",
       "source_label": "ITM_CSM_0080",

@@ -198,10 +198,18 @@ pub fn carried_step_ahead(entry:CrtRng,situation:Situation,players:&[crate::Play
     carried_step_ahead_members(entry,situation,players,enemies,night,history,None)
 }
 pub fn carried_step_ahead_members(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,members:Option<Vec<usize>>)->Result<Battle> {
+    step_ahead_profile(entry,situation,players,enemies,night,history,members,false)
+}
+pub fn roque_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Battle> {
+    ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Unexpected Roque party")?;
+    ensure(players[3].boost_start,"Roque routine requires Partitio Boost-Start")?;
+    step_ahead_profile(entry,situation,players,&["ENE_NML_OCN_230","ENE_NML_OCN_230"],true,history,None,true)
+}
+fn step_ahead_profile(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,members:Option<Vec<usize>>,roque:bool)->Result<Battle> {
     ensure(members.as_ref().is_none_or(|v|!v.is_empty()&&v.iter().all(|&i|i<players.len())),"Invalid Step Ahead members")?;
     ensure(situation!=Situation::Surprise,"Route prohibits surprise")?;
     let mut config=break_data().party_config.clone();config.players=players.to_vec();
-    for p in &mut config.players {p.resources.as_mut().ok_or_else(||SimError("Missing carried resources".into()))?.bp=1;p.skills.clear();}
+    for p in &mut config.players {p.resources.as_mut().ok_or_else(||SimError("Missing carried resources".into()))?.bp=1+u8::from(p.boost_start);p.skills.clear();}
     config.seed=entry.state;config.night_buff_turns=if night&&players.iter().any(|p|p.id=="throne") {3}else{0};
     config.enemies=enemies.iter().map(|id|break_data().enemies.get(*id).cloned().ok_or_else(||SimError(format!("Missing Step Ahead enemy {id}")))).collect::<Result<_>>()?;
     config.enemy_knowledge=history.clone();
@@ -215,6 +223,11 @@ pub fn carried_step_ahead_members(entry:CrtRng,situation:Situation,players:&[cra
     }
     config.inventory.insert("energizing_pomegranate_m".into(),1);
     config.inventory.insert("thunder_soulstone_l".into(),1);
+    if roque {
+        config.players[1].skills=vec!["attack_staff".into()];
+        config.players[2].skills=vec!["bewildering_grace".into()];
+        config.inventory.clear();config.inventory.insert("energizing_pomegranate".into(),1);
+    }
     let voices=players.iter().map(|p|carried_data().players.get(&p.id).map(|d|d.voice).ok_or_else(||SimError("Unsupported carried identity".into()))).collect::<Result<_>>()?;
     Battle::new_carried_step_ahead_members(config,situation,voices,members)
 }

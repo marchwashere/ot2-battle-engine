@@ -2709,7 +2709,8 @@ impl Battle {
                 }
             }
         }
-        if first && self.state.opening_crt.as_ref().is_some_and(|c|c.lord_sands) {
+        if first && (self.state.opening_crt.as_ref().is_some_and(|c|c.lord_sands)
+            || self.scenario.night_buff_turns>0 && self.actor_id("temenos").is_some()) {
             // ExecSpecialAction_DebuffInNight calls AddDisease directly, no lottery.
             for (i,state) in self.state.actors.iter_mut().enumerate() {
                 if self.scenario.actors[i].side==Side::Enemy {

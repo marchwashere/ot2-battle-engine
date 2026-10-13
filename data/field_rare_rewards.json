@@ -754,5 +754,257 @@
     "money": 1080,
     "drop_item": "ITM_CSM_0110",
     "drop_rate": 3
+  },
+  "ENE_NML_FLD_ISD_040": {
+    "exp": 23,
+    "jp": 20,
+    "money": 192,
+    "drop_item": "ITM_CSM_0010",
+    "drop_rate": 15
+  },
+  "ENE_NML_FLD_ISD_050": {
+    "exp": 32,
+    "jp": 22,
+    "money": 216,
+    "drop_item": "ITM_MRL_REV_0010",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_ISD_180": {
+    "exp": 22,
+    "jp": 21,
+    "money": 204,
+    "drop_item": "ITM_MRL_REV_0070",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_ISD_230": {
+    "exp": 64,
+    "jp": 23,
+    "money": 285,
+    "drop_item": "ITM_MRL_ATK_0050",
+    "drop_rate": 20
+  },
+  "ENE_NML_FLD_ISD_190": {
+    "exp": 24,
+    "jp": 19,
+    "money": 225,
+    "drop_item": "ITM_CSM_0170",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_ISD_150": {
+    "exp": 20,
+    "jp": 20,
+    "money": 192,
+    "drop_item": "ITM_MRL_ATK_0060",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_ISD_270": {
+    "exp": 36,
+    "jp": 23,
+    "money": 228,
+    "drop_item": "ITM_MRL_ATK_0090",
+    "drop_rate": 20
+  },
+  "ENE_NML_FLD_ISD_060": {
+    "exp": 49,
+    "jp": 33,
+    "money": 324,
+    "drop_item": "ITM_CSM_0020",
+    "drop_rate": 8
+  },
+  "ENE_NML_FLD_ISD_200": {
+    "exp": 88,
+    "jp": 34,
+    "money": 420,
+    "drop_item": "ITM_CSM_0050",
+    "drop_rate": 5
+  },
+  "ENE_NML_FLD_WLD_200": {
+    "exp": 87,
+    "jp": 39,
+    "money": 480,
+    "drop_item": "ITM_FLV_0290",
+    "drop_rate": 8
+  },
+  "ENE_NML_FLD_ISD_070": {
+    "exp": 89,
+    "jp": 41,
+    "money": 510,
+    "drop_item": "ITM_CSM_0040",
+    "drop_rate": 14
+  },
+  "ENE_NML_FLD_SEA_090": {
+    "exp": 225,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0060",
+    "drop_rate": 7
+  },
+  "ENE_NML_FLD_SEA_070": {
+    "exp": 89,
+    "jp": 41,
+    "money": 510,
+    "drop_item": "ITM_CSM_0020",
+    "drop_rate": 8
+  },
+  "ENE_NML_FLD_SEA_080": {
+    "exp": 146,
+    "jp": 55,
+    "money": 675,
+    "drop_item": "ITM_MRL_REV_0020",
+    "drop_rate": 35
+  },
+  "ENE_NML_FLD_SEA_210": {
+    "exp": 194,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0050",
+    "drop_rate": 5
+  },
+  "ENE_NML_FLD_SEA_190": {
+    "exp": 114,
+    "jp": 53,
+    "money": 528,
+    "drop_item": "ITM_MRL_ATK_0040",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_SEA_240": {
+    "exp": 178,
+    "jp": 55,
+    "money": 675,
+    "drop_item": "ITM_MRL_ATK_0070",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_SEA_260": {
+    "exp": 426,
+    "jp": 61,
+    "money": 750,
+    "drop_item": "ITM_MRL_COM_0020",
+    "drop_rate": 5
+  },
+  "ENE_NML_OCN_230": {
+    "exp": 229,
+    "jp": 58,
+    "money": 720,
+    "drop_item": "ITM_CSM_0130",
+    "drop_rate": 5
+  },
+  "ENE_NML_FLD_ISD_010": {
+    "exp": 7,
+    "jp": 3,
+    "money": 24,
+    "drop_item": "ITM_CSM_0010",
+    "drop_rate": 10
+  },
+  "ENE_NML_FLD_ISD_120": {
+    "exp": 8,
+    "jp": 4,
+    "money": 36,
+    "drop_item": "ITM_CSM_0010",
+    "drop_rate": 10
+  },
+  "ENE_NML_FLD_ISD_020": {
+    "exp": 11,
+    "jp": 9,
+    "money": 84,
+    "drop_item": "ITM_CSM_0040",
+    "drop_rate": 7
+  },
+  "ENE_NML_FLD_ISD_170": {
+    "exp": 7,
+    "jp": 5,
+    "money": 48,
+    "drop_item": "ITM_CSM_0150",
+    "drop_rate": 25
+  },
+  "ENE_NML_FLD_CTY_190": {
+    "exp": 15,
+    "jp": 16,
+    "money": 156,
+    "drop_item": "ITM_MRL_REV_0070",
+    "drop_rate": 20
+  },
+  "ENE_NML_FLD_ISD_260": {
+    "exp": 9,
+    "jp": 10,
+    "money": 96,
+    "drop_item": "ITM_MRL_ATK_0090",
+    "drop_rate": 15
+  },
+  "ENE_NML_FLD_ISD_130": {
+    "exp": 15,
+    "jp": 16,
+    "money": 156,
+    "drop_item": "ITM_MRL_ATK_0010",
+    "drop_rate": 20
+  },
+  "ENE_NML_FLD_ISD_030": {
+    "exp": 15,
+    "jp": 16,
+    "money": 156,
+    "drop_item": "ITM_MRL_REV_0010",
+    "drop_rate": 15
+  },
+  "ENE_NML_FLD_ISD_080": {
+    "exp": 146,
+    "jp": 55,
+    "money": 675,
+    "drop_item": "ITM_MRL_REV_0010",
+    "drop_rate": 30
+  },
+  "ENE_NML_FLD_SEA_270": {
+    "exp": 82,
+    "jp": 46,
+    "money": 570,
+    "drop_item": "ITM_MRL_COM_0010",
+    "drop_rate": 4
+  },
+  "ENE_NML_FLD_ISD_090": {
+    "exp": 225,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0030",
+    "drop_rate": 10
+  },
+  "ENE_NML_FLD_ISD_160": {
+    "exp": 225,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0050",
+    "drop_rate": 6
+  },
+  "ENE_NML_FLD_ISD_220": {
+    "exp": 385,
+    "jp": 58,
+    "money": 720,
+    "drop_item": "ITM_FLV_0290",
+    "drop_rate": 10
+  },
+  "ENE_NML_FLD_ISD_240": {
+    "exp": 114,
+    "jp": 19,
+    "money": 540,
+    "drop_item": "ITM_EQP_LNS_210",
+    "drop_rate": 100
+  },
+  "ENE_NML_FLD_ISD_280": {
+    "exp": 225,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0080",
+    "drop_rate": 7
+  },
+  "ENE_NML_FLD_CTY_220": {
+    "exp": 152,
+    "jp": 57,
+    "money": 705,
+    "drop_item": "ITM_CSM_0230",
+    "drop_rate": 10
+  },
+  "ENE_NML_FLD_CTY_200": {
+    "exp": 92,
+    "jp": 55,
+    "money": 540,
+    "drop_item": "ITM_CSM_0020",
+    "drop_rate": 8
   }
 }

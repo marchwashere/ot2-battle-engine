@@ -4,6 +4,7 @@ pub mod battle;
 pub mod bewildering_grace;
 pub mod bg_effects;
 pub mod gravell_routine;
+pub mod roque_routine;
 pub mod fight_search;
 pub mod hired_help;
 pub mod combat;

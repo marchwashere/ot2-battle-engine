@@ -1083,6 +1083,366 @@
         "sync_to_parent": false,
         "sync_children": false
       }
+    },
+    "ENE_NML_FLD_ISD_040": {
+      "speed": 87,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_050": {
+      "speed": 92,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_180": {
+      "speed": 89,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_230": {
+      "speed": 90,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 40,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_190": {
+      "speed": 79,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 30,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_150": {
+      "speed": 103,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 16,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_270": {
+      "speed": 96,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 54,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_060": {
+      "speed": 108,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_200": {
+      "speed": 104,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 30,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_WLD_200": {
+      "speed": 124,
+      "bp_base": 3,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_070": {
+      "speed": 105,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_090": {
+      "speed": 157,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_070": {
+      "speed": 120,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_080": {
+      "speed": 153,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_210": {
+      "speed": 140,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 25,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_190": {
+      "speed": 136,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 21,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_240": {
+      "speed": 140,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 48,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_260": {
+      "speed": 117,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 27,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_OCN_230": {
+      "speed": 123,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 54,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_010": {
+      "speed": 64,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_120": {
+      "speed": 69,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_020": {
+      "speed": 72,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_170": {
+      "speed": 50,
+      "bp_base": 4,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 30,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_190": {
+      "speed": 90,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 22,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_260": {
+      "speed": 73,
+      "bp_base": 2,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 54,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_130": {
+      "speed": 85,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 12,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_030": {
+      "speed": 80,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_080": {
+      "speed": 119,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_SEA_270": {
+      "speed": 96,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 40,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_090": {
+      "speed": 122,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 20,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_160": {
+      "speed": 192,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_220": {
+      "speed": 115,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 32,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_240": {
+      "speed": 120,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_ISD_280": {
+      "speed": 140,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 54,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_220": {
+      "speed": 157,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 23,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_CTY_200": {
+      "speed": 153,
+      "bp_base": 2,
+      "weakness_count": 3,
+      "initialization": {
+        "initial_idle_frames": 22,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
     }
   },
   "osvald_levels": [

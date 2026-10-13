@@ -12,6 +12,7 @@ const selected=[
   ['0030','healing_grape_bunch','Healing Grape Bunch'],
   ['0040','inspiriting_plum','Inspiriting Plum'],['0050','inspiriting_plum_m','Inspiriting Plum (M)'],
   ['0060','inspiriting_plum_basket','Inspiriting Plum Basket'],
+  ['0070','energizing_pomegranate','Energizing Pomegranate'],
   ['0080','energizing_pomegranate_m','Energizing Pomegranate (M)'],
   ['0100','refreshing_jam','Refreshing Jam'],['0101','rejuvenating_jam','Rejuvenating Jam'],
   ['0110','reinforcing_jam','Reinforcing Jam'],['0111','revitalizing_jam','Revitalizing Jam']

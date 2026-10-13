@@ -59,6 +59,7 @@ for(const [id,row,voice] of [
  ['donate_bp',find('ABI_MER_050_01'),'ABI_MER_050_01'],
  ['stimulate',find('ABI_DAN_060_01'),'ABI_DAN_060_01'],
  ['springy_boots',find('ABI_INV_020_01'),'ABI_INV_020_01'],
+ ['energizing_pomegranate',items.rows.find(r=>r.id==='ITM_CSM_0070'),'party_item'],
  ['energizing_pomegranate_m',items.rows.find(r=>r.id==='ITM_CSM_0080'),'party_item'],
  ['thunder_soulstone_l',items.rows.find(r=>r.id==='ITM_CSM_0370'),null]
 ]) {

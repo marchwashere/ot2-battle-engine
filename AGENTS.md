@@ -1,3 +1,12 @@
+- Roque JP100 profile: carried Throne/Osvald/Temenos/Partitio, all ASA,
+  Partitio Boost-Start2BP, native Temenos night debuffs. Partitio then Temenos
+  Defend -> Temenos first/Partitio second next turn; small Pom supplies3BP.
+  Osvald staff rightmost; full BG -> Guards simulation, reject disrupted
+  order, insufficient BP, silence, dead recipients or incomplete victory.
+  Search both boost paths in total input order; rewards share native logic.
+  Profile requires caller-audited skills/supports/inventory. Small Pom item
+  and timeline source-imported; no battle-state offsets. Retail trace pending.
+
 # Active project
 
 - Quicksand post-boss land Escape imports include ENG_DNG_DST_2_2_L_120 and
