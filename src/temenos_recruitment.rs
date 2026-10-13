@@ -9,6 +9,11 @@ pub struct Prediction {
  pub boost_cycles:u32,pub overkill:bool,pub enemy_knowledge:crate::knowledge::EnemyHistory,pub party_resources_after:Vec<Resources>,
 }
 pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Prediction> {
+ predict_from_boost_cycles(before,players,history,0)
+}
+/// First one-action victory at or after the requested complete boost cycles.
+pub fn predict_from_boost_cycles(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,minimum_cycles:u32)->Result<Prediction> {
+ ensure(minimum_cycles<65536,"Temenos boost search exhausted")?;
  ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","agnea","partitio"]),"Temenos requires carried Galdera party")?;
  let mut config=BattleConfig::from_json(include_str!("../data/temenos_recruitment.json"))?;
  config.seed=before.state;config.players=players.to_vec();config.enemy_knowledge=history.clone();
@@ -22,7 +27,7 @@ pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledg
  ensure(actor.0<4,"Recruitment must start with a player")?;
  let at_command_menu=absolute(battle.state().rng);
  let command=Command::Boost {id:battle.default_attack(actor)?.into(),target:Some(ActorId(4)),bp:1};
- let mut boost_cycles=0;
+ let mut boost_cycles=minimum_cycles;
  let (battle,mut report)=loop {
   let mut trial=battle.clone();
   let inputs:Vec<_>=(0..boost_cycles).flat_map(|_|[1,0]).chain([1]).collect();
