@@ -7,6 +7,9 @@ pub fn data()->&'static Data {static D:OnceLock<Data>=OnceLock::new();D.get_or_i
 #[derive(Debug,Serialize)]pub struct Action {pub turn:u32,pub actor:usize,pub name:String,pub bp:u8,pub report:crate::StepReport}
 #[derive(Debug,Serialize)]pub struct Prediction {pub before:CrtRng,pub at_command_menu:CrtRng,pub after:CrtRng,pub actions:Vec<Action>,pub trace:Vec<RngSpan>,pub rewards:Reward,pub drops:BTreeMap<String,u32>,pub money_spent:u32,pub broken:bool,pub overkill:bool,pub enemy_knowledge:crate::knowledge::EnemyHistory,pub party_resources_after:Vec<Resources>}
 pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Prediction> {
+ predict_with_finisher_boost_cycles(before,players,history,0)
+}
+pub fn predict_with_finisher_boost_cycles(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,cycles:u32)->Result<Prediction> {
  ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Lord Sands requires current Galdera party")?;
  let mut config=BattleConfig::from_json(include_str!("../data/lord_sands.json"))?;config.seed=before.state;config.players=players.to_vec();config.enemy_knowledge=history.clone();
  for p in &mut config.players {p.resources.as_mut().ok_or_else(||crate::SimError("Missing resources".into()))?.bp=1;}
@@ -24,7 +27,7 @@ pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledg
    (3,3)=>("Hired Help: Beastlings",3,Command::Boost{id:"hired_help_beastlings".into(),bp:3,target:None}),
    _=>return Err(crate::SimError(format!("Unexpected Lord Sands turn {turn}, actor {actor}; refusing unmodeled enemy action")))
   };
-  let mut report=b.step_player(command)?;report.rng_before=abs(report.rng_before);report.rng_after=abs(report.rng_after);actions.push(Action{turn,actor,name:name.into(),bp,report});
+  let mut report=if turn==3&&actor==3&&cycles>0 {let mut inputs=Vec::new();for _ in 0..cycles {inputs.extend([1,0]);}inputs.extend([1,2,3]);b.step_player_with_boost_inputs(command,&inputs)?}else{b.step_player(command)?};report.rng_before=abs(report.rng_before);report.rng_after=abs(report.rng_after);actions.push(Action{turn,actor,name:name.into(),bp,report});
  }
  ensure(b.state().outcome==Outcome::Victory&&b.state().actors[..4].iter().all(|p|p.alive()),"Lord Sands routine did not win with everyone alive")?;
  let mut broken=false;let mut overkill=false;let mut last_damage=0;
@@ -45,6 +48,18 @@ pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledg
    let damage:Vec<_>=r.actions[7].report.events.iter().filter_map(|e|if let Event::Damage {amount,..}=e{Some(*amount)}else{None}).collect();assert_eq!(damage,vec![9999;4]);
    for pair in r.trace.windows(2){assert_eq!(pair[0].after,pair[1].before);}
    assert_eq!(r.trace.last().unwrap().after,r.after);
+  }
+ }
+ #[test]fn finisher_boost_cycles_preserve_earlier_actions() {
+  let players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
+  for seed in 0u32..16 {
+   let rng=CrtRng::new(seed.wrapping_mul(1775700753));
+   let base=predict(rng,&players,&Default::default()).unwrap();
+   let adjusted=predict_with_finisher_boost_cycles(rng,&players,&Default::default(),2).unwrap();
+   assert_eq!(base.at_command_menu,adjusted.at_command_menu);
+   for i in 0..7 {assert_eq!(base.actions[i].report.rng_after,adjusted.actions[i].report.rng_after);}
+   assert_eq!(base.actions[7].report.rng_before,adjusted.actions[7].report.rng_before);
+   assert_ne!(base.after,adjusted.after);assert_eq!(adjusted.actions[7].report.outcome,Outcome::Victory);
   }
  }
 }

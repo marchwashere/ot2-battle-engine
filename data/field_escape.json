@@ -1023,6 +1023,66 @@
         "sync_to_parent": false,
         "sync_children": false
       }
+    },
+    "ENE_NML_DNG_RIN_260": {
+      "speed": 100,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_DNG_RIN_270": {
+      "speed": 109,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_DNG_RIN_290": {
+      "speed": 116,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_DNG_RIN_280": {
+      "speed": 106,
+      "bp_base": 3,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 18,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_FLD_DST_210": {
+      "speed": 100,
+      "bp_base": 2,
+      "weakness_count": 4,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
+    },
+    "ENE_NML_ENC_SUB_01": {
+      "speed": 160,
+      "bp_base": 3,
+      "weakness_count": 5,
+      "initialization": {
+        "initial_idle_frames": 24,
+        "sync_to_parent": false,
+        "sync_children": false
+      }
     }
   },
   "osvald_levels": [

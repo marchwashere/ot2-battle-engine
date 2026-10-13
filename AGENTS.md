@@ -1,5 +1,10 @@
 # Active project
 
+- Quicksand post-boss land Escape imports include ENG_DNG_DST_2_2_L_120 and
+  ENE_NML_ENC_SUB_01 (repeat boss, Escape enabled), plus ordinary land formations.
+  Lord Sands predictor exposes finisher boost cycles before Partitio's T3
+  Beastlings; unchanged first seven actions, actual boost voice/RNG execution.
+
 - Galdera Lord of the Sands: source-backed eight-action routine, both night talents,
   partial ASA, Slash/Scope/Beastlings timelines and rewards. Refuse enemy actions.
   Defend priority uses this-round next-order markers, not prior-round guard state.
