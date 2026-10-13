@@ -295,29 +295,7 @@ impl Battle {
         Ok(reaction)
     }
     pub(super) fn grace_delay(&mut self,actor:ActorId,targets:&[ActorId],count:usize) {
-        let mut current=Vec::new();let mut next=Vec::new();
-        for &target in targets {
-            if !self.state.actors[target.0].alive()||self.state.actors[target.0].broken() {continue;}
-            // OrderCountControl: the caster and already-acted characters move
-            // next turn; a character with an outstanding row moves only now.
-            if target!=actor&&self.state.queue[self.state.cursor+1..].contains(&target) {current.push(target);}
-            else {next.push(target);}
-        }
-        for (rows,start,selected,is_next) in [(&mut self.state.queue,self.state.cursor+1,current,false),(&mut self.state.next_queue,0,next,true)] {
-            if start>=rows.len() {continue;}
-            let mut end=rows.len()-1;
-            // Cannot push past a still-broken character's reserved row.
-            for (i,id) in rows.iter().enumerate().skip(start) {
-                let s=&self.state.actors[id.0];
-                if s.broken()&&(!is_next||s.break_until_round>self.state.round+1) {end=i.saturating_sub(1);}
-            }
-            for i in (start..rows.len()).rev() {
-                if !selected.contains(&rows[i])||i>end {continue;}
-                let to=i.saturating_add(count).min(end);
-                let id=rows.remove(i);rows.insert(to,id);
-                if to==end {end=end.saturating_sub(1).max(start);}
-            }
-        }
+        self.shift_action_orders(actor, targets, count.min(i32::MAX as usize) as i32);
     }
     pub(super) fn grace_shield_damage(&mut self,actor:ActorId,targets:&[ActorId],amount:u32,events:&mut Vec<Event>)->Option<u8> {
         let mut reaction=None;
@@ -329,6 +307,7 @@ impl Battle {
             if before>0&&s.shields==0 {
                 s.break_until_round=self.state.round+2;
                 events.push(Event::Broken {actor:target,recover_round:s.break_until_round});
+                self.break_action_order(target);
                 self.timer_rng("bg_shield_break_notification",Some(target));reaction=Some(10);
                 let cap=crate::field_escape::player_latent_max(&self.scenario.actors[actor.0].id).expect("BG actor");
                 let r=&mut self.state.actors[actor.0].resources.latent;*r=r.saturating_add(25).min(cap);

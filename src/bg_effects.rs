@@ -16,7 +16,6 @@ pub struct BattleModifiers {
     pub items_disabled:bool,
     pub last_act_round:Option<u32>,
     pub guard_hits:Vec<crate::ActorId>,
-    pub defended_round:BTreeMap<crate::ActorId,u32>,
     /// SetStatusDead saves permanent diseases for ExecRevive.
     pub dead_permanent: BTreeMap<crate::ActorId,Vec<crate::combat::Status>>,
 }

@@ -27,10 +27,11 @@ SP_DAMAGE sets additive break damage rather than directly executing a shield hit
 this bounded routine only accepts the already-broken boss. No new shield or shield
 RNG is synthesized. Summons ignore the hiring character's attack buffs.
 
-Defend priority tracks the next-order row set this round, not a still-active Guard
-status from the previous round. BattleCharacterBaseBP.CheckOverTakeEnable checks
-cTargetOrderData.m_eOrderType6. Thus Partitio's T2 Defend precedes Osvald on T3
-even if Osvald has not yet taken his T2 action when Partitio Defends.
+Defend moves to the front of the next queue, after recovering broken enemies.
+Earlier Defends and Springy Boots do not block it. The old interpretation of
+CheckOverTakeEnable's order type6 was wrong: that is BREAK_STYLE, not GUARD3.
+Partitio's T2 Defend precedes Osvald on T3 regardless of the lingering Guard
+status. See `turn-order-controls.md` for the corrected shared implementation.
 
 Predictions include all action reports and continuous absolute RNG spans,
 party resources/history, Break/Overkill EXP,37 base JP (no Domination on T3),

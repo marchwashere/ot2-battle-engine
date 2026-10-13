@@ -13,6 +13,7 @@ use std::{
     sync::Arc,
 };
 mod grace;
+mod order;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -1404,19 +1405,8 @@ impl Battle {
                 self.roll_status_application();
                 self.trace_rng("guard_disease", Some(actor), before);
                 self.state.actors[actor.0].guard = true;
-                self.state.grace.get_or_insert_with(Default::default).defended_round.insert(actor,self.state.round);
                 self.voice(actor, 17, VoiceCondition::default());
-                // Guard promotes the actor in the already generated next-round queue.
-                if let Some(index) = self.state.next_queue.iter().position(|id| *id == actor) {
-                    let id = self.state.next_queue.remove(index);
-                    let insert = self
-                        .state
-                        .next_queue
-                        .iter()
-                        .take_while(|id| self.state.grace.as_ref().is_some_and(|g|g.defended_round.get(id)==Some(&self.state.round)) || self.state.actors[id.0].has_status(StatusKind::ActFirst))
-                        .count();
-                    self.state.next_queue.insert(insert, id);
-                }
+                self.promote_next_order(actor);
                 ("defend", &[][..], &HitCheck::Guaranteed, 1)
             }
         };
@@ -1862,12 +1852,7 @@ impl Battle {
                 self.grace_recover(actor,target,*resource,amount,(actor!=target).then_some(target),events);
             },
             Effect::OrderShift { positions } => {
-                for (rows,start) in [(&mut self.state.queue,self.state.cursor+1),(&mut self.state.next_queue,0)] {
-                    if let Some(index)=rows.iter().enumerate().skip(start).find_map(|(i,id)|(*id==target).then_some(i)) {
-                        let end=(index as isize+*positions as isize).clamp(start as isize,rows.len() as isize-1) as usize;
-                        let id=rows.remove(index);rows.insert(end,id);
-                    }
-                }
+                self.shift_action_orders(actor, &[target], i32::from(*positions));
             }
             Effect::ElementalFixedDamage { amount, element } => {
                 let broken = self.state.actors[target.0].broken();
@@ -1965,9 +1950,7 @@ impl Battle {
                     status: *status,
                 });
                 if status.kind==StatusKind::ActFirst {
-                    if let Some(index)=self.state.next_queue.iter().position(|id|*id==target) {
-                        let id=self.state.next_queue.remove(index);self.state.next_queue.insert(0,id);
-                    }
+                    self.promote_next_order(target);
                 }
             }
             Effect::Cover { hits } => {
@@ -2241,6 +2224,7 @@ impl Battle {
                     actor: target,
                     recover_round: state.break_until_round,
                 });
+                self.break_action_order(target);
                 if self.state.opening_crt.as_ref().is_some_and(|c|c.step_ahead)&&self.side(actor)==Some(Side::Player) {
                     let maximum=crate::field_escape::player_latent_max(&self.scenario.actors[actor.0].id).expect("carried player");
                     let resource=&mut self.state.actors[actor.0].resources.latent;
@@ -2556,6 +2540,10 @@ impl Battle {
                 } else {
                     1
                 }
+            } else if round > self.state.round && s.has_status(StatusKind::ActFirst)
+                && self.side(id) == Some(Side::Player) {
+                // BattlePlayerBP.CalcNextTurnWaitTime, entry 23419: disease15.
+                speed + 20_000
             } else if self.state.round > 1
                 && round > self.state.round
                 && self.side(id) == Some(Side::Enemy)
@@ -2568,7 +2556,8 @@ impl Battle {
         });
         let states = &self.state.actors;
         let before = self.state.rng;
-        combat::shuffle_order(&mut rows, |id| !states[id.0].broken(), &mut self.state.rng);
+        combat::shuffle_order(&mut rows, |id| !states[id.0].broken()
+            && !states[id.0].has_status(StatusKind::ActFirst), &mut self.state.rng);
         self.trace_rng(
             if round == self.state.round {
                 "current_order_shuffle"
@@ -2578,8 +2567,6 @@ impl Battle {
             None,
             before,
         );
-        // BeTheFirst (disease92) is applied after the source shuffle.
-        rows.sort_by_key(|id| !self.state.actors[id.0].has_status(StatusKind::ActFirst));
         rows
     }
     fn start_ot2_round(&mut self, events: &mut Vec<Event>) {
