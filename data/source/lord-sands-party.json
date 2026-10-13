@@ -1,0 +1,223 @@
+[
+  {
+    "combat": {
+      "accuracy": 272,
+      "attack": 274,
+      "critical": 252,
+      "defense": 213,
+      "element_weaknesses": [],
+      "enemy_bp_base": 0,
+      "enemy_initialization": null,
+      "evasion": 280,
+      "growth_attack": 234,
+      "growth_magic": 234,
+      "magic": 250,
+      "magic_defense": 207,
+      "main_weapon": "dagger",
+      "shields": 0,
+      "statuses": [],
+      "steal_item": null,
+      "use_cat_damage_type": false,
+      "weapon_weaknesses": [],
+      "weapons": [
+        {
+          "attack": 4,
+          "magic": 0,
+          "weapon": "sword"
+        },
+        {
+          "attack": 6,
+          "magic": 0,
+          "weapon": "dagger"
+        },
+        {
+          "attack": 0,
+          "magic": 0,
+          "weapon": "axe"
+        }
+      ]
+    },
+    "id": "throne",
+    "name": "Throné",
+    "resources": {
+      "bp": 1,
+      "hp": 3432,
+      "latent": 75,
+      "sp": 118
+    },
+    "skills": [
+      "attack_sword",
+      "attack_dagger",
+      "ABI_SET_THI_010",
+      "ABI_SET_THI_020",
+      "attack_axe"
+    ],
+    "stats": {
+      "max_hp": 3432,
+      "max_sp": 118,
+      "speed": 280
+    }
+  },
+  {
+    "combat": {
+      "accuracy": 234,
+      "attack": 220,
+      "critical": 187,
+      "defense": 226,
+      "element_weaknesses": [],
+      "enemy_bp_base": 0,
+      "enemy_initialization": null,
+      "evasion": 234,
+      "growth_attack": 234,
+      "growth_magic": 234,
+      "magic": 304,
+      "magic_defense": 283,
+      "main_weapon": "staff",
+      "shields": 0,
+      "statuses": [],
+      "steal_item": null,
+      "use_cat_damage_type": false,
+      "weapon_weaknesses": [],
+      "weapons": [
+        {
+          "attack": 3,
+          "magic": 4,
+          "weapon": "staff"
+        },
+        {
+          "attack": 0,
+          "magic": 0,
+          "weapon": "lance"
+        },
+        {
+          "attack": 0,
+          "magic": 0,
+          "weapon": "sword"
+        }
+      ]
+    },
+    "id": "osvald",
+    "name": "Osvald",
+    "resources": {
+      "bp": 1,
+      "hp": 2964,
+      "latent": 75,
+      "sp": 177
+    },
+    "skills": [
+      "attack_staff",
+      "attack_lance",
+      "attack_sword"
+    ],
+    "stats": {
+      "max_hp": 3239,
+      "max_sp": 177,
+      "speed": 210
+    }
+  },
+  {
+    "combat": {
+      "accuracy": 80,
+      "attack": 80,
+      "critical": 56,
+      "defense": 92,
+      "element_weaknesses": [],
+      "enemy_bp_base": 0,
+      "enemy_initialization": null,
+      "evasion": 70,
+      "growth_attack": 80,
+      "growth_magic": 80,
+      "magic": 103,
+      "magic_defense": 121,
+      "main_weapon": "staff",
+      "shields": 0,
+      "statuses": [],
+      "steal_item": null,
+      "use_cat_damage_type": false,
+      "weapon_weaknesses": [],
+      "weapons": [
+        {
+          "attack": 3,
+          "magic": 5,
+          "weapon": "staff"
+        },
+        {
+          "attack": 0,
+          "magic": 0,
+          "weapon": "dagger"
+        }
+      ]
+    },
+    "id": "temenos",
+    "name": "Temenos",
+    "resources": {
+      "bp": 1,
+      "hp": 225,
+      "latent": 0,
+      "sp": 65
+    },
+    "skills": [
+      "attack_staff",
+      "ABI_SET_CLE_010",
+      "ABI_SET_CLE_020",
+      "attack_dagger"
+    ],
+    "stats": {
+      "max_hp": 225,
+      "max_sp": 65,
+      "speed": 70
+    }
+  },
+  {
+    "combat": {
+      "accuracy": 234,
+      "attack": 257,
+      "critical": 210,
+      "defense": 247,
+      "element_weaknesses": [],
+      "enemy_bp_base": 0,
+      "enemy_initialization": null,
+      "evasion": 210,
+      "growth_attack": 234,
+      "growth_magic": 234,
+      "magic": 257,
+      "magic_defense": 246,
+      "main_weapon": "lance",
+      "shields": 0,
+      "statuses": [],
+      "steal_item": null,
+      "use_cat_damage_type": false,
+      "weapon_weaknesses": [],
+      "weapons": [
+        {
+          "attack": 5,
+          "magic": 0,
+          "weapon": "lance"
+        },
+        {
+          "attack": 5,
+          "magic": 0,
+          "weapon": "bow"
+        }
+      ]
+    },
+    "id": "partitio",
+    "name": "Partitio",
+    "resources": {
+      "bp": 1,
+      "hp": 3775,
+      "latent": 0,
+      "sp": 148
+    },
+    "skills": [
+      "attack_lance",
+      "ABI_SET_MER_020",
+      "ABI_SET_MER_040"
+    ],
+    "stats": {
+      "max_hp": 3775,
+      "max_sp": 148,
+      "speed": 210
+    }
+  }
+]

@@ -6630,6 +6630,357 @@
         "None"
       ],
       "SlideFrame": 0
+    },
+    {
+      "id": "ABI_WAR_010_03",
+      "ID": 1003,
+      "AbilityID": 10030,
+      "DisplayName": "ABN_WAR_010",
+      "Detail": "ABD_WAR_010_03",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/RandomCountAttackCommand.RandomCountAttackCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/RandomCountAttackCommand.RandomCountAttackCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::ePHYSICS",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": true,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eSWORD",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 9,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 140,
+      "BaseCount": 5,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "RANDOM_TARGET_PHYSICS_DAMAGE",
+          "InvocationValue": 70,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": true,
+      "EnableHideOut": true,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": true,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Warrior/Seq_War_010_SamidareGiri.Seq_War_010_SamidareGiri",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Warrior/Seq_War_010_SamidareGiri.Seq_War_010_SamidareGiri"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 13
+    },
+    {
+      "id": "ABI_INV_030_01",
+      "ID": 1569,
+      "AbilityID": 15690,
+      "DisplayName": "ABN_INV_030",
+      "Detail": "ABD_INV_030_01",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eDEBUFF",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eINVENTOR",
+      "CostValue": 0,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "ADD_FORCE_CRITICAL",
+          "InvocationValue": 0,
+          "InvocationTurn": 4,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": false,
+      "EnableChaseAttack": true,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": false,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Inventor/Seq_Inv_030_BoenGoggles.Seq_Inv_030_BoenGoggles",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Inventor/Seq_Inv_030_BoenGoggles.Seq_Inv_030_BoenGoggles"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 92
+    },
+    {
+      "id": "ABI_MER_YOHEI_05_01",
+      "ID": 1637,
+      "AbilityID": 16370,
+      "DisplayName": "ABN_MER_YOHEI_05",
+      "Detail": "None",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::ePHYSICS",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eNONE",
+      "CostValue": 0,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 260,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "SP_DAMAGE",
+          "InvocationValue": 1,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "PHYSICS_DAMAGE",
+          "InvocationValue": 180,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": true,
+      "EnableHideOut": true,
+      "EnableRepeat": false,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": false,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Merchant/YoheiYobi/Seq_Mer_Yohei_05_01.Seq_Mer_Yohei_05_01",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Merchant/YoheiYobi/Seq_Mer_Yohei_05_01.Seq_Mer_Yohei_05_01"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 0
     }
   ],
   "ailments": [
@@ -7146,6 +7497,260 @@
       "ID": 27,
       "AilmentType": "EAILMENT_TYPE::NewEnumerator1",
       "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator2",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
+      "id": "SP_DAMAGE",
+      "ID": 30,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator2",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator3",
       "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
       "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
       "DiseaseRatio": 100,
@@ -11206,6 +11811,260 @@
       "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
     },
     {
+      "id": "RANDOM_TARGET_PHYSICS_DAMAGE",
+      "ID": 121,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator0",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator2",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
       "id": "RANDOM_TARGET_MAGIC_DAMAGE",
       "ID": 122,
       "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
@@ -14000,6 +14859,260 @@
       "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
     },
     {
+      "id": "ADD_FORCE_CRITICAL",
+      "ID": 419,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator8",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator0",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "FORCE_CRITICAL",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
       "id": "ADD_LAST_ACT_SPECIAL",
       "ID": 423,
       "AilmentType": "EAILMENT_TYPE::NewEnumerator8",
@@ -15727,6 +16840,94 @@
         "AGI": 150
       },
       "weapon": "EWEAPON_CATEGORY::eROD",
+      "ability_voice": true,
+      "initial_idle_frames": 0,
+      "sync_to_parent": false
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_05_01_INVADE",
+      "parameter": {
+        "HP": 1500,
+        "MP": 400,
+        "BP": 2,
+        "SP": 5,
+        "POT": 1,
+        "ATK": 400,
+        "DEF": 77,
+        "MATK": 90,
+        "MDEF": 150,
+        "ACC": 600,
+        "EVA": 200,
+        "CON": 300,
+        "AGI": 150
+      },
+      "weapon": "EWEAPON_CATEGORY::eNONE",
+      "ability_voice": true,
+      "initial_idle_frames": 0,
+      "sync_to_parent": false
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_05_02_INVADE",
+      "parameter": {
+        "HP": 1500,
+        "MP": 400,
+        "BP": 2,
+        "SP": 5,
+        "POT": 1,
+        "ATK": 400,
+        "DEF": 77,
+        "MATK": 90,
+        "MDEF": 150,
+        "ACC": 600,
+        "EVA": 200,
+        "CON": 300,
+        "AGI": 150
+      },
+      "weapon": "EWEAPON_CATEGORY::eNONE",
+      "ability_voice": true,
+      "initial_idle_frames": 0,
+      "sync_to_parent": false
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_05_03_INVADE",
+      "parameter": {
+        "HP": 1500,
+        "MP": 400,
+        "BP": 2,
+        "SP": 5,
+        "POT": 1,
+        "ATK": 400,
+        "DEF": 77,
+        "MATK": 90,
+        "MDEF": 150,
+        "ACC": 600,
+        "EVA": 200,
+        "CON": 300,
+        "AGI": 150
+      },
+      "weapon": "EWEAPON_CATEGORY::eNONE",
+      "ability_voice": true,
+      "initial_idle_frames": 0,
+      "sync_to_parent": false
+    },
+    {
+      "id": "PC_ABI_MER_YOHEI_05_04_INVADE",
+      "parameter": {
+        "HP": 1500,
+        "MP": 400,
+        "BP": 2,
+        "SP": 5,
+        "POT": 1,
+        "ATK": 400,
+        "DEF": 77,
+        "MATK": 90,
+        "MDEF": 150,
+        "ACC": 600,
+        "EVA": 200,
+        "CON": 300,
+        "AGI": 150
+      },
+      "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": true,
       "initial_idle_frames": 0,
       "sync_to_parent": false
@@ -19252,6 +20453,262 @@
         "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
         "body": "0a4b6 LocalVirtualFunction PlayAction\n  0a4bf LocalVariable Character\n  0a4d0 ByteConst 49\n  0a4d2 ByteConst 0\n  0a4d4 ByteConst 0\n0a4d7 Return\n  0a4d8 Nothing\n0a4d9 EndOfScript"
       }
+    ],
+    "ABI_WAR_010_03": [
+      {
+        "time": 4800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_36",
+        "body": "0c079 LocalVirtualFunction PlayVoice\n  0c082 ByteConst 18\n  0c084 ByteConst 0\n  0c086 ByteConst 0\n0c089 Return\n  0c08a Nothing\n0c08b EndOfScript"
+      },
+      {
+        "time": 6392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_29",
+        "body": "0beea LocalVirtualFunction ExecStepCounter\n0bef4 Return\n  0bef5 Nothing\n0bef6 EndOfScript"
+      },
+      {
+        "time": 7192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
+        "body": "0bd23 LocalVirtualFunction CheckCounterToMarker\n  0bd2c StringConst \"Finish\"\n0bd35 Return\n  0bd36 Nothing\n0bd37 EndOfScript"
+      },
+      {
+        "time": 7992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+        "body": "0ba44 LocalVirtualFunction PlayAction\n  0ba4d LocalVariable Character\n  0ba5e ByteConst 134\n  0ba60 ByteConst 1\n  0ba62 ByteConst 31\n0ba65 Return\n  0ba66 Nothing\n0ba67 EndOfScript"
+      },
+      {
+        "time": 9600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+        "body": "0b801 LocalVirtualFunction PlaySE\n  0b80a NameConst se_bat_ability_swordman_13_1\n0b814 Return\n  0b815 Nothing\n0b816 EndOfScript"
+      },
+      {
+        "time": 11192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0b601 LocalVirtualFunction ExecAilment\n  0b60a IntConst 0\n  0b60f True\n  0b610 True\n0b612 Return\n  0b613 Nothing\n0b614 EndOfScript"
+      },
+      {
+        "time": 15192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_30",
+        "body": "0bf23 LocalVirtualFunction ExecStepCounter\n0bf2d Return\n  0bf2e Nothing\n0bf2f EndOfScript"
+      },
+      {
+        "time": 15992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_23",
+        "body": "0bd64 LocalVirtualFunction CheckCounterToMarker\n  0bd6d StringConst \"Finish\"\n0bd76 Return\n  0bd77 Nothing\n0bd78 EndOfScript"
+      },
+      {
+        "time": 18392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+        "body": "0b843 LocalVirtualFunction PlaySE\n  0b84c NameConst se_bat_whoosh01\n0b856 Return\n  0b857 Nothing\n0b858 EndOfScript"
+      },
+      {
+        "time": 19703,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0b641 LocalVirtualFunction ExecAilment\n  0b64a IntConst 0\n  0b64f True\n  0b650 True\n0b652 Return\n  0b653 Nothing\n0b654 EndOfScript"
+      },
+      {
+        "time": 21592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_31",
+        "body": "0bf5c LocalVirtualFunction ExecStepCounter\n0bf66 Return\n  0bf67 Nothing\n0bf68 EndOfScript"
+      },
+      {
+        "time": 22392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_24",
+        "body": "0bda5 LocalVirtualFunction CheckCounterToMarker\n  0bdae StringConst \"Finish\"\n0bdb7 Return\n  0bdb8 Nothing\n0bdb9 EndOfScript"
+      },
+      {
+        "time": 25259,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+        "body": "0b885 LocalVirtualFunction PlaySE\n  0b88e NameConst se_bat_whoosh02\n0b898 Return\n  0b899 Nothing\n0b89a EndOfScript"
+      },
+      {
+        "time": 26651,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0b681 LocalVirtualFunction ExecAilment\n  0b68a IntConst 0\n  0b68f True\n  0b690 True\n0b692 Return\n  0b693 Nothing\n0b694 EndOfScript"
+      },
+      {
+        "time": 28792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_32",
+        "body": "0bf95 LocalVirtualFunction ExecStepCounter\n0bf9f Return\n  0bfa0 Nothing\n0bfa1 EndOfScript"
+      },
+      {
+        "time": 29592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_25",
+        "body": "0bde6 LocalVirtualFunction CheckCounterToMarker\n  0bdef StringConst \"Finish\"\n0bdf8 Return\n  0bdf9 Nothing\n0bdfa EndOfScript"
+      },
+      {
+        "time": 30392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+        "body": "0bac7 LocalVirtualFunction PlayAction\n  0bad0 LocalVariable Character\n  0bae1 ByteConst 135\n  0bae3 ByteConst 1\n  0bae5 ByteConst 32\n0bae8 Return\n  0bae9 Nothing\n0baea EndOfScript"
+      },
+      {
+        "time": 31546,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+        "body": "0b8c7 LocalVirtualFunction PlaySE\n  0b8d0 NameConst se_bat_whoosh01\n0b8da Return\n  0b8db Nothing\n0b8dc EndOfScript"
+      },
+      {
+        "time": 33541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0b6c1 LocalVirtualFunction ExecAilment\n  0b6ca IntConst 0\n  0b6cf True\n  0b6d0 True\n0b6d2 Return\n  0b6d3 Nothing\n0b6d4 EndOfScript"
+      },
+      {
+        "time": 33592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_33",
+        "body": "0bfce LocalVirtualFunction ExecStepCounter\n0bfd8 Return\n  0bfd9 Nothing\n0bfda EndOfScript"
+      },
+      {
+        "time": 34392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_26",
+        "body": "0be27 LocalVirtualFunction CheckCounterToMarker\n  0be30 StringConst \"Finish\"\n0be39 Return\n  0be3a Nothing\n0be3b EndOfScript"
+      },
+      {
+        "time": 35192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+        "body": "0bb4a LocalVirtualFunction PlayAction\n  0bb53 LocalVariable Character\n  0bb64 ByteConst 136\n  0bb66 ByteConst 1\n  0bb68 ByteConst 70\n0bb6b Return\n  0bb6c Nothing\n0bb6d EndOfScript"
+      },
+      {
+        "time": 41592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+        "body": "0b909 LocalVirtualFunction PlaySE\n  0b912 NameConst se_bat_whoosh02\n0b91c Return\n  0b91d Nothing\n0b91e EndOfScript"
+      },
+      {
+        "time": 43992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0b701 LocalVirtualFunction ExecAilment\n  0b70a IntConst 0\n  0b70f True\n  0b710 True\n0b712 Return\n  0b713 Nothing\n0b714 EndOfScript"
+      },
+      {
+        "time": 44792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_34",
+        "body": "0c007 LocalVirtualFunction ExecStepCounter\n0c011 Return\n  0c012 Nothing\n0c013 EndOfScript"
+      },
+      {
+        "time": 45592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_27",
+        "body": "0be68 LocalVirtualFunction CheckCounterToMarker\n  0be71 StringConst \"Finish\"\n0be7a Return\n  0be7b Nothing\n0be7c EndOfScript"
+      },
+      {
+        "time": 46392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+        "body": "0bbcd LocalVirtualFunction PlayAction\n  0bbd6 LocalVariable Character\n  0bbe7 ByteConst 137\n  0bbe9 ByteConst 1\n  0bbeb ByteConst 71\n0bbee Return\n  0bbef Nothing\n0bbf0 EndOfScript"
+      },
+      {
+        "time": 49592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+        "body": "0b94b LocalVirtualFunction PlaySE\n  0b954 NameConst se_bat_whoosh01\n0b95e Return\n  0b95f Nothing\n0b960 EndOfScript"
+      },
+      {
+        "time": 51192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0b741 LocalVirtualFunction ExecAilment\n  0b74a IntConst 0\n  0b74f True\n  0b750 True\n0b752 Return\n  0b753 Nothing\n0b754 EndOfScript"
+      },
+      {
+        "time": 52792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_35",
+        "body": "0c040 LocalVirtualFunction ExecStepCounter\n0c04a Return\n  0c04b Nothing\n0c04c EndOfScript"
+      },
+      {
+        "time": 53592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_28",
+        "body": "0bea9 LocalVirtualFunction CheckCounterToMarker\n  0beb2 StringConst \"Finish\"\n0bebb Return\n  0bebc Nothing\n0bebd EndOfScript"
+      },
+      {
+        "time": 54392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+        "body": "0bc50 LocalVirtualFunction PlayAction\n  0bc59 LocalVariable Character\n  0bc6a ByteConst 138\n  0bc6c ByteConst 1\n  0bc6e ByteConst 72\n0bc71 Return\n  0bc72 Nothing\n0bc73 EndOfScript"
+      },
+      {
+        "time": 55894,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+        "body": "0b98d LocalVirtualFunction PlaySE\n  0b996 NameConst se_bat_whoosh02\n0b9a0 Return\n  0b9a1 Nothing\n0b9a2 EndOfScript"
+      },
+      {
+        "time": 57396,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0b781 LocalVirtualFunction ExecAilment\n  0b78a IntConst 0\n  0b78f True\n  0b790 True\n0b792 Return\n  0b793 Nothing\n0b794 EndOfScript"
+      },
+      {
+        "time": 59192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+        "body": "0bcd3 LocalVirtualFunction PlayAction\n  0bcdc LocalVariable Character\n  0bced ByteConst 139\n  0bcef ByteConst 1\n  0bcf1 ByteConst 73\n0bcf4 Return\n  0bcf5 Nothing\n0bcf6 EndOfScript"
+      },
+      {
+        "time": 65592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+        "body": "0b9cf LocalVirtualFunction PlaySE\n  0b9d8 NameConst se_bat_ability_swordman_13_3\n0b9e2 Return\n  0b9e3 Nothing\n0b9e4 EndOfScript"
+      },
+      {
+        "time": 67192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+        "body": "0b7c1 LocalVirtualFunction ExecAilment\n  0b7ca IntConst 0\n  0b7cf True\n  0b7d0 True\n0b7d2 Return\n  0b7d3 Nothing\n0b7d4 EndOfScript"
+      }
+    ],
+    "ABI_INV_030_01": [
+      {
+        "time": 2400,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0eca5 LocalVirtualFunction PlayVoice\n  0ecae ByteConst 18\n  0ecb0 ByteConst 0\n  0ecb2 ByteConst 0\n0ecb5 Return\n  0ecb6 Nothing\n0ecb7 EndOfScript"
+      },
+      {
+        "time": 8000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0eb22 LocalVirtualFunction PlaySE\n  0eb2b NameConst se_bat_ability_Inventor_03_01\n0eb35 Return\n  0eb36 Nothing\n0eb37 EndOfScript"
+      },
+      {
+        "time": 8383,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0ec54 LocalVirtualFunction PlayAction\n  0ec5d LocalVariable Character\n  0ec6e ByteConst 119\n  0ec70 ByteConst 0\n  0ec72 ByteConst 0\n  0ec74 False\n0ec76 Return\n  0ec77 Nothing\n0ec78 EndOfScript"
+      },
+      {
+        "time": 30400,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0eb64 LocalVirtualFunction PlaySE\n  0eb6d NameConst se_bat_ability_Inventor_03_02\n0eb77 Return\n  0eb78 Nothing\n0eb79 EndOfScript"
+      },
+      {
+        "time": 48000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0eba6 LocalVirtualFunction PlaySE\n  0ebaf NameConst se_bat_debuff\n0ebb9 Return\n  0ebba Nothing\n0ebbb EndOfScript"
+      },
+      {
+        "time": 48000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0eae2 LocalVirtualFunction ExecAilment\n  0eaeb IntConst 0\n  0eaf0 True\n  0eaf1 False\n0eaf3 Return\n  0eaf4 Nothing\n0eaf5 EndOfScript"
+      },
+      {
+        "time": 68000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0ebe8 LocalVirtualFunction ExecPlayDiseaseMissUI\n0ebf2 Return\n  0ebf3 Nothing\n0ebf4 EndOfScript"
+      }
+    ],
+    "ABI_MER_YOHEI_05_01": [
+      {
+        "time": 0,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "09403 LocalVirtualFunction PlayAction\n  0940c LocalVariable Character\n  0941d ByteConst 20\n  0941f ByteConst 0\n  09421 ByteConst 0\n09424 Return\n  09425 Nothing\n09426 EndOfScript"
+      },
+      {
+        "time": 20000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "09486 LocalVirtualFunction PlayAction\n  0948f LocalVariable Character\n  094a0 ByteConst 106\n  094a2 ByteConst 0\n  094a4 ByteConst 0\n094a7 Return\n  094a8 Nothing\n094a9 EndOfScript"
+      },
+      {
+        "time": 20000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "09559 LocalVirtualFunction PlayVoice\n  09562 ByteConst 18\n  09564 ByteConst 0\n  09566 ByteConst 0\n09569 Return\n  0956a Nothing\n0956b EndOfScript"
+      },
+      {
+        "time": 33600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0938e LocalVirtualFunction PlaySE\n  09397 NameConst se_bat_atk_hikkakimawashi\n093a1 Return\n  093a2 Nothing\n093a3 EndOfScript"
+      },
+      {
+        "time": 37600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0934e LocalVirtualFunction ExecAilment\n  09357 IntConst 0\n  0935c True\n  0935d True\n0935f Return\n  09360 Nothing\n09361 EndOfScript"
+      },
+      {
+        "time": 43653,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "09509 LocalVirtualFunction PlayAction\n  09512 LocalVariable Character\n  09523 ByteConst 20\n  09525 ByteConst 0\n  09527 ByteConst 0\n0952a Return\n  0952b Nothing\n0952c EndOfScript"
+      }
     ]
   },
   "steps": {
@@ -19691,6 +21148,89 @@
         "index": 1,
         "last": false,
         "on_hit": true
+      }
+    ],
+    "ABI_WAR_010_03": [
+      {
+        "kind": "voice",
+        "tick": 4800,
+        "voice_type": 18
+      },
+      {
+        "kind": "random_target",
+        "tick": 6392
+      },
+      {
+        "kind": "effects",
+        "tick": 11192,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 15192
+      },
+      {
+        "kind": "effects",
+        "tick": 19703,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 21592
+      },
+      {
+        "kind": "effects",
+        "tick": 26651,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 28792
+      },
+      {
+        "kind": "effects",
+        "tick": 33541,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 33592
+      },
+      {
+        "kind": "effects",
+        "tick": 43182,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_INV_030_01": [
+      {
+        "kind": "voice",
+        "tick": 2400,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 48000,
+        "index": null,
+        "last": false
+      }
+    ],
+    "ABI_MER_YOHEI_05_01": [
+      {
+        "kind": "voice",
+        "tick": 20000,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 37600,
+        "index": null,
+        "last": true
       }
     ]
   },

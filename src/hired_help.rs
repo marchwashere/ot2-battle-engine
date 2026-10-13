@@ -44,3 +44,9 @@ mod tests {
         let mut rng=CrtRng::new(72);let before=rng;assert!(prepare_guards(&mut rng,4).is_err());assert_eq!(rng,before);
     }
 }
+
+pub fn prepare_beastlings(rng:&mut CrtRng,boost:u8)->Result<GuardSummons> {
+ ensure(boost<=3,"Invalid Beastlings BP")?;let before=*rng;let mut pool:Vec<_>=crate::lord_sands::data().beastlings_variants.iter().collect();let mut variants=vec![];
+ for _ in 0..4 {let roll=rng.index(pool.iter().map(|v|v.weight).sum());let mut sum=0;let index=pool.iter().position(|v|{sum+=v.weight;roll<sum}).unwrap();variants.push(pool.remove(index).id.as_str());}
+ Ok(GuardSummons {variants,count:boost+1,before,after:*rng})
+}

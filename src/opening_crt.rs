@@ -40,6 +40,7 @@ pub struct OpeningCrtState {
     pub step_ahead_members:Option<Vec<usize>>,
     #[serde(skip_serializing_if = "is_false")]
     pub temenos_recruitment: bool,
+    pub lord_sands: bool,
     #[serde(skip_serializing_if = "is_false")]
     pub hikari_recruitment: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -63,6 +64,7 @@ impl OpeningCrtState {
             step_ahead: false,
             step_ahead_members:None,
             temenos_recruitment: false,
+            lord_sands: false,
             hikari_recruitment: false,
             carried_voices: None,
             used_voices: vec![0; 3],
@@ -515,3 +517,5 @@ mod tests {
 }
 
 pub(crate) fn temenos_data()->&'static OpeningData {static DATA:OnceLock<OpeningData>=OnceLock::new();DATA.get_or_init(||serde_json::from_str(include_str!("../data/temenos_recruitment_crt.json")).expect("Temenos attack callbacks"))}
+
+pub(crate) fn lord_sands_data()->&'static OpeningData {static DATA:OnceLock<OpeningData>=OnceLock::new();DATA.get_or_init(||serde_json::from_str(include_str!("../data/lord_sands_crt.json")).expect("Lord Sands callbacks"))}

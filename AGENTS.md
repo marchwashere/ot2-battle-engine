@@ -1,5 +1,10 @@
 # Active project
 
+- Galdera Lord of the Sands: source-backed eight-action routine, both night talents,
+  partial ASA, Slash/Scope/Beastlings timelines and rewards. Refuse enemy actions.
+  Defend priority uses this-round next-order markers, not prior-round guard state.
+  Regenerate import-lord-sands after BG import; see docs/lord-sands.md.
+
 - Galdera after Temenos: field Escape supports actual Step Ahead membership
   [0,1,3] via with_step_ahead_members; level1 Temenos without support does not
   enter the Normal bonus turn. Preemptive remains all-player. Import Temenos

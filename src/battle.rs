@@ -353,7 +353,9 @@ impl Battle {
     }
     fn crt_data(&self) -> &'static opening_crt::OpeningData {
         let crt = self.state.opening_crt.as_ref();
-        if crt.is_some_and(|c|c.temenos_recruitment) {
+        if crt.is_some_and(|c|c.lord_sands) {
+            opening_crt::lord_sands_data()
+        } else if crt.is_some_and(|c|c.temenos_recruitment) {
             opening_crt::temenos_data()
         } else if crt.is_some_and(|c|c.step_ahead) {
             opening_crt::gravell_data()
@@ -416,6 +418,13 @@ impl Battle {
         let mut crt=OpeningCrtState::new(true);
         crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.step_ahead_members=members;
         crt.used_voices=vec![0;voices.iter().copied().max().unwrap_or(0)+1];crt.carried_voices=Some(voices);crt.settled_damage=vec![false;config.players.len()];
+        Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
+    }
+    pub(crate) fn new_lord_sands(config:BattleConfig)->Result<Self> {
+        let mut crt=OpeningCrtState::new(true);
+        crt.mansion_situation=Some(crate::escape::Situation::Normal);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.lord_sands=true;
+        crt.step_ahead_members=Some(vec![0,1,3]);crt.carried_voices=Some(vec![0,1,5,3]);
+        crt.used_voices=vec![0;6];crt.settled_damage=vec![false;4];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     pub(crate) fn new_temenos_recruitment(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
@@ -928,7 +937,7 @@ impl Battle {
             "it is an enemy turn",
         )?;
         if let Command::Skill {id,..}|Command::Boost {id,..}=&command {
-            if matches!(id.as_str(),"bewildering_grace"|"hired_help_guards") {
+            if matches!(id.as_str(),"bewildering_grace"|"hired_help_guards"|"hired_help_beastlings"|"aggressive_slash"|"critical_scope") {
                 let mut next=self.clone();
                 let report=next.grace_step(command,levels)?;
                 *self=next;return Ok(report);
@@ -1395,6 +1404,7 @@ impl Battle {
                 self.roll_status_application();
                 self.trace_rng("guard_disease", Some(actor), before);
                 self.state.actors[actor.0].guard = true;
+                self.state.grace.get_or_insert_with(Default::default).defended_round.insert(actor,self.state.round);
                 self.voice(actor, 17, VoiceCondition::default());
                 // Guard promotes the actor in the already generated next-round queue.
                 if let Some(index) = self.state.next_queue.iter().position(|id| *id == actor) {
@@ -1403,7 +1413,7 @@ impl Battle {
                         .state
                         .next_queue
                         .iter()
-                        .take_while(|id| self.state.actors[id.0].guard || self.state.actors[id.0].has_status(StatusKind::ActFirst))
+                        .take_while(|id| self.state.grace.as_ref().is_some_and(|g|g.defended_round.get(id)==Some(&self.state.round)) || self.state.actors[id.0].has_status(StatusKind::ActFirst))
                         .count();
                     self.state.next_queue.insert(insert, id);
                 }
@@ -1511,7 +1521,7 @@ impl Battle {
                 });
             }
             // Guards are the attack enforcers; the hiring merchant did not break.
-            let hired=events.iter().any(|e|matches!(e,Event::Action {name,..} if name=="hired_help_guards"));
+            let hired=events.iter().any(|e|matches!(e,Event::Action {name,..} if matches!(name.as_str(),"hired_help_guards"|"hired_help_beastlings")));
             self.order_voice((!hired&&events.iter().any(|e|matches!(e,Event::Broken {..}))).then_some(actor));
             if self
                 .state
@@ -1581,7 +1591,7 @@ impl Battle {
         let mut break_busy_until = 0;
         let mut voice_busy_until = 0;
         let normal_id = self.default_attack(actor).ok();
-        let plan = if self.state.opening_crt.as_ref().is_some_and(|c|c.temenos_recruitment) {
+        let plan = if self.state.opening_crt.as_ref().is_some_and(|c|c.temenos_recruitment||c.lord_sands) {
             &self.crt_data().normal_attacks[&format!("{}:{boost}",normal_id.unwrap())][..]
         } else if self.is_hikari_recruitment() {
             &self.crt_data().normal_attacks[normal_id.expect("validated recruitment weapon")][..]
@@ -2067,7 +2077,7 @@ impl Battle {
         );
         let forced_miss =
             actor == ActorId(1) && self.state.pirro.as_ref().is_some_and(|p| p.force_miss);
-        let critical = !forced_miss && !magical && self.state.rng.weighted_bool(crit_chance);
+        let critical = !forced_miss && (self.state.actors[target.0].has_status(StatusKind::ForceCritical) || (!magical && self.state.rng.weighted_bool(crit_chance)));
         let hit = if forced_miss {
             false
         } else if let Some(hit) = prechecked_hit {
@@ -2709,6 +2719,14 @@ impl Battle {
                     if let Some(trace)=self.state.opening_crt.as_mut().and_then(|c|c.trace.as_mut()) {
                         trace.push(RngSpan {reason:"study_foe_weakness",actor:Some(ActorId(i)),before,after});
                     }
+                }
+            }
+        }
+        if first && self.state.opening_crt.as_ref().is_some_and(|c|c.lord_sands) {
+            // ExecSpecialAction_DebuffInNight calls AddDisease directly, no lottery.
+            for (i,state) in self.state.actors.iter_mut().enumerate() {
+                if self.scenario.actors[i].side==Side::Enemy {
+                    state.statuses.extend([Status {kind:StatusKind::DefenseDown,turns:3},Status {kind:StatusKind::MagicDefenseDown,turns:3},Status {kind:StatusKind::Blind,turns:1}]);
                 }
             }
         }

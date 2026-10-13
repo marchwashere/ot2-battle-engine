@@ -1,0 +1,761 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/Battle/Database/EnemyGroupData",
+      "sha256": "b3a58b0c90e2e01f11b8d2adec43b03748a478ba0e42c1b6c7a7207bc48f660f"
+    },
+    {
+      "source": "/Game/Ability/Database/AilmentData",
+      "sha256": "f2a99c806f16db66a01681d96b525034563766a62710b6d6fbd80742a7bdb363"
+    },
+    {
+      "source": "/Game/Ability/Database/InvadeData",
+      "sha256": "7328c5c1f30e58faa208e1e4cba9c70c23949434eb9cb9fe2ae505cc6ebd7081"
+    },
+    {
+      "source": "/Game/Character/Database/CharacterResourceDB",
+      "sha256": "c01945df431b1cdff0790d026c5d5a27813748e89b854f26757381ba559f3a6d"
+    },
+    {
+      "source": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    }
+  ],
+  "enemy": {
+    "id": "ENE_NML_FLD_DST_280",
+    "EnemyID": 280,
+    "DisplayNameID": "ENN_NML_FLD_DST_280",
+    "ResourceLabel": "ENE_NML_FLD_DST_280",
+    "DisplayRank": 0,
+    "EnemyLevel": 30,
+    "DamageRatio": 4.09375,
+    "Size": "ECHARACTER_SIZE::eLARGE",
+    "NPCFlag": false,
+    "WeaponStance": "EWEAPON_STANCE::NONE",
+    "WeaponItemLabel": "None",
+    "DeadEffectSlow": false,
+    "MainEnemy": false,
+    "NonPartBattle": false,
+    "UseCatDamageType": false,
+    "DisableDeadKnockBack": false,
+    "Param": {
+      "HP": 40000,
+      "MP": 50,
+      "BP": 3,
+      "SP": 7,
+      "POT": 0,
+      "ATK": 460,
+      "DEF": 270,
+      "MATK": 440,
+      "MDEF": 230,
+      "ACC": 280,
+      "EVA": 100,
+      "CON": 150,
+      "AGI": 160
+    },
+    "Exp": 485,
+    "JobPoint": 37,
+    "Money": 1080,
+    "StealMoney": 2160,
+    "TameEnable": false,
+    "DefaultTameRate": 0,
+    "InvadeMonsterID": "ENE_NML_FLD_DST_280_INVADE",
+    "FirstBP": 0,
+    "DeadType": "EENEMY_DEAD_TYPE::eNORMAL_L",
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "WeaponResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      "EATTRIBUTE_RESIST::eREDUCE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "StealGuard": true,
+    "HaveItemID": "ITM_TRE_GLD_07",
+    "DropProbability": 100,
+    "EnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/SubBoss/subB_Dng_Dst_2_2.subB_Dng_Dst_2_2_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/SubBoss/subB_Dng_Dst_2_2.subB_Dng_Dst_2_2_C"
+      },
+      "subPath": ""
+    },
+    "EnemyAbility": [
+      "ABI_LBOS_DNGDST22_01_010",
+      "ABI_LBOS_DNGDST22_01_020",
+      "ABI_LBOS_DNGDST22_01_030",
+      "ABI_LBOS_DNGDST22_01_040",
+      "ABI_LBOS_DNGDST22_01_050",
+      "ABI_LBOS_DNGDST22_01_060",
+      "ABI_LBOS_DNGDST22_01_070",
+      "ABI_LBOS_DNGDST22_01_080",
+      "ABI_LBOS_DNGDST22_01_090",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "DiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1114636288,
+          "value": 60
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        },
+        {
+          "kind": "float32",
+          "bits": 1127481344,
+          "value": 180
+        }
+      ]
+    },
+    "EnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1120403456,
+          "value": 100
+        }
+      ]
+    },
+    "StatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "DamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        }
+      ]
+    },
+    "IconL_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1048911544,
+          "value": 0.25999999046325684
+        },
+        {
+          "kind": "float32",
+          "bits": 1059145646,
+          "value": 0.6299999952316284
+        }
+      ]
+    },
+    "PixelScaleL": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1043878380,
+          "value": 0.18000000715255737
+        },
+        {
+          "kind": "float32",
+          "bits": 1052266988,
+          "value": 0.36000001430511475
+        }
+      ]
+    },
+    "IconS_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1065520988,
+          "value": 1.0199999809265137
+        },
+        {
+          "kind": "float32",
+          "bits": 1069379748,
+          "value": 1.4800000190734863
+        }
+      ]
+    },
+    "PixelScaleS": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1036831949,
+          "value": 0.10000000149011612
+        },
+        {
+          "kind": "float32",
+          "bits": 1045220557,
+          "value": 0.20000000298023224
+        }
+      ]
+    },
+    "SPDiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1128792064,
+          "value": 200
+        },
+        {
+          "kind": "float32",
+          "bits": 1116471296,
+          "value": 70
+        },
+        {
+          "kind": "float32",
+          "bits": 1126170624,
+          "value": 160
+        }
+      ]
+    },
+    "SPEnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1120403456,
+          "value": 100
+        }
+      ]
+    },
+    "SPStatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "SPDamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        }
+      ]
+    },
+    "StealMoneyGuard": false,
+    "StealItemID": "None",
+    "AbilitySEDelay": 0,
+    "TextInfoLabel": "Enemy_002",
+    "BribeGuard": false,
+    "BribeMoney": 30000,
+    "RevealShieldPoint": 0,
+    "RevealEnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "DismantlingLabel": "ENE_NML_FLD_DST_280_DISMANTLING",
+    "WarpOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3267887104,
+          "value": -100
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "LegendTameMonster": false,
+    "ActionModeResourceList": [
+      "None",
+      "None"
+    ],
+    "WaitEnemyActionFrame": 24,
+    "DisableBreakSlow": false,
+    "ID": 27,
+    "NotInsertOrderWithCallEnemy": false,
+    "BreakCameraType": "EBREAK_CAMERA_TYPE::eWIDE"
+  },
+  "group": {
+    "id": "ENG_DNG_DST_2_2_L_110",
+    "VoiceID": "None",
+    "TalkPlayerID": "EPlayableCharacterID::eNONE",
+    "PlayerVoiceID": "None",
+    "BGMID": "m58_subbossbattle1",
+    "UseBattleBGM": true,
+    "UseVictoryBGM": true,
+    "ViewResult": true,
+    "ResumeBGM": true,
+    "BossBattle": true,
+    "EscapeEnable": false,
+    "PlacementType": "PMT_TYPE_3_009",
+    "EnemyID": [
+      "ENE_NML_FLD_DST_280",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SaveEndrollSegment": "EEndRollSegmentSet::ER_NONE",
+    "ID": 8987,
+    "BattleStartDashEnable": true,
+    "UseVictoryAction": true,
+    "ResultDashEnable": false,
+    "ItemEnable": true,
+    "GuardEnable": true,
+    "BoostEnable": true,
+    "BoostFinishResultEnable": true,
+    "BattleStartEvent": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "BattleStartEnemyVoiceEnable": true,
+    "WeaponUnloadGCType": "EWEAPON_UNLOAD_GC_TYPE::eTURN_END"
+  },
+  "parent_sequence": [
+    {
+      "time": 800,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_23",
+      "body": "0c23d LocalVirtualFunction PlayVoice\n  0c246 ByteConst 18\n  0c248 ByteConst 0\n  0c24a ByteConst 0\n0c24d Return\n  0c24e Nothing\n0c24f EndOfScript"
+    },
+    {
+      "time": 4000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+      "body": "0bf18 LocalVirtualFunction PlayAction\n  0bf21 LocalVariable Character\n  0bf32 ByteConst 137\n  0bf34 ByteConst 4\n  0bf36 ByteConst 112\n0bf39 Return\n  0bf3a Nothing\n0bf3b EndOfScript"
+    },
+    {
+      "time": 4123,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+      "body": "0bf68 LocalVirtualFunction CallBusinessSupporter\n0bf72 Return\n  0bf73 Nothing\n0bf74 EndOfScript"
+    },
+    {
+      "time": 7024,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+      "body": "0bfa1 LocalVirtualFunction WaitBusinessSupporter\n0bfab Return\n  0bfac Nothing\n0bfad EndOfScript"
+    },
+    {
+      "time": 9745,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+      "body": "0bfda LocalVirtualFunction PlayBusinessSupportAction\n  0bfe3 ByteConst 80\n0bfe6 Return\n  0bfe7 Nothing\n0bfe8 EndOfScript"
+    },
+    {
+      "time": 24384,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+      "body": "0bc46 LocalVirtualFunction ExecSummonCharacter\n  0bc4f IntConst 0\n  0bc54 True\n0bc56 Return\n  0bc57 Nothing\n0bc58 EndOfScript"
+    },
+    {
+      "time": 27701,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+      "body": "0c015 LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c01e IntConst 1\n  0c023 False\n  0c024 StringConst \"Character\"\n0c030 Return\n  0c031 Nothing\n0c032 EndOfScript"
+    },
+    {
+      "time": 32000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+      "body": "0bc85 LocalVirtualFunction ExecSummonCharacter\n  0bc8e IntConst 0\n  0bc93 True\n0bc95 Return\n  0bc96 Nothing\n0bc97 EndOfScript"
+    },
+    {
+      "time": 36043,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+      "body": "0c05f LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c068 IntConst 2\n  0c06d False\n  0c06e StringConst \"Character\"\n0c07a Return\n  0c07b Nothing\n0c07c EndOfScript"
+    },
+    {
+      "time": 40000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+      "body": "0bcc4 LocalVirtualFunction ExecSummonCharacter\n  0bccd IntConst 0\n  0bcd2 True\n0bcd4 Return\n  0bcd5 Nothing\n0bcd6 EndOfScript"
+    },
+    {
+      "time": 44024,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+      "body": "0c0a9 LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c0b2 IntConst 3\n  0c0b7 False\n  0c0b8 StringConst \"Character\"\n0c0c4 Return\n  0c0c5 Nothing\n0c0c6 EndOfScript"
+    },
+    {
+      "time": 48000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+      "body": "0bd03 LocalVirtualFunction ExecSummonCharacter\n  0bd0c IntConst 0\n  0bd11 True\n0bd13 Return\n  0bd14 Nothing\n0bd15 EndOfScript"
+    },
+    {
+      "time": 53280,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+      "body": "0bd42 LocalVirtualFunction ExecSummonAbility\n  0bd4b IntConst 0\n0bd51 Return\n  0bd52 Nothing\n0bd53 EndOfScript"
+    },
+    {
+      "time": 60168,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+      "body": "0c0f3 LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c0fc IntConst 1\n  0c101 False\n  0c102 StringConst \"Ability\"\n0c10c Return\n  0c10d Nothing\n0c10e EndOfScript"
+    },
+    {
+      "time": 64778,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+      "body": "0bd80 LocalVirtualFunction ExecSummonAbility\n  0bd89 IntConst 1\n0bd8f Return\n  0bd90 Nothing\n0bd91 EndOfScript"
+    },
+    {
+      "time": 70324,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+      "body": "0c13b LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c144 IntConst 2\n  0c149 False\n  0c14a StringConst \"Ability\"\n0c154 Return\n  0c155 Nothing\n0c156 EndOfScript"
+    },
+    {
+      "time": 76778,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+      "body": "0bdbe LocalVirtualFunction ExecSummonAbility\n  0bdc7 IntConst 2\n0bdcd Return\n  0bdce Nothing\n0bdcf EndOfScript"
+    },
+    {
+      "time": 82293,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+      "body": "0c183 LocalVirtualFunction CheckBoostLevelLessToMarker\n  0c18c IntConst 3\n  0c191 False\n  0c192 StringConst \"Ability\"\n0c19c Return\n  0c19d Nothing\n0c19e EndOfScript"
+    },
+    {
+      "time": 88778,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+      "body": "0bdfc LocalVirtualFunction ExecSummonAbility\n  0be05 IntConst 3\n0be0b Return\n  0be0c Nothing\n0be0d EndOfScript"
+    },
+    {
+      "time": 93712,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+      "body": "0be3a LocalVirtualFunction WaitSummonAbility\n0be44 Return\n  0be45 Nothing\n0be46 EndOfScript"
+    },
+    {
+      "time": 104612,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+      "body": "0be73 LocalVirtualFunction ReturnSummonCharacter\n0be7d Return\n  0be7e Nothing\n0be7f EndOfScript"
+    },
+    {
+      "time": 105145,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+      "body": "0beac LocalVirtualFunction ShowBusinessSupportInfomation\n0beb6 Return\n  0beb7 Nothing\n0beb8 EndOfScript"
+    },
+    {
+      "time": 108591,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+      "body": "0c1cb LocalVirtualFunction ReturnBusinessSupporter\n0c1d5 Return\n  0c1d6 Nothing\n0c1d7 EndOfScript"
+    },
+    {
+      "time": 111855,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
+      "body": "0c204 LocalVirtualFunction WaitBusinessSupporter\n0c20e Return\n  0c20f Nothing\n0c210 EndOfScript"
+    }
+  ],
+  "random_count": {
+    "asset": "Battle/BP/BattleAction/RandomCountAttack/RandomCountAttackCommand",
+    "sha256": "6f9b3f254f042072b8d78451a3aa1f4e47655b12e87a64c6c14ccbd42c518b43",
+    "functions": {
+      "ExecuteUbergraph_RandomCountAttackCommand": "04268 PushExecutionFlow target=356\n0426d ComputedJump\n  0426e LocalVariable EntryPoint\n0427f PushExecutionFlow target=189\n04284 Let property=CallFunc_RandomIntegerInRange_ReturnValue\n  04295 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n  042a6 CallMath import:-70:RandomIntegerInRange\n    042ab LocalVariable K2Node_Event_RandomMin\n    042bc LocalVariable K2Node_Event_RandomMax\n042ce Let property=CallFunc_Add_IntInt_ReturnValue\n  042df LocalVariable CallFunc_Add_IntInt_ReturnValue\n  042f0 CallMath import:-56:Add_IntInt\n    042f5 LocalVariable K2Node_Event_BaseCount\n    04306 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n04318 Let property=AbilityCounterMax\n  04329 InstanceVariable AbilityCounterMax\n  0433a LocalVariable CallFunc_Add_IntInt_ReturnValue\n0434b Let property=MinimumbilityCounter\n  0435c InstanceVariable MinimumbilityCounter\n  0436d LocalVariable K2Node_Event_MinimumCount\n0437e LetBool\n  0437f InstanceVariable IsRandomHitCommand\n  04390 True\n04391 LetBool\n  04392 InstanceVariable ExecSetRandomCount\n  043a3 True\n043a4 PopExecutionFlow\n043a5 LocalVirtualFunction SetupMinimumHit\n043af PopExecutionFlow\n043b0 LocalVirtualFunction StartCommandSequence\n043ba PopExecutionFlow\n043bb LetBool\n  043bc InstanceVariable m_bExecCommandSequence\n  043cd True\n043ce Jump target=204\n043d3 LetBool\n  043d4 LocalVariable CallFunc_Not_PreBool_ReturnValue\n  043e5 CallMath import:-66:Not_PreBool\n    043ea InstanceVariable ExecSetRandomCount\n043fc LetBool\n  043fd LocalVariable CallFunc_NotEqual_IntInt_ReturnValue\n  0440e CallMath import:-67:NotEqual_IntInt\n    04413 LocalVariable K2Node_Event_BaseCount\n    04424 IntConst 0\n0442a LetBool\n  0442b LocalVariable CallFunc_BooleanAND_ReturnValue\n  0443c CallMath import:-57:BooleanAND\n    04441 LocalVariable CallFunc_Not_PreBool_ReturnValue\n    04452 LocalVariable CallFunc_NotEqual_IntInt_ReturnValue\n04464 PopExecutionFlowIfNot\n  04465 LocalVariable CallFunc_BooleanAND_ReturnValue\n04476 Jump target=15\n0447b Jump target=219\n04480 Return\n  04481 Nothing\n04482 EndOfScript",
+      "InitAbilityCounter": "0456b LetValueOnPersistentFrame K2Node_Event_BaseCount\n  0457c LocalVariable BaseCount\n0458d LetValueOnPersistentFrame K2Node_Event_MinimumCount\n  0459e LocalVariable MinimumCount\n045af LetValueOnPersistentFrame K2Node_Event_RandomMin\n  045c0 LocalVariable RandomMin\n045d1 LetValueOnPersistentFrame K2Node_Event_RandomMax\n  045e2 LocalVariable RandomMax\n045f3 FinalFunction export:1:ExecuteUbergraph_RandomCountAttackCommand\n  045f8 IntConst 235\n045fe Return\n  045ff Nothing\n04600 EndOfScript",
+      "StartMainAction": "0462d FinalFunction export:1:ExecuteUbergraph_RandomCountAttackCommand\n  04632 IntConst 351\n04638 Return\n  04639 Nothing\n0463a EndOfScript",
+      "Setup Action Command": "04950 PushExecutionFlow target=667\n04955 PushExecutionFlow target=58\n0495a JumpIfNot target=529\n  0495f Context skip=9 rvalue=IsEnemy\n    04960 LocalVariable Enforcer\n    04985 InstanceVariable IsEnemy\n04996 LetBool\n  04997 InstanceVariable m_bEnableRandomCover\n  049a8 True\n049a9 PopExecutionFlow\n049aa FinalFunction import:-44:Setup Action Command\n  049af LocalVariable Enforcer\n  049c0 LocalOutVariable Target\n  049d1 LocalVariable NewCommand\n  049e2 LocalVariable BoostLevel\n  049f3 LocalVariable CallFunc_Setup_Action_Command_Success\n04a05 PushExecutionFlow target=648\n04a0a PushExecutionFlow target=636\n04a0f PushExecutionFlow target=211\n04a14 Let property=CallFunc_Multiply_IntInt_ReturnValue\n  04a25 LocalVariable CallFunc_Multiply_IntInt_ReturnValue\n  04a36 CallMath import:-65:Multiply_IntInt\n    04a3b StructMemberContext SlideFrame\n      04a4c InstanceVariable ActionCommand\n    04a5d InstanceVariable AbilityCounterMax\n04a6f Let property=m_nTotalSlideFrame\n  04a80 InstanceVariable m_nTotalSlideFrame\n  04a91 LocalVariable CallFunc_Multiply_IntInt_ReturnValue\n04aa2 PopExecutionFlow\n04aa3 PopExecutionFlowIfNot\n  04aa4 InstanceVariable m_bEnableSkillALL\n04ab5 Let property=Temp_int_Loop_Counter_Variable\n  04ac6 LocalVariable Temp_int_Loop_Counter_Variable\n  04ad7 IntConst 0\n04adc Let property=Temp_int_Array_Index_Variable\n  04aed LocalVariable Temp_int_Array_Index_Variable\n  04afe IntConst 0\n04b03 Let property=CallFunc_Array_Length_ReturnValue\n  04b14 LocalVariable CallFunc_Array_Length_ReturnValue\n  04b25 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    04b26 ObjectConst import:-78:Default__KismetArrayLibrary\n    04b3f FinalFunction import:-52:Array_Length\n      04b44 InstanceVariable AilmentList\n04b56 LetBool\n  04b57 LocalVariable CallFunc_Less_IntInt_ReturnValue\n  04b68 CallMath import:-62:Less_IntInt\n    04b6d LocalVariable Temp_int_Loop_Counter_Variable\n    04b7e LocalVariable CallFunc_Array_Length_ReturnValue\n04b90 PopExecutionFlowIfNot\n  04b91 LocalVariable CallFunc_Less_IntInt_ReturnValue\n04ba2 Let property=Temp_int_Array_Index_Variable\n  04bb3 LocalVariable Temp_int_Array_Index_Variable\n  04bc4 LocalVariable Temp_int_Loop_Counter_Variable\n04bd5 PushExecutionFlow target=455\n04bda Let property=Target_100_AC32A4AF450266B852A0AFABA6621862\n  04beb StructMemberContext Target_100_AC32A4AF450266B852A0AFABA6621862\n    04bfc StructMemberContext Ailment_29_75475DD04B3C5EEC50F1BE921DE759E3\n      04c0d ArrayGetByRef\n        04c0e InstanceVariable AilmentList\n        04c1f LocalVariable Temp_int_Array_Index_Variable\n  04c30 ByteConst 0\n04c32 PopExecutionFlow\n04c33 Let property=CallFunc_Add_IntInt_ReturnValue\n  04c44 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  04c55 CallMath import:-56:Add_IntInt\n    04c5a LocalVariable Temp_int_Loop_Counter_Variable\n    04c6b IntConst 1\n04c71 Let property=Temp_int_Loop_Counter_Variable\n  04c82 LocalVariable Temp_int_Loop_Counter_Variable\n  04c93 LocalVariable CallFunc_Add_IntInt_ReturnValue\n04ca4 Jump target=267\n04ca9 Context skip=24 rvalue=<null-field>\n  04caa ObjectConst import:-82:Default__LibBattle_C\n  04cbb LocalVirtualFunction GetBattleManager\n    04cc4 Self\n    04cc5 LocalVariable CallFunc_GetBattleManager_BattleManager\n04cd7 LetBool\n  04cd8 LocalVariable CallFunc_IsKSPartyBattle_ReturnValue\n  04ce9 Context skip=14 rvalue=CallFunc_IsKSPartyBattle_ReturnValue\n    04cea LocalVariable CallFunc_GetBattleManager_BattleManager\n    04d0f LocalVirtualFunction IsKSPartyBattle\n04d19 PopExecutionFlowIfNot\n  04d1a LocalVariable CallFunc_IsKSPartyBattle_ReturnValue\n04d2b Jump target=46\n04d30 LetBool\n  04d31 InstanceVariable ExecSetRandomCount\n  04d42 False\n04d43 PopExecutionFlow\n04d44 LetBool\n  04d45 LocalOutVariable Success\n  04d56 LocalVariable CallFunc_Setup_Action_Command_Success\n04d67 Return\n  04d68 Nothing\n04d69 EndOfScript",
+      "JudgeSpecialHitRate": "04ed0 FinalFunction import:-42:JudgeSpecialHitRate\n  04ed5 LocalVariable Ailment\n  04ee6 LocalVariable Target\n  04ef7 LocalVariable CallFunc_JudgeSpecialHitRate_Enable\n  04f08 LocalVariable CallFunc_JudgeSpecialHitRate_Result\n04f1a JumpIfNot target=95\n  04f1f LocalVariable CallFunc_JudgeSpecialHitRate_Enable\n04f30 LetBool\n  04f31 LocalOutVariable Enable\n  04f42 True\n04f43 LetBool\n  04f44 LocalOutVariable Result\n  04f55 LocalVariable CallFunc_JudgeSpecialHitRate_Result\n04f66 Jump target=166\n04f6b JumpIfNot target=144\n  04f70 InstanceVariable ExecutedStepCounter\n04f81 LetBool\n  04f82 LocalOutVariable Enable\n  04f93 True\n04f94 LetBool\n  04f95 LocalOutVariable Result\n  04fa6 InstanceVariable AttackHit\n04fb7 Jump target=166\n04fbc LetBool\n  04fbd LocalOutVariable Enable\n  04fce False\n04fcf LetBool\n  04fd0 LocalOutVariable Result\n  04fe1 False\n04fe2 Return\n  04fe3 Nothing\n04fe4 EndOfScript",
+      "CheckAttackHit": "05409 PushExecutionFlow target=1043\n0540e Let property=WorkAttackNum\n  0541f LocalVariable WorkAttackNum\n  05430 IntConst 0\n05435 Let property=CallFunc_Subtract_IntInt_ReturnValue\n  05446 LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n  05457 CallMath import:-71:Subtract_IntInt\n    0545c InstanceVariable AbilityCounter\n    0546d IntConst 1\n05473 Let property=WorkAttackNum\n  05484 LocalVariable WorkAttackNum\n  05495 LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n054a6 LetBool\n  054a7 LocalVariable CallFunc_Array_IsValidIndex_ReturnValue\n  054b8 Context skip=28 rvalue=CallFunc_Array_IsValidIndex_ReturnValue\n    054b9 ObjectConst import:-78:Default__KismetArrayLibrary\n    054d2 FinalFunction import:-51:Array_IsValidIndex\n      054d7 InstanceVariable InevitablyHit\n      054e8 LocalVariable WorkAttackNum\n054fa JumpIfNot target=720\n  054ff LocalVariable CallFunc_Array_IsValidIndex_ReturnValue\n05510 PushExecutionFlow target=732\n05515 Context skip=33 rvalue=<null-field>\n  05516 ObjectConst import:-78:Default__KismetArrayLibrary\n  05527 FinalFunction import:-50:Array_Get\n    0552c InstanceVariable SubTargetList\n    0553d IntConst 0\n    05542 LocalVariable CallFunc_Array_Get_Item\n05554 LetObj\n  05555 LocalVariable RandomTarget\n  05566 LocalVariable CallFunc_Array_Get_Item\n05577 LetBool\n  05578 LocalVariable Temp_bool_True_if_break_was_hit_Variable\n  05589 False\n0558a Let property=Temp_int_Loop_Counter_Variable\n  0559b LocalVariable Temp_int_Loop_Counter_Variable\n  055ac IntConst 0\n055b1 Let property=Temp_int_Array_Index_Variable\n  055c2 LocalVariable Temp_int_Array_Index_Variable\n  055d3 IntConst 0\n055d8 LetBool\n  055d9 LocalVariable CallFunc_Not_PreBool_ReturnValue\n  055ea CallMath import:-66:Not_PreBool\n    055ef LocalVariable Temp_bool_True_if_break_was_hit_Variable\n05601 Let property=CallFunc_Array_Length_ReturnValue\n  05612 LocalVariable CallFunc_Array_Length_ReturnValue\n  05623 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    05624 ObjectConst import:-78:Default__KismetArrayLibrary\n    0563d FinalFunction import:-52:Array_Length\n      05642 InstanceVariable AilmentList\n05654 LetBool\n  05655 LocalVariable CallFunc_Less_IntInt_ReturnValue\n  05666 CallMath import:-62:Less_IntInt\n    0566b LocalVariable Temp_int_Loop_Counter_Variable\n    0567c LocalVariable CallFunc_Array_Length_ReturnValue\n0568e LetBool\n  0568f LocalVariable CallFunc_BooleanAND_ReturnValue\n  056a0 CallMath import:-57:BooleanAND\n    056a5 LocalVariable CallFunc_Not_PreBool_ReturnValue\n    056b6 LocalVariable CallFunc_Less_IntInt_ReturnValue\n056c8 PopExecutionFlowIfNot\n  056c9 LocalVariable CallFunc_BooleanAND_ReturnValue\n056da Let property=Temp_int_Array_Index_Variable\n  056eb LocalVariable Temp_int_Array_Index_Variable\n  056fc LocalVariable Temp_int_Loop_Counter_Variable\n0570d PushExecutionFlow target=969\n05712 Context skip=37 rvalue=<null-field>\n  05713 ObjectConst import:-78:Default__KismetArrayLibrary\n  05724 FinalFunction import:-50:Array_Get\n    05729 InstanceVariable AilmentList\n    0573a LocalVariable Temp_int_Array_Index_Variable\n    0574b LocalVariable CallFunc_Array_Get_Item_2\n0575d LetBool\n  0575e LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n  0576f CallMath import:-60:EqualEqual_ByteByte\n    05774 StructMemberContext AilmentType_21_E59B88A04E22F516091964B64ED976DA\n      05785 LocalVariable CallFunc_Array_Get_Item_2\n    05796 ByteConst 0\n05799 PopExecutionFlowIfNot\n  0579a LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n057ab Context skip=37 rvalue=<null-field>\n  057ac ObjectConst import:-78:Default__KismetArrayLibrary\n  057bd FinalFunction import:-50:Array_Get\n    057c2 InstanceVariable AilmentList\n    057d3 LocalVariable Temp_int_Array_Index_Variable\n    057e4 LocalVariable CallFunc_Array_Get_Item_2\n057f6 Let property=DamageAilment\n  05807 LocalVariable DamageAilment\n  05818 LocalVariable CallFunc_Array_Get_Item_2\n05829 LetBool\n  0582a LocalVariable Temp_bool_True_if_break_was_hit_Variable\n  0583b True\n0583c PopExecutionFlow\n0583d LetBool\n  0583e InstanceVariable AttackHit\n  0584f False\n05850 PopExecutionFlow\n05851 LetBool\n  05852 LocalVariable CallFunc_IsValid_ReturnValue\n  05863 CallMath import:-73:IsValid\n    05868 LocalVariable RandomTarget\n0587a JumpIfNot target=957\n  0587f LocalVariable CallFunc_IsValid_ReturnValue\n05890 Context skip=43 rvalue=<null-field>\n  05891 ObjectConst import:-81:Default__LibAilment_C\n  058a2 LocalVirtualFunction CheckHit\n    058ab LocalVariable DamageAilment\n    058bc LocalVariable RandomTarget\n    058cd Self\n    058ce Self\n    058cf LocalVariable CallFunc_CheckHit_Result\n058e1 Context skip=37 rvalue=<null-field>\n  058e2 ObjectConst import:-78:Default__KismetArrayLibrary\n  058f3 FinalFunction import:-50:Array_Get\n    058f8 InstanceVariable InevitablyHit\n    05909 LocalVariable WorkAttackNum\n    0591a LocalVariable CallFunc_Array_Get_Item_1\n0592c LetBool\n  0592d LocalVariable CallFunc_BooleanOR_ReturnValue\n  0593e CallMath import:-58:BooleanOR\n    05943 LocalVariable CallFunc_CheckHit_Result\n    05954 LocalVariable CallFunc_Array_Get_Item_1\n05966 LetBool\n  05967 InstanceVariable AttackHit\n  05978 LocalVariable CallFunc_BooleanOR_ReturnValue\n05989 PopExecutionFlow\n0598a LetBool\n  0598b InstanceVariable AttackHit\n  0599c False\n0599d PopExecutionFlow\n0599e Let property=CallFunc_Add_IntInt_ReturnValue\n  059af LocalVariable CallFunc_Add_IntInt_ReturnValue\n  059c0 CallMath import:-56:Add_IntInt\n    059c5 LocalVariable Temp_int_Loop_Counter_Variable\n    059d6 IntConst 1\n059dc Let property=Temp_int_Loop_Counter_Variable\n  059ed LocalVariable Temp_int_Loop_Counter_Variable\n  059fe LocalVariable CallFunc_Add_IntInt_ReturnValue\n05a0f Jump target=307\n05a14 Return\n  05a15 Nothing\n05a16 EndOfScript",
+      "SetupMinimumHit": "05bc7 PushExecutionFlow target=351\n05bcc PushExecutionFlow target=235\n05bd1 Let property=Temp_int_Variable\n  05be2 LocalVariable Temp_int_Variable\n  05bf3 IntConst 0\n05bf8 Let property=CallFunc_Subtract_IntInt_ReturnValue\n  05c09 LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n  05c1a CallMath import:-71:Subtract_IntInt\n    05c1f InstanceVariable AbilityCounterMax\n    05c30 IntConst 1\n05c36 LetBool\n  05c37 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n  05c48 CallMath import:-63:LessEqual_IntInt\n    05c4d LocalVariable Temp_int_Variable\n    05c5e LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n05c70 PopExecutionFlowIfNot\n  05c71 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n05c82 PushExecutionFlow target=277\n05c87 LetBool\n  05c88 LocalVariable CallFunc_Greater_IntInt_ReturnValue\n  05c99 CallMath import:-61:Greater_IntInt\n    05c9e InstanceVariable MinimumbilityCounter\n    05caf LocalVariable Temp_int_Variable\n05cc1 Let property=CallFunc_Array_Add_ReturnValue\n  05cd2 LocalVariable CallFunc_Array_Add_ReturnValue\n  05ce3 Context skip=28 rvalue=CallFunc_Array_Add_ReturnValue\n    05ce4 ObjectConst import:-78:Default__KismetArrayLibrary\n    05cfd FinalFunction import:-47:Array_Add\n      05d02 InstanceVariable InevitablyHit\n      05d13 LocalVariable CallFunc_Greater_IntInt_ReturnValue\n05d25 PopExecutionFlow\n05d26 Context skip=19 rvalue=<null-field>\n  05d27 ObjectConst import:-78:Default__KismetArrayLibrary\n  05d38 FinalFunction import:-55:Array_Shuffle\n    05d3d InstanceVariable InevitablyHit\n05d4f PopExecutionFlow\n05d50 Let property=CallFunc_Add_IntInt_ReturnValue\n  05d61 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  05d72 CallMath import:-56:Add_IntInt\n    05d77 LocalVariable Temp_int_Variable\n    05d88 IntConst 1\n05d8e Let property=Temp_int_Variable\n  05d9f LocalVariable Temp_int_Variable\n  05db0 LocalVariable CallFunc_Add_IntInt_ReturnValue\n05dc1 Jump target=33\n05dc6 Return\n  05dc7 Nothing\n05dc8 EndOfScript",
+      "GetBattleReplayParam": "05f73 Let property=Temp_int_Variable\n  05f84 LocalVariable Temp_int_Variable\n  05f95 IntConst 0\n05f9a Let property=Temp_int_Variable_1\n  05fab LocalVariable Temp_int_Variable_1\n  05fbc IntConst 1\n05fc1 LetBool\n  05fc2 LocalVariable Temp_bool_Variable\n  05fd3 InstanceVariable m_bEnableRandomTarget\n05fe4 Let property=Param1\n  05ff5 LocalOutVariable Param1\n  06006 InstanceVariable AbilityCounter\n06017 Let property=Param2\n  06028 LocalOutVariable Param2\n  06039 SwitchValue cases=2 end=163\n    06040 LocalVariable Temp_bool_Variable\n    06051 False\n    06052 SwitchCaseNext 140\n    06056 LocalVariable Temp_int_Variable_1\n    06067 True\n    06068 SwitchCaseNext 154\n    0606c LocalVariable Temp_int_Variable\n    0607d LocalVariable K2Node_Select_Default\n0608e Let property=Param3\n  0609f LocalOutVariable Param3\n  060b0 IntConst 0\n060b5 Let property=Param4\n  060c6 LocalOutVariable Param4\n  060d7 IntConst 0\n060dc Return\n  060dd Nothing\n060de EndOfScript",
+      "SetBattleReplayParam": "066c7 PushExecutionFlow target=1549\n066cc PushExecutionFlow target=1357\n066d1 PushExecutionFlow target=847\n066d6 PushExecutionFlow target=408\n066db Let property=CallFunc_Array_Length_ReturnValue\n  066ec LocalVariable CallFunc_Array_Length_ReturnValue\n  066fd Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    066fe ObjectConst import:-78:Default__KismetArrayLibrary\n    06717 FinalFunction import:-52:Array_Length\n      0671c InstanceVariable Target\n0672e Context skip=33 rvalue=<null-field>\n  0672f ObjectConst import:-78:Default__KismetArrayLibrary\n  06740 FinalFunction import:-50:Array_Get\n    06745 LocalOutVariable ParamList\n    06756 IntConst 0\n    0675b LocalVariable CallFunc_Array_Get_Item_1\n0676d Let property=CallFunc_Max_ReturnValue\n  0677e LocalVariable CallFunc_Max_ReturnValue\n  0678f CallMath import:-64:Max\n    06794 LocalVariable CallFunc_Array_Get_Item_1\n    067a5 LocalVariable CallFunc_Array_Length_ReturnValue\n067b7 Let property=AbilityCounterMax\n  067c8 InstanceVariable AbilityCounterMax\n  067d9 LocalVariable CallFunc_Max_ReturnValue\n067ea Context skip=19 rvalue=<null-field>\n  067eb ObjectConst import:-78:Default__KismetArrayLibrary\n  067fc FinalFunction import:-48:Array_Clear\n    06801 LocalVariable Temp_wildcard_Variable\n06813 Let property=Temp_int_Variable_1\n  06824 LocalVariable Temp_int_Variable_1\n  06835 IntConst 1\n0683a LetBool\n  0683b LocalVariable CallFunc_LessEqual_IntInt_ReturnValue_1\n  0684c CallMath import:-63:LessEqual_IntInt\n    06851 LocalVariable Temp_int_Variable_1\n    06862 InstanceVariable AbilityCounterMax\n06874 JumpIfNot target=1373\n  06879 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue_1\n0688a PushExecutionFlow target=1401\n0688f LetBool\n  06890 LocalVariable Temp_bool_Variable\n  068a1 True\n068a2 Let property=CallFunc_Array_Add_ReturnValue\n  068b3 LocalVariable CallFunc_Array_Add_ReturnValue\n  068c4 Context skip=28 rvalue=CallFunc_Array_Add_ReturnValue\n    068c5 ObjectConst import:-78:Default__KismetArrayLibrary\n    068de FinalFunction import:-47:Array_Add\n      068e3 LocalVariable Temp_wildcard_Variable\n      068f4 LocalVariable Temp_bool_Variable\n06906 PopExecutionFlow\n06907 Context skip=28 rvalue=<null-field>\n  06908 ObjectConst import:-78:Default__KismetArrayLibrary\n  06919 FinalFunction import:-53:Array_Resize\n    0691e InstanceVariable BattleReplayTarget\n    0692f InstanceVariable AbilityCounterMax\n06941 Let property=Temp_int_Variable\n  06952 LocalVariable Temp_int_Variable\n  06963 IntConst 0\n06968 Let property=CallFunc_Subtract_IntInt_ReturnValue\n  06979 LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n  0698a CallMath import:-71:Subtract_IntInt\n    0698f InstanceVariable AbilityCounterMax\n    069a0 IntConst 1\n069a6 LetBool\n  069a7 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n  069b8 CallMath import:-63:LessEqual_IntInt\n    069bd LocalVariable Temp_int_Variable\n    069ce LocalVariable CallFunc_Subtract_IntInt_ReturnValue\n069e0 JumpIfNot target=805\n  069e5 LocalVariable CallFunc_LessEqual_IntInt_ReturnValue\n069f6 PushExecutionFlow target=1475\n069fb Let property=CallFunc_Array_Length_ReturnValue_2\n  06a0c LocalVariable CallFunc_Array_Length_ReturnValue_2\n  06a1d Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_2\n    06a1e ObjectConst import:-78:Default__KismetArrayLibrary\n    06a37 FinalFunction import:-52:Array_Length\n      06a3c InstanceVariable Target\n06a4e Let property=CallFunc_Percent_IntInt_ReturnValue\n  06a5f LocalVariable CallFunc_Percent_IntInt_ReturnValue\n  06a70 CallMath import:-68:Percent_IntInt\n    06a75 LocalVariable Temp_int_Variable\n    06a86 LocalVariable CallFunc_Array_Length_ReturnValue_2\n06a98 Context skip=37 rvalue=<null-field>\n  06a99 ObjectConst import:-78:Default__KismetArrayLibrary\n  06aaa FinalFunction import:-50:Array_Get\n    06aaf InstanceVariable Target\n    06ac0 LocalVariable CallFunc_Percent_IntInt_ReturnValue\n    06ad1 LocalVariable CallFunc_Array_Get_Item_2\n06ae3 Context skip=38 rvalue=<null-field>\n  06ae4 ObjectConst import:-78:Default__KismetArrayLibrary\n  06af5 FinalFunction import:-54:Array_Set\n    06afa InstanceVariable BattleReplayTarget\n    06b0b LocalVariable Temp_int_Variable\n    06b1c LocalVariable CallFunc_Array_Get_Item_2\n    06b2d False\n06b2f PopExecutionFlow\n06b30 Context skip=19 rvalue=<null-field>\n  06b31 ObjectConst import:-78:Default__KismetArrayLibrary\n  06b42 FinalFunction import:-55:Array_Shuffle\n    06b47 InstanceVariable BattleReplayTarget\n06b59 PopExecutionFlow\n06b5a LetBool\n  06b5b LocalVariable CallFunc_Not_PreBool_ReturnValue\n  06b6c CallMath import:-66:Not_PreBool\n    06b71 StructMemberContext EnableSkillAll\n      06b82 InstanceVariable ActionCommand\n06b94 Context skip=33 rvalue=<null-field>\n  06b95 ObjectConst import:-78:Default__KismetArrayLibrary\n  06ba6 FinalFunction import:-50:Array_Get\n    06bab LocalOutVariable ParamList\n    06bbc IntConst 1\n    06bc1 LocalVariable CallFunc_Array_Get_Item\n06bd3 LetBool\n  06bd4 LocalVariable CallFunc_NotEqual_IntInt_ReturnValue\n  06be5 CallMath import:-67:NotEqual_IntInt\n    06bea LocalVariable CallFunc_Array_Get_Item\n    06bfb IntConst 0\n06c01 LetBool\n  06c02 LocalVariable CallFunc_BooleanOR_ReturnValue\n  06c13 CallMath import:-58:BooleanOR\n    06c18 LocalVariable CallFunc_NotEqual_IntInt_ReturnValue\n    06c29 LocalVariable CallFunc_Not_PreBool_ReturnValue\n06c3b JumpIfNot target=1345\n  06c40 LocalVariable CallFunc_BooleanOR_ReturnValue\n06c51 LetBool\n  06c52 InstanceVariable m_bEnableRandomTarget\n  06c63 False\n06c64 Let property=Temp_int_Loop_Counter_Variable\n  06c75 LocalVariable Temp_int_Loop_Counter_Variable\n  06c86 IntConst 0\n06c8b Let property=Temp_int_Array_Index_Variable\n  06c9c LocalVariable Temp_int_Array_Index_Variable\n  06cad IntConst 0\n06cb2 Let property=CallFunc_Array_Length_ReturnValue_1\n  06cc3 LocalVariable CallFunc_Array_Length_ReturnValue_1\n  06cd4 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_1\n    06cd5 ObjectConst import:-78:Default__KismetArrayLibrary\n    06cee FinalFunction import:-52:Array_Length\n      06cf3 InstanceVariable AilmentList\n06d05 LetBool\n  06d06 LocalVariable CallFunc_Less_IntInt_ReturnValue\n  06d17 CallMath import:-62:Less_IntInt\n    06d1c LocalVariable Temp_int_Loop_Counter_Variable\n    06d2d LocalVariable CallFunc_Array_Length_ReturnValue_1\n06d3f PopExecutionFlowIfNot\n  06d40 LocalVariable CallFunc_Less_IntInt_ReturnValue\n06d51 Let property=Temp_int_Array_Index_Variable\n  06d62 LocalVariable Temp_int_Array_Index_Variable\n  06d73 LocalVariable Temp_int_Loop_Counter_Variable\n06d84 PushExecutionFlow target=1271\n06d89 Let property=Target_100_AC32A4AF450266B852A0AFABA6621862\n  06d9a StructMemberContext Target_100_AC32A4AF450266B852A0AFABA6621862\n    06dab StructMemberContext Ailment_29_75475DD04B3C5EEC50F1BE921DE759E3\n      06dbc ArrayGetByRef\n        06dbd InstanceVariable AilmentList\n        06dce LocalVariable Temp_int_Array_Index_Variable\n  06ddf ByteConst 0\n06de1 PopExecutionFlow\n06de2 Let property=CallFunc_Add_IntInt_ReturnValue\n  06df3 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  06e04 CallMath import:-56:Add_IntInt\n    06e09 LocalVariable Temp_int_Loop_Counter_Variable\n    06e1a IntConst 1\n06e20 Let property=Temp_int_Loop_Counter_Variable\n  06e31 LocalVariable Temp_int_Loop_Counter_Variable\n  06e42 LocalVariable CallFunc_Add_IntInt_ReturnValue\n06e53 Jump target=1083\n06e58 LetBool\n  06e59 InstanceVariable m_bEnableRandomTarget\n  06e6a True\n06e6b PopExecutionFlow\n06e6c LetBool\n  06e6d LocalOutVariable Return\n  06e7e False\n06e7f Jump target=1549\n06e84 Let property=InevitablyHit\n  06e95 InstanceVariable InevitablyHit\n  06ea6 LocalVariable Temp_wildcard_Variable\n06eb7 PopExecutionFlow\n06eb8 Let property=CallFunc_Add_IntInt_ReturnValue_2\n  06ec9 LocalVariable CallFunc_Add_IntInt_ReturnValue_2\n  06eda CallMath import:-56:Add_IntInt\n    06edf LocalVariable Temp_int_Variable_1\n    06ef0 IntConst 1\n06ef6 Let property=Temp_int_Variable_1\n  06f07 LocalVariable Temp_int_Variable_1\n  06f18 LocalVariable CallFunc_Add_IntInt_ReturnValue_2\n06f29 Jump target=271\n06f2e Let property=CallFunc_Add_IntInt_ReturnValue_1\n  06f3f LocalVariable CallFunc_Add_IntInt_ReturnValue_1\n  06f50 CallMath import:-56:Add_IntInt\n    06f55 LocalVariable Temp_int_Variable\n    06f66 IntConst 1\n06f6c Let property=Temp_int_Variable\n  06f7d LocalVariable Temp_int_Variable\n  06f8e LocalVariable CallFunc_Add_IntInt_ReturnValue_1\n06f9f Jump target=481\n06fa4 Return\n  06fa5 Nothing\n06fa6 EndOfScript",
+      "ExecCheckAdditiveTurn": "07e49 PushExecutionFlow target=3079\n07e4e PushExecutionFlow target=3035\n07e53 PushExecutionFlow target=2687\n07e58 PushExecutionFlow target=2374\n07e5d PushExecutionFlow target=1939\n07e62 PushExecutionFlow target=1495\n07e67 PushExecutionFlow target=595\n07e6c PushExecutionFlow target=190\n07e71 Context skip=19 rvalue=<null-field>\n  07e72 ObjectConst import:-78:Default__KismetArrayLibrary\n  07e83 FinalFunction import:-48:Array_Clear\n    07e88 LocalVariable WorkAdditiveTarget\n07e9a LetBool\n  07e9b LocalVariable CallFunc_Not_PreBool_ReturnValue\n  07eac CallMath import:-66:Not_PreBool\n    07eb1 InstanceVariable m_bEnableRandomTarget\n07ec3 LetBool\n  07ec4 LocalVariable CallFunc_BooleanOR_ReturnValue_1\n  07ed5 CallMath import:-58:BooleanOR\n    07eda LocalVariable CallFunc_Not_PreBool_ReturnValue\n    07eeb InstanceVariable m_bEnableSkillALL\n07efd JumpIfNot target=3051\n  07f02 LocalVariable CallFunc_BooleanOR_ReturnValue_1\n07f13 Let property=WorkAdditiveTarget\n  07f24 LocalVariable WorkAdditiveTarget\n  07f35 InstanceVariable Target\n07f46 PopExecutionFlow\n07f47 PopExecutionFlowIfNot\n  07f48 StructMemberContext EnableRepeat\n    07f59 InstanceVariable ActionCommand\n07f6a Context skip=34 rvalue=<null-field>\n  07f6b InstanceVariable Enforcer_Old\n  07f88 LocalVirtualFunction SearchDisease\n    07f91 ByteConst 47\n    07f93 LocalVariable CallFunc_SearchDisease_ExecHandler_1\n    07fa4 LocalVariable CallFunc_SearchDisease_Enable_1\n07fb6 LetBool\n  07fb7 LocalVariable CallFunc_CheckPotentialityActionExec_ReturnValue\n  07fc8 Context skip=12 rvalue=CallFunc_CheckPotentialityActionExec_ReturnValue\n    07fc9 InstanceVariable m_cEnforcer\n    07fee FinalFunction import:-74:CheckPotentialityActionExec\n      07ff3 ByteConst 4\n07ff6 LetBool\n  07ff7 LocalVariable CallFunc_BooleanOR_ReturnValue_2\n  08008 CallMath import:-58:BooleanOR\n    0800d LocalVariable CallFunc_SearchDisease_Enable_1\n    0801e LocalVariable CallFunc_CheckPotentialityActionExec_ReturnValue\n08030 PopExecutionFlowIfNot\n  08031 LocalVariable CallFunc_BooleanOR_ReturnValue_2\n08042 Context skip=24 rvalue=<null-field>\n  08043 ObjectConst import:-82:Default__LibBattle_C\n  08054 LocalVirtualFunction GetBattleManager\n    0805d Self\n    0805e LocalVariable CallFunc_GetBattleManager_BattleManager_5\n08070 Context skip=24 rvalue=<null-field>\n  08071 ObjectConst import:-79:Default__LibAccessor_DBAccessManager_C\n  08082 LocalVirtualFunction GetDBAccessManager\n    0808b Self\n    0808c LocalVariable CallFunc_GetDBAccessManager_DBAccessManager_1\n0809e Context skip=50 rvalue=<null-field>\n  0809f LocalVariable CallFunc_GetDBAccessManager_DBAccessManager_1\n  080bc LocalVirtualFunction ConvertAbilityIDToLabel\n    080c5 StructMemberContext AbilityID\n      080d6 InstanceVariable ActionCommand\n    080e7 LocalVariable CallFunc_ConvertAbilityIDToLabel_AbilityLabel_1\n    080f8 LocalVariable CallFunc_ConvertAbilityIDToLabel_IsFind_1\n0810a LetBool\n  0810b LocalVariable CallFunc_AddAdditiveOrderForRepeat_ReturnValue_1\n  0811c Context skip=41 rvalue=CallFunc_AddAdditiveOrderForRepeat_ReturnValue_1\n    0811d LocalVariable CallFunc_GetBattleManager_BattleManager_5\n    08142 LocalVirtualFunction AddAdditiveOrderForRepeat\n      0814b InstanceVariable m_cEnforcer\n      0815c LocalVariable CallFunc_ConvertAbilityIDToLabel_AbilityLabel_1\n      0816d InstanceVariable Target\n0817f PopExecutionFlow\n08180 LetBool\n  08181 LocalVariable CallFunc_CheckSupportAilment_ReturnValue\n  08192 Context skip=25 rvalue=CallFunc_CheckSupportAilment_ReturnValue\n    08193 InstanceVariable m_cEnforcer\n    081b8 VirtualFunction CheckSupportAilment\n      081c1 ByteConst 34\n      081c3 LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData\n081d5 LetBool\n  081d6 LocalVariable CallFunc_BooleanAND_ReturnValue\n  081e7 CallMath import:-57:BooleanAND\n    081ec StructMemberContext EnableChaseAttack\n      081fd InstanceVariable ActionCommand\n    0820e LocalVariable CallFunc_CheckSupportAilment_ReturnValue\n08220 LetBool\n  08221 LocalVariable CallFunc_RandomBoolForAilment_ReturnValue\n  08232 Context skip=33 rvalue=CallFunc_RandomBoolForAilment_ReturnValue\n    08233 ObjectConst import:-81:Default__LibAilment_C\n    0824c LocalVirtualFunction RandomBoolForAilment\n      08255 StructMemberContext InvocationValue\n        08266 LocalVariable CallFunc_CheckSupportAilment_cSupportAbilityData\n      08277 Self\n08279 LetBool\n  0827a LocalVariable CallFunc_BooleanAND_ReturnValue_1\n  0828b CallMath import:-57:BooleanAND\n    08290 LocalVariable CallFunc_BooleanAND_ReturnValue\n    082a1 LocalVariable CallFunc_RandomBoolForAilment_ReturnValue\n082b3 PopExecutionFlowIfNot\n  082b4 LocalVariable CallFunc_BooleanAND_ReturnValue_1\n082c5 Let property=CallFunc_Array_Length_ReturnValue\n  082d6 LocalVariable CallFunc_Array_Length_ReturnValue\n  082e7 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    082e8 ObjectConst import:-78:Default__KismetArrayLibrary\n    08301 FinalFunction import:-52:Array_Length\n      08306 InstanceVariable Target\n08318 Let property=CallFunc_RandomInteger_ReturnValue\n  08329 LocalVariable CallFunc_RandomInteger_ReturnValue\n  0833a CallMath import:-69:RandomInteger\n    0833f LocalVariable CallFunc_Array_Length_ReturnValue\n08351 Context skip=37 rvalue=<null-field>\n  08352 ObjectConst import:-78:Default__KismetArrayLibrary\n  08363 FinalFunction import:-50:Array_Get\n    08368 InstanceVariable Target\n    08379 LocalVariable CallFunc_RandomInteger_ReturnValue\n    0838a LocalVariable CallFunc_Array_Get_Item\n0839c SetArray\n  0839d LocalVariable K2Node_MakeArray_Array\n  083ae LocalVariable CallFunc_Array_Get_Item\n083c0 LetBool\n  083c1 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n  083d2 CallMath import:-60:EqualEqual_ByteByte\n    083d7 StructMemberContext TargetType\n      083e8 InstanceVariable ActionCommand\n    083f9 ByteConst 4\n083fc LetBool\n  083fd LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1\n  0840e CallMath import:-60:EqualEqual_ByteByte\n    08413 StructMemberContext TargetType\n      08424 InstanceVariable ActionCommand\n    08435 ByteConst 3\n08438 LetBool\n  08439 LocalVariable CallFunc_BooleanOR_ReturnValue\n  0844a CallMath import:-58:BooleanOR\n    0844f LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue_1\n    08460 LocalVariable CallFunc_EqualEqual_ByteByte_ReturnValue\n08472 Context skip=24 rvalue=<null-field>\n  08473 ObjectConst import:-82:Default__LibBattle_C\n  08484 LocalVirtualFunction GetBattleManager\n    0848d Self\n    0848e LocalVariable CallFunc_GetBattleManager_BattleManager_2\n084a0 Let property=CallFunc_GetMainWeaponCategory_ReturnValue\n  084b1 LocalVariable CallFunc_GetMainWeaponCategory_ReturnValue\n  084c2 Context skip=10 rvalue=CallFunc_GetMainWeaponCategory_ReturnValue\n    084c3 InstanceVariable m_cEnforcer\n    084e8 FinalFunction import:-75:GetMainWeaponCategory\n084ee Context skip=33 rvalue=<null-field>\n  084ef ObjectConst import:-80:Default__LibActionCommand_C\n  08500 LocalVirtualFunction GetChaseAttackAbilityByWeapon\n    08509 LocalVariable CallFunc_GetMainWeaponCategory_ReturnValue\n    0851a Self\n    0851b LocalVariable CallFunc_GetChaseAttackAbilityByWeapon_AbilityName\n0852d LetBool\n  0852e LocalVariable Temp_bool_Variable\n  0853f LocalVariable CallFunc_BooleanOR_ReturnValue\n08550 Context skip=24 rvalue=<null-field>\n  08551 ObjectConst import:-82:Default__LibBattle_C\n  08562 LocalVirtualFunction GetBattleManager_OLD\n    0856b Self\n    0856c LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n0857e Context skip=34 rvalue=<null-field>\n  0857f LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n  0859c LocalVirtualFunction GetDefaultTarget\n    085a5 ByteConst 3\n    085a7 InstanceVariable m_cEnforcer\n    085b8 LocalVariable CallFunc_GetDefaultTarget_Target\n085ca LetBool\n  085cb LocalVariable CallFunc_AddAdditiveOrderForChaseAttack_ReturnValue\n  085dc Context skip=85 rvalue=CallFunc_AddAdditiveOrderForChaseAttack_ReturnValue\n    085dd LocalVariable CallFunc_GetBattleManager_BattleManager_2\n    08602 LocalVirtualFunction AddAdditiveOrderForChaseAttack\n      0860b InstanceVariable m_cEnforcer\n      0861c LocalVariable CallFunc_GetChaseAttackAbilityByWeapon_AbilityName\n      0862d SwitchValue cases=2 end=1493\n        08634 LocalVariable Temp_bool_Variable\n        08645 False\n        08646 SwitchCaseNext 1470\n        0864a LocalVariable CallFunc_GetDefaultTarget_Target\n        0865b True\n        0865c SwitchCaseNext 1484\n        08660 LocalVariable K2Node_MakeArray_Array\n        08671 LocalVariable K2Node_Select_Default\n08683 PopExecutionFlow\n08684 Context skip=34 rvalue=<null-field>\n  08685 InstanceVariable Enforcer_Old\n  086a2 LocalVirtualFunction SearchDisease\n    086ab ByteConst 19\n    086ad LocalVariable CallFunc_SearchDisease_ExecHandler\n    086be LocalVariable CallFunc_SearchDisease_Enable\n086d0 LetBool\n  086d1 LocalVariable CallFunc_BooleanAND_ReturnValue_5\n  086e2 CallMath import:-57:BooleanAND\n    086e7 LocalVariable CallFunc_SearchDisease_Enable\n    086f8 StructMemberContext EnableEnchant\n      08709 InstanceVariable ActionCommand\n0871b PopExecutionFlowIfNot\n  0871c LocalVariable CallFunc_BooleanAND_ReturnValue_5\n0872d LetBool\n  0872e LocalVariable CallFunc_IsCharacterEnemy_ReturnValue\n  0873f Context skip=14 rvalue=CallFunc_IsCharacterEnemy_ReturnValue\n    08740 InstanceVariable m_cEnforcer\n    08765 LocalVirtualFunction IsCharacterEnemy\n0876f Context skip=24 rvalue=<null-field>\n  08770 ObjectConst import:-82:Default__LibBattle_C\n  08781 LocalVirtualFunction GetBattleManager\n    0878a Self\n    0878b LocalVariable CallFunc_GetBattleManager_BattleManager_6\n0879d Let property=CallFunc_Conv_IntToByte_ReturnValue\n  087ae LocalVariable CallFunc_Conv_IntToByte_ReturnValue\n  087bf CallMath import:-59:Conv_IntToByte\n    087c4 StructMemberContext AdvValue1_73_FACD087247D104F314BBBDA27281F2CB\n      087d5 StructMemberContext DiseaseData_27_97F541284DF239C711F646952A80D4DC\n        087e6 LocalVariable CallFunc_SearchDisease_ExecHandler\n087f8 Let property=CallFunc_GetValidValue_ReturnValue\n  08809 LocalVariable CallFunc_GetValidValue_ReturnValue\n  0881a CallMath import:-72:GetValidValue\n    0881f ObjectConst import:-33:EATTRIBUTE_TYPE\n    08824 LocalVariable CallFunc_Conv_IntToByte_ReturnValue\n08836 Context skip=42 rvalue=<null-field>\n  08837 ObjectConst import:-80:Default__LibActionCommand_C\n  08848 LocalVirtualFunction GetEnchantAbilityByAttribute\n    08851 LocalVariable CallFunc_GetValidValue_ReturnValue\n    08862 LocalVariable CallFunc_IsCharacterEnemy_ReturnValue\n    08873 Self\n    08874 LocalVariable CallFunc_GetEnchantAbilityByAttribute_AbilityName\n08886 LetBool\n  08887 LocalVariable CallFunc_AddAdditiveOrderForEnchant_ReturnValue_1\n  08898 Context skip=41 rvalue=CallFunc_AddAdditiveOrderForEnchant_ReturnValue_1\n    08899 LocalVariable CallFunc_GetBattleManager_BattleManager_6\n    088be LocalVirtualFunction AddAdditiveOrderForEnchant\n      088c7 InstanceVariable m_cEnforcer\n      088d8 LocalVariable CallFunc_GetEnchantAbilityByAttribute_AbilityName\n      088e9 LocalVariable WorkAdditiveTarget\n088fb PopExecutionFlow\n088fc Context skip=43 rvalue=<null-field>\n  088fd InstanceVariable Enforcer_Old\n  0891a LocalVirtualFunction SearchMainWeaponAilment\n    08923 ByteConst 68\n    08925 LocalVariable CallFunc_SearchMainWeaponAilment_Ailment_1\n    08936 LocalVariable CallFunc_SearchMainWeaponAilment_AilmentHandler_1\n    08947 LocalVariable CallFunc_SearchMainWeaponAilment_Find_1\n08959 LetBool\n  0895a LocalVariable CallFunc_BooleanAND_ReturnValue_4\n  0896b CallMath import:-57:BooleanAND\n    08970 LocalVariable CallFunc_SearchMainWeaponAilment_Find_1\n    08981 StructMemberContext EnableRepeat\n      08992 InstanceVariable ActionCommand\n089a4 PopExecutionFlowIfNot\n  089a5 LocalVariable CallFunc_BooleanAND_ReturnValue_4\n089b6 LetBool\n  089b7 LocalVariable CallFunc_RandomBoolForAilment_ReturnValue_1\n  089c8 Context skip=33 rvalue=CallFunc_RandomBoolForAilment_ReturnValue_1\n    089c9 ObjectConst import:-81:Default__LibAilment_C\n    089e2 LocalVirtualFunction RandomBoolForAilment\n      089eb StructMemberContext InvocationValue\n        089fc LocalVariable CallFunc_SearchMainWeaponAilment_AilmentHandler_1\n      08a0d Self\n08a0f PopExecutionFlowIfNot\n  08a10 LocalVariable CallFunc_RandomBoolForAilment_ReturnValue_1\n08a21 Context skip=24 rvalue=<null-field>\n  08a22 ObjectConst import:-82:Default__LibBattle_C\n  08a33 LocalVirtualFunction GetBattleManager\n    08a3c Self\n    08a3d LocalVariable CallFunc_GetBattleManager_BattleManager_4\n08a4f Context skip=24 rvalue=<null-field>\n  08a50 ObjectConst import:-79:Default__LibAccessor_DBAccessManager_C\n  08a61 LocalVirtualFunction GetDBAccessManager\n    08a6a Self\n    08a6b LocalVariable CallFunc_GetDBAccessManager_DBAccessManager\n08a7d Context skip=50 rvalue=<null-field>\n  08a7e LocalVariable CallFunc_GetDBAccessManager_DBAccessManager\n  08a9b LocalVirtualFunction ConvertAbilityIDToLabel\n    08aa4 StructMemberContext AbilityID\n      08ab5 InstanceVariable ActionCommand\n    08ac6 LocalVariable CallFunc_ConvertAbilityIDToLabel_AbilityLabel\n    08ad7 LocalVariable CallFunc_ConvertAbilityIDToLabel_IsFind\n08ae9 LetBool\n  08aea LocalVariable CallFunc_AddAdditiveOrderForRepeat_ReturnValue\n  08afb Context skip=41 rvalue=CallFunc_AddAdditiveOrderForRepeat_ReturnValue\n    08afc LocalVariable CallFunc_GetBattleManager_BattleManager_4\n    08b21 LocalVirtualFunction AddAdditiveOrderForRepeat\n      08b2a InstanceVariable m_cEnforcer\n      08b3b LocalVariable CallFunc_ConvertAbilityIDToLabel_AbilityLabel\n      08b4c InstanceVariable Target\n08b5e PopExecutionFlow\n08b5f Context skip=43 rvalue=<null-field>\n  08b60 InstanceVariable Enforcer_Old\n  08b7d LocalVirtualFunction SearchMainWeaponAilment\n    08b86 ByteConst 71\n    08b88 LocalVariable CallFunc_SearchMainWeaponAilment_Ailment\n    08b99 LocalVariable CallFunc_SearchMainWeaponAilment_AilmentHandler\n    08baa LocalVariable CallFunc_SearchMainWeaponAilment_Find\n08bbc LetBool\n  08bbd LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n  08bce CallMath import:-66:Not_PreBool\n    08bd3 InstanceVariable IsAdditiveOrderCommand\n08be5 LetBool\n  08be6 LocalVariable CallFunc_BooleanAND_ReturnValue_2\n  08bf7 CallMath import:-57:BooleanAND\n    08bfc LocalVariable CallFunc_SearchMainWeaponAilment_Find\n    08c0d StructMemberContext EnableEnchant\n      08c1e InstanceVariable ActionCommand\n08c30 LetBool\n  08c31 LocalVariable CallFunc_BooleanAND_ReturnValue_3\n  08c42 CallMath import:-57:BooleanAND\n    08c47 LocalVariable CallFunc_BooleanAND_ReturnValue_2\n    08c58 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n08c6a PopExecutionFlowIfNot\n  08c6b LocalVariable CallFunc_BooleanAND_ReturnValue_3\n08c7c Context skip=24 rvalue=<null-field>\n  08c7d ObjectConst import:-82:Default__LibBattle_C\n  08c8e LocalVirtualFunction GetBattleManager\n    08c97 Self\n    08c98 LocalVariable CallFunc_GetBattleManager_BattleManager_3\n08caa LetBool\n  08cab LocalVariable CallFunc_AddAdditiveOrderForEnchant_ReturnValue\n  08cbc Context skip=45 rvalue=CallFunc_AddAdditiveOrderForEnchant_ReturnValue\n    08cbd LocalVariable CallFunc_GetBattleManager_BattleManager_3\n    08ce2 LocalVirtualFunction AddAdditiveOrderForEnchant\n      08ceb InstanceVariable m_cEnforcer\n      08cfc NameConst ABI_THUNDER\n      08d05 LocalVariable WorkAdditiveTarget\n08d17 PopExecutionFlow\n08d18 LetBool\n  08d19 LocalVariable CallFunc_CheckEnableAutoTameMonster_ReturnValue\n  08d2a LocalVirtualFunction CheckEnableAutoTameMonster\n08d34 PopExecutionFlowIfNot\n  08d35 LocalVariable CallFunc_CheckEnableAutoTameMonster_ReturnValue\n08d46 Context skip=24 rvalue=<null-field>\n  08d47 ObjectConst import:-82:Default__LibBattle_C\n  08d58 LocalVirtualFunction GetBattleManager\n    08d61 Self\n    08d62 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n08d74 LetBool\n  08d75 LocalVariable CallFunc_IsAutoTameMonster_ReturnValue\n  08d86 Context skip=14 rvalue=CallFunc_IsAutoTameMonster_ReturnValue\n    08d87 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n    08dac LocalVirtualFunction IsAutoTameMonster\n08db6 PopExecutionFlowIfNot\n  08db7 LocalVariable CallFunc_IsAutoTameMonster_ReturnValue\n08dc8 Context skip=24 rvalue=<null-field>\n  08dc9 ObjectConst import:-82:Default__LibBattle_C\n  08dda LocalVirtualFunction GetBattleManager\n    08de3 Self\n    08de4 LocalVariable CallFunc_GetBattleManager_BattleManager\n08df6 Context skip=24 rvalue=<null-field>\n  08df7 ObjectConst import:-82:Default__LibBattle_C\n  08e08 LocalVirtualFunction GetBattleManager\n    08e11 Self\n    08e12 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n08e24 LetBool\n  08e25 LocalVariable CallFunc_GetAutoTameTarget_ReturnValue\n  08e36 Context skip=23 rvalue=CallFunc_GetAutoTameTarget_ReturnValue\n    08e37 LocalVariable CallFunc_GetBattleManager_BattleManager_1\n    08e5c LocalVirtualFunction GetAutoTameTarget\n      08e65 LocalVariable CallFunc_GetAutoTameTarget_cAutoTameTarget\n08e77 LetBool\n  08e78 LocalVariable CallFunc_AddAdditiveOrderForAutoTameMonster_ReturnValue\n  08e89 Context skip=32 rvalue=CallFunc_AddAdditiveOrderForAutoTameMonster_ReturnValue\n    08e8a LocalVariable CallFunc_GetBattleManager_BattleManager\n    08eaf LocalVirtualFunction AddAdditiveOrderForAutoTameMonster\n      08eb8 InstanceVariable m_cEnforcer\n      08ec9 LocalVariable CallFunc_GetAutoTameTarget_cAutoTameTarget\n08edb PopExecutionFlow\n08edc LetBool\n  08edd LocalOutVariable ExecAdditiveTurn\n  08eee False\n08eef Jump target=3079\n08ef4 Let property=WorkAdditiveTarget\n  08f05 LocalVariable WorkAdditiveTarget\n  08f16 InstanceVariable StoreRandomTarget\n08f27 PopExecutionFlow\n08f28 Return\n  08f29 Nothing\n08f2a EndOfScript",
+      "CheckAttackCounter": "09091 Context skip=24 rvalue=<null-field>\n  09092 ObjectConst import:-82:Default__LibBattle_C\n  090a3 LocalVirtualFunction GetBattleManager_OLD\n    090ac Self\n    090ad LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n090bf Context skip=23 rvalue=<null-field>\n  090c0 InterfaceContext\n    090c1 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n  090de LocalVirtualFunction IsAliveEnemy\n    090e7 LocalVariable CallFunc_IsAliveEnemy_Result\n090f9 LetBool\n  090fa LocalVariable CallFunc_Less_IntInt_ReturnValue\n  0910b CallMath import:-62:Less_IntInt\n    09110 InstanceVariable AbilityCounter\n    09121 InstanceVariable AbilityCounterMax\n09133 LetBool\n  09134 LocalVariable CallFunc_BooleanAND_ReturnValue\n  09145 CallMath import:-57:BooleanAND\n    0914a LocalVariable CallFunc_IsAliveEnemy_Result\n    0915b LocalVariable CallFunc_Less_IntInt_ReturnValue\n0916d JumpIfNot target=198\n  09172 LocalVariable CallFunc_BooleanAND_ReturnValue\n09183 LetBool\n  09184 LocalOutVariable ReturnValue\n  09195 False\n09196 Jump target=209\n0919b LetBool\n  0919c LocalOutVariable ReturnValue\n  091ad True\n091ae Return\n  091af LocalOutVariable ReturnValue\n091c0 EndOfScript",
+      "CheckLastHit": "0938f Context skip=24 rvalue=<null-field>\n  09390 ObjectConst import:-82:Default__LibBattle_C\n  093a1 LocalVirtualFunction GetBattleManager\n    093aa Self\n    093ab LocalVariable CallFunc_GetBattleManager_BattleManager\n093bd LetBool\n  093be LocalVariable CallFunc_IsEndrollReplayMode_ReturnValue\n  093cf Context skip=10 rvalue=CallFunc_IsEndrollReplayMode_ReturnValue\n    093d0 LocalVariable CallFunc_GetBattleManager_BattleManager\n    093f5 FinalFunction import:-76:IsEndrollReplayMode\n093fb LetBool\n  093fc LocalVariable CallFunc_Not_PreBool_ReturnValue\n  0940d CallMath import:-66:Not_PreBool\n    09412 LocalVariable CallFunc_IsEndrollReplayMode_ReturnValue\n09424 JumpIfNot target=147\n  09429 LocalVariable CallFunc_Not_PreBool_ReturnValue\n0943a LetBool\n  0943b LocalOutVariable ReturnValue\n  0944c True\n0944d Jump target=348\n09452 JumpIfNot target=329\n  09457 InstanceVariable m_bEnableRandomTarget\n09468 Context skip=33 rvalue=<null-field>\n  09469 ObjectConst import:-78:Default__KismetArrayLibrary\n  0947a FinalFunction import:-50:Array_Get\n    0947f InstanceVariable SubTargetList\n    09490 IntConst 0\n    09495 LocalVariable CallFunc_Array_Get_Item\n094a7 LetBool\n  094a8 LocalVariable CallFunc_Array_Contains_ReturnValue\n  094b9 Context skip=28 rvalue=CallFunc_Array_Contains_ReturnValue\n    094ba ObjectConst import:-78:Default__KismetArrayLibrary\n    094d3 FinalFunction import:-49:Array_Contains\n      094d8 InstanceVariable BattleReplayTarget\n      094e9 LocalVariable CallFunc_Array_Get_Item\n094fb LetBool\n  094fc LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n  0950d CallMath import:-66:Not_PreBool\n    09512 LocalVariable CallFunc_Array_Contains_ReturnValue\n09524 LetBool\n  09525 LocalOutVariable ReturnValue\n  09536 LocalVariable CallFunc_Not_PreBool_ReturnValue_1\n09547 Jump target=348\n0954c LetBool\n  0954d LocalOutVariable ReturnValue\n  0955e InstanceVariable m_bIsLastHit\n0956f Return\n  09570 LocalOutVariable ReturnValue\n09581 EndOfScript",
+      "ExecAilmentCommand": "0974c Context skip=24 rvalue=<null-field>\n  0974d ObjectConst import:-82:Default__LibBattle_C\n  0975e LocalVirtualFunction GetBattleManager_OLD\n    09767 Self\n    09768 LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n0977a Context skip=23 rvalue=<null-field>\n  0977b InterfaceContext\n    0977c LocalVariable CallFunc_GetBattleManager_OLD_BattleManager\n  09799 LocalVirtualFunction IsAliveEnemy\n    097a2 LocalVariable CallFunc_IsAliveEnemy_Result\n097b4 JumpIfNot target=177\n  097b9 LocalVariable CallFunc_IsAliveEnemy_Result\n097ca LetBool\n  097cb LocalVariable CallFunc_ExecAilmentCommand_ReturnValue\n  097dc FinalFunction import:-37:ExecAilmentCommand\n    097e1 LocalVariable Index\n    097f2 LocalVariable AllAilment\n    09803 LocalVariable LastHit\n09815 LetBool\n  09816 LocalOutVariable ReturnValue\n  09827 LocalVariable CallFunc_ExecAilmentCommand_ReturnValue\n09838 Jump target=188\n0983d LetBool\n  0983e LocalOutVariable ReturnValue\n  0984f True\n09850 Return\n  09851 LocalOutVariable ReturnValue\n09862 EndOfScript",
+      "ExecStepCounter": "09a81 PushExecutionFlow target=531\n09a86 PushExecutionFlow target=95\n09a8b PushExecutionFlow target=30\n09a90 JumpIfNot target=119\n  09a95 InstanceVariable m_bEnableRandomTarget\n09aa6 PopExecutionFlow\n09aa7 LetBool\n  09aa8 LocalVariable CallFunc_ExecStepCounter_ReturnValue\n  09ab9 FinalFunction import:-39:ExecStepCounter\n09abf LocalVirtualFunction CheckAttackHit\n09ac9 LetBool\n  09aca InstanceVariable ExecutedStepCounter\n  09adb True\n09adc LetBool\n  09add LocalVariable Result\n  09aee LocalVariable CallFunc_ExecStepCounter_ReturnValue\n09aff PopExecutionFlow\n09b00 LetBool\n  09b01 LocalOutVariable ReturnValue\n  09b12 LocalVariable Result\n09b23 Jump target=531\n09b28 Context skip=34 rvalue=<null-field>\n  09b29 ObjectConst import:-82:Default__LibBattle_C\n  09b3a LocalVirtualFunction BattleCharacterFilterForDeadOrAlive\n    09b43 InstanceVariable m_acTarget\n    09b54 True\n    09b55 Self\n    09b56 LocalVariable CallFunc_BattleCharacterFilterForDeadOrAlive_out\n09b68 Let property=m_acTarget\n  09b79 InstanceVariable m_acTarget\n  09b8a LocalVariable CallFunc_BattleCharacterFilterForDeadOrAlive_out\n09b9b LocalVirtualFunction SetSubTargetList\n  09ba4 InstanceVariable m_acTarget\n09bb6 Let property=Temp_int_Loop_Counter_Variable\n  09bc7 LocalVariable Temp_int_Loop_Counter_Variable\n  09bd8 IntConst 0\n09bdd Let property=Temp_int_Array_Index_Variable\n  09bee LocalVariable Temp_int_Array_Index_Variable\n  09bff IntConst 0\n09c04 Let property=CallFunc_Array_Length_ReturnValue\n  09c15 LocalVariable CallFunc_Array_Length_ReturnValue\n  09c26 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    09c27 ObjectConst import:-78:Default__KismetArrayLibrary\n    09c40 FinalFunction import:-52:Array_Length\n      09c45 InstanceVariable AilmentList\n09c57 LetBool\n  09c58 LocalVariable CallFunc_Less_IntInt_ReturnValue\n  09c69 CallMath import:-62:Less_IntInt\n    09c6e LocalVariable Temp_int_Loop_Counter_Variable\n    09c7f LocalVariable CallFunc_Array_Length_ReturnValue\n09c91 PopExecutionFlowIfNot\n  09c92 LocalVariable CallFunc_Less_IntInt_ReturnValue\n09ca3 Let property=Temp_int_Array_Index_Variable\n  09cb4 LocalVariable Temp_int_Array_Index_Variable\n  09cc5 LocalVariable Temp_int_Loop_Counter_Variable\n09cd6 PushExecutionFlow target=457\n09cdb Let property=Target_59_2E347BFD49C7173CB5462C85E2AA9D4C\n  09cec StructMemberContext Target_59_2E347BFD49C7173CB5462C85E2AA9D4C\n    09cfd ArrayGetByRef\n      09cfe InstanceVariable AilmentList\n      09d0f LocalVariable Temp_int_Array_Index_Variable\n  09d20 InstanceVariable m_acTarget\n09d31 PopExecutionFlow\n09d32 Let property=CallFunc_Add_IntInt_ReturnValue\n  09d43 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  09d54 CallMath import:-56:Add_IntInt\n    09d59 LocalVariable Temp_int_Loop_Counter_Variable\n    09d6a IntConst 1\n09d70 Let property=Temp_int_Loop_Counter_Variable\n  09d81 LocalVariable Temp_int_Loop_Counter_Variable\n  09d92 LocalVariable CallFunc_Add_IntInt_ReturnValue\n09da3 Jump target=271\n09da8 Return\n  09da9 LocalOutVariable ReturnValue\n09dba EndOfScript"
+    },
+    "defaults": [
+      {
+        "UberGraphFrame": {}
+      }
+    ]
+  },
+  "scope": {
+    "id": "ABI_INV_030_01",
+    "ID": 1569,
+    "AbilityID": 15690,
+    "DisplayName": "ABN_INV_030",
+    "Detail": "ABD_INV_030_01",
+    "CommandActor": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+        "number": 0,
+        "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+      },
+      "subPath": ""
+    },
+    "AbilityType": "EABILITY_TYPE::eDEBUFF",
+    "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+    "AlwaysDisable": false,
+    "Attribute": "EATTRIBUTE_TYPE::eNONE",
+    "DependWeapon": false,
+    "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+    "ExceptEnforcer": false,
+    "CostType": "EABILITY_COST_TYPE::eINVENTOR",
+    "CostValue": 0,
+    "HitRatio": 0,
+    "CriticalRatio": 0,
+    "CriticalPower": 125,
+    "AbilityRatio": 100,
+    "BaseCount": 0,
+    "MinimumCount": 0,
+    "RandomCountMin": 0,
+    "RandomCountMax": 0,
+    "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+    "EstimateOrderCount": 0,
+    "Ailment": [
+      {
+        "AilmentName": "ADD_FORCE_CRITICAL",
+        "InvocationValue": 0,
+        "InvocationTurn": 4,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "KeepBoostEffect": false,
+    "EnableItemAll": false,
+    "EnableSkillAll": true,
+    "EnableConvergence": false,
+    "EnableDiffusion": false,
+    "EnableReflection": false,
+    "EnableCounter": false,
+    "EnableHideOut": false,
+    "EnableRepeat": true,
+    "EnableCover": false,
+    "EnableProvoke": false,
+    "EnableDisableMagic": false,
+    "EnableEnchant": false,
+    "EnableChaseAttack": true,
+    "EnableWeakCheckAll": false,
+    "EnableNormalAttackAll": false,
+    "EnableSession": false,
+    "EnableBusinessSupport": false,
+    "EnableForceWeakness": false,
+    "EnableNoUseMaterial": false,
+    "EnableSwitchWeapon": false,
+    "EnableCompensationMagic": false,
+    "EnableExcitement": false,
+    "SongAbilityFlag": false,
+    "DanceAbilityFlag": false,
+    "EnableAutoTameMonster": false,
+    "UseAbilityCamera": true,
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/Sequencer/ActionCommand/PC/Inventor/Seq_Inv_030_BoenGoggles.Seq_Inv_030_BoenGoggles",
+        "number": 0,
+        "text": "/Game/Battle/Sequencer/ActionCommand/PC/Inventor/Seq_Inv_030_BoenGoggles.Seq_Inv_030_BoenGoggles"
+      },
+      "subPath": ""
+    },
+    "AbilitySE": [
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SlideFrame": 92
+  },
+  "night_params": [
+    {
+      "id": "DEBUFF_IN_NIGHT_PARAM",
+      "ID": 0,
+      "VarType": "int",
+      "Min": "0",
+      "Max": "0",
+      "Init": "1",
+      "Param": "3"
+    },
+    {
+      "id": "BUFF_IN_NIGHT_PARAM",
+      "ID": 0,
+      "VarType": "int",
+      "Min": "0",
+      "Max": "0",
+      "Init": "0",
+      "Param": "3"
+    }
+  ]
+}

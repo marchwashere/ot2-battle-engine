@@ -16,6 +16,7 @@ pub struct BattleModifiers {
     pub items_disabled:bool,
     pub last_act_round:Option<u32>,
     pub guard_hits:Vec<crate::ActorId>,
+    pub defended_round:BTreeMap<crate::ActorId,u32>,
     /// SetStatusDead saves permanent diseases for ExecRevive.
     pub dead_permanent: BTreeMap<crate::ActorId,Vec<crate::combat::Status>>,
 }
@@ -32,7 +33,7 @@ pub enum Target { SelfOnly, PartySingle, PartyAll, EnemySingle, EnemyAll, Everyo
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all="snake_case")]
 pub enum EffectKind {
-    PhysicalDamage, MagicDamage, RandomTargetMagicDamage,
+    PhysicalDamage, MagicDamage, RandomTargetMagicDamage, RandomTargetPhysicalDamage, AdditiveShieldDamage,
     ReviveRatio, HpOne, HpFixedRecovery, SpRatioRecovery, SpFixedRecovery,
     SpRatioDamage, BpRecovery, BpDamage, ShieldDamage,
     InstantDeathExceptCaster, RemovePartyDeconditions, AddStatus,
@@ -136,6 +137,7 @@ struct Imported { abilities:Vec<Ability>, ailments:Vec<Ailment>, sequences:BTree
 fn classify(name:&str)->Result<EffectKind> {
     use EffectKind::*;
     Ok(match name {
+        "RANDOM_TARGET_PHYSICS_DAMAGE"=>RandomTargetPhysicalDamage,"SP_DAMAGE"=>AdditiveShieldDamage,
         "PHYSICS_DAMAGE"=>PhysicalDamage,"MAGIC_DAMAGE"=>MagicDamage,
         "RANDOM_TARGET_MAGIC_DAMAGE"=>RandomTargetMagicDamage,
         "REVIVE_RATIO"=>ReviveRatio,"HP1"=>HpOne,"HP_FIXED_RECOVERY"=>HpFixedRecovery,
@@ -143,7 +145,7 @@ fn classify(name:&str)->Result<EffectKind> {
         "MP_RATIO_DAMAGE"=>SpRatioDamage,"BP_RECOVERY"=>BpRecovery,"BP_DAMAGE"=>BpDamage,
         "SP_DAMAGE_DIRECT"=>ShieldDamage,"INSTANT_DEATH_EXCEPT_ENFORCER"=>InstantDeathExceptCaster,
         "REMOVE_DECONDITION_PARTY_ALL"=>RemovePartyDeconditions,
-        "ADD_SILENCE"|"ADD_POISON_NORMAL"|"ADD_MAGIC_REFLECTION"|"ADD_ATK_UP"|
+        "ADD_FORCE_CRITICAL"|"ADD_SILENCE"|"ADD_POISON_NORMAL"|"ADD_MAGIC_REFLECTION"|"ADD_ATK_UP"|
         "ADD_MATK_UP"|"ADD_DEF_UP"|"ADD_MDEF_UP"|"ADD_AGI_UP"|
         "ADD_DEF_DOWN"|"ADD_MDEF_DOWN"|"ADD_LAST_ACT_SPECIAL"=>AddStatus,
         "ADD_DISABLE_ITEM_MENU"=>DisableItems,"ORDER_COUNT_DOWN"=>OrderDelay,
@@ -252,7 +254,8 @@ mod tests {
     use super::*;
     #[test]
     fn all_39_children_and_both_nested_summons_are_present() {
-        assert_eq!(children().len(),42);
+        assert_eq!(children().len(),45);
+        for id in ["ABI_WAR_010_03","ABI_INV_030_01","ABI_MER_YOHEI_05_01"] {assert!(child(id).is_ok());}
         for n in 1..=39 {assert!(child(&format!("ABI_DAN_MAKA_{n:03}")).is_ok());}
         assert!(child("ABI_DAN_MAKA_006_INV").is_ok());
         assert!(child("ABI_DAN_MAKA_017_INV").is_ok());

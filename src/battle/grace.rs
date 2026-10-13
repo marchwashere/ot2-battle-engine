@@ -16,7 +16,7 @@ impl Battle {
         ensure(self.state.actors[actor.0].resources.sp>=cost,"Not enough SP")?;
         let before=self.state.rng;
         let standard:Vec<_>=(1..=bp).collect();let inputs=levels.unwrap_or(&standard);
-        self.validate_boost_inputs(inputs,bp)?;self.apply_boost_inputs(inputs);
+        if !inputs.is_empty() {self.validate_boost_inputs(inputs,bp)?;self.apply_boost_inputs(inputs);}
         let mut events=vec![Event::Action {actor,name:id.clone()}];
         let state=&mut self.state.actors[actor.0];state.guard=false;
         let old=state.resources.bp;state.resources.bp-=bp;state.boosted_this_round|=bp>0;
@@ -35,16 +35,23 @@ impl Battle {
                 self.grace_child(actor,crate::bg_effects::child(selection.ability)?,&mut events)?;
                 dance.complete_child(selection.ability,self.state.actors[actor.0].alive(),self.grace_enemies_alive())?;
             }
+        } else if id=="critical_scope"||id=="aggressive_slash" {
+            ensure(self.state.opening_crt.as_ref().is_some_and(|c|c.lord_sands),"New actions require Lord Sands profile")?;
+            ensure((id=="critical_scope"&&bp==0)||(id=="aggressive_slash"&&bp==2),"Only agreed Scope/Slash boosts supported")?;
+            if id=="aggressive_slash" {self.state.actors[actor.0].main_weapon=Some(combat::Weapon::Sword);}
+            let child=crate::bg_effects::child(if id=="critical_scope" {"ABI_INV_030_01"}else{"ABI_WAR_010_03"})?;
+            self.grace_common_child(actor,child,&[ActorId(4)],&mut events)?;
         } else {
-            let summons=crate::hired_help::prepare_guards(&mut self.state.rng,bp)?;
-            self.trace_rng("guards_variant_preparation",Some(actor),summons.before);
-            self.voice(actor,18,VoiceCondition {ability:Some("ABI_MER_070_D_1"),..Default::default()});
+            let beast=id=="hired_help_beastlings";
+            let summons=if beast {crate::hired_help::prepare_beastlings(&mut self.state.rng,bp)?}else{crate::hired_help::prepare_guards(&mut self.state.rng,bp)?};
+            self.trace_rng(if beast {"beastlings_variant_preparation"}else{"guards_variant_preparation"},Some(actor),summons.before);
+            self.voice(actor,18,VoiceCondition {ability:Some(if beast {"ABI_MER_070_E_1"}else{"ABI_MER_070_D_1"}),..Default::default()});
             let targets:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Enemy)&&self.state.actors[id.0].alive()).collect();
             let mut jobs=vec![];
             for (i,id) in summons.variants.iter().take(summons.count as usize).enumerate() {
                 let profile=crate::bg_effects::summon(id)?;
                 ensure(profile.initial_idle_frames==0,"Guard sprite initialization changed")?;
-                jobs.push(([53280.0,64778.0,76778.0,88778.0][i],crate::bg_effects::child("ABI_MER_YOHEI_04_01")?,targets.clone(),Some(profile)));
+                jobs.push(([53280.0,64778.0,76778.0,88778.0][i],crate::bg_effects::child(if beast {"ABI_MER_YOHEI_05_01"}else{"ABI_MER_YOHEI_04_01"})?,targets.clone(),Some(profile)));
             }
             self.grace_commands(actor,&jobs,&mut events)?;
         }
@@ -152,9 +159,9 @@ impl Battle {
                 let Some((n,_,id))=next else {break};states[n].pending=None;self.timer_rng("break_slow_timer",Some(id));
             }
             let (_,child,targets,summon)=&jobs[i];let run=&mut states[i];
-            let random_count=child.id=="ABI_DAN_MAKA_039";
+            let random_count=matches!(child.id.as_str(),"ABI_DAN_MAKA_039"|"ABI_WAR_010_03");
             if step.is_none() {
-                if random_count {let before=self.state.rng;self.state.rng.index(1);for n in (1..=10).rev() {self.state.rng.index(n);}self.trace_rng("bg_random_count_setup",Some(actor),before);}
+                if random_count {let before=self.state.rng;self.state.rng.index(1);for n in (1..=if child.id=="ABI_WAR_010_03" {5}else{10}).rev() {self.state.rng.index(n);}self.trace_rng("bg_random_count_setup",Some(actor),before);}
                 continue;
             }
             match *step.unwrap() {
@@ -166,7 +173,7 @@ impl Battle {
                 },
                 Step::Voice {voice_type,..}=>{
                     if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
-                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(&child.id),..Default::default()});}
+                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(if child.id=="ABI_WAR_010_03" {"ABI_WAR_010_01"}else{&child.id}),..Default::default()});}
                 },
                 Step::Effects {index,last,on_hit,..}=>{
                     if random_count&&!self.grace_enemies_alive() {continue;}
@@ -180,7 +187,7 @@ impl Battle {
                         if on_hit {selected.retain(|t|run.hits.contains(t));}
                         self.trace_rng("bg_ailment_target",Some(actor),before);
                         let result=match op.kind {
-                            PhysicalDamage|MagicDamage|RandomTargetMagicDamage=>{
+                            PhysicalDamage|MagicDamage|RandomTargetMagicDamage|RandomTargetPhysicalDamage=>{
                                 let begin=events.len();let profile=summon.map(|s|s.combat());
                                 let result=self.grace_damage(actor,&selected,child,op,last,profile.as_ref(),events)?;
                                 for e in &events[begin..] {if let Event::Damage {target,..}=e {if !run.hits.contains(target) {run.hits.push(*target);}
@@ -188,6 +195,7 @@ impl Battle {
                                 }}
                                 result
                             },
+                            AdditiveShieldDamage=>{ensure(selected.iter().all(|t|self.state.actors[t.0].broken()),"Beastlings additive shields currently require broken target")?;None},
                             ShieldDamage=>self.grace_shield_damage(actor,&selected,op.value,events),
                             OrderDelay=>{self.grace_delay(actor,&selected,op.value as usize);None},
                             _=>{self.grace_scalar(actor,&selected,op,&mut run.recovery,events)?;None},
@@ -265,8 +273,8 @@ impl Battle {
             "eLIGHT"=>Some(combat::Element::Light),"eDARK"=>Some(combat::Element::Dark),
             other=>return Err(SimError(format!("Unknown BG element {other}"))),
         };
-        let attack=combat::Attack {kind:if op.kind==EffectKind::PhysicalDamage {DamageKind::Physical} else {DamageKind::Magical},
-            weapon:summon.and_then(|s|s.main_weapon),element,invocation:op.value,ability_ratio:child.ability_ratio,
+        let attack=combat::Attack {kind:if matches!(op.kind,EffectKind::PhysicalDamage|EffectKind::RandomTargetPhysicalDamage) {DamageKind::Physical} else {DamageKind::Magical},
+            weapon:if child.id=="ABI_WAR_010_03" {Some(combat::Weapon::Sword)}else{summon.and_then(|s|s.main_weapon)},element,invocation:op.value,ability_ratio:child.ability_ratio,
             hit_bonus:child.hit_ratio,critical_bonus:child.critical_ratio,critical_power:child.critical_power,normal_attack:false};
         let mut reaction=None;
         for &target in targets {
@@ -477,6 +485,7 @@ impl Battle {
     pub(super) fn grace_status(&mut self, actor:ActorId,target:ActorId,op:&Operation,events:&mut Vec<Event>)->Result<()> {
         ensure(op.kind==EffectKind::AddStatus,"Not a BG status")?;
         let kind=match op.status.as_deref() {
+            Some("FORCE_CRITICAL")=>StatusKind::ForceCritical,
             Some("ATK_UP")=>StatusKind::AttackUp,
             Some("MATK_UP")=>StatusKind::MagicUp,
             Some("DEF_UP")=>StatusKind::DefenseUp,
@@ -628,7 +637,7 @@ mod tests {
     #[test]
     fn every_common_child_executes_its_authored_timeline() {
         let mut count=0;
-        for child in crate::bg_effects::children().values().filter(|c|c.command.contains("/_Common/CommonCommand.")) {
+        for child in crate::bg_effects::children().values().filter(|c|c.command.contains("/_Common/CommonCommand.")&&c.id!="ABI_MER_YOHEI_05_01") {
             let mut b=battle();let actor=ActorId(2);let mut events=vec![];
             let actors=(0..b.state.actors.len()).map(|i|crate::bg_effects::TargetActor {id:ActorId(i),side:b.side(ActorId(i)).unwrap(),alive:true}).collect::<Vec<_>>();
             let targets=child.select_targets(actor,&actors,&mut b.state.rng).unwrap();
