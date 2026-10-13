@@ -2,7 +2,7 @@
 const fs=require('fs'),path=require('path'),assert=require('assert/strict'),s=require('./source.cjs');
 const {initialization}=require('./enemy-initialization.cjs');
 const enemies=s.table('Character/Database/EnemyDB'),groups=s.table('Battle/Database/EnemyGroupData');
-const selected=groups.rows.filter(r=>/^ENG_FLD_((CTY|WLD)_1_3|WLD_2_1|WLD_3_2|DST_2_(3|4))_LND_(DAY|NGT)_/.test(r.id));
+const selected=groups.rows.filter(r=>/^ENG_FLD_((CTY|WLD)_1_3|WLD_2_1|WLD_3_2|DST_2_(3|4)|FST_2_2)_LND_(DAY|NGT)_/.test(r.id));
 assert(selected.length>0);assert(selected.every(r=>r.EscapeEnable&&!r.BossBattle));
 const params=s.table('GameParam/GameParamDefineTable');
 const rareIds=[...new Set(params.rows.filter(r=>r.id.startsWith('RARE_ENEMY_')).flatMap(r=>[r.Min,r.Max,r.Init]))];

@@ -1,5 +1,11 @@
 # Active project
 
+- import-highroad-return includes every Eastern Wellgrove Trail land group
+  (FST_2_2 DAY/NGT, all progression tiers), native enemy initialization, combat
+  and rewards. Assistant carries real players/supports/weakness history for the
+  planned post-Champion Seeker steal encounter, demands Normal/Preemptive and
+  Escape100. Western Sai menu boosts, theft and field travel stay in assistant.
+
 - import-highroad-return now also imports every Southern Sai Sands land group
   (DST_2_3 DAY/NGT, all progression tiers) and its native enemy initialization,
   combat and reward records. The assistant models the planned first encounter
