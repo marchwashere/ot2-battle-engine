@@ -1,0 +1,1498 @@
+{
+  "sources": [
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Character/Database/EnemyDB",
+      "sha256": "ebc2a62a5e4a8a04e117a51bea1714d5a35049f14304986ba95da3f94358ebdf"
+    },
+    {
+      "source": "/Game/Battle/Database/EnemyGroupData",
+      "sha256": "b3a58b0c90e2e01f11b8d2adec43b03748a478ba0e42c1b6c7a7207bc48f660f"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0",
+      "sha256": "599211d0301119b9636dd0d3cf53e85028e38fedb77d93b21e486bc217228206"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "sha256": "de261d0b4523691b89e2713d7c836e2a786a4165a42552a9ce544442e51a4a8c"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "sha256": "de261d0b4523691b89e2713d7c836e2a786a4165a42552a9ce544442e51a4a8c"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3",
+      "sha256": "8b1100e64721cbde9d4a58acac96eb65a1fd53eddf4a18eccae37ab468418a53"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv0",
+      "sha256": "2e6610995da4023c6adc9b96cb41af3206dfa167f23197eb9aca622b1247d44a"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod",
+      "sha256": "ff94d392c1e08aacce008959d77af30731cde467a47ff9fbc94bd6dbc31ef6ea"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod",
+      "sha256": "ff94d392c1e08aacce008959d77af30731cde467a47ff9fbc94bd6dbc31ef6ea"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv3",
+      "sha256": "94b3f7eb2d12c91d28310368cfc5971fa695faebe6d445fe34983981aa28c0d7"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear_Lv0",
+      "sha256": "e2105d931a5deb2174f485466d187df52ec9767322b8efab6d9a44d02424383b"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear",
+      "sha256": "f4a627c1fe8c955fbef3d6768b850602e51ba7f35a8536a58595f5896d2c31fb"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear",
+      "sha256": "f4a627c1fe8c955fbef3d6768b850602e51ba7f35a8536a58595f5896d2c31fb"
+    },
+    {
+      "source": "/Game/Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear_Lv3",
+      "sha256": "b07d0b0eb4c738ba5c9ea8ace36ab6cc6055809a84887afc3e0cee87c2a0dc1a"
+    }
+  ],
+  "enemy": {
+    "id": "ENE_EVE_CLE_MNT_030",
+    "EnemyID": 22021,
+    "DisplayNameID": "ENN_EVE_CLE_MNT_020",
+    "ResourceLabel": "ENE_EVE_CLE_MNT_030",
+    "DisplayRank": 0,
+    "EnemyLevel": 10,
+    "DamageRatio": 1.4296879768371582,
+    "Size": "ECHARACTER_SIZE::eMEDIUM",
+    "NPCFlag": false,
+    "WeaponStance": "EWEAPON_STANCE::NONE",
+    "WeaponItemLabel": "None",
+    "DeadEffectSlow": false,
+    "MainEnemy": false,
+    "NonPartBattle": false,
+    "UseCatDamageType": false,
+    "DisableDeadKnockBack": false,
+    "Param": {
+      "HP": 500,
+      "MP": 50,
+      "BP": 2,
+      "SP": 3,
+      "POT": 0,
+      "ATK": 88,
+      "DEF": 65,
+      "MATK": 125,
+      "MDEF": 110,
+      "ACC": 100,
+      "EVA": 98,
+      "CON": 102,
+      "AGI": 70
+    },
+    "Exp": 10,
+    "JobPoint": 6,
+    "Money": 500,
+    "StealMoney": 1000,
+    "TameEnable": false,
+    "DefaultTameRate": 2000,
+    "InvadeMonsterID": "None",
+    "FirstBP": 0,
+    "DeadType": "EENEMY_DEAD_TYPE::eNORMAL_M",
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "WeaponResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "StealGuard": true,
+    "HaveItemID": "ITM_CSM_0500",
+    "DropProbability": 100,
+    "EnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C"
+      },
+      "subPath": ""
+    },
+    "EnemyAbility": [
+      "ABI_ENE_0180",
+      "ABI_ENE_0010",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "ABI_ENE_1500",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "ABI_ENE_1490",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "DiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1106247680,
+          "value": 30
+        },
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1140457472,
+          "value": 500
+        }
+      ]
+    },
+    "EnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1132068864,
+          "value": 250
+        }
+      ]
+    },
+    "StatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "DamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1128792064,
+          "value": 200
+        }
+      ]
+    },
+    "IconL_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1048911544,
+          "value": 0.25999999046325684
+        },
+        {
+          "kind": "float32",
+          "bits": 1059145646,
+          "value": 0.6299999952316284
+        }
+      ]
+    },
+    "PixelScaleL": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1043878380,
+          "value": 0.18000000715255737
+        },
+        {
+          "kind": "float32",
+          "bits": 1052266988,
+          "value": 0.36000001430511475
+        }
+      ]
+    },
+    "IconS_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1065520988,
+          "value": 1.0199999809265137
+        },
+        {
+          "kind": "float32",
+          "bits": 1069379748,
+          "value": 1.4800000190734863
+        }
+      ]
+    },
+    "PixelScaleS": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1036831949,
+          "value": 0.10000000149011612
+        },
+        {
+          "kind": "float32",
+          "bits": 1045220557,
+          "value": 0.20000000298023224
+        }
+      ]
+    },
+    "SPDiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1128792064,
+          "value": 200
+        },
+        {
+          "kind": "float32",
+          "bits": 1116471296,
+          "value": 70
+        },
+        {
+          "kind": "float32",
+          "bits": 1126170624,
+          "value": 160
+        }
+      ]
+    },
+    "SPEnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1120403456,
+          "value": 100
+        }
+      ]
+    },
+    "SPStatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "SPDamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        }
+      ]
+    },
+    "StealMoneyGuard": false,
+    "StealItemID": "None",
+    "AbilitySEDelay": 0,
+    "TextInfoLabel": "NPC_000",
+    "BribeGuard": false,
+    "BribeMoney": 100,
+    "RevealShieldPoint": 3,
+    "RevealEnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/GeneralEnemy/AI_Pettern/NewAIPattern/BattleAI_NormalEnemy.BattleAI_NormalEnemy_C"
+      },
+      "subPath": ""
+    },
+    "DismantlingLabel": "ENE_EVE_CLE_MNT_030_DISMANTLING",
+    "WarpOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3267887104,
+          "value": -100
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "LegendTameMonster": false,
+    "ActionModeResourceList": [
+      "None",
+      "None"
+    ],
+    "WaitEnemyActionFrame": 0,
+    "DisableBreakSlow": false,
+    "ID": 634,
+    "NotInsertOrderWithCallEnemy": false,
+    "BreakCameraType": "EBREAK_CAMERA_TYPE::eNORMAL"
+  },
+  "group": {
+    "id": "ENG_EVE_CLE_C00_010",
+    "VoiceID": "None",
+    "TalkPlayerID": "EPlayableCharacterID::eNONE",
+    "PlayerVoiceID": "None",
+    "BGMID": "m50a_battle1",
+    "UseBattleBGM": true,
+    "UseVictoryBGM": true,
+    "ViewResult": true,
+    "ResumeBGM": true,
+    "BossBattle": false,
+    "EscapeEnable": false,
+    "PlacementType": "PMT_TYPE_001",
+    "EnemyID": [
+      "ENE_EVE_CLE_MNT_030",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SaveEndrollSegment": "EEndRollSegmentSet::ER_NONE",
+    "ID": 8298,
+    "BattleStartDashEnable": true,
+    "UseVictoryAction": true,
+    "ResultDashEnable": false,
+    "ItemEnable": true,
+    "GuardEnable": true,
+    "BoostEnable": true,
+    "BoostFinishResultEnable": true,
+    "BattleStartEvent": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "BattleStartEnemyVoiceEnable": false,
+    "WeaponUnloadGCType": "EWEAPON_UNLOAD_GC_TYPE::eTURN_END"
+  },
+  "schedules": [
+    {
+      "id": "attack_dagger:0",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv0",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "083dc LocalVirtualFunction PlayVoice\n  083e5 ByteConst 6\n  083e7 ByteConst 0\n  083e9 ByteConst 0\n083ec Return\n  083ed Nothing\n083ee EndOfScript"
+        },
+        {
+          "time": 800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0838c LocalVirtualFunction PlayAction\n  08395 LocalVariable Character\n  083a6 ByteConst 39\n  083a8 ByteConst 0\n  083aa ByteConst 0\n083ad Return\n  083ae Nothing\n083af EndOfScript"
+        },
+        {
+          "time": 4000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "08317 LocalVirtualFunction PlaySE\n  08320 NameConst se_bat_atk_dagger\n0832a Return\n  0832b Nothing\n0832c EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "082d7 LocalVirtualFunction ExecAilment\n  082e0 IntConst 0\n  082e5 True\n  082e6 True\n082e8 Return\n  082e9 Nothing\n082ea EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_dagger:1",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a9c3 LocalVirtualFunction ExecStepCounter\n0a9cd Return\n  0a9ce Nothing\n0a9cf EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0aab7 LocalVirtualFunction PlayVoice\n  0aac0 ByteConst 6\n  0aac2 ByteConst 0\n  0aac4 ByteConst 0\n0aac7 Return\n  0aac8 Nothing\n0aac9 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a9fc LocalVirtualFunction CheckCounterToMarker\n  0aa05 StringConst \"Finish\"\n0aa0e Return\n  0aa0f Nothing\n0aa10 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a86d LocalVirtualFunction PlayAction\n  0a876 LocalVariable Character\n  0a887 ByteConst 163\n  0a889 ByteConst 0\n  0a88b ByteConst 0\n0a88e Return\n  0a88f Nothing\n0a890 EndOfScript"
+        },
+        {
+          "time": 4805,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a774 LocalVirtualFunction PlaySE\n  0a77d NameConst se_bat_atk_dagger\n0a787 Return\n  0a788 Nothing\n0a789 EndOfScript"
+        },
+        {
+          "time": 7205,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a6b4 LocalVirtualFunction ExecAilment\n  0a6bd IntConst 0\n  0a6c2 True\n  0a6c3 False\n0a6c5 Return\n  0a6c6 Nothing\n0a6c7 EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0aa3d LocalVirtualFunction ExecStepCounter\n0aa47 Return\n  0aa48 Nothing\n0aa49 EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0aa76 LocalVirtualFunction CheckCounterToMarker\n  0aa7f StringConst \"Finish\"\n0aa88 Return\n  0aa89 Nothing\n0aa8a EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a8f0 LocalVirtualFunction PlayAction\n  0a8f9 LocalVariable Character\n  0a90a ByteConst 163\n  0a90c ByteConst 0\n  0a90e ByteConst 0\n0a911 Return\n  0a912 Nothing\n0a913 EndOfScript"
+        },
+        {
+          "time": 12158,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a7b6 LocalVirtualFunction PlaySE\n  0a7bf NameConst se_bat_atk_dagger\n0a7c9 Return\n  0a7ca Nothing\n0a7cb EndOfScript"
+        },
+        {
+          "time": 15358,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a6f4 LocalVirtualFunction ExecAilment\n  0a6fd IntConst 0\n  0a702 True\n  0a703 False\n0a705 Return\n  0a706 Nothing\n0a707 EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a973 LocalVirtualFunction PlayAction\n  0a97c LocalVariable Character\n  0a98d ByteConst 164\n  0a98f ByteConst 0\n  0a991 ByteConst 0\n0a994 Return\n  0a995 Nothing\n0a996 EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0aaf6 LocalVirtualFunction PlayVoice\n  0aaff ByteConst 7\n  0ab01 ByteConst 0\n  0ab03 ByteConst 0\n0ab06 Return\n  0ab07 Nothing\n0ab08 EndOfScript"
+        },
+        {
+          "time": 21956,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a7f8 LocalVirtualFunction PlaySE\n  0a801 NameConst se_bat_atk_dagger\n0a80b Return\n  0a80c Nothing\n0a80d EndOfScript"
+        },
+        {
+          "time": 25305,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a734 LocalVirtualFunction ExecAilment\n  0a73d IntConst 0\n  0a742 True\n  0a743 True\n0a745 Return\n  0a746 Nothing\n0a747 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_dagger:2",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a9c3 LocalVirtualFunction ExecStepCounter\n0a9cd Return\n  0a9ce Nothing\n0a9cf EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0aab7 LocalVirtualFunction PlayVoice\n  0aac0 ByteConst 6\n  0aac2 ByteConst 0\n  0aac4 ByteConst 0\n0aac7 Return\n  0aac8 Nothing\n0aac9 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a9fc LocalVirtualFunction CheckCounterToMarker\n  0aa05 StringConst \"Finish\"\n0aa0e Return\n  0aa0f Nothing\n0aa10 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a86d LocalVirtualFunction PlayAction\n  0a876 LocalVariable Character\n  0a887 ByteConst 163\n  0a889 ByteConst 0\n  0a88b ByteConst 0\n0a88e Return\n  0a88f Nothing\n0a890 EndOfScript"
+        },
+        {
+          "time": 4805,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a774 LocalVirtualFunction PlaySE\n  0a77d NameConst se_bat_atk_dagger\n0a787 Return\n  0a788 Nothing\n0a789 EndOfScript"
+        },
+        {
+          "time": 7205,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a6b4 LocalVirtualFunction ExecAilment\n  0a6bd IntConst 0\n  0a6c2 True\n  0a6c3 False\n0a6c5 Return\n  0a6c6 Nothing\n0a6c7 EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0aa3d LocalVirtualFunction ExecStepCounter\n0aa47 Return\n  0aa48 Nothing\n0aa49 EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0aa76 LocalVirtualFunction CheckCounterToMarker\n  0aa7f StringConst \"Finish\"\n0aa88 Return\n  0aa89 Nothing\n0aa8a EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a8f0 LocalVirtualFunction PlayAction\n  0a8f9 LocalVariable Character\n  0a90a ByteConst 163\n  0a90c ByteConst 0\n  0a90e ByteConst 0\n0a911 Return\n  0a912 Nothing\n0a913 EndOfScript"
+        },
+        {
+          "time": 12158,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a7b6 LocalVirtualFunction PlaySE\n  0a7bf NameConst se_bat_atk_dagger\n0a7c9 Return\n  0a7ca Nothing\n0a7cb EndOfScript"
+        },
+        {
+          "time": 15358,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a6f4 LocalVirtualFunction ExecAilment\n  0a6fd IntConst 0\n  0a702 True\n  0a703 False\n0a705 Return\n  0a706 Nothing\n0a707 EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a973 LocalVirtualFunction PlayAction\n  0a97c LocalVariable Character\n  0a98d ByteConst 164\n  0a98f ByteConst 0\n  0a991 ByteConst 0\n0a994 Return\n  0a995 Nothing\n0a996 EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0aaf6 LocalVirtualFunction PlayVoice\n  0aaff ByteConst 7\n  0ab01 ByteConst 0\n  0ab03 ByteConst 0\n0ab06 Return\n  0ab07 Nothing\n0ab08 EndOfScript"
+        },
+        {
+          "time": 21956,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a7f8 LocalVirtualFunction PlaySE\n  0a801 NameConst se_bat_atk_dagger\n0a80b Return\n  0a80c Nothing\n0a80d EndOfScript"
+        },
+        {
+          "time": 25305,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a734 LocalVirtualFunction ExecAilment\n  0a73d IntConst 0\n  0a742 True\n  0a743 True\n0a745 Return\n  0a746 Nothing\n0a747 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_dagger:3",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Dagger_Lv3",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a305 LocalVirtualFunction PlaySE\n  0a30e NameConst se_bat_boost_cast\n0a318 Return\n  0a319 Nothing\n0a31a EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a482 LocalVirtualFunction PlayAction\n  0a48b LocalVariable Character\n  0a49c ByteConst 39\n  0a49e ByteConst 0\n  0a4a0 ByteConst 0\n0a4a3 Return\n  0a4a4 Nothing\n0a4a5 EndOfScript"
+        },
+        {
+          "time": 3200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0a65b LocalVirtualFunction PlayVoice\n  0a664 ByteConst 6\n  0a666 ByteConst 0\n  0a668 ByteConst 0\n0a66b Return\n  0a66c Nothing\n0a66d EndOfScript"
+        },
+        {
+          "time": 5600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a347 LocalVirtualFunction PlaySE\n  0a350 NameConst se_bat_atk_dagger\n0a35a Return\n  0a35b Nothing\n0a35c EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a205 LocalVirtualFunction ExecAilment\n  0a20e IntConst 0\n  0a213 True\n  0a214 False\n0a216 Return\n  0a217 Nothing\n0a218 EndOfScript"
+        },
+        {
+          "time": 12000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a505 LocalVirtualFunction PlayAction\n  0a50e LocalVariable Character\n  0a51f ByteConst 163\n  0a521 ByteConst 0\n  0a523 ByteConst 0\n0a526 Return\n  0a527 Nothing\n0a528 EndOfScript"
+        },
+        {
+          "time": 13600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a389 LocalVirtualFunction PlaySE\n  0a392 NameConst se_bat_atk_dagger\n0a39c Return\n  0a39d Nothing\n0a39e EndOfScript"
+        },
+        {
+          "time": 17600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a245 LocalVirtualFunction ExecAilment\n  0a24e IntConst 0\n  0a253 True\n  0a254 False\n0a256 Return\n  0a257 Nothing\n0a258 EndOfScript"
+        },
+        {
+          "time": 19200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0a588 LocalVirtualFunction PlayAction\n  0a591 LocalVariable Character\n  0a5a2 ByteConst 163\n  0a5a4 ByteConst 0\n  0a5a6 ByteConst 0\n0a5a9 Return\n  0a5aa Nothing\n0a5ab EndOfScript"
+        },
+        {
+          "time": 20922,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a3cb LocalVirtualFunction PlaySE\n  0a3d4 NameConst se_bat_atk_dagger\n0a3de Return\n  0a3df Nothing\n0a3e0 EndOfScript"
+        },
+        {
+          "time": 24922,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a285 LocalVirtualFunction ExecAilment\n  0a28e IntConst 0\n  0a293 True\n  0a294 False\n0a296 Return\n  0a297 Nothing\n0a298 EndOfScript"
+        },
+        {
+          "time": 26400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0a60b LocalVirtualFunction PlayAction\n  0a614 LocalVariable Character\n  0a625 ByteConst 164\n  0a627 ByteConst 0\n  0a629 ByteConst 0\n0a62c Return\n  0a62d Nothing\n0a62e EndOfScript"
+        },
+        {
+          "time": 28684,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a40d LocalVirtualFunction PlaySE\n  0a416 NameConst se_bat_atk_dagger\n0a420 Return\n  0a421 Nothing\n0a422 EndOfScript"
+        },
+        {
+          "time": 30286,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0a69a LocalVirtualFunction PlayVoice\n  0a6a3 ByteConst 7\n  0a6a5 ByteConst 0\n  0a6a7 ByteConst 0\n0a6aa Return\n  0a6ab Nothing\n0a6ac EndOfScript"
+        },
+        {
+          "time": 30450,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a2c5 LocalVirtualFunction ExecAilment\n  0a2ce IntConst 0\n  0a2d3 True\n  0a2d4 True\n0a2d6 Return\n  0a2d7 Nothing\n0a2d8 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_staff:0",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv0",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "083a7 LocalVirtualFunction PlayVoice\n  083b0 ByteConst 6\n  083b2 ByteConst 0\n  083b4 ByteConst 0\n083b7 Return\n  083b8 Nothing\n083b9 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "08357 LocalVirtualFunction PlayAction\n  08360 LocalVariable Character\n  08371 ByteConst 42\n  08373 ByteConst 0\n  08375 ByteConst 0\n08378 Return\n  08379 Nothing\n0837a EndOfScript"
+        },
+        {
+          "time": 5600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "082e2 LocalVirtualFunction PlaySE\n  082eb NameConst se_bat_atk_sword\n082f5 Return\n  082f6 Nothing\n082f7 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "082a2 LocalVirtualFunction ExecAilment\n  082ab IntConst 0\n  082b0 True\n  082b1 True\n082b3 Return\n  082b4 Nothing\n082b5 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_staff:1",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a98e LocalVirtualFunction ExecStepCounter\n0a998 Return\n  0a999 Nothing\n0a99a EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0aa82 LocalVirtualFunction PlayVoice\n  0aa8b ByteConst 6\n  0aa8d ByteConst 0\n  0aa8f ByteConst 0\n0aa92 Return\n  0aa93 Nothing\n0aa94 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a9c7 LocalVirtualFunction CheckCounterToMarker\n  0a9d0 StringConst \"Finish\"\n0a9d9 Return\n  0a9da Nothing\n0a9db EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a838 LocalVirtualFunction PlayAction\n  0a841 LocalVariable Character\n  0a852 ByteConst 169\n  0a854 ByteConst 0\n  0a856 ByteConst 0\n0a859 Return\n  0a85a Nothing\n0a85b EndOfScript"
+        },
+        {
+          "time": 3200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a73f LocalVirtualFunction PlaySE\n  0a748 NameConst se_bat_atk_sword\n0a752 Return\n  0a753 Nothing\n0a754 EndOfScript"
+        },
+        {
+          "time": 6400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a67f LocalVirtualFunction ExecAilment\n  0a688 IntConst 0\n  0a68d True\n  0a68e False\n0a690 Return\n  0a691 Nothing\n0a692 EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0aa08 LocalVirtualFunction ExecStepCounter\n0aa12 Return\n  0aa13 Nothing\n0aa14 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0aa41 LocalVirtualFunction CheckCounterToMarker\n  0aa4a StringConst \"Finish\"\n0aa53 Return\n  0aa54 Nothing\n0aa55 EndOfScript"
+        },
+        {
+          "time": 10400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a8bb LocalVirtualFunction PlayAction\n  0a8c4 LocalVariable Character\n  0a8d5 ByteConst 169\n  0a8d7 ByteConst 0\n  0a8d9 ByteConst 0\n0a8dc Return\n  0a8dd Nothing\n0a8de EndOfScript"
+        },
+        {
+          "time": 11200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a781 LocalVirtualFunction PlaySE\n  0a78a NameConst se_bat_atk_sword\n0a794 Return\n  0a795 Nothing\n0a796 EndOfScript"
+        },
+        {
+          "time": 15200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a6bf LocalVirtualFunction ExecAilment\n  0a6c8 IntConst 0\n  0a6cd True\n  0a6ce False\n0a6d0 Return\n  0a6d1 Nothing\n0a6d2 EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a7c3 LocalVirtualFunction PlaySE\n  0a7cc NameConst se_bat_atk_sword\n0a7d6 Return\n  0a7d7 Nothing\n0a7d8 EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a93e LocalVirtualFunction PlayAction\n  0a947 LocalVariable Character\n  0a958 ByteConst 170\n  0a95a ByteConst 0\n  0a95c ByteConst 0\n0a95f Return\n  0a960 Nothing\n0a961 EndOfScript"
+        },
+        {
+          "time": 19200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0aac1 LocalVirtualFunction PlayVoice\n  0aaca ByteConst 7\n  0aacc ByteConst 0\n  0aace ByteConst 0\n0aad1 Return\n  0aad2 Nothing\n0aad3 EndOfScript"
+        },
+        {
+          "time": 22400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a6ff LocalVirtualFunction ExecAilment\n  0a708 IntConst 0\n  0a70d True\n  0a70e True\n0a710 Return\n  0a711 Nothing\n0a712 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_staff:2",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a98e LocalVirtualFunction ExecStepCounter\n0a998 Return\n  0a999 Nothing\n0a99a EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0aa82 LocalVirtualFunction PlayVoice\n  0aa8b ByteConst 6\n  0aa8d ByteConst 0\n  0aa8f ByteConst 0\n0aa92 Return\n  0aa93 Nothing\n0aa94 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a9c7 LocalVirtualFunction CheckCounterToMarker\n  0a9d0 StringConst \"Finish\"\n0a9d9 Return\n  0a9da Nothing\n0a9db EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a838 LocalVirtualFunction PlayAction\n  0a841 LocalVariable Character\n  0a852 ByteConst 169\n  0a854 ByteConst 0\n  0a856 ByteConst 0\n0a859 Return\n  0a85a Nothing\n0a85b EndOfScript"
+        },
+        {
+          "time": 3200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a73f LocalVirtualFunction PlaySE\n  0a748 NameConst se_bat_atk_sword\n0a752 Return\n  0a753 Nothing\n0a754 EndOfScript"
+        },
+        {
+          "time": 6400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a67f LocalVirtualFunction ExecAilment\n  0a688 IntConst 0\n  0a68d True\n  0a68e False\n0a690 Return\n  0a691 Nothing\n0a692 EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0aa08 LocalVirtualFunction ExecStepCounter\n0aa12 Return\n  0aa13 Nothing\n0aa14 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0aa41 LocalVirtualFunction CheckCounterToMarker\n  0aa4a StringConst \"Finish\"\n0aa53 Return\n  0aa54 Nothing\n0aa55 EndOfScript"
+        },
+        {
+          "time": 10400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a8bb LocalVirtualFunction PlayAction\n  0a8c4 LocalVariable Character\n  0a8d5 ByteConst 169\n  0a8d7 ByteConst 0\n  0a8d9 ByteConst 0\n0a8dc Return\n  0a8dd Nothing\n0a8de EndOfScript"
+        },
+        {
+          "time": 11200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a781 LocalVirtualFunction PlaySE\n  0a78a NameConst se_bat_atk_sword\n0a794 Return\n  0a795 Nothing\n0a796 EndOfScript"
+        },
+        {
+          "time": 15200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a6bf LocalVirtualFunction ExecAilment\n  0a6c8 IntConst 0\n  0a6cd True\n  0a6ce False\n0a6d0 Return\n  0a6d1 Nothing\n0a6d2 EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a7c3 LocalVirtualFunction PlaySE\n  0a7cc NameConst se_bat_atk_sword\n0a7d6 Return\n  0a7d7 Nothing\n0a7d8 EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a93e LocalVirtualFunction PlayAction\n  0a947 LocalVariable Character\n  0a958 ByteConst 170\n  0a95a ByteConst 0\n  0a95c ByteConst 0\n0a95f Return\n  0a960 Nothing\n0a961 EndOfScript"
+        },
+        {
+          "time": 19200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0aac1 LocalVirtualFunction PlayVoice\n  0aaca ByteConst 7\n  0aacc ByteConst 0\n  0aace ByteConst 0\n0aad1 Return\n  0aad2 Nothing\n0aad3 EndOfScript"
+        },
+        {
+          "time": 22400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a6ff LocalVirtualFunction ExecAilment\n  0a708 IntConst 0\n  0a70d True\n  0a70e True\n0a710 Return\n  0a711 Nothing\n0a712 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_staff:3",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Rod_Lv3",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0a2d0 LocalVirtualFunction PlaySE\n  0a2d9 NameConst se_bat_boost_cast\n0a2e3 Return\n  0a2e4 Nothing\n0a2e5 EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0a44d LocalVirtualFunction PlayAction\n  0a456 LocalVariable Character\n  0a467 ByteConst 42\n  0a469 ByteConst 0\n  0a46b ByteConst 0\n0a46e Return\n  0a46f Nothing\n0a470 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0a626 LocalVirtualFunction PlayVoice\n  0a62f ByteConst 6\n  0a631 ByteConst 0\n  0a633 ByteConst 0\n0a636 Return\n  0a637 Nothing\n0a638 EndOfScript"
+        },
+        {
+          "time": 3116,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0a1d0 LocalVirtualFunction ExecAilment\n  0a1d9 IntConst 0\n  0a1de True\n  0a1df False\n0a1e1 Return\n  0a1e2 Nothing\n0a1e3 EndOfScript"
+        },
+        {
+          "time": 4059,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0a312 LocalVirtualFunction PlaySE\n  0a31b NameConst se_bat_atk_sword\n0a325 Return\n  0a326 Nothing\n0a327 EndOfScript"
+        },
+        {
+          "time": 9103,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0a4d0 LocalVirtualFunction PlayAction\n  0a4d9 LocalVariable Character\n  0a4ea ByteConst 169\n  0a4ec ByteConst 0\n  0a4ee ByteConst 0\n0a4f1 Return\n  0a4f2 Nothing\n0a4f3 EndOfScript"
+        },
+        {
+          "time": 9903,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0a354 LocalVirtualFunction PlaySE\n  0a35d NameConst se_bat_atk_sword\n0a367 Return\n  0a368 Nothing\n0a369 EndOfScript"
+        },
+        {
+          "time": 10316,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0a210 LocalVirtualFunction ExecAilment\n  0a219 IntConst 0\n  0a21e True\n  0a21f False\n0a221 Return\n  0a222 Nothing\n0a223 EndOfScript"
+        },
+        {
+          "time": 16303,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0a553 LocalVirtualFunction PlayAction\n  0a55c LocalVariable Character\n  0a56d ByteConst 169\n  0a56f ByteConst 0\n  0a571 ByteConst 0\n0a574 Return\n  0a575 Nothing\n0a576 EndOfScript"
+        },
+        {
+          "time": 17103,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0a396 LocalVirtualFunction PlaySE\n  0a39f NameConst se_bat_atk_sword\n0a3a9 Return\n  0a3aa Nothing\n0a3ab EndOfScript"
+        },
+        {
+          "time": 17516,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0a250 LocalVirtualFunction ExecAilment\n  0a259 IntConst 0\n  0a25e True\n  0a25f False\n0a261 Return\n  0a262 Nothing\n0a263 EndOfScript"
+        },
+        {
+          "time": 23503,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0a5d6 LocalVirtualFunction PlayAction\n  0a5df LocalVariable Character\n  0a5f0 ByteConst 170\n  0a5f2 ByteConst 0\n  0a5f4 ByteConst 0\n0a5f7 Return\n  0a5f8 Nothing\n0a5f9 EndOfScript"
+        },
+        {
+          "time": 24303,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0a3d8 LocalVirtualFunction PlaySE\n  0a3e1 NameConst se_bat_atk_sword\n0a3eb Return\n  0a3ec Nothing\n0a3ed EndOfScript"
+        },
+        {
+          "time": 24303,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0a665 LocalVirtualFunction PlayVoice\n  0a66e ByteConst 7\n  0a670 ByteConst 0\n  0a672 ByteConst 0\n0a675 Return\n  0a676 Nothing\n0a677 EndOfScript"
+        },
+        {
+          "time": 24716,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0a290 LocalVirtualFunction ExecAilment\n  0a299 IntConst 0\n  0a29e True\n  0a29f True\n0a2a1 Return\n  0a2a2 Nothing\n0a2a3 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_lance:0",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear_Lv0",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0eb29 LocalVirtualFunction ExecStepCounter\n0eb33 Return\n  0eb34 Nothing\n0eb35 EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0ec7b LocalVirtualFunction PlayVoice\n  0ec84 ByteConst 6\n  0ec86 ByteConst 0\n  0ec88 ByteConst 0\n0ec8b Return\n  0ec8c Nothing\n0ec8d EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0ea54 LocalVirtualFunction PlayAction\n  0ea5d LocalVariable Character\n  0ea6e ByteConst 38\n  0ea70 ByteConst 0\n  0ea72 ByteConst 0\n  0ea74 False\n0ea76 Return\n  0ea77 Nothing\n0ea78 EndOfScript"
+        },
+        {
+          "time": 4511,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0e99d LocalVirtualFunction PlaySE\n  0e9a6 NameConst se_bat_atk_spear\n0e9b0 Return\n  0e9b1 Nothing\n0e9b2 EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0eb62 LocalVirtualFunction CheckCounterToMarker\n  0eb6b UnicodeStringConst \"[+1なし]1撃目続き\"\n0eb85 Return\n  0eb86 Nothing\n0eb87 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0e8dd LocalVirtualFunction ExecAilment\n  0e8e6 IntConst 0\n  0e8eb True\n  0e8ec False\n0e8ee Return\n  0e8ef Nothing\n0e8f0 EndOfScript"
+        },
+        {
+          "time": 10400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0ebb4 LocalVirtualFunction JumpToMarker\n  0ebbd UnicodeStringConst \"[+1あり]2撃目\"\n0ebd3 Return\n  0ebd4 Nothing\n0ebd5 EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0ec02 LocalVirtualFunction ExecStepCounter\n0ec0c Return\n  0ec0d Nothing\n0ec0e EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0ead8 LocalVirtualFunction PlayAction\n  0eae1 LocalVariable Character\n  0eaf2 ByteConst 162\n  0eaf4 ByteConst 0\n  0eaf6 ByteConst 0\n  0eaf8 False\n0eafa Return\n  0eafb Nothing\n0eafc EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0ecba LocalVirtualFunction PlayVoice\n  0ecc3 ByteConst 7\n  0ecc5 ByteConst 0\n  0ecc7 ByteConst 0\n0ecca Return\n  0eccb Nothing\n0eccc EndOfScript"
+        },
+        {
+          "time": 21600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0e9df LocalVirtualFunction PlaySE\n  0e9e8 NameConst se_bat_atk_spear\n0e9f2 Return\n  0e9f3 Nothing\n0e9f4 EndOfScript"
+        },
+        {
+          "time": 25600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0e91d LocalVirtualFunction ExecAilment\n  0e926 IntConst 0\n  0e92b True\n  0e92c True\n0e92e Return\n  0e92f Nothing\n0e930 EndOfScript"
+        },
+        {
+          "time": 44000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0ec3b LocalVirtualFunction JumpToMarker\n  0ec44 UnicodeStringConst \"終了\"\n0ec4c Return\n  0ec4d Nothing\n0ec4e EndOfScript"
+        },
+        {
+          "time": 65600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0e95d LocalVirtualFunction ExecAilment\n  0e966 IntConst 0\n  0e96b True\n  0e96c True\n0e96e Return\n  0e96f Nothing\n0e970 EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_lance:1",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0b76b LocalVirtualFunction ExecStepCounter\n0b775 Return\n  0b776 Nothing\n0b777 EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+          "body": "0b957 LocalVirtualFunction PlayVoice\n  0b960 ByteConst 6\n  0b962 ByteConst 0\n  0b964 ByteConst 0\n0b967 Return\n  0b968 Nothing\n0b969 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0b592 LocalVirtualFunction PlayAction\n  0b59b LocalVariable Character\n  0b5ac ByteConst 161\n  0b5ae ByteConst 0\n  0b5b0 ByteConst 0\n0b5b3 Return\n  0b5b4 Nothing\n0b5b5 EndOfScript"
+        },
+        {
+          "time": 4000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0b457 LocalVirtualFunction PlaySE\n  0b460 NameConst se_bat_atk_spear\n0b46a Return\n  0b46b Nothing\n0b46c EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0b357 LocalVirtualFunction ExecAilment\n  0b360 IntConst 0\n  0b365 True\n  0b366 False\n0b368 Return\n  0b369 Nothing\n0b36a EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0b7a4 LocalVirtualFunction JumpToMarker\n  0b7ad StringConst \"Two\"\n0b7b3 Return\n  0b7b4 Nothing\n0b7b5 EndOfScript"
+        },
+        {
+          "time": 16000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0b7e2 LocalVirtualFunction ExecStepCounter\n0b7ec Return\n  0b7ed Nothing\n0b7ee EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+          "body": "0b81b LocalVirtualFunction CheckCounterToMarker\n  0b824 StringConst \"Finish\"\n0b82d Return\n  0b82e Nothing\n0b82f EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0b615 LocalVirtualFunction PlayAction\n  0b61e LocalVariable Character\n  0b62f ByteConst 161\n  0b631 ByteConst 0\n  0b633 ByteConst 0\n0b636 Return\n  0b637 Nothing\n0b638 EndOfScript"
+        },
+        {
+          "time": 20000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0b499 LocalVirtualFunction PlaySE\n  0b4a2 NameConst se_bat_atk_spear\n0b4ac Return\n  0b4ad Nothing\n0b4ae EndOfScript"
+        },
+        {
+          "time": 24000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0b397 LocalVirtualFunction ExecAilment\n  0b3a0 IntConst 0\n  0b3a5 True\n  0b3a6 False\n0b3a8 Return\n  0b3a9 Nothing\n0b3aa EndOfScript"
+        },
+        {
+          "time": 24800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+          "body": "0b85c LocalVirtualFunction JumpToMarker\n  0b865 StringConst \"Two+1\"\n0b86d Return\n  0b86e Nothing\n0b86f EndOfScript"
+        },
+        {
+          "time": 31995,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+          "body": "0b89c LocalVirtualFunction ExecStepCounter\n0b8a6 Return\n  0b8a7 Nothing\n0b8a8 EndOfScript"
+        },
+        {
+          "time": 32795,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+          "body": "0b8d5 LocalVirtualFunction CheckCounterToMarker\n  0b8de StringConst \"Finish\"\n0b8e7 Return\n  0b8e8 Nothing\n0b8e9 EndOfScript"
+        },
+        {
+          "time": 34400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0b698 LocalVirtualFunction PlayAction\n  0b6a1 LocalVariable Character\n  0b6b2 ByteConst 161\n  0b6b4 ByteConst 0\n  0b6b6 ByteConst 0\n0b6b9 Return\n  0b6ba Nothing\n0b6bb EndOfScript"
+        },
+        {
+          "time": 36000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0b4db LocalVirtualFunction PlaySE\n  0b4e4 NameConst se_bat_atk_spear\n0b4ee Return\n  0b4ef Nothing\n0b4f0 EndOfScript"
+        },
+        {
+          "time": 40000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0b3d7 LocalVirtualFunction ExecAilment\n  0b3e0 IntConst 0\n  0b3e5 True\n  0b3e6 False\n0b3e8 Return\n  0b3e9 Nothing\n0b3ea EndOfScript"
+        },
+        {
+          "time": 40795,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+          "body": "0b916 LocalVirtualFunction JumpToMarker\n  0b91f StringConst \"Finish\"\n0b928 Return\n  0b929 Nothing\n0b92a EndOfScript"
+        },
+        {
+          "time": 48978,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0b71b LocalVirtualFunction PlayAction\n  0b724 LocalVariable Character\n  0b735 ByteConst 162\n  0b737 ByteConst 0\n  0b739 ByteConst 0\n0b73c Return\n  0b73d Nothing\n0b73e EndOfScript"
+        },
+        {
+          "time": 48978,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+          "body": "0b996 LocalVirtualFunction PlayVoice\n  0b99f ByteConst 7\n  0b9a1 ByteConst 0\n  0b9a3 ByteConst 0\n0b9a6 Return\n  0b9a7 Nothing\n0b9a8 EndOfScript"
+        },
+        {
+          "time": 53963,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0b51d LocalVirtualFunction PlaySE\n  0b526 NameConst se_bat_atk_spear\n0b530 Return\n  0b531 Nothing\n0b532 EndOfScript"
+        },
+        {
+          "time": 57963,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0b417 LocalVirtualFunction ExecAilment\n  0b420 IntConst 0\n  0b425 True\n  0b426 True\n0b428 Return\n  0b429 Nothing\n0b42a EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_lance:2",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "0b76b LocalVirtualFunction ExecStepCounter\n0b775 Return\n  0b776 Nothing\n0b777 EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+          "body": "0b957 LocalVirtualFunction PlayVoice\n  0b960 ByteConst 6\n  0b962 ByteConst 0\n  0b964 ByteConst 0\n0b967 Return\n  0b968 Nothing\n0b969 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "0b592 LocalVirtualFunction PlayAction\n  0b59b LocalVariable Character\n  0b5ac ByteConst 161\n  0b5ae ByteConst 0\n  0b5b0 ByteConst 0\n0b5b3 Return\n  0b5b4 Nothing\n0b5b5 EndOfScript"
+        },
+        {
+          "time": 4000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "0b457 LocalVirtualFunction PlaySE\n  0b460 NameConst se_bat_atk_spear\n0b46a Return\n  0b46b Nothing\n0b46c EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "0b357 LocalVirtualFunction ExecAilment\n  0b360 IntConst 0\n  0b365 True\n  0b366 False\n0b368 Return\n  0b369 Nothing\n0b36a EndOfScript"
+        },
+        {
+          "time": 8800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "0b7a4 LocalVirtualFunction JumpToMarker\n  0b7ad StringConst \"Two\"\n0b7b3 Return\n  0b7b4 Nothing\n0b7b5 EndOfScript"
+        },
+        {
+          "time": 16000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "0b7e2 LocalVirtualFunction ExecStepCounter\n0b7ec Return\n  0b7ed Nothing\n0b7ee EndOfScript"
+        },
+        {
+          "time": 16800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+          "body": "0b81b LocalVirtualFunction CheckCounterToMarker\n  0b824 StringConst \"Finish\"\n0b82d Return\n  0b82e Nothing\n0b82f EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "0b615 LocalVirtualFunction PlayAction\n  0b61e LocalVariable Character\n  0b62f ByteConst 161\n  0b631 ByteConst 0\n  0b633 ByteConst 0\n0b636 Return\n  0b637 Nothing\n0b638 EndOfScript"
+        },
+        {
+          "time": 20000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "0b499 LocalVirtualFunction PlaySE\n  0b4a2 NameConst se_bat_atk_spear\n0b4ac Return\n  0b4ad Nothing\n0b4ae EndOfScript"
+        },
+        {
+          "time": 24000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "0b397 LocalVirtualFunction ExecAilment\n  0b3a0 IntConst 0\n  0b3a5 True\n  0b3a6 False\n0b3a8 Return\n  0b3a9 Nothing\n0b3aa EndOfScript"
+        },
+        {
+          "time": 24800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+          "body": "0b85c LocalVirtualFunction JumpToMarker\n  0b865 StringConst \"Two+1\"\n0b86d Return\n  0b86e Nothing\n0b86f EndOfScript"
+        },
+        {
+          "time": 31995,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+          "body": "0b89c LocalVirtualFunction ExecStepCounter\n0b8a6 Return\n  0b8a7 Nothing\n0b8a8 EndOfScript"
+        },
+        {
+          "time": 32795,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+          "body": "0b8d5 LocalVirtualFunction CheckCounterToMarker\n  0b8de StringConst \"Finish\"\n0b8e7 Return\n  0b8e8 Nothing\n0b8e9 EndOfScript"
+        },
+        {
+          "time": 34400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "0b698 LocalVirtualFunction PlayAction\n  0b6a1 LocalVariable Character\n  0b6b2 ByteConst 161\n  0b6b4 ByteConst 0\n  0b6b6 ByteConst 0\n0b6b9 Return\n  0b6ba Nothing\n0b6bb EndOfScript"
+        },
+        {
+          "time": 36000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "0b4db LocalVirtualFunction PlaySE\n  0b4e4 NameConst se_bat_atk_spear\n0b4ee Return\n  0b4ef Nothing\n0b4f0 EndOfScript"
+        },
+        {
+          "time": 40000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "0b3d7 LocalVirtualFunction ExecAilment\n  0b3e0 IntConst 0\n  0b3e5 True\n  0b3e6 False\n0b3e8 Return\n  0b3e9 Nothing\n0b3ea EndOfScript"
+        },
+        {
+          "time": 40795,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+          "body": "0b916 LocalVirtualFunction JumpToMarker\n  0b91f StringConst \"Finish\"\n0b928 Return\n  0b929 Nothing\n0b92a EndOfScript"
+        },
+        {
+          "time": 48978,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "0b71b LocalVirtualFunction PlayAction\n  0b724 LocalVariable Character\n  0b735 ByteConst 162\n  0b737 ByteConst 0\n  0b739 ByteConst 0\n0b73c Return\n  0b73d Nothing\n0b73e EndOfScript"
+        },
+        {
+          "time": 48978,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+          "body": "0b996 LocalVirtualFunction PlayVoice\n  0b99f ByteConst 7\n  0b9a1 ByteConst 0\n  0b9a3 ByteConst 0\n0b9a6 Return\n  0b9a7 Nothing\n0b9a8 EndOfScript"
+        },
+        {
+          "time": 53963,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "0b51d LocalVirtualFunction PlaySE\n  0b526 NameConst se_bat_atk_spear\n0b530 Return\n  0b531 Nothing\n0b532 EndOfScript"
+        },
+        {
+          "time": 57963,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "0b417 LocalVirtualFunction ExecAilment\n  0b420 IntConst 0\n  0b425 True\n  0b426 True\n0b428 Return\n  0b429 Nothing\n0b42a EndOfScript"
+        }
+      ]
+    },
+    {
+      "id": "attack_lance:3",
+      "asset": "Battle/Sequencer/ActionCommand/Basic/Normal_Attack_Spear_Lv3",
+      "events": [
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+          "body": "108b3 LocalVirtualFunction PlaySE\n  108bc NameConst se_bat_boost_cast\n108c6 Return\n  108c7 Nothing\n108c8 EndOfScript"
+        },
+        {
+          "time": 0,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+          "body": "10cd3 LocalVirtualFunction ExecStepCounter\n10cdd Return\n  10cde Nothing\n10cdf EndOfScript"
+        },
+        {
+          "time": 1600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+          "body": "10a72 LocalVirtualFunction PlayAction\n  10a7b LocalVariable Character\n  10a8c ByteConst 38\n  10a8e ByteConst 0\n  10a90 ByteConst 0\n  10a92 False\n10a94 Return\n  10a95 Nothing\n10a96 EndOfScript"
+        },
+        {
+          "time": 2400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_25",
+          "body": "10ef9 LocalVirtualFunction PlayVoice\n  10f02 ByteConst 6\n  10f04 ByteConst 0\n  10f06 ByteConst 0\n10f09 Return\n  10f0a Nothing\n10f0b EndOfScript"
+        },
+        {
+          "time": 4000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+          "body": "108f5 LocalVirtualFunction PlaySE\n  108fe NameConst se_bat_atk_spear\n10908 Return\n  10909 Nothing\n1090a EndOfScript"
+        },
+        {
+          "time": 8000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+          "body": "10773 LocalVirtualFunction ExecAilment\n  1077c IntConst 0\n  10781 True\n  10782 False\n10784 Return\n  10785 Nothing\n10786 EndOfScript"
+        },
+        {
+          "time": 9600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+          "body": "10d0c LocalVirtualFunction JumpToMarker\n  10d15 StringConst \"Two\"\n10d1b Return\n  10d1c Nothing\n10d1d EndOfScript"
+        },
+        {
+          "time": 16000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+          "body": "10d4a LocalVirtualFunction ExecStepCounter\n10d54 Return\n  10d55 Nothing\n10d56 EndOfScript"
+        },
+        {
+          "time": 16000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+          "body": "10af6 LocalVirtualFunction PlayAction\n  10aff LocalVariable Character\n  10b10 ByteConst 161\n  10b12 ByteConst 0\n  10b14 ByteConst 0\n  10b16 False\n10b18 Return\n  10b19 Nothing\n10b1a EndOfScript"
+        },
+        {
+          "time": 18400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+          "body": "10937 LocalVirtualFunction PlaySE\n  10940 NameConst se_bat_atk_spear\n1094a Return\n  1094b Nothing\n1094c EndOfScript"
+        },
+        {
+          "time": 22400,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+          "body": "107b3 LocalVirtualFunction ExecAilment\n  107bc IntConst 0\n  107c1 True\n  107c2 False\n107c4 Return\n  107c5 Nothing\n107c6 EndOfScript"
+        },
+        {
+          "time": 24000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+          "body": "10d83 LocalVirtualFunction JumpToMarker\n  10d8c StringConst \"Three\"\n10d94 Return\n  10d95 Nothing\n10d96 EndOfScript"
+        },
+        {
+          "time": 32000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+          "body": "10dc3 LocalVirtualFunction ExecStepCounter\n10dcd Return\n  10dce Nothing\n10dcf EndOfScript"
+        },
+        {
+          "time": 32000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+          "body": "10b7a LocalVirtualFunction PlayAction\n  10b83 LocalVariable Character\n  10b94 ByteConst 161\n  10b96 ByteConst 0\n  10b98 ByteConst 0\n  10b9a False\n10b9c Return\n  10b9d Nothing\n10b9e EndOfScript"
+        },
+        {
+          "time": 33600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+          "body": "10979 LocalVirtualFunction PlaySE\n  10982 NameConst se_bat_atk_spear\n1098c Return\n  1098d Nothing\n1098e EndOfScript"
+        },
+        {
+          "time": 37600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+          "body": "107f3 LocalVirtualFunction ExecAilment\n  107fc IntConst 0\n  10801 True\n  10802 False\n10804 Return\n  10805 Nothing\n10806 EndOfScript"
+        },
+        {
+          "time": 39200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+          "body": "10dfc LocalVirtualFunction JumpToMarker\n  10e05 StringConst \"Three+1\"\n10e0f Return\n  10e10 Nothing\n10e11 EndOfScript"
+        },
+        {
+          "time": 48000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
+          "body": "10e3e LocalVirtualFunction ExecStepCounter\n10e48 Return\n  10e49 Nothing\n10e4a EndOfScript"
+        },
+        {
+          "time": 48000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+          "body": "10bfe LocalVirtualFunction PlayAction\n  10c07 LocalVariable Character\n  10c18 ByteConst 161\n  10c1a ByteConst 0\n  10c1c ByteConst 0\n  10c1e False\n10c20 Return\n  10c21 Nothing\n10c22 EndOfScript"
+        },
+        {
+          "time": 48800,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_23",
+          "body": "10e77 LocalVirtualFunction CheckCounterToMarker\n  10e80 StringConst \"Finish\"\n10e89 Return\n  10e8a Nothing\n10e8b EndOfScript"
+        },
+        {
+          "time": 49600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+          "body": "109bb LocalVirtualFunction PlaySE\n  109c4 NameConst se_bat_atk_spear\n109ce Return\n  109cf Nothing\n109d0 EndOfScript"
+        },
+        {
+          "time": 53600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+          "body": "10833 LocalVirtualFunction ExecAilment\n  1083c IntConst 0\n  10841 True\n  10842 False\n10844 Return\n  10845 Nothing\n10846 EndOfScript"
+        },
+        {
+          "time": 55200,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_24",
+          "body": "10eb8 LocalVirtualFunction JumpToMarker\n  10ec1 StringConst \"Finish\"\n10eca Return\n  10ecb Nothing\n10ecc EndOfScript"
+        },
+        {
+          "time": 64000,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+          "body": "10c82 LocalVirtualFunction PlayAction\n  10c8b LocalVariable Character\n  10c9c ByteConst 162\n  10c9e ByteConst 0\n  10ca0 ByteConst 0\n  10ca2 False\n10ca4 Return\n  10ca5 Nothing\n10ca6 EndOfScript"
+        },
+        {
+          "time": 66736,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+          "body": "109fd LocalVirtualFunction PlaySE\n  10a06 NameConst se_bat_atk_spear\n10a10 Return\n  10a11 Nothing\n10a12 EndOfScript"
+        },
+        {
+          "time": 66736,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_26",
+          "body": "10f38 LocalVirtualFunction PlayVoice\n  10f41 ByteConst 7\n  10f43 ByteConst 0\n  10f45 ByteConst 0\n10f48 Return\n  10f49 Nothing\n10f4a EndOfScript"
+        },
+        {
+          "time": 69600,
+          "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+          "body": "10873 LocalVirtualFunction ExecAilment\n  1087c IntConst 0\n  10881 True\n  10882 True\n10884 Return\n  10885 Nothing\n10886 EndOfScript"
+        }
+      ]
+    }
+  ]
+}

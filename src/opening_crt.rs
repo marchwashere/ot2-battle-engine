@@ -37,6 +37,8 @@ pub struct OpeningCrtState {
     #[serde(skip_serializing_if = "is_false")]
     pub step_ahead: bool,
     #[serde(skip_serializing_if = "is_false")]
+    pub temenos_recruitment: bool,
+    #[serde(skip_serializing_if = "is_false")]
     pub hikari_recruitment: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub carried_voices: Option<Vec<usize>>,
@@ -57,6 +59,7 @@ impl OpeningCrtState {
             field_break: false,
             field_item: false,
             step_ahead: false,
+            temenos_recruitment: false,
             hikari_recruitment: false,
             carried_voices: None,
             used_voices: vec![0; 3],
@@ -507,3 +510,5 @@ mod tests {
         assert_eq!(rng, before);
     }
 }
+
+pub(crate) fn temenos_data()->&'static OpeningData {static DATA:OnceLock<OpeningData>=OnceLock::new();DATA.get_or_init(||serde_json::from_str(include_str!("../data/temenos_recruitment_crt.json")).expect("Temenos attack callbacks"))}

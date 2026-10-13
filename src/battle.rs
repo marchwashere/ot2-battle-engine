@@ -353,7 +353,9 @@ impl Battle {
     }
     fn crt_data(&self) -> &'static opening_crt::OpeningData {
         let crt = self.state.opening_crt.as_ref();
-        if crt.is_some_and(|c|c.step_ahead) {
+        if crt.is_some_and(|c|c.temenos_recruitment) {
+            opening_crt::temenos_data()
+        } else if crt.is_some_and(|c|c.step_ahead) {
             opening_crt::gravell_data()
         } else if crt.is_some_and(|c|c.carried_voices.is_some()) {
             opening_crt::carried_field_item_data()
@@ -410,6 +412,12 @@ impl Battle {
     pub(crate) fn new_carried_step_ahead(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
         let mut crt=OpeningCrtState::new(true);
         crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;
+        crt.carried_voices=Some(voices);crt.used_voices=vec![0;5];crt.settled_damage=vec![false;config.players.len()];
+        Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
+    }
+    pub(crate) fn new_temenos_recruitment(config:BattleConfig,situation:crate::escape::Situation,voices:Vec<usize>)->Result<Self> {
+        let mut crt=OpeningCrtState::new(true);
+        crt.mansion_situation=Some(situation);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.temenos_recruitment=true;
         crt.carried_voices=Some(voices);crt.used_voices=vec![0;5];crt.settled_damage=vec![false;config.players.len()];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
@@ -1094,7 +1102,7 @@ impl Battle {
                     let id = self.catalog().skills[i].id.as_str();
                     if id == "attack_staff" {
                         ensure(
-                            (self.is_mug() || self.is_hikari_recruitment() || self.state.opening_crt.as_ref().is_some_and(|c|c.field_break)) && matches!(action, Action::Skill(_, 0)),
+                            ((self.is_mug() || self.is_hikari_recruitment() || self.state.opening_crt.as_ref().is_some_and(|c|c.field_break)) && matches!(action, Action::Skill(_, 0))) || (self.state.opening_crt.as_ref().is_some_and(|c|c.temenos_recruitment) && matches!(action,Action::Skill(_,1))),
                             "staff CRT callbacks are restricted to the unboosted Cape Cold Mug action",
                         )?;
                     }
@@ -1570,7 +1578,9 @@ impl Battle {
         let mut break_busy_until = 0;
         let mut voice_busy_until = 0;
         let normal_id = self.default_attack(actor).ok();
-        let plan = if self.is_hikari_recruitment() {
+        let plan = if self.state.opening_crt.as_ref().is_some_and(|c|c.temenos_recruitment) {
+            &self.crt_data().normal_attacks[&format!("{}:{boost}",normal_id.unwrap())][..]
+        } else if self.is_hikari_recruitment() {
             &self.crt_data().normal_attacks[normal_id.expect("validated recruitment weapon")][..]
         } else if attack.weapon == Some(combat::Weapon::Staff) {
             &self.crt_data().staff_attack[..]

@@ -1,5 +1,11 @@
 # Active project
 
+- Temenos Galdera recruitment uses temenos_recruitment::predict: source normal
+  attack AbilityRatio80, +1 BP, first A Step Ahead actor; boost/cancel search
+  secures a real first-action kill, including Osvald/Partitio critical requirements.
+  Separate exact staff/spear/dagger timelines; preserve all other profiles. See
+  docs/temenos-recruitment.md. Caller handles source scenes and Temenos/Agnea swap.
+
 - import-highroad-return includes every Eastern Wellgrove Trail land group
   (FST_2_2 DAY/NGT, all progression tiers), native enemy initialization, combat
   and rewards. Assistant carries real players/supports/weakness history for the

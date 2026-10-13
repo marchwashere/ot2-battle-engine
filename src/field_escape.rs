@@ -353,7 +353,7 @@ pub fn player_latent_max(id:&str)->Result<u16> {
     carried_data().players.get(id).map(|p|p.latent_max).ok_or_else(||SimError(format!("Unknown latent maximum: {id}")))
 }
 pub fn route_player(character:u32,experience:u32)->Result<crate::PlayerCharacter> {
-    let (mut player,base)=match character {7=>(break_data().party_config.players[0].clone(),5),6=>(break_data().party_config.players[1].clone(),1),8|4|1|3=>(crate::progression::starter(character)?,1),_=>return Err(SimError("Unsupported route character".into()))};
+    let (mut player,base)=match character {7=>(break_data().party_config.players[0].clone(),5),6=>(break_data().party_config.players[1].clone(),1),8|4|1|3|5=>(crate::progression::starter(character)?,1),_=>return Err(SimError("Unsupported route character".into()))};
     crate::progression::apply_growth(&mut player,character,base,crate::progression::growth(character,experience)?.level)?;
     player.resources=Some(crate::Resources {hp:player.stats.max_hp,sp:player.stats.max_sp,bp:1,latent:0});
     Ok(player)
