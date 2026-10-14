@@ -1789,6 +1789,21 @@
         "ability": "ABI_DAN_070_01"
       },
       {
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01",
+        "type": 18,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false,
+        "meat_only": false,
+        "ability": "ABI_SCH_010_01"
+      },
+      {
         "id": "PROFESSOR_ePLAY_ABILITY_ABI_INV_020_01",
         "type": 18,
         "rate": 100,
@@ -6009,6 +6024,19 @@
         "effect": null
       }
     ],
+    "ABI_SET_SCH_010": [
+      {
+        "kind": "voice",
+        "tick": 800,
+        "type": 18
+      },
+      {
+        "kind": "damage",
+        "tick": 63112,
+        "last": true,
+        "effect": null
+      }
+    ],
     "energizing_pomegranate": [
       {
         "kind": "voice",
@@ -6062,6 +6090,7 @@
     "donate_bp": true,
     "stimulate": true,
     "springy_boots": true,
+    "ABI_SET_SCH_010": true,
     "energizing_pomegranate": false,
     "energizing_pomegranate_m": false,
     "thunder_soulstone_l": false
@@ -6103,6 +6132,12 @@
     "springy_boots:3": 35568,
     "springy_boots:4": 34896,
     "springy_boots:5": 18409,
+    "ABI_SET_SCH_010:0": 0,
+    "ABI_SET_SCH_010:1": 48913,
+    "ABI_SET_SCH_010:2": 0,
+    "ABI_SET_SCH_010:3": 0,
+    "ABI_SET_SCH_010:4": 0,
+    "ABI_SET_SCH_010:5": 0,
     "energizing_pomegranate:0": 23472,
     "energizing_pomegranate:1": 21073,
     "energizing_pomegranate:2": 16537,
@@ -6147,6 +6182,7 @@
   "ability_voice_ids": {
     "donate_bp": "ABI_MER_050_01",
     "stimulate": "ABI_DAN_060_01",
-    "springy_boots": "ABI_INV_020_01"
+    "springy_boots": "ABI_INV_020_01",
+    "ABI_SET_SCH_010": "ABI_SCH_010_01"
   }
 }

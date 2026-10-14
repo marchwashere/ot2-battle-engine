@@ -18,7 +18,7 @@ const rows=ids.map(find);
 const summon=invade.rows.filter(r=>/^PC_ABI_MER_YOHEI_04_0[1-4]_INVADE$/.test(r.id));
 assert.equal(summon.length,4);
 const guards=find('ABI_MER_YOHEI_04_01');
-const sourceRows=[...rows,find('ABI_DAN_060_01'),...[1,2,3,4].map(n=>find('ABI_MER_050_0'+n)),find('ABI_INV_020_01'),find('ABI_MER_070_D_1'),guards];
+const sourceRows=[...rows,find('ABI_DAN_060_01'),...[1,2,3,4].map(n=>find('ABI_MER_050_0'+n)),find('ABI_INV_020_01'),find('ABI_MER_070_D_1'),find('ABI_SCH_010_01'),guards];
 const sequences={};
 for(const row of sourceRows){
  const asset=row.ActionCommandSequencer?.asset?.text?.split('.')[0]?.replace(/^\/Game\//,'');
@@ -33,13 +33,13 @@ const crt=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/carried_field_
 crt.ability_voice_ids??={};
 const voiceTable=s.table('Character/Database/BattleVoiceSet');
 const voiceTypes={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12,eON_RECOVERED:13,eON_REVIVED:14,eUSE_ITEM_TO_PARTY:15,eUSE_ITEM_TO_ENEMY:16,ePLAY_GUARD:17,ePLAY_ABILITY:18};
-const abilities=['ABI_DAN_060_01','ABI_DAN_070_01','ABI_INV_020_01','ABI_MER_070_01'];
+const abilities=['ABI_DAN_060_01','ABI_DAN_070_01','ABI_INV_020_01','ABI_MER_070_01','ABI_SCH_010_01'];
 const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN'],['PRIEST','BattleSIN']];
 const durations=[];
 crt.voices=specs.map(([prefix,folder],index)=>{
  const a=voiceTable.rows.findIndex(r=>r.id===prefix+'_VOICE_DATA_START'),b=voiceTable.rows.findIndex((r,j)=>j>a&&r.id.endsWith('_VOICE_DATA_START'));
- const rows=voiceTable.rows.slice(a+1,b).filter(r=>voiceTypes[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))&&(!r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||(abilities.includes(r.AbilityID)||(['MERCHANT','FENCER'].includes(prefix)&&['ABI_MER_070_D_1','ABI_MER_050_01'].includes(r.AbilityID))))).sort((a,b)=>b.Priority-a.Priority);
- assert(rows.length<=64);
+ const rows=voiceTable.rows.slice(a+1,b).filter(r=>voiceTypes[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))&&(!r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||((abilities.includes(r.AbilityID)&&(r.AbilityID!=='ABI_SCH_010_01'||prefix==='PROFESSOR'))||(['MERCHANT','FENCER'].includes(prefix)&&['ABI_MER_070_D_1','ABI_MER_050_01'].includes(r.AbilityID))))).sort((a,b)=>b.Priority-a.Priority);
+ assert(rows.length<=64,`${prefix}: ${rows.length} voice rows`);
  durations[index]={};
  for(const r of rows.filter(r=>r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||r.BattleVoiceType.endsWith('::eUSE_ITEM_TO_PARTY'))){
   const asset='Sound/Resource/VO/'+folder+'/en/'+r.VoiceLabel.toLowerCase(),pkg=s.assets.loadPackage(path.join(s.assets.CONTENT,asset+'.uasset'));
@@ -59,6 +59,7 @@ for(const [id,row,voice] of [
  ['donate_bp',find('ABI_MER_050_01'),'ABI_MER_050_01'],
  ['stimulate',find('ABI_DAN_060_01'),'ABI_DAN_060_01'],
  ['springy_boots',find('ABI_INV_020_01'),'ABI_INV_020_01'],
+ ['ABI_SET_SCH_010',find('ABI_SCH_010_01'),'ABI_SCH_010_01'],
  ['energizing_pomegranate',items.rows.find(r=>r.id==='ITM_CSM_0070'),'party_item'],
  ['energizing_pomegranate_m',items.rows.find(r=>r.id==='ITM_CSM_0080'),'party_item'],
  ['thunder_soulstone_l',items.rows.find(r=>r.id==='ITM_CSM_0370'),null]

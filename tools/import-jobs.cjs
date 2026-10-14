@@ -19,7 +19,7 @@ const characters={};
 const imported=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/progression.json')));
 for(const [id,name,coreId] of [[7,'eTHIEF','throne'],[6,'ePROFESSOR','osvald'],[8,'eDANCER','agnea'],[4,'eMERCHANT','partitio'],[1,'eFENCER','hikari'],[5,'ePRIEST','temenos']]){
  const p=players.get(name),main=jobs.get(p.FirstJob.split('::').at(-1));
- characters[id]={id:coreId,main_job:main.JobID,permitted_weapons:weaponNames.filter((_,i)=>main.ProperEquipment[i])};
+ characters[id]={id:coreId,main_job:main.JobID,revision:p.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>main.ProperEquipment[i])};
  // Native Multiply_CharacterParam_RevisionParam is float32 product*.01 then
  // FloorToInt. Verify the existing growth projection agrees at every level.
  for(const g of growth.values())for(const [k,v] of Object.entries(g.Parameter)) {
@@ -50,6 +50,7 @@ for(const name of ['FUN_140fcd1a0','FUN_140fcaf50']){
 assert(native.FUN_140fcd1a0.body.includes('FUN_140fcaf50'));
 assert.equal((native.FUN_140fcaf50.body.match(/ROUND/g)||[]).length,13);
 const data={scholar:{id:6,revision:scholar.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>scholar.ProperEquipment[i])},
+ raw_growth:Object.fromEntries([...growth.values()].map(r=>[r.id,r.Parameter])),
  characters,default_weapons:defaults,scholar_abilities:scholarAbilities,
  maximum_hp_sp:Number(params.get('PLAYER_STATUS_HP_RANGE').Max),maximum_stat:Number(params.get('PLAYER_STATUS_RANGE').Max)};
 data.additional_jobs=['eINVENTOR','eMERCHANT','eDANCER','eFENCER'].map(id=>{const j=jobs.get(id);return {id:j.JobID,revision:j.ParameterRevision,permitted_weapons:weaponNames.filter((_,i)=>j.ProperEquipment[i])};});

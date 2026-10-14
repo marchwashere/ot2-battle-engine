@@ -35,11 +35,12 @@ impl Battle {
                 self.grace_child(actor,crate::bg_effects::child(selection.ability)?,&mut events)?;
                 dance.complete_child(selection.ability,self.state.actors[actor.0].alive(),self.grace_enemies_alive())?;
             }
-        } else if id=="critical_scope"||id=="aggressive_slash" {
+        } else if matches!(id.as_str(),"critical_scope"|"aggressive_slash"|"elemental_barrage"|"holy_light") {
             ensure(self.state.opening_crt.as_ref().is_some_and(|c|c.lord_sands),"New actions require Lord Sands profile")?;
-            ensure((id=="critical_scope"&&bp==0)||(id=="aggressive_slash"&&bp==2),"Only agreed Scope/Slash boosts supported")?;
+            ensure((matches!(id.as_str(),"critical_scope"|"holy_light")&&bp==0)||(id=="aggressive_slash"&&(bp==2||bp==3))||(id=="elemental_barrage"&&bp==3),"Unsupported route skill boost")?;
             if id=="aggressive_slash" {self.state.actors[actor.0].main_weapon=Some(combat::Weapon::Sword);}
-            let child=crate::bg_effects::child(if id=="critical_scope" {"ABI_INV_030_01"}else{"ABI_WAR_010_03"})?;
+            if matches!(id.as_str(),"elemental_barrage"|"holy_light") {self.state.actors[actor.0].main_weapon=self.scenario.actors[actor.0].combat.as_ref().unwrap().weapons.iter().max_by_key(|w|w.magic).map(|w|w.weapon);}
+            let child=crate::bg_effects::child(match id.as_str() {"critical_scope"=>"ABI_INV_030_01","holy_light"=>"ABI_CLE_020_01","elemental_barrage"=>"ABI_SCH_060_04",_=>if bp==3 {"ABI_WAR_010_04"}else{"ABI_WAR_010_03"}})?;
             self.grace_common_child(actor,child,&[ActorId(4)],&mut events)?;
         } else {
             let beast=id=="hired_help_beastlings";
@@ -140,32 +141,47 @@ impl Battle {
     }
     fn grace_commands(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>)->Result<()> {
         use crate::bg_effects::{EffectKind::*,Step};
-        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>}
+        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32}
         let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
         let party:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Player)).collect();
         let mut schedule=vec![];
         for (i,(start,child,_,_)) in jobs.iter().enumerate() {
             schedule.push((*start,i,None));
             for step in &child.steps {
-                let tick=match step {Step::Effects {tick,..}|Step::Voice {tick,..}|Step::RandomTarget {tick}=>*tick};
+                let tick=step.tick();
                 schedule.push((start+tick,i,Some(step)));
             }
         }
         schedule.sort_by(|a,b|a.0.total_cmp(&b.0));
-        for (tick,i,step) in schedule {
+        while !schedule.is_empty() {
+            let (tick,i,step)=schedule.remove(0);
             loop {
                 let next=states.iter().enumerate().filter_map(|(n,s)|s.pending.map(|(t,id)|(n,t,id)))
                     .filter(|(_,t,_)|*t<=tick).min_by(|a,b|a.1.total_cmp(&b.1));
                 let Some((n,_,id))=next else {break};states[n].pending=None;self.timer_rng("break_slow_timer",Some(id));
             }
             let (_,child,targets,summon)=&jobs[i];let run=&mut states[i];
-            let random_count=matches!(child.id.as_str(),"ABI_DAN_MAKA_039"|"ABI_WAR_010_03");
+            let random_count=matches!(child.id.as_str(),"ABI_DAN_MAKA_039"|"ABI_WAR_010_03"|"ABI_WAR_010_04"|"ABI_SCH_060_04");
             if step.is_none() {
-                if random_count {let before=self.state.rng;self.state.rng.index(1);for n in (1..=if child.id=="ABI_WAR_010_03" {5}else{10}).rev() {self.state.rng.index(n);}self.trace_rng("bg_random_count_setup",Some(actor),before);}
+                if random_count {let before=self.state.rng;let extra=self.state.rng.index(if child.id=="ABI_SCH_060_04" {3}else{1});run.count=extra+match child.id.as_str(){"ABI_WAR_010_03"=>5,"ABI_WAR_010_04"|"ABI_SCH_060_04"=>6,_=>10};for n in (1..=run.count).rev() {self.state.rng.index(n);}self.trace_rng("bg_random_count_setup",Some(actor),before);}
                 continue;
             }
             match *step.unwrap() {
+                Step::CounterBranch{destination,..}|Step::Jump{destination,..}|Step::PatternBranch{ice:destination,..}=>{
+                    let jump=match *step.unwrap(){
+                        Step::CounterBranch{..}=>if run.counter>=run.count||!self.grace_enemies_alive(){Some(destination)}else{None},
+                        Step::PatternBranch{ice,thunder,..}=>{let before=self.state.rng;let pattern=self.state.rng.index(3);self.trace_rng("barrage_element_pattern",Some(actor),before);match pattern{0=>None,1=>Some(ice),_=>Some(thunder)}},
+                        _=>Some(destination),
+                    };
+                    if let Some(destination)=jump {
+                        ensure(destination>step.unwrap().tick(),"Authored route sequence jump must advance")?;
+                        schedule.retain(|(_,job,_)|*job!=i);
+                        for next in &child.steps {if next.tick()>=destination {schedule.push((tick+next.tick()-destination,i,Some(next)));}}
+                        schedule.sort_by(|a,b|a.0.total_cmp(&b.0));
+                    }
+                },
                 Step::RandomTarget {..}=>{
+                    run.counter+=1;
                     let live=targets.iter().copied().filter(|t|self.state.actors[t.0].alive()).collect::<Vec<_>>();
                     let before=self.state.rng;
                     run.random=if live.is_empty() {None} else {Some(live[self.state.rng.index(live.len() as u32) as usize])};
@@ -173,7 +189,7 @@ impl Battle {
                 },
                 Step::Voice {voice_type,..}=>{
                     if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
-                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(if child.id=="ABI_WAR_010_03" {"ABI_WAR_010_01"}else{&child.id}),..Default::default()});}
+                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(match child.id.as_str(){"ABI_WAR_010_03"|"ABI_WAR_010_04"=>"ABI_WAR_010_01","ABI_SCH_060_04"=>"ABI_SCH_060_01",_=>&child.id}),..Default::default()});}
                 },
                 Step::Effects {index,last,on_hit,..}=>{
                     if random_count&&!self.grace_enemies_alive() {continue;}
@@ -195,7 +211,7 @@ impl Battle {
                                 }}
                                 result
                             },
-                            AdditiveShieldDamage=>{ensure(selected.iter().all(|t|self.state.actors[t.0].broken()),"Beastlings additive shields currently require broken target")?;None},
+                            AdditiveShieldDamage=>{ensure(selected.iter().all(|t|!self.state.actors[t.0].alive()||self.state.actors[t.0].broken()),"Beastlings additive shields currently require broken target")?;None},
                             ShieldDamage=>self.grace_shield_damage(actor,&selected,op.value,events),
                             OrderDelay=>{self.grace_delay(actor,&selected,op.value as usize);None},
                             _=>{self.grace_scalar(actor,&selected,op,&mut run.recovery,events)?;None},
@@ -267,14 +283,14 @@ impl Battle {
         }
     }
     pub(super) fn grace_damage(&mut self,actor:ActorId,targets:&[ActorId],child:&crate::bg_effects::Child,op:&Operation,last:bool,summon:Option<&CombatProfile>,events:&mut Vec<Event>)->Result<Option<u8>> {
-        let element=match child.attribute.rsplit("::").next().unwrap() {
+        let element=match op.source.as_str(){"RANDOM_TARGET_MAGIC_DAMAGE_FIRE"=>Some(combat::Element::Fire),"RANDOM_TARGET_MAGIC_DAMAGE_ICE"=>Some(combat::Element::Ice),"RANDOM_TARGET_MAGIC_DAMAGE_THUNDER"=>Some(combat::Element::Lightning),_=>match child.attribute.rsplit("::").next().unwrap() {
             "eNONE"=>None,"eFIRE"=>Some(combat::Element::Fire),"eICE"=>Some(combat::Element::Ice),
             "eTHUNDER"=>Some(combat::Element::Lightning),"eWIND"=>Some(combat::Element::Wind),
             "eLIGHT"=>Some(combat::Element::Light),"eDARK"=>Some(combat::Element::Dark),
             other=>return Err(SimError(format!("Unknown BG element {other}"))),
-        };
+        }};
         let attack=combat::Attack {kind:if matches!(op.kind,EffectKind::PhysicalDamage|EffectKind::RandomTargetPhysicalDamage) {DamageKind::Physical} else {DamageKind::Magical},
-            weapon:if child.id=="ABI_WAR_010_03" {Some(combat::Weapon::Sword)}else{summon.and_then(|s|s.main_weapon)},element,invocation:op.value,ability_ratio:child.ability_ratio,
+            weapon:if child.id.starts_with("ABI_WAR_010_") {Some(combat::Weapon::Sword)}else{summon.and_then(|s|s.main_weapon)},element,invocation:op.value,ability_ratio:child.ability_ratio,
             hit_bonus:child.hit_ratio,critical_bonus:child.critical_ratio,critical_power:child.critical_power,normal_attack:false};
         let mut reaction=None;
         for &target in targets {
@@ -769,4 +785,6 @@ mod tests {
     }
 
 }
+
+
 

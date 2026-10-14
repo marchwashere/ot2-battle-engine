@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "rules": "ot2_opening_v1",
+  "seed": 0,
+  "night_buff_turns": 3,
+  "players": [],
+  "enemies": [
+    {
+      "id": "ENE_NML_FLD_CTY_260",
+      "name": "Gigantes",
+      "stats": {
+        "max_hp": 50000,
+        "max_sp": 50,
+        "speed": 165
+      },
+      "resources": {
+        "hp": 50000,
+        "sp": 50,
+        "bp": 0,
+        "latent": 0
+      },
+      "skills": [
+        "ABI_ENE_0010"
+      ],
+      "combat": {
+        "attack": 460,
+        "defense": 295,
+        "magic": 440,
+        "magic_defense": 280,
+        "accuracy": 240,
+        "evasion": 110,
+        "critical": 160,
+        "growth_attack": 460,
+        "growth_magic": 460,
+        "weapons": [],
+        "main_weapon": null,
+        "shields": 9,
+        "weapon_weaknesses": [
+          "sword",
+          "bow"
+        ],
+        "element_weaknesses": [
+          "fire",
+          "ice",
+          "lightning"
+        ],
+        "statuses": [],
+        "steal_item": null,
+        "enemy_bp_base": 3,
+        "enemy_initialization": {
+          "initial_idle_frames": 24,
+          "sync_to_parent": false,
+          "sync_children": false
+        }
+      },
+      "ai": {
+        "schema_version": 1,
+        "initial_state": "idle",
+        "states": [
+          {
+            "id": "idle",
+            "rules": [
+              {
+                "condition": {
+                  "kind": "always"
+                },
+                "selection": {
+                  "kind": "sequence",
+                  "actions": [
+                    {
+                      "skill": "ABI_ENE_0010",
+                      "target": "random_opponent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "ABI_ENE_0010",
+      "name": "Attack",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0180",
+      "name": "Slice",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 1,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 120,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "ABI_ENE_0190",
+      "name": "Triple Slash",
+      "target": "opponent",
+      "sp_cost": 5,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "hits": 3,
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": null,
+            "element": null,
+            "invocation": 85,
+            "ability_ratio": 100,
+            "hit_bonus": 0,
+            "critical_bonus": 0,
+            "critical_power": 150,
+            "normal_attack": false
+          }
+        }
+      ],
+      "boosted": []
+    },
+    {
+      "id": "attack_dagger",
+      "name": "attack_dagger",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "dagger",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "dagger",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "attack_staff",
+      "name": "attack_staff",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "staff",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "staff",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "staff",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "staff",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "attack_lance",
+      "name": "attack_lance",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "lance",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "lance",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "lance",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "lance",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "aggressive_slash",
+      "name": "Aggressive Slash",
+      "target": "self_only",
+      "sp_cost": 9,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "critical_scope",
+      "name": "Critical Scope",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "hired_help_beastlings",
+      "name": "Hired Help: Beastlings",
+      "target": "self_only",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "attack_sword",
+      "name": "attack_sword",
+      "target": "opponent",
+      "sp_cost": 0,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "damage",
+          "attack": {
+            "kind": "physical",
+            "weapon": "sword",
+            "element": null,
+            "invocation": 100,
+            "ability_ratio": 80,
+            "hit_bonus": 20,
+            "critical_bonus": 0,
+            "critical_power": 125,
+            "normal_attack": true
+          }
+        }
+      ],
+      "hits": 1,
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 2
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 3
+        },
+        {
+          "effects": [
+            {
+              "kind": "damage",
+              "attack": {
+                "kind": "physical",
+                "weapon": "sword",
+                "element": null,
+                "invocation": 100,
+                "ability_ratio": 80,
+                "hit_bonus": 20,
+                "critical_bonus": 0,
+                "critical_power": 125,
+                "normal_attack": true
+              }
+            }
+          ],
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "id": "elemental_barrage",
+      "name": "elemental_barrage",
+      "target": "self_only",
+      "sp_cost": 10,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "holy_light",
+      "name": "holy_light",
+      "target": "self_only",
+      "sp_cost": 6,
+      "hit": {
+        "kind": "guaranteed"
+      },
+      "effects": [
+        {
+          "kind": "no_effect"
+        }
+      ],
+      "boosted": [
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        },
+        {
+          "effects": [
+            {
+              "kind": "no_effect"
+            }
+          ],
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "inventory": {}
+}

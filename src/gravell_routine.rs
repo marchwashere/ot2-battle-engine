@@ -48,6 +48,10 @@ pub struct PlannedAction { pub actor: ActorId, pub action: Action }
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all="snake_case")]
 pub enum Action {
+    SpringyBoots { target: ActorId },
+    Fireball,
+    FireballMax,
+    Dagger { target: ActorId },
     Staff { target: ActorId },
     SmallPomegranate { target: ActorId },
     Defend,
@@ -60,6 +64,10 @@ pub enum Action {
 impl Action {
     pub fn command(self)->Command {
         match self {
+            Self::SpringyBoots {target}=>Command::Skill {id:"springy_boots".into(),target:Some(target)},
+            Self::Fireball=>Command::Boost {id:"ABI_SET_SCH_010".into(),target:None,bp:1},
+            Self::FireballMax=>Command::Boost {id:"ABI_SET_SCH_010".into(),target:None,bp:3},
+            Self::Dagger {target}=>Command::Skill {id:"attack_dagger".into(),target:Some(target)},
             Self::Staff {target}=>Command::Skill {id:"attack_staff".into(),target:Some(target)},
             Self::SmallPomegranate {target}=>Command::Item {id:"energizing_pomegranate".into(),target:Some(target)},
             Self::Defend=>Command::Defend,

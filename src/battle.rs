@@ -422,9 +422,12 @@ impl Battle {
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     pub(crate) fn new_lord_sands(config:BattleConfig)->Result<Self> {
+        Self::new_route_boss(config,Some(vec![0,1,3]))
+    }
+    pub(crate) fn new_route_boss(config:BattleConfig,members:Option<Vec<usize>>)->Result<Self> {
         let mut crt=OpeningCrtState::new(true);
         crt.mansion_situation=Some(crate::escape::Situation::Normal);crt.field_break=true;crt.field_item=true;crt.step_ahead=true;crt.lord_sands=true;
-        crt.step_ahead_members=Some(vec![0,1,3]);crt.carried_voices=Some(vec![0,1,5,3]);
+        crt.step_ahead_members=members;crt.carried_voices=Some(vec![0,1,5,3]);
         crt.used_voices=vec![0;6];crt.settled_damage=vec![false;4];
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
@@ -938,7 +941,7 @@ impl Battle {
             "it is an enemy turn",
         )?;
         if let Command::Skill {id,..}|Command::Boost {id,..}=&command {
-            if matches!(id.as_str(),"bewildering_grace"|"hired_help_guards"|"hired_help_beastlings"|"aggressive_slash"|"critical_scope") {
+            if matches!(id.as_str(),"bewildering_grace"|"hired_help_guards"|"hired_help_beastlings"|"aggressive_slash"|"critical_scope"|"elemental_barrage"|"holy_light") {
                 let mut next=self.clone();
                 let report=next.grace_step(command,levels)?;
                 *self=next;return Ok(report);
@@ -1352,6 +1355,11 @@ impl Battle {
         let (name, effects, hit, hits) = match action.action {
             Action::Skill(i, boost) => {
                 let skill = &scenario.catalog.skills[i];
+                // BattleCommandMenuActorBP invokes SetBestMagicAttackWeapon
+                // when selecting elemental magic, including after a staff hit.
+                if matches!(skill.id.as_str(),"ABI_SET_SCH_010"|"ABI_SET_SCH_020") {
+                    self.state.actors[actor.0].main_weapon=scenario.actors[actor.0].combat.as_ref().unwrap().weapons.iter().max_by_key(|w|w.magic).map(|w|w.weapon);
+                }
                 normal_boost = boost;
                 for level in 1..=if automatic_boost { boost } else { 0 } {
                     self.voice(
@@ -2095,7 +2103,7 @@ impl Battle {
         } else {
             attacker.attack + equipped.map_or(0, |w| w.attack)
         };
-        let amount = combat::damage_with_statuses(
+        let amount = combat::damage_with_equipment(
             combat::DamageInput {
                 attack: atk.min(999),
                 defense: if magical {
@@ -2131,6 +2139,7 @@ impl Battle {
             combat::variance(&mut self.state.rng),
             defender.use_cat_damage_type,
             summon.is_none()&&self.state.actors[actor.0].has_status(if magical { StatusKind::MagicDown } else { StatusKind::AttackDown }),
+            if summon.is_none()&&attack.element==Some(combat::Element::Fire) {attacker.fire_damage_bonus}else{0},
         );
         self.trace_rng("critical_hit_and_damage", Some(actor), before);
         self.resolve_damage(
@@ -2810,3 +2819,4 @@ impl Battle {
         });
     }
 }
+

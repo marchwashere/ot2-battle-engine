@@ -1,0 +1,408 @@
+{
+  "enemy": {
+    "id": "ENE_NML_FLD_CTY_260",
+    "EnemyID": 1160,
+    "DisplayNameID": "ENN_NML_FLD_CTY_260",
+    "ResourceLabel": "ENE_NML_FLD_CTY_260",
+    "DisplayRank": 0,
+    "EnemyLevel": 34,
+    "DamageRatio": 4.09375,
+    "Size": "ECHARACTER_SIZE::eLARGE",
+    "NPCFlag": false,
+    "WeaponStance": "EWEAPON_STANCE::NONE",
+    "WeaponItemLabel": "None",
+    "DeadEffectSlow": false,
+    "MainEnemy": false,
+    "NonPartBattle": false,
+    "UseCatDamageType": false,
+    "DisableDeadKnockBack": false,
+    "Param": {
+      "HP": 50000,
+      "MP": 50,
+      "BP": 3,
+      "SP": 9,
+      "POT": 0,
+      "ATK": 460,
+      "DEF": 295,
+      "MATK": 440,
+      "MDEF": 280,
+      "ACC": 240,
+      "EVA": 110,
+      "CON": 160,
+      "AGI": 165
+    },
+    "Exp": 662,
+    "JobPoint": 41,
+    "Money": 1224,
+    "StealMoney": 2448,
+    "TameEnable": false,
+    "DefaultTameRate": 0,
+    "InvadeMonsterID": "ENE_NML_FLD_CTY_260_INVADE",
+    "FirstBP": 0,
+    "DeadType": "EENEMY_DEAD_TYPE::eNORMAL_L",
+    "AttributeResist": [
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "WeaponResist": [
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eWEAK",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "DiseaseResist": [
+      "EATTRIBUTE_RESIST::eREDUCE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eINVALID",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE",
+      "EATTRIBUTE_RESIST::eNONE"
+    ],
+    "StealGuard": true,
+    "HaveItemID": "ITM_CSM_0110",
+    "DropProbability": 100,
+    "EnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Character/BP/BattleAI/SubBoss/subB_Dng_Ocn_1_3.subB_Dng_Ocn_1_3_C",
+        "number": 0,
+        "text": "/Game/Character/BP/BattleAI/SubBoss/subB_Dng_Ocn_1_3.subB_Dng_Ocn_1_3_C"
+      },
+      "subPath": ""
+    },
+    "EnemyAbility": [
+      "ABI_LBOS_DNGOCN13_01_010",
+      "ABI_LBOS_DNGOCN13_01_020",
+      "ABI_LBOS_DNGOCN13_01_030",
+      "ABI_LBOS_DNGOCN13_01_040",
+      "ABI_LBOS_DNGOCN13_01_050",
+      "ABI_LBOS_DNGOCN13_01_060",
+      "ABI_LBOS_DNGOCN13_01_070",
+      "ABI_LBOS_DNGOCN13_01_080",
+      "ABI_LBOS_DNGOCN13_01_090",
+      "ABI_LBOS_DNGOCN13_01_100",
+      "ABI_LBOS_DNGOCN13_01_110",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "DiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1114636288,
+          "value": 60
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        },
+        {
+          "kind": "float32",
+          "bits": 1127481344,
+          "value": 180
+        }
+      ]
+    },
+    "EnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1120403456,
+          "value": 100
+        }
+      ]
+    },
+    "StatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "DamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        }
+      ]
+    },
+    "IconL_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1048911544,
+          "value": 0.25999999046325684
+        },
+        {
+          "kind": "float32",
+          "bits": 1059145646,
+          "value": 0.6299999952316284
+        }
+      ]
+    },
+    "PixelScaleL": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1043878380,
+          "value": 0.18000000715255737
+        },
+        {
+          "kind": "float32",
+          "bits": 1052266988,
+          "value": 0.36000001430511475
+        }
+      ]
+    },
+    "IconS_UV": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1065520988,
+          "value": 1.0199999809265137
+        },
+        {
+          "kind": "float32",
+          "bits": 1069379748,
+          "value": 1.4800000190734863
+        }
+      ]
+    },
+    "PixelScaleS": {
+      "kind": "native-struct",
+      "type": "Vector2D",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1036831949,
+          "value": 0.10000000149011612
+        },
+        {
+          "kind": "float32",
+          "bits": 1045220557,
+          "value": 0.20000000298023224
+        }
+      ]
+    },
+    "SPDiseaseEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 1128792064,
+          "value": 200
+        },
+        {
+          "kind": "float32",
+          "bits": 1116471296,
+          "value": 70
+        },
+        {
+          "kind": "float32",
+          "bits": 1126170624,
+          "value": 160
+        }
+      ]
+    },
+    "SPEnemyEffectOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3256877056,
+          "value": -40
+        },
+        {
+          "kind": "float32",
+          "bits": 1084227584,
+          "value": 5
+        },
+        {
+          "kind": "float32",
+          "bits": 1120403456,
+          "value": 100
+        }
+      ]
+    },
+    "SPStatusUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3240099840,
+          "value": -10
+        },
+        {
+          "kind": "float32",
+          "bits": 1097859072,
+          "value": 15
+        }
+      ]
+    },
+    "SPDamageUIOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 3248488448,
+          "value": -20
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 1101004800,
+          "value": 20
+        }
+      ]
+    },
+    "StealMoneyGuard": false,
+    "StealItemID": "None",
+    "AbilitySEDelay": 0,
+    "TextInfoLabel": "Enemy_002",
+    "BribeGuard": false,
+    "BribeMoney": 30000,
+    "RevealShieldPoint": 0,
+    "RevealEnemyAI": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "None",
+        "number": 0,
+        "text": "None"
+      },
+      "subPath": ""
+    },
+    "DismantlingLabel": "ENE_NML_FLD_CTY_260_DISMANTLING",
+    "WarpOffset": {
+      "kind": "native-struct",
+      "type": "Vector",
+      "components": [
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        },
+        {
+          "kind": "float32",
+          "bits": 3267887104,
+          "value": -100
+        },
+        {
+          "kind": "float32",
+          "bits": 0,
+          "value": 0
+        }
+      ]
+    },
+    "LegendTameMonster": false,
+    "ActionModeResourceList": [
+      "None",
+      "None"
+    ],
+    "WaitEnemyActionFrame": 11,
+    "DisableBreakSlow": false,
+    "ID": 115,
+    "NotInsertOrderWithCallEnemy": false,
+    "BreakCameraType": "EBREAK_CAMERA_TYPE::eWIDE_TILTUP"
+  },
+  "reward": {
+    "exp": 662,
+    "jp": 41,
+    "money": 1224
+  },
+  "drop_item": "ITM_CSM_0110",
+  "drop_rate": 100
+}

@@ -1006,5 +1006,54 @@
     "money": 540,
     "drop_item": "ITM_CSM_0020",
     "drop_rate": 8
+  },
+  "ENE_NML_WTR_350": {
+    "exp": 73,
+    "jp": 37,
+    "money": 450,
+    "drop_item": "ITM_MRL_ATK_0070",
+    "drop_rate": 20
+  },
+  "ENE_NML_WTR_470": {
+    "exp": 65,
+    "jp": 26,
+    "money": 315,
+    "drop_item": "ITM_MRL_ATK_0010",
+    "drop_rate": 25
+  },
+  "ENE_NML_DNG_CAV_210": {
+    "exp": 132,
+    "jp": 58,
+    "money": 720,
+    "drop_item": "ITM_CSM_0250",
+    "drop_rate": 5
+  },
+  "ENE_NML_OCN_090": {
+    "exp": 296,
+    "jp": 63,
+    "money": 780,
+    "drop_item": "ITM_CSM_0080",
+    "drop_rate": 9
+  },
+  "ENE_NML_OCN_070": {
+    "exp": 123,
+    "jp": 58,
+    "money": 720,
+    "drop_item": "ITM_CSM_0050",
+    "drop_rate": 14
+  },
+  "ENE_NML_DNG_CAV_120": {
+    "exp": 160,
+    "jp": 59,
+    "money": 735,
+    "drop_item": "ITM_CSM_0230",
+    "drop_rate": 8
+  },
+  "ENE_NML_OCN_080": {
+    "exp": 232,
+    "jp": 61,
+    "money": 750,
+    "drop_item": "ITM_MRL_ATK_0070",
+    "drop_rate": 30
   }
 }

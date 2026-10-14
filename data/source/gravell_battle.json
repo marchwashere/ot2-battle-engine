@@ -5393,6 +5393,123 @@
       "SlideFrame": 147
     },
     {
+      "id": "ABI_SCH_010_01",
+      "ID": 1089,
+      "AbilityID": 10890,
+      "DisplayName": "ABN_SCH_010",
+      "Detail": "ABD_SCH_010_01",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 14,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": true,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": true,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic.Seq_Sch_010_FireMagic"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 112
+    },
+    {
       "id": "ABI_MER_YOHEI_04_01",
       "ID": 1633,
       "AbilityID": 16330,
@@ -7268,6 +7385,43 @@
         "time": 111855,
         "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
         "body": "0c204 LocalVirtualFunction WaitBusinessSupporter\n0c20e Return\n  0c20f Nothing\n0c210 EndOfScript"
+      }
+    ],
+    "Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_010_FireMagic": [
+      {
+        "time": 0,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0b7ba LocalVirtualFunction Fx_PS_Btl_Chant_Magic_A_Event_1\n  0b7c3 LocalVariable Fx_PS_Btl_Chant_Magic_A\n  0b7d4 NameConst HueShift\n  0b7dd FloatConst 0.949999988079071\n0b7e3 Return\n  0b7e4 Nothing\n0b7e5 EndOfScript"
+      },
+      {
+        "time": 125,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0b72f LocalVirtualFunction Fx_PS_Btl_Chant_Magic_A_Event_0\n  0b738 LocalVariable Fx_PS_Btl_Chant_Magic_A\n  0b749 NameConst HueShift\n  0b752 FloatConst 0.699999988079071\n0b758 Return\n  0b759 Nothing\n0b75a EndOfScript"
+      },
+      {
+        "time": 800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0b812 LocalVirtualFunction PlayVoice\n  0b81b ByteConst 18\n  0b81d ByteConst 0\n  0b81f ByteConst 0\n0b822 Return\n  0b823 Nothing\n0b824 EndOfScript"
+      },
+      {
+        "time": 7953,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0b629 LocalVirtualFunction PlayAction\n  0b632 LocalVariable Character\n  0b643 ByteConst 116\n  0b645 ByteConst 6\n  0b647 ByteConst 106\n0b64a Return\n  0b64b Nothing\n0b64c EndOfScript"
+      },
+      {
+        "time": 8000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0b5b4 LocalVirtualFunction PlaySE\n  0b5bd NameConst se_bat_ability_scholar_09\n0b5c7 Return\n  0b5c8 Nothing\n0b5c9 EndOfScript"
+      },
+      {
+        "time": 32302,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0b6ac LocalVirtualFunction PlayAction\n  0b6b5 LocalVariable Character\n  0b6c6 ByteConst 119\n  0b6c8 ByteConst 6\n  0b6ca ByteConst 109\n0b6cd Return\n  0b6ce Nothing\n0b6cf EndOfScript"
+      },
+      {
+        "time": 63112,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0b574 LocalVirtualFunction ExecAilment\n  0b57d IntConst 0\n  0b582 True\n  0b583 True\n0b585 Return\n  0b586 Nothing\n0b587 EndOfScript"
       }
     ],
     "Battle/Sequencer/ActionCommand/PC/Merchant/YoheiYobi/Seq_Mer_Yohei_04_01": [

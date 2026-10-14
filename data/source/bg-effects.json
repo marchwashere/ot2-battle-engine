@@ -6981,6 +6981,357 @@
         "None"
       ],
       "SlideFrame": 0
+    },
+    {
+      "id": "ABI_SCH_060_04",
+      "ID": 1136,
+      "AbilityID": 11360,
+      "DisplayName": "ABN_SCH_060",
+      "Detail": "ABD_SCH_060_04",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand.Random3PatternAttackCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 10,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 170,
+      "BaseCount": 6,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 2,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+          "InvocationValue": 80,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+          "InvocationValue": 80,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+          "InvocationValue": 80,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_060_ZokuseiKogekiMidareUchi.Seq_Sch_060_ZokuseiKogekiMidareUchi"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 15
+    },
+    {
+      "id": "ABI_WAR_010_04",
+      "ID": 1004,
+      "AbilityID": 10040,
+      "DisplayName": "ABN_WAR_010",
+      "Detail": "ABD_WAR_010_04",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/RandomCountAttack/RandomCountAttackCommand.RandomCountAttackCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/RandomCountAttack/RandomCountAttackCommand.RandomCountAttackCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::ePHYSICS",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": true,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eSWORD",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 9,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 170,
+      "BaseCount": 6,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "RANDOM_TARGET_PHYSICS_DAMAGE",
+          "InvocationValue": 70,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": true,
+      "EnableHideOut": true,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": true,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Warrior/Seq_War_010_SamidareGiri.Seq_War_010_SamidareGiri",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Warrior/Seq_War_010_SamidareGiri.Seq_War_010_SamidareGiri"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 13
+    },
+    {
+      "id": "ABI_CLE_020_01",
+      "ID": 1305,
+      "AbilityID": 13050,
+      "DisplayName": "ABN_CLE_020",
+      "Detail": "ABD_CLE_020_01",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eLIGHT",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 6,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 130,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": false,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Cleric/Seq_Cle_020_SeinaruHikari.Seq_Cle_020_SeinaruHikari",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Cleric/Seq_Cle_020_SeinaruHikari.Seq_Cle_020_SeinaruHikari"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 77
     }
   ],
   "ailments": [
@@ -14605,6 +14956,768 @@
       "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
     },
     {
+      "id": "RANDOM_TARGET_MAGIC_DAMAGE_FIRE",
+      "ID": 327,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator1",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator2",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator2",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
+      "id": "RANDOM_TARGET_MAGIC_DAMAGE_ICE",
+      "ID": 328,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator1",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator3",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator2",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
+      "id": "RANDOM_TARGET_MAGIC_DAMAGE_THUNDER",
+      "ID": 329,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator1",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator4",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator2",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
       "id": "REVERSE_BUFF",
       "ID": 361,
       "AilmentType": "EAILMENT_TYPE::NewEnumerator83",
@@ -20709,6 +21822,962 @@
         "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
         "body": "09509 LocalVirtualFunction PlayAction\n  09512 LocalVariable Character\n  09523 ByteConst 20\n  09525 ByteConst 0\n  09527 ByteConst 0\n0952a Return\n  0952b Nothing\n0952c EndOfScript"
       }
+    ],
+    "ABI_SCH_060_04": [
+      {
+        "time": 0,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_123",
+        "body": "17542 LocalVirtualFunction ExecStepCounter\n1754c Return\n  1754d Nothing\n1754e EndOfScript"
+      },
+      {
+        "time": 800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_72",
+        "body": "16874 LocalVirtualFunction CheckCounterToMarker\n  1687d StringConst \"Finish\"\n16886 Return\n  16887 Nothing\n16888 EndOfScript"
+      },
+      {
+        "time": 800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_148",
+        "body": "17ad3 LocalVirtualFunction PlayVoice\n  17adc ByteConst 18\n  17ade ByteConst 0\n  17ae0 ByteConst 0\n17ae3 Return\n  17ae4 Nothing\n17ae5 EndOfScript"
+      },
+      {
+        "time": 2082,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_73",
+        "body": "168b5 LocalVirtualFunction CheckPattern3 ToMarker\n  168be StringConst \"Ice\"\n  168c3 StringConst \"Thunder\"\n168cd Return\n  168ce Nothing\n168cf EndOfScript"
+      },
+      {
+        "time": 4059,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_48",
+        "body": "15c5f LocalVirtualFunction PlayAction\n  15c68 LocalVariable Character\n  15c79 ByteConst 137\n  15c7b ByteConst 6\n  15c7d ByteConst 113\n15c80 Return\n  15c81 Nothing\n15c82 EndOfScript"
+      },
+      {
+        "time": 4539,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_24",
+        "body": "155fc LocalVirtualFunction PlaySE\n  15605 NameConst se_bat_ability_scholar_18\n1560f Return\n  15610 Nothing\n15611 EndOfScript"
+      },
+      {
+        "time": 4800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_124",
+        "body": "1757b LocalVirtualFunction ExecStepCounter\n17585 Return\n  17586 Nothing\n17587 EndOfScript"
+      },
+      {
+        "time": 8034,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "14ffc LocalVirtualFunction ExecAilment\n  15005 IntConst 0\n  1500a False\n  1500b True\n1500d Return\n  1500e Nothing\n1500f EndOfScript"
+      },
+      {
+        "time": 11221,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_74",
+        "body": "168fc LocalVirtualFunction CheckCounterToMarker\n  16905 StringConst \"Finish\"\n1690e Return\n  1690f Nothing\n16910 EndOfScript"
+      },
+      {
+        "time": 12021,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_75",
+        "body": "1693d LocalVirtualFunction JumpToMarker\n  16946 StringConst \"2\"\n1694a Return\n  1694b Nothing\n1694c EndOfScript"
+      },
+      {
+        "time": 16065,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_49",
+        "body": "15ce2 LocalVirtualFunction PlayAction\n  15ceb LocalVariable Character\n  15cfc ByteConst 137\n  15cfe ByteConst 6\n  15d00 ByteConst 113\n15d03 Return\n  15d04 Nothing\n15d05 EndOfScript"
+      },
+      {
+        "time": 16539,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_25",
+        "body": "1563e LocalVirtualFunction PlaySE\n  15647 NameConst se_bat_ability_scholar_19\n15651 Return\n  15652 Nothing\n15653 EndOfScript"
+      },
+      {
+        "time": 16800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_125",
+        "body": "175b4 LocalVirtualFunction ExecStepCounter\n175be Return\n  175bf Nothing\n175c0 EndOfScript"
+      },
+      {
+        "time": 19978,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "1503c LocalVirtualFunction ExecAilment\n  15045 IntConst 1\n  1504a False\n  1504b True\n1504d Return\n  1504e Nothing\n1504f EndOfScript"
+      },
+      {
+        "time": 23286,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_76",
+        "body": "16979 LocalVirtualFunction CheckCounterToMarker\n  16982 StringConst \"Finish\"\n1698b Return\n  1698c Nothing\n1698d EndOfScript"
+      },
+      {
+        "time": 24086,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_77",
+        "body": "169ba LocalVirtualFunction JumpToMarker\n  169c3 StringConst \"2\"\n169c7 Return\n  169c8 Nothing\n169c9 EndOfScript"
+      },
+      {
+        "time": 28053,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_50",
+        "body": "15d65 LocalVirtualFunction PlayAction\n  15d6e LocalVariable Character\n  15d7f ByteConst 137\n  15d81 ByteConst 6\n  15d83 ByteConst 113\n15d86 Return\n  15d87 Nothing\n15d88 EndOfScript"
+      },
+      {
+        "time": 28539,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_26",
+        "body": "15680 LocalVirtualFunction PlaySE\n  15689 NameConst se_bat_ability_scholar_20\n15693 Return\n  15694 Nothing\n15695 EndOfScript"
+      },
+      {
+        "time": 28800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_126",
+        "body": "175ed LocalVirtualFunction ExecStepCounter\n175f7 Return\n  175f8 Nothing\n175f9 EndOfScript"
+      },
+      {
+        "time": 32144,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "1507c LocalVirtualFunction ExecAilment\n  15085 IntConst 2\n  1508a False\n  1508b True\n1508d Return\n  1508e Nothing\n1508f EndOfScript"
+      },
+      {
+        "time": 35351,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_78",
+        "body": "169f6 LocalVirtualFunction CheckCounterToMarker\n  169ff StringConst \"Finish\"\n16a08 Return\n  16a09 Nothing\n16a0a EndOfScript"
+      },
+      {
+        "time": 36151,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_79",
+        "body": "16a37 LocalVirtualFunction JumpToMarker\n  16a40 StringConst \"2\"\n16a44 Return\n  16a45 Nothing\n16a46 EndOfScript"
+      },
+      {
+        "time": 43200,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_80",
+        "body": "16a73 LocalVirtualFunction CheckPattern3 ToMarker\n  16a7c StringConst \"Ice2\"\n  16a82 StringConst \"Thunder2\"\n16a8d Return\n  16a8e Nothing\n16a8f EndOfScript"
+      },
+      {
+        "time": 44061,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_51",
+        "body": "15de8 LocalVirtualFunction PlayAction\n  15df1 LocalVariable Character\n  15e02 ByteConst 138\n  15e04 ByteConst 6\n  15e06 ByteConst 114\n15e09 Return\n  15e0a Nothing\n15e0b EndOfScript"
+      },
+      {
+        "time": 44457,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_27",
+        "body": "156c2 LocalVirtualFunction PlaySE\n  156cb NameConst se_bat_ability_scholar_18\n156d5 Return\n  156d6 Nothing\n156d7 EndOfScript"
+      },
+      {
+        "time": 44800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_127",
+        "body": "17626 LocalVirtualFunction ExecStepCounter\n17630 Return\n  17631 Nothing\n17632 EndOfScript"
+      },
+      {
+        "time": 48089,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "150bc LocalVirtualFunction ExecAilment\n  150c5 IntConst 0\n  150ca False\n  150cb True\n150cd Return\n  150ce Nothing\n150cf EndOfScript"
+      },
+      {
+        "time": 51466,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_81",
+        "body": "16abc LocalVirtualFunction CheckCounterToMarker\n  16ac5 StringConst \"Finish\"\n16ace Return\n  16acf Nothing\n16ad0 EndOfScript"
+      },
+      {
+        "time": 52266,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_82",
+        "body": "16afd LocalVirtualFunction JumpToMarker\n  16b06 StringConst \"3\"\n16b0a Return\n  16b0b Nothing\n16b0c EndOfScript"
+      },
+      {
+        "time": 56100,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_52",
+        "body": "15e6b LocalVirtualFunction PlayAction\n  15e74 LocalVariable Character\n  15e85 ByteConst 138\n  15e87 ByteConst 6\n  15e89 ByteConst 114\n15e8c Return\n  15e8d Nothing\n15e8e EndOfScript"
+      },
+      {
+        "time": 56457,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_28",
+        "body": "15704 LocalVirtualFunction PlaySE\n  1570d NameConst se_bat_ability_scholar_19\n15717 Return\n  15718 Nothing\n15719 EndOfScript"
+      },
+      {
+        "time": 56800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_128",
+        "body": "1765f LocalVirtualFunction ExecStepCounter\n17669 Return\n  1766a Nothing\n1766b EndOfScript"
+      },
+      {
+        "time": 59539,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "150fc LocalVirtualFunction ExecAilment\n  15105 IntConst 1\n  1510a False\n  1510b True\n1510d Return\n  1510e Nothing\n1510f EndOfScript"
+      },
+      {
+        "time": 63192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_83",
+        "body": "16b39 LocalVirtualFunction CheckCounterToMarker\n  16b42 StringConst \"Finish\"\n16b4b Return\n  16b4c Nothing\n16b4d EndOfScript"
+      },
+      {
+        "time": 63992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_84",
+        "body": "16b7a LocalVirtualFunction JumpToMarker\n  16b83 StringConst \"3\"\n16b87 Return\n  16b88 Nothing\n16b89 EndOfScript"
+      },
+      {
+        "time": 68232,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_53",
+        "body": "15eee LocalVirtualFunction PlayAction\n  15ef7 LocalVariable Character\n  15f08 ByteConst 138\n  15f0a ByteConst 6\n  15f0c ByteConst 114\n15f0f Return\n  15f10 Nothing\n15f11 EndOfScript"
+      },
+      {
+        "time": 68457,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_29",
+        "body": "15746 LocalVirtualFunction PlaySE\n  1574f NameConst se_bat_ability_scholar_20\n15759 Return\n  1575a Nothing\n1575b EndOfScript"
+      },
+      {
+        "time": 68800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_129",
+        "body": "17698 LocalVirtualFunction ExecStepCounter\n176a2 Return\n  176a3 Nothing\n176a4 EndOfScript"
+      },
+      {
+        "time": 71814,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "1513c LocalVirtualFunction ExecAilment\n  15145 IntConst 2\n  1514a False\n  1514b True\n1514d Return\n  1514e Nothing\n1514f EndOfScript"
+      },
+      {
+        "time": 75753,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_85",
+        "body": "16bb6 LocalVirtualFunction CheckCounterToMarker\n  16bbf StringConst \"Finish\"\n16bc8 Return\n  16bc9 Nothing\n16bca EndOfScript"
+      },
+      {
+        "time": 76553,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_86",
+        "body": "16bf7 LocalVirtualFunction JumpToMarker\n  16c00 StringConst \"3\"\n16c04 Return\n  16c05 Nothing\n16c06 EndOfScript"
+      },
+      {
+        "time": 83097,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_87",
+        "body": "16c33 LocalVirtualFunction CheckPattern3 ToMarker\n  16c3c StringConst \"Ice3\"\n  16c42 StringConst \"Thunder3\"\n16c4d Return\n  16c4e Nothing\n16c4f EndOfScript"
+      },
+      {
+        "time": 84251,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_54",
+        "body": "15f71 LocalVirtualFunction PlayAction\n  15f7a LocalVariable Character\n  15f8b ByteConst 139\n  15f8d ByteConst 6\n  15f8f ByteConst 115\n15f92 Return\n  15f93 Nothing\n15f94 EndOfScript"
+      },
+      {
+        "time": 84702,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_30",
+        "body": "15788 LocalVirtualFunction PlaySE\n  15791 NameConst se_bat_ability_scholar_18\n1579b Return\n  1579c Nothing\n1579d EndOfScript"
+      },
+      {
+        "time": 84800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_130",
+        "body": "176d1 LocalVirtualFunction ExecStepCounter\n176db Return\n  176dc Nothing\n176dd EndOfScript"
+      },
+      {
+        "time": 88234,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "1517c LocalVirtualFunction ExecAilment\n  15185 IntConst 0\n  1518a False\n  1518b True\n1518d Return\n  1518e Nothing\n1518f EndOfScript"
+      },
+      {
+        "time": 92000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_88",
+        "body": "16c7c LocalVirtualFunction CheckCounterToMarker\n  16c85 StringConst \"Finish\"\n16c8e Return\n  16c8f Nothing\n16c90 EndOfScript"
+      },
+      {
+        "time": 92800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_89",
+        "body": "16cbd LocalVirtualFunction JumpToMarker\n  16cc6 StringConst \"4\"\n16cca Return\n  16ccb Nothing\n16ccc EndOfScript"
+      },
+      {
+        "time": 96112,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_55",
+        "body": "15ff4 LocalVirtualFunction PlayAction\n  15ffd LocalVariable Character\n  1600e ByteConst 139\n  16010 ByteConst 6\n  16012 ByteConst 115\n16015 Return\n  16016 Nothing\n16017 EndOfScript"
+      },
+      {
+        "time": 96702,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_31",
+        "body": "157ca LocalVirtualFunction PlaySE\n  157d3 NameConst se_bat_ability_scholar_19\n157dd Return\n  157de Nothing\n157df EndOfScript"
+      },
+      {
+        "time": 96800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_131",
+        "body": "1770a LocalVirtualFunction ExecStepCounter\n17714 Return\n  17715 Nothing\n17716 EndOfScript"
+      },
+      {
+        "time": 100124,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+        "body": "151bc LocalVirtualFunction ExecAilment\n  151c5 IntConst 1\n  151ca False\n  151cb True\n151cd Return\n  151ce Nothing\n151cf EndOfScript"
+      },
+      {
+        "time": 103821,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_90",
+        "body": "16cf9 LocalVirtualFunction CheckCounterToMarker\n  16d02 StringConst \"Finish\"\n16d0b Return\n  16d0c Nothing\n16d0d EndOfScript"
+      },
+      {
+        "time": 104621,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_91",
+        "body": "16d3a LocalVirtualFunction JumpToMarker\n  16d43 StringConst \"4\"\n16d47 Return\n  16d48 Nothing\n16d49 EndOfScript"
+      },
+      {
+        "time": 108324,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_56",
+        "body": "16077 LocalVirtualFunction PlayAction\n  16080 LocalVariable Character\n  16091 ByteConst 139\n  16093 ByteConst 6\n  16095 ByteConst 115\n16098 Return\n  16099 Nothing\n1609a EndOfScript"
+      },
+      {
+        "time": 108702,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_32",
+        "body": "1580c LocalVirtualFunction PlaySE\n  15815 NameConst se_bat_ability_scholar_20\n1581f Return\n  15820 Nothing\n15821 EndOfScript"
+      },
+      {
+        "time": 108800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_132",
+        "body": "17743 LocalVirtualFunction ExecStepCounter\n1774d Return\n  1774e Nothing\n1774f EndOfScript"
+      },
+      {
+        "time": 112233,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+        "body": "151fc LocalVirtualFunction ExecAilment\n  15205 IntConst 2\n  1520a False\n  1520b True\n1520d Return\n  1520e Nothing\n1520f EndOfScript"
+      },
+      {
+        "time": 115708,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_92",
+        "body": "16d76 LocalVirtualFunction CheckCounterToMarker\n  16d7f StringConst \"Finish\"\n16d88 Return\n  16d89 Nothing\n16d8a EndOfScript"
+      },
+      {
+        "time": 116508,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_93",
+        "body": "16db7 LocalVirtualFunction JumpToMarker\n  16dc0 StringConst \"4\"\n16dc4 Return\n  16dc5 Nothing\n16dc6 EndOfScript"
+      },
+      {
+        "time": 122808,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_94",
+        "body": "16df3 LocalVirtualFunction CheckPattern3 ToMarker\n  16dfc StringConst \"Ice4\"\n  16e02 StringConst \"Thunder4\"\n16e0d Return\n  16e0e Nothing\n16e0f EndOfScript"
+      },
+      {
+        "time": 124025,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_57",
+        "body": "160fa LocalVirtualFunction PlayAction\n  16103 LocalVariable Character\n  16114 ByteConst 181\n  16116 ByteConst 6\n  16118 ByteConst 171\n1611b Return\n  1611c Nothing\n1611d EndOfScript"
+      },
+      {
+        "time": 124667,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_33",
+        "body": "1584e LocalVirtualFunction PlaySE\n  15857 NameConst se_bat_ability_scholar_18\n15861 Return\n  15862 Nothing\n15863 EndOfScript"
+      },
+      {
+        "time": 124800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_133",
+        "body": "1777c LocalVirtualFunction ExecStepCounter\n17786 Return\n  17787 Nothing\n17788 EndOfScript"
+      },
+      {
+        "time": 127959,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+        "body": "1523c LocalVirtualFunction ExecAilment\n  15245 IntConst 0\n  1524a False\n  1524b True\n1524d Return\n  1524e Nothing\n1524f EndOfScript"
+      },
+      {
+        "time": 130723,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_95",
+        "body": "16e3c LocalVirtualFunction CheckCounterToMarker\n  16e45 StringConst \"Finish\"\n16e4e Return\n  16e4f Nothing\n16e50 EndOfScript"
+      },
+      {
+        "time": 131523,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_96",
+        "body": "16e7d LocalVirtualFunction JumpToMarker\n  16e86 StringConst \"5\"\n16e8a Return\n  16e8b Nothing\n16e8c EndOfScript"
+      },
+      {
+        "time": 136386,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_58",
+        "body": "1617d LocalVirtualFunction PlayAction\n  16186 LocalVariable Character\n  16197 ByteConst 181\n  16199 ByteConst 6\n  1619b ByteConst 171\n1619e Return\n  1619f Nothing\n161a0 EndOfScript"
+      },
+      {
+        "time": 136667,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_34",
+        "body": "15890 LocalVirtualFunction PlaySE\n  15899 NameConst se_bat_ability_scholar_19\n158a3 Return\n  158a4 Nothing\n158a5 EndOfScript"
+      },
+      {
+        "time": 136800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_134",
+        "body": "177b5 LocalVirtualFunction ExecStepCounter\n177bf Return\n  177c0 Nothing\n177c1 EndOfScript"
+      },
+      {
+        "time": 140014,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+        "body": "1527c LocalVirtualFunction ExecAilment\n  15285 IntConst 1\n  1528a False\n  1528b True\n1528d Return\n  1528e Nothing\n1528f EndOfScript"
+      },
+      {
+        "time": 142969,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_97",
+        "body": "16eb9 LocalVirtualFunction CheckCounterToMarker\n  16ec2 StringConst \"Finish\"\n16ecb Return\n  16ecc Nothing\n16ecd EndOfScript"
+      },
+      {
+        "time": 143769,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_98",
+        "body": "16efa LocalVirtualFunction JumpToMarker\n  16f03 StringConst \"5\"\n16f07 Return\n  16f08 Nothing\n16f09 EndOfScript"
+      },
+      {
+        "time": 148300,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_59",
+        "body": "16200 LocalVirtualFunction PlayAction\n  16209 LocalVariable Character\n  1621a ByteConst 181\n  1621c ByteConst 6\n  1621e ByteConst 171\n16221 Return\n  16222 Nothing\n16223 EndOfScript"
+      },
+      {
+        "time": 148667,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_35",
+        "body": "158d2 LocalVirtualFunction PlaySE\n  158db NameConst se_bat_ability_scholar_20\n158e5 Return\n  158e6 Nothing\n158e7 EndOfScript"
+      },
+      {
+        "time": 148800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_135",
+        "body": "177ee LocalVirtualFunction ExecStepCounter\n177f8 Return\n  177f9 Nothing\n177fa EndOfScript"
+      },
+      {
+        "time": 151959,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+        "body": "152bc LocalVirtualFunction ExecAilment\n  152c5 IntConst 2\n  152ca False\n  152cb True\n152cd Return\n  152ce Nothing\n152cf EndOfScript"
+      },
+      {
+        "time": 156110,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_99",
+        "body": "16f36 LocalVirtualFunction CheckCounterToMarker\n  16f3f StringConst \"Finish\"\n16f48 Return\n  16f49 Nothing\n16f4a EndOfScript"
+      },
+      {
+        "time": 156910,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_100",
+        "body": "16f77 LocalVirtualFunction JumpToMarker\n  16f80 StringConst \"5\"\n16f84 Return\n  16f85 Nothing\n16f86 EndOfScript"
+      },
+      {
+        "time": 162797,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_101",
+        "body": "16fb3 LocalVirtualFunction CheckPattern3 ToMarker\n  16fbc StringConst \"Ice5\"\n  16fc2 StringConst \"Thunder5\"\n16fcd Return\n  16fce Nothing\n16fcf EndOfScript"
+      },
+      {
+        "time": 164401,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_60",
+        "body": "16283 LocalVirtualFunction PlayAction\n  1628c LocalVariable Character\n  1629d ByteConst 182\n  1629f ByteConst 6\n  162a1 ByteConst 172\n162a4 Return\n  162a5 Nothing\n162a6 EndOfScript"
+      },
+      {
+        "time": 164453,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_36",
+        "body": "15914 LocalVirtualFunction PlaySE\n  1591d NameConst se_bat_ability_scholar_18\n15927 Return\n  15928 Nothing\n15929 EndOfScript"
+      },
+      {
+        "time": 164800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_136",
+        "body": "17827 LocalVirtualFunction ExecStepCounter\n17831 Return\n  17832 Nothing\n17833 EndOfScript"
+      },
+      {
+        "time": 167602,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+        "body": "152fc LocalVirtualFunction ExecAilment\n  15305 IntConst 0\n  1530a False\n  1530b True\n1530d Return\n  1530e Nothing\n1530f EndOfScript"
+      },
+      {
+        "time": 171252,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_102",
+        "body": "16ffc LocalVirtualFunction CheckCounterToMarker\n  17005 StringConst \"Finish\"\n1700e Return\n  1700f Nothing\n17010 EndOfScript"
+      },
+      {
+        "time": 172052,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_103",
+        "body": "1703d LocalVirtualFunction JumpToMarker\n  17046 StringConst \"6\"\n1704a Return\n  1704b Nothing\n1704c EndOfScript"
+      },
+      {
+        "time": 176285,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_61",
+        "body": "16306 LocalVirtualFunction PlayAction\n  1630f LocalVariable Character\n  16320 ByteConst 182\n  16322 ByteConst 6\n  16324 ByteConst 172\n16327 Return\n  16328 Nothing\n16329 EndOfScript"
+      },
+      {
+        "time": 176453,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_37",
+        "body": "15956 LocalVirtualFunction PlaySE\n  1595f NameConst se_bat_ability_scholar_19\n15969 Return\n  1596a Nothing\n1596b EndOfScript"
+      },
+      {
+        "time": 176800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_137",
+        "body": "17860 LocalVirtualFunction ExecStepCounter\n1786a Return\n  1786b Nothing\n1786c EndOfScript"
+      },
+      {
+        "time": 179602,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+        "body": "1533c LocalVirtualFunction ExecAilment\n  15345 IntConst 1\n  1534a False\n  1534b True\n1534d Return\n  1534e Nothing\n1534f EndOfScript"
+      },
+      {
+        "time": 182586,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_104",
+        "body": "17079 LocalVirtualFunction CheckCounterToMarker\n  17082 StringConst \"Finish\"\n1708b Return\n  1708c Nothing\n1708d EndOfScript"
+      },
+      {
+        "time": 183386,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_105",
+        "body": "170ba LocalVirtualFunction JumpToMarker\n  170c3 StringConst \"6\"\n170c7 Return\n  170c8 Nothing\n170c9 EndOfScript"
+      },
+      {
+        "time": 188319,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_62",
+        "body": "16389 LocalVirtualFunction PlayAction\n  16392 LocalVariable Character\n  163a3 ByteConst 182\n  163a5 ByteConst 6\n  163a7 ByteConst 172\n163aa Return\n  163ab Nothing\n163ac EndOfScript"
+      },
+      {
+        "time": 188453,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_38",
+        "body": "15998 LocalVirtualFunction PlaySE\n  159a1 NameConst se_bat_ability_scholar_20\n159ab Return\n  159ac Nothing\n159ad EndOfScript"
+      },
+      {
+        "time": 188800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_138",
+        "body": "17899 LocalVirtualFunction ExecStepCounter\n178a3 Return\n  178a4 Nothing\n178a5 EndOfScript"
+      },
+      {
+        "time": 191657,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+        "body": "1537c LocalVirtualFunction ExecAilment\n  15385 IntConst 2\n  1538a False\n  1538b True\n1538d Return\n  1538e Nothing\n1538f EndOfScript"
+      },
+      {
+        "time": 195539,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_106",
+        "body": "170f6 LocalVirtualFunction CheckCounterToMarker\n  170ff StringConst \"Finish\"\n17108 Return\n  17109 Nothing\n1710a EndOfScript"
+      },
+      {
+        "time": 196339,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_107",
+        "body": "17137 LocalVirtualFunction JumpToMarker\n  17140 StringConst \"6\"\n17144 Return\n  17145 Nothing\n17146 EndOfScript"
+      },
+      {
+        "time": 202972,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_108",
+        "body": "17173 LocalVirtualFunction CheckPattern3 ToMarker\n  1717c StringConst \"Ice6\"\n  17182 StringConst \"Thunder6\"\n1718d Return\n  1718e Nothing\n1718f EndOfScript"
+      },
+      {
+        "time": 204205,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_63",
+        "body": "1640c LocalVirtualFunction PlayAction\n  16415 LocalVariable Character\n  16426 ByteConst 183\n  16428 ByteConst 6\n  1642a ByteConst 173\n1642d Return\n  1642e Nothing\n1642f EndOfScript"
+      },
+      {
+        "time": 204794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_39",
+        "body": "159da LocalVirtualFunction PlaySE\n  159e3 NameConst se_bat_ability_scholar_18\n159ed Return\n  159ee Nothing\n159ef EndOfScript"
+      },
+      {
+        "time": 204800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_139",
+        "body": "178d2 LocalVirtualFunction ExecStepCounter\n178dc Return\n  178dd Nothing\n178de EndOfScript"
+      },
+      {
+        "time": 208083,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+        "body": "153bc LocalVirtualFunction ExecAilment\n  153c5 IntConst 0\n  153ca False\n  153cb True\n153cd Return\n  153ce Nothing\n153cf EndOfScript"
+      },
+      {
+        "time": 210681,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_109",
+        "body": "171bc LocalVirtualFunction CheckCounterToMarker\n  171c5 StringConst \"Finish\"\n171ce Return\n  171cf Nothing\n171d0 EndOfScript"
+      },
+      {
+        "time": 211481,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_110",
+        "body": "171fd LocalVirtualFunction JumpToMarker\n  17206 StringConst \"7\"\n1720a Return\n  1720b Nothing\n1720c EndOfScript"
+      },
+      {
+        "time": 216313,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_64",
+        "body": "1648f LocalVirtualFunction PlayAction\n  16498 LocalVariable Character\n  164a9 ByteConst 183\n  164ab ByteConst 6\n  164ad ByteConst 173\n164b0 Return\n  164b1 Nothing\n164b2 EndOfScript"
+      },
+      {
+        "time": 216794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_40",
+        "body": "15a1c LocalVirtualFunction PlaySE\n  15a25 NameConst se_bat_ability_scholar_19\n15a2f Return\n  15a30 Nothing\n15a31 EndOfScript"
+      },
+      {
+        "time": 216800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_140",
+        "body": "1790b LocalVirtualFunction ExecStepCounter\n17915 Return\n  17916 Nothing\n17917 EndOfScript"
+      },
+      {
+        "time": 220028,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+        "body": "153fc LocalVirtualFunction ExecAilment\n  15405 IntConst 1\n  1540a False\n  1540b True\n1540d Return\n  1540e Nothing\n1540f EndOfScript"
+      },
+      {
+        "time": 222291,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_111",
+        "body": "17239 LocalVirtualFunction CheckCounterToMarker\n  17242 StringConst \"Finish\"\n1724b Return\n  1724c Nothing\n1724d EndOfScript"
+      },
+      {
+        "time": 223091,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_112",
+        "body": "1727a LocalVirtualFunction JumpToMarker\n  17283 StringConst \"7\"\n17287 Return\n  17288 Nothing\n17289 EndOfScript"
+      },
+      {
+        "time": 228198,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_65",
+        "body": "16512 LocalVirtualFunction PlayAction\n  1651b LocalVariable Character\n  1652c ByteConst 183\n  1652e ByteConst 6\n  16530 ByteConst 173\n16533 Return\n  16534 Nothing\n16535 EndOfScript"
+      },
+      {
+        "time": 228794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_41",
+        "body": "15a5e LocalVirtualFunction PlaySE\n  15a67 NameConst se_bat_ability_scholar_20\n15a71 Return\n  15a72 Nothing\n15a73 EndOfScript"
+      },
+      {
+        "time": 228800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_141",
+        "body": "17944 LocalVirtualFunction ExecStepCounter\n1794e Return\n  1794f Nothing\n17950 EndOfScript"
+      },
+      {
+        "time": 232029,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+        "body": "1543c LocalVirtualFunction ExecAilment\n  15445 IntConst 2\n  1544a False\n  1544b True\n1544d Return\n  1544e Nothing\n1544f EndOfScript"
+      },
+      {
+        "time": 235986,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_113",
+        "body": "172b6 LocalVirtualFunction CheckCounterToMarker\n  172bf StringConst \"Finish\"\n172c8 Return\n  172c9 Nothing\n172ca EndOfScript"
+      },
+      {
+        "time": 236786,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_114",
+        "body": "172f7 LocalVirtualFunction JumpToMarker\n  17300 StringConst \"7\"\n17304 Return\n  17305 Nothing\n17306 EndOfScript"
+      },
+      {
+        "time": 242838,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_115",
+        "body": "17333 LocalVirtualFunction CheckPattern3 ToMarker\n  1733c StringConst \"Ice7\"\n  17342 StringConst \"Thunder7\"\n1734d Return\n  1734e Nothing\n1734f EndOfScript"
+      },
+      {
+        "time": 244223,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_66",
+        "body": "16595 LocalVirtualFunction PlayAction\n  1659e LocalVariable Character\n  165af ByteConst 184\n  165b1 ByteConst 6\n  165b3 ByteConst 174\n165b6 Return\n  165b7 Nothing\n165b8 EndOfScript"
+      },
+      {
+        "time": 244794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_42",
+        "body": "15aa0 LocalVirtualFunction PlaySE\n  15aa9 NameConst se_bat_ability_scholar_18\n15ab3 Return\n  15ab4 Nothing\n15ab5 EndOfScript"
+      },
+      {
+        "time": 244800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_142",
+        "body": "1797d LocalVirtualFunction ExecStepCounter\n17987 Return\n  17988 Nothing\n17989 EndOfScript"
+      },
+      {
+        "time": 247704,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+        "body": "1547c LocalVirtualFunction ExecAilment\n  15485 IntConst 0\n  1548a False\n  1548b True\n1548d Return\n  1548e Nothing\n1548f EndOfScript"
+      },
+      {
+        "time": 250753,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_116",
+        "body": "1737c LocalVirtualFunction CheckCounterToMarker\n  17385 StringConst \"Finish\"\n1738e Return\n  1738f Nothing\n17390 EndOfScript"
+      },
+      {
+        "time": 256181,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_67",
+        "body": "16618 LocalVirtualFunction PlayAction\n  16621 LocalVariable Character\n  16632 ByteConst 184\n  16634 ByteConst 6\n  16636 ByteConst 174\n16639 Return\n  1663a Nothing\n1663b EndOfScript"
+      },
+      {
+        "time": 256794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_43",
+        "body": "15ae2 LocalVirtualFunction PlaySE\n  15aeb NameConst se_bat_ability_scholar_19\n15af5 Return\n  15af6 Nothing\n15af7 EndOfScript"
+      },
+      {
+        "time": 256800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_143",
+        "body": "179b6 LocalVirtualFunction ExecStepCounter\n179c0 Return\n  179c1 Nothing\n179c2 EndOfScript"
+      },
+      {
+        "time": 259769,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+        "body": "154bc LocalVirtualFunction ExecAilment\n  154c5 IntConst 1\n  154ca False\n  154cb True\n154cd Return\n  154ce Nothing\n154cf EndOfScript"
+      },
+      {
+        "time": 262969,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_117",
+        "body": "173bd LocalVirtualFunction CheckCounterToMarker\n  173c6 StringConst \"Finish\"\n173cf Return\n  173d0 Nothing\n173d1 EndOfScript"
+      },
+      {
+        "time": 268176,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_68",
+        "body": "1669b LocalVirtualFunction PlayAction\n  166a4 LocalVariable Character\n  166b5 ByteConst 184\n  166b7 ByteConst 6\n  166b9 ByteConst 174\n166bc Return\n  166bd Nothing\n166be EndOfScript"
+      },
+      {
+        "time": 268794,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_44",
+        "body": "15b24 LocalVirtualFunction PlaySE\n  15b2d NameConst se_bat_ability_scholar_20\n15b37 Return\n  15b38 Nothing\n15b39 EndOfScript"
+      },
+      {
+        "time": 268800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_144",
+        "body": "179ef LocalVirtualFunction ExecStepCounter\n179f9 Return\n  179fa Nothing\n179fb EndOfScript"
+      },
+      {
+        "time": 271769,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+        "body": "154fc LocalVirtualFunction ExecAilment\n  15505 IntConst 2\n  1550a False\n  1550b True\n1550d Return\n  1550e Nothing\n1550f EndOfScript"
+      },
+      {
+        "time": 275986,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_118",
+        "body": "173fe LocalVirtualFunction CheckCounterToMarker\n  17407 StringConst \"Finish\"\n17410 Return\n  17411 Nothing\n17412 EndOfScript"
+      },
+      {
+        "time": 282921,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_119",
+        "body": "1743f LocalVirtualFunction CheckPattern3 ToMarker\n  17448 StringConst \"Ice8\"\n  1744e StringConst \"Thunder8\"\n17459 Return\n  1745a Nothing\n1745b EndOfScript"
+      },
+      {
+        "time": 284394,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_69",
+        "body": "1671e LocalVirtualFunction PlayAction\n  16727 LocalVariable Character\n  16738 ByteConst 185\n  1673a ByteConst 6\n  1673c ByteConst 175\n1673f Return\n  16740 Nothing\n16741 EndOfScript"
+      },
+      {
+        "time": 284529,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_45",
+        "body": "15b66 LocalVirtualFunction PlaySE\n  15b6f NameConst se_bat_ability_scholar_18\n15b79 Return\n  15b7a Nothing\n15b7b EndOfScript"
+      },
+      {
+        "time": 284556,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_145",
+        "body": "17a28 LocalVirtualFunction ExecStepCounter\n17a32 Return\n  17a33 Nothing\n17a34 EndOfScript"
+      },
+      {
+        "time": 289315,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+        "body": "1553c LocalVirtualFunction ExecAilment\n  15545 IntConst 0\n  1554a False\n  1554b True\n1554d Return\n  1554e Nothing\n1554f EndOfScript"
+      },
+      {
+        "time": 295632,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_120",
+        "body": "17488 LocalVirtualFunction JumpToMarker\n  17491 StringConst \"End\"\n17497 Return\n  17498 Nothing\n17499 EndOfScript"
+      },
+      {
+        "time": 296203,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_70",
+        "body": "167a1 LocalVirtualFunction PlayAction\n  167aa LocalVariable Character\n  167bb ByteConst 185\n  167bd ByteConst 6\n  167bf ByteConst 175\n167c2 Return\n  167c3 Nothing\n167c4 EndOfScript"
+      },
+      {
+        "time": 296529,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_46",
+        "body": "15ba8 LocalVirtualFunction PlaySE\n  15bb1 NameConst se_bat_ability_scholar_19\n15bbb Return\n  15bbc Nothing\n15bbd EndOfScript"
+      },
+      {
+        "time": 296556,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_146",
+        "body": "17a61 LocalVirtualFunction ExecStepCounter\n17a6b Return\n  17a6c Nothing\n17a6d EndOfScript"
+      },
+      {
+        "time": 301600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
+        "body": "1557c LocalVirtualFunction ExecAilment\n  15585 IntConst 1\n  1558a False\n  1558b True\n1558d Return\n  1558e Nothing\n1558f EndOfScript"
+      },
+      {
+        "time": 307749,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_121",
+        "body": "174c6 LocalVirtualFunction JumpToMarker\n  174cf StringConst \"End\"\n174d5 Return\n  174d6 Nothing\n174d7 EndOfScript"
+      },
+      {
+        "time": 308224,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_71",
+        "body": "16824 LocalVirtualFunction PlayAction\n  1682d LocalVariable Character\n  1683e ByteConst 185\n  16840 ByteConst 6\n  16842 ByteConst 175\n16845 Return\n  16846 Nothing\n16847 EndOfScript"
+      },
+      {
+        "time": 308529,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_47",
+        "body": "15bea LocalVirtualFunction PlaySE\n  15bf3 NameConst se_bat_ability_scholar_20\n15bfd Return\n  15bfe Nothing\n15bff EndOfScript"
+      },
+      {
+        "time": 308556,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_147",
+        "body": "17a9a LocalVirtualFunction ExecStepCounter\n17aa4 Return\n  17aa5 Nothing\n17aa6 EndOfScript"
+      },
+      {
+        "time": 313600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_23",
+        "body": "155bc LocalVirtualFunction ExecAilment\n  155c5 IntConst 2\n  155ca False\n  155cb True\n155cd Return\n  155ce Nothing\n155cf EndOfScript"
+      },
+      {
+        "time": 319541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_122",
+        "body": "17504 LocalVirtualFunction JumpToMarker\n  1750d StringConst \"End\"\n17513 Return\n  17514 Nothing\n17515 EndOfScript"
+      }
+    ],
+    "ABI_WAR_010_04": [
+      {
+        "time": 4800,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_36",
+        "body": "0c079 LocalVirtualFunction PlayVoice\n  0c082 ByteConst 18\n  0c084 ByteConst 0\n  0c086 ByteConst 0\n0c089 Return\n  0c08a Nothing\n0c08b EndOfScript"
+      },
+      {
+        "time": 6392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_29",
+        "body": "0beea LocalVirtualFunction ExecStepCounter\n0bef4 Return\n  0bef5 Nothing\n0bef6 EndOfScript"
+      },
+      {
+        "time": 7192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_22",
+        "body": "0bd23 LocalVirtualFunction CheckCounterToMarker\n  0bd2c StringConst \"Finish\"\n0bd35 Return\n  0bd36 Nothing\n0bd37 EndOfScript"
+      },
+      {
+        "time": 7992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_16",
+        "body": "0ba44 LocalVirtualFunction PlayAction\n  0ba4d LocalVariable Character\n  0ba5e ByteConst 134\n  0ba60 ByteConst 1\n  0ba62 ByteConst 31\n0ba65 Return\n  0ba66 Nothing\n0ba67 EndOfScript"
+      },
+      {
+        "time": 9600,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+        "body": "0b801 LocalVirtualFunction PlaySE\n  0b80a NameConst se_bat_ability_swordman_13_1\n0b814 Return\n  0b815 Nothing\n0b816 EndOfScript"
+      },
+      {
+        "time": 11192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0b601 LocalVirtualFunction ExecAilment\n  0b60a IntConst 0\n  0b60f True\n  0b610 True\n0b612 Return\n  0b613 Nothing\n0b614 EndOfScript"
+      },
+      {
+        "time": 15192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_30",
+        "body": "0bf23 LocalVirtualFunction ExecStepCounter\n0bf2d Return\n  0bf2e Nothing\n0bf2f EndOfScript"
+      },
+      {
+        "time": 15992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_23",
+        "body": "0bd64 LocalVirtualFunction CheckCounterToMarker\n  0bd6d StringConst \"Finish\"\n0bd76 Return\n  0bd77 Nothing\n0bd78 EndOfScript"
+      },
+      {
+        "time": 18392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+        "body": "0b843 LocalVirtualFunction PlaySE\n  0b84c NameConst se_bat_whoosh01\n0b856 Return\n  0b857 Nothing\n0b858 EndOfScript"
+      },
+      {
+        "time": 19703,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0b641 LocalVirtualFunction ExecAilment\n  0b64a IntConst 0\n  0b64f True\n  0b650 True\n0b652 Return\n  0b653 Nothing\n0b654 EndOfScript"
+      },
+      {
+        "time": 21592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_31",
+        "body": "0bf5c LocalVirtualFunction ExecStepCounter\n0bf66 Return\n  0bf67 Nothing\n0bf68 EndOfScript"
+      },
+      {
+        "time": 22392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_24",
+        "body": "0bda5 LocalVirtualFunction CheckCounterToMarker\n  0bdae StringConst \"Finish\"\n0bdb7 Return\n  0bdb8 Nothing\n0bdb9 EndOfScript"
+      },
+      {
+        "time": 25259,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+        "body": "0b885 LocalVirtualFunction PlaySE\n  0b88e NameConst se_bat_whoosh02\n0b898 Return\n  0b899 Nothing\n0b89a EndOfScript"
+      },
+      {
+        "time": 26651,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0b681 LocalVirtualFunction ExecAilment\n  0b68a IntConst 0\n  0b68f True\n  0b690 True\n0b692 Return\n  0b693 Nothing\n0b694 EndOfScript"
+      },
+      {
+        "time": 28792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_32",
+        "body": "0bf95 LocalVirtualFunction ExecStepCounter\n0bf9f Return\n  0bfa0 Nothing\n0bfa1 EndOfScript"
+      },
+      {
+        "time": 29592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_25",
+        "body": "0bde6 LocalVirtualFunction CheckCounterToMarker\n  0bdef StringConst \"Finish\"\n0bdf8 Return\n  0bdf9 Nothing\n0bdfa EndOfScript"
+      },
+      {
+        "time": 30392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_17",
+        "body": "0bac7 LocalVirtualFunction PlayAction\n  0bad0 LocalVariable Character\n  0bae1 ByteConst 135\n  0bae3 ByteConst 1\n  0bae5 ByteConst 32\n0bae8 Return\n  0bae9 Nothing\n0baea EndOfScript"
+      },
+      {
+        "time": 31546,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+        "body": "0b8c7 LocalVirtualFunction PlaySE\n  0b8d0 NameConst se_bat_whoosh01\n0b8da Return\n  0b8db Nothing\n0b8dc EndOfScript"
+      },
+      {
+        "time": 33541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0b6c1 LocalVirtualFunction ExecAilment\n  0b6ca IntConst 0\n  0b6cf True\n  0b6d0 True\n0b6d2 Return\n  0b6d3 Nothing\n0b6d4 EndOfScript"
+      },
+      {
+        "time": 33592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_33",
+        "body": "0bfce LocalVirtualFunction ExecStepCounter\n0bfd8 Return\n  0bfd9 Nothing\n0bfda EndOfScript"
+      },
+      {
+        "time": 34392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_26",
+        "body": "0be27 LocalVirtualFunction CheckCounterToMarker\n  0be30 StringConst \"Finish\"\n0be39 Return\n  0be3a Nothing\n0be3b EndOfScript"
+      },
+      {
+        "time": 35192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_18",
+        "body": "0bb4a LocalVirtualFunction PlayAction\n  0bb53 LocalVariable Character\n  0bb64 ByteConst 136\n  0bb66 ByteConst 1\n  0bb68 ByteConst 70\n0bb6b Return\n  0bb6c Nothing\n0bb6d EndOfScript"
+      },
+      {
+        "time": 41592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+        "body": "0b909 LocalVirtualFunction PlaySE\n  0b912 NameConst se_bat_whoosh02\n0b91c Return\n  0b91d Nothing\n0b91e EndOfScript"
+      },
+      {
+        "time": 43992,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0b701 LocalVirtualFunction ExecAilment\n  0b70a IntConst 0\n  0b70f True\n  0b710 True\n0b712 Return\n  0b713 Nothing\n0b714 EndOfScript"
+      },
+      {
+        "time": 44792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_34",
+        "body": "0c007 LocalVirtualFunction ExecStepCounter\n0c011 Return\n  0c012 Nothing\n0c013 EndOfScript"
+      },
+      {
+        "time": 45592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_27",
+        "body": "0be68 LocalVirtualFunction CheckCounterToMarker\n  0be71 StringConst \"Finish\"\n0be7a Return\n  0be7b Nothing\n0be7c EndOfScript"
+      },
+      {
+        "time": 46392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_19",
+        "body": "0bbcd LocalVirtualFunction PlayAction\n  0bbd6 LocalVariable Character\n  0bbe7 ByteConst 137\n  0bbe9 ByteConst 1\n  0bbeb ByteConst 71\n0bbee Return\n  0bbef Nothing\n0bbf0 EndOfScript"
+      },
+      {
+        "time": 49592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_13",
+        "body": "0b94b LocalVirtualFunction PlaySE\n  0b954 NameConst se_bat_whoosh01\n0b95e Return\n  0b95f Nothing\n0b960 EndOfScript"
+      },
+      {
+        "time": 51192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0b741 LocalVirtualFunction ExecAilment\n  0b74a IntConst 0\n  0b74f True\n  0b750 True\n0b752 Return\n  0b753 Nothing\n0b754 EndOfScript"
+      },
+      {
+        "time": 52792,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_35",
+        "body": "0c040 LocalVirtualFunction ExecStepCounter\n0c04a Return\n  0c04b Nothing\n0c04c EndOfScript"
+      },
+      {
+        "time": 53592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_28",
+        "body": "0bea9 LocalVirtualFunction CheckCounterToMarker\n  0beb2 StringConst \"Finish\"\n0bebb Return\n  0bebc Nothing\n0bebd EndOfScript"
+      },
+      {
+        "time": 54392,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_20",
+        "body": "0bc50 LocalVirtualFunction PlayAction\n  0bc59 LocalVariable Character\n  0bc6a ByteConst 138\n  0bc6c ByteConst 1\n  0bc6e ByteConst 72\n0bc71 Return\n  0bc72 Nothing\n0bc73 EndOfScript"
+      },
+      {
+        "time": 55894,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_14",
+        "body": "0b98d LocalVirtualFunction PlaySE\n  0b996 NameConst se_bat_whoosh02\n0b9a0 Return\n  0b9a1 Nothing\n0b9a2 EndOfScript"
+      },
+      {
+        "time": 57396,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0b781 LocalVirtualFunction ExecAilment\n  0b78a IntConst 0\n  0b78f True\n  0b790 True\n0b792 Return\n  0b793 Nothing\n0b794 EndOfScript"
+      },
+      {
+        "time": 59192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_21",
+        "body": "0bcd3 LocalVirtualFunction PlayAction\n  0bcdc LocalVariable Character\n  0bced ByteConst 139\n  0bcef ByteConst 1\n  0bcf1 ByteConst 73\n0bcf4 Return\n  0bcf5 Nothing\n0bcf6 EndOfScript"
+      },
+      {
+        "time": 65592,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_15",
+        "body": "0b9cf LocalVirtualFunction PlaySE\n  0b9d8 NameConst se_bat_ability_swordman_13_3\n0b9e2 Return\n  0b9e3 Nothing\n0b9e4 EndOfScript"
+      },
+      {
+        "time": 67192,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+        "body": "0b7c1 LocalVirtualFunction ExecAilment\n  0b7ca IntConst 0\n  0b7cf True\n  0b7d0 True\n0b7d2 Return\n  0b7d3 Nothing\n0b7d4 EndOfScript"
+      }
+    ],
+    "ABI_CLE_020_01": [
+      {
+        "time": 1953,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "09413 LocalVirtualFunction PlayVoice\n  0941c ByteConst 18\n  0941e ByteConst 0\n  09420 ByteConst 0\n09423 Return\n  09424 Nothing\n09425 EndOfScript"
+      },
+      {
+        "time": 8027,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "093c3 LocalVirtualFunction PlayAction\n  093cc LocalVariable Character\n  093dd ByteConst 134\n  093df ByteConst 5\n  093e1 ByteConst 109\n093e4 Return\n  093e5 Nothing\n093e6 EndOfScript"
+      },
+      {
+        "time": 13869,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0934e LocalVirtualFunction PlaySE\n  09357 NameConst se_bat_ability_priest_09\n09361 Return\n  09362 Nothing\n09363 EndOfScript"
+      },
+      {
+        "time": 46847,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0930e LocalVirtualFunction ExecAilment\n  09317 IntConst 0\n  0931c True\n  0931d True\n0931f Return\n  09320 Nothing\n09321 EndOfScript"
+      }
     ]
   },
   "steps": {
@@ -21229,6 +23298,651 @@
       {
         "kind": "effects",
         "tick": 37600,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_SCH_060_04": [
+      {
+        "kind": "random_target",
+        "tick": 0
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 800,
+        "destination": 280000
+      },
+      {
+        "kind": "voice",
+        "tick": 800,
+        "voice_type": 18
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 2082,
+        "ice": 16000,
+        "thunder": 28000
+      },
+      {
+        "kind": "random_target",
+        "tick": 4800
+      },
+      {
+        "kind": "effects",
+        "tick": 8034,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 11221,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 12021,
+        "destination": 40000
+      },
+      {
+        "kind": "random_target",
+        "tick": 16800
+      },
+      {
+        "kind": "effects",
+        "tick": 19978,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 23286,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 24086,
+        "destination": 40000
+      },
+      {
+        "kind": "random_target",
+        "tick": 28800
+      },
+      {
+        "kind": "effects",
+        "tick": 32144,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 35351,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 36151,
+        "destination": 40000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 43200,
+        "ice": 56000,
+        "thunder": 68000
+      },
+      {
+        "kind": "random_target",
+        "tick": 44800
+      },
+      {
+        "kind": "effects",
+        "tick": 48089,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 51466,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 52266,
+        "destination": 80000
+      },
+      {
+        "kind": "random_target",
+        "tick": 56800
+      },
+      {
+        "kind": "effects",
+        "tick": 59539,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 63192,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 63992,
+        "destination": 80000
+      },
+      {
+        "kind": "random_target",
+        "tick": 68800
+      },
+      {
+        "kind": "effects",
+        "tick": 71814,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 75753,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 76553,
+        "destination": 80000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 83097,
+        "ice": 96000,
+        "thunder": 108000
+      },
+      {
+        "kind": "random_target",
+        "tick": 84800
+      },
+      {
+        "kind": "effects",
+        "tick": 88234,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 92000,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 92800,
+        "destination": 120000
+      },
+      {
+        "kind": "random_target",
+        "tick": 96800
+      },
+      {
+        "kind": "effects",
+        "tick": 100124,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 103821,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 104621,
+        "destination": 120000
+      },
+      {
+        "kind": "random_target",
+        "tick": 108800
+      },
+      {
+        "kind": "effects",
+        "tick": 112233,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 115708,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 116508,
+        "destination": 120000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 122808,
+        "ice": 136000,
+        "thunder": 148000
+      },
+      {
+        "kind": "random_target",
+        "tick": 124800
+      },
+      {
+        "kind": "effects",
+        "tick": 127959,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 130723,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 131523,
+        "destination": 160000
+      },
+      {
+        "kind": "random_target",
+        "tick": 136800
+      },
+      {
+        "kind": "effects",
+        "tick": 140014,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 142969,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 143769,
+        "destination": 160000
+      },
+      {
+        "kind": "random_target",
+        "tick": 148800
+      },
+      {
+        "kind": "effects",
+        "tick": 151959,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 156110,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 156910,
+        "destination": 160000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 162797,
+        "ice": 176000,
+        "thunder": 188000
+      },
+      {
+        "kind": "random_target",
+        "tick": 164800
+      },
+      {
+        "kind": "effects",
+        "tick": 167602,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 171252,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 172052,
+        "destination": 200000
+      },
+      {
+        "kind": "random_target",
+        "tick": 176800
+      },
+      {
+        "kind": "effects",
+        "tick": 179602,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 182586,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 183386,
+        "destination": 200000
+      },
+      {
+        "kind": "random_target",
+        "tick": 188800
+      },
+      {
+        "kind": "effects",
+        "tick": 191657,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 195539,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 196339,
+        "destination": 200000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 202972,
+        "ice": 216000,
+        "thunder": 228000
+      },
+      {
+        "kind": "random_target",
+        "tick": 204800
+      },
+      {
+        "kind": "effects",
+        "tick": 208083,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 210681,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 211481,
+        "destination": 240000
+      },
+      {
+        "kind": "random_target",
+        "tick": 216800
+      },
+      {
+        "kind": "effects",
+        "tick": 220028,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 222291,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 223091,
+        "destination": 240000
+      },
+      {
+        "kind": "random_target",
+        "tick": 228800
+      },
+      {
+        "kind": "effects",
+        "tick": 232029,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 235986,
+        "destination": 280000
+      },
+      {
+        "kind": "jump",
+        "tick": 236786,
+        "destination": 240000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 242838,
+        "ice": 256000,
+        "thunder": 268000
+      },
+      {
+        "kind": "random_target",
+        "tick": 244800
+      },
+      {
+        "kind": "effects",
+        "tick": 247704,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 250753,
+        "destination": 280000
+      },
+      {
+        "kind": "random_target",
+        "tick": 256800
+      },
+      {
+        "kind": "effects",
+        "tick": 259769,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 262969,
+        "destination": 280000
+      },
+      {
+        "kind": "random_target",
+        "tick": 268800
+      },
+      {
+        "kind": "effects",
+        "tick": 271769,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 275986,
+        "destination": 280000
+      },
+      {
+        "kind": "pattern_branch",
+        "tick": 282921,
+        "ice": 296000,
+        "thunder": 308000
+      },
+      {
+        "kind": "random_target",
+        "tick": 284556
+      },
+      {
+        "kind": "effects",
+        "tick": 289315,
+        "index": 0,
+        "last": true
+      },
+      {
+        "kind": "jump",
+        "tick": 295632,
+        "destination": 319955
+      },
+      {
+        "kind": "random_target",
+        "tick": 296556
+      },
+      {
+        "kind": "effects",
+        "tick": 301600,
+        "index": 1,
+        "last": true
+      },
+      {
+        "kind": "jump",
+        "tick": 307749,
+        "destination": 319955
+      },
+      {
+        "kind": "random_target",
+        "tick": 308556
+      },
+      {
+        "kind": "effects",
+        "tick": 313600,
+        "index": 2,
+        "last": true
+      },
+      {
+        "kind": "jump",
+        "tick": 319541,
+        "destination": 319955
+      }
+    ],
+    "ABI_WAR_010_04": [
+      {
+        "kind": "voice",
+        "tick": 4800,
+        "voice_type": 18
+      },
+      {
+        "kind": "random_target",
+        "tick": 6392
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 7192,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 11192,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 15192
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 15992,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 19703,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 21592
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 22392,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 26651,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 28792
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 29592,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 33541,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 33592
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 34392,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 43992,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 44792
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 45592,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 51192,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "random_target",
+        "tick": 52792
+      },
+      {
+        "kind": "counter_branch",
+        "tick": 53592,
+        "destination": 58402
+      },
+      {
+        "kind": "effects",
+        "tick": 57396,
+        "index": null,
+        "last": true
+      },
+      {
+        "kind": "effects",
+        "tick": 67192,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_CLE_020_01": [
+      {
+        "kind": "voice",
+        "tick": 1953,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 46847,
         "index": null,
         "last": true
       }

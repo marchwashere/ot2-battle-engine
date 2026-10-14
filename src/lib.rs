@@ -5,6 +5,7 @@ pub mod bewildering_grace;
 pub mod bg_effects;
 pub mod gravell_routine;
 pub mod roque_routine;
+pub mod nameless_routine;
 pub mod fight_search;
 pub mod hired_help;
 pub mod combat;
@@ -51,3 +52,4 @@ pub(crate) fn ensure(condition: bool, message: impl Into<String>) -> Result<()> 
 pub mod temenos_recruitment;
 
 pub mod lord_sands;
+pub mod gigantes;

@@ -1,0 +1,142 @@
+{
+  "ability": {
+    "id": "ABI_CLE_020_01",
+    "ID": 1305,
+    "AbilityID": 13050,
+    "DisplayName": "ABN_CLE_020",
+    "Detail": "ABD_CLE_020_01",
+    "CommandActor": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+        "number": 0,
+        "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+      },
+      "subPath": ""
+    },
+    "AbilityType": "EABILITY_TYPE::eMAGIC",
+    "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+    "AlwaysDisable": false,
+    "Attribute": "EATTRIBUTE_TYPE::eLIGHT",
+    "DependWeapon": false,
+    "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+    "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+    "ExceptEnforcer": false,
+    "CostType": "EABILITY_COST_TYPE::eMP",
+    "CostValue": 6,
+    "HitRatio": 0,
+    "CriticalRatio": 0,
+    "CriticalPower": 125,
+    "AbilityRatio": 100,
+    "BaseCount": 0,
+    "MinimumCount": 0,
+    "RandomCountMin": 0,
+    "RandomCountMax": 0,
+    "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+    "EstimateOrderCount": 0,
+    "Ailment": [
+      {
+        "AilmentName": "MAGIC_DAMAGE",
+        "InvocationValue": 130,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      },
+      {
+        "AilmentName": "None",
+        "InvocationValue": 0,
+        "InvocationTurn": 0,
+        "DiseaseRate": 0
+      }
+    ],
+    "KeepBoostEffect": false,
+    "EnableItemAll": false,
+    "EnableSkillAll": true,
+    "EnableConvergence": false,
+    "EnableDiffusion": false,
+    "EnableReflection": true,
+    "EnableCounter": false,
+    "EnableHideOut": false,
+    "EnableRepeat": true,
+    "EnableCover": false,
+    "EnableProvoke": false,
+    "EnableDisableMagic": false,
+    "EnableEnchant": false,
+    "EnableChaseAttack": false,
+    "EnableWeakCheckAll": false,
+    "EnableNormalAttackAll": false,
+    "EnableSession": false,
+    "EnableBusinessSupport": false,
+    "EnableForceWeakness": true,
+    "EnableNoUseMaterial": false,
+    "EnableSwitchWeapon": false,
+    "EnableCompensationMagic": false,
+    "EnableExcitement": false,
+    "SongAbilityFlag": false,
+    "DanceAbilityFlag": false,
+    "EnableAutoTameMonster": true,
+    "UseAbilityCamera": true,
+    "ActionCommandSequencer": {
+      "kind": "soft-object",
+      "asset": {
+        "base": "/Game/Battle/Sequencer/ActionCommand/PC/Cleric/Seq_Cle_020_SeinaruHikari.Seq_Cle_020_SeinaruHikari",
+        "number": 0,
+        "text": "/Game/Battle/Sequencer/ActionCommand/PC/Cleric/Seq_Cle_020_SeinaruHikari.Seq_Cle_020_SeinaruHikari"
+      },
+      "subPath": ""
+    },
+    "AbilitySE": [
+      "None",
+      "None",
+      "None",
+      "None"
+    ],
+    "SlideFrame": 77
+  },
+  "markers": {},
+  "events": [
+    {
+      "time": 1953,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+      "body": "09413 LocalVirtualFunction PlayVoice\n  0941c ByteConst 18\n  0941e ByteConst 0\n  09420 ByteConst 0\n09423 Return\n  09424 Nothing\n09425 EndOfScript"
+    },
+    {
+      "time": 8027,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+      "body": "093c3 LocalVirtualFunction PlayAction\n  093cc LocalVariable Character\n  093dd ByteConst 134\n  093df ByteConst 5\n  093e1 ByteConst 109\n093e4 Return\n  093e5 Nothing\n093e6 EndOfScript"
+    },
+    {
+      "time": 13869,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+      "body": "0934e LocalVirtualFunction PlaySE\n  09357 NameConst se_bat_ability_priest_09\n09361 Return\n  09362 Nothing\n09363 EndOfScript"
+    },
+    {
+      "time": 46847,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+      "body": "0930e LocalVirtualFunction ExecAilment\n  09317 IntConst 0\n  0931c True\n  0931d True\n0931f Return\n  09320 Nothing\n09321 EndOfScript"
+    }
+  ]
+}

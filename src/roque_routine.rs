@@ -11,7 +11,7 @@ fn prefix(mut b:Battle)->Result<Option<(Battle,Vec<MenuAction>)>> {
  let mut actions=vec![];
  for _ in 0..4 {
   if b.state().round!=1||b.state().outcome!=Outcome::Ongoing {return Ok(None);}
-  let a=match b.current_actor().map(|a|a.0) {Some(0)=>Action::SmallPomegranate {target:ActorId(2)},Some(1)=>Action::Staff {target:ActorId(4)},Some(2|3)=>Action::Defend,_=>return Ok(None)};
+  let a=match b.current_actor().map(|a|a.0) {Some(0)=>Action::Dagger {target:ActorId(4)},Some(1)=>Action::SmallPomegranate {target:ActorId(2)},Some(2|3)=>Action::Defend,_=>return Ok(None)};
   record(&mut b,&mut actions,a,&[])?;
  }
  if b.state().round!=2||b.current_actor()!=Some(ActorId(2))||b.state().actors[2].resources.bp<3 {return Ok(None);}
@@ -59,6 +59,8 @@ pub fn search(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
     accepted+=1;assert_eq!(&b.state().turn_order()[..2],&[ActorId(2),ActorId(3)]);
     assert_eq!(b.state().actors[2].resources.bp,3);assert_eq!(b.state().actors[3].resources.bp,3);
     assert_eq!(actions.len(),4);assert!(b.state().actors[4].has_status(crate::combat::StatusKind::DefenseDown));
+    assert_eq!(actions.iter().find(|a|a.report.actor==ActorId(0)).unwrap().action,Action::Dagger{target:ActorId(4)});
+    assert_eq!(actions.iter().find(|a|a.report.actor==ActorId(1)).unwrap().action,Action::SmallPomegranate{target:ActorId(2)});
    }
   }
   assert!(accepted>0&&accepted<128);

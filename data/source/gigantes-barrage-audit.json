@@ -1,0 +1,11 @@
+{
+  "asset": "Battle/BP/BattleAction/RandomCountAttack/Random3PatternAttackCommand",
+  "sha256": "d590e7cb441c300057db5e9481de64986e3fbbbfbc0e70623e0d382906a47761",
+  "functions": {
+    "CheckSequencePattern": "010e4 Let property=Temp_byte_Variable\n  010f5 LocalVariable Temp_byte_Variable\n  01106 ByteConst 3\n01108 Let property=Temp_byte_Variable_1\n  01119 LocalVariable Temp_byte_Variable_1\n  0112a ByteConst 2\n0112c Let property=CallFunc_RandomIntegerInRange_ReturnValue\n  0113d LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n  0114e CallMath import:-16:RandomIntegerInRange\n    01153 IntConst 0\n    01158 IntConst 2\n0115e Let property=Temp_byte_Variable_2\n  0116f LocalVariable Temp_byte_Variable_2\n  01180 ByteConst 1\n01182 Let property=Temp_int_Variable\n  01193 LocalVariable Temp_int_Variable\n  011a4 LocalVariable CallFunc_RandomIntegerInRange_ReturnValue\n011b5 Let property=ReturnValue\n  011c6 LocalOutVariable ReturnValue\n  011d7 SwitchValue cases=3 end=222\n    011de LocalVariable Temp_int_Variable\n    011ef IntConst 0\n    011f4 SwitchCaseNext 177\n    011f8 LocalVariable Temp_byte_Variable_2\n    01209 IntConst 1\n    0120e SwitchCaseNext 195\n    01212 LocalVariable Temp_byte_Variable_1\n    01223 IntConst 2\n    01228 SwitchCaseNext 213\n    0122c LocalVariable Temp_byte_Variable\n    0123d LocalVariable K2Node_Select_Default\n0124e Return\n  0124f LocalOutVariable ReturnValue\n01260 EndOfScript",
+    "CheckAttackHit": "0128d LetBool\n  0128e InstanceVariable AttackHit\n  0129f True\n012a0 Return\n  012a1 Nothing\n012a2 EndOfScript"
+  },
+  "defaults": [
+    {}
+  ]
+}

@@ -73,10 +73,14 @@ pub struct Child {
 #[derive(Debug,Clone,Serialize,Deserialize)]
 #[serde(tag="kind",rename_all="snake_case")]
 pub enum Step {
+    CounterBranch {tick:f64,destination:f64},
+    PatternBranch {tick:f64,ice:f64,thunder:f64},
+    Jump {tick:f64,destination:f64},
     RandomTarget {tick:f64},
     Effects {tick:f64,index:Option<usize>,last:bool,#[serde(default)] on_hit:bool},
     Voice {tick:f64,voice_type:u8},
 }
+impl Step {pub fn tick(&self)->f64 {match *self {Self::RandomTarget{tick}|Self::Effects{tick,..}|Self::Voice{tick,..}|Self::CounterBranch{tick,..}|Self::PatternBranch{tick,..}|Self::Jump{tick,..}=>tick}}}
 #[derive(Debug,Deserialize)]
 pub struct SummonProfile {
     pub id:String,
@@ -89,6 +93,7 @@ impl SummonProfile {
     pub fn combat(&self)->crate::combat::CombatProfile {
         let p=&self.parameter;
         crate::combat::CombatProfile {
+            nuts:Default::default(),fire_damage_bonus:0,
             attack:p["ATK"],defense:p["DEF"],magic:p["MATK"],magic_defense:p["MDEF"],
             accuracy:p["ACC"],evasion:p["EVA"],critical:p["CON"],growth_attack:p["ATK"],growth_magic:p["MATK"],
             main_weapon:match self.weapon.as_str() {"EWEAPON_CATEGORY::eNONE"=>None,"EWEAPON_CATEGORY::eROD"=>Some(crate::combat::Weapon::Staff),_=>unreachable!("validated summon weapon")},
@@ -138,7 +143,7 @@ fn classify(name:&str)->Result<EffectKind> {
     Ok(match name {
         "RANDOM_TARGET_PHYSICS_DAMAGE"=>RandomTargetPhysicalDamage,"SP_DAMAGE"=>AdditiveShieldDamage,
         "PHYSICS_DAMAGE"=>PhysicalDamage,"MAGIC_DAMAGE"=>MagicDamage,
-        "RANDOM_TARGET_MAGIC_DAMAGE"=>RandomTargetMagicDamage,
+        "RANDOM_TARGET_MAGIC_DAMAGE"|"RANDOM_TARGET_MAGIC_DAMAGE_FIRE"|"RANDOM_TARGET_MAGIC_DAMAGE_ICE"|"RANDOM_TARGET_MAGIC_DAMAGE_THUNDER"=>RandomTargetMagicDamage,
         "REVIVE_RATIO"=>ReviveRatio,"HP1"=>HpOne,"HP_FIXED_RECOVERY"=>HpFixedRecovery,
         "MP_RATIO_RECOVERY"=>SpRatioRecovery,"MP_FIXED_RECOVERY"=>SpFixedRecovery,
         "MP_RATIO_DAMAGE"=>SpRatioDamage,"BP_RECOVERY"=>BpRecovery,"BP_DAMAGE"=>BpDamage,
@@ -253,8 +258,8 @@ mod tests {
     use super::*;
     #[test]
     fn all_39_children_and_both_nested_summons_are_present() {
-        assert_eq!(children().len(),45);
-        for id in ["ABI_WAR_010_03","ABI_INV_030_01","ABI_MER_YOHEI_05_01"] {assert!(child(id).is_ok());}
+        assert_eq!(children().len(),48);
+        for id in ["ABI_WAR_010_03","ABI_WAR_010_04","ABI_SCH_060_04","ABI_CLE_020_01","ABI_INV_030_01","ABI_MER_YOHEI_05_01"] {assert!(child(id).is_ok());}
         for n in 1..=39 {assert!(child(&format!("ABI_DAN_MAKA_{n:03}")).is_ok());}
         assert!(child("ABI_DAN_MAKA_006_INV").is_ok());
         assert!(child("ABI_DAN_MAKA_017_INV").is_ok());

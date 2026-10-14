@@ -205,6 +205,16 @@ pub fn roque_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerC
     ensure(players[3].boost_start,"Roque routine requires Partitio Boost-Start")?;
     step_ahead_profile(entry,situation,players,&["ENE_NML_OCN_230","ENE_NML_OCN_230"],true,history,None,true)
 }
+pub fn nameless_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Battle> {
+    ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Unexpected Nameless party")?;
+    step_ahead_profile(entry,situation,players,&["ENE_NML_WTR_350";3],false,history,None,true)
+}
+pub fn shipwreck_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],enemies:&[&str],history:&crate::knowledge::EnemyHistory)->Result<Battle> {
+    ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Unexpected Shipwreck party")?;
+    ensure(players[1].boost_start,"Shipwreck requires Osvald Boost-Start")?;
+    ensure(enemies.iter().all(|id|matches!(*id,"ENE_NML_DNG_CAV_210"|"ENE_NML_OCN_090"|"ENE_NML_OCN_070"|"ENE_NML_DNG_CAV_120"|"ENE_NML_FLD_SEA_240"|"ENE_NML_OCN_080")),"Unexpected Shipwreck land enemy")?;
+    step_ahead_profile(entry,situation,players,enemies,true,history,None,true)
+}
 fn step_ahead_profile(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,members:Option<Vec<usize>>,roque:bool)->Result<Battle> {
     ensure(members.as_ref().is_none_or(|v|!v.is_empty()&&v.iter().all(|&i|i<players.len())),"Invalid Step Ahead members")?;
     ensure(situation!=Situation::Surprise,"Route prohibits surprise")?;
@@ -224,9 +234,15 @@ fn step_ahead_profile(entry:CrtRng,situation:Situation,players:&[crate::PlayerCh
     config.inventory.insert("energizing_pomegranate_m".into(),1);
     config.inventory.insert("thunder_soulstone_l".into(),1);
     if roque {
+        config.players[0].skills.push("attack_dagger".into());
         config.players[1].skills=vec!["attack_staff".into()];
         config.players[2].skills=vec!["bewildering_grace".into()];
         config.inventory.clear();config.inventory.insert("energizing_pomegranate".into(),1);
+        if enemies!=["ENE_NML_OCN_230";2] {
+            let mug:BattleConfig=serde_json::from_str(include_str!("../data/cape_cold_mug.json"))?;
+            config.skills.push(mug.skills.into_iter().find(|s|s.id=="ABI_SET_SCH_010").unwrap());
+            config.players[1].skills.push("ABI_SET_SCH_010".into());
+        }
     }
     let voices=players.iter().map(|p|carried_data().players.get(&p.id).map(|d|d.voice).ok_or_else(||SimError("Unsupported carried identity".into()))).collect::<Result<_>>()?;
     Battle::new_carried_step_ahead_members(config,situation,voices,members)

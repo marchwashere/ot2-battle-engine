@@ -29,9 +29,10 @@ pub struct ScholarAbility {
 #[derive(Deserialize)]
 struct Job {id:u32,revision:BTreeMap<String,u32>,permitted_weapons:Vec<Weapon>}
 #[derive(Deserialize)]
-struct Character {id:String,main_job:u32,permitted_weapons:Vec<Weapon>}
+struct Character {id:String,main_job:u32,permitted_weapons:Vec<Weapon>,revision:BTreeMap<String,u32>}
 #[derive(Deserialize)]
 struct Data {scholar:Job,#[serde(default)] additional_jobs:Vec<Job>,characters:BTreeMap<u32,Character>,default_weapons:Vec<DefaultWeapon>,
+    raw_growth:BTreeMap<u32,BTreeMap<String,u32>>,
     scholar_abilities:Vec<ScholarAbility>,maximum_hp_sp:u32,maximum_stat:u32}
 fn data()->&'static Data {
     static DATA:OnceLock<Data>=OnceLock::new();
@@ -48,10 +49,12 @@ fn job(job:Option<u32>)->Result<Option<&'static Job>> {
 /// Native Multiply_CharacterParam_RevisionParam: integer product, binary32
 /// multiplication by .01, then FloorToInt. Never multiply flat gear bonuses.
 fn revised(value:u32,percent:u32)->u32 {((value*percent) as f32*0.01_f32).floor() as u32}
-fn parameters(id:u32,level:u32,secondary:Option<u32>)->Result<BTreeMap<String,u32>> {
+fn parameters(id:u32,level:u32,secondary:Option<u32>,nuts:&BTreeMap<String,u32>)->Result<BTreeMap<String,u32>> {
     let growth=progression::growth_at_level(id,level)?;
     let job=job(secondary)?;
+    let c=character(id)?;
     Ok(growth.parameters.iter().map(|(k,&v)|{
+        let v=if nuts.is_empty(){v}else{revised(data().raw_growth[&level][k]+nuts.get(k).copied().unwrap_or(0),c.revision[k])};
         let value=job.map_or(v,|j|revised(v,j.revision[k]));
         let value=match k.as_str() {"HP"|"MP"=>value.min(data().maximum_hp_sp),
             "ATK"|"DEF"|"MATK"|"MDEF"|"ACC"|"EVA"|"CON"|"AGI"=>value.min(data().maximum_stat),_=>value};
@@ -71,6 +74,15 @@ fn apply_delta(player:&mut PlayerCharacter,before:&BTreeMap<String,u32>,after:&B
     for (value,key) in [(&mut c.attack,"ATK"),(&mut c.defense,"DEF"),(&mut c.magic,"MATK"),
         (&mut c.magic_defense,"MDEF"),(&mut c.accuracy,"ACC"),(&mut c.evasion,"EVA"),(&mut c.critical,"CON")] {update(value,key)?;}
     Ok(deltas)
+}
+/// LibAilment GrowParameter -> raw doping, then character and secondary-job revisions.
+pub fn add_nut(player:&mut PlayerCharacter,id:u32,level:u32,secondary:Option<u32>,stat:&str,amount:u32)->Result<()> {
+    ensure(["ATK","MATK","AGI","CON","ACC"].contains(&stat),"Unsupported route nut")?;
+    let mut nuts=player.combat.as_ref().ok_or_else(||SimError("Missing combat stats".into()))?.nuts.clone();
+    let before=parameters(id,level,secondary,&nuts)?;
+    *nuts.entry(stat.into()).or_default()+=amount;
+    let after=parameters(id,level,secondary,&nuts)?;
+    apply_delta(player,&before,&after)?;player.combat.as_mut().unwrap().nuts=nuts;Ok(())
 }
 pub fn permitted_weapons(id:u32,secondary:Option<u32>)->Result<Vec<Weapon>> {
     let character=character(id)?;
@@ -95,7 +107,8 @@ pub fn change_secondary_job(player:&mut PlayerCharacter,id:u32,level:u32,previou
     ensure(previous!=Some(ch.main_job),"Main job cannot also be the previous secondary job")?;
     let next=next.filter(|&id|id!=ch.main_job); // ChangePlayerSecondJob chooses -1 for the main job.
     let mut updated=player.clone();
-    let before=parameters(id,level,previous)?;let after=parameters(id,level,next)?;
+    let nuts=&player.combat.as_ref().ok_or_else(||SimError("Missing combat stats".into()))?.nuts;
+    let before=parameters(id,level,previous,nuts)?;let after=parameters(id,level,next,nuts)?;
     let stat_delta=apply_delta(&mut updated,&before,&after)?;
     let previous_permitted=permitted_weapons(id,previous)?;
     let permitted=permitted_weapons(id,next)?;
@@ -103,6 +116,7 @@ pub fn change_secondary_job(player:&mut PlayerCharacter,id:u32,level:u32,previou
     ensure(c.main_weapon.is_none_or(|w|permitted.contains(&w)),
         "Removing the selected main weapon requires an explicit supported weapon selection")?;
     let removed=c.weapons.iter().filter(|w|!permitted.contains(&w.weapon)).cloned().collect::<Vec<_>>();
+    ensure(removed.is_empty()||c.fire_damage_bonus==0,"Remove fire-potency equipment explicitly before changing to a job without its weapon slots")?;
     c.weapons.retain(|w|permitted.contains(&w.weapon));
     for removed in &removed {updated.skills.retain(|s|s!=normal(removed.weapon));}
     let mut added=Vec::new();
@@ -126,10 +140,11 @@ pub fn change_secondary_job(player:&mut PlayerCharacter,id:u32,level:u32,previou
 /// Character level changes with the assigned job's exact stat deltas. Retains
 /// equipment and resource values; the caller applies its level-up healing rule.
 pub fn apply_growth(player:&mut PlayerCharacter,id:u32,from:u32,to:u32,secondary:Option<u32>)->Result<()> {
-    if secondary.is_none() {return progression::apply_growth(player,id,from,to);}
+    if secondary.is_none()&&player.combat.as_ref().is_none_or(|c|c.nuts.is_empty()) {return progression::apply_growth(player,id,from,to);}
     let ch=character(id)?;ensure(player.id==ch.id,"Carried character/job identity mismatch")?;
     ensure(secondary!=Some(ch.main_job),"Main job cannot also be the secondary job")?;
-    let before=parameters(id,from,secondary)?;let after=parameters(id,to,secondary)?;
+    let nuts=&player.combat.as_ref().unwrap().nuts;
+    let before=parameters(id,from,secondary,nuts)?;let after=parameters(id,to,secondary,nuts)?;
     let mut updated=player.clone();apply_delta(&mut updated,&before,&after)?;
     let growth=progression::growth_at_level(id,to)?;
     let c=updated.combat.as_mut().unwrap();c.growth_attack=growth.growth_attack;c.growth_magic=growth.growth_magic;

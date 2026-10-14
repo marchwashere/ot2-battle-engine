@@ -1772,6 +1772,36 @@
         "just_break": false,
         "meat_only": false,
         "ability": "ABI_WAR_010_01"
+      },
+      {
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_060_01",
+        "type": 18,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false,
+        "meat_only": false,
+        "ability": "ABI_SCH_060_01"
+      },
+      {
+        "id": "PROFESSOR_GAG_ePLAY_ABILITY_ABI_SCH_060_01",
+        "type": 18,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false,
+        "meat_only": false,
+        "ability": "ABI_SCH_060_01"
       }
     ],
     [
@@ -5305,6 +5335,36 @@
         "just_break": false,
         "meat_only": false,
         "ability": null
+      },
+      {
+        "id": "PRIEST_ePLAY_ABILITY_ABI_CLE_010_01",
+        "type": 18,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false,
+        "meat_only": false,
+        "ability": "ABI_CLE_010_01"
+      },
+      {
+        "id": "PRIEST_ePLAY_ABILITY_ABI_CLE_020_01",
+        "type": 18,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false,
+        "meat_only": false,
+        "ability": "ABI_CLE_020_01"
       }
     ]
   ],

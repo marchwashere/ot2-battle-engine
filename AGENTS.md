@@ -1,13 +1,38 @@
+- Roque T1 updated: Osvald gives the small Pom to Temenos; Throne attacks
+  with unboosted dagger on the default/rightmost enemy. Partitio then Temenos
+  Defend. T2 BG then Guards unchanged; viewer recognizes the dagger action.
 - Roque JP100 profile: carried Throne/Osvald/Temenos/Partitio, all ASA,
   Partitio Boost-Start2BP, native Temenos night debuffs. Partitio then Temenos
   Defend -> Temenos first/Partitio second next turn; small Pom supplies3BP.
-  Osvald staff rightmost; full BG -> Guards simulation, reject disrupted
+  Throne dagger rightmost; full BG -> Guards simulation, reject disrupted
   order, insufficient BP, silence, dead recipients or incomplete victory.
   Search both boost paths in total input order; rewards share native logic.
   Profile requires caller-audited skills/supports/inventory. Small Pom item
   and timeline source-imported; no battle-state offsets. Retail trace pending.
 
 # Active project
+
+- Shipwreck JP uses nameless_routine::search_shipwreck: same five openings,
+  nighttime buffs/debuffs, +3 Fireball, Osvald Boost-Start required. Full-search
+  tests cover all six land formations. FireballMax serialized action is separate
+  from Nameless +1 Fireball. No Guards charge. Core import-highroad-return
+  includes Shipwreck land enemies and their rewards.
+
+- Nameless JP routine: daytime Ebony Eel x3, five accepted relative openings;
+  reject Temenos->Throne->Osvald. Partitio small Pom to Temenos. Defend/Boots
+  promotes Temenos then Osvald; T2 BG JP100 then +1 Fireball. Full execution
+  validates victory/all alive/resources/order, and caller can reject field reset
+  counters through search_accepting. Fireball uses native best-magic weapon
+  selection; import-gravell-battle includes its Osvald voice/timeline.
+
+- Gigantes and faster Sands: src/gigantes.rs uses common scripted-boss opening,
+  four ASA members, carried Boost-Start. Barrage6..8 and Slash6 use authored
+  runtime branches, interleaving element/target draws, damage and break timers.
+  Import order: bg-effects -> lord-sands -> gigantes. Core damage supports
+  equipped additive fire potency; jobs preserve raw nut doping through levels/jobs.
+  Gigantes floor excludes T1 damage, all criticals and fire potency. Retail trace
+  validation remains outstanding; see docs/gigantes.md. Old Sands API is retained
+  for historical tests; assistant now calls gigantes::predict_sands.
 
 - Quicksand post-boss land Escape imports include ENG_DNG_DST_2_2_L_120 and
   ENE_NML_ENC_SUB_01 (repeat boss, Escape enabled), plus ordinary land formations.

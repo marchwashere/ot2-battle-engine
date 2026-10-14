@@ -66,6 +66,11 @@ pub struct WeaponStats {
 #[serde(deny_unknown_fields)]
 pub struct CombatProfile {
     #[serde(default)]
+    pub nuts: std::collections::BTreeMap<String,u32>,
+    /// Additive percentage points from equipped fire-potency weapons.
+    #[serde(default)]
+    pub fire_damage_bonus: u32,
+    #[serde(default)]
     pub use_cat_damage_type: bool,
     /// Imported initial idle resource and synchronization gates for enemy CRT.
     #[serde(default)]
@@ -215,6 +220,9 @@ pub fn damage_with_cat_type(input: DamageInput, skill: &Attack, variance: f32, c
 }
 /// Disease ratios are applied before truncation, including simultaneous up/down.
 pub fn damage_with_statuses(input: DamageInput, skill: &Attack, variance: f32, cat: bool, attack_down: bool) -> u32 {
+    damage_with_equipment(input,skill,variance,cat,attack_down,0)
+}
+pub fn damage_with_equipment(input: DamageInput, skill: &Attack, variance: f32, cat: bool, attack_down: bool, bonus:u32) -> u32 {
     let attack = input.attack as f32 * (skill.invocation as f32 * 0.01_f32);
     let defense = input.defense as f32
         * if input.guard {
@@ -243,7 +251,7 @@ pub fn damage_with_statuses(input: DamageInput, skill: &Attack, variance: f32, c
         1.0
     };
     value *= variance;
-    value *= 1.0; // no outgoing equipment/support modifier in the opening loadout
+    value *= (100+bonus) as f32*0.01_f32;
     value *= if input.broken { 2.0 } else { 1.0 };
     value *= skill.ability_ratio as f32 * 0.01_f32;
     value *= parameter_disease_ratio(input.attack_up, attack_down);
