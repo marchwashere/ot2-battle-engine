@@ -1,3 +1,5 @@
+- 2026-10-15 supply revision supersedes older small-Pom notes: skip Gravell Villager; Steal Strengthening Serum with Champion Seeker, then path-action switch/close. Roque uses Pom M from Osvald. Nameless/Shipwreck use Partitio unboosted Donate BP and consume no Pom; retain all turn-order and BG safety checks. Tyrannodrake T2 Defend saves the reserved Pom M (documented plan, beyond current executable route).
+
 - Roque T1 updated: Osvald gives the small Pom to Temenos; Throne attacks
   with unboosted dagger on the default/rightmost enemy. Partitio then Temenos
   Defend. T2 BG then Guards unchanged; viewer recognizes the dagger action.

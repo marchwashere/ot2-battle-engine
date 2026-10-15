@@ -17,7 +17,7 @@ pub fn prefix(mut b:Battle)->Result<Option<(Battle,Vec<MenuAction>)>> {
    Some(0)=>match branch{0=>Action::Dagger{target:ActorId(4)},1=>Action::SpringyBoots{target:ActorId(1)},_=>Action::SpringyBoots{target:ActorId(2)}},
    Some(1)=>if branch==1{Action::Staff{target:ActorId(4)}}else{Action::Defend},
    Some(2)=>Action::Defend,
-   Some(3)=>Action::SmallPomegranate{target:ActorId(2)},
+   Some(3)=>Action::DonateBpUnboosted{target:ActorId(2)},
    _=>return Ok(None),
   };record(&mut b,&mut rows,a)?;
  }
@@ -69,13 +69,13 @@ fn search_with_finisher(battle:Battle,max_inputs:usize,finisher:Action,bp:usize,
   let o=p[1].combat.as_mut().unwrap();o.magic=499;o.fire_damage_bonus=60;
   o.weapons.iter_mut().find(|w|w.weapon==crate::combat::Weapon::Sword).unwrap().magic=298;p
  }
- #[test]fn all_relative_orders_and_pom_positions() {
+ #[test]fn all_relative_orders_and_donate_positions() {
   let mut orders=std::collections::BTreeSet::new();let mut pom_positions=std::collections::BTreeSet::new();
   for seed in 0..1024 {
    let b=crate::field_escape::nameless_jp_battle(crate::CrtRng::new(seed),crate::escape::Situation::Normal,&players(),&Default::default()).unwrap();
    let order=b.state().turn_order().iter().map(|a|a.0).collect::<Vec<_>>();let relative=order.iter().copied().filter(|&i|i!=3).collect::<Vec<_>>();orders.insert(relative.clone());
    let result=prefix(b).unwrap();assert_eq!(result.is_none(),relative==[2,0,1]);
-   if let Some((b,rows))=result {pom_positions.insert(order.iter().position(|&i|i==3).unwrap());assert_eq!(&b.state().turn_order()[..2],&[ActorId(2),ActorId(1)]);assert_eq!(b.state().actors[2].resources.bp,3);assert!(b.state().actors[1].resources.bp>=1);assert_eq!(rows.len(),4);}
+   if let Some((b,rows))=result {pom_positions.insert(order.iter().position(|&i|i==3).unwrap());assert_eq!(&b.state().turn_order()[..2],&[ActorId(2),ActorId(1)]);assert_eq!(b.state().actors[2].resources.bp,3);assert!(b.state().actors[1].resources.bp>=1);assert_eq!(rows.len(),4);assert!(rows.iter().any(|a|a.actor==ActorId(3)&&a.action==Action::DonateBpUnboosted{target:ActorId(2)}));assert!(b.state().inventory.iter().all(|&n|n==0));}
   }
   assert_eq!(orders.len(),6);assert_eq!(pom_positions.len(),4);
  }

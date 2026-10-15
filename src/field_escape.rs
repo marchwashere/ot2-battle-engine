@@ -237,7 +237,7 @@ fn step_ahead_profile(entry:CrtRng,situation:Situation,players:&[crate::PlayerCh
         config.players[0].skills.push("attack_dagger".into());
         config.players[1].skills=vec!["attack_staff".into()];
         config.players[2].skills=vec!["bewildering_grace".into()];
-        config.inventory.clear();config.inventory.insert("energizing_pomegranate".into(),1);
+        config.inventory.clear();if enemies==["ENE_NML_OCN_230";2] {config.inventory.insert("energizing_pomegranate_m".into(),1);}
         if enemies!=["ENE_NML_OCN_230";2] {
             let mug:BattleConfig=serde_json::from_str(include_str!("../data/cape_cold_mug.json"))?;
             config.skills.push(mug.skills.into_iter().find(|s|s.id=="ABI_SET_SCH_010").unwrap());

@@ -11,7 +11,7 @@ fn prefix(mut b:Battle)->Result<Option<(Battle,Vec<MenuAction>)>> {
  let mut actions=vec![];
  for _ in 0..4 {
   if b.state().round!=1||b.state().outcome!=Outcome::Ongoing {return Ok(None);}
-  let a=match b.current_actor().map(|a|a.0) {Some(0)=>Action::Dagger {target:ActorId(4)},Some(1)=>Action::SmallPomegranate {target:ActorId(2)},Some(2|3)=>Action::Defend,_=>return Ok(None)};
+  let a=match b.current_actor().map(|a|a.0) {Some(0)=>Action::Dagger {target:ActorId(4)},Some(1)=>Action::Pomegranate {target:ActorId(2)},Some(2|3)=>Action::Defend,_=>return Ok(None)};
   record(&mut b,&mut actions,a,&[])?;
  }
  if b.state().round!=2||b.current_actor()!=Some(ActorId(2))||b.state().actors[2].resources.bp<3 {return Ok(None);}
@@ -48,7 +48,7 @@ pub fn search(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
 
 #[cfg(test)]mod tests {
  use super::*;
- #[test]fn defend_order_and_small_pom_supply_both_max_boosts() {
+ #[test]fn defend_order_and_medium_pom_supply_both_max_boosts() {
   let mut players:Vec<crate::PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();players[3].boost_start=true;
   let mut accepted=0;
   for seed in 0..128 {
@@ -57,10 +57,10 @@ pub fn search(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
    let result=prefix(b).unwrap();assert_eq!(result.is_some(),expected);
    if let Some((b,actions))=result {
     accepted+=1;assert_eq!(&b.state().turn_order()[..2],&[ActorId(2),ActorId(3)]);
-    assert_eq!(b.state().actors[2].resources.bp,3);assert_eq!(b.state().actors[3].resources.bp,3);
+    assert_eq!(b.state().actors[2].resources.bp,4);assert_eq!(b.state().actors[3].resources.bp,3);
     assert_eq!(actions.len(),4);assert!(b.state().actors[4].has_status(crate::combat::StatusKind::DefenseDown));
     assert_eq!(actions.iter().find(|a|a.report.actor==ActorId(0)).unwrap().action,Action::Dagger{target:ActorId(4)});
-    assert_eq!(actions.iter().find(|a|a.report.actor==ActorId(1)).unwrap().action,Action::SmallPomegranate{target:ActorId(2)});
+    assert_eq!(actions.iter().find(|a|a.report.actor==ActorId(1)).unwrap().action,Action::Pomegranate{target:ActorId(2)});
    }
   }
   assert!(accepted>0&&accepted<128);
