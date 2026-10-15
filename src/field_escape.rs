@@ -264,13 +264,13 @@ pub fn carried_soulstone_with_step_ahead(entry:CrtRng,situation:Situation,player
 }
 pub fn carried_soulstone_after_defends(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
     levels:&[u32],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory,inputs:&[u8],item:&str,step_ahead:bool,defends:usize)->Result<Option<FieldRareVictory>> {
-    ensure(defends==0||step_ahead,"Defended item clear requires A Step Ahead")?;
+
     let (amount,element)=match item {"shadow_soulstone_m"=>(1100,combat::Element::Dark),"wind_soulstone_l"=>(2700,combat::Element::Wind),_=>return Err(SimError("Unsupported carried soulstone".into()))};
     if situation==Situation::Surprise {return Ok(None);}
     // Validate identities, resources and the ordinary first-menu assumptions.
-    let mut menu=if step_ahead {FieldEscapeMenu::with_step_ahead(entry,situation,players,levels,enemies,history)?}else{FieldEscapeMenu::with_players(entry,situation,players,levels,enemies,history)?};
+    let mut menu=if step_ahead {FieldEscapeMenu::with_step_ahead(entry,situation,players,levels,enemies,history)?}else{FieldEscapeMenu::with_players_defend(entry,situation,players,levels,enemies,night,history)?};
     for _ in 0..defends {
-        let Some((next,_))=menu.safe_step_ahead_defend_through_next_round()? else {return Ok(None)};
+        let Some((next,_))=(if step_ahead {menu.safe_step_ahead_defend_through_next_round()?}else{menu.safe_first_round_defend()?}) else {return Ok(None)};
         menu=next;
     }
     let mut config=break_data().party_config.clone();
@@ -657,6 +657,30 @@ impl FieldEscapeMenu {
         for span in &mut menu.trace {span.before.draws+=entry.draws;span.after.draws+=entry.draws;}
         menu.step_battle=Some(battle);
         Ok(menu)
+    }
+    /// Ordinary first-round Defends stop before any enemy or round transition.
+    pub fn with_players_defend(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],
+        levels:&[u32],enemies:&[&str],night:bool,history:&crate::knowledge::EnemyHistory)->Result<Self> {
+        let mut menu=Self::with_players(entry,situation,players,levels,enemies,history)?;
+        let mut config=break_data().party_config.clone();config.players=players.to_vec();
+        for p in &mut config.players {p.resources.as_mut().unwrap().bp=1;p.skills.clear();}
+        config.seed=entry.state;config.night_buff_turns=if night&&players.iter().any(|p|p.id=="throne"){3}else{0};
+        config.enemies=enemies.iter().map(|id|break_data().enemies.get(*id).cloned().ok_or_else(||SimError(format!("Missing ordinary field enemy {id}")))).collect::<Result<_>>()?;
+        config.enemy_knowledge=history.clone();
+        let voices=players.iter().map(|p|carried_data().players[&p.id].voice).collect();
+        let battle=Battle::new_carried_field_item(config,situation,voices)?;
+        ensure(menu.rng.state==battle.state().rng.state&&menu.first_actor==battle.current_actor().unwrap().0,"Ordinary field opening disagrees")?;
+        menu.current_order=battle.state().turn_order().iter().map(|id|id.0).collect();
+        menu.next_order=battle.state().next_queue.iter().map(|id|id.0).collect();
+        menu.step_battle=Some(battle);Ok(menu)
+    }
+    pub fn safe_first_round_defend(&self)->Result<Option<(Self,crate::StepReport)>> {
+        ensure(!self.step_ahead,"Ordinary Defend requires no A Step Ahead")?;
+        // step_player may resolve enemy actions before returning a player menu.
+        // Reject before executing whenever the next queued actor is an enemy.
+        let next=self.current_order.iter().position(|&id|id==self.first_actor).and_then(|i|self.current_order.get(i+1));
+        if self.round()!=1 || next.is_none_or(|&id|id>=self.party_levels.len()) {return Ok(None);}
+        self.safe_defend(false)
     }
     /// Defend only inside the all-player bonus turn. Never run an enemy action.
     pub fn safe_step_ahead_defend(&self)->Result<Option<(Self,crate::StepReport)>> {

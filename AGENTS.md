@@ -1,3 +1,5 @@
+- Conning coast Cultured Cait search includes 0–3 ordinary first-round Defends, stopping before the next enemy or round transition. Use carried full battle queues (including night buffs), replay Soulstone/Escape and leaf rolls; charge 3 per Defend + 2 per boost cycle. Preserve odd total cost layers and show each Defend/final actor. No A Step Ahead assumed.
+
 - 2026-10-15 supply revision supersedes older small-Pom notes: skip Gravell Villager; Steal Strengthening Serum with Champion Seeker, then path-action switch/close. Roque uses Pom M from Osvald. Nameless/Shipwreck use Partitio unboosted Donate BP and consume no Pom; retain all turn-order and BG safety checks. Tyrannodrake T2 Defend saves the reserved Pom M (documented plan, beyond current executable route).
 
 - Roque T1 updated: Osvald gives the small Pom to Temenos; Throne attacks
