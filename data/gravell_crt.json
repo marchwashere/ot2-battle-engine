@@ -1759,7 +1759,7 @@
         "ability": null
       },
       {
-        "id": "PROFESSOR_ePLAY_ABILITY_ABI_DAN_060_01",
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_MER_050_01",
         "type": 18,
         "rate": 100,
         "once": false,
@@ -1771,10 +1771,10 @@
         "pinch": false,
         "just_break": false,
         "meat_only": false,
-        "ability": "ABI_DAN_060_01"
+        "ability": "ABI_MER_050_01"
       },
       {
-        "id": "PROFESSOR_ePLAY_ABILITY_ABI_DAN_070_01",
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_MER_070_D_1",
         "type": 18,
         "rate": 100,
         "once": false,
@@ -1786,7 +1786,7 @@
         "pinch": false,
         "just_break": false,
         "meat_only": false,
-        "ability": "ABI_DAN_070_01"
+        "ability": "ABI_MER_070_D_1"
       },
       {
         "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01",
@@ -6115,13 +6115,13 @@
     "wind_soulstone_l:4": 18097,
     "wind_soulstone_l:5": 16513,
     "donate_bp:0": 0,
-    "donate_bp:1": 0,
+    "donate_bp:1": 12889,
     "donate_bp:2": 0,
     "donate_bp:3": 34417,
     "donate_bp:4": 19441,
     "donate_bp:5": 0,
     "stimulate:0": 26496,
-    "stimulate:1": 22272,
+    "stimulate:1": 0,
     "stimulate:2": 26856,
     "stimulate:3": 35833,
     "stimulate:4": 31080,

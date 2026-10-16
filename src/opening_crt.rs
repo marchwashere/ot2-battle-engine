@@ -358,7 +358,7 @@ pub(crate) fn select_voice_from(
             }
             4 => {
                 !row.counter
-                    && !row.decondition
+                    && (!row.decondition || condition.decondition)
                     && (row.border == 0 || row.border >= condition.border)
             }
             8 | 18 => row.border == 0 || row.border >= condition.border,

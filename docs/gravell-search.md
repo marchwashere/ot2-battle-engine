@@ -136,3 +136,29 @@ Target deadlines use the exact 32-bit CRT distance (`CrtRng::distance_to`), not
 estimated action draw counts. Probe trace filtering changes recorded diagnostics
 only; accepted replay restores every span. Retail Donate/Guards regressions and
 normal attack/action execution remain unchanged.
+
+## Osvald Merchant voice regression (2026-10-16)
+
+The Gravell voice importer previously restricted Donate BP and Guards cast voices
+to MERCHANT/FENCER. Galdera's Osvald also requires the source BattleVoiceSet rows
+`PROFESSOR_ePLAY_ABILITY_ABI_MER_050_01` and
+`PROFESSOR_ePLAY_ABILITY_ABI_MER_070_D_1`. The missing Guards voice skipped one
+draw, changing subsequent hit outcomes and producing a net five-draw discrepancy.
+Osvald's unused Dancer ability voices are omitted to retain the route profile's
+64-row mask limit.
+
+`osvald_guards_live_1e10aa9c` replays the unchanged reported inputs: Osvald's
+menu is 4772, Guards hits Chubby Cait four times and kills it, and Throné's menu
+is 4844. Subsequent BG effects remain self-heal, EXP x100, JP x2, party defense
+down. The fixture records player-observed checkpoints, not a retail per-call
+trace. No RNG offset or changed hit formula is used.
+
+Follow-up retail checkpoints exposed another omission in BG status callbacks:
+BattlePlayerBP.OnTakeDisease (script 0x7525b) requests eTAKE_DAMAGE with
+DECONDITION for debuffs/deconditions. BP_BattleVoiceComponent checks the counter
+row then selects the debuff row (two draws); its settled-damage flag suppresses
+the second defense-down reaction in the same action. Apply this inside slot zero's
+AddDisease callback, before the remaining None-slot duration rolls. Four party
+reactions add eight draws. The unchanged-input regression now matches Agnea's
+menu 4889, pre-BG 5002, effects complete 5184, and Osvald's menu 5203. The resulting
+field-return prediction is 5212; this endpoint is simulated, not yet retail-verified.

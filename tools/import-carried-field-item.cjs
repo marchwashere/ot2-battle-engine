@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const s=require('./source.cjs'),{objectHeader}=require('../../OT2BattleEngine/tools/properties.cjs');
 const table=s.table('Character/Database/BattleVoiceSet');
 const crt=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/field_rare_crt.json')));
-const types={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12,eUSE_ITEM_TO_PARTY:15,eUSE_ITEM_TO_ENEMY:16};
+const types={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12,eUSE_ITEM_TO_PARTY:15,eUSE_ITEM_TO_ENEMY:16,ePLAY_GUARD:17};
 const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN'],['PRIEST','BattleSIN']];
 const sources=[{source:table.source,sha256:table.sha256}],voiceRows=[];
 crt.voices=specs.map(([prefix,folder],i)=>{

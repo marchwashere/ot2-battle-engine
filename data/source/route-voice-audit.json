@@ -1,0 +1,1006 @@
+{
+  "source": {
+    "path": "/Game/Character/Database/BattleVoiceSet",
+    "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+  },
+  "profiles": [
+    {
+      "file": "cape_cold_mug_crt.json",
+      "rows": 42
+    },
+    {
+      "file": "carried_field_item_crt.json",
+      "rows": 242
+    },
+    {
+      "file": "field_break_crt.json",
+      "rows": 36
+    },
+    {
+      "file": "field_carried_crt.json",
+      "rows": 212
+    },
+    {
+      "file": "field_party_crt.json",
+      "rows": 113
+    },
+    {
+      "file": "field_rare_crt.json",
+      "rows": 116
+    },
+    {
+      "file": "gravell_crt.json",
+      "rows": 367
+    },
+    {
+      "file": "hikari_recruitment_crt.json",
+      "rows": 158
+    },
+    {
+      "file": "lord_sands_crt.json",
+      "rows": 357
+    },
+    {
+      "file": "mansion_escape_crt.json",
+      "rows": 34
+    },
+    {
+      "file": "opening_crt.json",
+      "rows": 80
+    },
+    {
+      "file": "temenos_recruitment_crt.json",
+      "rows": 304
+    },
+    {
+      "file": "throne_pirro_crt.json",
+      "rows": 88
+    },
+    {
+      "file": "throne_second_crt.json",
+      "rows": 84
+    }
+  ],
+  "contracts": [
+    {
+      "file": "carried_field_item_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "THIEF_eUSE_ITEM_TO_PARTY_COMMON",
+        "THIEF_eUSE_ITEM_TO_PARTY_SELF",
+        "THIEF_eUSE_ITEM_TO_ENEMY_COMMON",
+        "THIEF_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "THIEF_eTAKE_DAMAGE_SMALL",
+        "THIEF_eTAKE_DAMAGE_MEDIUM",
+        "THIEF_eTAKE_DAMAGE_LARGE",
+        "THIEF_eTAKE_DAMAGE_FATAL",
+        "THIEF_eTAKE_DAMAGE_COUNTER",
+        "THIEF_eTAKE_DAMAGE_DEBUFF",
+        "THIEF_eON_DEAD_COMMON",
+        "THIEF_eON_AVOID_COMMON",
+        "THIEF_eON_RECOVERED_COMMON",
+        "THIEF_eON_REVIVED_COMMON",
+        "THIEF_ePLAY_GUARD_COMMON",
+        "THIEF_eON_RECOVERED_KEN",
+        "THIEF_eON_RECOVERED_SIN",
+        "THIEF_eON_RECOVERED_SHO",
+        "THIEF_eON_RECOVERED_ODO",
+        "THIEF_eON_RECOVERED_GAK",
+        "THIEF_eON_RECOVERED_KAR",
+        "THIEF_eON_RECOVERED_KUS",
+        "THIEF_eON_REVIVED_KEN",
+        "THIEF_eON_REVIVED_SIN",
+        "THIEF_eON_REVIVED_SHO",
+        "THIEF_eON_REVIVED_ODO",
+        "THIEF_eON_REVIVED_GAK",
+        "THIEF_eON_REVIVED_KAR",
+        "THIEF_eON_REVIVED_KUS"
+      ]
+    },
+    {
+      "file": "carried_field_item_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "PROFESSOR_eUSE_ITEM_TO_PARTY_COMMON",
+        "PROFESSOR_eUSE_ITEM_TO_PARTY_SELF",
+        "PROFESSOR_eUSE_ITEM_TO_ENEMY_COMMON",
+        "PROFESSOR_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "PROFESSOR_eTAKE_DAMAGE_SMALL",
+        "PROFESSOR_eTAKE_DAMAGE_MEDIUM",
+        "PROFESSOR_eTAKE_DAMAGE_LARGE",
+        "PROFESSOR_eTAKE_DAMAGE_FATAL",
+        "PROFESSOR_eTAKE_DAMAGE_COUNTER",
+        "PROFESSOR_eTAKE_DAMAGE_DEBUFF",
+        "PROFESSOR_eON_DEAD_COMMON",
+        "PROFESSOR_eON_AVOID_COMMON",
+        "PROFESSOR_eON_RECOVERED_COMMON",
+        "PROFESSOR_eON_REVIVED_COMMON",
+        "PROFESSOR_ePLAY_GUARD_COMMON",
+        "PROFESSOR_eON_RECOVERED_KEN",
+        "PROFESSOR_eON_RECOVERED_SIN",
+        "PROFESSOR_eON_RECOVERED_SHO",
+        "PROFESSOR_eON_RECOVERED_ODO",
+        "PROFESSOR_eON_RECOVERED_KAR",
+        "PROFESSOR_eON_RECOVERED_KUS",
+        "PROFESSOR_eON_RECOVERED_TOU",
+        "PROFESSOR_eON_REVIVED_KEN",
+        "PROFESSOR_eON_REVIVED_SIN",
+        "PROFESSOR_eON_REVIVED_SHO",
+        "PROFESSOR_eON_REVIVED_ODO",
+        "PROFESSOR_eON_REVIVED_KAR",
+        "PROFESSOR_eON_REVIVED_KUS",
+        "PROFESSOR_eON_REVIVED_TOU",
+        "PROFESSOR_eON_RECOVERED_GUEST_005",
+        "PROFESSOR_eON_REVIVED_GUEST_005"
+      ]
+    },
+    {
+      "file": "carried_field_item_crt",
+      "index": 2,
+      "prefix": "DANCER",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "DANCER_eUSE_ITEM_TO_PARTY_COMMON",
+        "DANCER_eUSE_ITEM_TO_PARTY_SELF",
+        "DANCER_eUSE_ITEM_TO_ENEMY_COMMON",
+        "DANCER_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 2,
+      "prefix": "DANCER",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "DANCER_eTAKE_DAMAGE_SMALL",
+        "DANCER_eTAKE_DAMAGE_MEDIUM",
+        "DANCER_eTAKE_DAMAGE_LARGE",
+        "DANCER_eTAKE_DAMAGE_FATAL",
+        "DANCER_eTAKE_DAMAGE_COUNTER",
+        "DANCER_eTAKE_DAMAGE_DEBUFF",
+        "DANCER_eON_DEAD_COMMON",
+        "DANCER_eON_AVOID_COMMON",
+        "DANCER_eON_RECOVERED_COMMON",
+        "DANCER_eON_REVIVED_COMMON",
+        "DANCER_ePLAY_GUARD_COMMON",
+        "DANCER_eON_RECOVERED_KEN",
+        "DANCER_eON_RECOVERED_SIN",
+        "DANCER_eON_RECOVERED_SHO",
+        "DANCER_eON_RECOVERED_GAK",
+        "DANCER_eON_RECOVERED_KAR",
+        "DANCER_eON_RECOVERED_KUS",
+        "DANCER_eON_RECOVERED_TOU",
+        "DANCER_eON_REVIVED_KEN",
+        "DANCER_eON_REVIVED_SIN",
+        "DANCER_eON_REVIVED_SHO",
+        "DANCER_eON_REVIVED_GAK",
+        "DANCER_eON_REVIVED_KAR",
+        "DANCER_eON_REVIVED_KUS",
+        "DANCER_eON_REVIVED_TOU",
+        "DANCER_eON_RECOVERED_GUEST_004",
+        "DANCER_eON_REVIVED_GUEST_004",
+        "DANCER_eTAKE_DAMAGE_DULCINEA_DANCE",
+        "DANCER_eTAKE_DAMAGE_DULCINEA_SONG"
+      ]
+    },
+    {
+      "file": "carried_field_item_crt",
+      "index": 3,
+      "prefix": "MERCHANT",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "MERCHANT_eUSE_ITEM_TO_PARTY_COMMON",
+        "MERCHANT_eUSE_ITEM_TO_PARTY_SELF",
+        "MERCHANT_eUSE_ITEM_TO_ENEMY_COMMON",
+        "MERCHANT_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 3,
+      "prefix": "MERCHANT",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "MERCHANT_eTAKE_DAMAGE_SMALL",
+        "MERCHANT_eTAKE_DAMAGE_MEDIUM",
+        "MERCHANT_eTAKE_DAMAGE_LARGE",
+        "MERCHANT_eTAKE_DAMAGE_FATAL",
+        "MERCHANT_eTAKE_DAMAGE_COUNTER",
+        "MERCHANT_eTAKE_DAMAGE_DEBUFF",
+        "MERCHANT_eON_DEAD_COMMON",
+        "MERCHANT_eON_AVOID_COMMON",
+        "MERCHANT_eON_RECOVERED_COMMON",
+        "MERCHANT_eON_REVIVED_COMMON",
+        "MERCHANT_ePLAY_GUARD_COMMON",
+        "MERCHANT_eON_RECOVERED_KEN",
+        "MERCHANT_eON_RECOVERED_SIN",
+        "MERCHANT_eON_RECOVERED_ODO",
+        "MERCHANT_eON_RECOVERED_GAK",
+        "MERCHANT_eON_RECOVERED_KAR",
+        "MERCHANT_eON_RECOVERED_KUS",
+        "MERCHANT_eON_RECOVERED_TOU",
+        "MERCHANT_eON_REVIVED_KEN",
+        "MERCHANT_eON_REVIVED_SIN",
+        "MERCHANT_eON_REVIVED_ODO",
+        "MERCHANT_eON_REVIVED_GAK",
+        "MERCHANT_eON_REVIVED_KAR",
+        "MERCHANT_eON_REVIVED_KUS",
+        "MERCHANT_eON_REVIVED_TOU"
+      ]
+    },
+    {
+      "file": "carried_field_item_crt",
+      "index": 4,
+      "prefix": "FENCER",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "FENCER_eUSE_ITEM_TO_PARTY_COMMON",
+        "FENCER_eUSE_ITEM_TO_PARTY_SELF",
+        "FENCER_eUSE_ITEM_TO_ENEMY_COMMON",
+        "FENCER_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 4,
+      "prefix": "FENCER",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "FENCER_eTAKE_DAMAGE_SMALL",
+        "FENCER_eTAKE_DAMAGE_MEDIUM",
+        "FENCER_eTAKE_DAMAGE_LARGE",
+        "FENCER_eTAKE_DAMAGE_FATAL",
+        "FENCER_eTAKE_DAMAGE_COUNTER",
+        "FENCER_eTAKE_DAMAGE_DEBUFF",
+        "FENCER_eON_DEAD_COMMON",
+        "FENCER_eON_AVOID_COMMON",
+        "FENCER_eON_RECOVERED_COMMON",
+        "FENCER_eON_REVIVED_COMMON",
+        "FENCER_ePLAY_GUARD_COMMON",
+        "FENCER_eON_RECOVERED_SIN",
+        "FENCER_eON_RECOVERED_SHO",
+        "FENCER_eON_RECOVERED_ODO",
+        "FENCER_eON_RECOVERED_GAK",
+        "FENCER_eON_RECOVERED_KAR",
+        "FENCER_eON_RECOVERED_KUS",
+        "FENCER_eON_RECOVERED_TOU",
+        "FENCER_eON_REVIVED_SIN",
+        "FENCER_eON_REVIVED_SHO",
+        "FENCER_eON_REVIVED_ODO",
+        "FENCER_eON_REVIVED_GAK",
+        "FENCER_eON_REVIVED_KAR",
+        "FENCER_eON_REVIVED_KUS",
+        "FENCER_eON_REVIVED_TOU"
+      ]
+    },
+    {
+      "file": "carried_field_item_crt",
+      "index": 5,
+      "prefix": "PRIEST",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eUSE_ITEM_TO_PARTY",
+        "eUSE_ITEM_TO_ENEMY"
+      ],
+      "checked": [
+        "PRIEST_eUSE_ITEM_TO_PARTY_COMMON",
+        "PRIEST_eUSE_ITEM_TO_PARTY_SELF",
+        "PRIEST_eUSE_ITEM_TO_ENEMY_COMMON",
+        "PRIEST_ePLAY_GUARD_COMMON"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 5,
+      "prefix": "PRIEST",
+      "abilities": [],
+      "types": [
+        "ePLAY_GUARD",
+        "eON_RECOVERED",
+        "eON_REVIVED",
+        "eTAKE_DAMAGE",
+        "eON_AVOID",
+        "eON_DEAD"
+      ],
+      "checked": [
+        "PRIEST_eTAKE_DAMAGE_SMALL",
+        "PRIEST_eTAKE_DAMAGE_MEDIUM",
+        "PRIEST_eTAKE_DAMAGE_LARGE",
+        "PRIEST_eTAKE_DAMAGE_FATAL",
+        "PRIEST_eTAKE_DAMAGE_COUNTER",
+        "PRIEST_eTAKE_DAMAGE_DEBUFF",
+        "PRIEST_eON_DEAD_COMMON",
+        "PRIEST_eON_AVOID_COMMON",
+        "PRIEST_eON_RECOVERED_COMMON",
+        "PRIEST_eON_REVIVED_COMMON",
+        "PRIEST_ePLAY_GUARD_COMMON",
+        "PRIEST_eON_RECOVERED_KEN",
+        "PRIEST_eON_RECOVERED_SHO",
+        "PRIEST_eON_RECOVERED_ODO",
+        "PRIEST_eON_RECOVERED_GAK",
+        "PRIEST_eON_RECOVERED_KAR",
+        "PRIEST_eON_RECOVERED_KUS",
+        "PRIEST_eON_RECOVERED_TOU",
+        "PRIEST_eON_REVIVED_KEN",
+        "PRIEST_eON_REVIVED_SHO",
+        "PRIEST_eON_REVIVED_ODO",
+        "PRIEST_eON_REVIVED_GAK",
+        "PRIEST_eON_REVIVED_KAR",
+        "PRIEST_eON_REVIVED_KUS",
+        "PRIEST_eON_REVIVED_TOU",
+        "PRIEST_eON_RECOVERED_GUEST_003",
+        "PRIEST_eON_REVIVED_GUEST_003"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [
+        "ABI_MER_050_01",
+        "ABI_MER_070_D_1"
+      ],
+      "types": [],
+      "checked": [
+        "PROFESSOR_ePLAY_ABILITY_ABI_MER_050_01",
+        "PROFESSOR_ePLAY_ABILITY_ABI_MER_070_D_1"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 3,
+      "prefix": "MERCHANT",
+      "abilities": [
+        "ABI_MER_050_01",
+        "ABI_MER_070_D_1"
+      ],
+      "types": [],
+      "checked": [
+        "MERCHANT_ePLAY_ABILITY_ABI_MER_050_01",
+        "MERCHANT_ePLAY_ABILITY_ABI_MER_070_D_1"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 4,
+      "prefix": "FENCER",
+      "abilities": [
+        "ABI_MER_050_01",
+        "ABI_MER_070_D_1"
+      ],
+      "types": [],
+      "checked": [
+        "FENCER_ePLAY_ABILITY_ABI_MER_050_01",
+        "FENCER_ePLAY_ABILITY_ABI_MER_070_D_1"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 2,
+      "prefix": "DANCER",
+      "abilities": [
+        "ABI_DAN_070_01"
+      ],
+      "types": [],
+      "checked": [
+        "DANCER_ePLAY_ABILITY_ABI_DAN_070_01"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 5,
+      "prefix": "PRIEST",
+      "abilities": [
+        "ABI_DAN_070_01"
+      ],
+      "types": [],
+      "checked": [
+        "PRIEST_ePLAY_ABILITY_ABI_DAN_070_01"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [
+        "ABI_INV_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "THIEF_ePLAY_ABILITY_ABI_INV_020_01"
+      ]
+    },
+    {
+      "file": "gravell_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [
+        "ABI_SCH_010_01"
+      ],
+      "types": [],
+      "checked": [
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01"
+      ]
+    },
+    {
+      "file": "lord_sands_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [
+        "ABI_INV_030_01"
+      ],
+      "types": [],
+      "checked": [
+        "THIEF_ePLAY_ABILITY_ABI_INV_030_01"
+      ]
+    },
+    {
+      "file": "lord_sands_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [
+        "ABI_WAR_010_01",
+        "ABI_SCH_060_01"
+      ],
+      "types": [],
+      "checked": [
+        "PROFESSOR_ePLAY_ABILITY_ABI_WAR_010_01",
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_060_01"
+      ]
+    },
+    {
+      "file": "lord_sands_crt",
+      "index": 3,
+      "prefix": "MERCHANT",
+      "abilities": [
+        "ABI_MER_070_E_1"
+      ],
+      "types": [],
+      "checked": [
+        "MERCHANT_ePLAY_ABILITY_ABI_MER_070_E_1"
+      ]
+    },
+    {
+      "file": "lord_sands_crt",
+      "index": 5,
+      "prefix": "PRIEST",
+      "abilities": [
+        "ABI_CLE_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "PRIEST_ePLAY_ABILITY_ABI_CLE_020_01"
+      ]
+    },
+    {
+      "file": "cape_cold_mug_crt",
+      "index": 0,
+      "prefix": "PROFESSOR",
+      "abilities": [
+        "ABI_SCH_010_01",
+        "ABI_SCH_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01",
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_020_01"
+      ]
+    },
+    {
+      "file": "field_party_crt",
+      "index": 1,
+      "prefix": "PROFESSOR",
+      "abilities": [
+        "ABI_SCH_010_01",
+        "ABI_SCH_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_010_01",
+        "PROFESSOR_ePLAY_ABILITY_ABI_SCH_020_01"
+      ]
+    },
+    {
+      "file": "field_party_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [
+        "ABI_THI_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "THIEF_ePLAY_ABILITY_ABI_THI_020_01"
+      ]
+    },
+    {
+      "file": "throne_pirro_crt",
+      "index": 0,
+      "prefix": "THIEF",
+      "abilities": [
+        "ABI_THI_020_01"
+      ],
+      "types": [],
+      "checked": [
+        "THIEF_ePLAY_ABILITY_ABI_THI_020_01"
+      ]
+    }
+  ],
+  "bg_child_voices": [
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_039",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_038",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_037",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_036",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_035",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_034",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_033",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_032",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_031",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_030",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_029",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_028",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_027",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_026",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_025",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_024",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_023",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_022",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_021",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_020",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_019",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_018",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_017",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_016",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_015",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_014",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_013",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_012",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_011",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_010",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_009",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_008",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_007",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_006",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_005",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_004",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_003",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_002",
+      "rows": []
+    },
+    {
+      "prefix": "DANCER",
+      "ability": "ABI_DAN_MAKA_001",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_039",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_038",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_037",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_036",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_035",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_034",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_033",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_032",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_031",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_030",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_029",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_028",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_027",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_026",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_025",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_024",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_023",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_022",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_021",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_020",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_019",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_018",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_017",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_016",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_015",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_014",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_013",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_012",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_011",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_010",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_009",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_008",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_007",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_006",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_005",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_004",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_003",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_002",
+      "rows": []
+    },
+    {
+      "prefix": "PRIEST",
+      "ability": "ABI_DAN_MAKA_001",
+      "rows": []
+    }
+  ]
+}

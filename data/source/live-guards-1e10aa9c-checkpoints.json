@@ -1,0 +1,436 @@
+{
+  "identified_seed": "0x1E10AA9C",
+  "voices": "NSNNNNSNSNSSSSSSNSSNNSSNNNSNSNSSN",
+  "pirro_first": false,
+  "throne_hp": 197,
+  "observed": {
+    "osvald_t1_menu": 4772,
+    "after_boost_adjustment": 4779,
+    "throne_t1_menu": 4844,
+    "agnea_t2_menu": 4889,
+    "before_bg": 5002,
+    "after_bg_effects": 5184,
+    "osvald_t2_menu": 5203,
+    "enemy_left_to_right": [
+      "Chubby Cait",
+      "Dreadwing",
+      "Creepy Fledgling"
+    ],
+    "cait_hits": 4,
+    "cait_dead_after_guards": true,
+    "bg_effects": [
+      "self HP recovery",
+      "EXP x100",
+      "JP x2",
+      "party defense down"
+    ]
+  },
+  "prior_prediction": {
+    "throne_t1_menu": 4839,
+    "cait_hits": 2,
+    "cait_hp": 18,
+    "agnea_t2_menu": 4889
+  },
+  "status": "Resolved by importing Osvald's source-defined Guards ability voice. Unchanged battle inputs reproduce four Cait hits, its death, Throne menu 4844 and all four BG effects. Observations are retail checkpoints, not a per-call retail trace; no fixed RNG offset is applied.",
+  "party": [
+    {
+      "combat": {
+        "accuracy": 126,
+        "attack": 127,
+        "critical": 117,
+        "defense": 107,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 130,
+        "fire_damage_bonus": 0,
+        "growth_attack": 109,
+        "growth_magic": 109,
+        "magic": 116,
+        "magic_defense": 101,
+        "main_weapon": "dagger",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "sword"
+          },
+          {
+            "attack": 6,
+            "magic": 0,
+            "weapon": "dagger"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "axe"
+          }
+        ]
+      },
+      "id": "throne",
+      "name": "Throné",
+      "resources": {
+        "bp": 1,
+        "hp": 885,
+        "latent": 75,
+        "sp": 56
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_010",
+        "ABI_SET_THI_020",
+        "attack_axe"
+      ],
+      "stats": {
+        "max_hp": 885,
+        "max_sp": 56,
+        "speed": 130
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 109,
+        "attack": 100,
+        "critical": 87,
+        "defense": 106,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 109,
+        "fire_damage_bonus": 0,
+        "growth_attack": 109,
+        "growth_magic": 109,
+        "magic": 145,
+        "magic_defense": 136,
+        "main_weapon": "staff",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 3,
+            "magic": 4,
+            "weapon": "staff"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "lance"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "bow"
+          }
+        ]
+      },
+      "id": "osvald",
+      "name": "Osvald",
+      "resources": {
+        "bp": 1,
+        "hp": 708,
+        "latent": 50,
+        "sp": 84
+      },
+      "skills": [
+        "attack_staff",
+        "attack_lance",
+        "attack_bow"
+      ],
+      "stats": {
+        "max_hp": 764,
+        "max_sp": 90,
+        "speed": 98
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 103,
+        "attack": 103,
+        "critical": 103,
+        "defense": 82,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 113,
+        "fire_damage_bonus": 0,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 123,
+        "magic_defense": 93,
+        "main_weapon": "dagger",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "dagger"
+          }
+        ]
+      },
+      "id": "agnea",
+      "name": "Agnea",
+      "resources": {
+        "bp": 1,
+        "hp": 657,
+        "latent": 0,
+        "sp": 66
+      },
+      "skills": [
+        "attack_dagger",
+        "ABI_SET_DAN_010",
+        "ABI_SET_DAN_020"
+      ],
+      "stats": {
+        "max_hp": 657,
+        "max_sp": 66,
+        "speed": 133
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 103,
+        "attack": 113,
+        "critical": 92,
+        "defense": 116,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 92,
+        "fire_damage_bonus": 0,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 113,
+        "magic_defense": 115,
+        "main_weapon": "lance",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "lance"
+          },
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "bow"
+          }
+        ]
+      },
+      "id": "partitio",
+      "name": "Partitio",
+      "resources": {
+        "bp": 1,
+        "hp": 803,
+        "latent": 0,
+        "sp": 66
+      },
+      "skills": [
+        "attack_lance",
+        "ABI_SET_MER_020",
+        "ABI_SET_MER_040"
+      ],
+      "stats": {
+        "max_hp": 803,
+        "max_sp": 66,
+        "speed": 92
+      }
+    }
+  ],
+  "enemy_ids": [
+    "ENE_NML_FLD_WLD_250",
+    "ENE_NML_FLD_WLD_160",
+    "ENE_NML_OTR_150"
+  ],
+  "enemy_knowledge": {
+    "ENE_EVE_SUB_OTR_100": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 32
+    },
+    "ENE_NML_FLD_CTY_010": {
+      "elements": 0,
+      "studied": false,
+      "weapons": 4
+    },
+    "ENE_NML_FLD_FST_010": {
+      "elements": 2,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_FST_020": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 4
+    },
+    "ENE_NML_FLD_SEA_130": {
+      "elements": 16,
+      "studied": true,
+      "weapons": 40
+    },
+    "ENE_NML_FLD_SEA_160": {
+      "elements": 2,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_SNW_010": {
+      "elements": 17,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_SNW_110": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 16
+    },
+    "ENE_NML_FLD_SNW_150": {
+      "elements": 32,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_WLD_020": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 32
+    },
+    "ENE_NML_FLD_WLD_040": {
+      "elements": 16,
+      "studied": true,
+      "weapons": 42
+    },
+    "ENE_NML_FLD_WLD_130": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 41
+    },
+    "ENE_NML_FLD_WLD_210": {
+      "elements": 8,
+      "studied": true,
+      "weapons": 5
+    },
+    "ENE_NML_FLD_WLD_270": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_OTR_140": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 1
+    },
+    "ENE_NML_WTR_590": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 32
+    }
+  },
+  "battle_entry": {
+    "draws": 4636,
+    "state": 1454933368
+  },
+  "situation": "Normal",
+  "guard_inputs": [
+    1,
+    0,
+    1,
+    2,
+    3
+  ],
+  "bg_inputs": [
+    1,
+    2,
+    1,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3
+  ]
+}

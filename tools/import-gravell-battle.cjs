@@ -36,10 +36,13 @@ const voiceTypes={eBATTLE_START:1,eBATTLE_VICTORY:2,eORDER_START:3,eTAKE_DAMAGE:
 const abilities=['ABI_DAN_060_01','ABI_DAN_070_01','ABI_INV_020_01','ABI_MER_070_01','ABI_SCH_010_01'];
 const specs=[['THIEF','BattleTOU'],['PROFESSOR','BattleGAK'],['DANCER','BattleODO'],['MERCHANT','BattleSHO'],['FENCER','BattleKEN'],['PRIEST','BattleSIN']];
 const durations=[];
+// Galdera uses Osvald as Merchant: retain his Donate BP and Guards cast voices.
+// His unused Dancer abilities are omitted from this route-specific 64-row voice mask.
 crt.voices=specs.map(([prefix,folder],index)=>{
  const a=voiceTable.rows.findIndex(r=>r.id===prefix+'_VOICE_DATA_START'),b=voiceTable.rows.findIndex((r,j)=>j>a&&r.id.endsWith('_VOICE_DATA_START'));
- const rows=voiceTable.rows.slice(a+1,b).filter(r=>voiceTypes[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))&&(!r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||((abilities.includes(r.AbilityID)&&(r.AbilityID!=='ABI_SCH_010_01'||prefix==='PROFESSOR'))||(['MERCHANT','FENCER'].includes(prefix)&&['ABI_MER_070_D_1','ABI_MER_050_01'].includes(r.AbilityID))))).sort((a,b)=>b.Priority-a.Priority);
+ const rows=voiceTable.rows.slice(a+1,b).filter(r=>voiceTypes[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))&&(!r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||((abilities.includes(r.AbilityID)&&(r.AbilityID!=='ABI_SCH_010_01'||prefix==='PROFESSOR')&&!(prefix==='PROFESSOR'&&['ABI_DAN_060_01','ABI_DAN_070_01'].includes(r.AbilityID)))||(['MERCHANT','FENCER','PROFESSOR'].includes(prefix)&&['ABI_MER_070_D_1','ABI_MER_050_01'].includes(r.AbilityID))))).sort((a,b)=>b.Priority-a.Priority);
  assert(rows.length<=64,`${prefix}: ${rows.length} voice rows`);
+ if(['MERCHANT','FENCER','PROFESSOR'].includes(prefix))for(const id of ['ABI_MER_070_D_1','ABI_MER_050_01'])assert(rows.some(r=>r.AbilityID===id),`${prefix}: missing ${id} voice`);
  durations[index]={};
  for(const r of rows.filter(r=>r.BattleVoiceType.endsWith('::ePLAY_ABILITY')||r.BattleVoiceType.endsWith('::eUSE_ITEM_TO_PARTY'))){
   const asset='Sound/Resource/VO/'+folder+'/en/'+r.VoiceLabel.toLowerCase(),pkg=s.assets.loadPackage(path.join(s.assets.CONTENT,asset+'.uasset'));

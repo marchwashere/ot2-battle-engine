@@ -2302,9 +2302,16 @@ impl Battle {
         }
     }
     fn voice(&mut self, actor: ActorId, voice_type: u8, condition: VoiceCondition) {
+        self.voice_with_disease_check(actor,voice_type,condition,false);
+    }
+    fn voice_with_disease_check(&mut self, actor:ActorId, voice_type:u8, condition:VoiceCondition, skip_disease_check:bool) {
         if self.side(actor) != Some(Side::Player) && !self.is_pirro() {
             return;
         }
+        // BattlePlayerBP.CanPlayVoiceWhileDisease. Silence is the only
+        // voice-blocking disease reachable by the implemented BG outcomes.
+        if !skip_disease_check && matches!(voice_type,4|11|13|26)
+            && self.state.actors[actor.0].has_status(StatusKind::Silence) {return;}
         let data = self.crt_data();
         let voice_index =
             if let Some(indices)=self.state.opening_crt.as_ref().and_then(|c|c.carried_voices.as_ref()) {indices[actor.0]}
@@ -2361,16 +2368,19 @@ impl Battle {
     fn order_voice(&mut self, breaker: Option<ActorId>) {
         if let Some(actor) = self.current_actor() {
             let ally_breaker=breaker.filter(|b|*b!=actor).and_then(|b|match self.scenario.actors[b.0].id.as_str() {
-                "osvald"=>Some("ePROFESSOR"),"throne"=>Some("eTHIEF"),"hikari"=>Some("eFENCER"),"agnea"=>Some("eDANCER"),"partitio"=>Some("eMERCHANT"),_=>None});
+                "osvald"=>Some("ePROFESSOR"),"throne"=>Some("eTHIEF"),"hikari"=>Some("eFENCER"),"agnea"=>Some("eDANCER"),"partitio"=>Some("eMERCHANT"),"temenos"=>Some("ePRIEST"),_=>None});
             let state = &self.state.actors[actor.0];
+            // BeginCharacterTurn overwrites pinch with decondition, then
+            // overwrites both with the preceding ally-break condition.
+            let decondition=ally_breaker.is_none() && (state.has_status(StatusKind::Poison)||state.has_status(StatusKind::Silence));
             self.voice(
                 actor,
                 3,
                 VoiceCondition {
                     ally_breaker,
-                    pinch: u64::from(state.resources.hp) * 4
+                    pinch: ally_breaker.is_none() && !decondition && u64::from(state.resources.hp) * 4
                         <= u64::from(self.scenario.actors[actor.0].stats.max_hp),
-                    decondition: false,
+                    decondition,
                     border: 0,
                     ..Default::default()
                 },

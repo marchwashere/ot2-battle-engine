@@ -279,7 +279,7 @@ impl Battle {
     fn grace_enforcer(&self,actor:ActorId)->Option<&'static str> {
         match self.scenario.actors[actor.0].id.as_str() {
             "throne"=>Some("eTHIEF"),"hikari"=>Some("eFENCER"),"agnea"=>Some("eDANCER"),
-            "partitio"=>Some("eMERCHANT"),"osvald"=>Some("ePROFESSOR"),_=>None,
+            "partitio"=>Some("eMERCHANT"),"osvald"=>Some("ePROFESSOR"),"temenos"=>Some("ePRIEST"),_=>None,
         }
     }
     pub(super) fn grace_damage(&mut self,actor:ActorId,targets:&[ActorId],child:&crate::bg_effects::Child,op:&Operation,last:bool,summon:Option<&CombatProfile>,events:&mut Vec<Event>)->Result<Option<u8>> {
@@ -452,6 +452,15 @@ impl Battle {
         for (status,kind) in buffs {
             self.state.actors[target.0].statuses.retain(|s|s.kind!=status.kind);
             self.grace_add_disease(target,Status {kind,turns:status.turns});
+            self.grace_disease_voice(target,kind,false);
+        }
+    }
+    fn grace_disease_voice(&mut self,target:ActorId,kind:StatusKind,was_silent:bool) {
+        if matches!(kind,StatusKind::AttackDown|StatusKind::MagicDown|StatusKind::SpeedDown|StatusKind::DefenseDown|StatusKind::MagicDefenseDown|StatusKind::Silence|StatusKind::Poison)
+            && !was_silent && self.state.actors[target.0].has_status(kind) {
+            // OnTakeDisease explicitly allows the first newly inflicted Silence
+            // reaction; subsequent reactions remain blocked while silenced.
+            self.voice_with_disease_check(target,4,VoiceCondition {decondition:true,..Default::default()},kind==StatusKind::Silence);
         }
     }
     fn grace_add_disease(&mut self,target:ActorId,status:Status) {
@@ -497,15 +506,26 @@ impl Battle {
         ensure(target.0<self.state.actors.len(),"Invalid BG status target")?;
         if !self.state.actors[target.0].alive() {return Ok(());}
         let before=self.state.rng;
-        let slots=op.roll_status_slots(&mut self.state.rng)?;
+        let rate=if op.disease_rate==0 {100} else {op.disease_rate};
+        let success=self.state.rng.weighted_bool(rate as f32*0.01_f32);
         self.trace_rng("bg_status_application",Some(actor),before);
-        if let Some(slots)=slots {
+        if success {
             // Imported BG ailment rows have one actual disease in slot zero;
-            // all following None entries still consumed their duration rolls.
-            let turns=(u32::from(op.turns)+slots[0]).min(9) as u8;
+            // AddDisease/OnTakeDisease executes before the remaining None slots.
+            let before=self.state.rng;
+            let extra=op.status_random_min+self.state.rng.index(op.status_random_max-op.status_random_min+1);
+            self.trace_rng("bg_status_duration",Some(target),before);
+            let turns=(u32::from(op.turns)+extra).min(9) as u8;
             let status=Status {kind,turns};
+            let was_silent=self.state.actors[target.0].has_status(StatusKind::Silence);
             self.grace_add_disease(target,status);
+            // BattlePlayerBP.OnTakeDisease: deconditions/debuffs request type 4
+            // with DECONDITION. The shared settled-damage gate prevents repeats.
+            self.grace_disease_voice(target,kind,was_silent);
             events.push(Event::StatusApplied {actor:target,status});
+            let before=self.state.rng;
+            for _ in 1..op.status_slots {self.state.rng.index(op.status_random_max-op.status_random_min+1);}
+            self.trace_rng("bg_status_remaining_slots",Some(target),before);
         }
         Ok(())
     }
@@ -571,6 +591,52 @@ mod tests {
         assert_eq!(b.current_actor(),Some(ActorId(0)));
         assert_eq!(b.state.rng.draws,19_290_104);
         assert_eq!(report.events.iter().filter(|e|matches!(e,Event::Damage {..}|Event::Miss {..})).count(),12);
+    }
+    #[test]
+    fn osvald_guards_live_1e10aa9c() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../../data/source/live-guards-1e10aa9c-checkpoints.json")).unwrap();
+        let party:Vec<crate::PlayerCharacter>=serde_json::from_value(v["party"].clone()).unwrap();
+        let enemies:Vec<_>=v["enemy_ids"].as_array().unwrap().iter().map(|v|v.as_str().unwrap()).collect();
+        let entry:CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let mut b=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let original=b.clone();
+        b.step_player(Command::Defend).unwrap();
+        b.step_player_with_boost_inputs(Command::Boost{id:"donate_bp".into(),target:Some(ActorId(1)),bp:1},&[1]).unwrap();
+        assert_eq!(b.state.rng.draws+entry.draws,4772);
+        let inputs:Vec<u8>=serde_json::from_value(v["guard_inputs"].clone()).unwrap();
+        let r=b.step_player_with_boost_inputs(Command::Boost{id:"hired_help_guards".into(),target:None,bp:3},&inputs).unwrap();
+        assert_eq!(b.current_actor(),Some(ActorId(0)));
+        assert_eq!(r.events.iter().filter(|e|matches!(e,Event::Damage{target:ActorId(6),..})).count(),4);
+        assert_eq!(b.state.actors[6].resources.hp,0);
+        assert_eq!(b.state.rng.draws+entry.draws,4844);
+        b.step_player(Command::Item{id:"energizing_pomegranate_m".into(),target:Some(ActorId(2))}).unwrap();
+        assert_eq!(b.current_actor(),Some(ActorId(2)));
+        assert_eq!(b.state.rng.draws+entry.draws,4889);
+        let bg:Vec<u8>=serde_json::from_value(v["bg_inputs"].clone()).unwrap();
+        let pre_bg=b.preview_boost_inputs(&bg).unwrap();
+        assert_eq!(pre_bg.rng.draws+entry.draws,5002);
+        assert_eq!(pre_bg.rng.state,0xA3596FFE);
+        let r=b.step_player_with_boost_inputs(Command::Boost{id:"bewildering_grace".into(),target:None,bp:3},&bg).unwrap();
+        let effects:Vec<_>=r.events.iter().filter_map(|e|if let Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect();
+        assert_eq!(effects,["ABI_DAN_MAKA_027","ABI_DAN_MAKA_002","ABI_DAN_MAKA_018","ABI_DAN_MAKA_030"]);
+        assert_eq!(b.current_actor(),Some(ActorId(1)));
+        assert_eq!(b.state.rng.draws+entry.draws,5203);
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        let menu=trace.last().unwrap();
+        assert_eq!(menu.reason,"order_voice");
+        assert_eq!(menu.before.draws+entry.draws,5184);
+        let reactions:Vec<_>=trace.iter().filter(|s|s.reason=="damage_voice"&&s.before.draws+entry.draws>=5002).collect();
+        assert_eq!(reactions.len(),4);
+        assert!(reactions.iter().all(|s|s.after.draws-s.before.draws==2));
+        let fight=crate::gravell_routine::replay(original,&bg,&inputs).unwrap();
+        let rewards=crate::gravell_routine::rewards(&fight,true).unwrap();
+        let mut field=rewards.after;field.advance(2);
+        assert_eq!(fight.evaluation,crate::gravell_routine::Evaluation::Accepted);
+        assert_eq!(fight.after.draws+entry.draws,5207);
+        assert_eq!(rewards.after.draws+entry.draws,5210);
+        assert_eq!(field.draws+entry.draws,5212);
+        assert_eq!(field.state,0xD2A671B8);
     }
     #[test]
     fn live_hikari_donate_bp_matches_partitio_menu() {
@@ -719,12 +785,13 @@ mod tests {
         let mut b=battle();let before=b.state.rng;let mut reference=before;
         let op=&crate::bg_effects::child("ABI_DAN_MAKA_024").unwrap().operations[0];
         let slots=op.roll_status_slots(&mut reference).unwrap().unwrap();
+        reference.advance(2); // Counter candidate, then the new-Silence debuff voice.
         let mut events=vec![];
         b.grace_status(ActorId(2),ActorId(0),op,&mut events).unwrap();
         assert_eq!(b.state.rng,reference);
         assert_eq!(b.state.actors[0].statuses.iter().find(|s|s.kind==StatusKind::Silence).unwrap().turns,2+slots[0] as u8);
         assert_eq!(b.state.round,1);
-        assert_eq!(b.state.rng.draws-before.draws,21);
+        assert_eq!(b.state.rng.draws-before.draws,23);
     }
     #[test]
     fn bp_depletion_is_clamped_and_does_not_change_hp_or_sp() {
@@ -751,13 +818,39 @@ mod tests {
         assert!(!trace.iter().any(|s|s.reason=="critical_hit_and_damage"));
     }
     #[test]
-    fn reverse_and_cleanse_preserve_other_status_categories_and_no_rng() {
+    fn silence_suppresses_reactions_but_not_its_first_infliction_or_menu_voice() {
+        let mut b=battle();let target=ActorId(0);let mut events=vec![];
+        let op=&crate::bg_effects::child("ABI_DAN_MAKA_024").unwrap().operations[0];
+        b.grace_status(ActorId(2),target,op,&mut events).unwrap();
+        b.state.opening_crt.as_mut().unwrap().settled_damage.fill(false);
+        let before=b.state.rng;
+        for kind in [4,11,13] {b.voice(target,kind,VoiceCondition::default());}
+        assert_eq!(b.state.rng,before);
+        b.state.queue=vec![target];b.state.cursor=0;
+        b.order_voice(None);
+        assert!(b.state.rng.draws>before.draws);
+        let mut clean=b.clone();clean.state.actors[0].statuses.clear();
+        clean.state.rng=before;b.state.rng=before;
+        b.order_voice(None);clean.order_voice(None);
+        assert_ne!(b.state.rng,clean.state.rng,"status-specific command voice must differ from healthy voice traversal");
+    }
+    #[test]
+    fn temenos_identity_is_available_to_recovery_reactions() {
+        let mut b=battle();
+        Arc::make_mut(&mut b.scenario).actors[2].id="temenos".into();
+        assert_eq!(b.grace_enforcer(ActorId(2)),Some("ePRIEST"));
+    }
+    #[test]
+    fn reverse_reacts_once_and_cleanse_preserves_other_status_categories() {
         let mut b=battle();let before=b.state.rng;
         b.state.actors[0].statuses=vec![
             Status {kind:StatusKind::AttackUp,turns:5},Status {kind:StatusKind::Poison,turns:9},
             Status {kind:StatusKind::MagicReflection,turns:1},Status {kind:StatusKind::DefenseDown,turns:2}];
-        b.grace_reverse_buffs(ActorId(0));b.grace_remove_deconditions(ActorId(0));
-        assert_eq!(b.state.rng,before);
+        b.grace_reverse_buffs(ActorId(0));
+        assert_eq!(b.state.rng.draws-before.draws,2);
+        let after_reverse=b.state.rng;
+        b.grace_remove_deconditions(ActorId(0));
+        assert_eq!(b.state.rng,after_reverse);
         assert!(b.state.actors[0].has_status(StatusKind::AttackDown));
         assert!(b.state.actors[0].has_status(StatusKind::MagicReflection));
         assert!(b.state.actors[0].has_status(StatusKind::DefenseDown));

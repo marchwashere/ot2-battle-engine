@@ -494,6 +494,19 @@
         "decondition": false,
         "pinch": false,
         "just_break": false
+      },
+      {
+        "id": "THIEF_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
       }
     ],
     [
@@ -1007,6 +1020,19 @@
       {
         "id": "PROFESSOR_eUSE_ITEM_TO_ENEMY_COMMON",
         "type": 16,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "PROFESSOR_ePLAY_GUARD_COMMON",
+        "type": 17,
         "rate": 100,
         "once": false,
         "border": 0,
@@ -1564,6 +1590,19 @@
         "decondition": false,
         "pinch": false,
         "just_break": false
+      },
+      {
+        "id": "DANCER_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
       }
     ],
     [
@@ -2060,6 +2099,19 @@
         "decondition": false,
         "pinch": false,
         "just_break": false
+      },
+      {
+        "id": "MERCHANT_ePLAY_GUARD_COMMON",
+        "type": 17,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
       }
     ],
     [
@@ -2547,6 +2599,19 @@
       {
         "id": "FENCER_eUSE_ITEM_TO_ENEMY_COMMON",
         "type": 16,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "FENCER_ePLAY_GUARD_COMMON",
+        "type": 17,
         "rate": 100,
         "once": false,
         "border": 0,
@@ -3069,6 +3134,19 @@
       {
         "id": "PRIEST_eUSE_ITEM_TO_ENEMY_COMMON",
         "type": 16,
+        "rate": 100,
+        "once": false,
+        "border": 0,
+        "self_only": false,
+        "target": null,
+        "counter": false,
+        "decondition": false,
+        "pinch": false,
+        "just_break": false
+      },
+      {
+        "id": "PRIEST_ePLAY_GUARD_COMMON",
+        "type": 17,
         "rate": 100,
         "once": false,
         "border": 0,
