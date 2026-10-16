@@ -15,6 +15,7 @@ use std::{
 mod grace;
 mod scholar;
 mod order;
+mod route_boss;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -679,6 +680,7 @@ impl Battle {
                 }
                 self.trace_rng("actor_initialization", Some(ActorId(i)), before);
             }
+            self.initialize_route_boss_ai();
         }
         if self.state.outcome == Outcome::Ongoing {
             if self.is_pirro() {
@@ -2529,7 +2531,7 @@ impl Battle {
             .iter()
             .enumerate()
             .filter(|(_, s)| s.alive())
-            .map(|(i, _)| ActorId(i))
+            .flat_map(|(i, _)| (0..self.route_boss_order_count(ActorId(i))).map(move |slot|(ActorId(i),slot)))
             .collect();
         if round == 1 {
             match self
@@ -2539,15 +2541,15 @@ impl Battle {
                 .and_then(|c| c.mansion_situation)
             {
                 Some(crate::escape::Situation::Preemptive) => {
-                    rows.retain(|id| self.side(*id) == Some(Side::Player))
+                    rows.retain(|(id,_)| self.side(*id) == Some(Side::Player))
                 }
                 Some(crate::escape::Situation::Surprise) => {
-                    rows.retain(|id| self.side(*id) == Some(Side::Enemy))
+                    rows.retain(|(id,_)| self.side(*id) == Some(Side::Enemy))
                 }
                 _ => (),
             }
         }
-        combat::sort_order(&mut rows, |id| {
+        combat::sort_order(&mut rows, |(id,slot)| {
             let s = &self.state.actors[id.0];
             // The first preview uses the timing values cached at initialization.
             // Adding the night talent marks order rows but does not call
@@ -2576,14 +2578,14 @@ impl Battle {
                 && self.side(id) == Some(Side::Enemy)
             {
                 let unit = f32::from(s.order_sample) * 3.051_851e-5_f32;
-                (speed as f32 * (0.7_f32 + (1.5_f32 - 0.7_f32) * unit)) as u32
+                { let base=(speed as f32 * (0.7_f32 + (1.5_f32 - 0.7_f32) * unit)) as u32; (base as f32*self.route_boss_order_ratio(id,slot)) as u32 }
             } else {
-                speed
+                (speed as f32 * self.route_boss_order_ratio(id,slot)) as u32
             }
         });
         let states = &self.state.actors;
         let before = self.state.rng;
-        combat::shuffle_order(&mut rows, |id| !states[id.0].broken()
+        combat::shuffle_order(&mut rows, |(id,_)| !states[id.0].broken()
             && !states[id.0].has_status(StatusKind::ActFirst), &mut self.state.rng);
         self.trace_rng(
             if round == self.state.round {
@@ -2594,7 +2596,7 @@ impl Battle {
             None,
             before,
         );
-        rows
+        rows.into_iter().map(|(id,_)|id).collect()
     }
     fn start_ot2_round(&mut self, events: &mut Vec<Event>) {
         let first = self.state.round == 0;

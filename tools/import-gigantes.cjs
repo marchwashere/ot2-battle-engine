@@ -44,6 +44,9 @@ for(const [i,prefix,ability]of [[1,'PROFESSOR','ABI_SCH_060_01'],[5,'PRIEST','AB
  }
  assert(crt.voices[i].length<=64);
 }
+const holyVoice=voices.find(r=>r.id==='PRIEST_ePLAY_ABILITY_ABI_CLE_020_01');
+const holyPkg=s.assets.loadPackage(path.join(s.assets.CONTENT,'Sound/Resource/VO/BattleSIN/en/'+holyVoice.VoiceLabel.toLowerCase()+'.uasset'));
+crt.skill_voice_duration_ticks.holy_light=Math.ceil(s.fields(objectHeader(holyPkg,holyPkg.exports[0]).properties).Duration*24000);
 fs.writeFileSync('data/lord_sands_crt.json',JSON.stringify(crt,null,2)+'\n');
 console.log('Imported Gigantes and authored Barrage/Slash/Holy Light timelines');
 

@@ -1,6 +1,6 @@
-//! Ordinary single-order battle queue controls. Source: BattleActionOrderBP
+//! Battle queue controls, including the route bosses' two action slots. Source: BattleActionOrderBP
 //! MoveActionOrder; BattleCharacterBaseBP CheckOverTakeEnable and
-//! OrderCountControl. Special boss multi-order / ExVide paths are not enabled.
+//! OrderCountControl. Other special boss / ExVide paths are not enabled.
 use super::*;
 
 impl Battle {

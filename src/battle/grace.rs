@@ -141,7 +141,7 @@ impl Battle {
     }
     fn grace_commands(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>)->Result<()> {
         use crate::bg_effects::{EffectKind::*,Step};
-        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32}
+        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
         let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
         let party:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Player)).collect();
         let mut schedule=vec![];
@@ -190,7 +190,7 @@ impl Battle {
                 Step::Voice {voice_type,..}=>{
                     if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
                     else if child.id.starts_with("ABI_SCH_011_")||child.id.starts_with("ABI_SCH_070_") {self.scholar_cast_voice(actor,child);}
-                    else {self.voice(actor,voice_type,VoiceCondition {ability:Some(match child.id.as_str(){"ABI_WAR_010_03"|"ABI_WAR_010_04"=>"ABI_WAR_010_01","ABI_SCH_060_04"=>"ABI_SCH_060_01",_=>&child.id}),..Default::default()});}
+                    else {if child.id=="ABI_CLE_020_01"&&self.scenario.actors[actor.0].id=="temenos" {run.voice_busy_until=tick+f64::from(crate::opening_crt::lord_sands_data().skill_voice_duration_ticks["holy_light"]);}self.voice(actor,voice_type,VoiceCondition {ability:Some(match child.id.as_str(){"ABI_WAR_010_03"|"ABI_WAR_010_04"=>"ABI_WAR_010_01","ABI_SCH_060_04"=>"ABI_SCH_060_01",_=>&child.id}),..Default::default()});}
                 },
                 Step::Effects {index,last,on_hit,..}=>{
                     if random_count&&!self.grace_enemies_alive() {continue;}
@@ -219,7 +219,7 @@ impl Battle {
                         };
                         if result.is_some_and(|v|reaction.is_none_or(|r|v>r)) {reaction=result;}
                     }
-                    if summon.is_none()&&self.state.actors[actor.0].alive() {if let Some(kind)=reaction {self.voice(actor,kind,VoiceCondition::default());}}
+                    if summon.is_none()&&tick>=run.voice_busy_until&&self.state.actors[actor.0].alive() {if let Some(kind)=reaction {self.voice(actor,kind,VoiceCondition::default());}}
                     let damage_targets:Vec<_>=events[damage_event_start..].iter().filter_map(|e|if let Event::Damage {target,..}=e {Some(*target)}else{None}).collect();
                     let mut new_break=None;let mut broken_hit=None;
                     for (n,(was_alive,was_broken)) in before_states.into_iter().enumerate() {
@@ -301,7 +301,11 @@ impl Battle {
             if !self.state.actors[target.0].alive() && summon.is_none() && !child.id.starts_with("ABI_SCH_011_") {continue;}
             let broken=self.state.actors[target.0].broken();
             let known=self.state.actors[target.0].revealed_element_weaknesses;
-            self.apply_attack_profile(actor,target,&attack,None,summon,events);
+            // RandomCountAttackCommand.ExecStepCounter caches CheckHit before
+            // JudgeSpecialHitRate returns it, even with Critical Scope active.
+            // Aggressive Slash has MinimumCount=0 (no forced-hit slots).
+            let hit=if child.id.starts_with("ABI_WAR_010_") {Some(self.normal_accuracy(actor,target,&attack))}else{None};
+            self.apply_attack_profile(actor,target,&attack,hit,summon,events);
             if self.side(target)==Some(Side::Enemy) {
                 let after=&self.state.actors[target.0];
                 let kind=if last&&!after.alive() {Some(12)} else if !broken&&after.broken() {Some(10)}
