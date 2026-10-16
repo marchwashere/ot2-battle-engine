@@ -1,0 +1,2367 @@
+{
+  "evidence": {
+    "Battle__BP__BattleAction___Base__BP_ActionCommandBase.txt": {
+      "ExecPayPostCost": "# ExecPayPostCost script=0x3b009 serialized=716 memory=516 expected=516\n@0000 (0) JumpIfNot target=513 [Use Grow Magic Buff]\n@000e (14) K2Node_DynamicCast_AsBattle_Character_Base_BP = DynamicCast import:-10:BattleCharacterBaseBP_C [m_cEnforcer]\n@0032 (50) K2Node_DynamicCast_bSuccess = Cast cast=71 [K2Node_DynamicCast_AsBattle_Character_Base_BP]\n@004f (79) K2Node_DynamicCast_AsBattle_Character_Base_BP.SearchDisease(74, CallFunc_SearchDisease_ExecHandler, CallFunc_SearchDisease_Enable)\n@0087 (135) JumpIfNot target=266 [CallFunc_SearchDisease_Enable]\n@0095 (149) K2Node_DynamicCast_AsBattle_Character_Base_BP = DynamicCast import:-10:BattleCharacterBaseBP_C [m_cEnforcer]\n@00b9 (185) K2Node_DynamicCast_bSuccess = Cast cast=71 [K2Node_DynamicCast_AsBattle_Character_Base_BP]\n@00d6 (214) K2Node_DynamicCast_AsBattle_Character_Base_BP.UpdateDiseaseCounter(74, CallFunc_UpdateDiseaseCounter_Remove_1)\n@0105 (261) Jump target=513\n@010a (266) K2Node_DynamicCast_AsBattle_Character_Base_BP = DynamicCast import:-10:BattleCharacterBaseBP_C [m_cEnforcer]\n@012e (302) K2Node_DynamicCast_bSuccess = Cast cast=71 [K2Node_DynamicCast_AsBattle_Character_Base_BP]\n@014b (331) K2Node_DynamicCast_AsBattle_Character_Base_BP.SearchDisease(75, CallFunc_SearchDisease_ExecHandler_1, CallFunc_SearchDisease_Enable_1)\n@0183 (387) JumpIfNot target=513 [CallFunc_SearchDisease_Enable_1]\n@0191 (401) K2Node_DynamicCast_AsBattle_Character_Base_BP = DynamicCast import:-10:BattleCharacterBaseBP_C [m_cEnforcer]\n@01b5 (437) K2Node_DynamicCast_bSuccess = Cast cast=71 [K2Node_DynamicCast_AsBattle_Character_Base_BP]\n@01d2 (466) K2Node_DynamicCast_AsBattle_Character_Base_BP.UpdateDiseaseCounter(75, CallFunc_UpdateDiseaseCounter_Remove)\n@0201 (513) Return [Nothing]\n@0203 (515) EndOfScript\n"
+    },
+    "Battle__BP__BattleCommandMenuActorBP.txt": {
+      "CreateDefaultMenuItemFromActionSet": "# CreateDefaultMenuItemFromActionSet script=0x465b6 serialized=5901 memory=3765 expected=3765\n@0000 (0) PushExecutionFlow target=3762\n@0005 (5) IsGrowMagicBuff = False\n@0010 (16) PushExecutionFlow target=2270\n@0015 (21) PushExecutionFlow target=637\n@001a (26) PushExecutionFlow target=181\n@001f (31) WorkCommandEnable = CommandEnable\n@0032 (50) CallFunc_GetDataTableRowFromName_ReturnValue_2 = import:-92:Default__DataTableFunctionLibrary.GetDataTableRowFromName(import:-89:AbilitySetData, AbilitySetName, CallFunc_GetDataTableRowFromName_OutRow_2)\n@0077 (119) JumpIfNot target=3593 [CallFunc_GetDataTableRowFromName_ReturnValue_2]\n@0085 (133) CreateAbilitySet = CallFunc_GetDataTableRowFromName_OutRow_2\n@00a0 (160) AddInfoText = TextConst kind=0\n@00b4 (180) PopExecutionFlow\n@00b5 (181) CallFunc_NotEqual_NameName_ReturnValue = NotEqual_NameName(CreateAbilitySet.HyperMagicLabel, None)\n@00e8 (232) CallFunc_BooleanAND_ReturnValue = BooleanAND(HyperMagic, CallFunc_NotEqual_NameName_ReturnValue)\n@010e (270) JumpIfNot target=411 [CallFunc_BooleanAND_ReturnValue]\n@011c (284) CallFunc_GetDataTableRowFromName_ReturnValue = import:-92:Default__DataTableFunctionLibrary.GetDataTableRowFromName(import:-89:AbilitySetData, CreateAbilitySet.HyperMagicLabel, CallFunc_GetDataTableRowFromName_OutRow)\n@016a (362) PopExecutionFlowIfNot [CallFunc_GetDataTableRowFromName_ReturnValue]\n@0174 (372) CreateAbilitySet = CallFunc_GetDataTableRowFromName_OutRow\n@018f (399) IsGrowMagicBuff = True\n@019a (410) PopExecutionFlow\n@019b (411) CallFunc_NotEqual_NameName_ReturnValue_1 = NotEqual_NameName(CreateAbilitySet.SuperMagicLabel, None)\n@01ce (462) CallFunc_BooleanAND_ReturnValue_1 = BooleanAND(SuperMagic, CallFunc_NotEqual_NameName_ReturnValue_1)\n@01f4 (500) PopExecutionFlowIfNot [CallFunc_BooleanAND_ReturnValue_1]\n@01fe (510) CallFunc_GetDataTableRowFromName_ReturnValue_1 = import:-92:Default__DataTableFunctionLibrary.GetDataTableRowFromName(import:-89:AbilitySetData, CreateAbilitySet.SuperMagicLabel, CallFunc_GetDataTableRowFromName_OutRow_1)\n@024c (588) PopExecutionFlowIfNot [CallFunc_GetDataTableRowFromName_ReturnValue_1]\n@0256 (598) CreateAbilitySet = CallFunc_GetDataTableRowFromName_OutRow_1\n@0271 (625) IsGrowMagicBuff = True\n@027c (636) PopExecutionFlow\n@027d (637) CallFunc_EqualEqual_ByteByte_ReturnValue_1 = EqualEqual_ByteByte(CreateAbilitySet.MenuType, 10)\n@02a5 (677) JumpIfNot target=2047 [CallFunc_EqualEqual_ByteByte_ReturnValue_1]\n@02b3 (691) CallFunc_IsInventorEnable_ReturnValue = PlayerHandle.IsInventorEnable()\n@02dd (733) PopExecutionFlowIfNot [CallFunc_IsInventorEnable_ReturnValue]\n@02e7 (743) CallFunc_GetInventorComponent_ReturnValue = PlayerHandle.GetInventorComponent()\n@0311 (785) CallFunc_IsInventorItemReady_ReturnValue = CallFunc_GetInventorComponent_ReturnValue.IsInventorItemReady(AbilitySetName)\n@0348 (840) JumpIfNot target=1093 [CallFunc_IsInventorItemReady_ReturnValue]\n@0356 (854) CreateAbilitySet.MenuType = 0\n@0373 (883) CheckCommandSealingList(PlayerHandle, CreateAbilitySet, CallFunc_CheckCommandSealingList_eCommandUseable)\n@039c (924) WorkUseable = CallFunc_CheckCommandSealingList_eCommandUseable\n@03b7 (951) CheckCommandSealingList(PlayerHandle, CreateAbilitySet, CallFunc_CheckCommandSealingList_eCommandUseable)\n@03e0 (992) CallFunc_EqualEqual_ByteByte_ReturnValue = EqualEqual_ByteByte(CallFunc_CheckCommandSealingList_eCommandUseable, 0)\n@03ff (1023) PopExecutionFlowIfNot [CallFunc_EqualEqual_ByteByte_ReturnValue]\n@0409 (1033) GetGameText(eBATTLE_INVENTION_USE, CallFunc_GetGameText_OutText)\n@0429 (1065) AddInfoText = CallFunc_GetGameText_OutText\n@0444 (1092) PopExecutionFlow\n@0445 (1093) CallFunc_GetInventorComponent_ReturnValue = PlayerHandle.GetInventorComponent()\n@046f (1135) CallFunc_IsInventorItemExecCreate_ReturnValue = CallFunc_GetInventorComponent_ReturnValue.IsInventorItemExecCreate(AbilitySetName)\n@04a6 (1190) JumpIfNot target=1631 [CallFunc_IsInventorItemExecCreate_ReturnValue]\n@04b4 (1204) GetGameText(eBATTLE_INVENTION_CREATING, CallFunc_GetGameText_OutText_1)\n@04d4 (1236) CallFunc_GetInventorComponent_ReturnValue = PlayerHandle.GetInventorComponent()\n@04fe (1278) CallFunc_GetInventorComponent_ReturnValue.GetInventorItemCreateTurn(AbilitySetName, CallFunc_GetInventorItemCreateTurn_nRestTurn, CallFunc_GetInventorItemCreateTurn_nCreateTurnMax)\n@053d (1341) K2Node_MakeStruct_FormatArgumentData_1.ArgumentName = \"0\"\n@055b (1371) K2Node_MakeStruct_FormatArgumentData_1.ArgumentValueType = 0\n@0578 (1400) K2Node_MakeStruct_FormatArgumentData_1.ArgumentValue = TextConst kind=0\n@0595 (1429) K2Node_MakeStruct_FormatArgumentData_1.ArgumentValueInt = CallFunc_GetInventorItemCreateTurn_nRestTurn\n@05b9 (1465) K2Node_MakeStruct_FormatArgumentData_1.ArgumentValueFloat = 0\n@05d9 (1497) K2Node_MakeStruct_FormatArgumentData_1.ArgumentValueGender = 0\n@05f6 (1526) SetArray [K2Node_MakeArray_Array_1; K2Node_MakeStruct_FormatArgumentData_1]\n@060a (1546) CallFunc_Format_ReturnValue_1 = Format(CallFunc_GetGameText_OutText_1, K2Node_MakeArray_Array_1)\n@0638 (1592) AddInfoText = CallFunc_Format_ReturnValue_1\n@0653 (1619) WorkCommandEnable = False\n@065e (1630) PopExecutionFlow\n@065f (1631) GetGameText(eBATTLE_INVENTION_CREATE, CallFunc_GetGameText_OutText_2)\n@067f (1663) CallFunc_GetInventorComponent_ReturnValue = PlayerHandle.GetInventorComponent()\n@06a9 (1705) CallFunc_GetInventorComponent_ReturnValue.GetInventorItemCreateTurn(AbilitySetName, CallFunc_GetInventorItemCreateTurn_nRestTurn, CallFunc_GetInventorItemCreateTurn_nCreateTurnMax)\n@06e8 (1768) K2Node_MakeStruct_FormatArgumentData.ArgumentName = \"0\"\n@0706 (1798) K2Node_MakeStruct_FormatArgumentData.ArgumentValueType = 0\n@0723 (1827) K2Node_MakeStruct_FormatArgumentData.ArgumentValue = TextConst kind=0\n@0740 (1856) K2Node_MakeStruct_FormatArgumentData.ArgumentValueInt = CallFunc_GetInventorItemCreateTurn_nCreateTurnMax\n@0764 (1892) K2Node_MakeStruct_FormatArgumentData.ArgumentValueFloat = 0\n@0784 (1924) K2Node_MakeStruct_FormatArgumentData.ArgumentValueGender = 0\n@07a1 (1953) SetArray [K2Node_MakeArray_Array; K2Node_MakeStruct_FormatArgumentData]\n@07b5 (1973) CallFunc_Format_ReturnValue = Format(CallFunc_GetGameText_OutText_2, K2Node_MakeArray_Array)\n@07e3 (2019) AddInfoText = CallFunc_Format_ReturnValue\n@07fe (2046) PopExecutionFlow\n@07ff (2047) CallFunc_EqualEqual_NameName_ReturnValue = EqualEqual_NameName(CreateAbilitySet.NoBoost, ABI_INV_080_01)\n@0832 (2098) PopExecutionFlowIfNot [CallFunc_EqualEqual_NameName_ReturnValue]\n@083c (2108) CallFunc_IsInventorEnable_ReturnValue = PlayerHandle.IsInventorEnable()\n@0866 (2150) PopExecutionFlowIfNot [CallFunc_IsInventorEnable_ReturnValue]\n@0870 (2160) CallFunc_GetInventorComponent_ReturnValue = PlayerHandle.GetInventorComponent()\n@089a (2202) CallFunc_IsInventorItemAllReady_ReturnValue = CallFunc_GetInventorComponent_ReturnValue.IsInventorItemAllReady()\n@08c8 (2248) PopExecutionFlowIfNot [CallFunc_IsInventorItemAllReady_ReturnValue]\n@08d2 (2258) WorkCommandEnable = False\n@08dd (2269) PopExecutionFlow\n@08de (2270) CallFunc_IsCommandSealing_ReturnValue = IsCommandSealing(8)\n@08f4 (2292) CallFunc_Not_PreBool_ReturnValue = Not_PreBool(CallFunc_IsCommandSealing_ReturnValue)\n@0911 (2321) Temp_bool_Variable = True\n@091c (2332) CallFunc_EqualEqual_ByteByte_ReturnValue_2 = EqualEqual_ByteByte(CreateAbilitySet.SubMenuType, 9)\n@0944 (2372) Temp_bool_Variable_1 = CallFunc_EqualEqual_ByteByte_ReturnValue_2\n@0957 (2391) import:-257:Default__LibActionCommand_C.GetActionCommandFromSet(CreateAbilitySet, 0, Self, CallFunc_GetActionCommandFromSet_Command, CallFunc_GetActionCommandFromSet_Label)\n@099c (2460) CheckCommandEnable(PlayerHandle, CreateAbilitySet, CallFunc_GetActionCommandFromSet_Command, NormalAttack, CallFunc_CheckCommandEnable_Useable, CallFunc_CheckCommandEnable_Disable)\n@09e0 (2528) CheckCommandCost(PlayerHandle, CallFunc_GetActionCommandFromSet_Command, CallFunc_CheckCommandCost_Enable)\n@0a09 (2569) CallFunc_BooleanAND_ReturnValue_2 = BooleanAND(WorkCommandEnable, CallFunc_CheckCommandCost_Enable)\n@0a2f (2607) CallFunc_BooleanAND_ReturnValue_3 = BooleanAND(IsEnableWeapon, CallFunc_Not_PreBool_ReturnValue)\n@0a55 (2645) CallFunc_BooleanAND_ReturnValue_4 = BooleanAND(CallFunc_BooleanAND_ReturnValue_2, CallFunc_CheckCommandEnable_Useable)\n@0a7b (2683) CallFunc_BooleanAND_ReturnValue_5 = BooleanAND(CallFunc_BooleanAND_ReturnValue_4, SwitchValue cases=2 end=2764 [Temp_bool_Variable_1; False; SwitchCaseNext 2741; Temp_bool_Variable; True; SwitchCaseNext 2755; CallFunc_BooleanAND_ReturnValue_3; K2Node_Select_Default])\n@0acd (2765) CallFunc_Not_PreBool_ReturnValue_1 = Not_PreBool(SwitchValue cases=2 end=2837 [Temp_bool_Variable_1; False; SwitchCaseNext 2814; Temp_bool_Variable; True; SwitchCaseNext 2828; CallFunc_BooleanAND_ReturnValue_3; K2Node_Select_Default])\n@0b16 (2838) CallFunc_BooleanOR_ReturnValue = BooleanOR(CallFunc_CheckCommandEnable_Disable, CallFunc_Not_PreBool_ReturnValue_1)\n@0b3c (2876) CallFunc_BooleanOR_ReturnValue_1 = BooleanOR(CallFunc_BooleanOR_ReturnValue, CommandSeal)\n@0b62 (2914) K2Node_MakeStruct_CommandMenuItem.DisplayName = None\n@0b8a (2954) K2Node_MakeStruct_CommandMenuItem.DetailText = None\n@0bb2 (2994) K2Node_MakeStruct_CommandMenuItem.Type = CreateAbilitySet.MenuType\n@0bdf (3039) K2Node_MakeStruct_CommandMenuItem.SubType = CreateAbilitySet.SubMenuType\n@0c0c (3084) K2Node_MakeStruct_CommandMenuItem.CommandSet = CreateAbilitySet\n@0c30 (3120) K2Node_MakeStruct_CommandMenuItem.Option = None\n@0c58 (3160) K2Node_MakeStruct_CommandMenuItem.AddInfoText = AddInfoText\n@0c7c (3196) K2Node_MakeStruct_CommandMenuItem.Enable = CallFunc_BooleanAND_ReturnValue_5\n@0c98 (3224) K2Node_MakeStruct_CommandMenuItem.NormalAttack = NormalAttack\n@0cb4 (3252) K2Node_MakeStruct_CommandMenuItem.SortKey = 0\n@0cd4 (3284) K2Node_MakeStruct_CommandMenuItem.CommandSeal = CallFunc_BooleanOR_ReturnValue_1\n@0cf0 (3312) K2Node_MakeStruct_CommandMenuItem.CommandID = AbilitySetName\n@0d14 (3348) K2Node_MakeStruct_CommandMenuItem.LearningAbility = LearningAbility\n@0d30 (3376) K2Node_MakeStruct_CommandMenuItem.BoostMaxOnly = False\n@0d44 (3396) K2Node_MakeStruct_CommandMenuItem.PotentialityActionAbility = PotentialityActionAbility\n@0d60 (3424) K2Node_MakeStruct_CommandMenuItem.Count = 0\n@0d80 (3456) K2Node_MakeStruct_CommandMenuItem.AwakingInvadeMonster = False\n@0d94 (3476) K2Node_MakeStruct_CommandMenuItem.InventorMenu = False\n@0da8 (3496) K2Node_MakeStruct_CommandMenuItem.UseGrowMagicBuff = IsGrowMagicBuff\n@0dc4 (3524) CallFunc_Array_Add_ReturnValue = import:-251:Default__KismetArrayLibrary.Array_Add(MenuItemList, K2Node_MakeStruct_CommandMenuItem)\n@0e08 (3592) PopExecutionFlow\n@0e09 (3593) CallFunc_Conv_NameToString_ReturnValue = Conv_NameToString(AbilitySetName)\n@0e2e (3630) CallFunc_Concat_StrStr_ReturnValue = Concat_StrStr(\"Failed Add AbilitySet : Name : \", CallFunc_Conv_NameToString_ReturnValue)\n@0e74 (3700) PrintString(Self, CallFunc_Concat_StrStr_ReturnValue, True, True, StructConst import:-315:LinearColor size=16 [0; 0.6600000262260437; 1; 1], 2)\n@0eb1 (3761) PopExecutionFlow\n@0eb2 (3762) Return [Nothing]\n@0eb4 (3764) EndOfScript\n"
+    },
+    "Battle__BP__BattleCharacterBaseBP.txt": {
+      "UpdateDiseaseCounter": "# UpdateDiseaseCounter script=0x38bcb serialized=2013 memory=1305 expected=1305\n@0000 (0) PushExecutionFlow target=1302\n@0005 (5) PushExecutionFlow target=806\n@000a (10) CallFunc_Map_Find_ReturnValue = import:-20:Default__BlueprintMapLibrary.Map_Find(CharacterDisease, Type, CallFunc_Map_Find_Value)\n@004f (79) PopExecutionFlowIfNot [CallFunc_Map_Find_ReturnValue]\n@0059 (89) CallFunc_Map_Find_ReturnValue = import:-20:Default__BlueprintMapLibrary.Map_Find(CharacterDisease, Type, CallFunc_Map_Find_Value)\n@009e (158) DiseaseHandler = CallFunc_Map_Find_Value\n@00b9 (185) CallFunc_BooleanOR_ReturnValue_1 = BooleanOR(DiseaseHandler.Permanent, DiseaseHandler.SupPermanent)\n@00f1 (241) JumpIfNot target=830 [CallFunc_BooleanOR_ReturnValue_1]\n@00ff (255) CallFunc_EqualEqual_ByteByte_ReturnValue = EqualEqual_ByteByte(Type, 37)\n@011e (286) CallFunc_EqualEqual_ByteByte_ReturnValue_1 = EqualEqual_ByteByte(Type, 36)\n@013d (317) CallFunc_BooleanOR_ReturnValue = BooleanOR(CallFunc_EqualEqual_ByteByte_ReturnValue_1, CallFunc_EqualEqual_ByteByte_ReturnValue)\n@0163 (355) PopExecutionFlowIfNot [CallFunc_BooleanOR_ReturnValue]\n@016d (365) CallFunc_Not_PreBool_ReturnValue = Not_PreBool(DiseaseHandler.SupPermanent)\n@0193 (403) CallFunc_Greater_IntInt_ReturnValue = Greater_IntInt(DiseaseHandler.Counter, 0)\n@01be (446) CallFunc_BooleanAND_ReturnValue = BooleanAND(CallFunc_Greater_IntInt_ReturnValue, CallFunc_Not_PreBool_ReturnValue)\n@01e4 (484) PopExecutionFlowIfNot [CallFunc_BooleanAND_ReturnValue]\n@01ee (494) CallFunc_Subtract_IntInt_ReturnValue = Subtract_IntInt(DiseaseHandler.Counter, 1)\n@0221 (545) CallFunc_LessEqual_IntInt_ReturnValue = LessEqual_IntInt(CallFunc_Subtract_IntInt_ReturnValue, 0)\n@0243 (579) Temp_int_Variable = 0\n@025a (602) Temp_bool_Variable = CallFunc_LessEqual_IntInt_ReturnValue\n@026d (621) DiseaseHandler.InvocationValue = SwitchValue cases=2 end=710 [Temp_bool_Variable; False; SwitchCaseNext 687; DiseaseHandler.InvocationValue; True; SwitchCaseNext 701; Temp_int_Variable; K2Node_Select_Default]\n@02c6 (710) DiseaseHandler.Counter = CallFunc_Subtract_IntInt_ReturnValue\n@02ea (746) import:-20:Default__BlueprintMapLibrary.Map_Add(CharacterDisease, Type, DiseaseHandler)\n@0325 (805) PopExecutionFlow\n@0326 (806) Remove = DiseaseRemove\n@0339 (825) Jump target=1302\n@033e (830) CallFunc_EqualEqual_ByteByte_ReturnValue_2 = EqualEqual_ByteByte(DiseaseHandler.DiseaseData.DiseaseCategory, 2)\n@036f (879) CallFunc_CheckSupportAilment_ReturnValue = CheckSupportAilment(15, CallFunc_CheckSupportAilment_cSupportAbilityData)\n@0392 (914) CallFunc_BooleanAND_ReturnValue_1 = BooleanAND(CallFunc_CheckSupportAilment_ReturnValue, CallFunc_EqualEqual_ByteByte_ReturnValue_2)\n@03b8 (952) CallFunc_SelectInt_ReturnValue = SelectInt(CallFunc_CheckSupportAilment_cSupportAbilityData.InvocationValue, 0, CallFunc_BooleanAND_ReturnValue_1)\n@03f4 (1012) CallFunc_Add_IntInt_ReturnValue = Add_IntInt(1, CallFunc_SelectInt_ReturnValue)\n@041e (1054) CallFunc_Subtract_IntInt_ReturnValue_1 = Subtract_IntInt(DiseaseHandler.Counter, CallFunc_Add_IntInt_ReturnValue)\n@0455 (1109) DiseaseHandler.Counter = CallFunc_Subtract_IntInt_ReturnValue_1\n@0479 (1145) import:-20:Default__BlueprintMapLibrary.Map_Add(CharacterDisease, Type, DiseaseHandler)\n@04b4 (1204) CallFunc_LessEqual_IntInt_ReturnValue_1 = LessEqual_IntInt(DiseaseHandler.Counter, 0)\n@04df (1247) PopExecutionFlowIfNot [CallFunc_LessEqual_IntInt_ReturnValue_1]\n@04e9 (1257) RemoveDisease(Type, False, CallFunc_RemoveDisease_ExecRemove)\n@050a (1290) DiseaseRemove = True\n@0515 (1301) PopExecutionFlow\n@0516 (1302) Return [Nothing]\n@0518 (1304) EndOfScript\n"
+    },
+    "Battle__BP__BattlePlayerBP.txt": {
+      "OnTakeDisease": "# OnTakeDisease script=0x7525b serialized=3032 memory=2188 expected=2188\n@0000 (0) PushExecutionFlow target=2177\n@0005 (5) PushExecutionFlow target=2098\n@000a (10) PushExecutionFlow target=1576\n@000f (15) PushExecutionFlow target=673\n@0014 (20) PushExecutionFlow target=457\n@0019 (25) PushExecutionFlow target=120\n@001e (30) CallFunc_OnTakeDisease_ReturnValue = OnTakeDisease(cEnforcer, eDiseaseType, eDiseaseCategory, nInvocationValue, 0, bIsNewDisease)\n@0064 (100) WorkResult = CallFunc_OnTakeDisease_ReturnValue\n@0077 (119) PopExecutionFlow\n@0078 (120) CallFunc_EqualEqual_ByteByte_ReturnValue_9 = EqualEqual_ByteByte(eDiseaseType, 53)\n@0097 (151) JumpIfNot target=263 [CallFunc_EqualEqual_ByteByte_ReturnValue_9]\n@00a5 (165) PushExecutionFlow target=2153\n@00aa (170) PushExecutionFlow target=2138\n@00af (175) PushExecutionFlow target=2122\n@00b4 (180) PushExecutionFlow target=309\n@00b9 (185) PopExecutionFlowIfNot [m_bMasqueradeEnable]\n@00c3 (195) CallFunc_IsExecMasquerade_ReturnValue = m_cMasqueradeComponent.IsExecMasquerade()\n@00ed (237) PopExecutionFlowIfNot [CallFunc_IsExecMasquerade_ReturnValue]\n@00f7 (247) ResumeMasquerade(False)\n@0106 (262) PopExecutionFlow\n@0107 (263) CallFunc_EqualEqual_ByteByte_ReturnValue_8 = EqualEqual_ByteByte(eDiseaseType, 85)\n@0126 (294) PopExecutionFlowIfNot [CallFunc_EqualEqual_ByteByte_ReturnValue_8]\n@0130 (304) PushExecutionFlow target=2122\n@0135 (309) K2Node_DynamicCast_AsKSBattle_Character_Player = DynamicCast import:-18:KSBattleCharacterPlayer_C [AnimCharacter]\n@0159 (345) K2Node_DynamicCast_bSuccess = Cast cast=71 [K2Node_DynamicCast_AsKSBattle_Character_Player]\n@0176 (374) K2Node_DynamicCast_AsKSBattle_Character_Player.Set State Harden(True, eDiseaseType)\n@01a4 (420) PlayerStatusUI.Play Darken for Harden()\n@01c8 (456) PopExecutionFlow\n@01c9 (457) CallFunc_EqualEqual_ByteByte_ReturnValue_5 = EqualEqual_ByteByte(eDiseaseType, 100)\n@01e8 (488) CallFunc_EqualEqual_ByteByte_ReturnValue_6 = EqualEqual_ByteByte(eDiseaseType, 60)\n@0207 (519) CallFunc_EqualEqual_ByteByte_ReturnValue_7 = EqualEqual_ByteByte(eDiseaseType, 51)\n@0226 (550) CallFunc_BooleanOR_ReturnValue_1 = BooleanOR(CallFunc_EqualEqual_ByteByte_ReturnValue_7, CallFunc_EqualEqual_ByteByte_ReturnValue_6)\n@024c (588) CallFunc_BooleanOR_ReturnValue_2 = BooleanOR(CallFunc_BooleanOR_ReturnValue_1, CallFunc_EqualEqual_ByteByte_ReturnValue_5)\n@0272 (626) PopExecutionFlowIfNot [CallFunc_BooleanOR_ReturnValue_2]\n@027c (636) PlayerStatusUI.Play Darken for Exclusion()\n@02a0 (672) PopExecutionFlow\n@02a1 (673) import:-508:Default__LibBattle_C.GetBattleManager(Self, CallFunc_GetBattleManager_BattleManager_1)\n@02cf (719) CallFunc_IsEndrollReplayMode_ReturnValue_1 = CallFunc_GetBattleManager_BattleManager_1.IsEndrollReplayMode()\n@02f9 (761) CallFunc_Not_PreBool_ReturnValue_1 = Not_PreBool(CallFunc_IsEndrollReplayMode_ReturnValue_1)\n@0316 (790) PopExecutionFlowIfNot [CallFunc_Not_PreBool_ReturnValue_1]\n@0320 (800) CallFunc_EqualEqual_ByteByte_ReturnValue_3 = EqualEqual_ByteByte(eDiseaseType, 54)\n@033f (831) JumpIfNot target=1057 [CallFunc_EqualEqual_ByteByte_ReturnValue_3]\n@034d (845) SearchDisease(54, CallFunc_SearchDisease_ExecHandler_2, CallFunc_SearchDisease_Enable_2)\n@036f (879) WorkDoomParameter = CallFunc_SearchDisease_ExecHandler_2\n@038a (906) import:-508:Default__LibBattle_C.GetBattleManager_OLD(Self, CallFunc_GetBattleManager_OLD_BattleManager_1)\n@03b8 (952) SetDoomUIParameter(CallFunc_GetBattleManager_OLD_BattleManager_1, WorkDoomParameter, CallFunc_SetDoomUIParameter_DoomUI, CallFunc_SetDoomUIParameter_DeathCount, CallFunc_SetDoomUIParameter_ColorType)\n@03f3 (1011) CallFunc_SetDoomUIParameter_DoomUI.StartNormalDeathCount(CallFunc_SetDoomUIParameter_DeathCount)\n@0420 (1056) PopExecutionFlow\n@0421 (1057) CallFunc_EqualEqual_ByteByte_ReturnValue_2 = EqualEqual_ByteByte(eDiseaseType, 101)\n@0440 (1088) JumpIfNot target=1314 [CallFunc_EqualEqual_ByteByte_ReturnValue_2]\n@044e (1102) SearchDisease(101, CallFunc_SearchDisease_ExecHandler_1, CallFunc_SearchDisease_Enable_1)\n@0470 (1136) WorkDoomParameter = CallFunc_SearchDisease_ExecHandler_1\n@048b (1163) import:-508:Default__LibBattle_C.GetBattleManager_OLD(Self, CallFunc_GetBattleManager_OLD_BattleManager)\n@04b9 (1209) SetDoomUIParameter(CallFunc_GetBattleManager_OLD_BattleManager, WorkDoomParameter, CallFunc_SetDoomUIParameter_DoomUI_1, CallFunc_SetDoomUIParameter_DeathCount_1, CallFunc_SetDoomUIParameter_ColorType_1)\n@04f4 (1268) CallFunc_SetDoomUIParameter_DoomUI_1.StartNormalDeathCount(CallFunc_SetDoomUIParameter_DeathCount_1)\n@0521 (1313) PopExecutionFlow\n@0522 (1314) CallFunc_EqualEqual_ByteByte_ReturnValue_1 = EqualEqual_ByteByte(eDiseaseType, 65)\n@0541 (1345) PopExecutionFlowIfNot [CallFunc_EqualEqual_ByteByte_ReturnValue_1]\n@054b (1355) SearchDisease(65, CallFunc_SearchDisease_ExecHandler, CallFunc_SearchDisease_Enable)\n@056d (1389) WorkDoomParameter = CallFunc_SearchDisease_ExecHandler\n@0588 (1416) import:-508:Default__LibBattle_C.GetBattleManager_OLD(Self, CallFunc_GetBattleManager_OLD_BattleManager_2)\n@05b6 (1462) SetDoomUIParameter(CallFunc_GetBattleManager_OLD_BattleManager_2, WorkDoomParameter, CallFunc_SetDoomUIParameter_DoomUI_2, CallFunc_SetDoomUIParameter_DeathCount_2, CallFunc_SetDoomUIParameter_ColorType_2)\n@05f1 (1521) CallFunc_SetDoomUIParameter_DoomUI_2.StartGalderaDeathCount(CallFunc_SetDoomUIParameter_DeathCount_2, CallFunc_SetDoomUIParameter_ColorType_2)\n@0627 (1575) PopExecutionFlow\n@0628 (1576) import:-508:Default__LibBattle_C.GetBattleManager(Self, CallFunc_GetBattleManager_BattleManager)\n@0656 (1622) CallFunc_IsEndrollReplayMode_ReturnValue = CallFunc_GetBattleManager_BattleManager.IsEndrollReplayMode()\n@0680 (1664) CallFunc_Not_PreBool_ReturnValue = Not_PreBool(CallFunc_IsEndrollReplayMode_ReturnValue)\n@069d (1693) PopExecutionFlowIfNot [CallFunc_Not_PreBool_ReturnValue]\n@06a7 (1703) CallFunc_EqualEqual_ByteByte_ReturnValue = EqualEqual_ByteByte(eDiseaseCategory, 2)\n@06c6 (1734) CallFunc_EqualEqual_ByteByte_ReturnValue_4 = EqualEqual_ByteByte(eDiseaseCategory, 0)\n@06e5 (1765) CallFunc_BooleanOR_ReturnValue = BooleanOR(CallFunc_EqualEqual_ByteByte_ReturnValue_4, CallFunc_EqualEqual_ByteByte_ReturnValue)\n@070b (1803) PopExecutionFlowIfNot [CallFunc_BooleanOR_ReturnValue]\n@0715 (1813) CallFunc_CanPlayVoiceWhileDisease_ReturnValue = CanPlayVoiceWhileDisease(4)\n@072f (1839) JumpIfNot target=1960 [CallFunc_CanPlayVoiceWhileDisease_ReturnValue]\n@073d (1853) K2Node_MakeStruct_BattleVoiceSetData.DiseaseCategory = 0\n@075a (1882) CallFunc_PlayBattleVoice_ReturnValue = PlayBattleVoice(4, K2Node_MakeStruct_BattleVoiceSetData, True)\n@077e (1918) CallFunc_PlayVibration2ByLabel_ReturnValue = PlayVibration2ByLabel(tyu, 0, False, 0)\n@07a7 (1959) PopExecutionFlow\n@07a8 (1960) SetArray [K2Node_MakeArray_Array; 4; 101; 85; 6; 53]\n@07bd (1981) CallFunc_Array_Contains_ReturnValue = import:-501:Default__KismetArrayLibrary.Array_Contains(K2Node_MakeArray_Array, eDiseaseType)\n@07f9 (2041) CallFunc_BooleanAND_ReturnValue = BooleanAND(bIsNewDisease, CallFunc_Array_Contains_ReturnValue)\n@081f (2079) JumpIfNot target=1918 [CallFunc_BooleanAND_ReturnValue]\n@082d (2093) Jump target=1853\n@0832 (2098) ReturnValue = WorkResult\n@0845 (2117) Jump target=2177\n@084a (2122) SetGuard(False)\n@0859 (2137) PopExecutionFlow\n@085a (2138) SavePermanentDisease()\n@0868 (2152) PopExecutionFlow\n@0869 (2153) RemoveDiseaseAllForHarden(CallFunc_RemoveDiseaseAllForHarden_ExecRemove)\n@0880 (2176) PopExecutionFlow\n@0881 (2177) Return [ReturnValue]\n@088b (2187) EndOfScript\n"
+    }
+  },
+  "sources": [
+    {
+      "source": "/Game/Ability/Database/AbilityData",
+      "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+    },
+    {
+      "source": "/Game/Ability/Database/AilmentData",
+      "sha256": "f2a99c806f16db66a01681d96b525034563766a62710b6d6fbd80742a7bdb363"
+    },
+    {
+      "source": "/Game/Ability/Database/AbilitySetData",
+      "sha256": "34568a4256c18b359fcb77e64b65dae4840664d3795edea9ec5fcaeb7dda8ff1"
+    },
+    {
+      "source": "/Game/Ability/Database/DiseaseData",
+      "sha256": "4197a3df501c11dca11fbbbddd7983a3b3fed4a182346e1926c802f0064f58c9"
+    },
+    {
+      "source": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    }
+  ],
+  "abilities": [
+    {
+      "id": "ABI_SCH_011_01",
+      "ID": 1093,
+      "AbilityID": 10930,
+      "DisplayName": "ABN_SCH_011",
+      "Detail": "ABD_SCH_011_01",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 14,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 85,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": true,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": true,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 122
+    },
+    {
+      "id": "ABI_SCH_011_02",
+      "ID": 1094,
+      "AbilityID": 10940,
+      "DisplayName": "ABN_SCH_011",
+      "Detail": "ABD_SCH_011_02",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 14,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 150,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": true,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": true,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 122
+    },
+    {
+      "id": "ABI_SCH_011_03",
+      "ID": 1095,
+      "AbilityID": 10950,
+      "DisplayName": "ABN_SCH_011",
+      "Detail": "ABD_SCH_011_03",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 14,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 215,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": true,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": true,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 122
+    },
+    {
+      "id": "ABI_SCH_011_04",
+      "ID": 1096,
+      "AbilityID": 10960,
+      "DisplayName": "ABN_SCH_011",
+      "Detail": "ABD_SCH_011_04",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eMAGIC",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 14,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 280,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": false,
+      "EnableConvergence": true,
+      "EnableDiffusion": false,
+      "EnableReflection": true,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": true,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": true,
+      "EnableExcitement": false,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": true,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_011_FireMagic_Dai.Seq_Sch_011_FireMagic_Dai"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 122
+    },
+    {
+      "id": "ABI_SCH_070_01",
+      "ID": 1137,
+      "AbilityID": 11370,
+      "DisplayName": "ABN_SCH_070",
+      "Detail": "ABD_SCH_070_01",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eBUFF",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::ePARTY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 15,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "ADD_SUPER_MAGIC",
+          "InvocationValue": 0,
+          "InvocationTurn": 2,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": true,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": false,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 112
+    },
+    {
+      "id": "ABI_SCH_070_02",
+      "ID": 1138,
+      "AbilityID": 11380,
+      "DisplayName": "ABN_SCH_070",
+      "Detail": "ABD_SCH_070_02",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eBUFF",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::ePARTY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 15,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "ADD_SUPER_MAGIC",
+          "InvocationValue": 0,
+          "InvocationTurn": 3,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": true,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": false,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 112
+    },
+    {
+      "id": "ABI_SCH_070_03",
+      "ID": 1139,
+      "AbilityID": 11390,
+      "DisplayName": "ABN_SCH_070",
+      "Detail": "ABD_SCH_070_03",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eBUFF",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::ePARTY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 15,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "ADD_SUPER_MAGIC",
+          "InvocationValue": 0,
+          "InvocationTurn": 4,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": true,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": false,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 112
+    },
+    {
+      "id": "ABI_SCH_070_04",
+      "ID": 1140,
+      "AbilityID": 11400,
+      "DisplayName": "ABN_SCH_070",
+      "Detail": "ABD_SCH_070_04",
+      "CommandActor": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C",
+          "number": 0,
+          "text": "/Game/Battle/BP/BattleAction/_Common/CommonCommand.CommonCommand_C"
+        },
+        "subPath": ""
+      },
+      "AbilityType": "EABILITY_TYPE::eBUFF",
+      "AbilityUseType": "EABILITY_USE_TYPE::eBATTLE_ONLY",
+      "AlwaysDisable": false,
+      "Attribute": "EATTRIBUTE_TYPE::eNONE",
+      "DependWeapon": false,
+      "RestrictWeapon": "EWEAPON_CATEGORY::eNONE",
+      "TargetType": "EBATTLE_TARGET_TYPE::ePARTY_SINGLE",
+      "ExceptEnforcer": false,
+      "CostType": "EABILITY_COST_TYPE::eMP",
+      "CostValue": 15,
+      "HitRatio": 0,
+      "CriticalRatio": 0,
+      "CriticalPower": 125,
+      "AbilityRatio": 100,
+      "BaseCount": 0,
+      "MinimumCount": 0,
+      "RandomCountMin": 0,
+      "RandomCountMax": 0,
+      "EstimateOrderType": "EBATTLE_ACTION_ORDER_ESTIMATE_TYPE::eNONE",
+      "EstimateOrderCount": 0,
+      "Ailment": [
+        {
+          "AilmentName": "ADD_SUPER_MAGIC",
+          "InvocationValue": 0,
+          "InvocationTurn": 5,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "KeepBoostEffect": false,
+      "EnableItemAll": false,
+      "EnableSkillAll": true,
+      "EnableConvergence": false,
+      "EnableDiffusion": false,
+      "EnableReflection": false,
+      "EnableCounter": false,
+      "EnableHideOut": false,
+      "EnableRepeat": true,
+      "EnableCover": false,
+      "EnableProvoke": false,
+      "EnableDisableMagic": true,
+      "EnableEnchant": false,
+      "EnableChaseAttack": false,
+      "EnableWeakCheckAll": false,
+      "EnableNormalAttackAll": false,
+      "EnableSession": false,
+      "EnableBusinessSupport": false,
+      "EnableForceWeakness": false,
+      "EnableNoUseMaterial": false,
+      "EnableSwitchWeapon": false,
+      "EnableCompensationMagic": false,
+      "EnableExcitement": true,
+      "SongAbilityFlag": false,
+      "DanceAbilityFlag": false,
+      "EnableAutoTameMonster": false,
+      "UseAbilityCamera": true,
+      "ActionCommandSequencer": {
+        "kind": "soft-object",
+        "asset": {
+          "base": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka",
+          "number": 0,
+          "text": "/Game/Battle/Sequencer/ActionCommand/PC/Scholar/Seq_Sch_070_DaiMahoka.Seq_Sch_070_DaiMahoka"
+        },
+        "subPath": ""
+      },
+      "AbilitySE": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "SlideFrame": 112
+    }
+  ],
+  "ailments": [
+    {
+      "id": "MAGIC_DAMAGE",
+      "ID": 1,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator0",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator1",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    },
+    {
+      "id": "ADD_SUPER_MAGIC",
+      "ID": 344,
+      "AilmentType": "EAILMENT_TYPE::NewEnumerator8",
+      "CalcType": "EAILMENT_CALC_TYPE_OLD::NewEnumerator0",
+      "Attribute": "EAILMENT_ATTRIBUTE_TYPE::NewEnumerator0",
+      "Target": "EAILMENT_TARGET_TYPE_OLD::NewEnumerator0",
+      "DiseaseRatio": 100,
+      "AddDisease": [
+        {
+          "DiseaseName": "SUPER_MAGIC",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        },
+        {
+          "DiseaseName": "None",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "ActionCommand": {
+            "kind": "object",
+            "index": 0,
+            "path": null
+          },
+          "ByEquipment": false
+        }
+      ],
+      "TargetDiseaseType": "EAILMENT_REMOVE_DISEASE_TYPE::eALL",
+      "OrderChangeType": "EAILMENT_ORDER_CHANGE_TYPE::NewEnumerator0",
+      "TargetParam": {
+        "HP": false,
+        "MP": false,
+        "BP": false,
+        "SP": false,
+        "POT": false,
+        "ATK": false,
+        "DEF": false,
+        "MATK": false,
+        "MDEF": false,
+        "ACC": false,
+        "EVA": false,
+        "CON": false,
+        "AGI": false
+      },
+      "AdvValue1": 0,
+      "AdvValue2": 0,
+      "AdvValue3": 0,
+      "AdvValue4": 0,
+      "TargetDiseaseName": "ePOISON",
+      "FieldDiseaseType": "EFIELD_DISEASE_TYPE::eNONE"
+    }
+  ],
+  "sequences": {
+    "ABI_SCH_011_01": [
+      {
+        "time": 3200,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0cd6a LocalVirtualFunction PlayVoice\n  0cd73 ByteConst 18\n  0cd75 ByteConst 0\n  0cd77 ByteConst 0\n0cd7a Return\n  0cd7b Nothing\n0cd7c EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0cbe0 LocalVirtualFunction PlaySE\n  0cbe9 NameConst se_bat_ability_scholar_09\n0cbf3 Return\n  0cbf4 Nothing\n0cbf5 EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0cc97 LocalVirtualFunction PlayAction\n  0cca0 LocalVariable Character\n  0ccb1 ByteConst 117\n  0ccb3 ByteConst 6\n  0ccb5 ByteConst 107\n0ccb8 Return\n  0ccb9 Nothing\n0ccba EndOfScript"
+      },
+      {
+        "time": 12000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0cc22 LocalVirtualFunction PlaySE\n  0cc2b NameConst se_bat_ability_scholar_10\n0cc35 Return\n  0cc36 Nothing\n0cc37 EndOfScript"
+      },
+      {
+        "time": 31888,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0cd1a LocalVirtualFunction PlayAction\n  0cd23 LocalVariable Character\n  0cd34 ByteConst 119\n  0cd36 ByteConst 6\n  0cd38 ByteConst 109\n0cd3b Return\n  0cd3c Nothing\n0cd3d EndOfScript"
+      },
+      {
+        "time": 62491,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0cb60 LocalVirtualFunction ExecAilment\n  0cb69 IntConst 0\n  0cb6e True\n  0cb6f False\n0cb71 Return\n  0cb72 Nothing\n0cb73 EndOfScript"
+      },
+      {
+        "time": 72541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0cba0 LocalVirtualFunction ExecAilment\n  0cba9 IntConst 0\n  0cbae True\n  0cbaf True\n0cbb1 Return\n  0cbb2 Nothing\n0cbb3 EndOfScript"
+      }
+    ],
+    "ABI_SCH_011_02": [
+      {
+        "time": 3200,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0cd6a LocalVirtualFunction PlayVoice\n  0cd73 ByteConst 18\n  0cd75 ByteConst 0\n  0cd77 ByteConst 0\n0cd7a Return\n  0cd7b Nothing\n0cd7c EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0cbe0 LocalVirtualFunction PlaySE\n  0cbe9 NameConst se_bat_ability_scholar_09\n0cbf3 Return\n  0cbf4 Nothing\n0cbf5 EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0cc97 LocalVirtualFunction PlayAction\n  0cca0 LocalVariable Character\n  0ccb1 ByteConst 117\n  0ccb3 ByteConst 6\n  0ccb5 ByteConst 107\n0ccb8 Return\n  0ccb9 Nothing\n0ccba EndOfScript"
+      },
+      {
+        "time": 12000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0cc22 LocalVirtualFunction PlaySE\n  0cc2b NameConst se_bat_ability_scholar_10\n0cc35 Return\n  0cc36 Nothing\n0cc37 EndOfScript"
+      },
+      {
+        "time": 31888,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0cd1a LocalVirtualFunction PlayAction\n  0cd23 LocalVariable Character\n  0cd34 ByteConst 119\n  0cd36 ByteConst 6\n  0cd38 ByteConst 109\n0cd3b Return\n  0cd3c Nothing\n0cd3d EndOfScript"
+      },
+      {
+        "time": 62491,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0cb60 LocalVirtualFunction ExecAilment\n  0cb69 IntConst 0\n  0cb6e True\n  0cb6f False\n0cb71 Return\n  0cb72 Nothing\n0cb73 EndOfScript"
+      },
+      {
+        "time": 72541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0cba0 LocalVirtualFunction ExecAilment\n  0cba9 IntConst 0\n  0cbae True\n  0cbaf True\n0cbb1 Return\n  0cbb2 Nothing\n0cbb3 EndOfScript"
+      }
+    ],
+    "ABI_SCH_011_03": [
+      {
+        "time": 3200,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0cd6a LocalVirtualFunction PlayVoice\n  0cd73 ByteConst 18\n  0cd75 ByteConst 0\n  0cd77 ByteConst 0\n0cd7a Return\n  0cd7b Nothing\n0cd7c EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0cbe0 LocalVirtualFunction PlaySE\n  0cbe9 NameConst se_bat_ability_scholar_09\n0cbf3 Return\n  0cbf4 Nothing\n0cbf5 EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0cc97 LocalVirtualFunction PlayAction\n  0cca0 LocalVariable Character\n  0ccb1 ByteConst 117\n  0ccb3 ByteConst 6\n  0ccb5 ByteConst 107\n0ccb8 Return\n  0ccb9 Nothing\n0ccba EndOfScript"
+      },
+      {
+        "time": 12000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0cc22 LocalVirtualFunction PlaySE\n  0cc2b NameConst se_bat_ability_scholar_10\n0cc35 Return\n  0cc36 Nothing\n0cc37 EndOfScript"
+      },
+      {
+        "time": 31888,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0cd1a LocalVirtualFunction PlayAction\n  0cd23 LocalVariable Character\n  0cd34 ByteConst 119\n  0cd36 ByteConst 6\n  0cd38 ByteConst 109\n0cd3b Return\n  0cd3c Nothing\n0cd3d EndOfScript"
+      },
+      {
+        "time": 62491,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0cb60 LocalVirtualFunction ExecAilment\n  0cb69 IntConst 0\n  0cb6e True\n  0cb6f False\n0cb71 Return\n  0cb72 Nothing\n0cb73 EndOfScript"
+      },
+      {
+        "time": 72541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0cba0 LocalVirtualFunction ExecAilment\n  0cba9 IntConst 0\n  0cbae True\n  0cbaf True\n0cbb1 Return\n  0cbb2 Nothing\n0cbb3 EndOfScript"
+      }
+    ],
+    "ABI_SCH_011_04": [
+      {
+        "time": 3200,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+        "body": "0cd6a LocalVirtualFunction PlayVoice\n  0cd73 ByteConst 18\n  0cd75 ByteConst 0\n  0cd77 ByteConst 0\n0cd7a Return\n  0cd7b Nothing\n0cd7c EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0cbe0 LocalVirtualFunction PlaySE\n  0cbe9 NameConst se_bat_ability_scholar_09\n0cbf3 Return\n  0cbf4 Nothing\n0cbf5 EndOfScript"
+      },
+      {
+        "time": 7980,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+        "body": "0cc97 LocalVirtualFunction PlayAction\n  0cca0 LocalVariable Character\n  0ccb1 ByteConst 117\n  0ccb3 ByteConst 6\n  0ccb5 ByteConst 107\n0ccb8 Return\n  0ccb9 Nothing\n0ccba EndOfScript"
+      },
+      {
+        "time": 12000,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0cc22 LocalVirtualFunction PlaySE\n  0cc2b NameConst se_bat_ability_scholar_10\n0cc35 Return\n  0cc36 Nothing\n0cc37 EndOfScript"
+      },
+      {
+        "time": 31888,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+        "body": "0cd1a LocalVirtualFunction PlayAction\n  0cd23 LocalVariable Character\n  0cd34 ByteConst 119\n  0cd36 ByteConst 6\n  0cd38 ByteConst 109\n0cd3b Return\n  0cd3c Nothing\n0cd3d EndOfScript"
+      },
+      {
+        "time": 62491,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0cb60 LocalVirtualFunction ExecAilment\n  0cb69 IntConst 0\n  0cb6e True\n  0cb6f False\n0cb71 Return\n  0cb72 Nothing\n0cb73 EndOfScript"
+      },
+      {
+        "time": 72541,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0cba0 LocalVirtualFunction ExecAilment\n  0cba9 IntConst 0\n  0cbae True\n  0cbaf True\n0cbb1 Return\n  0cbb2 Nothing\n0cbb3 EndOfScript"
+      }
+    ],
+    "ABI_SCH_070_01": [
+      {
+        "time": 2383,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0a7ad LocalVirtualFunction PlayVoice\n  0a7b6 ByteConst 18\n  0a7b8 ByteConst 0\n  0a7ba ByteConst 0\n0a7bd Return\n  0a7be Nothing\n0a7bf EndOfScript"
+      },
+      {
+        "time": 8031,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0a75d LocalVirtualFunction PlayAction\n  0a766 LocalVariable Character\n  0a777 ByteConst 136\n  0a779 ByteConst 6\n  0a77b ByteConst 112\n0a77e Return\n  0a77f Nothing\n0a780 EndOfScript"
+      },
+      {
+        "time": 14431,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0a6e8 LocalVirtualFunction PlaySE\n  0a6f1 NameConst se_bat_ability_scholar_22\n0a6fb Return\n  0a6fc Nothing\n0a6fd EndOfScript"
+      },
+      {
+        "time": 32077,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0a6a8 LocalVirtualFunction ExecAilment\n  0a6b1 IntConst 0\n  0a6b6 True\n  0a6b7 False\n0a6b9 Return\n  0a6ba Nothing\n0a6bb EndOfScript"
+      }
+    ],
+    "ABI_SCH_070_02": [
+      {
+        "time": 2383,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0a7ad LocalVirtualFunction PlayVoice\n  0a7b6 ByteConst 18\n  0a7b8 ByteConst 0\n  0a7ba ByteConst 0\n0a7bd Return\n  0a7be Nothing\n0a7bf EndOfScript"
+      },
+      {
+        "time": 8031,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0a75d LocalVirtualFunction PlayAction\n  0a766 LocalVariable Character\n  0a777 ByteConst 136\n  0a779 ByteConst 6\n  0a77b ByteConst 112\n0a77e Return\n  0a77f Nothing\n0a780 EndOfScript"
+      },
+      {
+        "time": 14431,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0a6e8 LocalVirtualFunction PlaySE\n  0a6f1 NameConst se_bat_ability_scholar_22\n0a6fb Return\n  0a6fc Nothing\n0a6fd EndOfScript"
+      },
+      {
+        "time": 32077,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0a6a8 LocalVirtualFunction ExecAilment\n  0a6b1 IntConst 0\n  0a6b6 True\n  0a6b7 False\n0a6b9 Return\n  0a6ba Nothing\n0a6bb EndOfScript"
+      }
+    ],
+    "ABI_SCH_070_03": [
+      {
+        "time": 2383,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0a7ad LocalVirtualFunction PlayVoice\n  0a7b6 ByteConst 18\n  0a7b8 ByteConst 0\n  0a7ba ByteConst 0\n0a7bd Return\n  0a7be Nothing\n0a7bf EndOfScript"
+      },
+      {
+        "time": 8031,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0a75d LocalVirtualFunction PlayAction\n  0a766 LocalVariable Character\n  0a777 ByteConst 136\n  0a779 ByteConst 6\n  0a77b ByteConst 112\n0a77e Return\n  0a77f Nothing\n0a780 EndOfScript"
+      },
+      {
+        "time": 14431,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0a6e8 LocalVirtualFunction PlaySE\n  0a6f1 NameConst se_bat_ability_scholar_22\n0a6fb Return\n  0a6fc Nothing\n0a6fd EndOfScript"
+      },
+      {
+        "time": 32077,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0a6a8 LocalVirtualFunction ExecAilment\n  0a6b1 IntConst 0\n  0a6b6 True\n  0a6b7 False\n0a6b9 Return\n  0a6ba Nothing\n0a6bb EndOfScript"
+      }
+    ],
+    "ABI_SCH_070_04": [
+      {
+        "time": 2383,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+        "body": "0a7ad LocalVirtualFunction PlayVoice\n  0a7b6 ByteConst 18\n  0a7b8 ByteConst 0\n  0a7ba ByteConst 0\n0a7bd Return\n  0a7be Nothing\n0a7bf EndOfScript"
+      },
+      {
+        "time": 8031,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+        "body": "0a75d LocalVirtualFunction PlayAction\n  0a766 LocalVariable Character\n  0a777 ByteConst 136\n  0a779 ByteConst 6\n  0a77b ByteConst 112\n0a77e Return\n  0a77f Nothing\n0a780 EndOfScript"
+      },
+      {
+        "time": 14431,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+        "body": "0a6e8 LocalVirtualFunction PlaySE\n  0a6f1 NameConst se_bat_ability_scholar_22\n0a6fb Return\n  0a6fc Nothing\n0a6fd EndOfScript"
+      },
+      {
+        "time": 32077,
+        "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+        "body": "0a6a8 LocalVirtualFunction ExecAilment\n  0a6b1 IntConst 0\n  0a6b6 True\n  0a6b7 False\n0a6b9 Return\n  0a6ba Nothing\n0a6bb EndOfScript"
+      }
+    ]
+  },
+  "steps": {
+    "ABI_SCH_011_01": [
+      {
+        "kind": "voice",
+        "tick": 3200,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 62491,
+        "index": null,
+        "last": false
+      },
+      {
+        "kind": "effects",
+        "tick": 72541,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_SCH_011_02": [
+      {
+        "kind": "voice",
+        "tick": 3200,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 62491,
+        "index": null,
+        "last": false
+      },
+      {
+        "kind": "effects",
+        "tick": 72541,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_SCH_011_03": [
+      {
+        "kind": "voice",
+        "tick": 3200,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 62491,
+        "index": null,
+        "last": false
+      },
+      {
+        "kind": "effects",
+        "tick": 72541,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_SCH_011_04": [
+      {
+        "kind": "voice",
+        "tick": 3200,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 62491,
+        "index": null,
+        "last": false
+      },
+      {
+        "kind": "effects",
+        "tick": 72541,
+        "index": null,
+        "last": true
+      }
+    ],
+    "ABI_SCH_070_01": [
+      {
+        "kind": "voice",
+        "tick": 2383,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 32077,
+        "index": null,
+        "last": false
+      }
+    ],
+    "ABI_SCH_070_02": [
+      {
+        "kind": "voice",
+        "tick": 2383,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 32077,
+        "index": null,
+        "last": false
+      }
+    ],
+    "ABI_SCH_070_03": [
+      {
+        "kind": "voice",
+        "tick": 2383,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 32077,
+        "index": null,
+        "last": false
+      }
+    ],
+    "ABI_SCH_070_04": [
+      {
+        "kind": "voice",
+        "tick": 2383,
+        "voice_type": 18
+      },
+      {
+        "kind": "effects",
+        "tick": 32077,
+        "index": null,
+        "last": false
+      }
+    ]
+  },
+  "voices": {
+    "throne": [
+      {
+        "id": "THIEF_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 883,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_AB_04021"
+      },
+      {
+        "id": "THIEF_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 893,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_TOU_PC_AB_04070"
+      }
+    ],
+    "osvald": [
+      {
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 813,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_GAK_PC_AB_04021"
+      },
+      {
+        "id": "PROFESSOR_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 823,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_GAK_PC_AB_04070"
+      }
+    ],
+    "agnea": [
+      {
+        "id": "DANCER_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 790,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_ODO_PC_AB_04021"
+      },
+      {
+        "id": "DANCER_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 800,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_ODO_PC_AB_04070"
+      }
+    ],
+    "partitio": [
+      {
+        "id": "MERCHANT_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 766,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_SHO_PC_AB_04021"
+      },
+      {
+        "id": "MERCHANT_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 776,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_SHO_PC_AB_04070"
+      }
+    ],
+    "hikari": [
+      {
+        "id": "FENCER_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 722,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_KEN_PC_AB_04021"
+      },
+      {
+        "id": "FENCER_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 732,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_KEN_PC_AB_04070"
+      }
+    ],
+    "temenos": [
+      {
+        "id": "PRIEST_ePLAY_ABILITY_ABI_SCH_011_01",
+        "Id": 744,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_011_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_SIN_PC_AB_04021"
+      },
+      {
+        "id": "PRIEST_ePLAY_ABILITY_ABI_SCH_070_01",
+        "Id": 754,
+        "BattleVoiceType": "EBATTLE_VOICE_TYPE::ePLAY_ABILITY",
+        "TargetSelf": false,
+        "TargetID": "None",
+        "InvadeID": "None",
+        "SupporterID": "None",
+        "EnemyID": "None",
+        "EnemyGroupID": "None",
+        "DiseaseCategory": "EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX",
+        "AbilityID": "ABI_SCH_070_01",
+        "EventFlag": "None",
+        "BossFlag": false,
+        "FieldCommandFlag": false,
+        "PinchFlag": false,
+        "JustBreakFlag": false,
+        "CounterFlag": false,
+        "SongFlag": false,
+        "DanceFlag": false,
+        "MeatFlag": false,
+        "Border": 0,
+        "PlayOnce": false,
+        "VoiceRate": 100,
+        "Priority": 100,
+        "VoiceLabel": "VO_SIN_PC_AB_04070"
+      }
+    ]
+  },
+  "durations": {
+    "throne:ABI_SCH_011_01": 34344,
+    "throne:ABI_SCH_070_01": 36385,
+    "osvald:ABI_SCH_011_01": 40009,
+    "osvald:ABI_SCH_070_01": 39457,
+    "agnea:ABI_SCH_011_01": 38833,
+    "agnea:ABI_SCH_070_01": 28320,
+    "partitio:ABI_SCH_011_01": 48385,
+    "partitio:ABI_SCH_070_01": 51192,
+    "hikari:ABI_SCH_011_01": 35304,
+    "hikari:ABI_SCH_070_01": 21384,
+    "temenos:ABI_SCH_011_01": 37105,
+    "temenos:ABI_SCH_070_01": 49920
+  },
+  "sets": [
+    {
+      "id": "ABI_SET_SCH_010",
+      "ID": 121,
+      "AbilitySetID": 121,
+      "NoBoost": "ABI_SCH_010_01",
+      "BoostLv1": "ABI_SCH_010_02",
+      "BoostLv2": "ABI_SCH_010_03",
+      "BoostLv3": "ABI_SCH_010_04",
+      "MenuType": "ECOMMAND_MENU_TYPE::eCOMMAND",
+      "SubMenuType": "ECOMMAND_SUB_MENU_TYPE::eNONE",
+      "MenuIconType": "EABILITY_ICON_TYPE::eMAGIC",
+      "MenuInfoLv": 0,
+      "SuperMagicLabel": "ABI_SET_SCH_011",
+      "HyperMagicLabel": "ABI_SET_SCH_012",
+      "RestrictWeaponLabel": "None",
+      "IsDivineAbility": false,
+      "InventorTurn": 0,
+      "CommandSealingSwitch": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_011",
+      "ID": 122,
+      "AbilitySetID": 122,
+      "NoBoost": "ABI_SCH_011_01",
+      "BoostLv1": "ABI_SCH_011_02",
+      "BoostLv2": "ABI_SCH_011_03",
+      "BoostLv3": "ABI_SCH_011_04",
+      "MenuType": "ECOMMAND_MENU_TYPE::eCOMMAND",
+      "SubMenuType": "ECOMMAND_SUB_MENU_TYPE::eNONE",
+      "MenuIconType": "EABILITY_ICON_TYPE::eMAGIC",
+      "MenuInfoLv": 0,
+      "SuperMagicLabel": "None",
+      "HyperMagicLabel": "None",
+      "RestrictWeaponLabel": "None",
+      "IsDivineAbility": false,
+      "InventorTurn": 0,
+      "CommandSealingSwitch": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "ABI_SET_SCH_070",
+      "ID": 133,
+      "AbilitySetID": 133,
+      "NoBoost": "ABI_SCH_070_01",
+      "BoostLv1": "ABI_SCH_070_02",
+      "BoostLv2": "ABI_SCH_070_03",
+      "BoostLv3": "ABI_SCH_070_04",
+      "MenuType": "ECOMMAND_MENU_TYPE::eCOMMAND",
+      "SubMenuType": "ECOMMAND_SUB_MENU_TYPE::eNONE",
+      "MenuIconType": "EABILITY_ICON_TYPE::eBUFF",
+      "MenuInfoLv": 0,
+      "SuperMagicLabel": "None",
+      "HyperMagicLabel": "None",
+      "RestrictWeaponLabel": "None",
+      "IsDivineAbility": false,
+      "InventorTurn": 0,
+      "CommandSealingSwitch": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "disease": {
+    "id": "SUPER_MAGIC",
+    "ID": 81,
+    "DisplayName": "None",
+    "Detail": "BUFF_DETAIL_SUPER_MAGIC",
+    "DiseaseType": "EDISEASE_TYPE::eSUPER_MAGIC",
+    "EnableResist": false,
+    "ResistType": "EDISEASE_TYPE::ePOISON",
+    "EnableTurnCount": false,
+    "DiseaseCategory": "EDISEASE_CATEGORY::eBUFF",
+    "BattleEndContinue": false,
+    "AdvValue1": 0,
+    "AdvValue2": 0,
+    "AdvValue3": 0,
+    "AdvValue4": 0,
+    "AdvLabel1": "None",
+    "ResorceLabel": "DISEASE_SUPER_MAGIC_ICON_01",
+    "EnableBuffExtension": false,
+    "EnableDiseaseCopy": false,
+    "EnableStealDisease": false,
+    "EffectLabel": "None",
+    "AttachEffect": false,
+    "GroundEffect": false,
+    "EnableDebuffExtension": false,
+    "EnableChangePermanent": false,
+    "EnableDeconditionExtension": false,
+    "StealthType": "ESTEALTH_DISEASE_TYPE::eSTEALTH_NORMAL",
+    "AttachSocketName": "EDEBUFF_ATTACHSOCKET_TYPE::eSTUN",
+    "DisplayOrder": 1160
+  }
+}

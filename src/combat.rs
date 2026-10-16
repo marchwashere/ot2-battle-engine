@@ -31,6 +31,8 @@ pub enum Element {
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum StatusKind {
+    /// Remaining upgraded casts, not elapsed rounds.
+    AdvancedMagic,
     ForceCritical,
     Blind,
     AttackUp,

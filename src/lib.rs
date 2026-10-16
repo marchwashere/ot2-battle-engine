@@ -53,3 +53,5 @@ pub mod temenos_recruitment;
 
 pub mod lord_sands;
 pub mod gigantes;
+
+pub mod scholar_magic;

@@ -189,6 +189,7 @@ impl Battle {
                 },
                 Step::Voice {voice_type,..}=>{
                     if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
+                    else if child.id.starts_with("ABI_SCH_011_")||child.id.starts_with("ABI_SCH_070_") {self.scholar_cast_voice(actor,child);}
                     else {self.voice(actor,voice_type,VoiceCondition {ability:Some(match child.id.as_str(){"ABI_WAR_010_03"|"ABI_WAR_010_04"=>"ABI_WAR_010_01","ABI_SCH_060_04"=>"ABI_SCH_060_01",_=>&child.id}),..Default::default()});}
                 },
                 Step::Effects {index,last,on_hit,..}=>{
@@ -227,7 +228,7 @@ impl Battle {
                         if state.broken() {if !was_broken {new_break=Some(target);}else if damage_targets.contains(&target) {broken_hit=Some(target);}}
                     }
                     if let Some(target)=new_break {run.pending=Some((tick+f64::from(self.crt_data().break_timer_delay_ticks),target));run.busy=tick+f64::from(self.crt_data().break_busy_ticks);}
-                    else if tick>=run.busy {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
+                    else if tick>=run.busy && !child.id.starts_with("ABI_SCH_011_") {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
                 }
             }
         }
@@ -297,7 +298,7 @@ impl Battle {
             // Summon commands retain their prepared targets. LibAilment's
             // damage loop checks object validity, not current HP; later Guards
             // still process a target killed by an earlier Guard.
-            if !self.state.actors[target.0].alive() && summon.is_none() {continue;}
+            if !self.state.actors[target.0].alive() && summon.is_none() && !child.id.starts_with("ABI_SCH_011_") {continue;}
             let broken=self.state.actors[target.0].broken();
             let known=self.state.actors[target.0].revealed_element_weaknesses;
             self.apply_attack_profile(actor,target,&attack,None,summon,events);
@@ -489,6 +490,7 @@ impl Battle {
     pub(super) fn grace_status(&mut self, actor:ActorId,target:ActorId,op:&Operation,events:&mut Vec<Event>)->Result<()> {
         ensure(op.kind==EffectKind::AddStatus,"Not a BG status")?;
         let kind=match op.status.as_deref() {
+            Some("SUPER_MAGIC")=>StatusKind::AdvancedMagic,
             Some("FORCE_CRITICAL")=>StatusKind::ForceCritical,
             Some("ATK_UP")=>StatusKind::AttackUp,
             Some("MATK_UP")=>StatusKind::MagicUp,

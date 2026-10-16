@@ -13,6 +13,7 @@ use std::{
     sync::Arc,
 };
 mod grace;
+mod scholar;
 mod order;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -438,10 +439,11 @@ impl Battle {
         Self::new_internal(config,ItemCatalog::builtin()?,Some(crt))
     }
     fn new_internal(
-        config: BattleConfig,
+        mut config: BattleConfig,
         items: ItemCatalog,
         opening_crt: Option<OpeningCrtState>,
     ) -> Result<Self> {
+        for skill in crate::scholar_magic::skills() {if !config.skills.iter().any(|s|s.id==skill.id) {config.skills.push(skill);}}
         ensure(
             config.schema_version == 1,
             "unsupported battle schema_version",
@@ -945,6 +947,12 @@ impl Battle {
                 let mut next=self.clone();
                 let report=next.grace_step(command,levels)?;
                 *self=next;return Ok(report);
+            }
+        }
+        if let Command::Skill {id,..}|Command::Boost {id,..}=&command {
+            ensure(!(self.state.actors[actor.0].has_status(StatusKind::AdvancedMagic)&&matches!(id.as_str(),"ABI_SET_SCH_020"|"ABI_SET_SCH_030")),"Advanced Icewind/Lightning Bolt upgrades are not implemented")?;
+            if matches!(id.as_str(),"ABI_SET_SCH_070"|"ABI_SET_SCH_011") || (id=="ABI_SET_SCH_010" && self.state.actors[actor.0].has_status(StatusKind::AdvancedMagic)) {
+                let mut next=self.clone();let report=next.scholar_step(command,levels)?;*self=next;return Ok(report);
             }
         }
         let prepared = match command {
@@ -2594,7 +2602,7 @@ impl Battle {
         if !first {
             for (i, state) in self.state.actors.iter_mut().enumerate() {
                 for status in &mut state.statuses {
-                    if status.turns != 255 && status.kind != StatusKind::MagicReflection {
+                    if status.turns != 255 && !matches!(status.kind,StatusKind::MagicReflection|StatusKind::AdvancedMagic) {
                         status.turns = status.turns.saturating_sub(1);
                     }
                 }

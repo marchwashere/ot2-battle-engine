@@ -149,7 +149,7 @@ fn classify(name:&str)->Result<EffectKind> {
         "MP_RATIO_DAMAGE"=>SpRatioDamage,"BP_RECOVERY"=>BpRecovery,"BP_DAMAGE"=>BpDamage,
         "SP_DAMAGE_DIRECT"=>ShieldDamage,"INSTANT_DEATH_EXCEPT_ENFORCER"=>InstantDeathExceptCaster,
         "REMOVE_DECONDITION_PARTY_ALL"=>RemovePartyDeconditions,
-        "ADD_FORCE_CRITICAL"|"ADD_SILENCE"|"ADD_POISON_NORMAL"|"ADD_MAGIC_REFLECTION"|"ADD_ATK_UP"|
+        "ADD_SUPER_MAGIC"|"ADD_FORCE_CRITICAL"|"ADD_SILENCE"|"ADD_POISON_NORMAL"|"ADD_MAGIC_REFLECTION"|"ADD_ATK_UP"|
         "ADD_MATK_UP"|"ADD_DEF_UP"|"ADD_MDEF_UP"|"ADD_AGI_UP"|
         "ADD_DEF_DOWN"|"ADD_MDEF_DOWN"|"ADD_LAST_ACT_SPECIAL"=>AddStatus,
         "ADD_DISABLE_ITEM_MENU"=>DisableItems,"ORDER_COUNT_DOWN"=>OrderDelay,
@@ -162,7 +162,11 @@ fn classify(name:&str)->Result<EffectKind> {
     })
 }
 fn import()->Result<BTreeMap<String,Child>> {
-    let d:Imported=serde_json::from_str(include_str!("../data/source/bg-effects.json"))?;
+    let mut d:Imported=serde_json::from_str(include_str!("../data/source/bg-effects.json"))?;
+    let scholar:Imported=serde_json::from_str(include_str!("../data/source/scholar-magic.json"))?;
+    d.abilities.extend(scholar.abilities);
+    for row in scholar.ailments {if !d.ailments.iter().any(|r|r.id==row.id) {d.ailments.push(row);}}
+    d.sequences.extend(scholar.sequences);d.steps.extend(scholar.steps);
     let mut children=BTreeMap::new();
     for a in d.abilities {
         let target=match a.target_type.rsplit("::").next().unwrap() {
@@ -258,7 +262,8 @@ mod tests {
     use super::*;
     #[test]
     fn all_39_children_and_both_nested_summons_are_present() {
-        assert_eq!(children().len(),48);
+        assert_eq!(children().len(),56);
+        for n in 1..=4 {for skill in ["011","070"] {assert!(child(&format!("ABI_SCH_{skill}_0{n}")).is_ok());}}
         for id in ["ABI_WAR_010_03","ABI_WAR_010_04","ABI_SCH_060_04","ABI_CLE_020_01","ABI_INV_030_01","ABI_MER_YOHEI_05_01"] {assert!(child(id).is_ok());}
         for n in 1..=39 {assert!(child(&format!("ABI_DAN_MAKA_{n:03}")).is_ok());}
         assert!(child("ABI_DAN_MAKA_006_INV").is_ok());
