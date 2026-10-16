@@ -5,7 +5,7 @@ fn record(b:&mut Battle,actions:&mut Vec<MenuAction>,a:Action,inputs:&[u8])->Res
  let report=if inputs.is_empty(){b.step_player(a.command())?}else{b.step_player_with_boost_inputs(a.command(),inputs)?};
  actions.push(MenuAction {round,actor:report.actor,action:a,inputs:inputs.to_vec(),before:report.rng_before,report});Ok(())
 }
-fn prefix(mut b:Battle)->Result<Option<(Battle,Vec<MenuAction>)>> {
+pub fn prefix(mut b:Battle)->Result<Option<(Battle,Vec<MenuAction>)>> {
  let order=b.state().turn_order();
  if order.iter().position(|a|a.0==3)>=order.iter().position(|a|a.0==2){return Ok(None);}
  let mut actions=vec![];
