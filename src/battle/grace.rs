@@ -27,12 +27,16 @@ impl Battle {
         if id=="bewildering_grace" {
             let mut dance=crate::bewildering_grace::Dance::new(bp)?;
             let mut first=true;
+            // BG children are SetSummonAbility(..., owner=parent). The native
+            // recovery flag's getter/setter delegate to that owner, so it spans
+            // the whole dance, including nested summon commands.
+            let mut recovery_settled=false;
             while let Some(selection)=dance.select(&mut self.state.rng)? {
                 self.trace_rng("bewildering_grace_lottery",Some(actor),selection.before);
                 // SetupActionCommand selects the first child before the parent
                 // ability voice. Later children follow completion of all child callbacks.
                 if first {self.voice(actor,18,VoiceCondition {ability:Some("ABI_DAN_070_01"),..Default::default()});first=false;}
-                self.grace_child(actor,crate::bg_effects::child(selection.ability)?,&mut events)?;
+                self.grace_child_with_recovery(actor,crate::bg_effects::child(selection.ability)?,&mut events,&mut recovery_settled)?;
                 dance.complete_child(selection.ability,self.state.actors[actor.0].alive(),self.grace_enemies_alive())?;
             }
         } else if matches!(id.as_str(),"critical_scope"|"aggressive_slash"|"elemental_barrage"|"holy_light") {
@@ -58,7 +62,11 @@ impl Battle {
         }
         Ok(self.complete_player_action(actor,events,before))
     }
-    pub(super) fn grace_child(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,events:&mut Vec<Event>)->Result<()> {
+    #[cfg(test)]
+    fn grace_child(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,events:&mut Vec<Event>)->Result<()> {
+        self.grace_child_with_recovery(actor,child,events,&mut false)
+    }
+    fn grace_child_with_recovery(&mut self,actor:ActorId,child:&'static crate::bg_effects::Child,events:&mut Vec<Event>,recovery_settled:&mut bool)->Result<()> {
         // Transform selects its replacement in SetupActionCommand; target
         // selection uses the complete enemy array in TransformEnemyStart.
         if child.id=="ABI_DAN_MAKA_003" {return self.grace_transform(child,events);}
@@ -70,8 +78,8 @@ impl Battle {
             let summon=crate::bg_effects::summon(&child.operations[0].source)?;
             if summon.initial_idle_frames>0 {let before=self.state.rng;self.state.rng.index(summon.initial_idle_frames);self.trace_rng("bg_summon_initial_frame",Some(actor),before);}
             let nested=crate::bg_effects::child(if child.id=="ABI_DAN_MAKA_006" {"ABI_DAN_MAKA_006_INV"}else{"ABI_DAN_MAKA_017_INV"})?;
-            self.grace_common_command(actor,nested,&targets,Some(summon),events)
-        } else {self.grace_common_child(actor,child,&targets,events)}
+            self.grace_commands_with_recovery(actor,&[(0.0,nested,targets,Some(summon))],events,recovery_settled)
+        } else {self.grace_commands_with_recovery(actor,&[(0.0,child,targets,None)],events,recovery_settled)}
     }
     fn grace_transform(&mut self,child:&crate::bg_effects::Child,events:&mut Vec<Event>)->Result<()> {
         let before=self.state.rng;let roll=self.state.rng.index(100);let mut sum=0;
@@ -140,8 +148,11 @@ impl Battle {
         self.grace_commands(actor,&[(0.0,child,targets.to_vec(),summon)],events)
     }
     fn grace_commands(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>)->Result<()> {
+        self.grace_commands_with_recovery(actor,jobs,events,&mut false)
+    }
+    fn grace_commands_with_recovery(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>,recovery_settled:&mut bool)->Result<()> {
         use crate::bg_effects::{EffectKind::*,Step};
-        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
+        #[derive(Default)] struct Runtime {pending:Option<(f64,ActorId)>,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
         let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
         // All overlapping summons consult the same BattleCamera.Playing flag.
         let mut break_camera_busy_until=f64::NEG_INFINITY;
@@ -222,7 +233,7 @@ impl Battle {
                             AdditiveShieldDamage=>{ensure(selected.iter().all(|t|!self.state.actors[t.0].alive()||self.state.actors[t.0].broken()),"Beastlings additive shields currently require broken target")?;None},
                             ShieldDamage=>self.grace_shield_damage(actor,&selected,op.value,events),
                             OrderDelay=>{self.grace_delay(actor,&selected,op.value as usize);None},
-                            _=>{self.grace_scalar(actor,&selected,op,&mut run.recovery,events)?;None},
+                            _=>{self.grace_scalar(actor,&selected,op,recovery_settled,events)?;None},
                         };
                         if result.is_some_and(|v|reaction.is_none_or(|r|v>r)) {reaction=result;}
                     }
@@ -308,10 +319,10 @@ impl Battle {
             hit_bonus:child.hit_ratio,critical_bonus:child.critical_ratio,critical_power:child.critical_power,normal_attack:false};
         let mut reaction=None;
         for &target in targets {
-            // Summon commands retain their prepared targets. LibAilment's
+            // Commands retain their prepared targets. LibAilment's
             // damage loop checks object validity, not current HP; later Guards
-            // still process a target killed by an earlier Guard.
-            if !self.state.actors[target.0].alive() && summon.is_none() && !child.id.starts_with("ABI_SCH_011_") {continue;}
+            // and BG's three light hits still process an earlier-killed target.
+            // The final hit can consequently request the aggregate kill voice.
             let broken=self.state.actors[target.0].broken();
             let known=self.state.actors[target.0].revealed_element_weaknesses;
             // RandomCountAttackCommand.ExecStepCounter caches CheckHit before
@@ -332,7 +343,6 @@ impl Battle {
         self.shift_action_orders(actor, targets, count.min(i32::MAX as usize) as i32);
     }
     pub(super) fn grace_shield_damage(&mut self,actor:ActorId,targets:&[ActorId],amount:u32,events:&mut Vec<Event>)->Option<u8> {
-        let mut reaction=None;
         for &target in targets {
             if !self.state.actors[target.0].alive()||self.side(target)!=Some(Side::Enemy) {continue;}
             let s=&mut self.state.actors[target.0];
@@ -342,12 +352,15 @@ impl Battle {
                 s.break_until_round=self.state.round+2;
                 events.push(Event::Broken {actor:target,recover_round:s.break_until_round});
                 self.break_action_order(target);
-                self.timer_rng("bg_shield_break_notification",Some(target));reaction=Some(10);
+                self.timer_rng("bg_shield_break_notification",Some(target));
                 let cap=crate::field_escape::player_latent_max(&self.scenario.actors[actor.0].id).expect("BG actor");
                 let r=&mut self.state.actors[actor.0].resources.latent;*r=r.saturating_add(25).min(cap);
             }
         }
-        reaction
+        // Battle_ExecDamageSP has break UI/camera callbacks, but unlike HP
+        // damage does not request an enforcer break voice. Its OnAttackDamageSP
+        // parent is a non-native Blueprint event, not another voice callback.
+        None
     }
     /// Execute scalar effects in ailment order (outside the per-target loop).
     /// `recovery_settled` belongs to the command, not an individual ailment.
@@ -785,6 +798,81 @@ mod tests {
         assert_eq!(b.state.rng,after);
         b.grace_recover(ActorId(2),ActorId(1),Resource::Latent,300,None,&mut vec![]);
         assert_eq!(b.state.actors[1].resources.latent,125);assert_eq!(b.state.rng,after);
+    }
+    #[test]
+    fn reported_shipwreck_bg_effects_share_parent_recovery_gate() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../../data/source/bg-shipwreck-1e10aa9c.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry:CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let b=crate::field_escape::shipwreck_jp_battle(entry,crate::escape::Situation::Normal,&party,&enemies,&history).unwrap();
+        let search_entry=b.clone();
+        let (mut b,actions)=crate::nameless_routine::prefix(b).unwrap().unwrap();
+        for (action,row) in actions.iter().zip(v["actions"].as_array().unwrap()) {
+            assert_eq!(serde_json::to_value(action.action).unwrap(),row["action"]);
+        }
+        assert_eq!(b.state.rng.draws+entry.draws,10221);
+        let inputs:Vec<u8>=serde_json::from_value(v["actions"][4]["inputs"].clone()).unwrap();
+        let pre=b.preview_boost_inputs(&inputs).unwrap().rng;
+        assert_eq!((pre.draws+entry.draws,pre.state),(10241,0x4FBF56EF));
+        let report=b.step_player_with_boost_inputs(crate::gravell_routine::Action::BewilderingGrace.command(),&inputs).unwrap();
+        let effects=report.events.iter().filter_map(|e|if let Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        assert_eq!(effects,["ABI_DAN_MAKA_012","ABI_DAN_MAKA_032","ABI_DAN_MAKA_033","ABI_DAN_MAKA_011"]);
+        assert_eq!(b.state.grace.as_ref().unwrap().jp_percent(),100);
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        let draws=trace.iter().filter(|s|s.reason=="bewildering_grace_lottery").map(|s|s.before.draws+entry.draws).collect::<Vec<_>>();
+        assert_eq!(draws,[10241,10260,10261,10262]);
+        assert_eq!(trace.iter().filter(|s|s.reason=="bg_recovery_speaker_shuffle").count(),1);
+        let fixed=crate::nameless_routine::search_shipwreck(search_entry,96).unwrap().expect("corrected JP plan");
+        assert_eq!(fixed.state.outcome,Outcome::Victory);
+        assert!(fixed.state.actors[..4].iter().all(|a|a.alive()));
+        assert_eq!(fixed.state.grace.as_ref().unwrap().jp_percent(),10000);
+        let dance=fixed.actions.iter().find(|a|a.action==crate::gravell_routine::Action::BewilderingGrace).unwrap();
+        let lottery=fixed.trace.iter().find(|s|s.reason=="bewildering_grace_lottery").unwrap();
+        eprintln!("Corrected same-entry BG: menu {}, inputs {:?}, pre-cast {} / 0x{:08X}",dance.before.draws+entry.draws,dance.inputs,lottery.before.draws+entry.draws,lottery.before.state);
+    }
+    #[test]
+    fn every_pair_of_bg_recovery_effects_shares_one_owner() {
+        // Source: BP_ActionCommandBase.Get/SetSettledPlayOnce_OnRecovered
+        // delegates to the summon owner. Even self-healing consumes that gate.
+        for first in [5,12,20,21,27,32,33] {for second in [5,12,20,21,27,32,33] {
+            let mut b=battle();let mut settled=false;let mut events=vec![];
+            let a=crate::bg_effects::child(&format!("ABI_DAN_MAKA_{first:03}")).unwrap();
+            let c=crate::bg_effects::child(&format!("ABI_DAN_MAKA_{second:03}")).unwrap();
+            b.grace_child_with_recovery(ActorId(2),a,&mut events,&mut settled).unwrap();
+            assert!(settled);
+            b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+            b.grace_child_with_recovery(ActorId(2),c,&mut events,&mut settled).unwrap();
+            let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+            assert!(!trace.iter().any(|s|matches!(s.reason,"bg_recovery_speaker_shuffle"|"voice")),"{first} then {second}");
+            // The next independent command gets a fresh gate.
+            b.grace_child(ActorId(2),crate::bg_effects::child("ABI_DAN_MAKA_012").unwrap(),&mut events).unwrap();
+            assert!(b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap().iter().any(|s|s.reason=="bg_recovery_speaker_shuffle"));
+        }}
+    }
+    #[test]
+    fn bg_light_retains_targets_until_final_hit_and_kill_voice() {
+        let mut b=battle();
+        for target in &mut b.state.actors[4..] {target.resources.hp=1;}
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        let mut events=vec![];
+        b.grace_child(ActorId(2),crate::bg_effects::child("ABI_DAN_MAKA_011").unwrap(),&mut events).unwrap();
+        assert_eq!(events.iter().filter(|e|matches!(e,Event::Damage{..})).count(),9);
+        assert!(b.state.actors[4..].iter().all(|a|!a.alive()));
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        assert_eq!(trace.iter().filter(|s|s.reason=="kill_voice").count(),1);
+    }
+    #[test]
+    fn bg_direct_shield_damage_does_not_invent_a_break_voice() {
+        let mut b=battle();let mut events=vec![];
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        b.grace_child(ActorId(2),crate::bg_effects::child("ABI_DAN_MAKA_029").unwrap(),&mut events).unwrap();
+        assert!(events.iter().any(|e|matches!(e,Event::Broken{..})));
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        assert!(trace.iter().any(|s|s.reason=="bg_shield_break_notification"));
+        assert!(trace.iter().any(|s|s.reason=="break_slow_timer"));
+        assert!(!trace.iter().any(|s|s.reason.ends_with("voice")));
     }
     #[test]
     fn exp100_survives_later_lesser_rolls_and_scattering_rejects_items_atomically() {

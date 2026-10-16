@@ -1,0 +1,468 @@
+{
+  "provenance": "Route input snapshot for user-reported 2026-10-17 BG effects; no live RNG-call trace. Pre-cast position remains a prediction.",
+  "battle_entry": {
+    "draws": 10012,
+    "state": 2575737464
+  },
+  "situation": "Normal",
+  "party": [
+    {
+      "combat": {
+        "accuracy": 272,
+        "attack": 308,
+        "critical": 282,
+        "defense": 413,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 280,
+        "fire_damage_bonus": 0,
+        "growth_attack": 234,
+        "growth_magic": 234,
+        "magic": 250,
+        "magic_defense": 459,
+        "main_weapon": "dagger",
+        "nuts": {
+          "ATK": 28,
+          "CON": 28
+        },
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 4,
+            "magic": 0,
+            "weapon": "sword"
+          },
+          {
+            "attack": 6,
+            "magic": 0,
+            "weapon": "dagger"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "axe"
+          }
+        ]
+      },
+      "id": "throne",
+      "name": "Throné",
+      "resources": {
+        "bp": 0,
+        "hp": 3432,
+        "latent": 80,
+        "sp": 118
+      },
+      "skills": [
+        "attack_sword",
+        "attack_dagger",
+        "ABI_SET_THI_010",
+        "ABI_SET_THI_020",
+        "attack_axe"
+      ],
+      "stats": {
+        "max_hp": 3432,
+        "max_sp": 118,
+        "speed": 392
+      }
+    },
+    {
+      "boost_start": true,
+      "combat": {
+        "accuracy": 234,
+        "attack": 220,
+        "critical": 187,
+        "defense": 246,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 234,
+        "fire_damage_bonus": 60,
+        "growth_attack": 234,
+        "growth_magic": 234,
+        "magic": 499,
+        "magic_defense": 319,
+        "main_weapon": "staff",
+        "nuts": {
+          "MATK": 56
+        },
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 3,
+            "magic": 4,
+            "weapon": "staff"
+          },
+          {
+            "attack": 132,
+            "magic": 0,
+            "weapon": "lance"
+          },
+          {
+            "attack": 195,
+            "magic": 298,
+            "weapon": "sword"
+          }
+        ]
+      },
+      "id": "osvald",
+      "name": "Osvald",
+      "resources": {
+        "bp": 0,
+        "hp": 2964,
+        "latent": 75,
+        "sp": 158
+      },
+      "skills": [
+        "attack_staff",
+        "attack_lance",
+        "attack_sword"
+      ],
+      "stats": {
+        "max_hp": 3239,
+        "max_sp": 177,
+        "speed": 210
+      }
+    },
+    {
+      "combat": {
+        "accuracy": 103,
+        "attack": 103,
+        "critical": 72,
+        "defense": 115,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 90,
+        "fire_damage_bonus": 0,
+        "growth_attack": 103,
+        "growth_magic": 103,
+        "magic": 132,
+        "magic_defense": 150,
+        "main_weapon": "staff",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 3,
+            "magic": 5,
+            "weapon": "staff"
+          },
+          {
+            "attack": 0,
+            "magic": 0,
+            "weapon": "dagger"
+          }
+        ]
+      },
+      "id": "temenos",
+      "name": "Temenos",
+      "resources": {
+        "bp": 2,
+        "hp": 657,
+        "latent": 0,
+        "sp": 85
+      },
+      "skills": [
+        "attack_staff",
+        "ABI_SET_CLE_010",
+        "ABI_SET_CLE_020",
+        "attack_dagger"
+      ],
+      "stats": {
+        "max_hp": 657,
+        "max_sp": 85,
+        "speed": 90
+      }
+    },
+    {
+      "boost_start": true,
+      "combat": {
+        "accuracy": 234,
+        "attack": 257,
+        "critical": 210,
+        "defense": 247,
+        "element_weaknesses": [],
+        "enemy_bp_base": 0,
+        "enemy_initialization": null,
+        "evasion": 210,
+        "fire_damage_bonus": 0,
+        "growth_attack": 234,
+        "growth_magic": 234,
+        "magic": 257,
+        "magic_defense": 246,
+        "main_weapon": "lance",
+        "nuts": {},
+        "shields": 0,
+        "statuses": [],
+        "steal_item": null,
+        "use_cat_damage_type": false,
+        "weapon_weaknesses": [],
+        "weapons": [
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "lance"
+          },
+          {
+            "attack": 5,
+            "magic": 0,
+            "weapon": "bow"
+          }
+        ]
+      },
+      "id": "partitio",
+      "name": "Partitio",
+      "resources": {
+        "bp": 0,
+        "hp": 3775,
+        "latent": 25,
+        "sp": 148
+      },
+      "skills": [
+        "attack_lance",
+        "ABI_SET_MER_020",
+        "ABI_SET_MER_040"
+      ],
+      "stats": {
+        "max_hp": 3775,
+        "max_sp": 148,
+        "speed": 210
+      }
+    }
+  ],
+  "enemy_ids": [
+    "ENE_NML_DNG_CAV_210",
+    "ENE_NML_DNG_CAV_120",
+    "ENE_NML_DNG_CAV_120"
+  ],
+  "enemy_knowledge": {
+    "ENE_EVE_CLE_MNT_030": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 4
+    },
+    "ENE_EVE_SUB_OTR_100": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_CTY_010": {
+      "elements": 0,
+      "studied": false,
+      "weapons": 4
+    },
+    "ENE_NML_FLD_CTY_100": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_CTY_260": {
+      "elements": 7,
+      "studied": true,
+      "weapons": 1
+    },
+    "ENE_NML_FLD_DST_040": {
+      "elements": 40,
+      "studied": true,
+      "weapons": 12
+    },
+    "ENE_NML_FLD_DST_170": {
+      "elements": 8,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_DST_210": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_DST_230": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 4
+    },
+    "ENE_NML_FLD_DST_270": {
+      "elements": 9,
+      "studied": true,
+      "weapons": 9
+    },
+    "ENE_NML_FLD_DST_280": {
+      "elements": 16,
+      "studied": true,
+      "weapons": 9
+    },
+    "ENE_NML_FLD_FST_040": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 1
+    },
+    "ENE_NML_FLD_FST_100": {
+      "elements": 1,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_FST_160": {
+      "elements": 32,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_ISD_040": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 32
+    },
+    "ENE_NML_FLD_ISD_120": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_ISD_130": {
+      "elements": 8,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_ISD_230": {
+      "elements": 16,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_SEA_090": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 2
+    },
+    "ENE_NML_FLD_SEA_130": {
+      "elements": 17,
+      "studied": true,
+      "weapons": 32
+    },
+    "ENE_NML_FLD_SEA_150": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_SNW_010": {
+      "elements": 17,
+      "studied": true,
+      "weapons": 0
+    },
+    "ENE_NML_FLD_SNW_110": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 32
+    },
+    "ENE_NML_FLD_SNW_150": {
+      "elements": 32,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_WLD_030": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 8
+    },
+    "ENE_NML_FLD_WLD_040": {
+      "elements": 16,
+      "studied": true,
+      "weapons": 42
+    },
+    "ENE_NML_FLD_WLD_130": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 41
+    },
+    "ENE_NML_FLD_WLD_160": {
+      "elements": 4,
+      "studied": true,
+      "weapons": 16
+    },
+    "ENE_NML_FLD_WLD_250": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 36
+    },
+    "ENE_NML_FLD_WLD_270": {
+      "elements": 1,
+      "studied": true,
+      "weapons": 1
+    },
+    "ENE_NML_OTR_140": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 41
+    },
+    "ENE_NML_OTR_150": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 33
+    },
+    "ENE_NML_WTR_470": {
+      "elements": 0,
+      "studied": true,
+      "weapons": 1
+    }
+  },
+  "actions": [
+    {
+      "action": "defend",
+      "inputs": []
+    },
+    {
+      "action": {
+        "dagger": {
+          "target": 4
+        }
+      },
+      "inputs": []
+    },
+    {
+      "action": "defend",
+      "inputs": []
+    },
+    {
+      "action": {
+        "donate_bp_unboosted": {
+          "target": 2
+        }
+      },
+      "inputs": []
+    },
+    {
+      "action": "bewildering_grace",
+      "inputs": [
+        1,
+        2,
+        1,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3
+      ]
+    }
+  ],
+  "expected_effects": [
+    "ABI_DAN_MAKA_012",
+    "ABI_DAN_MAKA_032",
+    "ABI_DAN_MAKA_033",
+    "ABI_DAN_MAKA_011"
+  ]
+}

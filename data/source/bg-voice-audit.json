@@ -1,0 +1,918 @@
+{
+  "sources": [
+    {
+      "asset": "Battle/BP/BattleAction/_Base/BP_ActionCommandBase",
+      "sha256": "1b48752709f8e58d8c9f38b685c2a4d06301b5a566999eac9cc9ab5858255e59"
+    },
+    {
+      "asset": "Library/LibAilment",
+      "sha256": "fc21c394293a5c0488840eb1bfb5632595dd9474b8e3320c9437b788d25fe935"
+    },
+    {
+      "asset": "Battle/BP/BattlePlayerBP",
+      "sha256": "daca68dbe063d2709143c98370605e6fad0b575358dc73579b05328ef63c59a6"
+    },
+    {
+      "asset": "Battle/BP/BattleAction/RandomSelectAbility/RandomSelectAbilityCommand",
+      "sha256": "0be9f8c876cff9d7e2e6d9d3119666bbfbf16ae5d805ea633802ef221d3529c7"
+    },
+    {
+      "asset": "/Game/Character/Database/BattleVoiceSet",
+      "sha256": "c95f6a6b13d67af5fe0526dcd727e15473f4948931c50ab81a08eb3c1aca017a"
+    }
+  ],
+  "candidate_counts": {
+    "THIEF": 27,
+    "PROFESSOR": 29,
+    "DANCER": 31,
+    "MERCHANT": 27,
+    "FENCER": 27,
+    "PRIEST": 29
+  },
+  "parent_sequence": [
+    {
+      "time": 2400,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_6",
+      "body": "0b7bf LocalVirtualFunction CallSessionSupporter\n0b7c9 Return\n  0b7ca Nothing\n0b7cb EndOfScript"
+    },
+    {
+      "time": 4000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_7",
+      "body": "0b7f8 LocalVirtualFunction WaitSessionSupporter\n0b802 Return\n  0b803 Nothing\n0b804 EndOfScript"
+    },
+    {
+      "time": 4287,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_12",
+      "body": "0b917 LocalVirtualFunction PlayVoice\n  0b920 ByteConst 18\n  0b922 ByteConst 0\n  0b924 ByteConst 0\n0b927 Return\n  0b928 Nothing\n0b929 EndOfScript"
+    },
+    {
+      "time": 8008,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_4",
+      "body": "0b6ec LocalVirtualFunction PlayAction\n  0b6f5 LocalVariable Character\n  0b706 ByteConst 136\n  0b708 ByteConst 8\n  0b70a ByteConst 112\n0b70d Return\n  0b70e Nothing\n0b70f EndOfScript"
+    },
+    {
+      "time": 14695,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_2",
+      "body": "0b635 LocalVirtualFunction PlaySE\n  0b63e NameConst se_bat_ability_dancer_07_1\n0b648 Return\n  0b649 Nothing\n0b64a EndOfScript"
+    },
+    {
+      "time": 20000,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_8",
+      "body": "0b831 LocalVirtualFunction PlaySessionAction\n  0b83a ByteConst 81\n0b83d Return\n  0b83e Nothing\n0b83f EndOfScript"
+    },
+    {
+      "time": 68070,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_3",
+      "body": "0b677 LocalVirtualFunction PlaySE\n  0b680 NameConst se_bat_ability_dancer_07_2\n0b68a Return\n  0b68b Nothing\n0b68c EndOfScript"
+    },
+    {
+      "time": 100380,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_0",
+      "body": "0b5c3 LocalVirtualFunction ExecSpecialAilment\n0b5cd Return\n  0b5ce Nothing\n0b5cf EndOfScript"
+    },
+    {
+      "time": 102323,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_9",
+      "body": "0b86c LocalVirtualFunction WaitSummonAbility\n0b876 Return\n  0b877 Nothing\n0b878 EndOfScript"
+    },
+    {
+      "time": 112007,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_1",
+      "body": "0b5fc LocalVirtualFunction ExecSessionAbility\n0b606 Return\n  0b607 Nothing\n0b608 EndOfScript"
+    },
+    {
+      "time": 112007,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_5",
+      "body": "0b76f LocalVirtualFunction PlayAction\n  0b778 LocalVariable Character\n  0b789 ByteConst 81\n  0b78b ByteConst 0\n  0b78d ByteConst 0\n0b790 Return\n  0b791 Nothing\n0b792 EndOfScript"
+    },
+    {
+      "time": 112807,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_10",
+      "body": "0b8a5 LocalVirtualFunction WaitSessionAbility\n0b8af Return\n  0b8b0 Nothing\n0b8b1 EndOfScript"
+    },
+    {
+      "time": 114507,
+      "function": "SequenceEvent__ENTRYPOINTSequenceDirector_11",
+      "body": "0b8de LocalVirtualFunction ReturnSessionSupporter\n0b8e8 Return\n  0b8e9 Nothing\n0b8ea EndOfScript"
+    }
+  ],
+  "effects": [
+    {
+      "id": "ABI_DAN_MAKA_001",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "JPUP",
+          "InvocationValue": 10000,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_002",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "EXPUP",
+          "InvocationValue": 10000,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_003",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ENE_NML_OTR_130",
+          "InvocationValue": 30,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ENE_NML_OTR_140",
+          "InvocationValue": 15,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ENE_NML_OTR_150",
+          "InvocationValue": 5,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ENE_NML_WTR_510",
+          "InvocationValue": 30,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ENE_NML_WTR_590",
+          "InvocationValue": 15,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ENE_NML_WTR_600",
+          "InvocationValue": 5,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_004",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "operations": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_005",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "REVIVE_RATIO",
+          "InvocationValue": 100,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "MP_RATIO_RECOVERY",
+          "InvocationValue": 100,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "BP_RECOVERY",
+          "InvocationValue": 5,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "REMOVE_DECONDITION_PARTY_ALL",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_006",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "PC_ABI_MAKA_001_INVADE",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": [
+        "PC_ABI_MAKA_001_INVADE"
+      ]
+    },
+    {
+      "id": "ABI_DAN_MAKA_007",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "HP1",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [
+        {
+          "kind": "voice",
+          "tick": 61600,
+          "voice_type": 0
+        }
+      ],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_008",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_SINGLE",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "INSTANT_DEATH_EXCEPT_ENFORCER",
+          "InvocationValue": 100,
+          "InvocationTurn": 0,
+          "DiseaseRate": 50
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_009",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "JPUP",
+          "InvocationValue": 500,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_010",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "EXPUP",
+          "InvocationValue": 500,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_011",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eLIGHT",
+      "operations": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 130,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_012",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "BP_RECOVERY",
+          "InvocationValue": 5,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_013",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_MAGIC_REFLECTION",
+          "InvocationValue": 0,
+          "InvocationTurn": 1,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_014",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_POISON_NORMAL",
+          "InvocationValue": 0,
+          "InvocationTurn": 9,
+          "DiseaseRate": 100
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_015",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_DISABLE_ITEM_MENU",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "PHYSICS_DAMAGE",
+          "InvocationValue": 100,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_016",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "BP_DAMAGE",
+          "InvocationValue": 5,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_017",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "PC_ABI_MAKA_002_INVADE",
+          "InvocationValue": 0,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": [
+        "PC_ABI_MAKA_002_INVADE"
+      ]
+    },
+    {
+      "id": "ABI_DAN_MAKA_018",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "JPUP",
+          "InvocationValue": 200,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_019",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "EXPUP",
+          "InvocationValue": 200,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_020",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "MP_FIXED_RECOVERY",
+          "InvocationValue": 50,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_021",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "BP_RECOVERY",
+          "InvocationValue": 1,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_022",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+      "attribute": "EATTRIBUTE_TYPE::eTHUNDER",
+      "operations": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 130,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_023",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "operations": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 105,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_024",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_SILENCE",
+          "InvocationValue": 0,
+          "InvocationTurn": 2,
+          "DiseaseRate": 100
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_025",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "MP_RATIO_DAMAGE",
+          "InvocationValue": 100,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_026",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_ATK_UP",
+          "InvocationValue": 150,
+          "InvocationTurn": 2,
+          "DiseaseRate": 100
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_027",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "HP_FIXED_RECOVERY",
+          "InvocationValue": 400,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_028",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eWIND",
+      "operations": [
+        {
+          "AilmentName": "MAGIC_DAMAGE",
+          "InvocationValue": 200,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        },
+        {
+          "AilmentName": "ORDER_COUNT_DOWN",
+          "InvocationValue": 10,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_029",
+      "target": "EBATTLE_TARGET_TYPE::eENEMY_SINGLE",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "SP_DAMAGE_DIRECT",
+          "InvocationValue": 10,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_030",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_DEF_DOWN",
+          "InvocationValue": 50,
+          "InvocationTurn": 2,
+          "DiseaseRate": 100
+        },
+        {
+          "AilmentName": "ADD_MDEF_DOWN",
+          "InvocationValue": 50,
+          "InvocationTurn": 2,
+          "DiseaseRate": 100
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_031",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_032",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "RECOVERY_POTENTIALITY_ACTION",
+          "InvocationValue": 30,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_033",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "RECOVERY_POTENTIALITY_ACTION",
+          "InvocationValue": 300,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_034",
+      "target": "EBATTLE_TARGET_TYPE::ePARTY_ALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "DAMAGE_POTENTIALITY_ACTION",
+          "InvocationValue": 300,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_035",
+      "target": "EBATTLE_TARGET_TYPE::eALL",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "REVERSE_BUFF",
+          "InvocationValue": 99,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_036",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "GET_LEAF",
+          "InvocationValue": 1000,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_037",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "GET_LEAF",
+          "InvocationValue": 10000,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_038",
+      "target": "EBATTLE_TARGET_TYPE::eSELF",
+      "attribute": "EATTRIBUTE_TYPE::eNONE",
+      "operations": [
+        {
+          "AilmentName": "ADD_LAST_ACT_SPECIAL",
+          "InvocationValue": 0,
+          "InvocationTurn": 1,
+          "DiseaseRate": 100
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    },
+    {
+      "id": "ABI_DAN_MAKA_039",
+      "target": "EBATTLE_TARGET_TYPE::eALL",
+      "attribute": "EATTRIBUTE_TYPE::eFIRE",
+      "operations": [
+        {
+          "AilmentName": "RANDOM_TARGET_MAGIC_DAMAGE",
+          "InvocationValue": 150,
+          "InvocationTurn": 0,
+          "DiseaseRate": 0
+        }
+      ],
+      "authored_voice_events": [],
+      "nested_summons": []
+    }
+  ],
+  "evidence": {
+    "shield_events": [
+      {
+        "name": "OnAttackDamageSP",
+        "descriptor": "0x144cc2be0",
+        "flags": "0xc020800"
+      },
+      {
+        "name": "OnHitDamageSP",
+        "descriptor": "0x144ccd330",
+        "flags": "0xc020800"
+      }
+    ],
+    "recovery_owner": {
+      "get": "45ca4 JumpIfNot target=84\n  45ca9 InstanceVariable m_bIsSummonAbility\n45cba LetBool\n  45cbb LocalVariable CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n  45ccc Context skip=14 rvalue=CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n    45ccd InstanceVariable m_cSummonOwnerAbility\n    45cf2 LocalVirtualFunction GetSettledPlayOnce_OnRecovered\n45cfc LetBool\n  45cfd LocalOutVariable ReturnValue\n  45d0e LocalVariable CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n45d1f Jump target=103\n45d24 LetBool\n  45d25 LocalOutVariable ReturnValue\n  45d36 InstanceVariable m_bSettledPlayOnce_OnRecovered\n45d47 Return\n  45d48 LocalOutVariable ReturnValue\n45d59 EndOfScript",
+      "set": "45b94 JumpIfNot target=64\n  45b99 InstanceVariable m_bIsSummonAbility\n45baa Context skip=23 rvalue=<null-field>\n  45bab InstanceVariable m_cSummonOwnerAbility\n  45bc8 LocalVirtualFunction SetSettledPlayOnce_OnRecovered\n    45bd1 LocalVariable bEnable\n45be3 Jump target=83\n45be8 LetBool\n  45be9 InstanceVariable m_bSettledPlayOnce_OnRecovered\n  45bfa LocalVariable bEnable\n45c0b Return\n  45c0c Nothing\n45c0d EndOfScript",
+      "setup": "7c9e4 PushExecutionFlow target=1122\n7c9e9 Let property=WorkTargetList\n  7c9fa LocalVariable WorkTargetList\n  7ca0b LocalOutVariable TargetList\n7ca1c LetBool\n  7ca1d LocalVariable CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n  7ca2e Context skip=14 rvalue=CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n    7ca2f StructMemberContext CommandActor_60_B9ED06CF492FA9DA5A33E1846995CBCE\n      7ca40 LocalOutVariable ExecAilmentHandler\n    7ca65 LocalVirtualFunction GetSettledPlayOnce_OnRecovered\n7ca6f JumpIfNot target=379\n  7ca74 LocalVariable CallFunc_GetSettledPlayOnce_OnRecovered_ReturnValue\n7ca85 Let property=Temp_int_Loop_Counter_Variable_1\n  7ca96 LocalVariable Temp_int_Loop_Counter_Variable_1\n  7caa7 IntConst 0\n7caac Let property=Temp_int_Array_Index_Variable_1\n  7cabd LocalVariable Temp_int_Array_Index_Variable_1\n  7cace IntConst 0\n7cad3 Let property=CallFunc_Array_Length_ReturnValue_2\n  7cae4 LocalVariable CallFunc_Array_Length_ReturnValue_2\n  7caf5 Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_2\n    7caf6 ObjectConst import:-227:Default__KismetArrayLibrary\n    7cb0f FinalFunction import:-110:Array_Length\n      7cb14 LocalVariable WorkTargetList\n7cb26 LetBool\n  7cb27 LocalVariable CallFunc_Less_IntInt_ReturnValue_1\n  7cb38 CallMath import:-135:Less_IntInt\n    7cb3d LocalVariable Temp_int_Loop_Counter_Variable_1\n    7cb4e LocalVariable CallFunc_Array_Length_ReturnValue_2\n7cb60 PopExecutionFlowIfNot\n  7cb61 LocalVariable CallFunc_Less_IntInt_ReturnValue_1\n7cb72 Let property=Temp_int_Array_Index_Variable_1\n  7cb83 LocalVariable Temp_int_Array_Index_Variable_1\n  7cb94 LocalVariable Temp_int_Loop_Counter_Variable_1\n7cba5 PushExecutionFlow target=654\n7cbaa Context skip=37 rvalue=<null-field>\n  7cbab ObjectConst import:-227:Default__KismetArrayLibrary\n  7cbbc FinalFunction import:-106:Array_Get\n    7cbc1 LocalVariable WorkTargetList\n    7cbd2 LocalVariable Temp_int_Array_Index_Variable_1\n    7cbe3 LocalVariable CallFunc_Array_Get_Item_1\n7cbf5 Context skip=11 rvalue=<null-field>\n  7cbf6 LocalVariable CallFunc_Array_Get_Item_1\n  7cc13 FinalFunction import:-188:SetEnablePlayOnRecoveredVoice\n    7cc18 False\n7cc1a PopExecutionFlow\n7cc1b Let property=CallFunc_Array_Length_ReturnValue_1\n  7cc2c LocalVariable CallFunc_Array_Length_ReturnValue_1\n  7cc3d Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue_1\n    7cc3e ObjectConst import:-227:Default__KismetArrayLibrary\n    7cc57 FinalFunction import:-110:Array_Length\n      7cc5c LocalVariable WorkTargetList\n7cc6e LetBool\n  7cc6f LocalVariable CallFunc_Greater_IntInt_ReturnValue\n  7cc80 CallMath import:-133:Greater_IntInt\n    7cc85 LocalVariable CallFunc_Array_Length_ReturnValue_1\n    7cc96 IntConst 1\n7cc9c JumpIfNot target=607\n  7cca1 LocalVariable CallFunc_Greater_IntInt_ReturnValue\n7ccb2 PushExecutionFlow target=607\n7ccb7 PushExecutionFlow target=728\n7ccbc Context skip=19 rvalue=<null-field>\n  7ccbd ObjectConst import:-227:Default__KismetArrayLibrary\n  7ccce FinalFunction import:-113:Array_Shuffle\n    7ccd3 LocalVariable WorkTargetList\n7cce5 LetBool\n  7cce6 LocalVariable CallFunc_Array_RemoveItem_ReturnValue\n  7ccf7 Context skip=37 rvalue=CallFunc_Array_RemoveItem_ReturnValue\n    7ccf8 ObjectConst import:-227:Default__KismetArrayLibrary\n    7cd11 FinalFunction import:-112:Array_RemoveItem\n      7cd16 LocalVariable WorkTargetList\n      7cd27 StructMemberContext Enforcer_58_86723D6647D3A7C577D78DBEAB27607D\n        7cd38 LocalOutVariable ExecAilmentHandler\n7cd4a PopExecutionFlow\n7cd4b Context skip=15 rvalue=<null-field>\n  7cd4c StructMemberContext CommandActor_60_B9ED06CF492FA9DA5A33E1846995CBCE\n    7cd5d LocalOutVariable ExecAilmentHandler\n  7cd7a LocalVirtualFunction SetSettledPlayOnce_OnRecovered\n    7cd83 True\n7cd85 PopExecutionFlow\n7cd86 Let property=CallFunc_Add_IntInt_ReturnValue_1\n  7cd97 LocalVariable CallFunc_Add_IntInt_ReturnValue_1\n  7cda8 CallMath import:-115:Add_IntInt\n    7cdad LocalVariable Temp_int_Loop_Counter_Variable_1\n    7cdbe IntConst 1\n7cdc4 Let property=Temp_int_Loop_Counter_Variable_1\n  7cdd5 LocalVariable Temp_int_Loop_Counter_Variable_1\n  7cde6 LocalVariable CallFunc_Add_IntInt_ReturnValue_1\n7cdf7 Jump target=147\n7cdfc Let property=Temp_int_Loop_Counter_Variable\n  7ce0d LocalVariable Temp_int_Loop_Counter_Variable\n  7ce1e IntConst 0\n7ce23 Let property=Temp_int_Array_Index_Variable\n  7ce34 LocalVariable Temp_int_Array_Index_Variable\n  7ce45 IntConst 0\n7ce4a Let property=CallFunc_Array_Length_ReturnValue\n  7ce5b LocalVariable CallFunc_Array_Length_ReturnValue\n  7ce6c Context skip=19 rvalue=CallFunc_Array_Length_ReturnValue\n    7ce6d ObjectConst import:-227:Default__KismetArrayLibrary\n    7ce86 FinalFunction import:-110:Array_Length\n      7ce8b LocalVariable WorkTargetList\n7ce9d LetBool\n  7ce9e LocalVariable CallFunc_Less_IntInt_ReturnValue\n  7ceaf CallMath import:-135:Less_IntInt\n    7ceb4 LocalVariable Temp_int_Loop_Counter_Variable\n    7cec5 LocalVariable CallFunc_Array_Length_ReturnValue\n7ced7 PopExecutionFlowIfNot\n  7ced8 LocalVariable CallFunc_Less_IntInt_ReturnValue\n7cee9 Let property=Temp_int_Array_Index_Variable\n  7cefa LocalVariable Temp_int_Array_Index_Variable\n  7cf0b LocalVariable Temp_int_Loop_Counter_Variable\n7cf1c PushExecutionFlow target=1048\n7cf21 LetBool\n  7cf22 LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n  7cf33 CallMath import:-126:EqualEqual_IntInt\n    7cf38 LocalVariable Temp_int_Array_Index_Variable\n    7cf49 IntConst 0\n7cf4f Context skip=37 rvalue=<null-field>\n  7cf50 ObjectConst import:-227:Default__KismetArrayLibrary\n  7cf61 FinalFunction import:-106:Array_Get\n    7cf66 LocalVariable WorkTargetList\n    7cf77 LocalVariable Temp_int_Array_Index_Variable\n    7cf88 LocalVariable CallFunc_Array_Get_Item\n7cf9a Context skip=19 rvalue=<null-field>\n  7cf9b LocalVariable CallFunc_Array_Get_Item\n  7cfb8 FinalFunction import:-188:SetEnablePlayOnRecoveredVoice\n    7cfbd LocalVariable CallFunc_EqualEqual_IntInt_ReturnValue\n7cfcf PopExecutionFlow\n7cfd0 Let property=CallFunc_Add_IntInt_ReturnValue\n  7cfe1 LocalVariable CallFunc_Add_IntInt_ReturnValue\n  7cff2 CallMath import:-115:Add_IntInt\n    7cff7 LocalVariable Temp_int_Loop_Counter_Variable\n    7d008 IntConst 1\n7d00e Let property=Temp_int_Loop_Counter_Variable\n  7d01f LocalVariable Temp_int_Loop_Counter_Variable\n  7d030 LocalVariable CallFunc_Add_IntInt_ReturnValue\n7d041 Jump target=774\n7d046 Return\n  7d047 Nothing\n7d048 EndOfScript"
+    },
+    "damage_callbacks": [
+      "  16fa3 LocalVariable PlayVoice_KillEnemy",
+      "  16fb6 LocalVariable PlayVoice_BreakEnemy",
+      "  16fc9 LocalVariable PlayVoice_OpenWeakness",
+      "  1714d LocalVariable CallFunc_IsValid_ReturnValue",
+      "  1715e CallMath import:-163:IsValid",
+      "  1717a LocalVariable CallFunc_IsValid_ReturnValue",
+      "  1735a LocalVariable PlayVoice_KillEnemy",
+      "  1736c LocalVariable CallFunc_PlayBattleVoice_ReturnValue_2",
+      "  1737d Context skip=169 rvalue=CallFunc_PlayBattleVoice_ReturnValue_2",
+      "    173a3 LocalVirtualFunction PlayBattleVoice",
+      "  1742a LocalVariable PlayVoice_BreakEnemy",
+      "  1743c LocalVariable CallFunc_PlayBattleVoice_ReturnValue",
+      "  1744d Context skip=169 rvalue=CallFunc_PlayBattleVoice_ReturnValue",
+      "    17473 LocalVirtualFunction PlayBattleVoice",
+      "  174f6 LocalVariable PlayVoice_OpenWeakness",
+      "  17508 LocalVariable CallFunc_PlayBattleVoice_ReturnValue_1",
+      "  17519 Context skip=169 rvalue=CallFunc_PlayBattleVoice_ReturnValue_1",
+      "    1753f LocalVirtualFunction PlayBattleVoice",
+      "  18630 LocalVariable CallFunc_IsCharacterDead_ReturnValue_1",
+      "  18641 Context skip=14 rvalue=CallFunc_IsCharacterDead_ReturnValue_1",
+      "    18667 VirtualFunction IsCharacterDead",
+      "    18688 LocalVariable CallFunc_IsCharacterDead_ReturnValue_1",
+      "  1878c LocalVariable CallFunc_CheckLastHit_ReturnValue",
+      "  1879d Context skip=23 rvalue=CallFunc_CheckLastHit_ReturnValue",
+      "    187c3 LocalVirtualFunction CheckLastHit",
+      "  187df LocalVariable CallFunc_IsCharacterDead_ReturnValue",
+      "  187f0 Context skip=14 rvalue=CallFunc_IsCharacterDead_ReturnValue",
+      "    18816 VirtualFunction IsCharacterDead",
+      "    18837 LocalVariable CallFunc_IsCharacterDead_ReturnValue",
+      "    18848 LocalVariable CallFunc_CheckLastHit_ReturnValue",
+      "  18871 LocalVariable PlayVoice_KillEnemy",
+      "  1898a LocalVariable PlayVoice_BreakEnemy",
+      "  189b0 LocalVariable PlayVoice_OpenWeakness",
+      "  19329 LocalVariable CallFunc_CheckLastHit_ReturnValue_1",
+      "  1933a Context skip=23 rvalue=CallFunc_CheckLastHit_ReturnValue_1",
+      "    19360 LocalVirtualFunction CheckLastHit",
+      "    193c4 LocalVariable CallFunc_CheckLastHit_ReturnValue_1",
+      "  1946d LocalVariable CallFunc_PlayBattleVoiceForDamage_ReturnValue",
+      "  1947e Context skip=32 rvalue=CallFunc_PlayBattleVoiceForDamage_ReturnValue",
+      "    194a4 LocalVirtualFunction PlayBattleVoiceForDamage"
+    ],
+    "player_callbacks": {
+      "PlayBattleVoiceForDamage": [
+        "70535 LocalVirtualFunction SearchDisease",
+        "  70540 LocalVariable CallFunc_SearchDisease_ExecHandler",
+        "  70551 LocalVariable CallFunc_SearchDisease_Enable",
+        "    7057a LocalVariable CallFunc_SearchDisease_Enable",
+        "  70645 LocalVariable CallFunc_PlayBattleVoice_ReturnValue_3",
+        "  70656 LocalVirtualFunction PlayBattleVoice",
+        "  706f0 InstanceVariable IsDead",
+        "  70c26 LocalVariable CallFunc_PlayBattleVoice_ReturnValue",
+        "  70c37 LocalVirtualFunction PlayBattleVoice",
+        "  70e5f LocalVariable CallFunc_PlayBattleVoice_ReturnValue_4",
+        "  70e70 LocalVirtualFunction PlayBattleVoice",
+        "  71029 LocalVariable CallFunc_PlayBattleVoice_ReturnValue_2",
+        "  7103a LocalVirtualFunction PlayBattleVoice",
+        "  710d7 LocalVariable CallFunc_PlayBattleVoice_ReturnValue_1",
+        "  710e8 LocalVirtualFunction PlayBattleVoice"
+      ],
+      "PlayBattleVoice": [
+        "  73996 LocalVariable bIsSkipDiseaseCheck",
+        "  742ce LocalVariable CallFunc_PlayBattleVoice_ReturnValue",
+        "  742df FinalFunction import:-224:PlayBattleVoice",
+        "    74306 LocalVariable bIsSkipDiseaseCheck",
+        "  7432a LocalVariable CallFunc_PlayBattleVoice_ReturnValue",
+        "  74341 LocalVariable CallFunc_CanPlayVoiceWhileDisease_ReturnValue",
+        "  74352 LocalVirtualFunction CanPlayVoiceWhileDisease",
+        "  74372 LocalVariable CallFunc_CanPlayVoiceWhileDisease_ReturnValue"
+      ],
+      "OnTakeDisease": [
+        "  7527a LocalVariable CallFunc_OnTakeDisease_ReturnValue",
+        "  7528b FinalFunction import:-222:OnTakeDisease",
+        "    752a1 LocalVariable eDiseaseType",
+        "    752b2 LocalVariable eDiseaseCategory",
+        "    752d9 LocalVariable bIsNewDisease",
+        "  752fd LocalVariable CallFunc_OnTakeDisease_ReturnValue",
+        "    75326 LocalVariable eDiseaseType",
+        "    753e9 LocalVariable eDiseaseType",
+        "    75499 LocalVariable eDiseaseType",
+        "    754eb LocalVariable eDiseaseType",
+        "    75516 LocalVariable eDiseaseType",
+        "    75541 LocalVariable eDiseaseType",
+        "    756c2 LocalVariable eDiseaseType",
+        "756ec LocalVirtualFunction SearchDisease",
+        "  756f7 LocalVariable CallFunc_SearchDisease_ExecHandler_2",
+        "  75708 LocalVariable CallFunc_SearchDisease_Enable_2",
+        "  7573c LocalVariable CallFunc_SearchDisease_ExecHandler_2",
+        "    7582b LocalVariable eDiseaseType",
+        "75855 LocalVirtualFunction SearchDisease",
+        "  75860 LocalVariable CallFunc_SearchDisease_ExecHandler_1",
+        "  75871 LocalVariable CallFunc_SearchDisease_Enable_1",
+        "  758a5 LocalVariable CallFunc_SearchDisease_ExecHandler_1",
+        "    75994 LocalVariable eDiseaseType",
+        "759ba LocalVirtualFunction SearchDisease",
+        "  759c5 LocalVariable CallFunc_SearchDisease_ExecHandler",
+        "  759d6 LocalVariable CallFunc_SearchDisease_Enable",
+        "  75a0a LocalVariable CallFunc_SearchDisease_ExecHandler",
+        "    75bb1 LocalVariable eDiseaseCategory",
+        "    75bdc LocalVariable eDiseaseCategory",
+        "  75c3d LocalVariable CallFunc_CanPlayVoiceWhileDisease_ReturnValue",
+        "  75c4e LocalVirtualFunction CanPlayVoiceWhileDisease",
+        "  75c5f LocalVariable CallFunc_CanPlayVoiceWhileDisease_ReturnValue",
+        "75c70 Let property=DiseaseCategory",
+        "  75c81 StructMemberContext DiseaseCategory",
+        "  75ca6 LocalVariable CallFunc_PlayBattleVoice_ReturnValue",
+        "  75cb7 LocalVirtualFunction PlayBattleVoice",
+        "      75d5e LocalVariable eDiseaseType",
+        "    75d87 LocalVariable bIsNewDisease",
+        "75df9 LocalVirtualFunction SavePermanentDisease",
+        "75e04 LocalVirtualFunction RemoveDiseaseAllForHarden",
+        "  75e0d LocalVariable CallFunc_RemoveDiseaseAllForHarden_ExecRemove"
+      ],
+      "CanPlayRecoveredVoice": [
+        "75f97 LocalVirtualFunction GetRecoveredVoiceEnforcer",
+        "  75fb1 LocalVariable CallFunc_GetRecoveredVoiceEnforcer_outEnforcer",
+        "    75fda LocalVariable CallFunc_GetRecoveredVoiceEnforcer_outEnforcer",
+        "    76004 InstanceVariable m_bPlayOnRecoveredVoice"
+      ],
+      "GetRecoveredVoiceEnforcer": [],
+      "CanPlayVoiceWhileDisease": [
+        "7a19d LocalVirtualFunction SearchDisease",
+        "  7a1a8 LocalVariable CallFunc_SearchDisease_ExecHandler_4",
+        "  7a1b9 LocalVariable CallFunc_SearchDisease_Enable_4",
+        "7a1cb LocalVirtualFunction SearchDisease",
+        "  7a1d6 LocalVariable CallFunc_SearchDisease_ExecHandler_3",
+        "  7a1e7 LocalVariable CallFunc_SearchDisease_Enable_3",
+        "7a1f9 LocalVirtualFunction SearchDisease",
+        "  7a204 LocalVariable CallFunc_SearchDisease_ExecHandler_2",
+        "  7a215 LocalVariable CallFunc_SearchDisease_Enable_2",
+        "7a227 LocalVirtualFunction SearchDisease",
+        "  7a232 LocalVariable CallFunc_SearchDisease_ExecHandler_1",
+        "  7a243 LocalVariable CallFunc_SearchDisease_Enable_1",
+        "7a255 LocalVirtualFunction SearchDisease",
+        "  7a260 LocalVariable CallFunc_SearchDisease_ExecHandler",
+        "  7a271 LocalVariable CallFunc_SearchDisease_Enable",
+        "    7a29a LocalVariable CallFunc_SearchDisease_Enable",
+        "    7a2ab LocalVariable CallFunc_SearchDisease_Enable_1",
+        "    7a2e5 LocalVariable CallFunc_SearchDisease_Enable_2",
+        "    7a31f LocalVariable CallFunc_SearchDisease_Enable_3",
+        "    7a359 LocalVariable CallFunc_SearchDisease_Enable_4"
+      ],
+      "OnHitDamageSP": []
+    }
+  }
+}
