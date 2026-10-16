@@ -54,6 +54,19 @@ pub fn predict_from_boost_cycles(before:CrtRng,players:&[PlayerCharacter],histor
 }
 #[cfg(test)]mod tests {
  use super::*;
+ #[test]fn live_1e10aa9c_opening_after_four_player_initializations() {
+  let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/temenos-live-1e10aa9c.json")).unwrap();
+  let mut rng=CrtRng::new(0x1e10aa9c);rng.advance(6380);
+  let mut c=BattleConfig::from_json(include_str!("../data/temenos_recruitment.json")).unwrap();c.seed=rng.state;
+  c.players=serde_json::from_value(v["players"].clone()).unwrap();
+  c.enemy_knowledge=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+  for (p,weapon) in c.players.iter_mut().zip(["dagger","staff","dagger","lance"]) {p.skills=vec![format!("attack_{weapon}")];p.resources.as_mut().unwrap().bp=1;}
+  let b=Battle::new_temenos_recruitment(c,crate::escape::Situation::Normal,vec![0,1,2,3]).unwrap();
+  assert_eq!(rng.draws+b.state().rng.draws,6425);
+  assert_eq!(b.state().turn_order().iter().map(|a|a.0).collect::<Vec<_>>(),vec![0,2,1,3]);
+  assert_eq!(b.state().next_queue.iter().map(|a|a.0).collect::<Vec<_>>(),vec![3,2,1,0,4]);
+  for s in b.state().opening_crt.as_ref().unwrap().trace.as_ref().unwrap() {eprintln!("{}: {} -> {}",s.reason,6380+s.before.draws,6380+s.after.draws);}
+ }
  #[test]fn level70_all_first_actors_win_with_two_hits() {
   let exp=crate::field_escape::experience_for_level(70).unwrap();
   let players:Vec<_>=[7,6,8,4].iter().map(|&id|crate::field_escape::route_player(id,exp).unwrap()).collect();
