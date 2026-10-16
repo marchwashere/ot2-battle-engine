@@ -1,0 +1,20 @@
+{
+  "method": "Read-only inspection of loaded MovieScene objects using ReadProcessMemory; no hooks or game-state writes",
+  "date": "2026-10-16",
+  "native_tick_resolution_getter": "FUN_1408e9330",
+  "tick_resolution_offset": "0x108",
+  "display_rate_offset": "0x110",
+  "default_movie_scene": {
+    "tick_resolution": [60000, 1],
+    "display_rate": [60000, 1]
+  },
+  "loaded_break_cameras": {
+    "names": ["BreakCamera_Lv1_Near", "BreakCamera_Ex01Wide", "BreakCamera_Ex02WideTiltUp", "BreakCamera_Ex03Vide"],
+    "tick_resolution": [60000, 1],
+    "display_rate": [30, 1]
+  },
+  "asset_playback_upper_bound": 30000,
+  "normal_attack_ticks_per_second": 24000,
+  "normalized_break_duration_ticks": 12000,
+  "duration_seconds": 0.5
+}

@@ -444,6 +444,7 @@ impl Battle {
         items: ItemCatalog,
         opening_crt: Option<OpeningCrtState>,
     ) -> Result<Self> {
+        route_boss::validate_boss_ai(&config,opening_crt.as_ref())?;
         for skill in crate::scholar_magic::skills() {if !config.skills.iter().any(|s|s.id==skill.id) {config.skills.push(skill);}}
         ensure(
             config.schema_version == 1,
@@ -1593,14 +1594,25 @@ impl Battle {
     ) {
         // StartMainAction caches accuracy. Only authored ExecStepCounter keys
         // replace it. In particular sword/dagger Lv3 reuse it for all four hits.
+        // The command's selected weapon also selects its authored timeline.
+        // Update it before timeline selection, not at the first damage hit.
+        self.state.actors[actor.0].main_weapon = attack.weapon;
         let mut hit = self.normal_accuracy(actor, target, attack);
         let data = opening_crt::data();
         let mut pending_break_timer = None;
         let mut break_busy_until = 0;
         let mut voice_busy_until = 0;
-        let normal_id = self.default_attack(actor).ok();
+        let normal_id = match attack.weapon {
+            Some(combat::Weapon::Sword)=>Some("attack_sword"),
+            Some(combat::Weapon::Dagger)=>Some("attack_dagger"),
+            Some(combat::Weapon::Lance)=>Some("attack_lance"),
+            Some(combat::Weapon::Staff)=>Some("attack_staff"),
+            Some(combat::Weapon::Axe)=>Some("attack_axe"),
+            _=>None,
+        };
         let plan = if self.state.opening_crt.as_ref().is_some_and(|c|c.temenos_recruitment||c.lord_sands) {
-            &self.crt_data().normal_attacks[&format!("{}:{boost}",normal_id.unwrap())][..]
+            self.crt_data().normal_attacks.get(&format!("{}:{boost}",normal_id.unwrap()))
+                .map(|v|v.as_slice()).unwrap_or_else(||opening_crt::attack_plan(attack.weapon.expect("normal weapon"),boost))
         } else if self.is_hikari_recruitment() {
             &self.crt_data().normal_attacks[normal_id.expect("validated recruitment weapon")][..]
         } else if attack.weapon == Some(combat::Weapon::Staff) {
@@ -1650,7 +1662,7 @@ impl Battle {
                         if just_break {
                             pending_break_timer = Some(tick + data.break_timer_delay_ticks);
                             break_busy_until = tick + data.break_busy_ticks;
-                        } else if tick >= break_busy_until {
+                        } else if tick > break_busy_until {
                             // Battle_ExecDamageHP -> PlayFinishBlow. Its zero
                             // delay schedules K2_SetTimerDelegate, which draws
                             // CRT even with zero initial-start variance.

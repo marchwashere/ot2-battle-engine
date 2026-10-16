@@ -1,0 +1,9 @@
+'use strict';
+const fs=require('fs'),path=require('path'),s=require('./source.cjs'),{blueprint}=require('./audit-pirro.cjs');
+const enemies=s.table('Character/Database/EnemyDB');const byAsset=new Map();
+for(const e of enemies.rows){const a=e.EnemyAI?.asset?.text||'';if(!/\/(?:BOSS|SubBoss)\//i.test(a))continue;const asset=a.replace('/Game/','').split('.')[0];if(!byAsset.has(asset))byAsset.set(asset,[]);byAsset.get(asset).push(e.id);}
+const rows=[];
+for(const [asset,ids]of byAsset){const b=blueprint(asset);const init=b.functions.AIInitialize||null;const relevant=Object.fromEntries(Object.entries(b.functions).filter(([name,text])=>name==='AIInitialize'||/CreateActionTable|ExecSettingNextOrder|Array_Shuffle|Random|ActionTable|OrderCount|MultiAction/i.test(text)));rows.push({asset,sha256:b.sha256,enemies:ids,initialization_present:init!==null,initialization:init,order_methods:Object.keys(relevant).filter(k=>/ExecSettingNextOrder|OrderCount|MultiAction/.test(relevant[k])),rng_methods:Object.keys(relevant).filter(k=>/Random|Array_Shuffle|CreateActionTable/.test(relevant[k])),source_methods:Object.fromEntries(Object.entries(relevant).map(([name,text])=>[name,{sha256:require("crypto").createHash("sha256").update(text).digest("hex"),calls:text.split("\n").filter(line=>/CreateActionTable|ExecSettingNextOrder|Array_Shuffle|Random|OrderCount|MultiAction|UpdateActionTable/.test(line))}]))});}
+fs.writeFileSync(path.join(__dirname,'../data/source/boss-ai-audit.json'),JSON.stringify({source:enemies.source,sha256:enemies.sha256,scope:'Static source inventory; dynamic branches and inherited methods require per-boss execution audit. Not a generic boss simulator.',bosses:rows},null,2)+'\n');
+fs.writeFileSync(path.join(__dirname,'../data/boss-ai-enemies.json'),JSON.stringify(rows.flatMap(r=>r.enemies).sort(),null,2)+'\n');
+console.log(rows.length+' boss AI assets inventoried');

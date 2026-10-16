@@ -81,6 +81,41 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
 }
 #[cfg(test)]mod tests {
  use super::*;
+ #[test]fn retail_gigantes_full_battle() {
+  let mut players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
+  for i in [1,3] {players[i].boost_start=true;}
+  players[0].stats.speed+=112;
+  for stat in ["CON","ATK"] {crate::jobs::add_nut(&mut players[0],7,70,Some(11),stat,28).unwrap();}
+  let o=players[1].combat.as_mut().unwrap();o.magic=499;o.fire_damage_bonus=60;
+  o.weapons.iter_mut().find(|w|w.weapon==crate::combat::Weapon::Sword).unwrap().magic=298;
+  let r=predict(CrtRng{state:0x4dde2f3b,draws:9597},&players,&Default::default()).unwrap();
+  let live:serde_json::Value=serde_json::from_str(include_str!("../data/source/gigantes-live-20261016.json")).unwrap();
+  assert_eq!(r.at_command_menu.draws,9666);
+  assert_eq!(r.actions.iter().map(|a|a.report.rng_after.draws).collect::<Vec<_>>(),[9687,9726,9767,9825,9891,9926,9957]);
+  assert_eq!(r.after.draws,9958);
+  // User confirmed eight Barrage hits, followed by a break on the first sword hit.
+  let barrage=r.actions.iter().find(|a|a.name=="Elemental Barrage").unwrap();
+  assert_eq!(barrage.report.events.iter().filter(|e|matches!(e,Event::Damage{..})).count(),8);
+  assert!(!barrage.report.events.iter().any(|e|matches!(e,Event::Broken{..})));
+  let sword=r.actions.iter().find(|a|a.name=="Sword x3").unwrap();
+  let hit_breaks=sword.report.events.iter().filter_map(|e|match e {Event::Damage{broken_before,..}=>Some(*broken_before),_=>None}).collect::<Vec<_>>();
+  assert_eq!(hit_breaks,[false,true,true]);
+  let mut checked=0;
+  for span in &r.trace {
+   for pos in span.before.draws..span.after.draws {
+    let row=&live["records"][(pos-9597) as usize];
+    let mut rng=span.before;rng.advance(pos-span.before.draws);
+    assert_eq!(row["before"].as_u64(),Some(u64::from(rng.state)),"state at {pos}");
+    let node=row["node"].as_str().unwrap_or("");
+    if span.reason.ends_with("voice") {assert!(node.ends_with(".PlayBattleVoice"),"{pos}: {} vs {node}",span.reason);}
+    if span.reason.ends_with("timer") {assert_eq!(row["caller"].as_str(),Some("0x2C52E57"),"timer at {pos}");}
+    if span.reason=="normal_accuracy" {assert!(node.ends_with(".CheckHit"),"accuracy at {pos}: {node}");}
+    if span.reason=="critical_hit_and_damage" {assert!(node.ends_with(".CheckCritical")||node.ends_with(".CheckHit")||node.ends_with(".GetCalcValueRandomRatio"),"damage at {pos}: {node}");}
+    checked+=1;
+   }
+  }
+  assert_eq!(checked,live["records"].as_array().unwrap().len());
+ }
  #[test]fn geared_routine_replays_barrage_and_both_order_branches() {
   let mut players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
   for i in [1,3] {players[i].boost_start=true;}

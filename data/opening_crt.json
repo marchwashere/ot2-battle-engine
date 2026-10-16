@@ -1064,12 +1064,12 @@
       [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,
@@ -1094,12 +1094,12 @@
       [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,
@@ -1407,7 +1407,7 @@
     ]
   },
   "break_timer_delay_ticks": 2400,
-  "break_busy_ticks": 30000,
+  "break_busy_ticks": 12000,
   "post_event_encounter_reset": true,
   "encounter": {
     "min": 1000,

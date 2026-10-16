@@ -1599,7 +1599,7 @@
     ]
   },
   "break_timer_delay_ticks": 2400,
-  "break_busy_ticks": 30000,
+  "break_busy_ticks": 12000,
   "post_event_encounter_reset": true,
   "encounter": {
     "min": 1000,

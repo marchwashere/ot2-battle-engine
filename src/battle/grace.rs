@@ -141,8 +141,10 @@ impl Battle {
     }
     fn grace_commands(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>)->Result<()> {
         use crate::bg_effects::{EffectKind::*,Step};
-        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,busy:f64,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
+        #[derive(Default)] struct Runtime {recovery:bool,pending:Option<(f64,ActorId)>,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
         let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
+        // All overlapping summons consult the same BattleCamera.Playing flag.
+        let mut break_camera_busy_until=f64::NEG_INFINITY;
         let party:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Player)).collect();
         let mut schedule=vec![];
         for (i,(start,child,_,_)) in jobs.iter().enumerate() {
@@ -188,11 +190,16 @@ impl Battle {
                     self.trace_rng("bg_random_hit_target",Some(actor),before);
                 },
                 Step::Voice {voice_type,..}=>{
+                    if child.id=="ABI_SCH_060_04"&&self.scenario.actors[actor.0].id=="osvald" {run.voice_busy_until=tick+f64::from(crate::opening_crt::lord_sands_data().skill_voice_duration_ticks["elemental_barrage"]);}
                     if let Some(s)=summon {if voice_type==18&&s.ability_voice {let before=self.state.rng;self.state.rng.weighted_bool(1.0);self.trace_rng("summon_ability_voice",Some(actor),before);}}
                     else if child.id.starts_with("ABI_SCH_011_")||child.id.starts_with("ABI_SCH_070_") {self.scholar_cast_voice(actor,child);}
                     else {if child.id=="ABI_CLE_020_01"&&self.scenario.actors[actor.0].id=="temenos" {run.voice_busy_until=tick+f64::from(crate::opening_crt::lord_sands_data().skill_voice_duration_ticks["holy_light"]);}self.voice(actor,voice_type,VoiceCondition {ability:Some(match child.id.as_str(){"ABI_WAR_010_03"|"ABI_WAR_010_04"=>"ABI_WAR_010_01","ABI_SCH_060_04"=>"ABI_SCH_060_01",_=>&child.id}),..Default::default()});}
                 },
                 Step::Effects {index,last,on_hit,..}=>{
+                    // CheckLastHit uses the parent summon flag for Hired Help,
+                    // not the single-hit child's flag. Early lethal summons
+                    // retain Break until the last summoned attack settles death.
+                    let last=if summon.is_some_and(|s|s.id.starts_with("PC_ABI_MER_YOHEI")) {i+1==jobs.len()}else{last};
                     if random_count&&!self.grace_enemies_alive() {continue;}
                     let damage_event_start=events.len();
                     let before_states=self.state.actors.iter().map(|a|(a.alive(),a.broken())).collect::<Vec<_>>();
@@ -223,12 +230,18 @@ impl Battle {
                     let damage_targets:Vec<_>=events[damage_event_start..].iter().filter_map(|e|if let Event::Damage {target,..}=e {Some(*target)}else{None}).collect();
                     let mut new_break=None;let mut broken_hit=None;
                     for (n,(was_alive,was_broken)) in before_states.into_iter().enumerate() {
-                        let target=ActorId(n);if self.side(target)!=Some(Side::Enemy)||!was_alive {continue;}
+                        let target=ActorId(n);if self.side(target)!=Some(Side::Enemy)||(!was_alive&&!was_broken) {continue;}
                         let state=&mut self.state.actors[n];if last&&!state.alive() {state.break_until_round=0;}
                         if state.broken() {if !was_broken {new_break=Some(target);}else if damage_targets.contains(&target) {broken_hit=Some(target);}}
                     }
-                    if let Some(target)=new_break {run.pending=Some((tick+f64::from(self.crt_data().break_timer_delay_ticks),target));run.busy=tick+f64::from(self.crt_data().break_busy_ticks);}
-                    else if tick>=run.busy && !child.id.starts_with("ABI_SCH_011_") {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
+                    if let Some(target)=new_break {
+                        run.pending=Some((tick+f64::from(opening_crt::data().break_timer_delay_ticks),target));
+                        if tick>break_camera_busy_until {break_camera_busy_until=tick+f64::from(opening_crt::data().break_busy_ticks);}
+                    }
+                    // The action is updated before its appended break-camera
+                    // sequence. At the same endpoint tick, OnStop has not yet
+                    // cleared Playing (retail Guards trace exercises equality).
+                    else if tick>break_camera_busy_until && !child.id.starts_with("ABI_SCH_011_") {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
                 }
             }
         }
@@ -586,7 +599,7 @@ mod tests {
                 match span.reason {
                     "boost_voice"|"ability_voice"|"summon_ability_voice"|"order_voice"=>assert!(node.ends_with(".PlayBattleVoice")),
                     "guards_variant_preparation"=>assert_eq!(rva,"0x30D7604"),
-                    "damage_notification_timer"|"break_slow_timer"=>assert_eq!(rva,"0x2C52E57"),
+                    "damage_notification_timer"|"break_slow_timer"|"broken_hit_slow_timer"=>assert_eq!(rva,"0x2C52E57","{position}: {}",span.reason),
                     "critical_hit_and_damage"=>assert!(node.ends_with(".CheckCritical")||node.ends_with(".CheckHit")||node.ends_with(".GetCalcValueRandomRatio")),
                     other=>panic!("unexpected live draw {position}: {other}"),
                 }

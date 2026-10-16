@@ -2860,6 +2860,13 @@
       ]
     }
   },
+  "break_camera_timing": {
+    "asset": "Battle/Sequencer/Break/BreakCamera_Lv1_Near",
+    "playback_ticks": 30000,
+    "ticks_per_second": 60000,
+    "action_ticks_per_second": 24000,
+    "normalized_duration_ticks": 12000
+  },
   "schedules": [
     {
       "ability": "NORMAL_ATTACK_SWORD_1",
@@ -2895,12 +2902,12 @@
       "steps": [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,
@@ -2925,12 +2932,12 @@
       "timeline": [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,
@@ -2960,12 +2967,12 @@
       "steps": [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,
@@ -2995,12 +3002,12 @@
       "timeline": [
         {
           "tick": 0,
-          "kind": "voice",
-          "type": 6
+          "kind": "check"
         },
         {
           "tick": 0,
-          "kind": "check"
+          "kind": "voice",
+          "type": 6
         },
         {
           "tick": 7200,

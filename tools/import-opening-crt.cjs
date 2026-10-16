@@ -79,8 +79,16 @@ sources.push({source:'/Game/'+breakAsset,sha256:s.assets.hash(breakPackage.b)});
 const breakMovie=s.fields(objectHeader(breakPackage,breakPackage.exports.find(e=>e.name==='MovieScene_0')).properties);
 const range=Buffer.from(breakMovie.PlaybackRange.hex,'hex');
 if(range.length!==10||range[0]!==1||range[5]!==0||range.readInt32LE(1)!==0)throw new Error('Unexpected break timing bounds');
+// MovieScene's native default is 60000/1 (runtime Default__MovieScene,
+// TickResolution at +0x108; native getter 1408e9330). These break assets omit
+// TickResolution, unlike the 24000/1 normal-attack assets. Normalize before
+// comparing camera completion with authored action ticks.
+if(breakMovie.TickResolution!==undefined)throw new Error('Explicit break TickResolution needs decoding');
+const breakTickResolution=60000,actionTickResolution=24000;
+const breakBusyTicks=range.readInt32LE(6)*actionTickResolution/breakTickResolution;
+if(!Number.isInteger(breakBusyTicks))throw new Error('Non-integral normalized break duration');
 const postEvent=table('Event/Database/EventList').find(r=>r.id==='MS_TOU_10_0300');
-const output={voices:sets,attacks,break_timer_delay_ticks:Math.round(Number(breakSlow.Min)*24000),break_busy_ticks:range.readInt32LE(6),post_event_encounter_reset:postEvent.EncountReset,encounter:{min:level.EncountStepMin,range_a:level.RandomStepA,range_b:level.RandomStepB,first_ratio:level.FirstEncountStepRatio},drop_rate:enemy.DropProbability,victory_voice:group.UseVictoryAction,battle_start_voice:group.BattleStartEvent===null || group.BattleStartEvent.asset?.text==="None"};
+const output={voices:sets,attacks,break_timer_delay_ticks:Math.round(Number(breakSlow.Min)*actionTickResolution),break_busy_ticks:breakBusyTicks,post_event_encounter_reset:postEvent.EncountReset,encounter:{min:level.EncountStepMin,range_a:level.RandomStepA,range_b:level.RandomStepB,first_ratio:level.FirstEncountStepRatio},drop_rate:enemy.DropProbability,victory_voice:group.UseVictoryAction,battle_start_voice:group.BattleStartEvent===null || group.BattleStartEvent.asset?.text==="None"};
 fs.writeFileSync(path.join(__dirname,'../data/opening_crt.json'),JSON.stringify(output,null,2)+'\n');
-fs.writeFileSync(path.join(__dirname,'../data/source/opening_crt.json'),JSON.stringify({sources,rows:{voices:raw,level,group,enemy,breakSlow,finishSlow,postEvent},schedules},null,2)+'\n');
+fs.writeFileSync(path.join(__dirname,'../data/source/opening_crt.json'),JSON.stringify({sources,rows:{voices:raw,level,group,enemy,breakSlow,finishSlow,postEvent},break_camera_timing:{asset:breakAsset,playback_ticks:range.readInt32LE(6),ticks_per_second:breakTickResolution,action_ticks_per_second:actionTickResolution,normalized_duration_ticks:breakBusyTicks},schedules},null,2)+'\n');
 console.log('Imported opening CRT candidates, weapon schedules, drops and encounter-counter parameters.');

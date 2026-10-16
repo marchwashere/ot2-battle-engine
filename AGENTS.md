@@ -1,4 +1,8 @@
-- 2026-10-16 boss audit: route_boss.rs replays Sands/Gigantes AI table shuffles (11/15 draws), two slot insertions, and NORMAL/DELAY order rows. Live Sands trace validates both opening queues and eight action boundaries through victory/drop. Slash caches accuracy even under Critical Scope; Temenos Holy Light suppresses weakness voice during its cast clip. Gigantes source-backed, retail capture pending. See docs/gigantes.md.
+- User-confirmed battle setting (2026-10-16): ALL fights use 2x battle speed. Full final Gigantes capture is validated through post-drop position9958 (361 draws), including sword/menu and Beastlings. Break cameras inherit MovieScene's 60000 Hz default; normalize their 30000 ticks to 12000 action ticks (0.5 seconds). Shared camera completion and parent summon LastHit govern broken-hit timers; do not add fixed offsets or blanket 2x factors. See docs/gigantes.md.
+
+- Boss extension requirement: audit AIInitialize, authored table shuffles (including singleton draws), initial slot insertions, dynamic phase/order changes and break recovery before supporting a new boss. Registry inventories 96 boss AI assets; generic field constructors reject these enemies and route-boss accepts only Sands/Gigantes. Never substitute ordinary one-slot initialization. See docs/gigantes.md.
+
+- 2026-10-16 boss audit: route_boss.rs replays Sands/Gigantes AI table shuffles (11/15 draws), two slot insertions, and NORMAL/DELAY order rows. Live Sands and Gigantes traces validate action boundaries through victory/drop. Slash caches accuracy even under Critical Scope; Temenos Holy Light and Osvald Barrage suppress weakness voices during their cast clips. See docs/gigantes.md.
 
 - Advanced Magic/Fire Storm: source-backed execution in battle/scholar.rs; AdvancedMagic status is a USE counter, excluded from round decay. Fireball redirects to Fire Storm when active; explicit Fire Storm requires a charge and learned Fireball. One charge consumed after the whole action. Both timelines and six cast-voice profiles come from import-scholar-magic; separate non-PlayOnce cast rows preserve existing voice masks. See docs/scholar-magic.md. Other upgraded elements explicitly unsupported; retail capture pending.
 
@@ -38,8 +42,8 @@
   runtime branches, interleaving element/target draws, damage and break timers.
   Import order: bg-effects -> lord-sands -> gigantes. Core damage supports
   equipped additive fire potency; jobs preserve raw nut doping through levels/jobs.
-  Gigantes floor excludes T1 damage, all criticals and fire potency. Retail trace
-  validation remains outstanding; see docs/gigantes.md. Old Sands API is retained
+  Gigantes floor excludes T1 damage, all criticals and fire potency. Full retail
+  capture is validated; see docs/gigantes.md. Old Sands API is retained
   for historical tests; assistant now calls gigantes::predict_sands.
 
 - Quicksand post-boss land Escape imports include ENG_DNG_DST_2_2_L_120 and

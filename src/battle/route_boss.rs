@@ -2,6 +2,30 @@
 //! Source: subB_Dng_Dst_2_2 / subB_Dng_Ocn_1_3 AIInitialize,
 //! BP_BattleAIUtility.CreateActionTable and native Array_Shuffle.
 use super::*;
+pub(super) fn validate_boss_ai(config: &BattleConfig, crt: Option<&OpeningCrtState>) -> Result<()> {
+    let Some(crt) = crt else { return Ok(()) };
+    if crt.lord_sands {
+        ensure(
+            config.enemies.len() == 1
+                && matches!(
+                    config.enemies[0].id.as_str(),
+                    "ENE_NML_FLD_DST_280" | "ENE_NML_FLD_CTY_260"
+                ),
+            "Boss requires its own audited AI initialization and action-slot profile",
+        )?;
+    } else if crt.mansion_situation.is_some() && !crt.pirro_battle {
+        static IDS: std::sync::OnceLock<std::collections::BTreeSet<String>> =
+            std::sync::OnceLock::new();
+        let ids = IDS.get_or_init(|| {
+            serde_json::from_str(include_str!("../../data/boss-ai-enemies.json"))
+                .expect("boss AI identities")
+        });
+        for enemy in &config.enemies {
+            ensure(!ids.contains(&enemy.id),format!("{} uses boss AI; ordinary field initialization cannot model its action tables or multiple slots",enemy.id))?;
+        }
+    }
+    Ok(())
+}
 impl Battle {
     fn route_boss_profile(&self, id: ActorId) -> Option<bool> {
         if !self
@@ -89,6 +113,21 @@ impl Battle {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn unsupported_boss_cannot_use_generic_route_or_field_profile() {
+        let mut c = BattleConfig::from_json(include_str!("../../data/gigantes.json")).unwrap();
+        c.enemies[0].id = "ENE_BOS_WAR_C01_010".into();
+        assert!(Battle::new_route_boss(c.clone(), None)
+            .unwrap_err()
+            .to_string()
+            .contains("audited AI"));
+        let mut crt = OpeningCrtState::new(true);
+        crt.mansion_situation = Some(crate::escape::Situation::Normal);
+        assert!(validate_boss_ai(&c, Some(&crt))
+            .unwrap_err()
+            .to_string()
+            .contains("boss AI"));
+    }
     #[test]
     fn gigantes_initializes_fifteen_shuffle_draws_and_two_order_slots() {
         let mut c = BattleConfig::from_json(include_str!("../../data/gigantes.json")).unwrap();
