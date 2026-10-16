@@ -35,6 +35,9 @@ pub fn search_accepting(battle:Battle,max_inputs:usize,mut accept:impl FnMut(&Fi
 pub fn search_shipwreck(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
  search_with_finisher(battle,max_inputs,Action::FireballMax,3,&mut |_|Ok(true))
 }
+pub(crate) fn search_roque(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
+ search_with_finisher(battle,max_inputs,Action::FireballTwo,2,&mut |_|Ok(true))
+}
 fn search_with_finisher(battle:Battle,max_inputs:usize,finisher:Action,bp:usize,accept:&mut impl FnMut(&Fight)->Result<bool>)->Result<Option<Fight>> {
  let Some((menu,rows))=prefix(battle)?else{return Ok(None);};
  let mut dance=BoostFrontier::new(&menu)?;let mut finishes=vec![];

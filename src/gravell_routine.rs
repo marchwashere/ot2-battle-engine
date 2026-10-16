@@ -50,6 +50,7 @@ pub struct PlannedAction { pub actor: ActorId, pub action: Action }
 pub enum Action {
     SpringyBoots { target: ActorId },
     Fireball,
+    FireballTwo,
     FireballMax,
     Dagger { target: ActorId },
     Staff { target: ActorId },
@@ -67,6 +68,7 @@ impl Action {
         match self {
             Self::SpringyBoots {target}=>Command::Skill {id:"springy_boots".into(),target:Some(target)},
             Self::Fireball=>Command::Boost {id:"ABI_SET_SCH_010".into(),target:None,bp:1},
+            Self::FireballTwo=>Command::Boost {id:"ABI_SET_SCH_010".into(),target:None,bp:2},
             Self::FireballMax=>Command::Boost {id:"ABI_SET_SCH_010".into(),target:None,bp:3},
             Self::Dagger {target}=>Command::Skill {id:"attack_dagger".into(),target:Some(target)},
             Self::Staff {target}=>Command::Skill {id:"attack_staff".into(),target:Some(target)},

@@ -202,7 +202,7 @@ pub fn carried_step_ahead_members(entry:CrtRng,situation:Situation,players:&[cra
 }
 pub fn roque_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Battle> {
     ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Unexpected Roque party")?;
-    ensure(players[3].boost_start,"Roque routine requires Partitio Boost-Start")?;
+    ensure(players[1].boost_start,"Roque routine requires Osvald Boost-Start")?;
     step_ahead_profile(entry,situation,players,&["ENE_NML_OCN_230","ENE_NML_OCN_230"],true,history,None,true)
 }
 pub fn nameless_jp_battle(entry:CrtRng,situation:Situation,players:&[crate::PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Battle> {
@@ -237,12 +237,10 @@ fn step_ahead_profile(entry:CrtRng,situation:Situation,players:&[crate::PlayerCh
         config.players[0].skills.push("attack_dagger".into());
         config.players[1].skills=vec!["attack_staff".into()];
         config.players[2].skills=vec!["bewildering_grace".into()];
-        config.inventory.clear();if enemies==["ENE_NML_OCN_230";2] {config.inventory.insert("energizing_pomegranate_m".into(),1);}
-        if enemies!=["ENE_NML_OCN_230";2] {
-            let mug:BattleConfig=serde_json::from_str(include_str!("../data/cape_cold_mug.json"))?;
-            config.skills.push(mug.skills.into_iter().find(|s|s.id=="ABI_SET_SCH_010").unwrap());
-            config.players[1].skills.push("ABI_SET_SCH_010".into());
-        }
+        config.inventory.clear();
+        let mug:BattleConfig=serde_json::from_str(include_str!("../data/cape_cold_mug.json"))?;
+        config.skills.push(mug.skills.into_iter().find(|s|s.id=="ABI_SET_SCH_010").unwrap());
+        config.players[1].skills.push("ABI_SET_SCH_010".into());
     }
     let voices=players.iter().map(|p|carried_data().players.get(&p.id).map(|d|d.voice).ok_or_else(||SimError("Unsupported carried identity".into()))).collect::<Result<_>>()?;
     Battle::new_carried_step_ahead_members(config,situation,voices,members)
