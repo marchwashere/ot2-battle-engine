@@ -4,6 +4,9 @@
 
 The third attempt in `data/source/gigantes-live-20261016.json` is user-confirmed:
 seed 1E10AA9C, island start 9216, correct wild Defends and Throné sword selection.
+This capture used the old conditional Partitio Defend. A test-only routine
+preserves that exact replay; the current always-attack routine replays its own
+action RNG and does not retain these old checkpoints.
 Core boss entry follows four player initialization draws at 9597. The opening,
 T1 actions and Osvald T2 command menu at 9825 match. Elemental Barrage previously
 allowed weakness voices during Osvald's cast clip. Its English SoundWave duration
@@ -24,18 +27,20 @@ four A Step Ahead members. The caller validates supports, learned skills and gea
 
 Gigantes, night:
 
-- T1: Throne and Osvald Defend. Partitio Defends only when preceding both;
-  otherwise he attacks with his lance. Temenos attacks with his staff.
+- T1: Throne and Osvald Defend. Partitio always attacks with his lance;
+  Temenos always attacks with his staff. Both attacks are unboosted.
 - T2: Throne +2 sword, Osvald +3 Elemental Barrage, Partitio +3 Beastlings.
   Temenos Defends if his action is reached. Reject an enemy turn, unbroken
   Beastlings target, insufficient BP/SP, or incomplete victory.
 
-Later Defends precede earlier Defends. Both breakers precede Partitio on T2.
+Later Defends precede earlier Defends, and both precede the T1 attackers on T2.
+Both breakers therefore precede Partitio regardless of the opening order.
 Three sword hits plus the minimum six Barrage hits break nine shields before
 Beastlings. Night talents last through T2.
 
-With the assistant's level70 entry fixture and manual loadout, the conservative
-floor is sword1356 + Barrage17454 + Beastlings32696 = **51506** versus50000 HP.
+With the assistant's current level70 no-nut entry fixture and Elemental
+Augmentation, the conservative floor is sword1077 + Barrage16806 +
+Beastlings32696 = **50579** versus50000 HP.
 This excludes both T1 attacks, every critical, every fire-potency bonus and all
 extra Barrage hits; sword/Barrage damage is counted entirely unbroken. The
 assistant evaluates the floor from the actual carried stats before accepting.
@@ -57,8 +62,9 @@ break, ability ratio, buffs and growth. Raw nut doping is added before character
 and secondary-job revisions, preserving float32 rounding through level changes.
 Nuts do not increase the level-based damage-growth multiplier.
 
-Validation:256 Gigantes seeds cover all three Barrage counts and both Partitio
-branches;128 Sands seeds cover six-hit Slash and finisher-prefix preservation.
+Validation:256 Gigantes seeds cover all three Barrage counts, both breaker
+orders, and Partitio attacking even when he precedes both breakers on T1;
+128 Sands seeds cover six-hit Slash and finisher-prefix preservation.
 Both bosses also have captured retail RNG regressions.
 
 ## 2026-10-16 retail Lord of the Sands correction

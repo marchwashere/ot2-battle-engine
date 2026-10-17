@@ -22,16 +22,18 @@ pub fn damage_floor(players:&[PlayerCharacter])->Result<DamageFloor> {
  Ok(DamageFloor{sword_three,barrage_six,beastlings_four,total:sword_three+barrage_six+beastlings_four})
 }
 pub fn predict(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory)->Result<Prediction> {
- predict_boss(before,players,history,false,0)
+ predict_boss(before,players,history,Routine::Gigantes,0)
 }
 /// Extra 0->1->0 cycles at Partitio's T2 finisher, then normal 0->3 boost.
 pub fn predict_with_finisher_cycles(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,cycles:u32)->Result<Prediction> {
- predict_boss(before,players,history,false,cycles)
+ predict_boss(before,players,history,Routine::Gigantes,cycles)
 }
 pub fn predict_sands(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,cycles:u32)->Result<Prediction> {
- predict_boss(before,players,history,true,cycles)
+ predict_boss(before,players,history,Routine::Sands,cycles)
 }
-fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,sands:bool,cycles:u32)->Result<Prediction> {
+enum Routine {Gigantes,Sands,#[cfg(test)] CapturedGigantes}
+fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowledge::EnemyHistory,routine:Routine,cycles:u32)->Result<Prediction> {
+ let sands=matches!(routine,Routine::Sands);
  ensure(players.iter().map(|p|p.id.as_str()).eq(["throne","osvald","temenos","partitio"]),"Gigantes requires Galdera party")?;
  ensure(players[1].boost_start&&players[3].boost_start,"Gigantes requires Osvald and Partitio Boost-Start")?;
  let mut config=BattleConfig::from_json(include_str!("../data/gigantes.json"))?;
@@ -57,8 +59,11 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
    (2,0)|(2,2)=>("Defend",0,Command::Defend),
    _=>return Err(crate::SimError("Unexpected Lord Sands enemy action".into()))
   }}else{match (turn,actor) {
+   // Both breakers gain Defend priority over the two T1 attackers on T2.
    (1,0)|(1,1)=>{defended[actor]=true;("Defend",0,Command::Defend)},
-   (1,3) if !defended[0]&&!defended[1]=>("Defend",0,Command::Defend),
+   // Preserve the old retail capture as an independent mechanics regression.
+   #[cfg(test)]
+   (1,3) if matches!(routine,Routine::CapturedGigantes)&&!defended[0]&&!defended[1]=>("Defend",0,Command::Defend),
    (1,3)=>("Lance attack",0,Command::Skill{id:"attack_lance".into(),target:Some(ActorId(4))}),
    (1,2)=>("Staff attack",0,Command::Skill{id:"attack_staff".into(),target:Some(ActorId(4))}),
    (2,0)=>("Sword x3",2,Command::Boost{id:"attack_sword".into(),bp:2,target:Some(ActorId(4))}),
@@ -88,7 +93,7 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
   for stat in ["CON","ATK"] {crate::jobs::add_nut(&mut players[0],7,70,Some(11),stat,28).unwrap();}
   let o=players[1].combat.as_mut().unwrap();o.magic=499;o.fire_damage_bonus=60;
   o.weapons.iter_mut().find(|w|w.weapon==crate::combat::Weapon::Sword).unwrap().magic=298;
-  let r=predict(CrtRng{state:0x4dde2f3b,draws:9597},&players,&Default::default()).unwrap();
+  let r=predict_boss(CrtRng{state:0x4dde2f3b,draws:9597},&players,&Default::default(),Routine::CapturedGigantes,0).unwrap();
   let live:serde_json::Value=serde_json::from_str(include_str!("../data/source/gigantes-live-20261016.json")).unwrap();
   assert_eq!(r.at_command_menu.draws,9666);
   assert_eq!(r.actions.iter().map(|a|a.report.rng_after.draws).collect::<Vec<_>>(),[9687,9726,9767,9825,9891,9926,9957]);
@@ -116,26 +121,34 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
   }
   assert_eq!(checked,live["records"].as_array().unwrap().len());
  }
- #[test]fn geared_routine_replays_barrage_and_both_order_branches() {
+ #[test]fn geared_routine_always_attacks_and_keeps_both_breakers_before_beastlings() {
   let mut players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
   for i in [1,3] {players[i].boost_start=true;}
   let o=players[1].combat.as_mut().unwrap();o.magic=499;o.fire_damage_bonus=60;
   o.weapons.iter_mut().find(|w|w.weapon==crate::combat::Weapon::Sword).unwrap().magic=298;
   players[0].stats.speed+=112;
   let floor=damage_floor(&players).unwrap();assert!(floor.total>50000,"{floor:?}");
-  let mut counts=std::collections::BTreeSet::new();let mut defended=std::collections::BTreeSet::new();let mut first=std::collections::BTreeSet::new();
+  let mut counts=std::collections::BTreeSet::new();let mut first=std::collections::BTreeSet::new();let mut partitio_before_both=false;
   for seed in 0u32..256 {
    let r=predict(CrtRng::new(seed.wrapping_mul(1775700753)),&players,&Default::default()).unwrap();
    let barrage=r.actions.iter().find(|a|a.name=="Elemental Barrage").unwrap();
    let hits=barrage.report.events.iter().filter(|e|matches!(e,Event::Damage{..})).count();counts.insert(hits);
-   defended.insert(r.actions.iter().find(|a|a.turn==1&&a.actor==3).unwrap().name.clone());
+   let opening:Vec<_>=r.actions.iter().filter(|a|a.turn==1).collect();
+   let position=|actor|opening.iter().position(|a|a.actor==actor).unwrap();
+   partitio_before_both|=position(3)<position(0)&&position(3)<position(1);
+   assert_eq!(opening[position(3)].name,"Lance attack");assert_eq!(opening[position(3)].bp,0);
+   assert_eq!(opening[position(2)].name,"Staff attack");assert_eq!(opening[position(2)].bp,0);
+   let second:Vec<_>=r.actions.iter().filter(|a|a.turn==2).map(|a|a.actor).collect();
+   assert!(matches!(second[..2],[0,1]|[1,0]),"Breakers must lead T2: {second:?}");
+   assert_eq!(r.actions.last().unwrap().name,"Hired Help: Beastlings");
    first.insert(r.actions.iter().find(|a|a.turn==2).unwrap().actor);
    assert!(r.broken);assert!(r.actions.iter().all(|a|a.turn<=2));
    for pair in r.trace.windows(2){assert_eq!(pair[0].after,pair[1].before);}
    assert_eq!(r.trace.last().unwrap().after,r.after);
   }
   assert_eq!(counts.into_iter().collect::<Vec<_>>(),[6,7,8]);
-  assert_eq!(defended.len(),2);assert!(first.contains(&0)&&first.contains(&1));
+  assert!(partitio_before_both,"Exercise the former conditional-Defend branch");
+  assert!(first.contains(&0)&&first.contains(&1));
  }
  #[test]fn faster_sands_has_six_hits_and_preserves_finisher_prefix() {
   let mut players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
