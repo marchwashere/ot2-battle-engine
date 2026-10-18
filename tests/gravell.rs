@@ -100,6 +100,26 @@ fn galdera_merchant_osvald_search_replays_exp100_with_everyone_alive() {
     assert!(gravell_routine::rewards(&fight,true).unwrap().awarded.exp>=50_000);
 }
 #[test]
+fn route_filter_rejects_a_victory_and_continues_within_the_existing_frontier() {
+    let battle=opening(77);
+    let baseline=gravell_routine::search(battle.clone(),512).unwrap().unwrap();
+    let mut visited=Vec::new();
+    let filtered=gravell_routine::search_target_filtered(battle.clone(),512,None,Some(0),None,|fight| {
+        assert_eq!(fight.evaluation,gravell_routine::Evaluation::Accepted);
+        visited.push(fight.after);
+        Ok(fight.after!=baseline.after)
+    }).unwrap().expect("Another fully validated victory after rejecting the first");
+    assert_eq!(visited[0],baseline.after);
+    assert_ne!(filtered.after,baseline.after);
+    assert!(visited.len()>=2);
+    let bg=&filtered.actions.iter().find(|a|a.action==gravell_routine::Action::BewilderingGrace).unwrap().inputs;
+    let guards=&filtered.actions.iter().find(|a|a.action==gravell_routine::Action::Guards).unwrap().inputs;
+    assert_eq!(gravell_routine::replay(battle.clone(),bg,guards).unwrap().state,filtered.state);
+    let budget=baseline.actions.iter().map(|a|a.inputs.len()).sum();
+    assert!(gravell_routine::search_target_filtered(battle,budget,None,Some(0),None,|_|Ok(false)).unwrap().is_none());
+}
+
+#[test]
 fn late_finisher_adjustment_replays_callbacks_and_preserves_the_frozen_prefix() {
     for seed in 0..128 {
         let battle=opening(seed);

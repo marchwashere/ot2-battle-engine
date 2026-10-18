@@ -212,21 +212,28 @@ pub fn replay_finisher(battle:Battle,selected:&Fight,inputs:&[u8])->Result<Fight
 pub fn search(battle:Battle,max_inputs:usize)->Result<Option<Fight>> {
     // Untargeted/unlimited compatibility callers retain strict propagation;
     // enumerating an unbounded Cartesian product is unsuitable here.
-    search_target_impl(battle,max_inputs,None,Some(0),None)
+    search_target_impl(battle,max_inputs,None,Some(0),None,&mut |_|Ok(true))
 }
 /// Search Guards/BG combinations in total input-cost order. Target an actually
 /// executed BG lottery at any of the four effect positions; child execution
 /// determines later lottery positions and early termination.
 pub fn search_target(battle:Battle,max_inputs:usize,target:Option<u32>)->Result<Option<Fight>> {
-    search_target_impl(battle,max_inputs,target,None,None)
+    search_target_impl(battle,max_inputs,target,None,None,&mut |_|Ok(true))
 }
 /// Fast route refinement: retain a bounded band of Guards alternatives beyond
 /// the cheapest finisher-ready roll. Acceptance still replays the entire fight.
 /// This is a search-quality bound, never an approximation of battle execution.
 pub fn search_target_windowed(battle:Battle,max_inputs:usize,target:u32,guard_extra_inputs:usize,work:Option<&std::cell::Cell<usize>>)->Result<Option<Fight>> {
-    search_target_impl(battle,max_inputs,Some(target),Some(guard_extra_inputs),work)
+    search_target_impl(battle,max_inputs,Some(target),Some(guard_extra_inputs),work,&mut |_|Ok(true))
 }
-fn search_target_impl(battle:Battle,max_inputs:usize,target:Option<u32>,guard_extra_inputs:Option<usize>,work:Option<&std::cell::Cell<usize>>)->Result<Option<Fight>> {
+/// Apply a route continuation constraint to fully replayed victories. Returning
+/// false keeps searching within the same input/work bounds. In particular, BG
+/// can win before the Soulstone menu exists, so a caller may need to validate
+/// its resulting field RNG before committing that otherwise valid EXP100 win.
+pub fn search_target_filtered(battle:Battle,max_inputs:usize,target:Option<u32>,guard_extra_inputs:Option<usize>,work:Option<&std::cell::Cell<usize>>,mut accepts:impl FnMut(&Fight)->Result<bool>)->Result<Option<Fight>> {
+    search_target_impl(battle,max_inputs,target,guard_extra_inputs,work,&mut accepts)
+}
+fn search_target_impl(battle:Battle,max_inputs:usize,target:Option<u32>,guard_extra_inputs:Option<usize>,work:Option<&std::cell::Cell<usize>>,accepts:&mut dyn FnMut(&Fight)->Result<bool>)->Result<Option<Fight>> {
     use crate::fight_search::BoostFrontier;
     let mut probe=battle.clone();probe.lottery_search_trace();
     let mut prefix=Runner::new(probe)?;
@@ -265,9 +272,9 @@ fn search_target_impl(battle:Battle,max_inputs:usize,target:Option<u32>,guard_ex
                 if after.battle.state().grace.as_ref().is_none_or(|g|g.exp_percent()!=10_000)||after.battle.state().actors[..4].iter().any(|a|!a.alive()) {continue;}
                 after.advance_to_search()?;
                 if after.evaluation()==Evaluation::Accepted {
-                    let replay=replay(battle,&candidate.inputs,guard_inputs)?;
+                    let replay=replay(battle.clone(),&candidate.inputs,guard_inputs)?;
                     ensure(replay.evaluation==Evaluation::Accepted,"Fight search replay diverged")?;
-                    return Ok(Some(replay));
+                    if accepts(&replay)? {return Ok(Some(replay));}
                 }
             }
         }
