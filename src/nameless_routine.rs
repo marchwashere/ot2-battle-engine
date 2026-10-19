@@ -99,6 +99,26 @@ fn search_with_finisher(battle:Battle,max_inputs:usize,finisher:Action,bp:usize,
    }
   }panic!("Expected a reachable JP100 candidate");
  }
+ #[test]fn domination_counts_preemptive_turns_but_excludes_the_step_ahead_turn() {
+  use crate::escape::Situation::{Normal,Preemptive};
+  for situation in [Normal,Preemptive] {
+   let f=(0u32..128).find_map(|seed| {
+    let b=crate::field_escape::nameless_jp_battle(crate::CrtRng::new(seed.wrapping_mul(2654435761)),situation,&players(),&Default::default()).unwrap();
+    search(b,96).unwrap()
+   }).expect("Reachable JP100 victory");
+   assert_eq!(f.state.round,2);
+   let r=crate::gravell_routine::rewards(&f,false).unwrap();
+   assert_eq!(r.base.jp,111);
+   assert_eq!(r.awarded.jp,if situation==Normal{12210}else{11100});
+   let mut endpoint=f.clone();endpoint.state.round=1;
+   assert_eq!(crate::gravell_routine::rewards(&endpoint,false).unwrap().awarded.jp,12210);
+   endpoint.state.round=3;
+   assert_eq!(crate::gravell_routine::rewards(&endpoint,false).unwrap().awarded.jp,11100);
+   endpoint.state.round=2;
+   endpoint.state.opening_crt.as_mut().unwrap().step_ahead=false;
+   assert_eq!(crate::gravell_routine::rewards(&endpoint,false).unwrap().awarded.jp,11100);
+  }
+ }
  #[test]fn shipwreck_all_six_land_formations_win_with_max_fireball() {
   let formations:Vec<Vec<&str>>=vec![vec!["ENE_NML_DNG_CAV_210";4],vec!["ENE_NML_OCN_090","ENE_NML_OCN_070","ENE_NML_OCN_070"],vec!["ENE_NML_DNG_CAV_210","ENE_NML_DNG_CAV_120","ENE_NML_DNG_CAV_120"],vec!["ENE_NML_FLD_SEA_240";3],vec!["ENE_NML_DNG_CAV_210","ENE_NML_DNG_CAV_120","ENE_NML_OCN_080"],vec!["ENE_NML_OCN_090","ENE_NML_OCN_080"]];
   for enemies in formations {

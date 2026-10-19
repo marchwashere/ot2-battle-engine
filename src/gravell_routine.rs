@@ -292,6 +292,16 @@ pub struct Rewards {
 }
 /// CalcGetReward applies the battle multiplier before CalcBonusReward.
 /// A Step Ahead is turn zero in the retail reward counter.
+pub fn has_domination_bonus(state:&crate::BattleState)->bool {
+    // AddBattleFirstActionCharacter accepts only BattleStartType == Normal.
+    // BeginTurn skips AddBattleTurnCount for that bonus turn only. A preemptive
+    // opening is an ordinary counted turn, even when the party equips ASA.
+    let bonus_turn=state.opening_crt.as_ref().is_some_and(|c|
+        c.step_ahead && c.mansion_situation==Some(crate::escape::Situation::Normal)
+        && c.step_ahead_members.as_ref().is_none_or(|members|!members.is_empty()));
+    state.round<=1+u32::from(bonus_turn)
+}
+
 pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
     ensure(fight.evaluation==Evaluation::Accepted,"Cannot award an unaccepted fight")?;
     #[derive(serde::Deserialize)] struct Row {exp:u32,jp:u32,money:u32,drop_item:String,drop_rate:u32}
@@ -317,7 +327,7 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
         }
     }}
     awarded.exp+=(u32::from(broken)+u32::from(overkill))*(awarded.exp/10).max(1);
-    if fight.state.round<=2 {awarded.jp+=(awarded.jp/10).max(1);}
+    if has_domination_bonus(&fight.state) {awarded.jp+=(awarded.jp/10).max(1);}
     if !damaged {awarded.money+=(awarded.money/10).max(1);}
     awarded.money+=modifiers.money_gained;
     let hired_help_cost=crate::hired_help::guards_cost()*fight.actions.iter().filter(|a|a.action==Action::Guards).count() as u32;
