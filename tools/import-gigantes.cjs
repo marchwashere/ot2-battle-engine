@@ -40,7 +40,7 @@ const crt=JSON.parse(fs.readFileSync('data/lord_sands_crt.json')),voices=table('
 for(const [i,prefix,ability]of [[1,'PROFESSOR','ABI_SCH_060_01'],[5,'PRIEST','ABI_CLE_020_01']]){
  for(const r of voices.filter(r=>r.id.startsWith(prefix+'_')&&r.AbilityID===ability)){
   assert.equal(r.BattleVoiceType,'EBATTLE_VOICE_TYPE::ePLAY_ABILITY');
-  if(!crt.voices[i].some(v=>v.id===r.id))crt.voices[i].push({id:r.id,type:18,rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,meat_only:r.MeatFlag,ability});
+  if(!crt.voices[i].some(v=>v.id===r.id))crt.voices[i].push({id:r.id,type:18,rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{}),meat_only:r.MeatFlag,ability});
  }
  assert(crt.voices[i].length<=64);
 }

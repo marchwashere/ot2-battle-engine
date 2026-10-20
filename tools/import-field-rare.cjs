@@ -21,7 +21,7 @@ for(const [actor,prefix,folder] of [[0,'THIEF','BattleTOU'],[1,'PROFESSOR','Batt
  const end=voiceTable.rows.findIndex((r,i)=>i>start&&r.id.endsWith('_VOICE_DATA_START'));
  const rows=voiceTable.rows.slice(start+1,end).filter(r=>types[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))).sort((a,b)=>b.Priority-a.Priority);
  assert(rows.length<=64);
- crt.voices[actor]=rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag}));
+ crt.voices[actor]=rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{})}));
  const v=rows.find(r=>r.id===prefix+'_eUSE_ITEM_TO_ENEMY_COMMON');assert(v,'Missing item voice');
  const pkg=s.assets.loadPackage(path.join(s.assets.CONTENT,'Sound/Resource/VO/'+folder+'/en/'+v.VoiceLabel.toLowerCase()+'.uasset'));
  const cue=s.fields(objectHeader(pkg,pkg.exports[0]).properties);

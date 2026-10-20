@@ -337,6 +337,31 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
 mod tests {
     use super::*;
     #[test]
+    fn reported_chubby_lightning_hits_survivor_and_scattering_blocks_finisher() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-3899b25a.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry:crate::CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let battle=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let bg_inputs:Vec<u8>=serde_json::from_value(v["actions"][4]["inputs"].clone()).unwrap();
+        let guard_inputs:Vec<u8>=serde_json::from_value(v["actions"][3]["inputs"].clone()).unwrap();
+        let fight=replay(battle,&bg_inputs,&guard_inputs).unwrap();
+        for (action,old) in fight.actions.iter().zip(v["actions"].as_array().unwrap()) {
+            assert_eq!(action.before.draws+entry.draws,old["before"]["draws"].as_u64().unwrap());
+            assert_eq!(action.before.state,old["before"]["state"].as_u64().unwrap() as u32);
+        }
+        let bg=&fight.actions[4].report;
+        let effects=bg.events.iter().filter_map(|e|if let crate::Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        assert_eq!(effects,["ABI_DAN_MAKA_002","ABI_DAN_MAKA_022","ABI_DAN_MAKA_015","ABI_DAN_MAKA_005"]);
+        assert!(bg.events.iter().any(|e|matches!(e,crate::Event::Damage {target,..} if *target==ActorId(5))));
+        assert!(fight.state.actors[5].alive());
+        assert!(fight.state.grace.as_ref().unwrap().items_disabled);
+        assert_eq!(fight.state.grace.as_ref().unwrap().exp_percent(),10_000);
+        assert!(!fight.actions.iter().any(|a|a.action==Action::ThunderSoulstone));
+        assert!(matches!(fight.evaluation,Evaluation::Loss {reasons} if reasons.contains(&LossReason::RoutineExhausted)));
+    }
+    #[test]
     fn exp100_never_masks_unfinished_combat_or_a_dead_reward_recipient() {
         use crate::Outcome::*;
         let party=[(ActorId(0),true),(ActorId(1),true),(ActorId(2),true),(ActorId(3),true)];

@@ -16,7 +16,7 @@ crt.voices=specs.map(([prefix,folder],i)=>{
  const pkg=s.assets.loadPackage(path.join(s.assets.CONTENT,asset+'.uasset'));
  crt.skill_voice_duration_ticks['shadow_soulstone_m:'+i]=Math.ceil(s.fields(objectHeader(pkg,pkg.exports[0]).properties).Duration*24000);
  sources.push({source:'/Game/'+asset,sha256:s.assets.hash(pkg.b)});
- return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag}));
+ return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{})}));
 });
 // Wind Soulstone L uses the same ordinary enemy-item voice, its own action sequence.
 const wind=s.table('Item/Database/ItemDB').rows.find(r=>r.id==='ITM_CSM_0400');

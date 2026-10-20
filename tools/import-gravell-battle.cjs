@@ -48,7 +48,7 @@ crt.voices=specs.map(([prefix,folder],index)=>{
   const asset='Sound/Resource/VO/'+folder+'/en/'+r.VoiceLabel.toLowerCase(),pkg=s.assets.loadPackage(path.join(s.assets.CONTENT,asset+'.uasset'));
   durations[index][r.AbilityID==='None'?'party_item':r.AbilityID]=Math.ceil(s.fields(objectHeader(pkg,pkg.exports[0]).properties).Duration*24000);
  }
- return rows.map(r=>({id:r.id,type:voiceTypes[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,meat_only:r.MeatFlag,ability:r.AbilityID==='None'?null:r.AbilityID}));
+ return rows.map(r=>({id:r.id,type:voiceTypes[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{}),meat_only:r.MeatFlag,ability:r.AbilityID==='None'?null:r.AbilityID}));
 });
 const donate=[1,2,3,4].map(n=>find('ABI_MER_050_0'+n));
 const skills=[

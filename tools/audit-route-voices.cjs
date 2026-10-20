@@ -15,6 +15,8 @@ for(const file of fs.readdirSync('data').filter(f=>f.endsWith('_crt.json'))){
    for(const [a,b] of [['rate','VoiceRate'],['once','PlayOnce'],['border','Border'],['counter','CounterFlag'],['self_only','TargetSelf'],['pinch','PinchFlag'],['just_break','JustBreakFlag']])
     assert.equal(row[a],raw[b],`${file} ${row.id} ${a}`);
    assert.equal(row.decondition,raw.DiseaseCategory.endsWith('::eDECONDITION'));
+   assert.equal(row.song??false,raw.SongFlag,`${file} ${row.id} song`);
+   assert.equal(row.dance??false,raw.DanceFlag,`${file} ${row.id} dance`);
    count++;
   }
  }

@@ -24,7 +24,7 @@ const rows=table('Character/Database/BattleVoiceSet');
 const start=rows.findIndex(r=>r.id==='THIEF_VOICE_DATA_START'),end=rows.findIndex((r,i)=>i>start&&r.id.endsWith('_VOICE_DATA_START'));
 const types={eBATTLE_START:1,eORDER_START:3,eTAKE_DAMAGE:4,eON_DEAD:5,eNORMAL_ATTACK:6,eNORMAL_ATTACK_LAST_HIT:7,eON_BOOST:8,eOPEN_WEAKNESS:9,eBREAK_ENEMY:10,eON_AVOID:11,eKILL_ENEMY:12};
 const voices=rows.slice(start+1,end).filter(r=>types[r.BattleVoiceType.split('::').at(-1)]&&r.EnemyGroupID==='None'&&r.EventFlag==='None'&&!(r.BattleVoiceType.endsWith('::eBATTLE_START')&&(r.BossFlag||r.FieldCommandFlag))).sort((a,b)=>b.Priority-a.Priority);
-crt.voices=[voices.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag})),[],[]];
+crt.voices=[voices.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{})})),[],[]];
 crt.battle_start_voice=true;crt.victory_voice=false;crt.drops=[];
 const param=table('GameParam/BattleParamDefineTable').find(r=>r.id==='ESCAPE_SUCCESS_RATE');
 assert.deepEqual([param.Min,param.Max,param.Init,param.Param],['0','15','30','100']);

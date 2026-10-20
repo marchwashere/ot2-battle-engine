@@ -66,7 +66,7 @@ crt.voices=['THIEF','BOSS_TOU10A_PIRLO','BOSS_TOU10B_PIRLO'].map(owner=>{
  const start=voices.findIndex(r=>r.id===owner+'_VOICE_DATA_START'),end=voices.findIndex((r,i)=>i>start&&r.id.endsWith('_VOICE_DATA_START'));
  const rows=voices.slice(start+1,end<0?voices.length:end).filter(r=>types[r.BattleVoiceType.split('::')[1]]&&(r.EnemyGroupID==='None'||r.EnemyGroupID===group.id)&&(r.AbilityID==='None'||Object.values(crt.ability_voice_ids).includes(r.AbilityID)));
  rows.sort((a,b)=>b.Priority-a.Priority);assert(rows.length<=64);assert(rows.every(r=>r.EventFlag==='None'));rawVoices.push(...rows);
- return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::')[1]],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory!=='EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX',pinch:r.PinchFlag,just_break:r.JustBreakFlag,ability:r.AbilityID==='None'?null:r.AbilityID}));
+ return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::')[1]],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory!=='EDISEASE_CATEGORY::eDISEASE_CATEGORY_MAX',pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{}),ability:r.AbilityID==='None'?null:r.AbilityID}));
 });
 crt.victory_voice=group.UseVictoryAction;crt.battle_start_voice=group.BattleStartEvent.asset.text==='None';crt.drops=[{rate:enemy.DropProbability,item:'inspiriting_plum_basket'}];
 const deathSlow=require('./audit-enemy-death-slow.cjs').auditEnemyDeathSlow();

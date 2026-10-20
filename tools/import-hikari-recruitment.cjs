@@ -95,7 +95,7 @@ crt.voices=[['THIEF','BattleTOU','attack_dagger'],['PROFESSOR','BattleGAK','atta
   const cue=s.fields(objectHeader(pkg,pkg.exports[0]).properties);assert(cue.Duration>0);
   crt.skill_voice_duration_ticks[id+':'+actor]=Math.ceil(cue.Duration*24000);sources.push({source:'/Game/'+asset,sha256:s.assets.hash(pkg.b)});
  }
- return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag}));
+ return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{})}));
 });
 const out=path.join(__dirname,'../data');
 fs.writeFileSync(path.join(out,'hikari_recruitment.json'),JSON.stringify(config,null,2)+'\n');

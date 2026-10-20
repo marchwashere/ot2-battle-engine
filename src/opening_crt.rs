@@ -130,6 +130,10 @@ struct VoiceCandidate {
     pinch: bool,
     just_break: bool,
     #[serde(default)]
+    song: bool,
+    #[serde(default)]
+    dance: bool,
+    #[serde(default)]
     meat_only: bool,
     #[serde(default)]
     ability: Option<String>,
@@ -143,6 +147,8 @@ pub(crate) struct VoiceCondition {
     pub target_self: bool,
     pub ally_breaker: Option<&'static str>,
     pub recovery_enforcer: Option<&'static str>,
+    pub song: bool,
+    pub dance: bool,
 }
 #[derive(Debug, Deserialize)]
 struct WeaponPlans {
@@ -359,6 +365,8 @@ pub(crate) fn select_voice_from(
             4 => {
                 !row.counter
                     && (!row.decondition || condition.decondition)
+                    && (!row.song || condition.song)
+                    && (!row.dance || condition.dance)
                     && (row.border == 0 || row.border >= condition.border)
             }
             8 | 18 => row.border == 0 || row.border >= condition.border,
@@ -379,6 +387,21 @@ pub(crate) fn select_voice_from(
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn agnea_damage_rolls_past_ineligible_song_and_dance_reactions() {
+        for (dance,expected,draws) in [
+            (false,"DANCER_eTAKE_DAMAGE_SMALL",5),
+            (true,"DANCER_eTAKE_DAMAGE_DULCINEA_DANCE",3),
+        ] {
+            let mut rng=CrtRng::new(0);
+            let mut used=0;
+            assert_eq!(select_voice_from(gravell_data(),2,4,
+                VoiceCondition {border:5,dance,..Default::default()},&mut used,&mut rng),
+                Some(expected));
+            // Rate checks happen before the song/dance condition checks.
+            assert_eq!(rng.draws,draws);
+        }
+    }
     #[test]
     fn supported_field_spells_have_eligible_voice_rows() {
         for (data,actor,id) in [(field_break_data(),0,"ABI_THI_020_01"),

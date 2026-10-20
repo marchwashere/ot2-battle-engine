@@ -9,6 +9,34 @@ coverage, not a live trace of every effect.
 
 ## Confirmed corrections
 
+### Follow-up: Chubby Cait seed 0x3899B25A (2026-10-20)
+
+The user's original inputs now reproduce all four reported effects:
+EXP ×100, lightning hitting the surviving Dreadwing once, items scattered,
+then full party HP/SP/BP recovery. Two source-backed errors caused the old
+prediction to accept this unusable item-finisher route:
+
+- `RandomSelectAbilityCommand.GetAbilityTarget` filters dead/stealthed actors
+  before selecting a random target. In the enemy branch, PushExecutionFlow
+  targets 1502 then 1746 execute in reverse: filter 1746, then random selection
+  1502. The old model selected a dead enemy and skipped the lightning's damage
+  and notification draws. Party-single uses the same stack ordering.
+- Agnea's damage reactions include Dulcinea dance/song conditions. VoiceRate
+  rolls precede those conditions in `BP_BattleVoiceComponent.PlayBattleVoice`.
+  `BattlePlayerBP.PlayBattleVoiceForDamage` gets the conditions from the
+  damaging command's `IsMusicalCommand`; the scatter child has neither flag.
+  The imported voice profiles omitted those flags and incorrectly selected
+  the dance reaction, skipping two candidate rolls. The corrected traversal
+  rolls counter, debuff, dance, song, then small damage.
+
+`data/source/bg-chubby-3899b25a.json` preserves the original route party and
+boost inputs. These are locally reproduced inputs, not a live RNG-call trace.
+The regression checks the reported effects, surviving Dreadwing, retained
+EXP ×100, and rejection because item lock prevents the soulstone finisher.
+The source-data audit now validates song/dance flags in every voice profile.
+
+### Earlier corrections
+
 1. **Recovery suppression belongs to the whole dance.** RandomSelectAbilityCommand
    creates children with `SetSummonAbility(true, true, ..., self)`. Both
    `BP_ActionCommandBase.GetSettledPlayOnce_OnRecovered` and its setter delegate

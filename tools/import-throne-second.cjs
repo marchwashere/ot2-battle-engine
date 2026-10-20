@@ -86,7 +86,7 @@ crt.voices=['THIEF','GUEST_006','GUEST_007'].map(owner=>{
   voiceRows.push(...rows);
   return rows.map(r=>({id:r.id,type:types[r.BattleVoiceType.split('::').at(-1)],rate:r.VoiceRate,once:r.PlayOnce,border:r.Border,
     self_only:r.TargetSelf,target:r.TargetID==='None'?null:r.TargetID,counter:r.CounterFlag,
-    decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,
+    decondition:r.DiseaseCategory.endsWith('::eDECONDITION'),pinch:r.PinchFlag,just_break:r.JustBreakFlag,...(r.SongFlag?{song:true}:{}),...(r.DanceFlag?{dance:true}:{}),
     ability:r.AbilityID==='None'?null:r.AbilityID}));
 });
 const schedules=[];crt.skills={};

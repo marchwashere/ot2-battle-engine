@@ -1848,7 +1848,8 @@
         "pinch": false,
         "just_break": false,
         "meat_only": false,
-        "ability": null
+        "ability": null,
+        "dance": true
       },
       {
         "id": "DANCER_eTAKE_DAMAGE_DULCINEA_SONG",
@@ -1863,7 +1864,8 @@
         "pinch": false,
         "just_break": false,
         "meat_only": false,
-        "ability": null
+        "ability": null,
+        "song": true
       },
       {
         "id": "DANCER_eTAKE_DAMAGE_SMALL",

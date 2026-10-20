@@ -952,7 +952,8 @@
         "counter": false,
         "decondition": false,
         "pinch": false,
-        "just_break": false
+        "just_break": false,
+        "dance": true
       },
       {
         "id": "DANCER_eTAKE_DAMAGE_DULCINEA_SONG",
@@ -965,7 +966,8 @@
         "counter": false,
         "decondition": false,
         "pinch": false,
-        "just_break": false
+        "just_break": false,
+        "song": true
       },
       {
         "id": "DANCER_eTAKE_DAMAGE_SMALL",

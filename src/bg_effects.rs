@@ -211,8 +211,9 @@ pub fn child(id:&str)->Result<&'static Child> {
 #[derive(Debug, Clone, Copy)]
 pub struct TargetActor { pub id:crate::ActorId, pub side:crate::Side, pub alive:bool }
 impl Child {
-    /// RandomSelectAbilityCommand.GetAbilityTarget selects from the complete
-    /// side list before filtering dead actors. Do not reroll a dead selection.
+    /// GetAbilityTarget's execution-flow stack runs the dead/stealth filter
+    /// before the random-single selection. In the enemy branch, Push(1502),
+    /// Push(1746) means filter block 1746 runs before selection block 1502.
     /// Revive+recovery retains dead party members; the remaining handlers decide
     /// which resources to apply to them.
     pub fn select_targets(&self,caster:crate::ActorId,actors:&[TargetActor],rng:&mut crate::CrtRng)->Result<Vec<crate::ActorId>> {
@@ -223,12 +224,12 @@ impl Child {
             Target::PartySingle|Target::PartyAll=>a.side==crate::Side::Player,
             Target::EnemySingle|Target::EnemyAll=>a.side==crate::Side::Enemy,
             Target::Everyone=>true,
-        }).collect();
+        }).filter(|a|a.alive||self.revive_recovery).collect();
         if matches!(self.target,Target::PartySingle|Target::EnemySingle) && !selected.is_empty() {
             let chosen=selected[rng.index(selected.len() as u32) as usize];
             selected=vec![chosen];
         }
-        Ok(selected.into_iter().filter(|a|a.alive||self.revive_recovery).map(|a|a.id).collect())
+        Ok(selected.into_iter().map(|a|a.id).collect())
     }
 }
 
@@ -295,6 +296,29 @@ mod tests {
         assert_eq!(rng.draws,1);
         assert!(death.operations[0].select_targets(ActorId(0),&targets,&[ActorId(0)],&mut rng).unwrap().is_empty());
         assert_eq!(rng.draws,1);
+    }
+    #[test]
+    fn random_single_filters_dead_targets_before_drawing() {
+        use crate::{ActorId,Side,CrtRng};
+        let actors=[
+            TargetActor{id:ActorId(0),side:Side::Player,alive:true},
+            TargetActor{id:ActorId(1),side:Side::Player,alive:false},
+            TargetActor{id:ActorId(2),side:Side::Enemy,alive:false},
+            TargetActor{id:ActorId(3),side:Side::Enemy,alive:true},
+            TargetActor{id:ActorId(4),side:Side::Enemy,alive:false},
+        ];
+        for seed in [0,1,0x3899b25a,u32::MAX] {
+            let mut rng=CrtRng::new(seed);
+            assert_eq!(child("ABI_DAN_MAKA_022").unwrap().select_targets(ActorId(0),&actors,&mut rng).unwrap(),vec![ActorId(3)]);
+            assert_eq!(rng.draws,1); // Even the singleton target draws.
+            assert_eq!(child("ABI_DAN_MAKA_008").unwrap().select_targets(ActorId(0),&actors,&mut rng).unwrap(),vec![ActorId(0)]);
+            assert_eq!(rng.draws,2);
+        }
+        let mut dead=actors;
+        dead[3].alive=false;
+        let mut rng=CrtRng::new(0);
+        assert!(child("ABI_DAN_MAKA_022").unwrap().select_targets(ActorId(0),&dead,&mut rng).unwrap().is_empty());
+        assert_eq!(rng.draws,0);
     }
     #[test]
     fn silence_draws_each_slot_and_revive_keeps_dead_targets() {

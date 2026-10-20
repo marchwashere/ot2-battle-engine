@@ -50,7 +50,9 @@ checkpoint. No placeholder or assumed EXP100 victory remains.
 Source details preserved:
 - Mushroom buffs enemy ATK/MATK/DEF/MDEF/AGI for five turns.
 - Silence uses 0..2 additive duration in all status slots; Poison starts at nine.
-- eALL includes both sides; party-single selection precedes dead filtering.
+- eALL includes both sides. Single-target selection filters dead/stealthed
+  candidates first, then draws even if only one candidate survives. Read
+  GetAbilityTarget's execution-flow stack rather than its textual block order.
 - Transform shuffles all enemy slots and checks DiseaseResist[8]; Chubby is immune.
 - Guards prepare four variants even when only three are summoned. Child voices,
   damage and order delay are merged by authored time across overlapping summons.
