@@ -24,6 +24,23 @@ change this. Each imported actor's level-one boost voice consumes exactly one
 CRT draw, while cancellation consumes none. `boost_cancel_cycle()` can advance
 a reusable menu cursor; clone it before `attempt()` to discard failed trials.
 
+The A Step Ahead Defend extension can advance into round 2. A preemptive
+start guarantees Escape only during round 1, not for the whole fight.
+`BattleManagerBP.Escape` checks `GetBattleTurnCount() <= 1` and
+`BattleStartType == 1` (decoded offsets 3820–3951) before bypassing
+`LibBattle.CheckEscapeSuccess` (offset 4782). Round 2 uses the party-level
+probability and consumes one RNG draw, even at 100% success.
+
+Seed `0x1965A5F4`, Pirro first/155 HP, exposed the missing round guard after
+seven Defends in the first Southern Crackridge encounter. The reproduced
+party levels [17,16,14,14] give 40% against encounter level20. Osvald's round-2
+menu is at position3616; its next roll is20497/32767 (~62.55%), so Escape
+fails. The old simulator skipped that roll and incorrectly accepted the route.
+`data/source/southern-escape-1965a5f4.json` records the locally reproduced
+inputs, not a live RNG trace. `tests/preemptive_escape_defends.rs` verifies
+that failure, a successful adjusted roll, and 0–7 Defends for both normal and
+preemptive starts at low and high party levels.
+
 Ordinary voice data is mapped by identity, independently of party slot. Imported
 latent caps are Throné80, Osvald100, Agnea110, Partitio100, and Hikari125. This
 projection never changes latent points or other character resources. Inputs

@@ -888,7 +888,11 @@ impl FieldEscapeMenu {
         ensure(previous == 0, "Return to zero BP before Escape")?;
         self.apply_boost_inputs(inputs);
         let before_check = self.rng;
-        let guaranteed = self.situation == Situation::Preemptive;
+        // BattleManagerBP.Escape bypasses CheckEscapeSuccess only while
+        // GetBattleTurnCount() <= 1 and BattleStartType is preemptive.
+        // Defend search can carry this menu into round 2; even a 100% ordinary
+        // escape then consumes its probability draw.
+        let guaranteed = self.situation == Situation::Preemptive && self.round() == 1;
         let chance_percent = if guaranteed {
             100
         } else {
