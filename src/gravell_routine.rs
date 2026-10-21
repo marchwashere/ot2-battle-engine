@@ -337,6 +337,33 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
 mod tests {
     use super::*;
     #[test]
+    fn reported_chubby_mist_keeps_latent_recovery_voice_before_fourth_effect() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-7b4971b0.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry:crate::CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let battle=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let bg_inputs:Vec<u8>=serde_json::from_value(v["actions"][4]["inputs"].clone()).unwrap();
+        let guard_inputs:Vec<u8>=serde_json::from_value(v["actions"][2]["inputs"].clone()).unwrap();
+        let fight=replay(battle,&bg_inputs,&guard_inputs).unwrap();
+        for (action,old) in fight.actions.iter().zip(v["actions"].as_array().unwrap()) {
+            assert_eq!(action.before.draws+entry.draws,old["before"]["draws"].as_u64().unwrap());
+            assert_eq!(action.before.state,old["before"]["state"].as_u64().unwrap() as u32);
+        }
+        let bg=&fight.actions[4].report;
+        let effects=bg.events.iter().filter_map(|e|if let crate::Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        let expected=v["reported_effects"].as_array().unwrap().iter().map(|v|v.as_str().unwrap()).collect::<Vec<_>>();
+        assert_eq!(effects,expected);
+        let lotteries:Vec<_>=fight.trace.iter().filter(|s|s.reason=="bewildering_grace_lottery").map(|s|s.before.draws+entry.draws).collect();
+        assert_eq!(lotteries,[2911,3005,3006,3019]);
+        let recovery=fight.trace.iter().find(|s|s.reason=="voice"&&s.before.draws+entry.draws==3011).unwrap();
+        assert_eq!(recovery.actor,Some(ActorId(3))); // Partitio, despite Silence.
+        assert_eq!(recovery.after.draws-recovery.before.draws,8);
+        assert!(fight.state.actors[..4].iter().all(|a|a.has_status(crate::combat::StatusKind::Silence)));
+        assert!(matches!(fight.evaluation,Evaluation::Loss {reasons} if reasons.contains(&LossReason::MissingExp100)));
+    }
+    #[test]
     fn reported_chubby_reverse_buff_sort_reproduces_failure_and_rejects_exp100() {
         let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-2135708b.json")).unwrap();
         let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();

@@ -9,6 +9,38 @@ coverage, not a live trace of every effect.
 
 ## Confirmed corrections
 
+### Follow-up: Silence and latent recovery, seed 0x7B4971B0 (2026-10-22)
+
+The original inputs reproduce the reported sequence exactly: mist/Silence
+(024), party latent depletion (034), latent +30 (032), then an additional
+end-of-turn action (038). The old simulator matched the first three effects
+but incorrectly predicted EXP100 as the fourth.
+
+The error was a misidentified disease enum in the voice gate. Native enum
+registration at `0x143d80e60` identifies Silence as **1**. The Blueprint
+`BattlePlayerBP.CanPlayVoiceWhileDisease` checks **4, 101, 85, 53, 6**:
+Sleep, Sleep Doom, Frozen, Stone and Stun. Silence is absent. Those conditions
+block voice types 4/11/13/26, but Silence does not. Its skill prohibition is
+separate and remains enforced. `OnTakeDisease` also does not need an exception
+for newly inflicted Silence; the earlier interpretation of that branch was
+wrong for the same reason.
+
+The third effect shuffles its recovery speaker and selects Partitio. His
+recovery voice consumes **8 draws**, even while Silenced. The fourth lottery
+therefore occurs at route position **3019**, not **3011**, producing 038 rather
+than 002. Earlier lotteries remain at 2911, 3005 and 3006, and every menu and
+boost input through the BG cast remains unchanged. This is a missing voice
+traversal, not extra RNG consumed by latent depletion or a camera correction.
+
+The source audit now reads and verifies the native enum registration, extracts
+the exact disease IDs from the Blueprint, and asserts Silence is not included.
+`data/source/bg-chubby-7b4971b0.json` preserves the reconstructed original
+party/inputs and user-reported effects, not a live RNG trace. Its regression
+checks all four effects, the eight-draw Partitio voice, unchanged earlier menus,
+and rejection for missing EXP100. Reaction tests compare Silenced and healthy
+characters for damage, avoidance, recovery and later debuffs; menu decondition
+voices and skill blocking remain covered separately.
+
 ### Follow-up: Reverse Buffs, Chubby Cait seed 0x2135708B (2026-10-21)
 
 The original boost inputs reproduce the user's four reported effects exactly:
@@ -132,7 +164,7 @@ which has no matching voice row. Actual reaction calls come from the effects.
 | 017 | Enemy-buffing summon | Summon profile; positive statuses do not trigger debuff voices |
 | 020 | Party SP recovery | Owner gate; display before type 13 |
 | 022 | Lightning | Outcome-dependent weakness/break/kill |
-| 024 | Silence | First new Silence can react; later blocked reactions draw nothing |
+| 024 | Silence | Status application reacts normally; Silence blocks skills but does not suppress reaction/recovery voices |
 | 025 | Caster SP depletion | UI, no recovery voice |
 | 026 | Attack buff | No debuff voice |
 | 027 | Caster HP recovery | UI; no self-recovery voice; still settles owner flag |
@@ -142,7 +174,7 @@ which has no matching voice row. Actual reaction calls come from the effects.
 | 031 | No effect | No voice |
 | 032, 033 | Latent recovery | Owner gate; no scalar UI timer or extra voice on reaching cap |
 | 034 | Latent depletion | No scalar UI timer or recovery voice |
-| 035 | Reverse buffs | Randomized duration insertion sort per target, then debuff reactions subject to settled/silence gates |
+| 035 | Reverse buffs | Randomized duration insertion sort per target, then debuff reactions subject to the settled-damage gate |
 | 036, 037 | Money | No voice |
 | 038 | Additional action | No immediate effect voice |
 | 039 | Repeated random fire hits | Target/outcome reactions; party damage/death suppression |

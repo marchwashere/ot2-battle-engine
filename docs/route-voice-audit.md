@@ -28,9 +28,11 @@ cannot prove callbacks execute.
   A preceding ally break overrides those own conditions.
 - Buff reversal directly invokes AddDisease and therefore also needs the
   debuff reaction callback. It now shares the same settled-reaction gate.
-- Silence blocks damage/avoid/recovered voice requests. Newly inflicted Silence
-  has the source's explicit exception for its first reaction. Revival is not
-  one of the suppressed voice types.
+- Correction, 2026-10-22: Silence does **not** block damage/avoid/recovered
+  voices. The previous interpretation misidentified the numeric disease IDs.
+  The native enum resolves the gate to Sleep, Sleep Doom, Frozen, Stone and
+  Stun; Silence is ID1 and absent. See `bg-voice-audit.md` for the source-backed
+  correction and seed7B4971B0's eight missing recovery draws.
 
 ## Source callback coverage
 
@@ -42,7 +44,7 @@ cannot prove callbacks execute.
 | Donate BP, Stimulate, Springy Boots | Ability-ID mapping and imported caster rows |
 | Guards/Beastlings | Owner casting voice plus each summoned actor's source voice |
 | Fireball, Slash, Barrage, Holy Light, Critical Scope | Correct caster profile and source ability aliases, including conditional Barrage rows |
-| BG 39 outcomes | Parent cast; child cast-row presence; damage/death, recovery/revival, debuff/reversal, silence suppression and next-menu conditions |
+| BG 39 outcomes | Parent cast; child cast-row presence; damage/death, recovery/revival, debuff/reversal, native disease voice gates and next-menu conditions |
 
 Evidence: `BattlePlayerBP.OnTakeDisease` (script 0x7525b),
 `CanPlayVoiceWhileDisease` (0x7a160), `IsCharacterDecondition` (0x71431),

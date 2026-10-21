@@ -2325,16 +2325,13 @@ impl Battle {
         }
     }
     fn voice(&mut self, actor: ActorId, voice_type: u8, condition: VoiceCondition) {
-        self.voice_with_disease_check(actor,voice_type,condition,false);
-    }
-    fn voice_with_disease_check(&mut self, actor:ActorId, voice_type:u8, condition:VoiceCondition, skip_disease_check:bool) {
         if self.side(actor) != Some(Side::Player) && !self.is_pirro() {
             return;
         }
-        // BattlePlayerBP.CanPlayVoiceWhileDisease. Silence is the only
-        // voice-blocking disease reachable by the implemented BG outcomes.
-        if !skip_disease_check && matches!(voice_type,4|11|13|26)
-            && self.state.actors[actor.0].has_status(StatusKind::Silence) {return;}
+        // CanPlayVoiceWhileDisease blocks types 4/11/13/26 for native disease
+        // IDs 4/6/53/85/101: Sleep, Stun, Stone, Frozen and Sleep Doom. None
+        // is a supported BG status. Silence is ID 1 and DOES NOT block voices;
+        // its skill prohibition is handled by command validation separately.
         let data = self.crt_data();
         let voice_index =
             if let Some(indices)=self.state.opening_crt.as_ref().and_then(|c|c.carried_voices.as_ref()) {indices[actor.0]}

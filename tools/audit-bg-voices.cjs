@@ -40,6 +40,19 @@ profiles.forEach((prefix,i)=>{
 });
 const {PE}=require('../../OT2BattleEngine/tools/pe.cjs');
 const pe=new PE(process.env.OT2_GAME_EXE||'C:/Program Files (x86)/Steam/steamapps/common/Octopath_Traveler2/Octopath_Traveler2/Binaries/Win64/Octopath_Traveler2-Win64-Shipping.exe');
+// Resolve the actual native enum values instead of guessing status names
+// from the numeric SearchDisease operands in the Blueprint.
+const disease_enum_base=0x143d80e60;
+const disease_enums=[[1,'eSILENCE'],[4,'eSLEEP'],[6,'eSTUN'],[53,'eSTONE'],[85,'eFROZEN'],[101,'eSLEEP_DOOM']].map(([value,name])=>{
+ const at=disease_enum_base+16*value;
+ assert.equal(pe.text(pe.ptr(at)),'EDISEASE_TYPE::'+name);
+ assert.equal(pe.ptr(at+8),value);
+ return {name,value,entry:'0x'+at.toString(16)};
+});
+const disease_gate=player.functions.CanPlayVoiceWhileDisease;
+const voice_blocking_diseases=[...disease_gate.matchAll(/LocalVirtualFunction SearchDisease\n\s+\w+ ByteConst (\d+)/g)].map(m=>Number(m[1]));
+assert.deepEqual(voice_blocking_diseases,[4,101,85,53,6]);
+assert(!voice_blocking_diseases.includes(disease_enums.find(e=>e.name==='eSILENCE').value));
 const shield_events=[['OnAttackDamageSP',0x144cc2be0],['OnHitDamageSP',0x144ccd330]].map(([name,at])=>{
  assert.equal(pe.text(pe.ptr(at+16)),name);const flags=pe.u32(at+64);
  assert.equal(flags,0x0c020800); // BlueprintImplementableEvent, no native implementation.
@@ -68,6 +81,7 @@ const sources=[base,ailment,player,random].map(({asset,sha256})=>({asset,sha256}
 sources.push({asset:voices.source,sha256:voices.sha256});
 const evidence={
  shield_events,
+ disease_voice_gate:{native_enum_base:'0x'+disease_enum_base.toString(16),disease_enums,voice_blocking_diseases,body:disease_gate},
  reverse_buff_sort:{reverse:ailment.functions.Battle_ExecReverseDisease,sort:reverse_sort,native_random_bool:{function:'FUN_1430d6c80',algorithm:'One CRT rand, binary32 unit times 2, truncate and clamp to 1; true if result == 1'}},
  recovery_owner:{get:base.functions.GetSettledPlayOnce_OnRecovered,set:base.functions.SetSettledPlayOnce_OnRecovered,setup:ailment.functions.SetupVoiceFlag_OnRecovered},
  damage_callbacks:ailment.functions.Battle_ExecDamageHP.split('\n').filter(l=>/IsValid|IsCharacterDead|PlayBattleVoice|CheckLastHit|PlayVoice_/.test(l)),

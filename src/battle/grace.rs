@@ -515,15 +515,15 @@ impl Battle {
         for (status,kind) in sorted {
             self.state.actors[target.0].statuses.retain(|s|s.kind!=status.kind);
             self.grace_add_disease(target,Status {kind,turns:status.turns});
-            self.grace_disease_voice(target,kind,false);
+            self.grace_disease_voice(target,kind);
         }
     }
-    fn grace_disease_voice(&mut self,target:ActorId,kind:StatusKind,was_silent:bool) {
+    fn grace_disease_voice(&mut self,target:ActorId,kind:StatusKind) {
         if matches!(kind,StatusKind::AttackDown|StatusKind::MagicDown|StatusKind::SpeedDown|StatusKind::DefenseDown|StatusKind::MagicDefenseDown|StatusKind::Silence|StatusKind::Poison)
-            && !was_silent && self.state.actors[target.0].has_status(kind) {
-            // OnTakeDisease explicitly allows the first newly inflicted Silence
-            // reaction; subsequent reactions remain blocked while silenced.
-            self.voice_with_disease_check(target,4,VoiceCondition {decondition:true,..Default::default()},kind==StatusKind::Silence);
+            && self.state.actors[target.0].has_status(kind) {
+            // Silence is not in CanPlayVoiceWhileDisease's blocking list.
+            // The common settled-damage gate still prevents repeated reactions.
+            self.voice(target,4,VoiceCondition {decondition:true,..Default::default()});
         }
     }
     fn grace_add_disease(&mut self,target:ActorId,status:Status) {
@@ -581,11 +581,10 @@ impl Battle {
             self.trace_rng("bg_status_duration",Some(target),before);
             let turns=(u32::from(op.turns)+extra).min(9) as u8;
             let status=Status {kind,turns};
-            let was_silent=self.state.actors[target.0].has_status(StatusKind::Silence);
             self.grace_add_disease(target,status);
             // BattlePlayerBP.OnTakeDisease: deconditions/debuffs request type 4
             // with DECONDITION. The shared settled-damage gate prevents repeats.
-            self.grace_disease_voice(target,kind,was_silent);
+            self.grace_disease_voice(target,kind);
             events.push(Event::StatusApplied {actor:target,status});
             let before=self.state.rng;
             for _ in 1..op.status_slots {self.state.rng.index(op.status_random_max-op.status_random_min+1);}
@@ -997,14 +996,29 @@ mod tests {
         assert!(!trace.iter().any(|s|s.reason=="critical_hit_and_damage"));
     }
     #[test]
-    fn silence_suppresses_reactions_but_not_its_first_infliction_or_menu_voice() {
+    fn silence_preserves_reaction_rolls_and_keeps_decondition_menu_voice() {
         let mut b=battle();let target=ActorId(0);let mut events=vec![];
         let op=&crate::bg_effects::child("ABI_DAN_MAKA_024").unwrap().operations[0];
         b.grace_status(ActorId(2),target,op,&mut events).unwrap();
         b.state.opening_crt.as_mut().unwrap().settled_damage.fill(false);
         let before=b.state.rng;
-        for kind in [4,11,13] {b.voice(target,kind,VoiceCondition::default());}
-        assert_eq!(b.state.rng,before);
+        for kind in [4,11,13] {
+            let mut silent=b.clone();let mut clean=b.clone();
+            clean.state.actors[0].statuses.clear();
+            let condition=VoiceCondition {recovery_enforcer:Some("eDANCER"),..Default::default()};
+            silent.voice(target,kind,condition);
+            clean.voice(target,kind,condition);
+            assert_eq!(silent.state.rng,clean.state.rng,"Silence must not suppress type {kind}");
+            assert!(silent.state.rng.draws>before.draws,"type {kind} must actually traverse candidates");
+        }
+        // A later debuff is still allowed to react while Silenced; it shares
+        // the ordinary settled-damage gate rather than a Silence exception.
+        let mut silent=b.clone();let mut clean=b.clone();
+        clean.state.actors[0].statuses.clear();
+        let down=&crate::bg_effects::child("ABI_DAN_MAKA_030").unwrap().operations[0];
+        silent.grace_status(ActorId(2),target,down,&mut vec![]).unwrap();
+        clean.grace_status(ActorId(2),target,down,&mut vec![]).unwrap();
+        assert_eq!(silent.state.rng,clean.state.rng);
         b.state.queue=vec![target];b.state.cursor=0;
         b.order_voice(None);
         assert!(b.state.rng.draws>before.draws);
