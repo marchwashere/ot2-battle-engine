@@ -160,10 +160,14 @@ impl Battle {
     }
     fn grace_commands_with_recovery(&mut self,actor:ActorId,jobs:&[(f64,&'static crate::bg_effects::Child,Vec<ActorId>,Option<&crate::bg_effects::SummonProfile>)],events:&mut Vec<Event>,recovery_settled:&mut bool)->Result<()> {
         use crate::bg_effects::{EffectKind::*,Step};
+        // Supported overlapping jobs are summoned attacks without ability
+        // cameras. Camera-enabled commands own the camera until post-action;
+        // reject future overlapping camera owners rather than guess lifetimes.
+        ensure(jobs.len()<=1||jobs.iter().all(|(_,child,_,_)|!child.use_ability_camera),"Overlapping ability-camera commands require an audited camera lifecycle")?;
         #[derive(Default)] struct Runtime {pending:Option<(f64,ActorId)>,hits:Vec<ActorId>,random:Option<ActorId>,counter:u32,count:u32,voice_busy_until:f64}
         let mut states:Vec<Runtime>=(0..jobs.len()).map(|_|Runtime::default()).collect();
         // All overlapping summons consult the same BattleCamera.Playing flag.
-        let mut break_camera_busy_until=f64::NEG_INFINITY;
+        let mut camera=hit_camera::HitCamera::new();
         let party:Vec<_>=(0..self.state.actors.len()).map(ActorId).filter(|id|self.side(*id)==Some(Side::Player)).collect();
         let mut schedule=vec![];
         for (i,(start,child,_,_)) in jobs.iter().enumerate() {
@@ -258,16 +262,12 @@ impl Battle {
                     }
                     if let Some(target)=new_break {
                         run.pending=Some((tick+f64::from(opening_crt::data().break_timer_delay_ticks),target));
-                        if tick>break_camera_busy_until {break_camera_busy_until=tick+f64::from(opening_crt::data().break_busy_ticks);}
+                        camera.on_break(tick,child.use_ability_camera);
                     }
-                    // The action is updated before its appended break-camera
-                    // sequence. At the same endpoint tick, OnStop has not yet
-                    // cleared Playing (retail Guards trace exercises equality).
-                    // Fire Storm and max-boost Barrage retain their ability
-                    // camera through this action. PlayFinishBlow returns while
-                    // that camera is Playing, even after the break camera ends.
-                    // The separate new-break timer above still runs.
-                    else if tick>break_camera_busy_until && !child.id.starts_with("ABI_SCH_011_") && child.id!="ABI_SCH_060_04" {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
+                    // PlayFinishBlow returns while BattleCamera.IsPlaying.
+                    // This uses the source flag for every command, including
+                    // single-hit skills; the new-break timer above is separate.
+                    else if !camera.playing(tick,child.use_ability_camera) {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
                 }
             }
         }
@@ -482,9 +482,14 @@ impl Battle {
         self.state.actors[target.0].statuses.retain(|s|!matches!(s.kind,StatusKind::Silence|StatusKind::Poison));
     }
     pub(super) fn grace_reverse_buffs(&mut self,target:ActorId) {
-        // REVERSE_BUFF selects buff category 1, then converts only diseases
-        // with EnableResist. AddDisease is direct, without the 21-roll handler.
+        // REVERSE_BUFF selects buff category 1, then SortDiseaseListForReverse
+        // filters temporary, resistible turn-counted diseases and insertion-
+        // sorts them by descending duration. For each non-less comparison the
+        // Blueprint calls RandomBool BEFORE checking equality, including when
+        // durations differ. Native RandomBool is RandomInteger(2) == 1.
+        // AddDisease is direct, without the 21-roll handler.
         let buffs:Vec<_>=self.state.actors[target.0].statuses.iter().copied().filter_map(|status| {
+            if status.turns==255 {return None;}
             let kind=match status.kind {
                 StatusKind::AttackUp=>StatusKind::AttackDown,
                 StatusKind::MagicUp=>StatusKind::MagicDown,
@@ -495,7 +500,19 @@ impl Battle {
             };
             Some((status,kind))
         }).collect();
-        for (status,kind) in buffs {
+        let before=self.state.rng;
+        let mut sorted:Vec<(Status,StatusKind)>=vec![];
+        for buff in buffs {
+            let mut insert=sorted.len();
+            for (i,(old,_)) in sorted.iter().enumerate() {
+                if old.turns<buff.0.turns {insert=i;break;}
+                let tie=self.state.rng.index(2)==1;
+                if old.turns==buff.0.turns && tie {insert=i;break;}
+            }
+            sorted.insert(insert,buff);
+        }
+        self.trace_rng("bg_reverse_buff_sort",Some(target),before);
+        for (status,kind) in sorted {
             self.state.actors[target.0].statuses.retain(|s|s.kind!=status.kind);
             self.grace_add_disease(target,Status {kind,turns:status.turns});
             self.grace_disease_voice(target,kind,false);
@@ -599,6 +616,46 @@ impl Battle {
 #[cfg(test)]
 mod tests {
     use super::*;
+    fn camera_test_battle()->Battle {
+        let mut config=BattleConfig::from_json(include_str!("../../data/gigantes.json")).unwrap();
+        config.players=serde_json::from_str(include_str!("../../data/source/lord-sands-party.json")).unwrap();
+        for (player,skill) in config.players.iter_mut().zip(["critical_scope","aggressive_slash","holy_light","hired_help_beastlings"]) {
+            player.skills=vec![skill.into()];
+        }
+        config.enemies[0].stats.max_hp=1_000_000;
+        config.enemies[0].resources.as_mut().unwrap().hp=1_000_000;
+        config.enemies[0].combat.as_mut().unwrap().weapon_weaknesses=vec![combat::Weapon::Sword];
+        config.players[1].combat.as_mut().unwrap().accuracy=999;
+        Battle::new_route_boss(config,None).unwrap()
+    }
+    #[test]
+    fn aggressive_slash_early_break_keeps_break_timer_but_no_finish_blow_timer() {
+        for (id,hits) in [("ABI_WAR_010_03",5),("ABI_WAR_010_04",6)] {
+            let mut b=camera_test_battle();
+            b.state.actors[4].shields=1;
+            b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+            let mut events=vec![];
+            b.grace_common_child(ActorId(1),crate::bg_effects::child(id).unwrap(),&[ActorId(4)],&mut events).unwrap();
+            assert_eq!(events.iter().filter(|e|matches!(e,Event::Damage{..})).count(),hits);
+            assert_eq!(events.iter().take_while(|e|!matches!(e,Event::Broken{..})).filter(|e|matches!(e,Event::Damage{..})).count(),1,"{id} must break on its first hit");
+            assert!(b.state.actors[4].alive());
+            let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+            assert_eq!(trace.iter().filter(|s|s.reason=="break_slow_timer").count(),1,"{id}");
+            assert!(!trace.iter().any(|s|s.reason=="broken_hit_slow_timer"),"{id}");
+        }
+    }
+    #[test]
+    fn single_hit_holy_light_on_broken_target_uses_its_ability_camera() {
+        let mut b=camera_test_battle();
+        b.state.actors[4].break_until_round=2;
+        b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+        let mut events=vec![];
+        b.grace_common_child(ActorId(2),crate::bg_effects::child("ABI_CLE_020_01").unwrap(),&[ActorId(4)],&mut events).unwrap();
+        assert_eq!(events.iter().filter(|e|matches!(e,Event::Damage{..})).count(),1);
+        assert!(b.state.actors[4].alive()&&b.state.actors[4].broken());
+        let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+        assert!(!trace.iter().any(|s|matches!(s.reason,"broken_hit_slow_timer"|"break_slow_timer")));
+    }
     fn battle()->Battle {
         let party:Vec<_>=[7,1,8,4].map(|id|crate::field_escape::route_player(id,5000).unwrap()).into();
         crate::field_escape::carried_step_ahead(CrtRng::new(0),crate::escape::Situation::Normal,&party,
@@ -977,6 +1034,40 @@ mod tests {
         assert!(b.state.actors[0].has_status(StatusKind::MagicReflection));
         assert!(b.state.actors[0].has_status(StatusKind::DefenseDown));
         assert!(!b.state.actors[0].has_status(StatusKind::Poison));
+    }
+    #[test]
+    fn reverse_buff_sort_preserves_native_comparisons_and_permanent_buffs() {
+        let mut b=battle();
+        b.state.actors[0].statuses=vec![
+            Status {kind:StatusKind::AttackUp,turns:3},
+            Status {kind:StatusKind::MagicUp,turns:3},
+            Status {kind:StatusKind::SpeedUp,turns:3},
+            Status {kind:StatusKind::DefenseUp,turns:255},
+        ];
+        // Seed 0 produces false, false, true: the third insertion passes
+        // AttackUp, then inserts before MagicUp. No draw for the first item.
+        b.state.rng=CrtRng::new(0);
+        b.grace_reverse_buffs(ActorId(0));
+        assert_eq!(b.state.rng.draws,5); // Three sort draws, two voice draws.
+        assert_eq!(b.state.actors[0].statuses,vec![
+            Status {kind:StatusKind::DefenseUp,turns:255},
+            Status {kind:StatusKind::AttackDown,turns:3},
+            Status {kind:StatusKind::SpeedDown,turns:3},
+            Status {kind:StatusKind::MagicDown,turns:3},
+        ]);
+        // Longer duration inserts immediately with no RandomBool call.
+        // Shorter duration still draws, although equality will be false.
+        for (durations,sort_draws) in [([1,3],0),([3,1],1)] {
+            let mut b=battle();
+            b.state.actors[0].statuses=vec![
+                Status {kind:StatusKind::AttackUp,turns:durations[0]},
+                Status {kind:StatusKind::MagicUp,turns:durations[1]},
+            ];
+            let before=b.state.rng;
+            b.grace_reverse_buffs(ActorId(0));
+            assert_eq!(b.state.rng.draws-before.draws,sort_draws+2);
+            assert_eq!(b.state.actors[0].statuses.iter().map(|s|s.turns).collect::<Vec<_>>(),[3,1]);
+        }
     }
     #[test]
     fn instant_death_has_a_real_chance_and_caster_is_excluded() {

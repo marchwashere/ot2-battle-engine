@@ -1,0 +1,292 @@
+{
+  "ability_source": {
+    "source": "/Game/Ability/Database/AbilityData",
+    "sha256": "0a5c871b8ef220e8d38fe7806df5abcc2c2f4008a70cee3e357145572784da74"
+  },
+  "abilities": [
+    {
+      "id": "ABI_DAN_MAKA_039",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_038",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_037",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_036",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_035",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_034",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_033",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_032",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_031",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_030",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_029",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_028",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_027",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_026",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_025",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_024",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_023",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_022",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_021",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_020",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_019",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_018",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_017",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_016",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_015",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_014",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_013",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_012",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_011",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_010",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_009",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_008",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_007",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_006",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_005",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_004",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_003",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_002",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_001",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_006_INV",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_DAN_MAKA_017_INV",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_MER_YOHEI_04_01",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_WAR_010_03",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_INV_030_01",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_MER_YOHEI_05_01",
+      "use_ability_camera": false
+    },
+    {
+      "id": "ABI_SCH_060_04",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_WAR_010_04",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_CLE_020_01",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_011_01",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_011_02",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_011_03",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_011_04",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_070_01",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_070_02",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_070_03",
+      "use_ability_camera": true
+    },
+    {
+      "id": "ABI_SCH_070_04",
+      "use_ability_camera": true
+    }
+  ],
+  "damage_source": {
+    "asset": "Library/LibAilment",
+    "sha256": "fc21c394293a5c0488840eb1bfb5632595dd9474b8e3320c9437b788d25fe935",
+    "function": "Battle_ExecDamageHP"
+  },
+  "break_camera": {
+    "sha256": "139466a3fbf82ced8be92faafe0072747a960db77be86f848f787586b22888b1",
+    "notes": "The Playing gate skips StartBreakCamera only; pushed continuation33312 still schedules BREAK_CAMERA_SLOW."
+  },
+  "bg_parent": {
+    "sha256": "0be9f8c876cff9d7e2e6d9d3119666bbfbf16ae5d805ea633802ef221d3529c7",
+    "notes": "RandomSelectAbilityCommand overrides PreActionCommand; do not inherit the parent camera flag into child timelines."
+  },
+  "item_uses_ability_camera": true,
+  "sources": [
+    {
+      "asset": "Library/LibActionCommand",
+      "sha256": "f260eba427666d73dce3e8d40b2daeb13a56bdfd67a60219331cce53dbf379bf",
+      "function": "GetActionCommandForItem",
+      "excerpt": "05f19 LetBool\n  05f1a StructMemberContext UseAbilityCamera\n    05f2b LocalVariable K2Node_MakeStruct_AbilityDataBase\n  05f3c True\n05f3d Let property=ActionCommandSequencer"
+    },
+    {
+      "asset": "Battle/BP/BattleAction/_Base/BP_ActionCommandBase",
+      "sha256": "1b48752709f8e58d8c9f38b685c2a4d06301b5a566999eac9cc9ab5858255e59",
+      "function": "Setup Action Command",
+      "excerpt": "1df0d LetBool\n  1df0e InstanceVariable EnableAbilityCamera\n  1df1f StructMemberContext UseAbilityCamera\n    1df30 InstanceVariable ActionCommand\n1df41 Let property=m_nTotalSlideFrame\n  1df52 InstanceVariable m_nTotalSlideFrame"
+    },
+    {
+      "asset": "Battle/BP/BattleAction/_Base/BP_ActionCommandBase",
+      "sha256": "1b48752709f8e58d8c9f38b685c2a4d06301b5a566999eac9cc9ab5858255e59",
+      "function": "ExecuteUbergraph_BP_ActionCommandBase",
+      "excerpt": "  16c4e InstanceVariable ExecPreAction\n  16c5f InstanceVariable EnableAbilityCamera\n16c70 PushExecutionFlow target=7232\n16c75 PushExecutionFlow target=6887\n16c7a PushExecutionFlow target=6571\n16c7f PushExecutionFlow target=4810\n16c84 PushExecutionFlow target=5294\n16c89 Context skip=24 rvalue=<null-field>\n  16c8a ObjectConst import:-303:Default__LibBattle_C\n  16c9b LocalVirtualFunction GetBattleManager\n17034 PopExecutionFlowIfNot\n  17035 InstanceVariable EnableAbilityCamera\n17046 Context skip=24 rvalue=<null-field>\n  17047 ObjectConst import:-303:Default__LibBattle_C\n  17058 LocalVirtualFunction GetBattleManager\n    17061 Self\n    17062 LocalVariable CallFunc_GetBattleManager_BattleManager_2\n17074 LetBool\n  17075 LocalVariable CallFunc_CheckDebugSwitch_ReturnValue_2\n  17086 Context skip=12 rvalue=CallFunc_CheckDebugSwitch_ReturnValue_2\n  17535 InstanceVariable BattleCamera\n  17552 LocalVirtualFunction StartAbilityCamera\n    1755b InstanceVariable BoostLevel\n    1756c StructMemberContext TargetType\n      1757d InstanceVariable ActionCommand\n    1758e InstanceVariable m_nTotalSlideFrame\n    1759f Self\n    175a0 LocalVariable CallFunc_IsCharacterEnemy_ReturnValue_2\n    175b1 LocalVariable CallFunc_GetMainPartyIsFrontMember_ReturnValue\n    175c2 InstanceVariable m_strActionLabel\n  17afa InstanceVariable ExecPostAction\n  17b0b InstanceVariable EnableAbilityCamera\n17b1c PushExecutionFlow target=9367\n17b21 PushExecutionFlow target=9022\n17b26 PushExecutionFlow target=8911\n17b2b PushExecutionFlow target=7450\n17b30 PushExecutionFlow target=7465\n17b35 PushExecutionFlow target=8396\n17b3a PushExecutionFlow target=8872\n17b3f PushExecutionFlow target=8896\n1a30b PopExecutionFlowIfNot\n  1a30c InstanceVariable EnableAbilityCamera\n1a31d Jump target=6036\n1a322 Let property=CallFunc_GetSpriteAssetPath_ReturnValue\n  1a333 LocalVariable CallFunc_GetSpriteAssetPath_ReturnValue\n  1a344 CallMath import:-284:GetSpriteAssetPath\n    1a349 LocalVariable K2Node_Event_cCommandSequence\n1a35b CallMath import:-168:BreakSoftObjectPath\n  1a360 LocalVariable CallFunc_GetSpriteAssetPath_ReturnValue\n  1a371 LocalVariable CallFunc_BreakSoftObjectPath_PathString"
+    },
+    {
+      "asset": "Battle/BP/BattleCameraBP",
+      "sha256": "3aa7108186ac1c99d0186e40a5491c49536f8d0ddfa0eb8b7bbfd522c240f7ab",
+      "function": "ExecuteUbergraph_BattleCameraBP",
+      "excerpt": "1127f Jump target=466\n11284 JumpIfNot target=792\n  11289 InstanceVariable Playing\n1129a PopExecutionFlow\n1129b Context skip=10 rvalue=<null-field>\n  1129c InstanceVariable CameraVibration\n  112b9 FinalFunction import:-126:PlayFromStart\n112bf PopExecutionFlow\n112c0 LetBool\n  112c1 InstanceVariable Playing\n  112d2 True\n112d3 LocalVirtualFunction SuspendWaitMove\n112dd LetObj\n  112de LocalVariable CallFunc_GetInstance_ReturnValue_1\n  112ef CallMath import:-156:GetInstance\n112f5 LetObj\n  112f6 LocalVariable CallFunc_GetBattleSequenceDirector_ReturnValue_1\n  11307 Context skip=10 rvalue=CallFunc_GetBattleSequenceDirector_ReturnValue_1\n116b6 PopExecutionFlow\n116b7 LetBool\n  116b8 InstanceVariable Playing\n  116c9 True\n116ca Context skip=10 rvalue=<null-field>\n  116cb InstanceVariable SceneComponent\n  116e8 FinalFunction import:-124:ResetRelativeTransform\n116ee LetObj\n  116ef LocalVariable CallFunc_GetInstance_ReturnValue\n  11700 CallMath import:-156:GetInstance\n11706 LetObj\n11790 PopExecutionFlow\n11791 LetBool\n  11792 InstanceVariable Playing\n  117a3 False\n117a4 CallMath import:-110:Delay\n  117a9 Self\n  117aa FloatConst 0\n  117af StructConst import:-200:LatentActionInfo size=32\n    117b8 SkipOffsetConst 30\n    117bd IntConst 592681277\n    117c2 NameConst ExecuteUbergraph_BattleCameraBP\n117ce PopExecutionFlow\n117cf JumpIfNot target=1759\n  117d4 InstanceVariable Playing\n117e5 PopExecutionFlow\n117e6 Context skip=10 rvalue=<null-field>\n  117e7 InstanceVariable TakeDamageVibration\n  11804 FinalFunction import:-126:PlayFromStart\n1180a PopExecutionFlow\n1180b JumpIfNot target=1807\n  11810 InstanceVariable Playing\n11821 PopExecutionFlow\n11822 Context skip=10 rvalue=<null-field>\n  11823 InstanceVariable TakeBigDamageVibration\n  11840 FinalFunction import:-126:PlayFromStart\n11846 PopExecutionFlow\n11847 PushExecutionFlow target=1870\n1184c PushExecutionFlow target=1903\n11851 PushExecutionFlow target=2419\n11ca0 PopExecutionFlow\n11ca1 LetBool\n  11ca2 InstanceVariable Playing\n  11cb3 True\n11cb4 Jump target=1840\n11cb9 Let property=VibrationOffset\n  11cca InstanceVariable VibrationOffset\n  11cdb InstanceVariable TakeDamageVibration_Offset_F3C50FFD43BCF2A50C9270AD74AB3605\n11cec PopExecutionFlow\n11ced LetBool\n  11cee InstanceVariable Playing\n  11cff False\n11d00 CallMath import:-81:BreakTransform\n  11d05 InstanceVariable DefaultTransform\n  11d16 LocalVariable CallFunc_BreakTransform_Location_2\n  11d27 LocalVariable CallFunc_BreakTransform_Rotation_2\n  11d38 LocalVariable CallFunc_BreakTransform_Scale_2\n11d4a Let property=TargetPos\n  11d5b InstanceVariable TargetPos\n1286a Jump target=825\n1286f LetBool\n  12870 InstanceVariable Playing\n  12881 False\n12882 LocalVirtualFunction ResumeWaitMove\n1288c PopExecutionFlow\n1288d LetBool\n  1288e InstanceVariable Playing\n  1289f False\n128a0 LocalVirtualFunction ResumeWaitMove\n128aa PopExecutionFlow\n128ab PushExecutionFlow target=5037\n128b0 LetBool\n  128b1 InstanceVariable Playing\n  128c2 True\n128c3 LocalVirtualFunction SuspendWaitMove\n128cd LocalVirtualFunction SuspendTargetFocusMove\n128d7 Let property=CallFunc_GetRelativeTransform_ReturnValue_3\n  128e8 LocalVariable CallFunc_GetRelativeTransform_ReturnValue_3\n  128f9 Context skip=10 rvalue=CallFunc_GetRelativeTransform_ReturnValue_3\n    128fa InstanceVariable CameraComponent\n    1291f FinalFunction import:-114:GetRelativeTransform\n12b72 Context skip=86 rvalue=<null-field>\n  12b73 LocalVariable CallFunc_GetBattleSequenceDirector_ReturnValue_2\n  12b90 LocalVirtualFunction ExecAbilityCamera\n    12b99 LocalVariable K2Node_Event_nBoostLevel\n    12baa LocalVariable K2Node_Event_eTargetType_1\n    12bbb InstanceVariable m_eCameraType\n    12bcc LocalVariable K2Node_Event_nSlideFrame\n    12bdd LocalVariable K2Node_Event_cActionCommand\n    12bee LocalVariable K2Node_Event_bEnemySide\n    12bff LocalVariable K2Node_Event_bIsFront_1\n    12c10 LocalVariable K2Node_Event_strAbilityName\n130c4 PopExecutionFlow\n130c5 LetBool\n  130c6 InstanceVariable Playing\n  130d7 False\n130d8 Let property=CallFunc_Concat_StrStr_ReturnValue\n  130e9 LocalVariable CallFunc_Concat_StrStr_ReturnValue\n  130fa CallMath import:-105:Concat_StrStr\n    130ff StringConst \"BattleCameraTransform : \"\n    13119 StringConst \"EndResultCamera : \"\n1312e Let property=CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1\n  1313f LocalVariable CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1\n132dc PopExecutionFlow\n132dd LetBool\n  132de InstanceVariable Playing\n  132ef True\n132f0 LetObj\n  132f1 LocalVariable CallFunc_GetInstance_ReturnValue_3\n  13302 CallMath import:-156:GetInstance\n13308 LetObj\n  13309 LocalVariable CallFunc_GetBattleSequenceDirector_ReturnValue_3\n  1331a Context skip=10 rvalue=CallFunc_GetBattleSequenceDirector_ReturnValue_3\n    1331b LocalVariable CallFunc_GetInstance_ReturnValue_3\n17bd0 Jump target=18711\n17bd5 LetBool\n  17bd6 InstanceVariable Playing\n  17be7 True\n17be8 LocalVirtualFunction SuspendWaitMove\n17bf2 LetObj\n  17bf3 LocalVariable CallFunc_GetInstance_ReturnValue_4\n  17c04 CallMath import:-156:GetInstance\n17c0a LetObj\n  17c0b LocalVariable CallFunc_GetBattleSequenceDirector_ReturnValue_4\n  17c1c Context skip=10 rvalue=CallFunc_GetBattleSequenceDirector_ReturnValue_4"
+    },
+    {
+      "asset": "Battle/BP/BattleManagerBP",
+      "sha256": "139466a3fbf82ced8be92faafe0072747a960db77be86f848f787586b22888b1",
+      "function": "ExecuteUbergraph_BattleManagerBP",
+      "excerpt": "  35216 Self\n  35217 ByteConst 5\n3521a BindDelegate FinishFinishBlow\n  35223 LocalVariable K2Node_CreateDelegate_OutputDelegate_7\n  35234 Self\n35235 Let property=CallFunc_K2_SetTimerDelegate_ReturnValue_2\n  35246 LocalVariable CallFunc_K2_SetTimerDelegate_ReturnValue_2\n  35257 CallMath import:-328:K2_SetTimerDelegate\n    3525c LocalVariable K2Node_CreateDelegate_OutputDelegate_7\n    3526d LocalVariable CallFunc_GetGameParamToFloat_Init_2\n    3527e False\n    3527f FloatConst 0\n    35284 FloatConst 0\n3528a LetBool\n  3528b InstanceVariable IsFinishBlowSlow\n  3529c True\n3529d LetBool\n  3529e InstanceVariable m_bOverrideBattleSpeed\n  352af True\n352b0 PopExecutionFlow\n  3de4f InstanceVariable BattleCamera\n  3de6c LocalVirtualFunction IsPlaying\n    3de75 LocalVariable CallFunc_IsPlaying_playing\n3de87 JumpIfNot target=33608\n  3de8c LocalVariable CallFunc_IsPlaying_playing\n3de9d PopExecutionFlow\n3de9e CallMath import:-533:GetGameParamToFloat\n  3dea3 NameConst FINISH_BLOW_SLOW\n  3deac LocalVariable CallFunc_GetGameParamToFloat_Min_2\n  3debd LocalVariable CallFunc_GetGameParamToFloat_Max_2\n  3dece LocalVariable CallFunc_GetGameParamToFloat_Init_2\n  3dedf LocalVariable CallFunc_GetGameParamToFloat_Param_2\n3def1 CallMath import:-320:Delay\n  3def6 Self\n  3def7 LocalVariable CallFunc_GetGameParamToFloat_Min_2\n  3df08 StructConst import:-690:LatentActionInfo size=32\n    3df11 SkipOffsetConst 7451\n    3df16 IntConst 874194881\n    3df1b NameConst ExecuteUbergraph_BattleManagerBP\n    3df24 Self\n3df27 PopExecutionFlow"
+    },
+    {
+      "asset": "Battle/BP/BattleSequenceDirectorBP",
+      "sha256": "73841fcfaf07d423de3d6b0aea75c5387ebc3a15c61998c537d9d9eec1aa4311",
+      "function": "ExecuteUbergraph_BattleSequenceDirectorBP",
+      "excerpt": "1cf72 Context skip=14 rvalue=<null-field>\n  1cf73 InstanceVariable m_cBattleCamera\n  1cf90 LocalVirtualFunction FinishAbilityCamera\n1cf9a LetBool\n  1cf9b InstanceVariable IsAbilityCamera\n  1cfac False\n1cfad CallMath import:-174:PrintString\n  1cfb2 Self"
+    }
+  ],
+  "notes": [
+    "GetActionCommandForItem explicitly sets UseAbilityCamera=true; the generic USE_ITEM ability row is not the final item command.",
+    "Setup Action Command copies this flag. Pre-action StartAbilityCamera sets Playing; the post-action camera callback clears it.",
+    "PlayFinishBlow exits while IsPlaying, before the zero-delay continuation and K2_SetTimerDelegate CRT call.",
+    "PlayBreakCamera has a separate pushed continuation for its timer; retain the draw when a hit newly breaks the target.",
+    "Normal attacks keep their existing hit/break timing. This is a scalar callback gate, not an item-wide or seed-specific RNG offset."
+  ],
+  "scope": "Shared scalar camera gate for supported ordinary attacks, scripted skills/items and BG/route child commands. Ability cameras span one command through post-action; overlapping camera-enabled jobs are rejected. No graphics or fixed RNG offsets."
+}

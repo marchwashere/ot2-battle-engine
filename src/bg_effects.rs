@@ -58,6 +58,8 @@ pub struct Operation {
 #[derive(Debug, Clone, Serialize)]
 pub struct Child {
     pub id: String,
+    /// BP_ActionCommandBase's camera flag, retained from the source ability.
+    pub use_ability_camera: bool,
     pub target: Target,
     pub attribute: String,
     pub ability_ratio: u32,
@@ -114,6 +116,7 @@ pub struct AuthoredEvent { pub time: f64, pub body: String }
 #[serde(rename_all="PascalCase")]
 struct Ability {
     #[serde(rename="id")] id:String,
+    use_ability_camera:bool,
     target_type:String, attribute:String, ability_ratio:u32,
     ability_type:String,
     hit_ratio:i32, critical_ratio:i32, critical_power:u32,
@@ -193,7 +196,7 @@ fn import()->Result<BTreeMap<String,Child>> {
         }
         let events=d.sequences.get(&a.id).ok_or_else(||SimError(format!("Missing BG sequence {}",a.id)))?.clone();
         let steps=d.steps.get(&a.id).ok_or_else(||SimError(format!("Missing BG executable sequence {}",a.id)))?.clone();
-        children.insert(a.id.clone(),Child {id:a.id,target,attribute:a.attribute,ability_ratio:a.ability_ratio,
+        children.insert(a.id.clone(),Child {id:a.id,use_ability_camera:a.use_ability_camera,target,attribute:a.attribute,ability_ratio:a.ability_ratio,
             hit_ratio:a.hit_ratio,critical_ratio:a.critical_ratio,critical_power:a.critical_power,
             command:a.command_actor.asset.text,revive_recovery:a.ability_type.ends_with("::eREVIVE_RECOVERY"),operations,events,steps});
     }
@@ -261,6 +264,19 @@ impl Operation {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn every_command_retains_its_required_source_camera_flag() {
+        for json in [include_str!("../data/source/bg-effects.json"),include_str!("../data/source/scholar-magic.json")] {
+            let source:serde_json::Value=serde_json::from_str(json).unwrap();
+            for row in source["abilities"].as_array().unwrap() {
+                let id=row["id"].as_str().unwrap();
+                assert_eq!(Some(child(id).unwrap().use_ability_camera),row["UseAbilityCamera"].as_bool(),"{id}");
+            }
+            let mut missing=source["abilities"][0].clone();
+            missing.as_object_mut().unwrap().remove("UseAbilityCamera");
+            assert!(serde_json::from_value::<Ability>(missing).is_err(),"Missing camera data must not silently default to false");
+        }
+    }
     #[test]
     fn all_39_children_and_both_nested_summons_are_present() {
         assert_eq!(children().len(),56);

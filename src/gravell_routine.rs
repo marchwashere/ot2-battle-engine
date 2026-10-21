@@ -337,6 +337,32 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
 mod tests {
     use super::*;
     #[test]
+    fn reported_chubby_reverse_buff_sort_reproduces_failure_and_rejects_exp100() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-2135708b.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry:crate::CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let battle=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let bg_inputs:Vec<u8>=serde_json::from_value(v["actions"][4]["inputs"].clone()).unwrap();
+        let guard_inputs:Vec<u8>=serde_json::from_value(v["actions"][2]["inputs"].clone()).unwrap();
+        let fight=replay(battle,&bg_inputs,&guard_inputs).unwrap();
+        // Preserve the original instructions and menus through BG. The
+        // source-backed change begins INSIDE its first effect, not Guards.
+        for (action,old) in fight.actions.iter().zip(v["actions"].as_array().unwrap()) {
+            assert_eq!(action.before.draws+entry.draws,old["before"]["draws"].as_u64().unwrap());
+            assert_eq!(action.before.state,old["before"]["state"].as_u64().unwrap() as u32);
+        }
+        let bg=&fight.actions[4].report;
+        let effects=bg.events.iter().filter_map(|e|if let crate::Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        let expected=v["reported_effects"].as_array().unwrap().iter().map(|v|v.as_str().unwrap()).collect::<Vec<_>>();
+        assert_eq!(effects,expected);
+        let sort_draws:Vec<_>=fight.trace.iter().filter(|s|s.reason=="bg_reverse_buff_sort").map(|s|s.after.draws-s.before.draws).collect();
+        assert_eq!(sort_draws.iter().filter(|&&draws|draws>0).count(),4);
+        assert_eq!(sort_draws.iter().sum::<u64>(),10);
+        assert!(matches!(fight.evaluation,Evaluation::Loss {reasons} if reasons.contains(&LossReason::MissingExp100)));
+    }
+    #[test]
     fn reported_chubby_lightning_hits_survivor_and_scattering_blocks_finisher() {
         let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-3899b25a.json")).unwrap();
         let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();

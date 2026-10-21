@@ -10,7 +10,7 @@ const base=blueprint('Battle/BP/BattleAction/_Base/BP_ActionCommandBase',[
 const ailment=blueprint('Library/LibAilment',[
  'SetupVoiceFlag_OnRecovered','Battle_ExecRecoveryHP','Battle_ExecRecoveryMP','Battle_ExecRecoveryBP',
  'Battle_ExecRecoveryPOT','Battle_ExecRevive','Battle_ExecDamageHP','Battle_ExecInstantDeath',
- 'Battle_ExecForceSetHPTo1','Battle_ExecAddDisease','Battle_ExecReverseDisease',
+ 'Battle_ExecForceSetHPTo1','Battle_ExecAddDisease','Battle_ExecReverseDisease','SortDiseaseListForReverse',
  'Battle_ExecRemoveDisease','Battle_ExecDamageMP','Battle_ExecDamageBP','Battle_ExecDamagePOT',
  'Battle_ExecEXPUp','Battle_ExecJPUp','Battle_ExecAddMoney','Battle_ExecDamageSP'
 ]);
@@ -49,6 +49,9 @@ assert(!ailment.functions.Battle_ExecDamageSP.includes('PlayBattleVoice'));
 assert(!base.functions.OnHitDamageSP.includes('PlayBattleVoice'));
 assert(!base.functions.OnAttackDamageSP.includes('PlayBattleVoice'));
 assert(!player.functions.OnHitDamageSP.includes('PlayBattleVoice'));
+const reverse_sort=ailment.functions.SortDiseaseListForReverse;
+for(const token of ['EnableResist','EnableTurnCount','SupPermanent','Permanent','Less_IntInt',':RandomBool',':EqualEqual_IntInt','Array_Insert'])assert(reverse_sort.includes(token),token);
+assert(reverse_sort.indexOf(':RandomBool')<reverse_sort.indexOf(':EqualEqual_IntInt'));
 const effects=bg.abilities.filter(a=>/^ABI_DAN_MAKA_\d{3}$/.test(a.id)).sort((a,b)=>a.id.localeCompare(b.id)).map(a=>({
  id:a.id,target:a.TargetType,attribute:a.Attribute,
  operations:a.Ailment.filter(x=>x.AilmentName!=='None'),
@@ -65,6 +68,7 @@ const sources=[base,ailment,player,random].map(({asset,sha256})=>({asset,sha256}
 sources.push({asset:voices.source,sha256:voices.sha256});
 const evidence={
  shield_events,
+ reverse_buff_sort:{reverse:ailment.functions.Battle_ExecReverseDisease,sort:reverse_sort,native_random_bool:{function:'FUN_1430d6c80',algorithm:'One CRT rand, binary32 unit times 2, truncate and clamp to 1; true if result == 1'}},
  recovery_owner:{get:base.functions.GetSettledPlayOnce_OnRecovered,set:base.functions.SetSettledPlayOnce_OnRecovered,setup:ailment.functions.SetupVoiceFlag_OnRecovered},
  damage_callbacks:ailment.functions.Battle_ExecDamageHP.split('\n').filter(l=>/IsValid|IsCharacterDead|PlayBattleVoice|CheckLastHit|PlayVoice_/.test(l)),
  player_callbacks:Object.fromEntries(Object.entries(player.functions).map(([k,v])=>[k,v.split('\n').filter(l=>/PlayBattleVoice|CanPlay|Disease|Recovered|IsDead/.test(l))]))

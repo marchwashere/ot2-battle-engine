@@ -13,6 +13,7 @@ use std::{
     sync::Arc,
 };
 mod grace;
+mod hit_camera;
 mod scholar;
 mod order;
 mod route_boss;
@@ -1600,7 +1601,7 @@ impl Battle {
         let mut hit = self.normal_accuracy(actor, target, attack);
         let data = opening_crt::data();
         let mut pending_break_timer = None;
-        let mut break_busy_until = 0;
+        let mut camera = hit_camera::HitCamera::new();
         let mut voice_busy_until = 0;
         let normal_id = match attack.weapon {
             Some(combat::Weapon::Sword)=>Some("attack_sword"),
@@ -1661,8 +1662,8 @@ impl Battle {
                     if hit && (just_break || self.state.actors[target.0].broken()) {
                         if just_break {
                             pending_break_timer = Some(tick + data.break_timer_delay_ticks);
-                            break_busy_until = tick + data.break_busy_ticks;
-                        } else if tick > break_busy_until {
+                            camera.on_break(f64::from(tick), false);
+                        } else if !camera.playing(f64::from(tick), false) {
                             // Battle_ExecDamageHP -> PlayFinishBlow. Its zero
                             // delay schedules K2_SetTimerDelegate, which draws
                             // CRT even with zero initial-start variance.
@@ -1696,7 +1697,7 @@ impl Battle {
         // A newly inflicted break still schedules its separate timer.
         let ability_camera_active = data.skill_uses_ability_camera[id];
         let mut pending_break_timer = None;
-        let mut break_busy_until = 0;
+        let mut camera = hit_camera::HitCamera::new();
         let mut voice_busy_until = 0;
         for step in &data.skills[id] {
             if pending_break_timer.is_some_and(|tick| tick <= step.tick()) {
@@ -1785,8 +1786,8 @@ impl Battle {
                     {
                         if !broken_before {
                             pending_break_timer = Some(tick + data.break_timer_delay_ticks);
-                            break_busy_until = tick + data.break_busy_ticks;
-                        } else if !ability_camera_active && tick >= break_busy_until {
+                            camera.on_break(f64::from(tick), ability_camera_active);
+                        } else if !camera.playing(f64::from(tick), ability_camera_active) {
                             self.timer_rng("broken_hit_slow_timer", Some(target));
                         }
                     }

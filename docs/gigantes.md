@@ -1,5 +1,10 @@
 # Gigantes and the revised Sands routine
 
+The camera gate is now shared by all supported damage executors and reads each
+command's imported `UseAbilityCamera` flag, replacing the initial Barrage/Fire
+Storm ID exceptions. See [hit-camera.md](hit-camera.md). Both VOD fixtures and
+the full captured Gigantes trace remain regression requirements.
+
 ## Barrage ability-camera gate, 2026-10-21
 
 Seed `0579DEA3` (Pirro first, 155 HP) matched all three sword hits and all eight

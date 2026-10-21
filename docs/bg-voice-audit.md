@@ -9,6 +9,37 @@ coverage, not a live trace of every effect.
 
 ## Confirmed corrections
 
+### Follow-up: Reverse Buffs, Chubby Cait seed 0x2135708B (2026-10-21)
+
+The original boost inputs reproduce the user's four reported effects exactly:
+buffs turn into debuffs (035), mist/Silence (024), party fire damage (004),
+then 1,000 leaves (036). The old prediction was 035, enemy-buffing summon
+(017), EXP100 (002), no effect (031).
+
+The missing calls are inside `LibAilment.SortDiseaseListForReverse`, invoked
+by `Battle_ExecReverseDisease` before applying each target's reversed buffs.
+It filters permanent/non-resistible/non-turn-counted diseases, then uses an
+insertion sort by descending duration. A longer duration inserts without RNG;
+otherwise it calls `RandomBool` before testing whether durations are equal.
+Consequently even an unequal shorter duration consumes a comparison roll.
+Native `FUN_1430d6c80` draws one CRT value and implements
+`RandomInteger(2) == 1`, not the weighted-boolean threshold helper.
+
+For this party the four buff lists consume **10 additional draws** before
+the second lottery. The first lottery remains at route position 2998; the
+second is 3018 rather than 3008. No Guards, camera, or pre-BG menu changes
+are needed. The same-input full pre-fix fight was identical at `0804390`,
+`8f1e678`, and the working tree with the shared camera refactor. The omitted
+sorting therefore predates both camera changes. This does not resolve the
+separate inconsistent fourth-Guards-hit report for seed `0x0FF630A8`.
+
+`data/source/bg-chubby-2135708b.json` records the original reconstructed
+party/inputs and user-reported effects; it is not a live RNG trace. Regression
+tests preserve every menu through BG, reproduce all four observed effects,
+and reject the old candidate for missing EXP100. Primitive tests cover equal
+and unequal durations, insertion order, and permanent-buff exclusion. The
+source audit now includes the previously omitted sorting helper.
+
 ### Follow-up: Chubby Cait seed 0x3899B25A (2026-10-20)
 
 The user's original inputs now reproduce all four reported effects:
@@ -111,7 +142,7 @@ which has no matching voice row. Actual reaction calls come from the effects.
 | 031 | No effect | No voice |
 | 032, 033 | Latent recovery | Owner gate; no scalar UI timer or extra voice on reaching cap |
 | 034 | Latent depletion | No scalar UI timer or recovery voice |
-| 035 | Reverse buffs | Debuff reactions subject to settled/silence gates |
+| 035 | Reverse buffs | Randomized duration insertion sort per target, then debuff reactions subject to settled/silence gates |
 | 036, 037 | Money | No voice |
 | 038 | Additional action | No immediate effect voice |
 | 039 | Repeated random fire hits | Target/outcome reactions; party damage/death suppression |
