@@ -1,5 +1,42 @@
 # Gigantes and the revised Sands routine
 
+## Barrage ability-camera gate, 2026-10-21
+
+Seed `0579DEA3` (Pirro first, 155 HP) matched all three sword hits and all eight
+Barrage hits, including the break on hit six. The user's following Beastlings
+hits were `8409, 9999, 8273, 9999`; the old prediction had
+`9999, 9999, 8409, 8185`. See `data/source/gigantes-vod-0579dea3.json` for
+the VOD observations and separately identified reconstructed entry.
+
+`ABI_SCH_060_04.UseAbilityCamera` is true. The action starts the ability camera
+before its damage and finishes it afterward. BattleManager's PlayFinishBlow
+returns while BattleCamera.IsPlaying, before scheduling its timer. The executor
+already honored this gate for Fire Storm but missed Barrage: after its brief
+break camera ended, hit eight incorrectly consumed a broken-hit timer draw.
+Run `node tools/audit-barrage-camera.cjs` for the hashed Blueprint/data evidence.
+
+Keep Osvald's break voice at6379->6380 and new-break timer at6380->6381.
+Remove only the spurious broken-hit timer at6389. The unchanged command-voice
+lottery now begins at6389, rejects Partitio's 50% praise candidate and selects
+the normal command line, ending at6406 (17 draws). Previously it began at6390
+and selected praise, ending at6396 (6 draws). This is a net +10 difference;
+no fixed offset or forced voice selection is applied.
+
+The corrected replay reproduces every observed damage number and continues
+through the same Georges actions to the reported Shipwreck formation/queues:
+
+- Gigantes after drop6438; rescue scene6443; Georges complete6449.
+- Shipwreck encounter selection6484; battle entry6492; first command menu6558.
+- T1: Osvald, Temenos, Throne, Partitio.
+- T2: Throne, Sea Anemone, Osvald, Partitio, Sea Anemone, Temenos, Sea Anemone.
+
+These counters are reconstructed predictions, not user-recorded RNG readings.
+PlayerOrder calls BeginCharacterOrder before opening the command menu; voice
+selection precedes a possible immediate boost. The user not hearing Partitio's
+line does not establish that selection was skipped. Audio interruption itself
+was not measured. The prior 483F1BED VOD and full361-draw retail capture remain
+unchanged and pass their regressions.
+
 ## Barrage frame evaluation, 2026-10-21
 
 Seed `483F1BED` exposed a missing weakness voice during Elemental Barrage. The

@@ -86,6 +86,30 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
 }
 #[cfg(test)]mod tests {
  use super::*;
+ #[test]fn barrage_camera_preserves_sixth_hit_break_and_following_beastlings() {
+  let fixture:serde_json::Value=serde_json::from_str(include_str!("../data/source/gigantes-vod-0579dea3.json")).unwrap();
+  let before:CrtRng=serde_json::from_value(fixture["battle_entry"].clone()).unwrap();
+  let players:Vec<PlayerCharacter>=serde_json::from_value(fixture["players"].clone()).unwrap();
+  let history=serde_json::from_value(fixture["enemy_knowledge"].clone()).unwrap();
+  let r=predict(before,&players,&history).unwrap();
+  let action=|name|r.actions.iter().find(|a|a.name==name).unwrap();
+  let damage=|a:&Action|a.report.events.iter().filter_map(|e|if let Event::Damage{amount,..}=e{Some(*amount)}else{None}).collect::<Vec<_>>();
+  assert_eq!(damage(action("Sword x3")),[360,363,367]);
+  let barrage=action("Elemental Barrage");
+  assert_eq!(damage(barrage),[4631,2873,2860,2880,4630,4559,4326,4342]);
+  let before_break=barrage.report.events.iter().take_while(|e|!matches!(e,Event::Broken{..})).filter(|e|matches!(e,Event::Damage{..})).count();
+  assert_eq!(before_break,6);
+  let trace:Vec<_>=r.trace.iter().filter(|s|s.before.draws>=barrage.report.rng_before.draws&&s.after.draws<=barrage.report.rng_after.draws).collect();
+  assert!(trace.iter().any(|s|s.reason=="break_voice"&&s.before.draws==6379&&s.after.draws==6380));
+  assert!(trace.iter().any(|s|s.reason=="break_slow_timer"&&s.before.draws==6380&&s.after.draws==6381));
+  assert!(!trace.iter().any(|s|s.reason=="broken_hit_slow_timer"));
+  // Removing the spurious timer changes the native praise lottery, not just
+  // the final counter: normal command selection takes seventeen draws here.
+  assert!(trace.iter().any(|s|s.reason=="order_voice"&&s.actor==Some(ActorId(3))&&s.before.draws==6389&&s.after.draws==6406));
+  assert_eq!(damage(action("Hired Help: Beastlings")),[8409,9999,8273,9999]);
+  assert_eq!(r.after,CrtRng{state:681204777,draws:6438});
+  for pair in r.trace.windows(2){assert_eq!(pair[0].after,pair[1].before);}
+ }
  #[test]fn english_barrage_120fps_reveals_ice_after_fourth_hit() {
   let fixture:serde_json::Value=serde_json::from_str(include_str!("../data/source/gigantes-vod-483f1bed.json")).unwrap();
   let before:CrtRng=serde_json::from_value(fixture["battle_entry"].clone()).unwrap();

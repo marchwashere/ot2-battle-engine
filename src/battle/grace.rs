@@ -263,7 +263,11 @@ impl Battle {
                     // The action is updated before its appended break-camera
                     // sequence. At the same endpoint tick, OnStop has not yet
                     // cleared Playing (retail Guards trace exercises equality).
-                    else if tick>break_camera_busy_until && !child.id.starts_with("ABI_SCH_011_") {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
+                    // Fire Storm and max-boost Barrage retain their ability
+                    // camera through this action. PlayFinishBlow returns while
+                    // that camera is Playing, even after the break camera ends.
+                    // The separate new-break timer above still runs.
+                    else if tick>break_camera_busy_until && !child.id.starts_with("ABI_SCH_011_") && child.id!="ABI_SCH_060_04" {if let Some(target)=broken_hit {self.timer_rng("broken_hit_slow_timer",Some(target));}}
                 }
             }
         }

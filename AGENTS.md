@@ -36,6 +36,8 @@
 
 # Active project
 
+- Barrage ability camera (2026-10-21): max-boost Barrage's UseAbilityCamera suppresses PlayFinishBlow/broken-hit timer draws for its entire action, not just the brief break camera. Keep the sixth-hit break voice and separate new-break timer. Seed0579DEA3's extra final timer changed Partitio's praise lottery: removing it gives net +10 and matches all damage and both Shipwreck queues. No voice override or constant offsets. Preserve the VOD regression and earlier retail trace; see docs/gigantes.md and tools/audit-barrage-camera.cjs.
+
 - Shipwreck JP uses nameless_routine::search_shipwreck: same five openings,
   nighttime buffs/debuffs, +3 Fireball, Osvald Boost-Start required. Full-search
   tests cover all six land formations. FireballMax serialized action is separate
