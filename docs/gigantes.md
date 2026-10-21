@@ -1,5 +1,34 @@
 # Gigantes and the revised Sands routine
 
+## Barrage frame evaluation, 2026-10-21
+
+Seed `483F1BED` exposed a missing weakness voice during Elemental Barrage. The
+user confirmed English voices, 120 FPS, 2x battle speed, and an audible weakness
+line. The VOD supplies all seven Barrage damage values and the following three
+sword values; `data/source/gigantes-vod-483f1bed.json` distinguishes those
+observations from reconstructed entry state and inferred RNG checkpoints.
+
+The authored-time-only scheduler put the fourth hit at 43396, just before the
+cast clip's modeled endpoint 43497. Native TickManualSequencerUpdate
+(`140e481a0`) evaluates events on frames. JumpToMarker (`140e3be60`) invokes
+SetPlaybackPosition (`142504080`), which defers the jump during evaluation.
+Consequently the next branch starts at the evaluation time, including the
+elapsed part of that frame, rather than exactly at the authored key.
+
+Barrage now evaluates keys at 400-action-tick intervals (24000 Hz, 2x, 120 FPS)
+and rebases marker jumps at that evaluated time. The fourth hit moves to 44800,
+allowing the normal weakness-voice selector to draw 7375 -> 7376. The earlier
+lightning reveal is still suppressed. All seven observed Barrage hits and all
+three sword hits match; the earlier 361-draw retail capture remains unchanged.
+Diagnostic replays also preserved both results at eight frame-start offsets.
+
+This is a scoped route timing profile, not a general audio-engine emulator.
+Other frame rates, variable-frame stalls and Japanese voice playback have not
+been validated. No raw RNG offsets, shorter voice duration, or blanket changes
+to other skills are used. The downstream route search consumes the corrected
+battle state and must reselect its adjustments; old Shipwreck controls are not
+valid merely because their BG roll still awards JP100.
+
 ## Retail Nameless capture, 2026-10-16
 
 The third attempt in `data/source/gigantes-live-20261016.json` is user-confirmed:

@@ -86,6 +86,28 @@ fn predict_boss(before:CrtRng,players:&[PlayerCharacter],history:&crate::knowled
 }
 #[cfg(test)]mod tests {
  use super::*;
+ #[test]fn english_barrage_120fps_reveals_ice_after_fourth_hit() {
+  let fixture:serde_json::Value=serde_json::from_str(include_str!("../data/source/gigantes-vod-483f1bed.json")).unwrap();
+  let before:CrtRng=serde_json::from_value(fixture["battle_entry"].clone()).unwrap();
+  let players:Vec<PlayerCharacter>=serde_json::from_value(fixture["players"].clone()).unwrap();
+  let history=serde_json::from_value(fixture["enemy_knowledge"].clone()).unwrap();
+  let r=predict(before,&players,&history).unwrap();
+  let barrage=r.actions.iter().find(|a|a.name=="Elemental Barrage").unwrap();
+  let sword=r.actions.iter().find(|a|a.name=="Sword x3").unwrap();
+  let damage=|a:&Action|a.report.events.iter().filter_map(|e|if let Event::Damage{amount,..}=e{Some(*amount)}else{None}).collect::<Vec<_>>();
+  assert_eq!(damage(barrage),[4513,2884,4538,2834,2853,2853,2827]);
+  assert_eq!(damage(sword),[364,453,554]);
+  // Only the fourth-hit discovery speaks: the earlier lightning reveal is
+  // still inside the cast clip. The native voice selector consumes the draw.
+  let voices:Vec<_>=r.trace.iter().filter(|s|s.reason=="weakness_voice"
+   &&s.before.draws>=barrage.report.rng_before.draws&&s.after.draws<=barrage.report.rng_after.draws).collect();
+  assert_eq!(voices.len(),1);
+  assert_eq!((voices[0].before.draws,voices[0].after.draws),(7375,7376));
+  assert_eq!(barrage.report.rng_after.draws,7405);
+  assert_eq!(sword.report.rng_after.draws,7432);
+  assert_eq!(r.after.draws,7464);
+  for pair in r.trace.windows(2){assert_eq!(pair[0].after,pair[1].before);}
+ }
  #[test]fn retail_gigantes_full_battle() {
   let mut players:Vec<PlayerCharacter>=serde_json::from_str(include_str!("../data/source/lord-sands-party.json")).unwrap();
   for i in [1,3] {players[i].boost_start=true;}

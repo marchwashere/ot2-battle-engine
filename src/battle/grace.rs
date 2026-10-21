@@ -2,6 +2,14 @@
 use super::*;
 use crate::bg_effects::{EffectKind,Operation};
 
+// Audited route profile: 120 FPS, 2x battle speed, 24000 action ticks/second.
+// TickManualSequencerUpdate evaluates keys on a frame; SetPlaybackPosition
+// defers marker jumps until evaluation finishes. Barrage must rebase the next
+// branch at that evaluated time, not the earlier authored key time. Otherwise
+// successive jumps underestimate elapsed time and suppress late weakness voices.
+// Keep this scoped to Barrage; other action clocks retain their audited behavior.
+const BARRAGE_FRAME_TICKS:f64=24_000.0*2.0/120.0;
+
 impl Battle {
     pub(super) fn grace_enemies_alive(&self)->bool {(0..self.state.actors.len()).any(|i|self.side(ActorId(i))==Some(Side::Enemy)&&self.state.actors[i].alive())}
     pub(super) fn grace_step(&mut self,command:Command,levels:Option<&[u8]>)->Result<StepReport> {
@@ -168,6 +176,9 @@ impl Battle {
         schedule.sort_by(|a,b|a.0.total_cmp(&b.0));
         while !schedule.is_empty() {
             let (tick,i,step)=schedule.remove(0);
+            let tick=if jobs[i].1.id=="ABI_SCH_060_04" {
+                (tick/BARRAGE_FRAME_TICKS).ceil()*BARRAGE_FRAME_TICKS
+            }else{tick};
             loop {
                 let next=states.iter().enumerate().filter_map(|(n,s)|s.pending.map(|(t,id)|(n,t,id)))
                     .filter(|(_,t,_)|*t<=tick).min_by(|a,b|a.1.total_cmp(&b.1));
