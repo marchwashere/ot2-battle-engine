@@ -24,7 +24,7 @@ for(const id of ids){
   }
   assert.equal(unfolded.filter(e=>/LocalVirtualFunction ExecAilment\b/.test(e.body)).length,5);
  }
- bg.steps[id]=unfolded.flatMap(ev=>{const b=ev.body;if(/LocalVirtualFunction ExecStepCounter\b/.test(b))return [{kind:'random_target',tick:ev.time}];if(/LocalVirtualFunction PlayVoice\b/.test(b))return [{kind:'voice',tick:ev.time,voice_type:Number(/ByteConst (\d+)/.exec(b)[1])}];if(/LocalVirtualFunction ExecAilment\b/.test(b)){const flags=[...b.matchAll(/\b(True|False)\b/g)].map(m=>m[1]==='True');return [{kind:'effects',tick:ev.time,index:flags[0]?null:Number(/IntConst (\d+)/.exec(b)[1]),last:flags[1]}]};return []});
+ bg.steps[id]=unfolded.flatMap(ev=>{const b=ev.body;if(/LocalVirtualFunction ExecPlayDiseaseMissUI\b/.test(b))return [{kind:'disease_miss_ui',tick:ev.time}];if(/LocalVirtualFunction ExecStepCounter\b/.test(b))return [{kind:'random_target',tick:ev.time}];if(/LocalVirtualFunction PlayVoice\b/.test(b))return [{kind:'voice',tick:ev.time,voice_type:Number(/ByteConst (\d+)/.exec(b)[1])}];if(/LocalVirtualFunction ExecAilment\b/.test(b)){const flags=[...b.matchAll(/\b(True|False)\b/g)].map(m=>m[1]==='True');return [{kind:'effects',tick:ev.time,index:flags[0]?null:Number(/IntConst (\d+)/.exec(b)[1]),last:flags[1]}]};return []});
 }
 const used=new Set(bg.abilities.flatMap(r=>r.Ailment.map(a=>a.AilmentName)));bg.ailments=table('Ability/Database/AilmentData').filter(r=>used.has(r.id));
 const summons=table('Ability/Database/InvadeData').filter(r=>/^PC_ABI_MER_YOHEI_05_0[1-4]_INVADE$/.test(r.id));assert.equal(summons.length,4);

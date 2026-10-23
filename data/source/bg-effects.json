@@ -22953,6 +22953,10 @@
         "tick": 12000,
         "index": null,
         "last": false
+      },
+      {
+        "kind": "disease_miss_ui",
+        "tick": 32000
       }
     ],
     "ABI_DAN_MAKA_029": [
@@ -23001,6 +23005,10 @@
         "tick": 20000,
         "index": 0,
         "last": false
+      },
+      {
+        "kind": "disease_miss_ui",
+        "tick": 40000
       }
     ],
     "ABI_DAN_MAKA_023": [
@@ -23074,6 +23082,10 @@
         "tick": 20000,
         "index": 0,
         "last": false
+      },
+      {
+        "kind": "disease_miss_ui",
+        "tick": 40000
       }
     ],
     "ABI_DAN_MAKA_013": [
@@ -23134,6 +23146,10 @@
         "tick": 62400,
         "index": null,
         "last": true
+      },
+      {
+        "kind": "disease_miss_ui",
+        "tick": 67200
       }
     ],
     "ABI_DAN_MAKA_007": [
@@ -23287,6 +23303,10 @@
         "tick": 48000,
         "index": null,
         "last": false
+      },
+      {
+        "kind": "disease_miss_ui",
+        "tick": 68000
       }
     ],
     "ABI_MER_YOHEI_05_01": [

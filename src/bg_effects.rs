@@ -3,7 +3,7 @@
 //! offsets. Targeting and authored events must be executed between selections.
 use crate::{Result, SimError};
 use serde::{Deserialize, Serialize};
-use std::{collections::BTreeMap, sync::OnceLock};
+use std::{collections::{BTreeMap,BTreeSet}, sync::OnceLock};
 
 /// Mutable effects shared by the children of a dance and the remaining battle.
 /// Preserve reward modifier requests in source execution order; the reward
@@ -18,6 +18,8 @@ pub struct BattleModifiers {
     pub guard_hits:Vec<crate::ActorId>,
     /// SetStatusDead saves permanent diseases for ExecRevive.
     pub dead_permanent: BTreeMap<crate::ActorId,Vec<crate::combat::Status>>,
+    /// ResetCharacter_PreAction clears this once per parent action, not per BG child.
+    pub action_disease_hits: BTreeSet<crate::ActorId>,
 }
 impl BattleModifiers {
     /// Native SetExpRatioByAbility (140e463f0) and SetJPRatioByAbility
@@ -81,8 +83,9 @@ pub enum Step {
     RandomTarget {tick:f64},
     Effects {tick:f64,index:Option<usize>,last:bool,#[serde(default)] on_hit:bool},
     Voice {tick:f64,voice_type:u8},
+    DiseaseMissUi {tick:f64},
 }
-impl Step {pub fn tick(&self)->f64 {match *self {Self::RandomTarget{tick}|Self::Effects{tick,..}|Self::Voice{tick,..}|Self::CounterBranch{tick,..}|Self::PatternBranch{tick,..}|Self::Jump{tick,..}=>tick}}}
+impl Step {pub fn tick(&self)->f64 {match *self {Self::RandomTarget{tick}|Self::Effects{tick,..}|Self::Voice{tick,..}|Self::CounterBranch{tick,..}|Self::PatternBranch{tick,..}|Self::Jump{tick,..}|Self::DiseaseMissUi{tick}=>tick}}}
 #[derive(Debug,Deserialize)]
 pub struct SummonProfile {
     pub id:String,
@@ -264,6 +267,17 @@ impl Operation {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn every_authored_disease_miss_display_is_imported() {
+        let mut count=0;
+        for child in children().values() {
+            let authored:Vec<_>=child.events.iter().filter(|e|e.body.contains("LocalVirtualFunction ExecPlayDiseaseMissUI")).map(|e|e.time).collect();
+            let imported:Vec<_>=child.steps.iter().filter_map(|s|if let Step::DiseaseMissUi {tick}=s {Some(*tick)}else{None}).collect();
+            assert_eq!(authored,imported,"{}",child.id);
+            count+=authored.len();
+        }
+        assert_eq!(count,5); // death, poison, mist, reflection, and Critical Scope
+    }
     #[test]
     fn every_command_retains_its_required_source_camera_flag() {
         for json in [include_str!("../data/source/bg-effects.json"),include_str!("../data/source/scholar-magic.json")] {

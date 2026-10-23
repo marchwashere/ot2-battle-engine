@@ -19,6 +19,7 @@ for(const r of rows) {
  const asset=r.ActionCommandSequencer.asset.text.split('.')[0].replace(/^\/Game\//,'');
  sequences[r.id]=audit(asset);
  steps[r.id]=sequences[r.id].flatMap(e=>{
+  if(/LocalVirtualFunction ExecPlayDiseaseMissUI\b/.test(e.body))return [{kind:'disease_miss_ui',tick:e.time}];
   if(/LocalVirtualFunction ExecStepCounter\b/.test(e.body))return [{kind:'random_target',tick:e.time}];
   if(r.id==='ABI_MER_YOHEI_04_01'&&/LocalVirtualFunction SequenceEvent_0\b/.test(e.body)) {
    const director=blueprint(asset);assert(/ExecAilmentWithAbilityHit_Implementation/.test(director.functions.ExecuteUbergraph_SequenceDirector));

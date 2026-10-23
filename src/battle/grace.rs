@@ -32,6 +32,7 @@ impl Battle {
         let old=state.resources.sp;state.resources.sp-=cost;
         if cost>0 {events.push(Event::ResourceChanged {actor,resource:Resource::Sp,before:old,after:state.resources.sp});}
         self.state.opening_crt.as_mut().unwrap().settled_damage.fill(false);
+        self.state.grace.get_or_insert_with(Default::default).action_disease_hits.clear();
         if id=="bewildering_grace" {
             let mut dance=crate::bewildering_grace::Dance::new(bp)?;
             let mut first=true;
@@ -195,6 +196,7 @@ impl Battle {
                 continue;
             }
             match *step.unwrap() {
+                Step::DiseaseMissUi {..}=>self.grace_disease_miss_ui(actor,targets,events),
                 Step::CounterBranch{destination,..}|Step::Jump{destination,..}|Step::PatternBranch{ice:destination,..}=>{
                     let jump=match *step.unwrap(){
                         Step::CounterBranch{..}=>if run.counter>=run.count||!self.grace_enemies_alive(){Some(destination)}else{None},
@@ -472,8 +474,22 @@ impl Battle {
         let success=self.state.rng.weighted_bool(op.disease_rate as f32*0.01_f32);
         self.trace_rng("bg_instant_death",Some(actor),before);
         if success {
+            // SetDamageForPlayer(InstantDeath=true) marks this target before HP loss.
+            self.state.grace.get_or_insert_with(Default::default).action_disease_hits.insert(target);
             let amount=self.state.actors[target.0].resources.hp;
             self.resolve_damage(actor,target,amount,false,false,events);
+        }
+    }
+    fn grace_disease_miss_ui(&mut self,actor:ActorId,targets:&[ActorId],events:&mut Vec<Event>) {
+        // The authored ExecPlayDiseaseMissUI event checks the command's original
+        // targets, including a caster excluded by an ailment target override.
+        // PlayMissUI -> DisplayTimer draws once; this callback requests no dodge
+        // voice. Earlier successful diseases in this same dance also set the flag.
+        for &target in targets {
+            if !self.state.grace.as_ref().is_some_and(|g|g.action_disease_hits.contains(&target)) {
+                events.push(Event::Miss {actor,target});
+                self.timer_rng("bg_disease_miss_notification_timer",Some(target));
+            }
         }
     }
     pub(super) fn grace_remove_deconditions(&mut self,target:ActorId) {
@@ -527,6 +543,7 @@ impl Battle {
         }
     }
     fn grace_add_disease(&mut self,target:ActorId,status:Status) {
+        self.state.grace.get_or_insert_with(Default::default).action_disease_hits.insert(target);
         let statuses=&mut self.state.actors[target.0].statuses;
         if let Some(old)=statuses.iter_mut().find(|s|s.kind==status.kind) {
             old.turns=if old.turns==255 {255} else {old.turns.saturating_add(status.turns).min(9)};
@@ -1094,6 +1111,43 @@ mod tests {
             killed|=!b.state.actors[0].alive();survived|=b.state.actors[0].alive();
         }
         assert!(killed&&survived);
+    }
+    #[test]
+    fn death_whisper_display_handles_failed_successful_and_excluded_targets() {
+        let child=crate::bg_effects::child("ABI_DAN_MAKA_008").unwrap();
+        for (target,seed,expected_misses) in [(ActorId(0),3174921689,1),(ActorId(0),0,0),(ActorId(2),0,1)] {
+            let mut b=battle();b.state.rng=CrtRng::new(seed);
+            b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+            let mut events=vec![];
+            b.grace_common_child(ActorId(2),child,&[target],&mut events).unwrap();
+            let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+            assert_eq!(events.iter().filter(|e|matches!(e,Event::Miss {..})).count(),expected_misses);
+            assert_eq!(trace.iter().filter(|s|s.reason=="bg_disease_miss_notification_timer").count(),expected_misses);
+            assert!(!trace.iter().any(|s|s.reason=="avoid_voice"));
+            if expected_misses==1 {
+                // A failed death roll + one display timer, or just the timer
+                // when the randomly selected caster is excluded from death.
+                assert_eq!(b.state.rng.draws,if target==ActorId(2) {1}else{2});
+            } else {assert!(!b.state.actors[target.0].alive());}
+        }
+    }
+    #[test]
+    fn disease_success_flag_spans_bg_children_but_hp_one_does_not_set_it() {
+        let mut b=battle();let actor=ActorId(2);let target=ActorId(0);let mut events=vec![];
+        b.grace_hp_one(actor,target,&mut events);
+        let before=b.state.rng;
+        b.grace_disease_miss_ui(actor,&[target],&mut events);
+        assert_eq!(b.state.rng.draws-before.draws,1);
+        b.grace_add_disease(target,Status {kind:StatusKind::Silence,turns:2});
+        b.state.rng=CrtRng::new(3174921689);events.clear();
+        b.grace_common_child(actor,crate::bg_effects::child("ABI_DAN_MAKA_008").unwrap(),&[target],&mut events).unwrap();
+        assert_eq!(b.state.rng.draws,1); // failed roll; earlier disease suppresses Miss UI
+        assert!(!events.iter().any(|e|matches!(e,Event::Miss {..})));
+        for id in ["ABI_DAN_MAKA_014","ABI_DAN_MAKA_024","ABI_DAN_MAKA_030"] {
+            let mut b=battle();let mut events=vec![];
+            b.grace_child(actor,crate::bg_effects::child(id).unwrap(),&mut events).unwrap();
+            assert!(!events.iter().any(|e|matches!(e,Event::Miss {..})),"{id}");
+        }
     }
     #[test]
     fn buffs_on_broken_enemies_do_not_create_broken_hit_timers() {

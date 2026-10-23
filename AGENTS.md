@@ -40,6 +40,8 @@
 
 # Active project
 
+- BG death-whisper Miss UI (2026-10-23): preserve authored ExecPlayDiseaseMissUI steps for BG008/014/024/030 and Critical Scope. The failed008 roll is followed by PlayMissUI's one display-timer draw, with no avoidance voice. Check original command targets (including excluded caster) and parent-action disease-success flags; ResetCharacter_PreAction clears flags once, not per child. Seed3A993DB1 reproduces022/007/008/004 and a wipe; old EXP100 at3273 was false, actual fourth lottery3274. Preserve its fixture, source audit, and docs/bg-voice-audit.md; no offsets or Guards/camera edits.
+
 - Barrage ability camera (2026-10-21): max-boost Barrage's UseAbilityCamera suppresses PlayFinishBlow/broken-hit timer draws for its entire action, not just the brief break camera. Keep the sixth-hit break voice and separate new-break timer. Seed0579DEA3's extra final timer changed Partitio's praise lottery: removing it gives net +10 and matches all damage and both Shipwreck queues. No voice override or constant offsets. Preserve the VOD regression and earlier retail trace; see docs/gigantes.md and tools/audit-barrage-camera.cjs.
 
 - Shipwreck JP uses nameless_routine::search_shipwreck: same five openings,

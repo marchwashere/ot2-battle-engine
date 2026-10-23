@@ -9,6 +9,39 @@ coverage, not a live trace of every effect.
 
 ## Confirmed corrections
 
+### Follow-up: death-whisper Miss display, seed 0x3A993DB1 (2026-10-23)
+
+The unchanged original inputs now reproduce all four reported effects: enemy
+lightning (022), party HP to one (007), failed instant death (008), then party
+fire (004), killing all four players. The previous simulator matched the first
+three effects but predicted EXP100 (002) as the fourth.
+
+This is an omitted authored UI event, not a Guards, camera, or voice-timing
+change. `Seq_DAN_Makafushigi_008` invokes its ailment at tick 62400, then
+`ExecPlayDiseaseMissUI` at tick 67200. The importer retained the ailment but
+silently dropped the later event. `BP_ActionCommandBase.ExecPlayDiseaseMissUI`
+checks `IsHitDiseaseInAction` on the command's original targets and invokes
+`PlayMissUI` when false. That display's timer consumes one CRT draw; this
+callback does **not** request an avoidance voice.
+
+For the original plan, lotteries one through three remain at route positions
+3234, 3239, and 3270. The failed-death roll is at 3272. The missing display
+draw is 3273 -> 3274, so the fourth lottery starts at **3274**, not 3273.
+The full replay now rejects the candidate for defeat and missing EXP100.
+
+The imported event is also retained for BG poison, mist, magic reflection,
+and Critical Scope. Successful status applications suppress its Miss display;
+successful instant death sets the same flag in `SetDamageForPlayer`. The
+flag is cleared by `ResetCharacter_PreAction`, shared across the children of
+one dance. Ordinary damage/HP-to-one do not set it. A caster excluded by the
+instant-death ailment still belongs to the original command target list.
+
+`data/source/bg-chubby-3a993db1.json` preserves the reconstructed route party,
+boost inputs, and user-reported effects; it is not a live RNG capture. Tests
+cover the exact failure, successful/failed/excluded death targets, shared
+disease flags, and all five imported Miss UI events. The source audit checks
+their cooked sequence timestamps and the separate display callback.
+
 ### Follow-up: Silence and latent recovery, seed 0x7B4971B0 (2026-10-22)
 
 The original inputs reproduce the reported sequence exactly: mist/Silence

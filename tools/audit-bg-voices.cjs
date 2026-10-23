@@ -5,7 +5,7 @@ const s=require('./source.cjs'),{blueprint}=require('./audit-pirro.cjs'),{audit}
 const bg=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/source/bg-effects.json')));
 const voices=s.table('Character/Database/BattleVoiceSet');
 const base=blueprint('Battle/BP/BattleAction/_Base/BP_ActionCommandBase',[
- 'GetSettledPlayOnce_OnRecovered','SetSettledPlayOnce_OnRecovered','CheckLastHit','SetSummonAbility','PlayVoiceCommand','OnHitDamageSP','OnAttackDamageSP'
+ 'GetSettledPlayOnce_OnRecovered','SetSettledPlayOnce_OnRecovered','CheckLastHit','SetSummonAbility','PlayVoiceCommand','OnHitDamageSP','OnAttackDamageSP','ExecPlayDiseaseMissUI'
 ]);
 const ailment=blueprint('Library/LibAilment',[
  'SetupVoiceFlag_OnRecovered','Battle_ExecRecoveryHP','Battle_ExecRecoveryMP','Battle_ExecRecoveryBP',
@@ -15,8 +15,25 @@ const ailment=blueprint('Library/LibAilment',[
  'Battle_ExecEXPUp','Battle_ExecJPUp','Battle_ExecAddMoney','Battle_ExecDamageSP'
 ]);
 const player=blueprint('Battle/BP/BattlePlayerBP',[
- 'CanPlayRecoveredVoice','GetRecoveredVoiceEnforcer','PlayBattleVoice','PlayBattleVoiceForDamage','OnTakeDisease','CanPlayVoiceWhileDisease','OnHitDamageSP'
+ 'CanPlayRecoveredVoice','GetRecoveredVoiceEnforcer','PlayBattleVoice','PlayBattleVoiceForDamage','OnTakeDisease','CanPlayVoiceWhileDisease','OnHitDamageSP','SetDamageForPlayer'
 ]);
+const character=blueprint('Battle/BP/BattleCharacterBaseBP',['OnTakeDisease']);
+const manager=blueprint('Battle/BP/BattleManagerBP',['ResetCharacter_PreAction']);
+const miss_ui=base.functions.ExecPlayDiseaseMissUI;
+assert(miss_ui.includes('IsHitDiseaseInAction')&&miss_ui.includes('PlayMissUI'));
+assert(!miss_ui.includes('PlayBattleVoice'));
+assert(player.functions.SetDamageForPlayer.includes('InstantDeath')&&player.functions.SetDamageForPlayer.includes('m_bHitDiseaseInAction'));
+assert(character.functions.OnTakeDisease.includes('m_bHitDiseaseInAction'));
+assert(manager.functions.ResetCharacter_PreAction.includes('ResetHitDiseaseForPreAction'));
+const miss_events=bg.abilities.flatMap(a=>{
+ const asset=a.ActionCommandSequencer.asset.text.split('.')[0].replace('/Game/','');
+ const expected=audit(asset).filter(e=>/LocalVirtualFunction ExecPlayDiseaseMissUI\b/.test(e.body)).map(e=>e.time);
+ assert.deepEqual(bg.steps[a.id].filter(e=>e.kind==='disease_miss_ui').map(e=>e.tick),expected,a.id);
+ return expected.map(tick=>({id:a.id,asset,tick}));
+});
+assert.equal(miss_events.length,5);
+const extra_enforcer_miss=base.defaults.flatMap(d=>d.CheckAbility_Redmine6725||[]);
+assert(miss_events.every(e=>!extra_enforcer_miss.includes(e.id)));
 const random=bg.commands['Battle/BP/BattleAction/RandomSelectAbility/RandomSelectAbilityCommand'];
 for(const method of ['GetSettledPlayOnce_OnRecovered','SetSettledPlayOnce_OnRecovered']) {
  assert(base.functions[method].includes('m_bIsSummonAbility'));
@@ -77,9 +94,10 @@ assert.equal(effects.length,39);
 assert.deepEqual(effects.flatMap(e=>e.authored_voice_events.map(v=>[e.id,v.voice_type])),[['ABI_DAN_MAKA_007',0]]);
 const parent=s.table('Ability/Database/AbilityData').rows.find(r=>r.id==='ABI_DAN_070_04');
 const parent_sequence=audit(parent.ActionCommandSequencer.asset.text.split('.')[0].replace('/Game/',''));
-const sources=[base,ailment,player,random].map(({asset,sha256})=>({asset,sha256}));
+const sources=[base,ailment,player,random,character,manager].map(({asset,sha256})=>({asset,sha256}));
 sources.push({asset:voices.source,sha256:voices.sha256});
 const evidence={
+ disease_miss_ui:{events:miss_events,body:miss_ui,reset:manager.functions.ResetCharacter_PreAction,apply_disease:character.functions.OnTakeDisease,instant_death:player.functions.SetDamageForPlayer},
  shield_events,
  disease_voice_gate:{native_enum_base:'0x'+disease_enum_base.toString(16),disease_enums,voice_blocking_diseases,body:disease_gate},
  reverse_buff_sort:{reverse:ailment.functions.Battle_ExecReverseDisease,sort:reverse_sort,native_random_bool:{function:'FUN_1430d6c80',algorithm:'One CRT rand, binary32 unit times 2, truncate and clamp to 1; true if result == 1'}},

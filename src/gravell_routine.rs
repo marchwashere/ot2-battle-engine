@@ -337,6 +337,34 @@ pub fn rewards(fight:&Fight,grows_on_trees:bool)->Result<Rewards> {
 mod tests {
     use super::*;
     #[test]
+    fn reported_chubby_death_whisper_miss_consumes_display_draw_before_party_wipe() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-3a993db1.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry:crate::CrtRng=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let battle=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let bg_inputs:Vec<u8>=serde_json::from_value(v["actions"][4]["inputs"].clone()).unwrap();
+        let guard_inputs:Vec<u8>=serde_json::from_value(v["actions"][3]["inputs"].clone()).unwrap();
+        let fight=replay(battle,&bg_inputs,&guard_inputs).unwrap();
+        for (action,old) in fight.actions.iter().zip(v["actions"].as_array().unwrap()) {
+            assert_eq!(action.before.draws+entry.draws,old["before"]["draws"].as_u64().unwrap());
+            assert_eq!(action.before.state,old["before"]["state"].as_u64().unwrap() as u32);
+        }
+        let bg=&fight.actions[4].report;
+        let effects=bg.events.iter().filter_map(|e|if let crate::Event::Action{name,..}=e {name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        assert_eq!(effects,["ABI_DAN_MAKA_022","ABI_DAN_MAKA_007","ABI_DAN_MAKA_008","ABI_DAN_MAKA_004"]);
+        let lotteries:Vec<_>=fight.trace.iter().filter(|s|s.reason=="bewildering_grace_lottery").map(|s|s.before.draws+entry.draws).collect();
+        assert_eq!(lotteries,[3234,3239,3270,3274]);
+        let miss=fight.trace.iter().find(|s|s.reason=="bg_disease_miss_notification_timer").unwrap();
+        assert_eq!(miss.before.draws+entry.draws,3273);
+        assert_eq!(miss.after.draws-miss.before.draws,1);
+        assert!(bg.events.iter().any(|e|matches!(e,crate::Event::Miss {..})));
+        assert!(fight.state.actors[..4].iter().all(|a|!a.alive()));
+        assert_eq!(fight.state.outcome,crate::Outcome::Defeat);
+        assert!(matches!(fight.evaluation,Evaluation::Loss {reasons} if reasons.contains(&LossReason::Defeat)&&reasons.contains(&LossReason::MissingExp100)));
+    }
+    #[test]
     fn reported_chubby_mist_keeps_latent_recovery_voice_before_fourth_effect() {
         let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-7b4971b0.json")).unwrap();
         let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();

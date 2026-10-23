@@ -1362,6 +1362,9 @@ impl Battle {
         if let Some(crt) = &mut self.state.opening_crt {
             crt.settled_damage.fill(false);
         }
+        if let Some(grace) = &mut self.state.grace {
+            grace.action_disease_hits.clear();
+        }
         self.state.actors[actor.0].guard = false;
         let mut normal_boost = 0;
         let (name, effects, hit, hits) = match action.action {
