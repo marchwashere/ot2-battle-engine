@@ -225,3 +225,22 @@ shield breaks, all 39 individual effects, revival/death, Silence and debuffs.
 Source checks verify candidate completeness across all six modeled characters.
 Existing live Guards, Chubby Cait and Gigantes fixtures remain valid. Distinguish
 this source-derived coverage from live-confirmed checkpoints.
+# BG summoned-monster owner reactions (2026-10-28)
+
+`BattleTameMonsterBP.InitializeTameMonster` creates a voice component only when
+`CharacterResourceDB.BattleVoiceCharacterID` is not `None`. Its `PlayBattleVoice`
+override forwards to `m_cOwnerPlayer` when that component is absent. Both BG
+monsters take the owner branch; all eight supported Guards/Beastlings variants
+have their own component. A missing reaction row on an existing component does
+not invoke the owner fallback.
+
+`LibAilment.Battle_ExecDamageHP` aggregates kill/break/weakness flags before
+requesting one reaction. The simulator now applies that routing after damage.
+For seed `03CC862D`, EXP100 followed by the summon still deals9244 critical to
+the final Dreadwing; Agnea's100%-rate kill voice consumes one additional CRT draw.
+The reported Eastern Sai opening matches the resulting +1 field-state shift:
+Agnea/Osvald/Throne/Partitio, then Throne/Osvald/Agnea/Wanderweed/Partitio/Ape/Ape.
+The report validates these endpoints, not a full native per-call capture.
+
+Source audit: `node tools/audit-summon-owner-voice.cjs`. Regression fixture:
+`data/source/bg-summon-03cc862d.json`.

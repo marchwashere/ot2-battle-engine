@@ -254,7 +254,11 @@ impl Battle {
                         };
                         if result.is_some_and(|v|reaction.is_none_or(|r|v>r)) {reaction=result;}
                     }
-                    if summon.is_none()&&tick>=run.voice_busy_until&&self.state.actors[actor.0].alive() {if let Some(kind)=reaction {self.voice(actor,kind,VoiceCondition::default());}}
+                    // BattleTameMonsterBP.PlayBattleVoice falls back to the
+                    // owning traveler only when the summon has no component.
+                    // Guards/Beastlings own a component (with no reaction rows),
+                    // whereas BG monsters forward kill/break/weakness requests.
+                    if summon.is_none_or(|s|!s.has_voice_component)&&tick>=run.voice_busy_until&&self.state.actors[actor.0].alive() {if let Some(kind)=reaction {self.voice(actor,kind,VoiceCondition::default());}}
                     let damage_targets:Vec<_>=events[damage_event_start..].iter().filter_map(|e|if let Event::Damage {target,..}=e {Some(*target)}else{None}).collect();
                     let mut new_break=None;let mut broken_hit=None;
                     for (n,(was_alive,was_broken)) in before_states.into_iter().enumerate() {
@@ -779,6 +783,24 @@ mod tests {
             ("voice",19_290_017,19_290_018),
             ("order_voice",19_290_018,19_290_035),
         ]);
+    }
+    #[test]
+    fn bg_monster_forwards_one_aggregate_kill_voice_but_guards_do_not() {
+        for (summon_id,child_id,expected) in [
+            ("PC_ABI_MAKA_001_INVADE","ABI_DAN_MAKA_006_INV",1),
+            ("PC_ABI_MER_YOHEI_04_01_INVADE","ABI_MER_YOHEI_04_01",0),
+        ] {
+            let mut b=battle();
+            for a in &mut b.state.actors[4..] {a.resources.hp=1;}
+            b.state.opening_crt.as_mut().unwrap().trace.as_mut().unwrap().clear();
+            let mut events=vec![];
+            b.grace_commands(ActorId(2),&[(0.0,crate::bg_effects::child(child_id).unwrap(),
+                vec![ActorId(4),ActorId(5),ActorId(6)],Some(crate::bg_effects::summon(summon_id).unwrap()))],&mut events).unwrap();
+            let trace=b.state.opening_crt.as_ref().unwrap().trace.as_ref().unwrap();
+            let kills:Vec<_>=trace.iter().filter(|s|s.reason=="kill_voice").collect();
+            assert_eq!(kills.len(),expected,"{summon_id}");
+            if expected==1 {assert_eq!(kills[0].actor,Some(ActorId(2)));assert_eq!(kills[0].after.draws-kills[0].before.draws,1);}
+        }
     }
     #[test]
     fn all_thirty_nine_effects_execute_against_real_combatants() {

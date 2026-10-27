@@ -365,6 +365,27 @@ mod tests {
         assert!(matches!(fight.evaluation,Evaluation::Loss {reasons} if reasons.contains(&LossReason::Defeat)&&reasons.contains(&LossReason::MissingExp100)));
     }
     #[test]
+    fn reported_bg_summon_kill_forwards_agnea_voice_after_matching_damage() {
+        let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-summon-03cc862d.json")).unwrap();
+        let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();
+        let entry=serde_json::from_value(v["battle_entry"].clone()).unwrap();
+        let history=serde_json::from_value(v["enemy_knowledge"].clone()).unwrap();
+        let enemies=v["enemy_ids"].as_array().unwrap().iter().map(|e|e.as_str().unwrap()).collect::<Vec<_>>();
+        let battle=crate::field_escape::carried_step_ahead(entry,crate::escape::Situation::Normal,&party,&enemies,true,&history).unwrap();
+        let bg_inputs:Vec<u8>=serde_json::from_value(v["bg_inputs"].clone()).unwrap();
+        let guard_inputs:Vec<u8>=serde_json::from_value(v["guard_inputs"].clone()).unwrap();
+        let fight=replay(battle,&bg_inputs,&guard_inputs).unwrap();
+        let bg=&fight.actions.last().unwrap().report;
+        let effects=bg.events.iter().filter_map(|e|if let crate::Event::Action{name,..}=e{name.starts_with("ABI_DAN_MAKA").then_some(name.as_str())}else{None}).collect::<Vec<_>>();
+        assert_eq!(effects,["ABI_DAN_MAKA_002","ABI_DAN_MAKA_006"]);
+        assert!(bg.events.iter().any(|e|matches!(e,crate::Event::Damage{amount:9244,critical:true,target:ActorId(6),..})));
+        let mut expected:crate::CrtRng=serde_json::from_value(v["old_bg_after"].clone()).unwrap();expected.advance(1);
+        assert_eq!(bg.rng_after.state,expected.state);
+        let kill=fight.trace.iter().find(|s|s.reason=="kill_voice"&&s.actor==Some(ActorId(2))).unwrap();
+        assert_eq!(kill.after.draws-kill.before.draws,1);
+        assert_eq!(fight.evaluation,Evaluation::Accepted);
+    }
+    #[test]
     fn reported_chubby_mist_keeps_latent_recovery_voice_before_fourth_effect() {
         let v:serde_json::Value=serde_json::from_str(include_str!("../data/source/bg-chubby-7b4971b0.json")).unwrap();
         let party=serde_json::from_value::<Vec<crate::PlayerCharacter>>(v["party"].clone()).unwrap();

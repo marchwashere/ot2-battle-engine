@@ -49,7 +49,7 @@ const summonProfiles=[...summons,...invade.rows.filter(r=>/^PC_ABI_MER_YOHEI_04_
  const resource=resources.rows.find(x=>x.id===r.ResourceLabel);assert(resource,r.id);
  const voiceRows=resource.BattleVoiceCharacterID==='None'?[]:voice.rows.filter(v=>v.id.startsWith(resource.BattleVoiceCharacterID+'_')&&!v.id.endsWith('VOICE_DATA_START'));
  assert(voiceRows.every(v=>v.BattleVoiceType==='EBATTLE_VOICE_TYPE::ePLAY_ABILITY'&&v.VoiceRate===100&&v.AbilityID==='ABI_MER_YOHEI_04_01'));
- return {id:r.id,parameter:r.Parameter,weapon:r.WeaponType,ability_voice:voiceRows.length===1,
+ return {id:r.id,parameter:r.Parameter,weapon:r.WeaponType,ability_voice:voiceRows.length===1,has_voice_component:resource.BattleVoiceCharacterID!=='None',
   ...require('./enemy-initialization.cjs').initialization(r,null,2)};
 });
 const transform_resists=Object.fromEntries(s.table('Character/Database/EnemyDB').rows.map(r=>[r.id,r.DiseaseResist[8]!=='EATTRIBUTE_RESIST::eNONE']));

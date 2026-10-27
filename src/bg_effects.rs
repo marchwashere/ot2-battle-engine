@@ -92,6 +92,7 @@ pub struct SummonProfile {
     parameter:BTreeMap<String,u32>,
     weapon:String,
     pub ability_voice:bool,
+    pub has_voice_component:bool,
     pub initial_idle_frames:u32,
 }
 impl SummonProfile {

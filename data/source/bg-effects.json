@@ -17845,7 +17845,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": false,
       "initial_idle_frames": 16,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": false
     },
     {
       "id": "PC_ABI_MAKA_002_INVADE",
@@ -17867,7 +17868,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": false,
       "initial_idle_frames": 23,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": false
     },
     {
       "id": "PC_ABI_MER_YOHEI_04_01_INVADE",
@@ -17889,7 +17891,8 @@
       "weapon": "EWEAPON_CATEGORY::eROD",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_04_02_INVADE",
@@ -17911,7 +17914,8 @@
       "weapon": "EWEAPON_CATEGORY::eROD",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_04_03_INVADE",
@@ -17933,7 +17937,8 @@
       "weapon": "EWEAPON_CATEGORY::eROD",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_04_04_INVADE",
@@ -17955,7 +17960,8 @@
       "weapon": "EWEAPON_CATEGORY::eROD",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_05_01_INVADE",
@@ -17977,7 +17983,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_05_02_INVADE",
@@ -17999,7 +18006,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_05_03_INVADE",
@@ -18021,7 +18029,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     },
     {
       "id": "PC_ABI_MER_YOHEI_05_04_INVADE",
@@ -18043,7 +18052,8 @@
       "weapon": "EWEAPON_CATEGORY::eNONE",
       "ability_voice": true,
       "initial_idle_frames": 0,
-      "sync_to_parent": false
+      "sync_to_parent": false,
+      "has_voice_component": true
     }
   ],
   "enemies": [
