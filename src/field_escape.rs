@@ -413,6 +413,7 @@ pub struct FieldBreakEscape {
 /// Every boost trial clones this state, including voice history and BP recovery.
 #[derive(Debug, Clone)]
 pub struct FieldBreakMenu {
+    escape_chance: Option<u32>,
     defends: Vec<FieldSafeDefend>,
     skill: Option<String>,
     battle: Battle,
@@ -489,7 +490,8 @@ impl FieldBreakMenu {
         let escape_round=self.battle.state().round;
         let available_escape_bp=self.available_bp();
         let before_check=self.rng();
-        ensure(self.battle.escape_check(None),"Broken-enemy Escape must succeed")?;
+        let chance_percent=self.escape_chance.unwrap_or(100);
+        let success=self.battle.escape_check(self.escape_chance.map(|p|p as f32*0.01));
         let at=|r:CrtRng| CrtRng {state:r.state,draws:self.entry.draws+r.draws};
         let sp_cost=self.report.events.iter().filter_map(|e|match e {
             crate::Event::ResourceChanged {actor,resource:crate::Resource::Sp,before,after} if actor.0==self.attack_actor=>Some(before.saturating_sub(*after)),_=>None
@@ -501,7 +503,7 @@ impl FieldBreakMenu {
             .iter().map(|r|RngSpan {reason:r.reason,actor:r.actor,before:at(r.before),after:at(r.after)}).collect();
         Ok(FieldBreakEscape {defends:self.defends,escape_menu_ordinal,skill:self.skill,enemy_knowledge:self.battle.enemy_knowledge(),attack_actor:self.attack_actor,escape_actor,weapon:self.weapon,boost:self.boost,report,at_attack_menu:self.at_attack_menu,
             at_escape_menu,escape_round,attack_inputs:self.attack_inputs,escape_inputs:inputs,available_escape_bp,
-            attempt:FieldEscapeAttempt {party_sp_cost:{let mut costs=vec![0;self.attack_actor+1];costs[self.attack_actor]=sp_cost;costs},party_latent_gain: {let mut gain=vec![0;self.attack_actor+1];gain[self.attack_actor]=25*breaks;gain},enemy_knowledge:self.battle.enemy_knowledge(),success:true,chance_percent:100,before_check,after:at(self.battle.state().rng),trace}})
+            attempt:FieldEscapeAttempt {party_sp_cost:{let mut costs=vec![0;self.attack_actor+1];costs[self.attack_actor]=sp_cost;costs},party_latent_gain: {let mut gain=vec![0;self.attack_actor+1];gain[self.attack_actor]=25*breaks;gain},enemy_knowledge:self.battle.enemy_knowledge(),success,chance_percent,before_check,after:at(self.battle.state().rng),trace}})
     }
 }
 
@@ -524,36 +526,59 @@ pub fn opening_break_menu_with_history(entry:CrtRng,situation:Situation,levels:&
 pub fn opening_break_menu_with_players(entry:CrtRng,situation:Situation,levels:&[u32],enemies:&[&str],
     weapon:combat::Weapon,inputs:&[u8],night:bool,history:&crate::knowledge::EnemyHistory,
     players:Option<&[crate::PlayerCharacter]>) -> Result<Option<FieldBreakMenu>> {
-    if let Some(p)=players {
-        if p.len()!=levels.len() || p.first().is_none_or(|p|p.id!="throne") || p.len()>2
-            || (p.len()==2 && p[1].id!="osvald") {return Ok(None);}
+    opening_break_menu_for_party(entry,situation,levels,enemies,weapon,inputs,night,history,players,0)
+}
+/// Partial breaks retain the ordinary Escape lottery; stop before any enemy action.
+pub fn opening_break_menu_for_party(entry:CrtRng,situation:Situation,levels:&[u32],enemies:&[&str],
+    weapon:combat::Weapon,inputs:&[u8],night:bool,history:&crate::knowledge::EnemyHistory,
+    players:Option<&[crate::PlayerCharacter]>,danger:u32)->Result<Option<FieldBreakMenu>> {
+    for target_index in 0..enemies.len() {
+        if let Some(menu)=opening_target_break(entry,situation,levels,enemies,weapon,inputs,night,history,players,danger,target_index)? {return Ok(Some(menu));}
     }
-    if enemies.len()!=1 || situation==Situation::Surprise || (players.is_none() && (levels.first()!=Some(&break_data().level)
+    Ok(None)
+}
+fn opening_target_break(entry:CrtRng,situation:Situation,levels:&[u32],enemies:&[&str],
+    weapon:combat::Weapon,inputs:&[u8],night:bool,history:&crate::knowledge::EnemyHistory,
+    players:Option<&[crate::PlayerCharacter]>,danger:u32,target_index:usize)->Result<Option<FieldBreakMenu>> {
+    if let Some(p)=players {
+        if p.len()!=levels.len() || p.first().is_none_or(|p|p.id!="throne") || p.len()>3
+            || (p.len()>=2 && p[1].id!="osvald") || (p.len()==3 && p[2].id!="agnea") {return Ok(None);}
+    }
+    if enemies.is_empty() || (enemies.len()!=1 && players.is_none_or(|p|p.len()!=3)) || situation==Situation::Surprise || (players.is_none() && (levels.first()!=Some(&break_data().level)
         || !(levels.len()==1 || levels==[break_data().level,1]))) {return Ok(None);}
-    let Some(enemy)=break_data().enemies.get(enemies[0]) else {return Ok(None);};
+    let Some(enemy)=break_data().enemies.get(enemies[target_index]) else {return Ok(None);};
     let boost=inputs.last().copied().unwrap_or(0);
     let profile=enemy.combat.as_ref().unwrap();
     if boost>1 || !profile.weapon_weaknesses.contains(&weapon) || profile.shields>boost+1 {return Ok(None);}
-    let mut config=if levels.len()==2 {break_data().party_config.clone()} else {break_data().config.clone()};
+    let mut config=if levels.len()>=2 {break_data().party_config.clone()} else {break_data().config.clone()};
     if let Some(players)=players {
-        for (target,carried) in config.players.iter_mut().zip(players) {
-            let skills=target.skills.clone();*target=carried.clone();target.skills=skills;
+        let original=config.players.clone();
+        config.players=players.to_vec();
+        for (i,target) in config.players.iter_mut().enumerate() {
+            target.skills=original.get(i).map(|p|p.skills.clone()).unwrap_or_default();
             target.resources.as_mut().unwrap().bp=1;
         }
     }
-    config.seed=entry.state; config.enemies=vec![enemy.clone()]; config.night_buff_turns=if night {3} else {0};
+    config.seed=entry.state;
+    let Some(enemies_config)=enemies.iter().map(|id|break_data().enemies.get(*id).cloned()).collect::<Option<Vec<_>>>() else {return Ok(None);};
+    config.enemies=enemies_config; config.night_buff_turns=if night {3} else {0};
     config.enemy_knowledge=history.clone();
-    let mut battle=Battle::new_field_break(config,situation)?;
+    let mut battle=if levels.len()==3 {
+        let voices=config.players.iter().map(|p|carried_data().players[&p.id].voice).collect();
+        Battle::new_carried_field_item(config,situation,voices)?
+    } else {Battle::new_field_break(config,situation)?};
     let actor=battle.current_actor().unwrap();
+    if actor.0>=2 {return Ok(None);}
     if (actor.0==0 && !matches!(weapon,combat::Weapon::Sword|combat::Weapon::Dagger))
         || (actor.0==1 && weapon!=combat::Weapon::Staff) {return Ok(None);}
     let rng=battle.state().rng; let at_attack_menu=CrtRng {state:rng.state,draws:entry.draws+rng.draws};
     let skill=match weapon {combat::Weapon::Dagger=>"attack_dagger",combat::Weapon::Sword=>"attack_sword",combat::Weapon::Staff=>"attack_staff",_=>return Ok(None)};
-    let target=ActorId(levels.len());
+    let target=ActorId(levels.len()+target_index);
     let report=battle.step_player_with_boost_inputs(Command::Boost {id:skill.into(),target:Some(target),bp:boost},inputs)?;
     if battle.state().outcome!=Outcome::Ongoing || !battle.state().actors[target.0].broken() {return Ok(None);}
-    ensure(battle.current_actor().is_some_and(|a|a.0<levels.len()),"Broken single enemy must yield the next player menu")?;
-    Ok(Some(FieldBreakMenu {defends:vec![],skill:None,battle,entry,weapon,boost,report,at_attack_menu,attack_inputs:inputs.to_vec(),attack_actor:actor.0}))
+    if !battle.current_actor().is_some_and(|a|a.0<levels.len()) {return Ok(None);}
+    let escape_chance=if enemies.len()==1 || (situation==Situation::Preemptive && battle.state().round==1) {None}else{Some(success_percent(levels,danger,0,0)?)};
+    Ok(Some(FieldBreakMenu {escape_chance,defends:vec![],skill:None,battle,entry,weapon,boost,report,at_attack_menu,attack_inputs:inputs.to_vec(),attack_actor:actor.0}))
 }
 
 /// First actor's known spell must break every surviving enemy; replay its actual BP tier.
@@ -598,7 +623,7 @@ pub fn opening_spell_break_menu(entry:CrtRng,situation:Situation,levels:&[u32],e
     if battle.state().outcome!=Outcome::Ongoing || battle.state().actors[players.len()..].iter().any(|a|a.alive()&&!a.broken()) {return Ok(None);}
     ensure(battle.current_actor().is_some_and(|a|a.0<players.len()),"All broken enemies must yield a player menu")?;
     let _=levels;
-    Ok(Some(FieldBreakMenu {defends:vec![],skill:Some(skill.into()),battle,entry,weapon:combat::Weapon::Staff,boost,report,at_attack_menu,attack_inputs:inputs.to_vec(),attack_actor:actor.0}))
+    Ok(Some(FieldBreakMenu {escape_chance:None,defends:vec![],skill:Some(skill.into()),battle,entry,weapon:combat::Weapon::Staff,boost,report,at_attack_menu,attack_inputs:inputs.to_vec(),attack_actor:actor.0}))
 }
 
 /// Test an opening normal attack against a lone enemy, using the real hit rolls.
@@ -1005,6 +1030,48 @@ mod boost_cursor_tests {
 #[cfg(test)]
 mod carried_break_tests {
     use super::*;
+    #[test]
+    fn cropdale_partial_break_checks_escape_and_target() {
+        let players=[route_player(7,1530).unwrap(),route_player(6,1467).unwrap(),route_player(8,0).unwrap()];
+        let levels=[crate::progression::growth(7,1530).unwrap().level,crate::progression::growth(6,1467).unwrap().level,1];
+        let ids=["ENE_NML_FLD_FST_100","ENE_NML_FLD_FST_100"];
+        let mut outcomes=[false;2];
+        for seed in 0..256 {
+            let entry=CrtRng::new(seed);
+            for weapon in [combat::Weapon::Sword,combat::Weapon::Dagger] {
+                let Some(menu)=opening_break_menu_for_party(entry,Situation::Normal,&levels,&ids,weapon,&[1],false,&Default::default(),Some(&players),11).unwrap() else {continue};
+                let first=FieldEscapeMenu::with_players(entry,Situation::Normal,&players,&levels,&ids,&Default::default()).unwrap();
+                assert_eq!(menu.at_attack_menu,first.rng);
+                let b=menu.attempt(&[]).unwrap();
+                assert_eq!(b.attempt.after.draws,b.attempt.before_check.draws+1);
+                assert_eq!(b.attempt.chance_percent,success_percent(&levels,11,0,0).unwrap());
+                assert_eq!(b.attempt.party_latent_gain[0],25);
+                outcomes[usize::from(b.attempt.success)]=true;
+            }
+        }
+        assert_eq!(outcomes,[true,true]);
+    }
+    #[test]
+    fn cropdale_three_player_break_preserves_opening_and_latent() {
+        let players=[route_player(7,1530).unwrap(),route_player(6,1467).unwrap(),route_player(8,0).unwrap()];
+        let levels=[crate::progression::growth(7,1530).unwrap().level,crate::progression::growth(6,1467).unwrap().level,1];
+        let ids=["ENE_NML_FLD_WLD_020"];
+        let mut checked=0;
+        for seed in 0..128 {
+            let entry=CrtRng::new(seed);
+            let first=FieldEscapeMenu::with_players(entry,Situation::Normal,&players,&levels,&ids,&Default::default()).unwrap();
+            for weapon in [combat::Weapon::Sword,combat::Weapon::Dagger] {
+                let Some(menu)=opening_break_menu_with_players(entry,Situation::Normal,&levels,&ids,weapon,&[1],false,&Default::default(),Some(&players)).unwrap() else {continue};
+                assert_eq!(menu.at_attack_menu,first.rng);
+                assert_eq!(menu.attack_actor,0);
+                let b=menu.attempt(&[]).unwrap();
+                assert!(b.attempt.success);
+                assert_eq!(b.attempt.party_latent_gain[0],25);
+                checked+=1;
+            }
+        }
+        assert!(checked>0);
+    }
     #[test]
     fn carried_break_matches_first_menu_and_real_bp() {
         let exp=[1530,1467];
